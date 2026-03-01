@@ -1,7 +1,5 @@
-"use client";
-
-import Page1 from "@/features/Home/page1";
-import { FullPage } from "react-abohook-fullpage";
+import FullPagesProvider from "@/shared/providers/FullPageProvider";
+import Image from "next/image";
 
 export default function page() {
   return (
@@ -9,56 +7,20 @@ export default function page() {
       style={{
         display: "flex",
         flexDirection: "column",
-        backgroundColor: "black",
+        backgroundColor: "red",
       }}
     >
-      <FullPage directionDots="right" duration={700} closeOutside>
-        <FullPage.Section>
-          <Page1 />
-        </FullPage.Section>
-        <FullPage.Section>
-          <div
-            style={{
-              backgroundColor: "orange",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              width: "100%",
-              height: "100%",
-            }}
-          >
-            <h1 style={{ fontSize: 24, color: "white" }}>Section 1</h1>
-          </div>
-        </FullPage.Section>
-        <FullPage.Section>
-          <div
-            style={{
-              backgroundColor: "blue",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              width: "100%",
-              height: "100%",
-            }}
-          >
-            <h1 style={{ fontSize: 24, color: "white" }}>Section 2</h1>
-          </div>
-        </FullPage.Section>
-        <FullPage.Footer>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "100%",
-            }}
-          >
-            <h1>Footer</h1>
-          </div>
-        </FullPage.Footer>
-      </FullPage>
+      <div className=" relative w-full h-full">
+        <Image
+          src="/imgs/HeroSection.png"
+          alt="hero section"
+          fill
+          fetchPriority="high"
+          priority
+          className="w-full h-full object-cover lg:object-fill absolute top-0 left-0 z-[-1]"
+        />
+      </div>
+      <FullPagesProvider />
     </div>
   );
 }
