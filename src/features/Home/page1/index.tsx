@@ -2,11 +2,10 @@ import HeroSectionHeader from "@/features/home/page1/components/HeroSectionHeade
 import VideoSection from "@/features/home/page1/components/VideoSection";
 import React from "react";
 
-export default function Page1() {
+export default function Page1({ page }: { page: number }) {
   return (
     <div className="w-full h-full">
-   
-      <VideoSection/>
+      <VideoSection />
       <HeroSectionHeader />
     </div>
   );

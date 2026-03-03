@@ -25,6 +25,15 @@ export default function RootLayout({
 }>) {
   return (
     <html className="scrollbar-hide" lang="en">
+      <head>
+        <link
+          rel="preload"
+          as="video"
+          fetchPriority="high"
+          href="/videos/HeroSection.webm"
+          type="video/webm"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
