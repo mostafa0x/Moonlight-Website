@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 
-export function useAutoSlider(isActive: boolean, length: number) {
+export function useAutoSlider(
+  isActive: boolean,
+  length: number,
+  delay: number = 5000,
+) {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -13,7 +17,7 @@ export function useAutoSlider(isActive: boolean, length: number) {
       console.log("x");
 
       setIndex((prev) => (prev + 1) % length);
-    }, 4000);
+    }, delay);
 
     return () => clearInterval(interval);
   }, [isActive]);

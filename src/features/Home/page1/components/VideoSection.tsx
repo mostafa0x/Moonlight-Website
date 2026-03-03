@@ -7,21 +7,20 @@ export default function VideoSection({ isActive }: { isActive: boolean }) {
   useEffect(() => {
     if (!videoRef.current) return;
 
-    isActive ? videoRef.current.play() : videoRef.current.pause();
-
+    isActive ? videoRef.current.play() : videoRef.current.pause;
     return () => {};
   }, [isActive]);
 
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <div className="abolute ">
+    <div>
       <video
         ref={videoRef}
         src="/videos/HeroSection.webm"
         muted
         loop
-        autoPlay
+        autoPlay={isActive}
         playsInline
         onCanPlay={() => setIsLoaded(true)}
         poster="imgs/HeroSection.png"

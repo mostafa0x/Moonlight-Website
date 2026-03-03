@@ -1,8 +1,11 @@
 import HeroSectionHeader from "@/features/home/page1/components/HeroSectionHeader";
-import VideoSection from "@/features/home/page1/components/VideoSection";
-import React from "react";
+import dynamic from "next/dynamic";
+const VideoSection = dynamic(
+  () => import("@/features/home/page1/components/VideoSection"),
+);
+import React, { memo } from "react";
 
-export default function Page1({ page }: { page: number }) {
+function Page1({ page }: { page: number }) {
   return (
     <div className="h-screen w-full flex overflow-hidden ">
       <HeroSectionHeader />
@@ -10,3 +13,5 @@ export default function Page1({ page }: { page: number }) {
     </div>
   );
 }
+
+export default memo(Page1);

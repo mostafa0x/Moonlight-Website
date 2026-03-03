@@ -4,9 +4,18 @@ import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import { useAutoSlider } from "@/shared/hooks/useSectionSlider";
 import type { ItemSliderType } from "@/shared/global";
-import SliderItem from "@/shared/components/location-section/SliderItem";
+const SliderItem = dynamic(
+  () => import("@/shared/components/location-section/SliderItem"),
+  { ssr: false },
+);
+
 import SliderItemHeader from "@/shared/components/location-section/SliderItemHeader";
-import BackgroundVideo from "@/shared/components/background-video/BackgroundVideo";
+const BackgroundVideo = dynamic(
+  () => import("@/shared/components/background-video/BackgroundVideo"),
+  { ssr: false },
+);
+import { memo } from "react";
+import dynamic from "next/dynamic";
 
 const slides: ItemSliderType[] = [
   {
@@ -26,13 +35,13 @@ const slides: ItemSliderType[] = [
   },
 ];
 
-export default function Page2({ page }: { page: number }) {
+function Page2({ page }: { page: number }) {
   const isInView = page === 1;
-  const index = useAutoSlider(isInView, slides.length);
+  const index = useAutoSlider(isInView, slides.length, 7500);
 
   return (
     <section className="h-screen w-full flex  overflow-hidden pt-[173px] px-[73px] ">
-      <BackgroundVideo />
+      <BackgroundVideo isInView={isInView} />
       <div className="flex w-full max-w-7xl  justify-between">
         <div className="w-1/2 ">
           <motion.h1
@@ -55,3 +64,4 @@ export default function Page2({ page }: { page: number }) {
     </section>
   );
 }
+export default memo(Page2);

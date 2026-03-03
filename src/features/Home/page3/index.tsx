@@ -41,7 +41,7 @@ export default function Page3({ page }: { page: number }) {
 
   return (
     <section className="relative h-screen w-full flex overflow-hidden pt-[78px] px-[90px] ">
-      <BackgroundVideo />
+      <BackgroundVideo isInView={isActive} />
 
       <PackageSection
         title={"Giza All-Inclusive VIP Tour"}
