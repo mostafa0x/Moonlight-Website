@@ -5,6 +5,8 @@ import Image from "next/image";
 import { useAutoSlider } from "@/shared/hooks/useSectionSlider";
 import type { ItemSliderType } from "@/shared/global";
 import SliderItem from "@/shared/components/location-section/SliderItem";
+import SliderItemHeader from "@/shared/components/location-section/SliderItemHeader";
+import BackgroundVideo from "@/shared/components/background-video/BackgroundVideo";
 
 const slides: ItemSliderType[] = [
   {
@@ -30,9 +32,7 @@ export default function Page2({ page }: { page: number }) {
 
   return (
     <section className="h-screen w-full flex  overflow-hidden pt-[173px] px-[73px] ">
-      <div className="absolute top-0 left-0 z-[-1] w-full h-full">
-        <Image src="/backgrounds/back.png" alt="" fill />
-      </div>
+      <BackgroundVideo />
       <div className="flex w-full max-w-7xl  justify-between">
         <div className="w-1/2 ">
           <motion.h1
@@ -44,23 +44,10 @@ export default function Page2({ page }: { page: number }) {
             Gize
           </motion.h1>
 
-          <AnimatePresence mode="wait">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
-              className="pt-[131px] space-y-[16px] "
-              key={slides[index].name}
-            >
-              <h2 className="text-[#F2C975] font-cairo font-bold text-2xl ">
-                {slides[index].name}
-              </h2>
-              <p className="text-[#E0E0E0] font-cairo font-medium text-[20px] max-w-[611px]">
-                {slides[index].desc}
-              </p>
-            </motion.div>
-          </AnimatePresence>
+          <SliderItemHeader
+            name={slides[index].name}
+            desc={slides[index].desc}
+          />
         </div>
 
         <SliderItem slide={slides[index]} />

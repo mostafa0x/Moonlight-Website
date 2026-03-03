@@ -24,7 +24,7 @@ export default function VideoSection({ isActive }: { isActive: boolean }) {
         autoPlay
         onCanPlay={() => setIsLoaded(true)}
         poster="imgs/HeroSection.png"
-        className={`w-full h-full object-cover lg:object-fill absolute top-0 left-0  ${
+        className={`w-full h-full object-cover  absolute top-0 left-0  ${
           isLoaded ? "z-[-1]" : "z-[-2]"
         }`}
       />
