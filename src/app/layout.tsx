@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
 import "./globals.css";
 import AllProviders from "@/shared/providers/AllProviders";
+import NavBar from "@/shared/components/nav-bar";
 
 const cairo = Cairo({
   subsets: ["arabic"],
@@ -32,7 +33,10 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        <AllProviders>{children}</AllProviders>
+        <AllProviders>
+          <NavBar />
+          {children}
+        </AllProviders>
       </body>
     </html>
   );

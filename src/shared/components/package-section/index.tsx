@@ -28,7 +28,7 @@ function PackageSection({
   packages: PackageType[];
 }) {
   return (
-    <section className="h-full w-full pt-[58px] px-[90px] relative">
+    <section className="h-full w-full pt-[18px] px-[90px] relative">
       <div className="flex flex-col w-full justify-center gap-[44px] z-10">
         <PackageSectionHeader title={title} />
         <motion.div

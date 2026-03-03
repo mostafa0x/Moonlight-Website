@@ -14,7 +14,9 @@ function PackageCard({ pkg }: { pkg: PackageType }) {
         </div>
         <div className="flex items-center justify-between">
           <p className="font-medium text-[32px] text-[#F2C975]">{price}$</p>
-          <p className="font-medium text-[16px] text-[#F2C975]">view more</p>
+          <p className="font-medium text-[16px] text-[#F2C975] underline underline-offset-3">
+            view more
+          </p>
         </div>
       </div>
     </div>
