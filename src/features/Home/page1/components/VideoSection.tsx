@@ -1,13 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-export default function VideoSection() {
+export default function VideoSection({ isActive }: { isActive: boolean }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    if (!videoRef.current) return;
+
+    isActive ? videoRef.current.play() : videoRef.current.pause();
+
+    return () => {};
+  }, [isActive]);
+
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <div className="relative w-full h-full">
       <video
+        ref={videoRef}
         src="/videos/HeroSection.webm"
         muted
         loop

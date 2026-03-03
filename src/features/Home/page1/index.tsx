@@ -5,7 +5,7 @@ import React from "react";
 export default function Page1({ page }: { page: number }) {
   return (
     <div className="w-full h-full">
-      <VideoSection />
+      <VideoSection isActive={page === 0} />
       <HeroSectionHeader />
     </div>
   );
