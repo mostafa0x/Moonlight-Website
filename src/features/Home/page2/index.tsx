@@ -1,11 +1,12 @@
 "use client";
 
 import { motion, AnimatePresence } from "motion/react";
-import { useRef } from "react";
 import Image from "next/image";
 import { useAutoSlider } from "@/shared/hooks/useSectionSlider";
+import type { ItemSliderType } from "@/shared/global";
+import SliderItem from "@/shared/components/location-section/SliderItem";
 
-const slides = [
+const slides: ItemSliderType[] = [
   {
     name: "Tutankhamun's Mask",
     src: "/imgs/item1.png",
@@ -24,15 +25,11 @@ const slides = [
 ];
 
 export default function Page2({ page }: { page: number }) {
-  const ref = useRef(null);
   const isInView = page === 1;
   const index = useAutoSlider(isInView, slides.length);
 
   return (
-    <section
-      ref={ref}
-      className="h-screen w-full flex  overflow-hidden pt-[173px] px-[73px] "
-    >
+    <section className="h-screen w-full flex  overflow-hidden pt-[173px] px-[73px] ">
       <div className="absolute top-0 left-0 z-[-1] w-full h-full">
         <Image src="/backgrounds/back.png" alt="" fill />
       </div>
@@ -66,27 +63,7 @@ export default function Page2({ page }: { page: number }) {
           </AnimatePresence>
         </div>
 
-        <div className=" relative  w-[405px] h-[745px] select-none ">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={index}
-              initial={{ x: "100%", y: -150, opacity: 0 }}
-              whileInView={{ x: "50%", opacity: 1 }}
-              whileHover={{ scale: 1.05, rotate: 5 }}
-              exit={{ x: "100%", opacity: 0 }}
-              transition={{ duration: 0.9, ease: "easeInOut" }}
-              className="absolute w-full h-full "
-            >
-              <Image
-                src={slides[index].src}
-                alt="slide"
-                fill
-                priority
-                className="object-contain "
-              />
-            </motion.div>
-          </AnimatePresence>
-        </div>
+        <SliderItem slide={slides[index]} />
       </div>
     </section>
   );
