@@ -5,7 +5,7 @@ import AllProviders from "@/shared/providers/AllProviders";
 
 const cairo = Cairo({
   subsets: ["arabic"],
-  weight: ["400", "500", "700"], // regular, medium, bold
+  weight: ["400", "500", "600", "700"], // 400=Regular, 500=Medium, 600=Semi-Bold, 700=Bold
   variable: "--font-cairo",
   display: "swap",
 });

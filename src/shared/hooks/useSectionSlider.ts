@@ -5,7 +5,7 @@ export function useAutoSlider(isActive: boolean, length: number) {
 
   useEffect(() => {
     if (!isActive) {
-      setIndex(0);
+      //   setIndex(0);
       return;
     }
 

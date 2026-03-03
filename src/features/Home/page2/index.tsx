@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence, useInView } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { useRef } from "react";
 import Image from "next/image";
 import { useAutoSlider } from "@/shared/hooks/useSectionSlider";
@@ -25,9 +25,7 @@ const slides = [
 
 export default function Page2({ page }: { page: number }) {
   const ref = useRef(null);
-  //   const isInView = useInView(ref, { amount: 0.6 });
   const isInView = page === 1;
-
   const index = useAutoSlider(isInView, slides.length);
 
   return (
