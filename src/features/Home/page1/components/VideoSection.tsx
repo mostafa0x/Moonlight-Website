@@ -22,6 +22,7 @@ export default function VideoSection({ isActive }: { isActive: boolean }) {
         muted
         loop
         autoPlay
+        playsInline
         onCanPlay={() => setIsLoaded(true)}
         poster="imgs/HeroSection.png"
         className={`w-full h-full object-cover  absolute top-0 left-0  ${

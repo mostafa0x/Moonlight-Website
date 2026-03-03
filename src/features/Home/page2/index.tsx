@@ -41,7 +41,7 @@ export default function Page2({ page }: { page: number }) {
             transition={{ duration: 0.6 }}
             className="text-6xl font-bold mb-6"
           >
-            Gize
+            Giza
           </motion.h1>
 
           <SliderItemHeader

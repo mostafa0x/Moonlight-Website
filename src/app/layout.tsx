@@ -3,6 +3,7 @@ import { Cairo } from "next/font/google";
 import "./globals.css";
 import AllProviders from "@/shared/providers/AllProviders";
 import NavBar from "@/shared/components/nav-bar";
+import BackgroundVideo from "@/shared/components/background-video/BackgroundVideo";
 
 const cairo = Cairo({
   subsets: ["arabic"],
