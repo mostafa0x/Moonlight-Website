@@ -4,9 +4,9 @@ import React from "react";
 
 export default function Page1({ page }: { page: number }) {
   return (
-    <div className="w-full h-full">
-      <VideoSection isActive={page === 0} />
+    <div className="h-screen w-full flex overflow-hidden ">
       <HeroSectionHeader />
+      <VideoSection isActive={page === 0} />
     </div>
   );
 }

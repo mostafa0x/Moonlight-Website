@@ -28,7 +28,7 @@ function PackageSection({
   packages: PackageType[];
 }) {
   return (
-    <section className="h-screen w-full flex overflow-hidden pt-[78px] px-[90px] relative">
+    <section className="h-full w-full pt-[58px] px-[90px] relative">
       <div className="flex flex-col w-full justify-center gap-[44px] z-10">
         <PackageSectionHeader title={title} />
         <motion.div
@@ -39,7 +39,7 @@ function PackageSection({
         >
           {packages.map((pkg, i) => (
             <motion.div
-              className="w-full h-full"
+              className="flex-1"
               key={i}
               whileTap={{
                 scale: 1.05,

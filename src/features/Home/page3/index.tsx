@@ -39,7 +39,7 @@ export default function Page3({ page }: { page: number }) {
   const isActive = page === 2;
 
   return (
-    <section className="h-screen w-full flex overflow-hidden pt-[78px] px-[90px] relative">
+    <section className="relative h-screen w-full flex overflow-hidden pt-[78px] px-[90px] ">
       <div className="absolute top-0 left-0 z-[-1] w-full h-full">
         <Image
           src="/backgrounds/back.png"

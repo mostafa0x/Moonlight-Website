@@ -15,7 +15,7 @@ export default function VideoSection({ isActive }: { isActive: boolean }) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <div className="relative w-full h-full">
+    <div className="abolute ">
       <video
         ref={videoRef}
         src="/videos/HeroSection.webm"
