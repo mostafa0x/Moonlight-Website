@@ -10,7 +10,7 @@ function BackgroundVideo({ isHasOverlay = true }: { isHasOverlay?: boolean }) {
     const time = setTimeout(() => {
       setIsEnded(false);
       videoRef.current?.play();
-    }, 5000);
+    }, 3000);
 
     return () => {
       clearTimeout(time);
@@ -24,10 +24,11 @@ function BackgroundVideo({ isHasOverlay = true }: { isHasOverlay?: boolean }) {
       )}
       <video
         ref={videoRef}
-        src="/videos/background.webm"
+        src="/videos/background2.webm"
         muted
         playsInline
         autoPlay
+        preload="metadata"
         onEnded={() => setIsEnded(true)}
         poster="imgs/BackgroundVideo.png"
         className={`w-full h-full object-cover  absolute top-0 left-0 z-[-2] `}

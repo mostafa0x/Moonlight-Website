@@ -30,7 +30,8 @@ function SliderItem({
             alt="slide"
             fill
             priority={firstItem}
-            quality={firstItem ? 100 : 80}
+            quality={firstItem ? 50 : 50}
+            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
             fetchPriority={firstItem ? "high" : "low"}
             loading={firstItem ? "eager" : "lazy"}
             className="object-contain "

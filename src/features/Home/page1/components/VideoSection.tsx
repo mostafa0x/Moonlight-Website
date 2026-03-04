@@ -1,17 +1,7 @@
-"use client";
-
 import { useEffect, useRef, useState } from "react";
 
 export default function VideoSection({ isActive }: { isActive: boolean }) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  useEffect(() => {
-    if (!videoRef.current) return;
-
-    isActive ? videoRef.current.play() : videoRef.current.pause;
-    return () => {};
-  }, [isActive]);
-
-  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <div>
@@ -22,11 +12,9 @@ export default function VideoSection({ isActive }: { isActive: boolean }) {
         loop
         autoPlay={isActive}
         playsInline
-        onCanPlay={() => setIsLoaded(true)}
+        preload="metadata"
         poster="imgs/HeroSection.png"
-        className={`w-full h-full object-cover  absolute top-0 left-0  ${
-          isLoaded ? "z-[-1]" : "z-[-2]"
-        }`}
+        className={`w-full h-full object-cover  absolute top-0 left-0`}
       />
     </div>
   );

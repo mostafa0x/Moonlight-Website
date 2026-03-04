@@ -35,7 +35,7 @@ function NavBar() {
         {LINKS.map((link) => (
           <Link
             href={link.link}
-            className="font-bold font-cairo text-xl text-white hover:text-gray-300"
+            className="font-bold font-cairo text-xl text-white hover:text-gray-300 select-none"
             key={link.title}
           >
             {link.title}
