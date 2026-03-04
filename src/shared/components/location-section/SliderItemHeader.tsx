@@ -1,13 +1,7 @@
 import { AnimatePresence, motion } from "motion/react";
-import React from "react";
+import { memo } from "react";
 
-export default function SliderItemHeader({
-  name,
-  desc,
-}: {
-  name: string;
-  desc: string;
-}) {
+function SliderItemHeader({ name, desc }: { name: string; desc: string }) {
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -15,7 +9,7 @@ export default function SliderItemHeader({
         whileInView={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
-        className="pt-[131px] space-y-[16px] "
+        className="pt-[131px] space-y-[16px] select-none"
         key={name}
       >
         <h2 className="text-[#F2C975] font-cairo font-bold text-2xl ">
@@ -28,3 +22,4 @@ export default function SliderItemHeader({
     </AnimatePresence>
   );
 }
+export default memo(SliderItemHeader);

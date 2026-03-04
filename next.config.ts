@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   images: {
-    qualities: [75, 50],
+    qualities: [75, 50, 30],
   },
 };
 

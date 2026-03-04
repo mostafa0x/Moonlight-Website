@@ -12,7 +12,7 @@ export default function page() {
       }}
     >
       <FullPagesProvider />
-      {/* <BackgroundVideo /> */}
+      <BackgroundVideo />
     </div>
   );
 }

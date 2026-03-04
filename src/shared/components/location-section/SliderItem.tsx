@@ -14,11 +14,11 @@ function SliderItem({
 }) {
   const firstItem = index === 0;
   return (
-    <div className=" relative  w-[405px] h-[745px] select-none ">
+    <div className="relative  w-[405px] h-[545px] select-none ">
       <AnimatePresence mode="wait">
         <motion.div
           key={slide.name}
-          initial={{ x: "100%", y: -150, opacity: 0 }}
+          initial={{ x: "100%", y: -80, opacity: 0 }}
           whileInView={{ x: "50%", opacity: 1 }}
           whileHover={{ scale: 1.05, rotate: 5 }}
           exit={{ x: "100%", opacity: 0 }}
@@ -30,7 +30,7 @@ function SliderItem({
             alt="slide"
             fill
             priority={firstItem}
-            quality={firstItem ? 50 : 50}
+            quality={firstItem ? 50 : 30}
             sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
             fetchPriority={firstItem ? "high" : "low"}
             loading={firstItem ? "eager" : "lazy"}

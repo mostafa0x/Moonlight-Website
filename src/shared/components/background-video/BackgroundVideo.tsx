@@ -24,14 +24,14 @@ function BackgroundVideo({ isHasOverlay = true }: { isHasOverlay?: boolean }) {
       )}
       <video
         ref={videoRef}
-        src="/videos/background2.webm"
+        src="/videos/background1.webm"
         muted
         playsInline
         autoPlay
         preload="metadata"
         onEnded={() => setIsEnded(true)}
         poster="imgs/BackgroundVideo.png"
-        className={`w-full h-full object-cover  absolute top-0 left-0 z-[-2] `}
+        className={`w-full h-full object-cover absolute top-0 left-0 z-[-2] `}
       />
     </div>
   );

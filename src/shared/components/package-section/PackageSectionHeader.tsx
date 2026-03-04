@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import React, { memo } from "react";
+import { memo } from "react";
 
 function PackageSectionHeader({ title }: { title: string }) {
   return (

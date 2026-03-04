@@ -7,7 +7,7 @@ export default function VideoSection({ isActive }: { isActive: boolean }) {
     <div>
       <video
         ref={videoRef}
-        src="/videos/HeroSection.webm"
+        src="/videos/HeroSection3.webm"
         muted
         loop
         autoPlay={isActive}
