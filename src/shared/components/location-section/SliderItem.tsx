@@ -1,9 +1,8 @@
 "use client";
 
 import type { ItemSliderType } from "@/shared/global";
-import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 
 function SliderItem({
   slide,
@@ -12,33 +11,41 @@ function SliderItem({
   slide: ItemSliderType;
   index: number;
 }) {
+  const [visible, setVisible] = useState(false);
   const firstItem = index === 0;
+
+  useEffect(() => {
+    setVisible(false);
+
+    const timeout = setTimeout(() => {
+      setVisible(true);
+    }, 50);
+
+    return () => clearTimeout(timeout);
+  }, [slide]);
+
   return (
-    <div className="relative  w-[405px] h-[545px] select-none ">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={slide.name}
-          initial={{ x: "100%", y: -80, opacity: 0 }}
-          whileInView={{ x: "50%", opacity: 1 }}
-          whileHover={{ scale: 1.05, rotate: 5 }}
-          exit={{ x: "100%", opacity: 0 }}
-          transition={{ duration: 0.9, ease: "easeInOut" }}
-          className="absolute w-full h-full "
-        >
-          <Image
-            src={slide.src}
-            alt="slide"
-            fill
-            priority={firstItem}
-            quality={firstItem ? 50 : 30}
-            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
-            fetchPriority={firstItem ? "high" : "low"}
-            loading={firstItem ? "eager" : "lazy"}
-            className="object-contain "
-          />
-        </motion.div>
-      </AnimatePresence>
+    <div className="relative w-[405px] h-[545px] overflow-hidden select-none">
+      <div
+        className={`
+          absolute inset-0
+          transition-all duration-500 ease-in-out
+          ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}
+          hover:scale-105 hover:rotate-6
+        `}
+      >
+        <Image
+          src={slide.src}
+          alt="slide"
+          fill
+          priority={firstItem}
+          quality={firstItem ? 45 : 30}
+          sizes="(max-width: 768px) 100vw, 405px"
+          className="object-contain"
+        />
+      </div>
     </div>
   );
 }
+
 export default memo(SliderItem);

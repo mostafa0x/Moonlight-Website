@@ -1,25 +1,18 @@
-import { AnimatePresence, motion } from "motion/react";
 import { memo } from "react";
 
 function SliderItemHeader({ name, desc }: { name: string; desc: string }) {
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1 }}
-        className="pt-[131px] space-y-[16px] select-none"
-        key={name}
-      >
-        <h2 className="text-[#F2C975] font-cairo font-bold text-2xl ">
-          {name}
-        </h2>
-        <p className="text-[#E0E0E0] font-cairo font-medium text-[20px] max-w-[611px]">
-          {desc}
-        </p>
-      </motion.div>
-    </AnimatePresence>
+    <div
+      key={name}
+      className="
+        pt-[131px] space-y-[16px] select-none animate-fade animate-ease-in animate-duration-1000"
+    >
+      <h2 className="text-[#F2C975] font-cairo font-bold text-2xl">{name}</h2>
+      <p className="text-[#E0E0E0] font-cairo font-medium text-[20px] max-w-[611px]">
+        {desc}
+      </p>
+    </div>
   );
 }
+
 export default memo(SliderItemHeader);
