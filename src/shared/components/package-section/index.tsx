@@ -10,14 +10,14 @@ const containerVariants: Variants = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.5,
+      staggerChildren: 0.3,
     },
   },
 };
 
 const itemVariants: Variants = {
   hidden: { y: 100, opacity: 0 },
-  show: { y: 0, opacity: 1, transition: { duration: 1 } },
+  show: { y: 0, opacity: 1, transition: { duration: 0.3 } },
 };
 
 function PackageSection({
@@ -38,18 +38,7 @@ function PackageSection({
           className="flex flex-row justify-between gap-7.5"
         >
           {packages.map((pkg, i) => (
-            <motion.div
-              className="flex-1"
-              key={i}
-              whileTap={{
-                scale: 1.05,
-              }}
-              variants={itemVariants}
-              whileHover={{
-                scale: 1.05,
-              }}
-              transition={{ type: "spring", stiffness: 300, damping: 10 }}
-            >
+            <motion.div className="flex-1" key={i} variants={itemVariants}>
               <PackageCard pkg={pkg} />
             </motion.div>
           ))}

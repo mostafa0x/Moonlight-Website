@@ -1,7 +1,8 @@
-import BackgroundVideo from "@/shared/components/background-video/BackgroundVideo";
 import FullPagesProvider from "@/shared/providers/FullPageProvider";
-import Image from "next/image";
-
+import dynamic from "next/dynamic";
+const BackgroundVideo = dynamic(
+  () => import("@/shared/components/background-video/BackgroundVideo"),
+);
 export default function page() {
   return (
     <div
@@ -11,6 +12,7 @@ export default function page() {
       }}
     >
       <FullPagesProvider />
+      <BackgroundVideo />
     </div>
   );
 }

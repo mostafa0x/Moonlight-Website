@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, AnimatePresence } from "motion/react";
-import Image from "next/image";
 import { useAutoSlider } from "@/shared/hooks/useSectionSlider";
 import type { ItemSliderType } from "@/shared/global";
 const SliderItem = dynamic(
@@ -10,10 +9,7 @@ const SliderItem = dynamic(
 );
 
 import SliderItemHeader from "@/shared/components/location-section/SliderItemHeader";
-const BackgroundVideo = dynamic(
-  () => import("@/shared/components/background-video/BackgroundVideo"),
-  { ssr: false },
-);
+
 import { memo } from "react";
 import dynamic from "next/dynamic";
 
@@ -41,7 +37,6 @@ function Page2({ page }: { page: number }) {
 
   return (
     <section className="h-screen w-full flex  overflow-hidden pt-[173px] px-[73px] ">
-      <BackgroundVideo isInView={isInView} />
       <div className="flex w-full max-w-7xl  justify-between">
         <div className="w-1/2 ">
           <motion.h1
@@ -59,7 +54,7 @@ function Page2({ page }: { page: number }) {
           />
         </div>
 
-        <SliderItem slide={slides[index]} />
+        <SliderItem slide={slides[index]} index={index} />
       </div>
     </section>
   );

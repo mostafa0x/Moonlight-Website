@@ -1,12 +1,7 @@
+"use client";
 import { memo, useEffect, useRef, useState } from "react";
 
-function BackgroundVideo({
-  isHasOverlay = true,
-  isInView = false,
-}: {
-  isHasOverlay?: boolean;
-  isInView: boolean;
-}) {
+function BackgroundVideo({ isHasOverlay = true }: { isHasOverlay?: boolean }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isEnded, setIsEnded] = useState(false);
 

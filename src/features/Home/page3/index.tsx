@@ -1,8 +1,6 @@
 import { type Variants } from "motion/react";
-import Image from "next/image";
 import type { PackageType } from "@/features/home/page3/types";
 import PackageSection from "@/shared/components/package-section";
-import BackgroundVideo from "@/shared/components/background-video/BackgroundVideo";
 
 const packages: PackageType[] = [
   {
@@ -41,8 +39,6 @@ export default function Page3({ page }: { page: number }) {
 
   return (
     <section className="relative h-screen w-full flex overflow-hidden pt-[78px] px-[90px] ">
-      <BackgroundVideo isInView={isActive} />
-
       <PackageSection
         title={"Giza All-Inclusive VIP Tour"}
         packages={packages}

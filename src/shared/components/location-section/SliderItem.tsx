@@ -5,7 +5,14 @@ import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import { memo } from "react";
 
-function SliderItem({ slide }: { slide: ItemSliderType }) {
+function SliderItem({
+  slide,
+  index = 0,
+}: {
+  slide: ItemSliderType;
+  index: number;
+}) {
+  const firstItem = index === 0;
   return (
     <div className=" relative  w-[405px] h-[745px] select-none ">
       <AnimatePresence mode="wait">
@@ -22,7 +29,10 @@ function SliderItem({ slide }: { slide: ItemSliderType }) {
             src={slide.src}
             alt="slide"
             fill
-            priority
+            priority={firstItem}
+            quality={firstItem ? 100 : 80}
+            fetchPriority={firstItem ? "high" : "low"}
+            loading={firstItem ? "eager" : "lazy"}
             className="object-contain "
           />
         </motion.div>
