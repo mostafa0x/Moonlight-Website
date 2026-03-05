@@ -1,17 +1,17 @@
 "use client";
 
 import { motion, AnimatePresence } from "motion/react";
-import { useAutoSlider } from "@/shared/hooks/useSectionSlider";
 import type { ItemSliderType } from "@/shared/global";
 const SliderItem = dynamic(
-  () => import("@/shared/components/location-section/SliderItem"),
+  () => import("@/features/slider-items/components/SliderItem"),
   { ssr: false },
 );
 
-import SliderItemHeader from "@/shared/components/location-section/SliderItemHeader";
+import SliderItemHeader from "@/features/slider-items/components/SliderItemHeader";
 
 import { memo } from "react";
 import dynamic from "next/dynamic";
+import { useAutoSlider } from "@/features/slider-items/hooks";
 
 const slides: ItemSliderType[] = [
   {
@@ -39,22 +39,23 @@ function Page2({ page }: { page: number }) {
     <section className="h-screen w-full flex  overflow-hidden pt-[173px] px-[73px] ">
       <div className="flex w-full max-w-7xl  justify-between">
         <div className="w-1/2 ">
-          <motion.h1
-            initial={{ x: -40, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="text-6xl font-bold mb-6"
+          <h1
+            // initial={{ x: -40, opacity: 0 }}
+            // whileInView={{ x: 0, opacity: 1 }}
+            // transition={{ duration: 0.6 }}
+            className={`text-6xl font-bold mb-6 ${isInView && "animate-fade-right"} animate-ease-in animate-duration-1000`}
           >
             Giza
-          </motion.h1>
+          </h1>
 
           <SliderItemHeader
             name={slides[index].name}
             desc={slides[index].desc}
+            isInView={isInView}
           />
         </div>
 
-        <SliderItem slide={slides[index]} index={index} />
+        <SliderItem slide={slides[index]} index={index} isInView={isInView} />
       </div>
     </section>
   );
