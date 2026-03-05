@@ -4,6 +4,26 @@
 
 @theme {
   --font-cairo: var(--font-cairo);
+
+  @keyframes shimmer {
+    0% {
+      background-position: -500px 0;
+    }
+    100% {
+      background-position: 500px 0;
+    }
+  }
+}
+@utility skeleton {
+  background: linear-gradient(90deg, #d9d9d9 25%, #f3f4f6 37%, #d9d9d9 63%);
+  background-size: 500px 100%;
+  animation: shimmer 1.5s linear infinite;
+  will-change: background-position;
+}
+@utility skeleton-dark {
+  background: linear-gradient(90deg, #4b5563 25%, #6b7280 37%, #4b5563 63%);
+  background-size: 500px 100%;
+  animation: shimmer 1.5s linear infinite;
 }
 
 @theme inline {

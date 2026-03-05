@@ -5,6 +5,7 @@ import PackageCard from "@/features/packages/components/PackageCard";
 import type { PackageType } from "@/features/home/page3/types";
 import PackageSectionHeader from "@/features/packages/components/PackageSectionHeader";
 import { memo } from "react";
+import PackageCardSkeleton from "@/features/packages/components/PackageCardSkeleton";
 
 const containerVariants: Variants = {
   hidden: {},
@@ -23,14 +24,16 @@ const itemVariants: Variants = {
 function PackageSection({
   title,
   packages,
+  isInView,
 }: {
   title: string;
   packages: PackageType[];
+  isInView: boolean;
 }) {
   return (
     <section className="h-full w-full pt-[18px] px-[90px] relative">
       <div className="flex flex-col w-full justify-center gap-[44px] z-10">
-        <PackageSectionHeader title={title} />
+        <PackageSectionHeader title={title} isInView={isInView} />
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -39,7 +42,7 @@ function PackageSection({
         >
           {packages.map((pkg, i) => (
             <motion.div className="flex-1" key={i} variants={itemVariants}>
-              <PackageCard pkg={pkg} />
+              <PackageCardSkeleton pkg={pkg} />
             </motion.div>
           ))}
         </motion.div>

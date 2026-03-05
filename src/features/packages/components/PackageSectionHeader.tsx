@@ -1,16 +1,19 @@
 import { motion } from "motion/react";
 import { memo } from "react";
 
-function PackageSectionHeader({ title }: { title: string }) {
+function PackageSectionHeader({
+  title,
+  isInView,
+}: {
+  title: string;
+  isInView: boolean;
+}) {
   return (
-    <motion.h1
-      initial={{ y: 100, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      className="text-4xl font-bold mb-6 text-center font-cairo text-[#F2C975] select-none"
+    <h1
+      className={`text-4xl font-bold mb-6 text-center font-cairo text-[#F2C975] select-none ${isInView && "animate-fade-up"} animate-ease-in-out animate-duration-2500`}
     >
       {title}
-    </motion.h1>
+    </h1>
   );
 }
 

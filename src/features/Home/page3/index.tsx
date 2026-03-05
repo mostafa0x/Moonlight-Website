@@ -35,14 +35,15 @@ const itemVariants: Variants = {
 };
 
 export default function Page3({ page }: { page: number }) {
-  const isActive = page === 2;
+  const isInView = page === 2;
 
   return (
-    <section className="relative h-screen w-full flex overflow-hidden pt-[78px] px-[90px] ">
+    <div className="relative h-screen w-full flex overflow-hidden pt-[78px] px-[90px] ">
       <PackageSection
         title={"Giza All-Inclusive VIP Tour"}
         packages={packages}
+        isInView={isInView}
       />
-    </section>
+    </div>
   );
 }
