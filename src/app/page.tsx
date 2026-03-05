@@ -1,4 +1,4 @@
-import FullPagesProvider from "@/shared/providers/FullPageProvider";
+import Home from "@/features/home";
 import dynamic from "next/dynamic";
 const BackgroundVideo = dynamic(
   () => import("@/shared/components/background-video/BackgroundVideo"),
@@ -11,7 +11,7 @@ export default function page() {
         flexDirection: "column",
       }}
     >
-      <FullPagesProvider />
+      <Home />
       <BackgroundVideo />
     </div>
   );
