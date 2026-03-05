@@ -43,6 +43,7 @@ export default function Page3({ page }: { page: number }) {
         title={"Giza All-Inclusive VIP Tour"}
         packages={packages}
         isInView={isInView}
+        isLoading={true}
       />
     </div>
   );

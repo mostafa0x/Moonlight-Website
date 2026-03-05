@@ -14,16 +14,28 @@
     }
   }
 }
+
+@keyframes slideFadeUp {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@utility slide-fade-up {
+  transform: translateY(100px);
+  opacity: 0;
+  animation: slideFadeUp 0.3s ease-out forwards;
+}
 @utility skeleton {
   background: linear-gradient(90deg, #d9d9d9 25%, #f3f4f6 37%, #d9d9d9 63%);
   background-size: 500px 100%;
   animation: shimmer 1.5s linear infinite;
   will-change: background-position;
-}
-@utility skeleton-dark {
-  background: linear-gradient(90deg, #4b5563 25%, #6b7280 37%, #4b5563 63%);
-  background-size: 500px 100%;
-  animation: shimmer 1.5s linear infinite;
 }
 
 @theme inline {
