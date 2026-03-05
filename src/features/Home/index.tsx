@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <FullPage
       directionDots="right"
-      duration={700}
+      duration={500}
       closeOutside
       onChange={setCurrentPage}
     >
