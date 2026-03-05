@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, AnimatePresence } from "motion/react";
 import type { ItemSliderType } from "@/shared/global";
 const SliderItem = dynamic(
   () => import("@/features/slider-items/components/SliderItem"),
@@ -8,7 +7,6 @@ const SliderItem = dynamic(
 );
 
 import SliderItemHeader from "@/features/slider-items/components/SliderItemHeader";
-
 import { memo } from "react";
 import dynamic from "next/dynamic";
 import { useAutoSlider } from "@/features/slider-items/hooks";
@@ -40,10 +38,7 @@ function Page2({ page }: { page: number }) {
       <div className="flex w-full max-w-7xl  justify-between">
         <div className="w-1/2 ">
           <h1
-            // initial={{ x: -40, opacity: 0 }}
-            // whileInView={{ x: 0, opacity: 1 }}
-            // transition={{ duration: 0.6 }}
-            className={`text-6xl font-bold mb-6 ${isInView && "animate-fade-right"} animate-ease-in animate-duration-1000`}
+            className={`text-6xl font-bold mb-6 ${isInView && "animate-fade-right"} animate-ease-in animate-duration-500`}
           >
             Giza
           </h1>

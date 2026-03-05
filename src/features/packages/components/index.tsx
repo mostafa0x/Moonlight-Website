@@ -1,9 +1,9 @@
 "use client";
 
 import { motion, type Variants } from "motion/react";
-import PackageCard from "@/shared/components/package-section/PackageCard";
+import PackageCard from "@/features/packages/components/PackageCard";
 import type { PackageType } from "@/features/home/page3/types";
-import PackageSectionHeader from "@/shared/components/package-section/PackageSectionHeader";
+import PackageSectionHeader from "@/features/packages/components/PackageSectionHeader";
 import { memo } from "react";
 
 const containerVariants: Variants = {

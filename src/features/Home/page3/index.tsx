@@ -1,6 +1,6 @@
 import { type Variants } from "motion/react";
 import type { PackageType } from "@/features/home/page3/types";
-import PackageSection from "@/shared/components/package-section";
+import PackageSection from "@/features/packages/components";
 
 const packages: PackageType[] = [
   {

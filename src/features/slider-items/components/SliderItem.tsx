@@ -1,5 +1,4 @@
 "use client";
-
 import { useExitSlider } from "@/features/slider-items/hooks";
 import type { ItemSliderType } from "@/shared/global";
 import Image from "next/image";
@@ -21,8 +20,7 @@ function SliderItem({
     <div className="relative w-[405px] h-[545px] select-none">
       <div
         className={`
-          absolute  w-full h-full
-          transition-all duration-400 ease-in-out
+          absolute w-full h-full transition-all duration-400 ease-in-out
           ${
             isExiting
               ? "opacity-0 translate-x-full"
