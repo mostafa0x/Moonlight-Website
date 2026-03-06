@@ -38,7 +38,7 @@ export default function Page3({ currentPage }: { currentPage: number }) {
   const isInView = currentPage === 2;
 
   return (
-    <div className="relative h-screen w-full flex overflow-hidden pt-[78px] px-[90px] ">
+    <div className="relative  h-screen w-full flex overflow-hidden pt-[30px] md:pt-[78px] px-[0px] md:px-[90px] ">
       <PackageSection
         title={"Giza All-Inclusive VIP Tour"}
         packages={packages}

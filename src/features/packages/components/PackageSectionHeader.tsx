@@ -10,7 +10,7 @@ function PackageSectionHeader({
 }) {
   return (
     <h1
-      className={`text-4xl font-bold mb-6 text-center font-cairo text-[#F2C975] select-none ${isInView && "animate-fade-up"} animate-ease-in-out animate-duration-2500`}
+      className={`text-2xl md:text-4xl text-center font-bold mb-6 text-center font-cairo text-[#F2C975] select-none ${isInView && "animate-fade-up"} animate-ease-in-out animate-duration-2500`}
     >
       {title}
     </h1>

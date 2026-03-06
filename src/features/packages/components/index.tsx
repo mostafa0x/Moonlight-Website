@@ -16,17 +16,18 @@ function PackageSection({
   isLoading?: boolean;
 }) {
   return (
-    <section className="h-full w-full pt-[18px] px-[90px] relative">
-      <div className="flex flex-col w-full justify-center gap-[44px] z-10">
+    <section className="flex w-full h-full">
+      <div className="flex flex-col w-full h-full justify-center  gap-[44px] z-10">
         <PackageSectionHeader title={title} isInView={isInView} />
 
-        <div className="flex flex-row justify-between gap-7.5">
+        <div className="flex gap-3.25 pl-[13px] md:gap-7.5 overflow-x-auto snap-x snap-mandatory md:overflow-visible">
           {packages.map((pkg, i) => (
             <div
               key={i}
               className={`
-                flex-1 
-                ${isInView && "slide-fade-up blur-none"}`}
+        flex-none w-[318px] snap-start md:flex-1  
+        ${isInView && "slide-fade-up blur-none"}
+      `}
               style={{ animationDelay: `${i * 0.3}s` }}
             >
               {isLoading ? <PackageCardSkeleton /> : <PackageCard pkg={pkg} />}
