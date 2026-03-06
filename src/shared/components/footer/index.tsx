@@ -26,6 +26,7 @@ function FooterPage({ page }: { page: number }) {
         <div className="space-x-[50px]  items-center justify-center ">
           {PAGES.map((page) => (
             <Link
+              key={page.name}
               href={page.link}
               className="text-[20px] font-cairo text-[#8B8B8B] font-bold hover:text-gray-200"
             >

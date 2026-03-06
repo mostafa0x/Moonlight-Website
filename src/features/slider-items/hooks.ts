@@ -3,30 +3,39 @@ import { useEffect, useState } from "react";
 
 export const useExitSlider = (
   slide: ItemSliderType,
-  exitDuration: number = 400,
+  exitDuration: number = 300,
 ) => {
   const [displaySlide, setDisplaySlide] = useState(slide);
   const [isExiting, setIsExiting] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     if (slide.name !== displaySlide.name) {
       setIsExiting(true);
 
       const timeoutChange = setTimeout(() => {
-        setDisplaySlide(slide);
-      }, exitDuration - 100);
-
-      const timeout = setTimeout(() => {
         // setDisplaySlide(slide);
-        setIsExiting(false);
-      }, exitDuration);
+        setIsLoaded(true);
+      }, exitDuration - 100);
 
       return () => {
         clearTimeout(timeoutChange);
-        clearTimeout(timeout);
       };
     }
   }, [slide]);
+  useEffect(() => {
+    if (!isLoaded) return;
+
+    const timeout = setTimeout(() => {
+      setDisplaySlide(slide);
+      setIsExiting(false);
+      setIsLoaded(false);
+    }, exitDuration + 200);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [isLoaded, slide]);
 
   return { displaySlide, isExiting };
 };

@@ -10,6 +10,8 @@ import SliderItemHeader from "@/features/slider-items/components/SliderItemHeade
 import { memo } from "react";
 import dynamic from "next/dynamic";
 import { useAutoSlider } from "@/features/slider-items/hooks";
+import TitleSliderItem from "@/features/slider-items/components/TitleSliderItem";
+import { useIsMobile } from "@/shared/hooks/useCheckMobile";
 
 const slides: ItemSliderType[] = [
   {
@@ -32,25 +34,37 @@ const slides: ItemSliderType[] = [
 function Page2({ page }: { page: number }) {
   const isInView = page === 1;
   const index = useAutoSlider(isInView, slides.length, 7500);
+  const currSlider = slides[index];
+  const isMobile = useIsMobile();
 
   return (
-    <section className="h-screen w-full flex  overflow-hidden pt-[173px] px-[73px] ">
-      <div className="flex w-full max-w-7xl  justify-between">
-        <div className="w-1/2 ">
+    <section className="h-screen w-full flex  overflow-hidden pt-18.5 lg:pt-43.25 px-6.25 lg:px-18.25 ">
+      <div className="flex w-full lg:max-w-7xl flex-col lg:flex-row  lg:justify-between">
+        <div className="lg:w-1/2 ">
           <h1
-            className={`text-6xl font-bold mb-6 ${isInView && "animate-fade-right"} animate-ease-in animate-duration-500`}
+            className={`text-2xl lg:text-6xl font-bold mb-6 ${isInView && "animate-fade-right"} animate-ease-in animate-duration-500`}
           >
             Giza
           </h1>
-
+          {isMobile && (
+            <>
+              <TitleSliderItem name={currSlider.name} isInView={isInView} />
+              <SliderItem
+                slide={currSlider}
+                index={index}
+                isInView={isInView}
+              />
+            </>
+          )}
           <SliderItemHeader
-            name={slides[index].name}
-            desc={slides[index].desc}
+            name={currSlider.name}
+            desc={currSlider.desc}
             isInView={isInView}
           />
         </div>
-
-        <SliderItem slide={slides[index]} index={index} isInView={isInView} />
+        {!isMobile && (
+          <SliderItem slide={currSlider} index={index} isInView={isInView} />
+        )}
       </div>
     </section>
   );

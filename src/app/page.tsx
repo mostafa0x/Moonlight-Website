@@ -12,7 +12,8 @@ export default function page() {
       }}
     >
       <Home />
-      <BackgroundVideo />
+      {/* <BackgroundVideo />
+       */}
     </div>
   );
 }

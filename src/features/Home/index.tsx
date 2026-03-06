@@ -13,7 +13,7 @@ export default function Home() {
     <FullPage
       directionDots="right"
       duration={500}
-      closeOutside
+      enableContextMenu
       onChange={setCurrentPage}
     >
       <FullPage.Section>
@@ -28,19 +28,6 @@ export default function Home() {
       <FullPage.Section>
         <FooterPage page={currentPage} />
       </FullPage.Section>
-
-      {/* <FullPage.Footer>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100%",
-          }}
-        >
-          <h1>Footer</h1>
-        </div>
-      </FullPage.Footer> */}
     </FullPage>
   );
 }

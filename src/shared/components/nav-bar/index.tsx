@@ -1,3 +1,4 @@
+import MenuBtn from "@/shared/button/MenuBtn";
 import Link from "next/link";
 import { memo } from "react";
 
@@ -29,9 +30,12 @@ const LINKS = [
 ];
 function NavBar() {
   return (
-    <div className="absolute top-0 left-0 w-full px-[80px] pt-[13px] flex flex-row justify-between z-65">
+    <div className="absolute top-0 left-0 w-full px-6 lg:px-20 pt-3.25 flex flex-row justify-between z-65">
       <div>Logo</div>
-      <div className="flex flex-row gap-9 justify-between pt-[12px]">
+      <div className=" lg:hidden">
+        <MenuBtn />
+      </div>
+      <div className="hidden flex-row gap-9 justify-between pt-3 lg:flex">
         {LINKS.map((link) => (
           <Link
             href={link.link}

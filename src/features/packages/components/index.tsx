@@ -26,7 +26,7 @@ function PackageSection({
               key={i}
               className={`
                 flex-1 
-                ${isInView && "slide-fade-up"}`}
+                ${isInView && "slide-fade-up blur-none"}`}
               style={{ animationDelay: `${i * 0.3}s` }}
             >
               {isLoading ? <PackageCardSkeleton /> : <PackageCard pkg={pkg} />}
