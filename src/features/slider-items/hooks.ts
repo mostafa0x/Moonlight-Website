@@ -5,16 +5,16 @@ export const useExitSlider = (
   slide: ItemSliderType,
   exitDuration: number = 300,
 ) => {
-  const [displaySlide, setDisplaySlide] = useState(slide);
+  const [displayItem, setDisplayItem] = useState(slide);
   const [isExiting, setIsExiting] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    if (slide.name !== displaySlide.name) {
+    if (slide.name !== displayItem.name) {
       setIsExiting(true);
 
       const timeoutChange = setTimeout(() => {
-        // setDisplaySlide(slide);
+        // setDisplayItem(slide);
         setIsLoaded(true);
       }, exitDuration - 100);
 
@@ -27,7 +27,7 @@ export const useExitSlider = (
     if (!isLoaded) return;
 
     const timeout = setTimeout(() => {
-      setDisplaySlide(slide);
+      setDisplayItem(slide);
       setIsExiting(false);
       setIsLoaded(false);
     }, exitDuration + 200);
@@ -37,29 +37,27 @@ export const useExitSlider = (
     };
   }, [isLoaded, slide]);
 
-  return { displaySlide, isExiting };
+  return { displayItem, isExiting };
 };
 
-export function useAutoSlider(
+export const useAutoSlider = (
   isActive: boolean,
   length: number,
   delay: number = 5000,
-) {
-  const [index, setIndex] = useState(0);
+): number => {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    if (!isActive) {
-      //   setIndex(0);
-      return;
-    }
+    if (!isActive) return;
 
-    const interval = setInterval(() => {
+    const intervalId = setInterval(() => {
       console.log("x");
 
-      setIndex((prev) => (prev + 1) % length);
+      setCurrentIndex((prev) => (prev + 1) % length);
     }, delay);
 
-    return () => clearInterval(interval);
-  }, [isActive]);
-  return index;
-}
+    return () => clearInterval(intervalId);
+  }, [isActive, length, delay]);
+
+  return currentIndex;
+};

@@ -5,7 +5,7 @@ const VideoSection = dynamic(
 );
 import React, { memo } from "react";
 
-function Page1({ page }: { page: number }) {
+function Page1({ currentPage }: { currentPage: number }) {
   return (
     <div className="h-screen w-full flex overflow-hidden ">
       <HeroSectionHeader />

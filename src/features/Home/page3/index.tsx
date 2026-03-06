@@ -34,8 +34,8 @@ const itemVariants: Variants = {
   show: { y: 0, opacity: 1, transition: { duration: 1 } },
 };
 
-export default function Page3({ page }: { page: number }) {
-  const isInView = page === 2;
+export default function Page3({ currentPage }: { currentPage: number }) {
+  const isInView = currentPage === 2;
 
   return (
     <div className="relative h-screen w-full flex overflow-hidden pt-[78px] px-[90px] ">

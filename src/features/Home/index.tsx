@@ -17,16 +17,16 @@ export default function Home() {
       onChange={setCurrentPage}
     >
       <FullPage.Section>
-        <Page1 page={currentPage} />
+        <Page1 currentPage={currentPage} />
       </FullPage.Section>
       <FullPage.Section>
-        <Page2 page={currentPage} />
+        <Page2 currentPage={currentPage} />
       </FullPage.Section>
       <FullPage.Section>
-        <Page3 page={currentPage} />
+        <Page3 currentPage={currentPage} />
       </FullPage.Section>
       <FullPage.Section>
-        <FooterPage page={currentPage} />
+        <FooterPage />
       </FullPage.Section>
     </FullPage>
   );

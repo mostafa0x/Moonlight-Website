@@ -7,8 +7,7 @@ const PAGES = [
   { name: "About us", link: "#" },
   { name: "Contact", link: "#" },
 ];
-function FooterPage({ page }: { page: number }) {
-  const isInView = page === 3;
+function FooterPage() {
   return (
     <div className="flex flex-col w-full h-full justify-center items-center">
       <div className=" space-y-[48px]">
