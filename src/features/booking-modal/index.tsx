@@ -5,7 +5,6 @@ import Included_Excluded from "@/features/booking-modal/components/Included_Excl
 import Overview from "@/features/booking-modal/components/Overview";
 import PickOfHit from "@/features/booking-modal/components/PickOfHit";
 import CloseBtn from "@/shared/button/CloseBtn";
-import Image from "next/image";
 
 export default function BookingModal() {
   return (
@@ -15,13 +14,29 @@ export default function BookingModal() {
           <div className=" absolute right-2.75 top-1.25 z-2">
             <CloseBtn />
           </div>
-          <HeaderModal />
+          <HeaderModal
+            titleTour="Giza All-Inclusive VIP Tour"
+            price="100"
+            image="/packages/gize/package1.png"
+          />
         </div>
         <div className="px-[21px] py-[16px]">
-          <Overview />
-          <Destinations />
-          <Included_Excluded />
-          <PickOfHit />
+          <div>
+            <Overview
+              description="Experience the majesty of the ancient world with our exclusive VIP tour
+        of the Giza Plateau. Enjoy skip-the-line access, a private Egyptologist
+        guide, and a luxurious camel ride at sunset."
+            />
+          </div>
+          <div className="mb-3">
+            <Destinations destinations={["Giza", "Cairo", "Alex"]} />
+          </div>
+          <div className="mb-[14px]">
+            <Included_Excluded included={["x"]} excluded={["y"]} />
+          </div>
+          <div className="">
+            <PickOfHit />
+          </div>
           <BookNowBtn />
         </div>
       </div>
