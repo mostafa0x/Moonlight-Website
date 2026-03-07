@@ -1,0 +1,32 @@
+import Image from "next/image";
+import { memo } from "react";
+function HeaderModal() {
+  return (
+    <div className="relative w-[630px] h-[209px] z-1">
+      <div className="absolute  bottom-0 left-0  text-white z-3 px-[17px] py-[15px]">
+        <h1 className="text-2xl text-white font-bold">
+          Giza All-Inclusive VIP Tour
+        </h1>
+        <div className="flex flex-row gap-[22px] mt-[7px] items-center">
+          <span className="text-[20px] text-[#F2C975] font-medium">100$</span>
+          <div className="flex flex-row gap-[6px] w-full items-center">
+            <img src={"/icons/group.svg"} alt="group icon" />
+            <span className="text-[14px] text-[#00D26A] font-medium">
+              More people, less price
+            </span>
+          </div>
+        </div>
+      </div>
+      <div className=" absolute inset-0 w-full h-full bg-linear-to-b from-transparent to-black to-95% z-2" />
+      <Image
+        src={"/packages/gize/package1.png"}
+        alt="modal img"
+        fill
+        quality={40}
+        className="object-cover"
+      />
+    </div>
+  );
+}
+
+export default memo(HeaderModal);
