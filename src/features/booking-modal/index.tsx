@@ -3,6 +3,7 @@ import CloseBtn from "@/shared/button/CloseBtn";
 import Step1 from "@/features/booking-modal/components/step1";
 import StepsInfo from "@/features/booking-modal/components/StepsInfo";
 import Step2 from "@/features/booking-modal/components/step2";
+import FooterModal from "@/features/booking-modal/components/FooterModal";
 
 export default function BookingModal() {
   return (
@@ -26,6 +27,9 @@ export default function BookingModal() {
         </div>
         <div className="px-[57px] py-[16px]">
           <Step2 />
+        </div>
+        <div className=" absolute bottom-0 left-0 w-full px-[21px] py-[16px]">
+          <FooterModal />
         </div>
       </div>
     </div>

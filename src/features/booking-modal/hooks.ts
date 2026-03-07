@@ -7,6 +7,7 @@ export const useBookingModal = () => {
   const isOpen = !!tourId;
   const step = Number(query.get("step") ?? "1");
   const nextStep = `/?tourId=${tourId}&step=${step + 1}`;
+  const prevStep = `/?tourId=${tourId}&step=${step - 1}`;
 
-  return { isOpen, step, nextStep };
+  return { isOpen, step, nextStep, prevStep };
 };
