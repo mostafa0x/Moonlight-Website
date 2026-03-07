@@ -9,7 +9,9 @@ function BackBtn({ prevStep }: { prevStep: string }) {
       className="flex flex-row gap-3"
     >
       <img src={"/icons/arrow-left.svg"} alt="arrow icon" />
-      <span className="text-sm text-[#8B8B8B] font-semibold">Back</span>
+      <span className="text-sm text-[#8B8B8B] hover:text-gray-300 font-semibold">
+        Back
+      </span>
     </Link>
   );
 }

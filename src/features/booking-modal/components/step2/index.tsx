@@ -3,7 +3,7 @@ import TourLanguageSelector from "@/features/booking-modal/components/step2/Tour
 import { useBookingModal } from "@/features/booking-modal/hooks";
 
 export default function Step2() {
-  const { step } = useBookingModal();
+  const { step, adults } = useBookingModal();
 
   return (
     step === 2 && (
@@ -12,8 +12,12 @@ export default function Step2() {
           Number of Travelers
         </h1>
         <div className="space-y-[8px]">
-          <PeopleCounter label="Adults" hint="Age 12+" count={1} />
-          <PeopleCounter label="Adults" hint="Age 12+" count={1} />
+          <PeopleCounter label="Adults" hint="Age 12+" count={adults} />
+          <PeopleCounter
+            label="Children"
+            hint="Age 2-11( Kids are 50% off )"
+            count={1}
+          />
           <div className=" relative">
             <h2 className="text-sm text-[#8B8B8B] font-medium mb-[16px]">
               Tour Guide Language
