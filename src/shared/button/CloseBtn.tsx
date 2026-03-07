@@ -3,7 +3,7 @@ import { memo } from "react";
 
 function CloseBtn() {
   return (
-    <Link href={"/"} prefetch={false}>
+    <Link aria-label="close modal button" href={"/"} prefetch={false}>
       <img
         src={"/icons/close.svg"}
         alt="close icon"

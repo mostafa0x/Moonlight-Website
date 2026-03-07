@@ -2,6 +2,7 @@ import HeaderModal from "@/features/booking-modal/components/HeaderModal";
 import CloseBtn from "@/shared/button/CloseBtn";
 import Step1 from "@/features/booking-modal/components/step1";
 import StepsInfo from "@/features/booking-modal/components/StepsInfo";
+import Step2 from "@/features/booking-modal/components/step2";
 
 export default function BookingModal() {
   return (
@@ -22,6 +23,9 @@ export default function BookingModal() {
         </div>
         <div className="px-[21px] py-[16px]">
           <Step1 />
+        </div>
+        <div className="px-[57px] py-[16px]">
+          <Step2 />
         </div>
       </div>
     </div>

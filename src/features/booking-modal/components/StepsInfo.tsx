@@ -6,7 +6,7 @@ import { memo } from "react";
 
 function StepsInfo() {
   const { step } = useBookingModal();
-  return (
+  return step !== 1 ? (
     <div className="flex items-center justify-center select-none">
       <div className="flex flex-row items-center">
         <StepsInfoItem id={1} step={step} />
@@ -15,7 +15,7 @@ function StepsInfo() {
         <StepsInfoItem id={4} step={step} />
       </div>
     </div>
-  );
+  ) : null;
 }
 
 export default memo(StepsInfo);
