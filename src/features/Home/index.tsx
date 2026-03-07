@@ -1,7 +1,7 @@
 "use client";
 
 import Page1 from "@/features/home/page1";
-const Page2 = dynamic(() => import("@/features/home/page2"), { ssr: false });
+import Page2 from "@/features/home/page2";
 const Page3 = dynamic(() => import("@/features/home/page3"), { ssr: false });
 import dynamic from "next/dynamic";
 const FooterPage = dynamic(() => import("@/shared/components/footer"), {

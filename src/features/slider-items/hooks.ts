@@ -16,18 +16,18 @@ export const useExitSlider = (
       const timeoutChange = setTimeout(() => {
         // setDisplayItem(slide);
         setIsLoaded(true);
-      }, exitDuration - 100);
+        setDisplayItem(slide);
+      }, exitDuration + 200);
 
       return () => {
         clearTimeout(timeoutChange);
       };
     }
-  }, [slide]);
+  }, [slide, displayItem]);
   useEffect(() => {
     if (!isLoaded) return;
 
     const timeout = setTimeout(() => {
-      setDisplayItem(slide);
       setIsExiting(false);
       setIsLoaded(false);
     }, exitDuration + 200);

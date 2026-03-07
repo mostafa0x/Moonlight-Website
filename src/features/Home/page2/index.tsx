@@ -3,7 +3,7 @@
 import type { ItemSliderType } from "@/shared/global";
 const SliderItem = dynamic(
   () => import("@/features/slider-items/components/SliderItem"),
-  { ssr: false },
+  { ssr: false, loading: () => <SliderItemSkeleton /> },
 );
 import SliderItemHeader from "@/features/slider-items/components/SliderItemHeader";
 import { memo } from "react";
@@ -11,6 +11,7 @@ import dynamic from "next/dynamic";
 import { useAutoSlider } from "@/features/slider-items/hooks";
 import TitleSliderItem from "@/features/slider-items/components/TitleSliderItem";
 import { useIsMobile } from "@/shared/hooks/useCheckMobile";
+import SliderItemSkeleton from "@/features/slider-items/components/SliderItemSkeleton";
 
 const slides: ItemSliderType[] = [
   {
