@@ -1,8 +1,9 @@
 import Home from "@/features/home";
 import dynamic from "next/dynamic";
-const BackgroundVideo = dynamic(
-  () => import("@/shared/components/background-video/BackgroundVideo"),
+const BackgroundImage = dynamic(
+  () => import("@/shared/components/background-image/BackgroundImage"),
 );
+
 export default function page() {
   return (
     <div
@@ -12,8 +13,7 @@ export default function page() {
       }}
     >
       <Home />
-      {/* <BackgroundVideo />
-       */}
+      <BackgroundImage />
     </div>
   );
 }
