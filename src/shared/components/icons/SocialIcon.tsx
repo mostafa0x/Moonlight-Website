@@ -13,9 +13,13 @@ function SocialIcon({ icon }: { icon: "facebook" | "instagram" | "tiktok" }) {
       target="_blank"
       aria-label={`${icon} link`}
       rel="noopener noreferrer"
-      className="relative flex border border-white rounded-full w-[81px] h-[81px] items-center justify-center hover:bg-gray-300/30 hover:scale-105 select-none cursor-pointer"
+      className="relative flex border border-white rounded-full w-11 h-11 md:w-20.25 md:h-20.25 items-center justify-center hover:bg-gray-300/30 hover:scale-105 select-none cursor-pointer"
     >
-      <img src={`/icons/${icon}.svg`} width={43} height={43} alt={icon} />
+      <img
+        src={`/icons/${icon}.svg`}
+        className="w-6 h-6 md:w-10.75 md:h-10.75"
+        alt={icon}
+      />
     </a>
   );
 }

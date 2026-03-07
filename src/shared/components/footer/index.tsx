@@ -9,20 +9,20 @@ const PAGES = [
 ];
 function FooterPage() {
   return (
-    <div className="flex flex-col w-full h-full justify-center items-center">
-      <div className=" space-y-[48px]">
+    <div className="flex flex-col w-full h-full justify-between pb-4.75 lg:pb-0 pt-28.5 lg:pt-0 lg:justify-center items-center">
+      <div className=" space-y-12">
         <div className=" items-center flex flex-col">
           Logo
           <h1 className="text-5xl text-[#F2C975] font-cairo font-medium ">
             MOON LIGHT
           </h1>
         </div>
-        <div className="flex flex-row gap-[66px]  items-center justify-center ">
+        <div className="flex flex-row gap-16.5  items-center justify-center ">
           <SocialIcon icon="facebook" />
           <SocialIcon icon="tiktok" />
           <SocialIcon icon="instagram" />
         </div>
-        <div className="space-x-[50px]  items-center justify-center ">
+        <div className="flex space-y-5.5 lg:space-y-0 lg:space-x-12.5 flex-col lg:flex-row items-center justify-center ">
           {PAGES.map((page) => (
             <Link
               key={page.name}
@@ -34,9 +34,9 @@ function FooterPage() {
           ))}
         </div>
       </div>
-      <div className="flex flex-col mt-[80px]  ">
-        <div className=" outline-1 outline-[#8B8B8B] w-[788px] justify-center items-center " />
-        <div className="flex items-start justify-between">
+      <div className="flex flex-col mt-20  ">
+        <div className="hidden lg:flex outline-1 outline-[#8B8B8B] w-197 justify-center items-center  " />
+        <div className="flex gap-1.25 items-start justify-between  ">
           <span className="text-[#8B8B8B] text-[16px] font-bold font-cairo">
             © 2026 All Rights Reserved.
           </span>
