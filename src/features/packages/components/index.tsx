@@ -3,6 +3,7 @@ import type { PackageType } from "@/features/home/page3/types";
 import PackageSectionHeader from "@/features/packages/components/PackageSectionHeader";
 import { memo } from "react";
 import PackageCardSkeleton from "@/features/packages/components/PackageCardSkeleton";
+import Link from "next/link";
 
 function PackageSection({
   title,
@@ -16,7 +17,11 @@ function PackageSection({
   isLoading?: boolean;
 }) {
   return (
-    <section className="flex w-full h-full">
+    <Link
+      className="w-full h-full flex"
+      href={"/?tourId=1&step=1"}
+      prefetch={false}
+    >
       <div className="flex flex-col w-full h-full justify-center  gap-11 z-10">
         <PackageSectionHeader title={title} isInView={isInView} />
 
@@ -37,7 +42,7 @@ function PackageSection({
           ))}
         </div>
       </div>
-    </section>
+    </Link>
   );
 }
 export default memo(PackageSection);

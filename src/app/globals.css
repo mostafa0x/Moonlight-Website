@@ -25,7 +25,22 @@
     opacity: 1;
   }
 }
+@keyframes modalFadeUp {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
+@utility modal-fade-up {
+  transform: translateY(100px);
+  opacity: 0;
+  animation: modalFadeUp 0.3s ease-out forwards;
+}
 @utility slide-fade-up {
   transform: translateY(100px);
   opacity: 0;

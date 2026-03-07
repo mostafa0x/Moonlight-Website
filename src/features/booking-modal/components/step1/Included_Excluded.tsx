@@ -1,4 +1,4 @@
-import Included_Excluded_Item from "@/features/booking-modal/components/Included_Excluded_Item";
+import Included_Excluded_Item from "@/features/booking-modal/components/step1/Included_Excluded_Item";
 import { memo } from "react";
 
 function Included_Excluded({

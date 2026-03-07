@@ -1,4 +1,4 @@
-import DestinationsItem from "@/features/booking-modal/components/DestinationsItem";
+import DestinationsItem from "@/features/booking-modal/components/step1/DestinationsItem";
 import { memo } from "react";
 
 function Destinations({ destinations }: { destinations: string[] }) {
