@@ -1,15 +1,18 @@
+import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
 import Link from "next/link";
 import { memo } from "react";
 
-function BookNowBtn({ nextStep }: { nextStep: string }) {
+function BookNowBtn() {
+  const { nextStep } = useBookingContext();
+
   return (
-    <Link
+    <button
       aria-label="next step button"
-      href={nextStep}
-      className="w-fit h-fit px-[16px] py-[3px] bg-[#F2C975] hover:bg-[#a88b4f] rounded-[10px] select-none"
+      onClick={nextStep}
+      className="w-fit h-fit px-[16px] py-[3px] bg-[#F2C975] hover:bg-[#a88b4f] rounded-[10px] select-none cursor-pointer"
     >
       <span className="text-base text-black font-semibold">BOOK NOW</span>
-    </Link>
+    </button>
   );
 }
 

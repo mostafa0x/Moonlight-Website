@@ -1,9 +1,8 @@
 "use client";
 import BookingModal from "@/features/booking-modal";
-import { useBookingModal } from "@/features/booking-modal/hooks";
-import React from "react";
+import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
 
 export default function BookingModalProvider() {
-  const { isOpen } = useBookingModal();
+  const { isOpen } = useBookingContext();
   return isOpen && <BookingModal />;
 }

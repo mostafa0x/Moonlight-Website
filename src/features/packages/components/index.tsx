@@ -17,11 +17,7 @@ function PackageSection({
   isLoading?: boolean;
 }) {
   return (
-    <Link
-      className="w-full h-full flex"
-      href={"/?tourId=1&step=1"}
-      prefetch={false}
-    >
+    <Link className="w-full h-full flex" href={"/?tourId=1"} prefetch={false}>
       <div className="flex flex-col w-full h-full justify-center  gap-11 z-10">
         <PackageSectionHeader title={title} isInView={isInView} />
 

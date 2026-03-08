@@ -1,12 +1,12 @@
 import BackBtn from "@/features/booking-modal/components/BackBtn";
 import NextStepBtn from "@/features/booking-modal/components/NextStepBtn";
-import { useBookingModal } from "@/features/booking-modal/hooks";
+import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
 import { memo } from "react";
 
 function FooterModal() {
-  const { step, nextStep, prevStep } = useBookingModal();
+  const { nextStep, prevStep } = useBookingContext();
 
-  return step !== 1 ? (
+  return (
     <div className=" flex flex-row justify-between items-center border-t border-[#313131] pt-[14px]">
       <BackBtn prevStep={prevStep} />
       <div className="flex flex-row items-center gap-[16px]">
@@ -19,7 +19,7 @@ function FooterModal() {
         <NextStepBtn nextStep={nextStep} />
       </div>
     </div>
-  ) : null;
+  );
 }
 
 export default memo(FooterModal);

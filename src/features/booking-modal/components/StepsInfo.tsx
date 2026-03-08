@@ -1,12 +1,9 @@
 "use client";
 import StepsInfoItem from "@/features/booking-modal/components/StepsInfoItem";
-import { useBookingModal } from "@/features/booking-modal/hooks";
-import clsx from "clsx";
 import { memo } from "react";
 
-function StepsInfo() {
-  const { step } = useBookingModal();
-  return step !== 1 ? (
+function StepsInfo({ step }: { step: number }) {
+  return (
     <div className="flex items-center justify-center select-none">
       <div className="flex flex-row items-center">
         <StepsInfoItem id={1} step={step} />
@@ -15,7 +12,7 @@ function StepsInfo() {
         <StepsInfoItem id={4} step={step} />
       </div>
     </div>
-  ) : null;
+  );
 }
 
 export default memo(StepsInfo);

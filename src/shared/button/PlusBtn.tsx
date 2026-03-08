@@ -1,14 +1,10 @@
 "use client";
-
-import { useBookingModal } from "@/features/booking-modal/hooks";
 import { memo } from "react";
 
-function PlusBtn() {
-  const { handleChangeAdults } = useBookingModal();
-
+function PlusBtn({ callback }: { callback: () => void }) {
   return (
     <button
-      onClick={() => handleChangeAdults("increase")}
+      onClick={callback}
       aria-label="plus button"
       className="flex flex-row justify-center items-center bg-[#262626] hover:bg-[#05703b]  w-[26px] h-[26px] rounded-full select-none cursor-pointer"
     >
