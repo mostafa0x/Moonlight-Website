@@ -6,6 +6,8 @@ import Step2 from "@/features/booking-modal/components/step2";
 import FooterModal from "@/features/booking-modal/components/FooterModal";
 import { FormProvider, useForm } from "react-hook-form";
 import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
+import Step3 from "@/features/booking-modal/components/step3";
+import Step4 from "@/features/booking-modal/components/step4";
 
 export default function BookingModal() {
   const methods = useForm({
@@ -46,6 +48,16 @@ export default function BookingModal() {
           {step === 2 && (
             <div className="px-[14px] md:px-[57px] py-[16px]">
               <Step2 />
+            </div>
+          )}
+          {step === 3 && (
+            <div className="px-[14px] md:px-[57px] py-[16px]">
+              <Step3 />
+            </div>
+          )}
+          {step === 4 && (
+            <div className="px-[14px] md:px-[57px] py-[16px]">
+              <Step4 />
             </div>
           )}
           {step !== 1 && (
