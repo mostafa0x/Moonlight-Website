@@ -2,7 +2,7 @@ import { memo } from "react";
 
 function PickOfHit() {
   return (
-    <div className="bg-[#131313] w-full h-[114px] border border-[#F2C975] rounded-[20px] space-y-[11px] pl-[12px] py-[12px]">
+    <div className="bg-[#131313] w-full h-[100px] border border-[#F2C975] rounded-[20px] space-y-[5px] pl-[12px] py-[12px]">
       <div className="flex flex-row gap-1.5 items-center">
         <img
           src={"/icons/importend.svg"}
@@ -19,7 +19,7 @@ function PickOfHit() {
           alt="icon"
           className="w-[16px] h-[16px]"
         />
-        <span className="text-sm text-white font-medium">
+        <span className="text-[12px] text-white font-medium">
           Pickup and drop-off extra charge outside supported areas (Old Cairo,
           Downtown Cairo, Giza).
         </span>

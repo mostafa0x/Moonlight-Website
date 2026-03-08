@@ -7,25 +7,33 @@ import { memo } from "react";
 
 function Step1() {
   return (
-    <>
-      <div>
-        <Overview
-          description="Experience the majesty of the ancient world with our exclusive VIP tour
-        of the Giza Plateau. Enjoy skip-the-line access, a private Egyptologist
-        guide, and a luxurious camel ride at sunset."
-        />
-      </div>
+    <div className="flex flex-col w-full ">
       <div className="mb-3">
-        <Destinations destinations={["Giza", "Cairo", "Alex"]} />
+        <Overview description="Experience the majesty of the ancient world with our exclusive VIP tour" />
+      </div>
+      <div className="mb-3 md:mb-[24px]">
+        <Destinations destinations={["Giza", "Cairo", "Al2ex", "2312"]} />
       </div>
       <div className="mb-[14px]">
-        <Included_Excluded included={["x"]} excluded={["y"]} />
+        <Included_Excluded
+          included={[
+            "sas sdfsd sdfsd fsd2 fsd 1",
+            "Entry tiwckets2",
+            "x21",
+            "sas sasddfsd sdfsd fsd fsd 1",
+            "Entry tickets2",
+            "x22",
+            "sa213s sdfsd sdfsd fsd fsd 1",
+          ]}
+          excluded={["y"]}
+        />
       </div>
-      <div className="">
-        <PickOfHit />
+      <div className=" absolute bottom-[18px] right-[27px] md:right-[36px]">
+        <div className="flex justify-end pt-[17px]">
+          <BookNowBtn />
+        </div>
       </div>
-      <BookNowBtn />
-    </>
+    </div>
   );
 }
 export default memo(Step1);

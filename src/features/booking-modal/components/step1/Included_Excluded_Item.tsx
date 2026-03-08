@@ -14,7 +14,9 @@ function Included_Excluded_Item({
         alt="ellipse icon"
         className="w-[7px] h-[7px]"
       />
-      <span className="text-[14px] text-[#E0E0E0] font-medium">{title}</span>
+      <span className="text-[12px] md:text-sm text-[#E0E0E0] font-medium">
+        {title}
+      </span>
     </div>
   );
 }

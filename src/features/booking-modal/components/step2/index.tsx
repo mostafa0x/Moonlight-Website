@@ -1,3 +1,4 @@
+import PickOfHit from "@/features/booking-modal/components/step1/PickOfHit";
 import PeopleCounter from "@/features/booking-modal/components/step2/PeopleCounter";
 import PeopleCounterItem from "@/features/booking-modal/components/step2/PeopleCounterItem";
 import SelectDestinations from "@/features/booking-modal/components/step2/SelectDestinations";
@@ -22,6 +23,7 @@ export default function Step2() {
             </h2>
             <TourLanguageSelector />
           </div>
+          <PickOfHit />
         </div>
       </div>
     )

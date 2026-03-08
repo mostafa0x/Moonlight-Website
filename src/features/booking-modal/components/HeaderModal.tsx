@@ -10,8 +10,8 @@ function HeaderModal({
   image: string;
 }) {
   return (
-    <div className="relative w-[630px] h-[209px] z-1">
-      <div className="absolute  bottom-0 left-0  text-white z-3 px-[17px] py-[15px]">
+    <div className="relative w-[630px] h-[100px] z-1">
+      <div className="absolute  top-0 left-0  text-white z-3 px-[17px] py-[15px]">
         <h1 className="text-2xl text-white font-bold">{titleTour}</h1>
         <div className="flex flex-row gap-[22px] mt-[7px] items-center">
           <span className="text-[20px] text-[#F2C975] font-medium">
@@ -25,6 +25,7 @@ function HeaderModal({
           </div>
         </div>
       </div>
+
       <div className=" absolute inset-0 w-full h-full bg-linear-to-b from-transparent to-black to-95% z-2" />
       <Image
         src={image}

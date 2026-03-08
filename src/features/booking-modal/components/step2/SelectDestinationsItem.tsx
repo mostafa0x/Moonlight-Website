@@ -24,7 +24,7 @@ function SelectDestinationsItem({ label }: { label: string }) {
       {isChecked ? (
         <img src={"/icons/check-box.svg"} alt="check-box icon" />
       ) : (
-        <div className="w-[24px] h-[24px] bg-white rounded-[5px]" />
+        <div className="w-[19px] h-[19px] bg-white rounded-[5px]" />
       )}
       <span className="text-sm text-white truncate ">{label}</span>
     </button>
