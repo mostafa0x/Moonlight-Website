@@ -14,6 +14,7 @@ export default function BookingModal() {
       children: 0,
       tourGuideLanguage: "English",
       totalPrice: 0,
+      destinations: "none",
     },
   });
   const { step } = useBookingContext();

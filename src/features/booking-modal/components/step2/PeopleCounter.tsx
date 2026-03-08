@@ -1,17 +1,14 @@
 import PeopleCounterItem from "@/features/booking-modal/components/step2/PeopleCounterItem";
-import type { PricingTier } from "@/features/booking-modal/types";
 import { calculatePrice } from "@/features/booking-modal/utils";
-import MinusBtn from "@/shared/button/MinusBtn";
-import PlusBtn from "@/shared/button/PlusBtn";
-import { memo, useCallback, useEffect } from "react";
-import { useController, useFormContext, useWatch } from "react-hook-form";
+import { memo, useEffect } from "react";
+import { useFormContext, useWatch } from "react-hook-form";
 
 function PeopleCounter() {
   const adults = "adults";
   const children = "children";
 
   const { control, setValue } = useFormContext();
-  const adultsValue = useWatch({ control, name: adults, defaultValue: 0 });
+  const adultsValue = useWatch({ control, name: adults, defaultValue: 1 });
   const childrenValue = useWatch({ control, name: children, defaultValue: 0 });
   const pricingTiers = [
     {
@@ -35,16 +32,18 @@ function PeopleCounter() {
       pricePerPerson: 65,
     },
   ];
+  console.log(childrenValue + " children count");
+  console.log(adultsValue + " Adults Count");
+  const totalPersons = adultsValue + childrenValue;
+  console.log(totalPersons + " TP");
 
   useEffect(() => {
-    const childrenPrice = calculatePrice(childrenValue, pricingTiers) / 2;
-    const totalPrice = calculatePrice(adultsValue, pricingTiers);
-    console.log(childrenValue + " children count");
-
-    console.log(adultsValue + " Adults Count");
+    const childrenPrice =
+      calculatePrice(totalPersons, childrenValue, pricingTiers) / 2;
+    const totalPrice = calculatePrice(totalPersons, adultsValue, pricingTiers);
 
     setValue("totalPrice", totalPrice + childrenPrice);
-  }, [adultsValue, childrenValue, pricingTiers]);
+  }, [totalPersons, pricingTiers]);
 
   return (
     <>

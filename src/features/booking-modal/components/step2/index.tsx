@@ -1,5 +1,6 @@
 import PeopleCounter from "@/features/booking-modal/components/step2/PeopleCounter";
 import PeopleCounterItem from "@/features/booking-modal/components/step2/PeopleCounterItem";
+import SelectDestinations from "@/features/booking-modal/components/step2/SelectDestinations";
 import TourLanguageSelector from "@/features/booking-modal/components/step2/TourLanguageSelector";
 import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
 
@@ -9,6 +10,7 @@ export default function Step2() {
   return (
     step === 2 && (
       <div className="  ">
+        <SelectDestinations />
         <h1 className="text-base text-[#F2C975] font-medium mb-[16px]">
           Number of Travelers
         </h1>
