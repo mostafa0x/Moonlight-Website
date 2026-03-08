@@ -1,13 +1,19 @@
 "use client";
 
 import { memo, useEffect, useRef, useState } from "react";
+import { useController, useFormContext } from "react-hook-form";
 
-const options = ["English", "Spinach", "French", "ital"];
+const options = ["English", "Spanish", "French", "Italian"];
 
 function TourLanguageSelector() {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState("English");
   const containerRef = useRef<HTMLDivElement>(null);
+  const name = "tourGuideLanguage";
+
+  const { control } = useFormContext();
+  const {
+    field: { value = "English", onChange },
+  } = useController({ name, control, defaultValue: "English" });
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -23,6 +29,7 @@ function TourLanguageSelector() {
   return (
     <div ref={containerRef} className="relative w-full select-none">
       <button
+        type="button"
         onClick={() => setOpen((prev) => !prev)}
         className="bg-[#131313] text-[20px] text-white font-semibold cursor-pointer w-full h-[66px] rounded-[16px] border border-[#313131] pl-[14px] pr-[40px] flex items-center"
       >
@@ -51,7 +58,7 @@ function TourLanguageSelector() {
           <div
             key={item}
             onClick={() => {
-              setValue(item);
+              onChange(item);
               setOpen(false);
             }}
             className="px-[14px] py-[16px] text-white text-[18px] cursor-pointer hover:bg-[#1f1f1f] transition-colors"
