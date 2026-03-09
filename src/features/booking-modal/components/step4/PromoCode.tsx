@@ -2,13 +2,13 @@ import { memo } from "react";
 
 function PromoCode() {
   return (
-    <div className=" space-y-[22px]">
+    <div className=" space-y-5.5">
       <h2 className="text-base text-[#F2C975] font-medium">Promo Code</h2>
-      <div className="flex flex-row gap-[12px]">
+      <div className="flex flex-row gap-3">
         <input
           placeholder="ENTER CODE"
           type="text"
-          className="bg-[#131313] border border-[#313131] rounded-[5px] text-[12px] text-[#8B8B8Bpx] px-[15px] py-[6px] w-full"
+          className="bg-[#131313] border border-[#313131] rounded-[5px] text-[12px] text-[#8B8B8Bpx] px-3.75 py-1.5 w-full"
         />
         {/* <button
           aria-label="apply button"

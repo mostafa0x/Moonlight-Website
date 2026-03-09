@@ -2,7 +2,6 @@ import BookNowBtn from "@/features/booking-modal/components/step1/BookNowBtn";
 import Destinations from "@/features/booking-modal/components/step1/Destinations";
 import Included_Excluded from "@/features/booking-modal/components/step1/Included_Excluded";
 import Overview from "@/features/booking-modal/components/step1/Overview";
-import PickOfHit from "@/features/booking-modal/components/step1/PickOfHit";
 import { memo } from "react";
 
 function Step1() {
@@ -14,7 +13,7 @@ function Step1() {
         Experience the majesty of the ancient world with our exclusive VIP tour"
         />
       </div>
-      <div className="mb-[20px]">
+      <div className="mb-5">
         <Destinations
           destinations={[
             "Giza",
@@ -47,124 +46,7 @@ function Step1() {
         />
       </div>
       <div>
-        <Included_Excluded
-          data={[
-            {
-              title: "Hotel accommodation",
-              icon: "green",
-            },
-            {
-              title: "Breakfast included",
-              icon: "green",
-            },
-            {
-              title: "Flights",
-              icon: "red",
-            },
-            {
-              title: "Travel insurance",
-              icon: "red",
-            },
-            {
-              title: "Hotel accommodation",
-              icon: "green",
-            },
-            {
-              title: "Breakfast included",
-              icon: "green",
-            },
-            {
-              title: "Flights",
-              icon: "red",
-            },
-            {
-              title: "Travel insurance",
-              icon: "red",
-            },
-            {
-              title: "Hotel accommodation",
-              icon: "green",
-            },
-            {
-              title: "Breakfast included",
-              icon: "green",
-            },
-            {
-              title: "Flights",
-              icon: "red",
-            },
-            {
-              title: "Travel insurance",
-              icon: "red",
-            },
-            {
-              title: "Hotel accommodation",
-              icon: "green",
-            },
-            {
-              title: "Breakfast included",
-              icon: "green",
-            },
-            {
-              title: "Flights",
-              icon: "red",
-            },
-            {
-              title: "Travel insurance",
-              icon: "red",
-            },
-            {
-              title: "Hotel accommodation",
-              icon: "green",
-            },
-            {
-              title: "Breakfast included",
-              icon: "green",
-            },
-            {
-              title: "Flights",
-              icon: "red",
-            },
-            {
-              title: "Travel insurance",
-              icon: "red",
-            },
-            {
-              title: "Hotel accommodation",
-              icon: "green",
-            },
-            {
-              title: "Breakfast included",
-              icon: "green",
-            },
-            {
-              title: "Flights",
-              icon: "red",
-            },
-            {
-              title: "Travel insurance",
-              icon: "red",
-            },
-            ,
-            {
-              title: "Flights",
-              icon: "red",
-            },
-            {
-              title: "Travel insurance",
-              icon: "red",
-            },
-            ,
-            {
-              title: "Flights",
-              icon: "red",
-            },
-            {
-              title: "Travel insurance",
-              icon: "red",
-            },
-          ]}
-        />
+        <Included_Excluded included={[]} excluded={[]} />
       </div>
       <div className=" absolute bottom-4.5 right-6.75 md:right-9">
         <div className="flex justify-end pt-4.25">

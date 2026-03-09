@@ -20,7 +20,7 @@ function PickLocation({
       <select
         aria-label={`${name} select`}
         id={name}
-        className="w-full bg-[#131313] border border-[#313131] rounded-[5px] px-[14px]"
+        className="w-full bg-[#131313] border border-[#313131] rounded-[5px] px-3.5"
         defaultValue={options[0]}
       >
         {options.map((item) => (

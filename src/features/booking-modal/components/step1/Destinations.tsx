@@ -1,10 +1,10 @@
 import DestinationsItem from "@/features/booking-modal/components/step1/DestinationsItem";
-import { useDragScroll } from "@/features/booking-modal/hooks";
+import useDragScroll from "@/shared/hooks/useDragScroll";
 import clsx from "clsx";
 import { memo } from "react";
 
 function Destinations({ destinations }: { destinations: string[] }) {
-  const { ref, events } = useDragScroll();
+  const { ref, events } = useDragScroll("X");
 
   return (
     <div className=" space-y-2.5">

@@ -19,12 +19,12 @@ function SelectDestinationsItem({ label }: { label: string }) {
     <button
       aria-label="select destinations"
       onClick={handleClick}
-      className="flex flex-row items-center p-[6px] h-[41px] w-fit bg-[#131313] border border-[#313131] rounded-[5px] gap-[6px] select-none cursor-pointer"
+      className="flex flex-row items-center p-1.5 h-10.25 w-fit bg-[#131313] border border-[#313131] rounded-[5px] gap-1.5 select-none cursor-pointer"
     >
       {isChecked ? (
         <img src={"/icons/check-box.svg"} alt="check-box icon" />
       ) : (
-        <div className="w-[19px] h-[19px] bg-white rounded-[5px]" />
+        <div className="w-4.75 h-4.75 bg-white rounded-[5px]" />
       )}
       <span className="text-sm text-white truncate ">{label}</span>
     </button>

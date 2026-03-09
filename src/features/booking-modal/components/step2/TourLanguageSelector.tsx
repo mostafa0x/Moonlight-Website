@@ -1,51 +1,41 @@
 "use client";
 
-import { memo, useEffect, useRef, useState } from "react";
+import useClickOutside from "@/shared/hooks/useClickOutside";
+import { memo, useState } from "react";
 import { useController, useFormContext } from "react-hook-form";
 
 const options = ["English", "Spanish", "French", "Italian"];
 
 function TourLanguageSelector() {
   const [open, setOpen] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
   const name = "tourGuideLanguage";
+  const { containerRef } = useClickOutside(() => setOpen(false));
 
   const { control } = useFormContext();
   const {
     field: { value = "English", onChange },
   } = useController({ name, control, defaultValue: "English" });
 
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (!containerRef.current?.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
   return (
     <div ref={containerRef} className="relative w-full select-none">
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
-        className="bg-[#131313] text-[20px] text-white font-semibold cursor-pointer w-full h-[66px] rounded-[16px] border border-[#313131] pl-[14px] pr-[40px] flex items-center"
+        className="bg-[#131313] text-[20px] text-white font-semibold cursor-pointer w-full h-16.5 rounded-2xl border border-[#313131] pl-3.5 pr-10 flex items-center"
       >
         {value}
       </button>
 
       <img
         src="/icons/arrow-down.svg"
-        className={`absolute right-[16px] top-1/2 -translate-y-1/2 pointer-events-none transition-transform duration-300 ${
+        className={`absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none transition-transform duration-300 ${
           open ? "rotate-180" : ""
         }`}
       />
 
       <div
         className={`
-        absolute top-[-20px] w-full bg-[#131313] border border-[#313131] rounded-[16px] overflow-hidden z-50
+        absolute -top-5 w-full bg-[#131313] border border-[#313131] rounded-2xl overflow-hidden z-50
         transform transition-all duration-200 origin-top
         ${
           open
@@ -61,7 +51,7 @@ function TourLanguageSelector() {
               onChange(item);
               setOpen(false);
             }}
-            className="px-[14px] py-[16px] text-white text-[18px] cursor-pointer hover:bg-[#1f1f1f] transition-colors"
+            className="px-3.5 py-4 text-white text-[18px] cursor-pointer hover:bg-[#1f1f1f] transition-colors"
           >
             {item}
           </div>

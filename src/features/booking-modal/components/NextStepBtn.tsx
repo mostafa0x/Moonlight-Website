@@ -5,7 +5,7 @@ function NextStepBtn({ nextStep }: { nextStep: () => void }) {
     <button
       onClick={nextStep}
       aria-label="next step button"
-      className="w-[139px] h-[41px] bg-[#F2C975] hover:bg-[#887142] rounded-[10px] flex flex-row gap-2 items-center justify-center cursor-pointer"
+      className="w-34.75 h-10.25 bg-[#F2C975] hover:bg-[#887142] rounded-[10px] flex flex-row gap-2 items-center justify-center cursor-pointer"
     >
       <span className="text-sm text-black font-semibold">Next</span>
       <img src={"/icons/arrow-right.svg"} alt="arrow icon" />

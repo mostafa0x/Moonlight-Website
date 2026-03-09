@@ -104,7 +104,8 @@ html {
 } */
 
 .scrollbar-custom::-webkit-scrollbar {
-  height: 2px;
+  height: 6px;
+  width: 4px;
 }
 
 .scrollbar-custom::-webkit-scrollbar-track {

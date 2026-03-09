@@ -9,17 +9,15 @@ function Included_Excluded_Item({
 }) {
   return (
     <div
-      className="flex flex-row items-center gap-[14px] select-none  "
+      className="flex flex-row items-center gap-3.5 select-none  "
       title={title}
     >
       <img
         src={`/icons/ellipse-${icon}.svg`}
         alt="ellipse icon"
-        className="w-[7px] h-[7px]"
+        className="w-1.75 h-1.75"
       />
-      <span className="text-sm text-[#E0E0E0] font-medium truncate">
-        {title}
-      </span>
+      <span className="text-sm text-[#E0E0E0] font-medium">{title}</span>
     </div>
   );
 }

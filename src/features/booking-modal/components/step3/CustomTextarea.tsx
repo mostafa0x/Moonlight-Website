@@ -16,7 +16,7 @@ function CustomTextarea({
       </label>
       <textarea
         id={name}
-        className="w-full bg-[#131313] border border-[#313131] resize-none rounded-[5px] px-[5px]"
+        className="w-full bg-[#131313] border border-[#313131] resize-none rounded-[5px] px-1.25"
         rows={4}
         placeholder={placeholder}
       />

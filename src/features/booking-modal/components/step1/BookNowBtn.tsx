@@ -9,7 +9,7 @@ function BookNowBtn() {
     <button
       aria-label="next step button"
       onClick={nextStep}
-      className="w-fit h-fit px-[16px] py-[3px] bg-[#F2C975] hover:bg-[#a88b4f] rounded-[10px] select-none cursor-pointer"
+      className="w-fit h-fit px-4 py-0.75 bg-[#F2C975] hover:bg-[#a88b4f] rounded-[10px] select-none cursor-pointer"
     >
       <span className="text-base text-black font-semibold">BOOK NOW</span>
     </button>

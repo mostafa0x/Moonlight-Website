@@ -7,7 +7,7 @@ export default function Step3() {
   return (
     <div>
       <h1 className="text-base text-[#F2C975] font-medium">Contact Details</h1>
-      <div className=" grid grid-cols-1 md:grid-cols-2 space-x-[12px] space-y-[11px] mt-[12px]">
+      <div className=" grid grid-cols-1 md:grid-cols-2 space-x-3 space-y-2.75 mt-3">
         <CustomInput
           label="Full Name"
           name="name"
@@ -33,7 +33,7 @@ export default function Step3() {
           placeholder="enter your nationality..."
         />
       </div>
-      <div className=" space-y-[10px]">
+      <div className="space-y-2.5">
         <PickLocation
           name="pickup or pick off"
           label="Pickup Location"

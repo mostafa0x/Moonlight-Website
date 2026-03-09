@@ -31,13 +31,13 @@ function PeopleCounterItem({ label, hint, name }: PeopleCounterProps) {
   }, [value, onChange]);
 
   return (
-    <div className="flex justify-between items-center bg-[#131313] border border-[#313131] rounded-2xl px-[14px] h-[66px] select-none">
+    <div className="flex justify-between items-center bg-[#131313] border border-[#313131] rounded-2xl px-3.5 h-16.5 select-none">
       <div className="flex flex-col">
         <h2 className="text-base text-white font-medium">{label}</h2>
         <span className="text-sm text-[#8B8B8B] font-medium">{hint}</span>
       </div>
 
-      <div className="flex flex-row gap-[10px]">
+      <div className="flex flex-row gap-2.5">
         <MinusBtn callback={decrement} />
         <span className="text-base text-white font-normal">{value}</span>
         <PlusBtn callback={increment} />

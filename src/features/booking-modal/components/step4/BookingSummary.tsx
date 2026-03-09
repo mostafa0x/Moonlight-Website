@@ -3,12 +3,12 @@ import { memo } from "react";
 
 function BookingSummary() {
   return (
-    <div className="flex flex-col justify-between bg-[#131313] border border-[#313131] w-full h-[258px] rounded-[5px] px-[15px] py-[6px] ">
+    <div className="flex flex-col justify-between bg-[#131313] border border-[#313131] w-full h-64.5 rounded-[5px] px-3.75 py-1.5 ">
       <div>
         <h1 className="text-base text-[#F2C975] font-medium">
           Booking Summary
         </h1>
-        <div className="mt-[11px] space-y-[15px]">
+        <div className="mt-2.75 space-y-3.75">
           <BookingSummaryItem
             label="tour"
             hint="Museum or Civilization Museum"
@@ -18,7 +18,7 @@ function BookingSummary() {
           <BookingSummaryItem label="Guide Language" hint="English" />
         </div>
       </div>
-      <div className="flex flex-row justify-between items-center border-t pt-[11px]">
+      <div className="flex flex-row justify-between items-center border-t pt-2.75">
         <h2 className="text-base text-[#8B8B8B]">Total Price</h2>
         <span className="text-[20px] text-[#F2C975] font-medium">100$</span>
       </div>

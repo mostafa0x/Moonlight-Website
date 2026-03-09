@@ -7,10 +7,10 @@ function Step4() {
   return (
     <div>
       <BookingSummary />
-      <div className="mt-[8px]">
+      <div className="mt-2">
         <PromoCode />
       </div>
-      <div className="mt-[19px]">
+      <div className="mt-4.75">
         <PaymentMethod />
       </div>
     </div>
