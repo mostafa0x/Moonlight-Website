@@ -10,3 +10,8 @@ export type PricingTier = {
   maxPax: number;
   pricePerPerson: number;
 };
+
+export type Included_ExcludedType = {
+  title: string;
+  icon: "red" | "green";
+};

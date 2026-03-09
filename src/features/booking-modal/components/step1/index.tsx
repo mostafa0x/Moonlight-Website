@@ -9,27 +9,165 @@ function Step1() {
   return (
     <div className="flex flex-col w-full ">
       <div className="mb-3">
-        <Overview description="Experience the majesty of the ancient world with our exclusive VIP tour" />
-      </div>
-      <div className="mb-3 md:mb-[24px]">
-        <Destinations destinations={["Giza", "Cairo", "Al2ex", "2312"]} />
-      </div>
-      <div className="mb-[14px]">
-        <Included_Excluded
-          included={[
-            "sas sdfsd sdfsd fsd2 fsd 1",
-            "Entry tiwckets2",
-            "x21",
-            "sas sasddfsd sdfsd fsd fsd 1",
-            "Entry tickets2",
-            "x22",
-            "sa213s sdfsd sdfsd fsd fsd 1",
-          ]}
-          excluded={["y"]}
+        <Overview
+          description="Experience the majesty of the ancient world with our exclusive VIP tour
+        Experience the majesty of the ancient world with our exclusive VIP tour"
         />
       </div>
-      <div className=" absolute bottom-[18px] right-[27px] md:right-[36px]">
-        <div className="flex justify-end pt-[17px]">
+      <div className="mb-[20px]">
+        <Destinations
+          destinations={[
+            "Giza",
+            "Cairo",
+            "Alexandria",
+            "Luxor",
+            "Aswan",
+            "Sharm El Sheikh",
+            "Hurghada",
+            "Marsa Alam",
+            "Dahab",
+            "Nuweiba",
+            "Taba",
+            "Siwa Oasis",
+            "Fayoum",
+            "Ain Sokhna",
+            "Port Said",
+            "Ismailia",
+            "Suez",
+            "El Gouna",
+            "Safaga",
+            "El Quseir",
+            "Abu Simbel",
+            "Kom Ombo",
+            "Edfu",
+            "Minya",
+            "Sohag",
+            "Qena",
+          ]}
+        />
+      </div>
+      <div>
+        <Included_Excluded
+          data={[
+            {
+              title: "Hotel accommodation",
+              icon: "green",
+            },
+            {
+              title: "Breakfast included",
+              icon: "green",
+            },
+            {
+              title: "Flights",
+              icon: "red",
+            },
+            {
+              title: "Travel insurance",
+              icon: "red",
+            },
+            {
+              title: "Hotel accommodation",
+              icon: "green",
+            },
+            {
+              title: "Breakfast included",
+              icon: "green",
+            },
+            {
+              title: "Flights",
+              icon: "red",
+            },
+            {
+              title: "Travel insurance",
+              icon: "red",
+            },
+            {
+              title: "Hotel accommodation",
+              icon: "green",
+            },
+            {
+              title: "Breakfast included",
+              icon: "green",
+            },
+            {
+              title: "Flights",
+              icon: "red",
+            },
+            {
+              title: "Travel insurance",
+              icon: "red",
+            },
+            {
+              title: "Hotel accommodation",
+              icon: "green",
+            },
+            {
+              title: "Breakfast included",
+              icon: "green",
+            },
+            {
+              title: "Flights",
+              icon: "red",
+            },
+            {
+              title: "Travel insurance",
+              icon: "red",
+            },
+            {
+              title: "Hotel accommodation",
+              icon: "green",
+            },
+            {
+              title: "Breakfast included",
+              icon: "green",
+            },
+            {
+              title: "Flights",
+              icon: "red",
+            },
+            {
+              title: "Travel insurance",
+              icon: "red",
+            },
+            {
+              title: "Hotel accommodation",
+              icon: "green",
+            },
+            {
+              title: "Breakfast included",
+              icon: "green",
+            },
+            {
+              title: "Flights",
+              icon: "red",
+            },
+            {
+              title: "Travel insurance",
+              icon: "red",
+            },
+            ,
+            {
+              title: "Flights",
+              icon: "red",
+            },
+            {
+              title: "Travel insurance",
+              icon: "red",
+            },
+            ,
+            {
+              title: "Flights",
+              icon: "red",
+            },
+            {
+              title: "Travel insurance",
+              icon: "red",
+            },
+          ]}
+        />
+      </div>
+      <div className=" absolute bottom-4.5 right-6.75 md:right-9">
+        <div className="flex justify-end pt-4.25">
           <BookNowBtn />
         </div>
       </div>
