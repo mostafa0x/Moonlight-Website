@@ -23,8 +23,8 @@ export default function BookingModal() {
 
   return (
     <FormProvider {...methods}>
-      <div className="fixed inset-0 z-9999  flex items-center justify-center bg-black/50 modal-fade-up pt-[32px] pb-[24px]">
-        <div className=" relative w-[369px] sm:w-[628px] h-full rounded-[20px] bg-black overflow-hidden">
+      <div className="fixed inset-0 z-9999  flex items-center justify-center bg-black/50 modal-fade-up pt-8 pb-6">
+        <div className=" relative w-92.25 sm:w-157 h-full rounded-[20px] bg-black overflow-hidden">
           <div>
             <div className=" absolute right-2.75 top-1.25 z-2">
               <CloseBtn />
@@ -41,27 +41,27 @@ export default function BookingModal() {
             </div>
           )}
           {step === 1 && (
-            <div className="flex px-[10px] lg:px-[21px] py-[16px]">
+            <div className="flex px-2.5 lg:px-5.25 py-4">
               <Step1 />
             </div>
           )}
           {step === 2 && (
-            <div className="px-[14px] lg:px-[57px] py-[16px]">
+            <div className="px-3.5 lg:px-14.25 py-4">
               <Step2 />
             </div>
           )}
           {step === 3 && (
-            <div className="px-[14px] lg:px-[57px] py-[16px]">
+            <div className="px-3.5 lg:px-14.25 py-4">
               <Step3 />
             </div>
           )}
           {step === 4 && (
-            <div className="px-[14px] lg:px-[57px] py-[16px]">
+            <div className="px-3.5 lg:px-14.25 py-4">
               <Step4 />
             </div>
           )}
           {step !== 1 && (
-            <div className=" absolute bottom-0 left-0 w-full px-[21px] py-[16px]">
+            <div className=" absolute bottom-0 left-0 w-full px-5.25 py-4">
               <FooterModal step={step} />
             </div>
           )}

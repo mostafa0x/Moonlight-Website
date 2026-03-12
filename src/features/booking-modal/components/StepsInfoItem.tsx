@@ -7,7 +7,7 @@ function StepsInfoItem({ id, step }: { id: number; step: number }) {
     <div className="flex flex-row  items-center">
       <div
         className={clsx(
-          "flex w-[18px] h-[18px] rounded-full items-center justify-center",
+          "flex w-4.5 h-4.5 rounded-full items-center justify-center",
           !isActive && "border border-[#F2C975]",
         )}
       >
@@ -20,7 +20,7 @@ function StepsInfoItem({ id, step }: { id: number; step: number }) {
       {id < 4 && (
         <div
           className={clsx(
-            "bg-[#F2C975] w-[136px] outline-1",
+            "bg-[#F2C975] w-22.5 sm:w-34 outline-1",
             isActive ? "outline-[#F2C975]" : "outline-[#343434]",
           )}
         />

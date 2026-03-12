@@ -1,8 +1,8 @@
-import type { ItemSliderType } from "@/shared/global";
+import type { ItemSliderType, LandmarksType } from "@/shared/global";
 import { useEffect, useState } from "react";
 
 export const useExitSlider = (
-  slide: ItemSliderType,
+  slide: LandmarksType,
   exitDuration: number = 300,
 ) => {
   const [displayItem, setDisplayItem] = useState(slide);
@@ -10,7 +10,7 @@ export const useExitSlider = (
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    if (slide.name !== displayItem.name) {
+    if (slide.title !== displayItem.title) {
       setIsExiting(true);
 
       const timeoutChange = setTimeout(() => {

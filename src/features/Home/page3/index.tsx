@@ -1,25 +1,13 @@
-import type { PackageType } from "@/features/home/page3/types";
 import PackageSection from "@/features/packages/components";
+import type { PackageType } from "@/shared/global";
 
-const packages: PackageType[] = [
-  {
-    title: "Giza All-Inclusive VIP Tour",
-    src: "/packages/gize/package1.png",
-    price: 320,
-  },
-  {
-    title: "Giza All-Inclusive VIP Tour",
-    src: "/packages/gize/package1.png",
-    price: 320,
-  },
-  {
-    title: "Giza All-Inclusive VIP Tour",
-    src: "/packages/gize/package1.png",
-    price: 320,
-  },
-];
-
-export default function Page3({ currentPage }: { currentPage: number }) {
+export default function Page3({
+  currentPage,
+  packages,
+}: {
+  currentPage: number;
+  packages: PackageType[];
+}) {
   const isInView = currentPage === 2;
 
   return (

@@ -1,6 +1,6 @@
 "use client";
 
-import type { ItemSliderType } from "@/shared/global";
+import type { ItemSliderType, LandmarksType } from "@/shared/global";
 const SliderItem = dynamic(
   () => import("@/features/slider-items/components/SliderItem"),
   { ssr: false, loading: () => <SliderItemSkeleton /> },
@@ -13,28 +13,16 @@ import TitleSliderItem from "@/features/slider-items/components/TitleSliderItem"
 import { useIsMobile } from "@/shared/hooks/useCheckMobile";
 import SliderItemSkeleton from "@/features/slider-items/components/SliderItemSkeleton";
 
-const slides: ItemSliderType[] = [
-  {
-    name: "Tutankhamun's Mask",
-    src: "/imgs/item1.png",
-    desc: "A timeless masterpiece that has endured for millennia. The golden mask of the young King Tutankhamun was crafted from pure gold and adorned with precious lapis lazuli and colored glass. Its astonishing detail reflects the grandeur of ancient Egyptian art and the majesty of the pharaohs.",
-  },
-  {
-    name: "Nefertiti",
-    src: "/imgs/item2.png",
-    desc: "Nefertiti was a queen of ancient Egypt and the Great Royal Wife of Pharaoh Akhenaten. She is famous for her extraordinary beauty and her iconic limestone bust, which symbolizes elegance and grace. Nefertiti played a key role in religious reforms, promoting the worship of the sun god Aten. Her legacy remains a symbol of power, influence, and timeless Egyptian art.",
-  },
-  {
-    name: "Horus",
-    src: "/imgs/item3.png",
-    desc: "Horus is a major deity in ancient Egyptian civilization, often shown as a falcon or a man with a falcon head. He symbolized kingship, protection, and divine authority. Son of Osiris and Isis, Horus defeated Set to reclaim Egypt's throne, representing order over chaos. The Eye of Horus became a famous symbol of protection, healing, and royal power, reflecting Egypt’s spiritual and political heritage.",
-  },
-];
-
-function Page2({ currentPage }: { currentPage: number }) {
+function Page2({
+  currentPage,
+  landmarks,
+}: {
+  currentPage: number;
+  landmarks: LandmarksType[];
+}) {
   const isPageInView = currentPage === 1;
-  const currentIndex = useAutoSlider(isPageInView, slides.length, 7500);
-  const currentSlide = slides[currentIndex];
+  const currentIndex = useAutoSlider(isPageInView, landmarks.length, 7500);
+  const currentSlide = landmarks[currentIndex];
   const isMobileDevice = useIsMobile();
 
   return (
@@ -49,7 +37,7 @@ function Page2({ currentPage }: { currentPage: number }) {
           {isMobileDevice && (
             <>
               <TitleSliderItem
-                name={currentSlide.name}
+                name={currentSlide.title}
                 isVisible={isPageInView}
               />
               <SliderItem
@@ -60,8 +48,8 @@ function Page2({ currentPage }: { currentPage: number }) {
             </>
           )}
           <SliderItemHeader
-            name={currentSlide.name}
-            description={currentSlide.desc}
+            name={currentSlide.title}
+            description={currentSlide.description}
             isVisible={isPageInView}
           />
         </div>

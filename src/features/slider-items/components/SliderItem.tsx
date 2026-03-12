@@ -1,7 +1,7 @@
 "use client";
 
 import { useExitSlider } from "@/features/slider-items/hooks";
-import type { ItemSliderType } from "@/shared/global";
+import type { ItemSliderType, LandmarksType } from "@/shared/global";
 import { cn } from "@/shared/lib/utils";
 import Image from "next/image";
 import { memo, useState, useEffect } from "react";
@@ -13,23 +13,23 @@ function SliderItem({
   index = 0,
   isVisible,
 }: {
-  item: ItemSliderType;
+  item: LandmarksType;
   index: number;
   isVisible: boolean;
 }) {
   const { displayItem, isExiting } = useExitSlider(item);
   const isFirstItem = index === 0;
 
-  const [loaded, setLoaded] = useState(imageCache.has(displayItem.src));
+  const [loaded, setLoaded] = useState(imageCache.has(displayItem.imageUrl));
 
   const handleCacheImage = () => {
-    imageCache.add(displayItem.src);
+    imageCache.add(displayItem.imageUrl);
     setLoaded(true);
   };
 
   useEffect(() => {
-    setLoaded(imageCache.has(displayItem.src));
-  }, [displayItem.src]);
+    setLoaded(imageCache.has(displayItem.imageUrl));
+  }, [displayItem.imageUrl]);
 
   return (
     <div className="relative w-full lg:w-75 xl:w-75 2xl:w-15 h-95.75 md:h-112.5 lg:h-136.25 select-none">
@@ -54,8 +54,8 @@ function SliderItem({
         )}
 
         <Image
-          src={displayItem.src}
-          alt={displayItem.name}
+          src={displayItem.imageUrl}
+          alt={displayItem.title}
           fill
           priority={isFirstItem}
           quality={30}
