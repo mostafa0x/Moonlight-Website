@@ -3,6 +3,7 @@ export interface BookingContextProps {
   step: number;
   nextStep: () => void;
   prevStep: () => void;
+  handleSetTourId: (tour: string) => void;
 }
 
 export type PricingTier = {

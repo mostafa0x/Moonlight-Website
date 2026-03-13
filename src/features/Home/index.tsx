@@ -9,12 +9,26 @@ import dynamic from "next/dynamic";
 const FooterPage = dynamic(() => import("@/shared/components/footer"), {
   ssr: false,
 });
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FullPage } from "react-abohook-fullpage";
 
-export default function Home({ data }: { data: HomeDataType[] }) {
+export default function Home({
+  data,
+  tourId,
+}: {
+  data: HomeDataType[];
+  tourId: string;
+}) {
   const [currentPage, setCurrentPage] = useState(0);
-  const { isOpen } = useBookingContext();
+  const { isOpen, handleSetTourId } = useBookingContext();
+
+  useEffect(() => {
+    handleSetTourId(tourId);
+    return () => {
+      handleSetTourId("");
+    };
+  }, [tourId]);
+
   return (
     <FullPage
       directionDots="right"
@@ -26,13 +40,17 @@ export default function Home({ data }: { data: HomeDataType[] }) {
       <FullPage.Section>
         <Page1 currentPage={currentPage} />
       </FullPage.Section>
-      {data.map((data) => [
-        <FullPage.Section key={data.id}>
-          <Page2 currentPage={currentPage} landmarks={data.landmarks} />
+      {data.map((pg) => [
+        <FullPage.Section key={pg.id}>
+          <Page2 currentPage={currentPage} landmarks={pg.landmarks} />
         </FullPage.Section>,
 
-        <FullPage.Section key={data.id}>
-          <Page3 currentPage={currentPage} packages={data.packages} />
+        <FullPage.Section key={pg.id}>
+          <Page3
+            currentPage={currentPage}
+            packages={pg.packages}
+            titleHeader={pg.name}
+          />
         </FullPage.Section>,
       ])}
 

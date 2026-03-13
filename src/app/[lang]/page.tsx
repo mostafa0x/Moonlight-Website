@@ -1,21 +1,34 @@
 import Home from "@/features/home";
 import type { HomeDataType } from "@/shared/global";
 import dynamic from "next/dynamic";
+import { Suspense } from "react";
 const BackgroundImage = dynamic(
   () => import("@/shared/components/background-image/BackgroundImage"),
 );
 
 async function fetchData(lang: string) {
-  const res = await fetch(
-    `https://moonlight-steel.vercel.app/api/home?lang${lang}`,
-  );
-  return res.json();
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/home?lang=${lang}`,
+    );
+    return res.json();
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
 }
 
-export default async function page({ params }: { params: { lang: string } }) {
+export default async function page({
+  searchParams,
+  params,
+}: {
+  searchParams: { tourId: string };
+  params: { lang: string };
+}) {
   const { lang } = await params;
+  const { tourId } = await searchParams;
+
   const { data } = await fetchData(lang);
-  console.log(data);
 
   return (
     <div
@@ -24,7 +37,7 @@ export default async function page({ params }: { params: { lang: string } }) {
         flexDirection: "column",
       }}
     >
-      <Home data={data} />
+      <Home data={[]} tourId={tourId} />
       <BackgroundImage />
     </div>
   );

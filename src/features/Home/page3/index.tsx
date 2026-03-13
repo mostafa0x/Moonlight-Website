@@ -4,16 +4,18 @@ import type { PackageType } from "@/shared/global";
 export default function Page3({
   currentPage,
   packages,
+  titleHeader,
 }: {
   currentPage: number;
   packages: PackageType[];
+  titleHeader: string;
 }) {
   const isInView = currentPage === 2;
 
   return (
     <div className="relative  h-screen w-full flex overflow-hidden pt-7.5 lg:pt-5 px-0 lg:px-22.5 ">
       <PackageSection
-        title={"Giza All-Inclusive VIP Tour"}
+        title={titleHeader}
         packages={packages}
         isInView={isInView}
         isLoading={false}
