@@ -5,7 +5,6 @@ export interface ItemSliderType {
 }
 
 export type LandmarksType = {
-  id: string;
   title: string;
   description: string;
   imageUrl: string;
@@ -19,9 +18,8 @@ export type PackageType = {
   availabilityStatus: string;
 };
 export interface HomeDataType {
-  id: string;
-  slug: string;
   name: string;
+  page: number;
   landmarks: LandmarksType[];
   packages: PackageType[];
 }

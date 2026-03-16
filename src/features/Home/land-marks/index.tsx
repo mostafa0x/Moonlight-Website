@@ -13,14 +13,18 @@ import TitleSliderItem from "@/features/slider-items/components/TitleSliderItem"
 import { useIsMobile } from "@/shared/hooks/useCheckMobile";
 import SliderItemSkeleton from "@/features/slider-items/components/SliderItemSkeleton";
 
-function Page2({
+function LandMarks({
   currentPage,
   landmarks,
+  titleHeader,
+  page,
 }: {
   currentPage: number;
   landmarks: LandmarksType[];
+  titleHeader: string;
+  page: number;
 }) {
-  const isPageInView = currentPage === 1;
+  const isPageInView = currentPage === page;
   const currentIndex = useAutoSlider(isPageInView, landmarks.length, 7500);
   const currentSlide = landmarks[currentIndex];
   const isMobileDevice = useIsMobile();
@@ -32,7 +36,7 @@ function Page2({
           <h1
             className={`text-2xl lg:text-6xl font-bold mb-6 ${isPageInView && "animate-fade-right"} animate-ease-in animate-duration-500`}
           >
-            Giza
+            {titleHeader}
           </h1>
           {isMobileDevice && (
             <>
@@ -64,4 +68,4 @@ function Page2({
     </section>
   );
 }
-export default memo(Page2);
+export default memo(LandMarks);

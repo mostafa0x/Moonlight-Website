@@ -2,8 +2,8 @@
 
 import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
 import Page1 from "@/features/home/page1";
-import Page2 from "@/features/home/page2";
-import Page3 from "@/features/home/page3";
+import LandMarks from "@/features/home/land-marks";
+import PackagesPage from "@/features/home/packages-page";
 import { HomeDataType } from "@/shared/global";
 import dynamic from "next/dynamic";
 const FooterPage = dynamic(() => import("@/shared/components/footer"), {
@@ -41,12 +41,17 @@ export default function Home({
         <Page1 currentPage={currentPage} />
       </FullPage.Section>
       {data.map((pg) => [
-        <FullPage.Section key={pg.id}>
-          <Page2 currentPage={currentPage} landmarks={pg.landmarks} />
+        <FullPage.Section key={pg.name}>
+          <LandMarks
+            currentPage={currentPage}
+            landmarks={pg.landmarks}
+            titleHeader={pg.name}
+            page={pg.page}
+          />
         </FullPage.Section>,
 
-        <FullPage.Section key={pg.id}>
-          <Page3
+        <FullPage.Section key={pg.name}>
+          <PackagesPage
             currentPage={currentPage}
             packages={pg.packages}
             titleHeader={pg.name}

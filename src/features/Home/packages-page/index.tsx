@@ -1,7 +1,8 @@
 import PackageSection from "@/features/packages/components";
 import type { PackageType } from "@/shared/global";
+import { memo } from "react";
 
-export default function Page3({
+function PackagesPage({
   currentPage,
   packages,
   titleHeader,
@@ -23,3 +24,5 @@ export default function Page3({
     </div>
   );
 }
+
+export default memo(PackagesPage);
