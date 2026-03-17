@@ -129,7 +129,6 @@ export default async function page({
       }}
     >
       <Home data={dataAll} tourId={tourId} />
-      <BackgroundImage />
     </div>
   );
 }

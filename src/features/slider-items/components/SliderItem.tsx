@@ -35,7 +35,7 @@ function SliderItem({
     <div className="relative w-full lg:w-75 xl:w-75 2xl:w-15 h-95.75 md:h-112.5 lg:h-136.25 select-none">
       <div
         className={cn(
-          "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-52 md:w-85 lg:w-101.25 h-full transition-all duration-400 ease-in-out",
+          "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-85 lg:w-[730px] h-full transition-all duration-400 ease-in-out",
           isExiting
             ? "opacity-0 translate-x-full"
             : isVisible
@@ -48,7 +48,7 @@ function SliderItem({
             src="/imgs/placeholder.webp"
             alt="loading"
             fill
-            sizes="(max-width: 768px) 100vw, 405px"
+            sizes="(max-width: 768px) 100vw, 402px"
             className="object-contain blur-sm"
           />
         )}
@@ -59,10 +59,10 @@ function SliderItem({
           fill
           priority={isFirstItem}
           quality={30}
-          sizes="(max-width: 768px) 100vw, 405px}"
+          sizes="(max-width: 768px) 100vw, 730px}"
           onLoad={handleCacheImage}
           className={cn(
-            "object-contain transition-opacity duration-500",
+            "object-contain transition-opacity duration-500 ",
             loaded ? "opacity-100" : "opacity-0",
           )}
         />

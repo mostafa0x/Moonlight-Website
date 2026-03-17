@@ -5,15 +5,15 @@ import { memo } from "react";
 const LINKS = [
   {
     title: "Home",
-    link: "#",
+    link: "/",
   },
   {
     title: "About",
-    link: "#",
+    link: "/about",
   },
   {
     title: "Contact",
-    link: "#",
+    link: "/contact-us",
   },
   {
     title: "Privacy Policy",

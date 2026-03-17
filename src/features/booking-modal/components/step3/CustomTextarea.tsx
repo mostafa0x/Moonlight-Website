@@ -10,8 +10,8 @@ function CustomTextarea({
   placeholder: string;
 }) {
   return (
-    <div className=" space-y-1">
-      <label htmlFor="notes" className="text-[12px] text-[#8B8B8B] font-medium">
+    <div className="flex flex-col gap-1">
+      <label htmlFor="notes" className="text-base text-[#8B8B8B] font-medium">
         {label}
       </label>
       <textarea

@@ -3,6 +3,7 @@ import { Cairo } from "next/font/google";
 import "./globals.css";
 import AllProviders from "@/shared/providers/AllProviders";
 import NavBar from "@/shared/components/nav-bar";
+import BackgroundImage from "@/shared/components/background-image/BackgroundImage";
 
 const cairo = Cairo({
   subsets: ["arabic"],
@@ -30,6 +31,7 @@ export default function RootLayout({
         <AllProviders>
           <NavBar />
           {children}
+          <BackgroundImage />
         </AllProviders>
       </body>
     </html>

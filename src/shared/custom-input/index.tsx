@@ -12,9 +12,9 @@ function CustomInput({
   placeholder: string;
 }) {
   return (
-    <div className="flex flex-col gap-[4px]">
+    <div className="flex w-full flex-col gap-1">
       <label
-        className="text-[12px] text-[#8B8B8B] font-medium select-none"
+        className="text-base text-[#8B8B8B] font-medium select-none"
         htmlFor={name}
       >
         {label}
@@ -22,7 +22,7 @@ function CustomInput({
       <input
         id={name}
         aria-label={`${label} input`}
-        className="bg-[#131313] border border-[#313131] w-full h-[32px] rounded-[5px] px-[15px] py-[6px] text-[12px] font-medium"
+        className="bg-[#131313] border border-[#313131] w-full h-8 rounded-[5px] px-3.75 py-1.5 text-sm text-[#8B8B8B] font-medium"
         name={name}
         placeholder={placeholder}
         type={type}
