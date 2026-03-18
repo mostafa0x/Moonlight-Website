@@ -100,5 +100,38 @@
       "title": "Consentimento",
       "text": "Ao usar o site você concorda com esta política."
     }
+  },
+  "about": {
+    "title": "Moonlight.. O seu guia para a magia da história egípcia",
+    "description": "Descubra a Moonlight, sua guia para tours inesquecíveis no Egito incluindo Cairo, Gizé, Alexandria e cruzeiros pelo Nilo.",
+    "keywords": [
+      "tours Moonlight Egito",
+      "guia viagem Egito",
+      "tour pirâmides Gizé",
+      "cruzeiro Nilo Egito",
+      "tours Alexandria",
+      "história Egito tours"
+    ],
+    "subtitle": "La vostra guida alla magia della storia egizia",
+    "who": {
+      "title": "Quem Somos",
+      "text": "Na Moonlight levamo-lo numa viagem no tempo."
+    },
+
+    "what": {
+      "title": "O que fazemos",
+      "intro": "Organizamos tours no Egito focados em tesouros arqueológicos.",
+      "items": [
+        "Cairo e Gizé: tours pelas Pirâmides.",
+        "Alexandria: explorando a Noiva do Mediterrâneo.",
+        "Cruzeiros no Nilo.",
+        "Em breve: Luxor e Assuão."
+      ]
+    },
+
+    "why": {
+      "title": "Por que Moonlight?",
+      "text": "Acreditamos que uma grande viagem está nos detalhes."
+    }
   }
 }

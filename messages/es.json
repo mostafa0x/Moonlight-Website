@@ -45,8 +45,7 @@
   },
   "privacy": {
     "title": "Política de Privacidad",
-     "description": "Learn how Moonlight collects, uses, and protects your personal information when you inquire about or book tours in Egypt through our website."
-,
+    "description": "Learn how Moonlight collects, uses, and protects your personal information when you inquire about or book tours in Egypt through our website.",
     "keywords": [
       "términos de tours Moonlight",
       "condiciones de reserva de tours",
@@ -100,6 +99,39 @@
     "consent": {
       "title": "Consentimiento",
       "text": "Al utilizar nuestro sitio web, usted acepta esta Política de Privacidad."
+    }
+  },
+  "about": {
+    "title": "Moonlight.. Su guía hacia la magia de la historia egipcia",
+    "description": "Descubra Moonlight, su guía de confianza para tours inolvidables en Egipto incluyendo El Cairo, Giza, Alejandría y cruceros por el Nilo.",
+    "keywords": [
+      "tours Moonlight Egipto",
+      "guía de viajes Egipto",
+      "tours pirámides Giza",
+      "crucero por el Nilo",
+      "tours Alejandría",
+      "historia Egipto tours"
+    ],
+    "subtitle": "Su guía hacia la magia de la historia egipcia",
+    "who": {
+      "title": "Quiénes somos",
+      "text": "En Moonlight, no solo ofrecemos tours; le llevamos en un viaje a través del tiempo."
+    },
+
+    "what": {
+      "title": "Qué hacemos",
+      "intro": "Nos especializamos en organizar tours en Egipto centrados en tesoros arqueológicos y museos.",
+      "items": [
+        "El Cairo y Giza: Tours por las Pirámides, la Ciudadela de Saladino y museos.",
+        "Alejandría: Explorando la 'Novia del Mediterráneo'.",
+        "Cruceros por el Nilo: Navegando por el eterno Nilo.",
+        "Próximamente: Luxor y Asuán."
+      ]
+    },
+
+    "why": {
+      "title": "¿Por qué Moonlight?",
+      "text": "Creemos que un gran viaje está en los detalles."
     }
   }
 }

@@ -100,5 +100,38 @@
       "title": "Consentement",
       "text": "En utilisant notre site, vous acceptez notre politique de confidentialité."
     }
+  },
+  "about": {
+    "title": "Moonlight.. Votre guide vers la magie de l'histoire égyptienne",
+    "description": "Découvrez Moonlight, votre guide pour des circuits inoubliables en Égypte incluant Le Caire, Gizeh, Alexandrie et des croisières sur le Nil.",
+    "keywords": [
+      "tours Moonlight Égypte",
+      "guide voyage Égypte",
+      "visite pyramides Gizeh",
+      "croisière Nil Égypte",
+      "tours Alexandrie",
+      "histoire Égypte tours"
+    ],
+
+    "who": {
+      "title": "Qui sommes-nous",
+      "text": "Chez Moonlight, nous vous emmenons pour un voyage dans le temps."
+    },
+    "subtitle": "Votre guide vers la magie de l'histoire égyptienne",
+    "what": {
+      "title": "Ce que nous faisons",
+      "intro": "Nous organisons des circuits en Égypte axés sur les trésors archéologiques.",
+      "items": [
+        "Le Caire et Gizeh: Visites des Pyramides et de la Citadelle.",
+        "Alexandrie: Découverte de la Mariée de la Méditerranée.",
+        "Croisières sur le Nil.",
+        "Bientôt: Louxor et Assouan."
+      ]
+    },
+
+    "why": {
+      "title": "Pourquoi Moonlight ?",
+      "text": "Nous croyons que le voyage est dans les détails."
+    }
   }
 }

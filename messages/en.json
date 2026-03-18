@@ -1,7 +1,7 @@
 {
   "terms": {
     "title": "Terms of Service",
-    "description ": "Read Moonlight's Terms of Service including booking conditions, cancellation policy, payment methods, refunds, and traveler responsibilities for tours in Egypt.",
+    "description": "Read Moonlight's Terms of Service including booking conditions, cancellation policy, payment methods, refunds, and traveler responsibilities for tours in Egypt.",
     "keywords": [
       "Moonlight tours terms",
       "tour booking terms",
@@ -105,6 +105,39 @@
     "consent": {
       "title": "Consent",
       "text": "By using our website, you hereby consent to our Privacy Policy and agree to its terms."
+    }
+  },
+  "about": {
+    "title": "About Moonlight.. Your Guide to the Magic of Egyptian History",
+    "description": "Discover Moonlight, your trusted guide for unforgettable tours across Egypt including Cairo, Giza, Alexandria, and Nile cruises. Experience the magic of Egyptian history with personalized travel experiences.",
+    "keywords": [
+      "Moonlight Egypt tours",
+      "Egypt travel guide",
+      "Cairo pyramids tours",
+      "Nile cruise Egypt",
+      "Alexandria tours",
+      "Egypt historical tours"
+    ],
+    "subtitle": "Your Guide to the Magic of Egyptian History",
+    "who": {
+      "title": "Who We Are",
+      "text": "At Moonlight, we don’t just offer tours; we take you on a journey through time. Born out of a deep passion for Egypt's magnificent history, Moonlight was created to provide a personalized travel experience that goes beyond the ordinary, making every visit to ancient landmarks a story to remember."
+    },
+
+    "what": {
+      "title": "What We Do",
+      "intro": "We specialize in organizing and managing bespoke tours within Egypt, focusing on the archaeological treasures and museums that defined civilization:",
+      "items": [
+        "Cairo & Giza: Enchanting tours of the Great Pyramids, the Saladin Citadel, and world-class museums.",
+        "Alexandria: Exploring the 'Bride of the Mediterranean' and its unique Greco-Roman heritage.",
+        "Nile Cruises: A serene experience sailing the eternal Nile, surrounded by thousands of years of history.",
+        "Coming Soon: Expanding our horizons to the golden sands and magic of Luxor and Aswan."
+      ]
+    },
+
+    "why": {
+      "title": "Why Moonlight?",
+      "text": "We believe that great travel is all about the details. We meticulously plan every step of your trip to ensure comfort, safety, and insightful discovery. Whether you are looking for an educational museum tour or a peaceful Nile cruise under the moonlight, we are here to make it happen with professionalism and heart."
     }
   }
 }
