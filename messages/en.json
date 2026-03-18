@@ -170,5 +170,13 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "login": "Login"
+  },
+  "footer": {
+    "terms": "Terms of use",
+    "privacy": "Privacy Policy",
+    "about": "About us",
+    "contact": "Contact",
+    "allRights": "All Rights Reserved.",
+    "designedBy": "Designed by"
   }
 }

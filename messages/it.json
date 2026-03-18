@@ -163,5 +163,13 @@
     "privacy": "Politica sulla Privacy",
     "terms": "Termini di Utilizzo",
     "login": "Accedi"
+  },
+  "footer": {
+    "terms": "Termini di utilizzo",
+    "privacy": "Informativa sulla privacy",
+    "about": "Chi siamo",
+    "contact": "Contatto",
+    "allRights": "Tutti i diritti riservati.",
+    "designedBy": "Progettato da"
   }
 }

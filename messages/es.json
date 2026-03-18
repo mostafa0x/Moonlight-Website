@@ -164,5 +164,13 @@
     "privacy": "Política de Privacidad",
     "terms": "Términos de Uso",
     "login": "Iniciar sesión"
+  },
+  "footer": {
+    "terms": "Términos de uso",
+    "privacy": "Política de privacidad",
+    "about": "Sobre nosotros",
+    "contact": "Contacto",
+    "allRights": "Todos los derechos reservados.",
+    "designedBy": "Diseñado por"
   }
 }
