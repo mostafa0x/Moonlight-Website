@@ -1,0 +1,46 @@
+{
+  "terms": {
+    "title": "Conditions d'Utilisation",
+    "description": "Consultez les Conditions d’Utilisation de Moonlight, incluant les conditions de réservation, la politique d’annulation, les paiements, les remboursements et les responsabilités des voyageurs pour les visites en Égypte.",
+    "keywords": [
+      "términos de tours Moonlight",
+      "condiciones de reserva de tours",
+      "política de tours en Egipto",
+      "política de cancelación tours Egipto",
+      "términos de viaje Moonlight"
+    ],
+    "lastUpdated": "Dernière mise à jour : Mars 2026",
+    "intro": "Bienvenue sur Moonlight. En naviguant sur notre site Web, en réservant une visite ou en utilisant nos services, vous acceptez les Conditions d'Utilisation suivantes.",
+    "booking": {
+      "title": "Réservations et Paiements",
+      "currency": "Devise : Toutes les transactions et les prix sont indiqués en dollars américains (USD) ou en euros (EUR).",
+      "paymentGateway": "Passerelle de paiement : Nous utilisons l'API Business de PayPal pour le traitement sécurisé des paiements.",
+      "confirmation": "Confirmation : Une réservation est confirmée une fois que le paiement complet est reçu par Moonlight."
+    },
+    "cancellation": {
+      "title": "Politique d'Annulation et de Remboursement",
+      "intro": "Nous planifions soigneusement nos visites et sécurisons les engagements avec les fournisseurs locaux.",
+      "sameDay": "Annulation le jour même ou moins de 24 heures avant le début : aucun remboursement.",
+      "advance": "Annulation plus de 24 heures à l'avance : remboursement moins 15 % de frais.",
+      "forceMajeure": "Force majeure : en cas de conditions extrêmes ou fermeture des sites, un remboursement complet ou une nouvelle date sera proposé."
+    },
+    "refunds": {
+      "title": "Traitement des Remboursements",
+      "text1": "Les remboursements approuvés seront traités via PayPal.",
+      "text2": "Le remboursement peut prendre plusieurs jours ouvrables selon votre banque."
+    },
+    "itinerary": {
+      "title": "Modifications de l'Itinéraire",
+      "text": "Moonlight se réserve le droit de modifier légèrement les itinéraires ou horaires."
+    },
+    "insurance": {
+      "title": "Assurance Voyage et Santé",
+      "text1": "Les retards de vol ou urgences personnelles ne sont pas exemptés de la politique d'annulation.",
+      "text2": "Moonlight n'est pas responsable des blessures ou pertes pendant les visites."
+    },
+    "conduct": {
+      "title": "Code de Conduite",
+      "text": "Tous les visiteurs doivent respecter les lois égyptiennes et les monuments historiques."
+    }
+  }
+}

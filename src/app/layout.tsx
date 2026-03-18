@@ -4,6 +4,7 @@ import "./globals.css";
 import AllProviders from "@/shared/providers/AllProviders";
 import NavBar from "@/shared/components/nav-bar";
 import BackgroundImage from "@/shared/components/background-image/BackgroundImage";
+import { NextIntlClientProvider } from "next-intl";
 
 const cairo = Cairo({
   subsets: ["arabic"],
@@ -11,6 +12,10 @@ const cairo = Cairo({
   variable: "--font-cairo",
   display: "swap",
 });
+
+export async function generateStaticParams() {
+  return ["en", "fr", "it", "es", "pt"].map((locale) => ({ locale }));
+}
 
 export const metadata: Metadata = {
   title: "Moonlight",
@@ -20,19 +25,25 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: string };
 }>) {
+  const { locale } = await params;
+
   return (
-    <html lang="en" className={`${cairo.variable} scrollbar-hide`}>
+    <html lang={locale} className={`${cairo.variable} scrollbar-hide`}>
       <body className="antialiased">
-        <AllProviders>
-          <NavBar />
-          {children}
-          <BackgroundImage />
-        </AllProviders>
+        <NextIntlClientProvider>
+          <AllProviders>
+            <NavBar />
+            {children}
+            <BackgroundImage />
+          </AllProviders>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

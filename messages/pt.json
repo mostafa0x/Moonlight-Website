@@ -1,0 +1,46 @@
+{
+  "terms": {
+    "title": "Termos de Serviço",
+    "description": "Leia os Termos de Serviço da Moonlight, incluindo condições de reserva, política de cancelamento, métodos de pagamento, reembolsos e responsabilidades dos viajantes para tours no Egito.",
+    "keywords": [
+      "termos tours Moonlight",
+      "condições reserva tours",
+      "política tours Egito",
+      "política cancelamento tours Egito",
+      "termos viagem Moonlight"
+    ],
+    "lastUpdated": "Última atualização: Março de 2026",
+    "intro": "Bem-vindo à Moonlight. Ao utilizar o nosso site ou reservar um tour concorda com os seguintes Termos de Serviço.",
+    "booking": {
+      "title": "Reservas e Pagamentos",
+      "currency": "Moeda: Todas as transações são processadas em USD ou EUR.",
+      "paymentGateway": "Gateway de pagamento: utilizamos a API Business do PayPal.",
+      "confirmation": "Confirmação: a reserva é confirmada após o pagamento completo."
+    },
+    "cancellation": {
+      "title": "Política de Cancelamento e Reembolso",
+      "intro": "Planeamos cuidadosamente os nossos tours com fornecedores locais.",
+      "sameDay": "Cancelamentos no mesmo dia ou menos de 24 horas: sem reembolso.",
+      "advance": "Cancelamentos com mais de 24 horas: reembolso menos 15%.",
+      "forceMajeure": "Força maior: reembolso total ou nova data caso o tour seja cancelado."
+    },
+    "refunds": {
+      "title": "Processamento de Reembolsos",
+      "text1": "Os reembolsos serão processados via PayPal.",
+      "text2": "Pode demorar vários dias úteis dependendo do banco."
+    },
+    "itinerary": {
+      "title": "Alterações de Itinerário",
+      "text": "Moonlight pode alterar ligeiramente itinerários ou horários."
+    },
+    "insurance": {
+      "title": "Seguro de Viagem",
+      "text1": "Atrasos de voo ou emergências pessoais não estão isentos da política de cancelamento.",
+      "text2": "Moonlight não é responsável por lesões ou perdas durante os tours."
+    },
+    "conduct": {
+      "title": "Código de Conduta",
+      "text": "Os hóspedes devem respeitar as leis egípcias e os monumentos históricos."
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "terms": {
+    "title": "Termini di Servizio",
+    "description": "Leggi i Termini di Servizio di Moonlight, incluse le condizioni di prenotazione, la politica di cancellazione, i metodi di pagamento, i rimborsi e le responsabilità dei viaggiatori per i tour in Egitto.",
+    "keywords": [
+      "termini tour Moonlight",
+      "condizioni prenotazione tour",
+      "politica tour Egitto",
+      "politica cancellazione tour Egitto",
+      "termini viaggio Moonlight"
+    ],
+    "lastUpdated": "Ultimo aggiornamento: Marzo 2026",
+    "intro": "Benvenuti su Moonlight. Utilizzando il nostro sito o prenotando un tour accetti i seguenti Termini di Servizio.",
+    "booking": {
+      "title": "Prenotazioni e Pagamenti",
+      "currency": "Valuta: Tutte le transazioni sono processate in Dollari USA (USD) o Euro (EUR).",
+      "paymentGateway": "Gateway di pagamento: utilizziamo PayPal Business API per pagamenti sicuri.",
+      "confirmation": "Conferma: una prenotazione è confermata solo dopo il pagamento completo."
+    },
+    "cancellation": {
+      "title": "Politica di Cancellazione e Rimborso",
+      "intro": "Pianifichiamo attentamente i nostri tour con fornitori locali.",
+      "sameDay": "Cancellazioni nello stesso giorno o meno di 24 ore prima: nessun rimborso.",
+      "advance": "Cancellazioni con più di 24 ore di anticipo: rimborso meno il 15%.",
+      "forceMajeure": "Forza maggiore: rimborso completo o nuova data in caso di circostanze straordinarie."
+    },
+    "refunds": {
+      "title": "Elaborazione dei Rimborsi",
+      "text1": "I rimborsi approvati saranno processati tramite PayPal.",
+      "text2": "Potrebbero essere necessari diversi giorni lavorativi."
+    },
+    "itinerary": {
+      "title": "Modifiche all'Itinerario",
+      "text": "Moonlight può modificare itinerari o orari se necessario."
+    },
+    "insurance": {
+      "title": "Assicurazione di Viaggio",
+      "text1": "Ritardi dei voli o emergenze personali non sono esenti dalla politica di cancellazione.",
+      "text2": "Moonlight non è responsabile per lesioni o perdite durante i tour."
+    },
+    "conduct": {
+      "title": "Codice di Condotta",
+      "text": "Gli ospiti devono rispettare le leggi egiziane e i monumenti storici."
+    }
+  }
+}

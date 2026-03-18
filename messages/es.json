@@ -1,0 +1,46 @@
+{
+  "terms": {
+    "title": "Términos de Servicio",
+    "description": "Lea los Términos de Servicio de Moonlight, incluyendo condiciones de reserva, política de cancelación, métodos de pago, reembolsos y responsabilidades del viajero para tours en Egipto.",
+    "keywords": [
+      "términos de tours Moonlight",
+      "condiciones de reserva de tours",
+      "política de tours en Egipto",
+      "política de cancelación tours Egipto",
+      "términos de viaje Moonlight"
+    ],
+    "lastUpdated": "Última actualización: Marzo de 2026",
+    "intro": "Bienvenido a Moonlight. Al navegar por nuestro sitio web, reservar un tour o utilizar nuestros servicios, usted acepta cumplir y estar sujeto a los siguientes Términos de Servicio. Por favor, revíselos cuidadosamente antes de realizar cualquier reserva.",
+    "booking": {
+      "title": "Reservas y Pagos",
+      "currency": "Moneda: Todas las transacciones y precios de los tours se cotizan y procesan en dólares estadounidenses (USD) o euros (EUR).",
+      "paymentGateway": "Pasarela de pago: Utilizamos la API Business de PayPal para el procesamiento seguro de pagos. Al completar una reserva, también acepta la Política de Uso Aceptable de PayPal.",
+      "confirmation": "Confirmación: Una reserva solo se considera final y confirmada una vez que Moonlight recibe con éxito el pago completo y el estado del tour se actualiza a \"Confirmado\" en su perfil de usuario en nuestro sitio web."
+    },
+    "cancellation": {
+      "title": "Política de Cancelación y Reembolso",
+      "intro": "Planificamos meticulosamente nuestros tours y aseguramos compromisos con proveedores locales con anticipación. Por lo tanto, la siguiente estricta política de cancelación se aplica a todas las reservas:",
+      "sameDay": "Cancelaciones el mismo día o dentro de 24 horas: Si cancela su tour el día programado o menos de 24 horas antes de la hora acordada (Hora local de Egipto - EET), no se emitirá ningún reembolso (se aplica una tarifa de cancelación del 100%).",
+      "advance": "Cancelaciones anticipadas: Si cancela con más de 24 horas de antelación (Hora local de Egipto - EET), se emitirá un reembolso menos una tarifa de cancelación del 15%.",
+      "forceMajeure": "Fuerza Mayor: En el raro caso de que Moonlight deba cancelar un tour debido a clima extremo, problemas de seguridad o cierre inesperado de sitios arqueológicos, se ofrecerá un reembolso completo o una fecha alternativa."
+    },
+    "refunds": {
+      "title": "Procesamiento de Reembolsos",
+      "text1": "Todos los reembolsos aprobados se procesarán al método de pago original (a través de PayPal).",
+      "text2": "Tenga en cuenta que puede tardar varios días hábiles en reflejarse el monto en su cuenta."
+    },
+    "itinerary": {
+      "title": "Cambios de Itinerario y Ruta",
+      "text": "Moonlight se reserva el derecho de modificar ligeramente itinerarios, rutas u horarios si es requerido por autoridades locales o condiciones operativas."
+    },
+    "insurance": {
+      "title": "Seguro de Viaje y Salud",
+      "text1": "Retrasos de vuelos, enfermedades o emergencias personales dentro de las 24 horas del tour no están exentos de nuestra política de cancelación.",
+      "text2": "Moonlight no se responsabiliza por lesiones, enfermedades o pérdida de pertenencias durante los tours."
+    },
+    "conduct": {
+      "title": "Código de Conducta",
+      "text": "Esperamos que todos los huéspedes respeten las leyes egipcias, normas culturales y monumentos históricos."
+    }
+  }
+}

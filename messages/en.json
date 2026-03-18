@@ -1,0 +1,52 @@
+{
+  "terms": {
+    "title": "Terms of Service",
+    "description ": "Read Moonlight's Terms of Service including booking conditions, cancellation policy, payment methods, refunds, and traveler responsibilities for tours in Egypt.",
+    "keywords": [
+      "Moonlight tours terms",
+      "tour booking terms",
+      "Egypt tours policy",
+      "cancellation policy Egypt tours",
+      "Moonlight travel terms"
+    ],
+    "lastUpdated": "Last Updated: March 2026",
+    "intro": "Welcome to Moonlight. By browsing our website, booking a tour, or using our services, you agree to comply with and be bound by the following Terms of Service. Please review them carefully before making any reservations.",
+
+    "booking": {
+      "title": "Booking and Payments",
+      "currency": "Currency: All transactions and tour prices are quoted and processed in US Dollars (USD) or Euros (EUR).",
+      "paymentGateway": "Payment Gateway: We utilize PayPal Business API for secure payment processing. By completing a booking, you also agree to PayPal's Acceptable Use Policy.",
+      "confirmation": "Confirmation: A booking is only considered final and confirmed once the full payment is successfully received by Moonlight, and the tour status is updated to \"Confirmed\" in your user profile on our website."
+    },
+
+    "cancellation": {
+      "title": "Cancellation and Refund Policy",
+      "intro": "We meticulously plan our tours and secure commitments with local vendors in advance. Therefore, the following strict cancellation policy applies to all bookings:",
+      "sameDay": "Same-Day & 24-Hour Cancellations (No-Show): If you cancel your tour on the scheduled day, or less than 24 hours before the agreed start time (Local Egypt Time - EET), no refund will be issued (100% cancellation fee applies).",
+      "advance": "Advance Cancellations (More than 24 Hours): If you cancel your booking more than 24 hours in advance (Local Egypt Time - EET), a refund will be issued, minus a 15% cancellation fee. This fee covers non-refundable transaction processing fees and administrative scheduling costs.",
+      "forceMajeure": "Force Majeure: In the rare event that Moonlight must cancel a tour due to extreme weather, security concerns, or unexpected closure of archaeological sites, a full refund or an alternative date will be offered."
+    },
+
+    "refunds": {
+      "title": "Refund Processing",
+      "text1": "All approved refunds will be processed back to the original method of payment (via PayPal).",
+      "text2": "Please note that it may take several business days for the refunded amount to reflect in your account, depending on your bank or credit card provider's policies."
+    },
+
+    "itinerary": {
+      "title": "Itinerary and Route Changes",
+      "text": "Moonlight reserves the right to slightly alter tour itineraries, routes, or timings without prior notice if required by local authorities, traffic conditions, or other operational necessities, ensuring the overall quality of the tour is maintained."
+    },
+
+    "insurance": {
+      "title": "Travel Insurance and Health",
+      "text1": "Flight delays, sudden illnesses, or personal emergencies occurring within 24 hours of the tour are not exempt from our cancellation policy. We strongly advise guests to purchase comprehensive Travel Insurance to cover such unforeseen events and claim any losses through their insurance provider.",
+      "text2": "Moonlight is not liable for any injuries, illnesses, or loss of personal property that occur during the tours."
+    },
+
+    "conduct": {
+      "title": "Code of Conduct",
+      "text": "We expect all guests to respect Egyptian laws, cultural norms, and historical monuments. We reserve the right to refuse service or terminate a tour prematurely, without a refund, if a guest's behavior is deemed illegal, highly disruptive, or disrespectful to local heritage."
+    }
+  }
+}
