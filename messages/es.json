@@ -42,5 +42,64 @@
       "title": "Código de Conducta",
       "text": "Esperamos que todos los huéspedes respeten las leyes egipcias, normas culturales y monumentos históricos."
     }
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+     "description": "Learn how Moonlight collects, uses, and protects your personal information when you inquire about or book tours in Egypt through our website."
+,
+    "keywords": [
+      "términos de tours Moonlight",
+      "condiciones de reserva de tours",
+      "política de tours en Egipto",
+      "política de cancelación tours Egipto",
+      "términos de viaje Moonlight"
+    ],
+    "effectiveDate": "Fecha de vigencia: Marzo de 2026",
+    "intro": "En Moonlight, una de nuestras principales prioridades es la privacidad de nuestros visitantes.",
+
+    "collect": {
+      "title": "Información que recopilamos",
+      "intro": "Solo recopilamos información personal que usted nos proporciona voluntariamente al consultar nuestros servicios o reservar un tour.",
+      "identification": "Datos de identificación: Nombre y nacionalidad.",
+      "contact": "Datos de contacto: Dirección de correo electrónico y número de teléfono (WhatsApp).",
+      "travel": "Datos de viaje: Preferencias, fechas de viaje y número de invitados."
+    },
+
+    "use": {
+      "title": "Cómo usamos su información",
+      "intro": "Utilizamos la información recopilada para:",
+      "items": [
+        "Proporcionar, operar y mantener nuestro sitio web.",
+        "Comunicarnos con usted para planificar su tour por Egipto.",
+        "Enviar confirmaciones de reserva y actualizaciones importantes.",
+        "Mejorar su experiencia en nuestro sitio web."
+      ]
+    },
+
+    "security": {
+      "title": "Seguridad y uso compartido de datos",
+      "noSharing": "No compartimos su información personal con terceros con fines de marketing.",
+      "providers": "Solo compartimos datos con proveedores esenciales cuando es necesario para su reserva.",
+      "protection": "Aplicamos medidas de seguridad estándar para proteger su información."
+    },
+
+    "logs": {
+      "title": "Archivos de registro",
+      "text": "Moonlight utiliza archivos de registro para registrar las visitas al sitio web."
+    },
+
+    "rights": {
+      "title": "Sus derechos de datos",
+      "items": [
+        "Solicitar una copia de los datos personales que tenemos.",
+        "Solicitar la corrección de información incorrecta.",
+        "Solicitar la eliminación de sus datos después de completar el tour."
+      ]
+    },
+
+    "consent": {
+      "title": "Consentimiento",
+      "text": "Al utilizar nuestro sitio web, usted acepta esta Política de Privacidad."
+    }
   }
 }

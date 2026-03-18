@@ -48,5 +48,63 @@
       "title": "Code of Conduct",
       "text": "We expect all guests to respect Egyptian laws, cultural norms, and historical monuments. We reserve the right to refuse service or terminate a tour prematurely, without a refund, if a guest's behavior is deemed illegal, highly disruptive, or disrespectful to local heritage."
     }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "description": "Learn how Moonlight collects, uses, and protects your personal information when you inquire about or book tours in Egypt through our website.",
+    "effectiveDate": "Effective Date: March 2026",
+    "keywords": [
+      "Moonlight tours terms",
+      "tour booking terms",
+      "Egypt tours policy",
+      "cancellation policy Egypt tours",
+      "Moonlight travel terms"
+    ],
+    "intro": "At Moonlight, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Moonlight and how we use it.",
+
+    "collect": {
+      "title": "Information We Collect",
+      "intro": "We only collect personal information that you voluntarily provide to us when you inquire about our services or book a tour. This may include:",
+      "identification": "Identification Data: Name and nationality.",
+      "contact": "Contact Data: Email address and phone number (WhatsApp).",
+      "travel": "Travel Data: Preferences, dates of travel, and number of guests."
+    },
+
+    "use": {
+      "title": "How We Use Your Information",
+      "intro": "We use the information we collect in various ways, including to:",
+      "items": [
+        "Provide, operate, and maintain our website.",
+        "Communicate with you to plan and customize your Egyptian tour.",
+        "Send you booking confirmations and essential travel updates.",
+        "Improve your experience on our website."
+      ]
+    },
+
+    "security": {
+      "title": "Data Security & Sharing",
+      "noSharing": "No Third-Party Sharing: We do not sell, rent, or share your personal information with third parties for marketing purposes.",
+      "providers": "Service Providers: Your data is only shared with essential service providers (e.g., Nile Cruise operators or hotel bookings) when necessary to fulfill your tour reservation.",
+      "protection": "Protection: We implement standard security measures to protect your data from unauthorized access."
+    },
+
+    "logs": {
+      "title": "Log Files",
+      "text": "Moonlight follows a standard procedure of using log files. These files log visitors when they visit websites. The information collected includes internet protocol (IP) addresses, browser type, and date/time stamps. These are not linked to any information that is personally identifiable."
+    },
+
+    "rights": {
+      "title": "Your Data Rights",
+      "items": [
+        "Request a copy of the personal data we hold about you.",
+        "Request that we correct any information you believe is inaccurate.",
+        "Request that we delete your personal data after your tour is completed."
+      ]
+    },
+
+    "consent": {
+      "title": "Consent",
+      "text": "By using our website, you hereby consent to our Privacy Policy and agree to its terms."
+    }
   }
 }

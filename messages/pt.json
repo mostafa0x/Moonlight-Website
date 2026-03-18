@@ -42,5 +42,63 @@
       "title": "Código de Conduta",
       "text": "Os hóspedes devem respeitar as leis egípcias e os monumentos históricos."
     }
+  },
+  "privacy": {
+    "title": "Política de Privacidade",
+    "description": "Scopri come Moonlight raccoglie, utilizza e protegge le tue informazioni personali quando richiedi informazioni o prenoti tour in Egitto tramite il nostro sito web.",
+    "keywords": [
+      "termos tours Moonlight",
+      "condições reserva tours",
+      "política tours Egito",
+      "política cancelamento tours Egito",
+      "termos viagem Moonlight"
+    ],
+    "effectiveDate": "Data de vigência: Março de 2026",
+    "intro": "Na Moonlight, a privacidade dos visitantes é uma prioridade.",
+
+    "collect": {
+      "title": "Informações que coletamos",
+      "intro": "Coletamos apenas informações fornecidas voluntariamente.",
+      "identification": "Dados de identificação: Nome e nacionalidade.",
+      "contact": "Dados de contato: Email e telefone.",
+      "travel": "Dados de viagem: Preferências, datas e número de hóspedes."
+    },
+
+    "use": {
+      "title": "Como usamos suas informações",
+      "intro": "Usamos as informações para:",
+      "items": [
+        "Operar e manter o site.",
+        "Comunicar sobre o tour no Egito.",
+        "Enviar confirmações de reserva.",
+        "Melhorar a experiência do usuário."
+      ]
+    },
+
+    "security": {
+      "title": "Segurança e compartilhamento",
+      "noSharing": "Não vendemos ou compartilhamos dados pessoais para marketing.",
+      "providers": "Os dados são compartilhados apenas com fornecedores necessários.",
+      "protection": "Aplicamos medidas de segurança padrão."
+    },
+
+    "logs": {
+      "title": "Arquivos de log",
+      "text": "Moonlight utiliza arquivos de log para analisar visitas."
+    },
+
+    "rights": {
+      "title": "Seus direitos",
+      "items": [
+        "Solicitar uma cópia dos dados.",
+        "Solicitar correção de dados.",
+        "Solicitar exclusão após o tour."
+      ]
+    },
+
+    "consent": {
+      "title": "Consentimento",
+      "text": "Ao usar o site você concorda com esta política."
+    }
   }
 }

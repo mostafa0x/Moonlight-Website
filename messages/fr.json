@@ -42,5 +42,63 @@
       "title": "Code de Conduite",
       "text": "Tous les visiteurs doivent respecter les lois égyptiennes et les monuments historiques."
     }
+  },
+  "privacy": {
+    "title": "Politique de Confidentialité",
+    "description": "Découvrez comment Moonlight collecte, utilise et protège vos informations personnelles lorsque vous demandez des informations ou réservez des visites en Égypte via notre site web.",
+    "keywords": [
+      "términos de tours Moonlight",
+      "condiciones de reserva de tours",
+      "política de tours en Egipto",
+      "política de cancelación tours Egipto",
+      "términos de viaje Moonlight"
+    ],
+    "effectiveDate": "Date d'entrée en vigueur : Mars 2026",
+    "intro": "Chez Moonlight, la confidentialité de nos visiteurs est l'une de nos principales priorités.",
+
+    "collect": {
+      "title": "Informations que nous collectons",
+      "intro": "Nous collectons uniquement les informations que vous nous fournissez volontairement.",
+      "identification": "Données d'identification : Nom et nationalité.",
+      "contact": "Données de contact : Adresse e-mail et numéro de téléphone (WhatsApp).",
+      "travel": "Données de voyage : Préférences, dates de voyage et nombre de participants."
+    },
+
+    "use": {
+      "title": "Comment nous utilisons vos informations",
+      "intro": "Nous utilisons les informations pour :",
+      "items": [
+        "Fournir et maintenir notre site web.",
+        "Communiquer avec vous pour planifier votre visite en Égypte.",
+        "Envoyer des confirmations de réservation.",
+        "Améliorer votre expérience sur notre site."
+      ]
+    },
+
+    "security": {
+      "title": "Sécurité et partage des données",
+      "noSharing": "Nous ne vendons ni ne partageons vos données à des tiers à des fins marketing.",
+      "providers": "Les données sont partagées uniquement avec les prestataires nécessaires.",
+      "protection": "Nous appliquons des mesures de sécurité standard."
+    },
+
+    "logs": {
+      "title": "Fichiers journaux",
+      "text": "Moonlight utilise des fichiers journaux pour analyser les visites sur le site."
+    },
+
+    "rights": {
+      "title": "Vos droits",
+      "items": [
+        "Demander une copie de vos données personnelles.",
+        "Demander la correction des informations incorrectes.",
+        "Demander la suppression de vos données après le tour."
+      ]
+    },
+
+    "consent": {
+      "title": "Consentement",
+      "text": "En utilisant notre site, vous acceptez notre politique de confidentialité."
+    }
   }
 }

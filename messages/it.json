@@ -42,5 +42,62 @@
       "title": "Codice di Condotta",
       "text": "Gli ospiti devono rispettare le leggi egiziane e i monumenti storici."
     }
+  },
+  "privacy": {
+    "title": "Informativa sulla Privacy",
+    "description": "Découvrez comment Moonlight collecte, utilise et protège vos informations personnelles lorsque vous demandez des informations ou réservez des visites en Égypte via notre site web.",
+    "keywords": [
+      "termini tour Moonlight",
+      "condizioni prenotazione tour",
+      "politica tour Egitto",
+      "politica cancellazione tour Egitto",
+      "termini viaggio Moonlight"
+    ],
+    "effectiveDate": "Data di entrata in vigore: Marzo 2026",
+    "intro": "Per Moonlight la privacy dei visitatori è una priorità.",
+    "collect": {
+      "title": "Informazioni raccolte",
+      "intro": "Raccogliamo solo i dati forniti volontariamente.",
+      "identification": "Dati identificativi: Nome e nazionalità.",
+      "contact": "Dati di contatto: Email e numero di telefono.",
+      "travel": "Dati di viaggio: Preferenze, date e numero di ospiti."
+    },
+
+    "use": {
+      "title": "Come utilizziamo le informazioni",
+      "intro": "Utilizziamo i dati per:",
+      "items": [
+        "Gestire il sito web.",
+        "Comunicare per organizzare il tour.",
+        "Inviare conferme di prenotazione.",
+        "Migliorare l'esperienza utente."
+      ]
+    },
+
+    "security": {
+      "title": "Sicurezza dei dati",
+      "noSharing": "Non vendiamo né condividiamo dati personali per marketing.",
+      "providers": "I dati sono condivisi solo con fornitori necessari.",
+      "protection": "Adottiamo misure di sicurezza standard."
+    },
+
+    "logs": {
+      "title": "File di log",
+      "text": "Moonlight utilizza file di log per analizzare le visite al sito."
+    },
+
+    "rights": {
+      "title": "Diritti sui dati",
+      "items": [
+        "Richiedere una copia dei dati.",
+        "Richiedere la correzione dei dati.",
+        "Richiedere la cancellazione dopo il tour."
+      ]
+    },
+
+    "consent": {
+      "title": "Consenso",
+      "text": "Utilizzando il sito accetti questa politica."
+    }
   }
 }

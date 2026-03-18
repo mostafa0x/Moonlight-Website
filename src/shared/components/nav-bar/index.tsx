@@ -13,11 +13,11 @@ const LINKS = [
   },
   {
     title: "Contact",
-    link: "/contact-us",
+    link: "/contact",
   },
   {
     title: "Privacy Policy",
-    link: "/privacy-policy",
+    link: "/privacy",
   },
   {
     title: "Terms of use",
