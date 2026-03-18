@@ -139,5 +139,36 @@
       "title": "Why Moonlight?",
       "text": "We believe that great travel is all about the details. We meticulously plan every step of your trip to ensure comfort, safety, and insightful discovery. Whether you are looking for an educational museum tour or a peaceful Nile cruise under the moonlight, we are here to make it happen with professionalism and heart."
     }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "headline": "Reach out to our concierge team to begin planning your bespoke Egyptian adventure.",
+    "description": "Contact Moonlight to start planning your personalized Egyptian tour. Our concierge team is ready to help you organize unforgettable experiences across Cairo, Giza, Alexandria, and the Nile.",
+    "keywords": [
+      "contact Moonlight tours",
+      "Egypt tour booking contact",
+      "private Egypt tours contact",
+      "Cairo tour concierge",
+      "Moonlight Egypt travel contact"
+    ],
+
+    "phone": "Phone",
+    "email": "Email",
+
+    "form": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "emailAddress": "Email address",
+      "message": "Message",
+      "send": "Send message"
+    }
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "login": "Login"
   }
 }

@@ -133,5 +133,36 @@
       "title": "¿Por qué Moonlight?",
       "text": "Creemos que un gran viaje está en los detalles."
     }
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "headline": "Póngase en contacto con nuestro equipo de conserjería para comenzar a planificar su aventura egipcia a medida.",
+    "description": "Contacte con Moonlight para comenzar a planificar su tour personalizado por Egipto.",
+    "keywords": [
+      "contacto tours Egipto",
+      "contactar Moonlight tours",
+      "reserva tours Egipto",
+      "tours privados Egipto",
+      "contacto viajes Egipto"
+    ],
+
+    "phone": "Teléfono",
+    "email": "Correo electrónico",
+
+    "form": {
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "emailAddress": "Dirección de correo electrónico",
+      "message": "Mensaje",
+      "send": "Enviar mensaje"
+    }
+  },
+  "navbar": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Uso",
+    "login": "Iniciar sesión"
   }
 }

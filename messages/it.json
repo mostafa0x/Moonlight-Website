@@ -132,5 +132,36 @@
       "title": "Perché Moonlight?",
       "text": "Crediamo che il vero viaggio sia nei dettagli."
     }
+  },
+  "contact": {
+    "title": "Contattaci",
+    "headline": "Contatta il nostro team di concierge per iniziare a pianificare la tua avventura egiziana su misura.",
+    "description": "Contatta Moonlight per pianificare il tuo tour personalizzato in Egitto.",
+    "keywords": [
+      "contatto tour Egitto",
+      "Moonlight contatti viaggio",
+      "prenotazione tour Egitto",
+      "tour privati Egitto",
+      "viaggio Egitto contatto"
+    ],
+
+    "phone": "Telefono",
+    "email": "Email",
+
+    "form": {
+      "firstName": "Nome",
+      "lastName": "Cognome",
+      "emailAddress": "Indirizzo email",
+      "message": "Messaggio",
+      "send": "Invia messaggio"
+    }
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "Chi Siamo",
+    "contact": "Contatto",
+    "privacy": "Politica sulla Privacy",
+    "terms": "Termini di Utilizzo",
+    "login": "Accedi"
   }
 }

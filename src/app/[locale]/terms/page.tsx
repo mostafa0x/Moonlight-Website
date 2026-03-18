@@ -22,7 +22,7 @@ export async function generateMetadata({
       description,
       type: "website",
       locale: params.locale,
-      siteName: "Moonlight",
+      siteName: process.env.NEXT_PUBLIC_WEBSITE_NAME,
     },
 
     twitter: {

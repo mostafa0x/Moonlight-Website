@@ -8,7 +8,7 @@ function CustomInput({
 }: {
   label: string;
   name: string;
-  type: "text" | "date" | "tel";
+  type: "text" | "date" | "tel" | "email";
   placeholder: string;
 }) {
   return (
