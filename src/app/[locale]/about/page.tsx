@@ -6,6 +6,7 @@ export async function generateMetadata({
 }: {
   params: { locale: string };
 }): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations("about");
 
   const title = t("title");
@@ -20,9 +21,9 @@ export async function generateMetadata({
       title,
       description,
       type: "website",
-      locale: params.locale,
+      locale: locale,
       siteName: process.env.NEXT_PUBLIC_WEBSITE_NAME,
-      url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${params.locale}/about`,
+      url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${locale}/about`,
     },
 
     twitter: {
@@ -32,7 +33,7 @@ export async function generateMetadata({
     },
 
     alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${params.locale}/about`,
+      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${locale}/about`,
       languages: {
         en: "/en/about",
         fr: "/fr/about",
@@ -48,9 +49,11 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page() {
-  const t = await getTranslations("about");
+export default async function Page({ params }: { params: { locale: string } }) {
+  const { locale } = await params;
+  console.log(locale);
 
+  const t = await getTranslations({ locale, namespace: "about" });
   return (
     <div className="flex justify-center items-center w-full h-full pt-20 px-6.25 pb-7.5">
       <div className="flex flex-col h-full px-6.25 py-9 gap-6 scrollbar-custom overflow-y-auto bg-black w-107 md:w-157">

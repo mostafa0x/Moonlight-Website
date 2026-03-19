@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
 import "./globals.css";
-export const dynamic = "force-static";
-export const dynamicParams = false;
 
-export async function generateStaticParams() {
-  return ["en", "fr", "it", "es", "pt"].map((locale) => ({ locale }));
-}
 const cairo = Cairo({
   subsets: ["arabic"],
   weight: ["400", "500", "600", "700"], // 400=Regular, 500=Medium, 600=Semi-Bold, 700=Bold
@@ -26,9 +21,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en" className={`${cairo.variable} scrollbar-hide`}>
-      <body>{children}</body>
-    </html>
-  );
+  return children;
 }

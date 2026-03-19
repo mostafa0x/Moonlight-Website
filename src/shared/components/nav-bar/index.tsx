@@ -3,8 +3,9 @@ import MenuBtn from "@/shared/button/MenuBtn";
 import Link from "next/link";
 import { memo } from "react";
 import { useTranslations } from "next-intl";
+import Avatar from "@/shared/components/avatar";
 
-function NavBar() {
+function NavBar({ userToken = "xx" }: { userToken?: string }) {
   const t = useTranslations("navbar");
 
   const LINKS = [
@@ -13,7 +14,6 @@ function NavBar() {
     { title: t("contact"), link: "/contact" },
     { title: t("privacy"), link: "/privacy" },
     { title: t("terms"), link: "/terms" },
-    { title: t("login"), link: "#" },
   ];
 
   return (
@@ -32,6 +32,19 @@ function NavBar() {
             {link.title}
           </Link>
         ))}
+        {userToken ? (
+          <Link href={"/profile"} className="flex flex-row gap-1 items-center">
+            <Avatar />
+            <span className="text-base text-white font-bold">Alex</span>
+          </Link>
+        ) : (
+          <Link
+            href={"/login"}
+            className="font-bold font-cairo text-base  xl:text-xl text-white hover:text-gray-300 select-none"
+          >
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );

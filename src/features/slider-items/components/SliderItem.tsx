@@ -1,7 +1,7 @@
 "use client";
 
 import { useExitSlider } from "@/features/slider-items/hooks";
-import type { ItemSliderType, LandmarksType } from "@/shared/global";
+import type { LandmarksType } from "@/shared/global";
 import { cn } from "@/shared/lib/utils";
 import Image from "next/image";
 import { memo, useState, useEffect } from "react";
@@ -35,7 +35,7 @@ function SliderItem({
     <div className="relative w-full lg:w-75 xl:w-75 2xl:w-15 h-95.75 md:h-112.5 lg:h-136.25 select-none">
       <div
         className={cn(
-          "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-85 lg:w-[730px] h-full transition-all duration-400 ease-in-out",
+          "absolute left-1/2 top-1/2 -translate-x-[50%] lg:-translate-x-[60%] xl:-translate-x-[70%] -translate-y-1/2 w-[330px] sm:w-[530px] xl:w-[730px] h-full transition-all duration-400 ease-in-out",
           isExiting
             ? "opacity-0 translate-x-full"
             : isVisible
@@ -58,7 +58,6 @@ function SliderItem({
           alt={displayItem.title}
           fill
           priority={isFirstItem}
-          quality={30}
           sizes="(max-width: 768px) 100vw, 730px}"
           onLoad={handleCacheImage}
           className={cn(

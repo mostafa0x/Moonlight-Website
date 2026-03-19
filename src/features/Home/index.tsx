@@ -1,15 +1,19 @@
 "use client";
 
+import dynamic from "next/dynamic";
+import type { HomeDataType } from "@/shared/global";
 import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
 import Page1 from "@/features/home/page1";
-import LandMarks from "@/features/home/land-marks";
-import PackagesPage from "@/features/home/packages-page";
-import { HomeDataType } from "@/shared/global";
-import dynamic from "next/dynamic";
+const LandMarks = dynamic(() => import("@/features/home/land-marks"), {
+  ssr: false,
+});
+const PackagesPage = dynamic(() => import("@/features/home/packages-page"), {
+  ssr: false,
+});
 const FooterPage = dynamic(() => import("@/shared/components/footer"), {
   ssr: false,
 });
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FullPage } from "react-abohook-fullpage";
 
 export default function Home({

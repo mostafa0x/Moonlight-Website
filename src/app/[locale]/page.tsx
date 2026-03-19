@@ -1,10 +1,5 @@
 import Home from "@/features/home";
 import type { HomeDataType } from "@/shared/global";
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
-const BackgroundImage = dynamic(
-  () => import("@/shared/components/background-image/BackgroundImage"),
-);
 
 async function fetchData(lang: string) {
   try {
@@ -70,12 +65,6 @@ export default async function page({
             "Ben ‘Ezra is Egypt’s oldest synagogue. It is famous for its Arabesque-decorated hekhal and the historic discovery of the Cairo Geniza, an 850-year-old treasure of rare documents.",
           imageUrl: "/imgs/packages/cairo/m3bd.webp",
           title: "Ben ‘Ezra Synagogue",
-        },
-        {
-          description:
-            "Known as Abu Serga, this historic Old Cairo church sits atop a Roman fort. It is renowned for its basilica layout and underground cave that sheltered the Holy Family.",
-          imageUrl: "/imgs/packages/cairo/m8ara.webp",
-          title: "Church of Saint Sergius and Bacchus",
         },
       ],
     },

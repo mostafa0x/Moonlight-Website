@@ -6,7 +6,8 @@ export async function generateMetadata({
 }: {
   params: { locale: string };
 }): Promise<Metadata> {
-  const t = await getTranslations("terms");
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "terms" });
 
   const title = t("title");
   const description = t("description");
@@ -21,7 +22,7 @@ export async function generateMetadata({
       title,
       description,
       type: "website",
-      locale: params.locale,
+      locale: locale,
       siteName: process.env.NEXT_PUBLIC_WEBSITE_NAME,
     },
 
@@ -32,7 +33,7 @@ export async function generateMetadata({
     },
 
     alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${params.locale}/terms`,
+      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${locale}/terms`,
       languages: {
         en: "/en/terms",
         fr: "/fr/terms",
