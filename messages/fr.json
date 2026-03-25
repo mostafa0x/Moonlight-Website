@@ -35,7 +35,7 @@
     },
     "insurance": {
       "title": "Assurance Voyage et Santé",
-      "text1": "Nous conseillons vivement agli ospiti di stipulare un'Assicurazione di Viaggio completa per coprire eventi imprevisti.",
+      "text1": "Nous conseillons vivement agli ospiti di stipulare un'Assicurazione di Viaggio completa per coprire eventi imprevistos.",
       "text2": "Moonlight non è responsabile per eventuali lesioni o perdita di proprietà personale durante i tour."
     },
     "conduct": {
@@ -151,6 +151,9 @@
     "contact": "Contact",
     "allRights": "Tous droits réservés.",
     "designedBy": "Conçu par"
+  },
+  "loader": {
+    "unlockingWonders": "Déverrouillage des merveilles antiques..."
   },
   "bookingModal": {
     "header": {

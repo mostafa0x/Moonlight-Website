@@ -152,6 +152,9 @@
     "allRights": "Todos los derechos reservados.",
     "designedBy": "Diseñado por"
   },
+  "loader": {
+    "unlockingWonders": "Descubriendo maravillas antiguas..."
+  },
   "bookingModal": {
     "header": {
       "startingFrom": "a partir de",

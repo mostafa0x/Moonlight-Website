@@ -1,6 +1,9 @@
 "use client";
+import { useTranslations } from "next-intl";
 
 export default function EgyptianLoader() {
+  const t = useTranslations("loader");
+  
   return (
     <div className="flex flex-col items-center justify-center h-full min-h-[400px] w-full bg-black/90 backdrop-blur-md rounded-[20px] overflow-hidden relative select-none">
       {/* Background hieroglyphs - faint golden texture */}
@@ -64,7 +67,7 @@ export default function EgyptianLoader() {
           Moonlight
         </h2>
         <p className="text-[#F2C975]/60 text-sm font-medium tracking-widest mt-1">
-          Unlocking Ancient Wonders...
+          {t("unlockingWonders")}
         </p>
         <div className="flex gap-3 justify-center mt-6">
           {[0, 1, 2].map((i) => (

@@ -41,6 +41,7 @@ function CustomInput({
         className={clsx(
           "bg-[#131313] border w-full h-8 rounded-[5px] px-3.75 py-1.5 text-sm text-[#8B8B8B] font-medium transition-colors focus:outline-none",
           error ? "border-red-500" : "border-[#313131] focus:border-[#F2C975]",
+          type === "date" && "[&::-webkit-calendar-picker-indicator]:invert-[1] [&::-webkit-calendar-picker-indicator]:brightness-200 cursor-pointer"
         )}
         placeholder={placeholder}
         type={type}

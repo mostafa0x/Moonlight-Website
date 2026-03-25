@@ -163,6 +163,9 @@
     "allRights": "All Rights Reserved.",
     "designedBy": "Designed by"
   },
+  "loader": {
+    "unlockingWonders": "Unlocking Ancient Wonders..."
+  },
   "bookingModal": {
     "header": {
       "startingFrom": "starting from",

@@ -152,6 +152,9 @@
     "allRights": "Tutti i diritti riservati.",
     "designedBy": "Progettato da"
   },
+  "loader": {
+    "unlockingWonders": "Svelando meraviglie antiche..."
+  },
   "bookingModal": {
     "header": {
       "startingFrom": "a partire da",
