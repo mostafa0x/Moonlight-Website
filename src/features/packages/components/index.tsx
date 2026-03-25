@@ -21,15 +21,19 @@ function PackageSection({
       <div className="flex flex-col w-full h-full justify-center  gap-11 z-10">
         <PackageSectionHeader title={title} isInView={isInView} />
 
-        <div className="flex  overflow-x-auto snap-x snap-mandatory scroll-smooth lg:overflow-visible">
+        <div
+          className={`flex overflow-x-auto snap-x snap-mandatory scroll-smooth lg:overflow-visible ${
+            packages.length === 1 ? "justify-center" : ""
+          }`}
+        >
           {packages.map((pkg, i) => (
             <Link
               href={"/?tourId=1"}
               prefetch={false}
-              key={i}
-              className={`flex-none w-79.5 snap-start lg:flex-1 pl-3.25 ${
-                isInView && "slide-fade-up blur-none"
-              }`}
+              key={pkg.packageId}
+              className={`flex-none w-79.5 snap-start pl-3.25 ${
+                packages.length > 1 ? "lg:flex-1" : ""
+              } ${isInView && "slide-fade-up blur-none"}`}
               style={{
                 animationDelay: `${i * 0.3}s`,
                 paddingRight: i === packages.length - 1 ? 13 : 0,

@@ -3,13 +3,13 @@ import Image from "next/image";
 import { memo } from "react";
 
 function PackageCard({ pkg }: { pkg: PackageType }) {
-  const { title, coverImageUrl, startingPrice } = pkg;
+  const { packageName, packageImage, startingPrice } = pkg;
 
   return (
     <div className="relative w-full h-[520px] rounded-2xl overflow-hidden select-none cursor-pointer group">
       <Image
-        src={coverImageUrl}
-        alt={title}
+        src={packageImage}
+        alt={packageName}
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
         className="object-cover transition-transform duration-500 ease-out group-hover:scale-130"
@@ -19,7 +19,7 @@ function PackageCard({ pkg }: { pkg: PackageType }) {
 
       <div className="absolute w-full z-6 bottom-0 left-0 pb-[11px] px-[16px]">
         <div>
-          <h1 className="font-semibold text-2xl text-white">{title}</h1>
+          <h1 className="font-semibold text-2xl text-white">{packageName}</h1>
         </div>
         <div className="flex items-center justify-between">
           <p className="font-medium text-[32px] text-[#F2C975]">

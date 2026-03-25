@@ -4,7 +4,7 @@ import type { HomeDataType } from "@/shared/global";
 async function fetchData(lang: string) {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/home?lang=${lang}`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}/packages?lang=${lang}`,
     );
     return res.json();
   } catch (err) {
@@ -26,6 +26,7 @@ export default async function page({
   const dataAll: HomeDataType[] = [
     {
       name: "Giza",
+      governorate: "giza",
       page: 1,
       packages: [],
       landmarks: [
@@ -51,6 +52,7 @@ export default async function page({
     },
     {
       name: "Cairo",
+      governorate: "cairo",
       page: 3,
       packages: [],
       landmarks: [
@@ -70,6 +72,7 @@ export default async function page({
     },
     {
       name: "Alex",
+      governorate: "alexandria",
       page: 5,
       packages: [],
       landmarks: [
@@ -90,6 +93,7 @@ export default async function page({
     {
       name: "Nile Cruise",
       page: 7,
+      governorate: "nile",
       packages: [],
       landmarks: [
         {
@@ -109,6 +113,16 @@ export default async function page({
   ];
 
   const { data = [] } = await fetchData(lang);
+  const updatedData = dataAll.map((section) => {
+    const filteredPackages = data.filter((pkg: any) =>
+      pkg.governorate.toLowerCase().includes(section.governorate.toLowerCase()),
+    );
+
+    return {
+      ...section,
+      packages: filteredPackages,
+    };
+  });
 
   return (
     <div
@@ -117,7 +131,7 @@ export default async function page({
         flexDirection: "column",
       }}
     >
-      <Home data={dataAll} tourId={tourId} />
+      <Home data={updatedData} tourId={tourId} />
     </div>
   );
 }

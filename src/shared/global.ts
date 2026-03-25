@@ -10,15 +10,17 @@ export type LandmarksType = {
   imageUrl: string;
 };
 export type PackageType = {
-  id: string;
-  title: string;
-  coverImageUrl: string;
+  packageId: string;
+  packageName: string;
+  packageImage: string;
   startingPrice: number;
+  governorate: string;
   currency: string;
   availabilityStatus: string;
 };
 export interface HomeDataType {
   name: string;
+  governorate: string;
   page: number;
   landmarks: LandmarksType[];
   packages: PackageType[];
