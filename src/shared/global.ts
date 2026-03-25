@@ -14,6 +14,21 @@ export type PackageType = {
   packageName: string;
   packageImage: string;
   startingPrice: number;
+
+  governorate: string;
+  currency: string;
+  availabilityStatus: string;
+};
+export type PackageDetailsType = {
+  packageId: string;
+  packageName: string;
+  packageImage: string;
+  startingPrice: number;
+    description:string
+  destinations:string[]
+  included:string[]
+  excluded:string[]
+  customizations:string[]
   governorate: string;
   currency: string;
   availabilityStatus: string;

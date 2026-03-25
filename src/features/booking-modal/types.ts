@@ -1,6 +1,7 @@
 export interface BookingContextProps {
   isOpen: boolean;
   tourId: string;
+  lang:string
   step: number;
   nextStep: () => void;
   prevStep: () => void;

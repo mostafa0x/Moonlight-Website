@@ -17,22 +17,22 @@ function Included_Excluded({
         {...events}
         className="h-full overflow-y-auto scrollbar-custom pr-1.5 cursor-grab active:cursor-grabbing "
       >
-        <div className="flex flex-row justify-between px-5 gap-2.5 select-none">
-          <div className="flex flex-row gap-1.25  mb-4.75 items-center">
+        <div className="grid grid-cols-2 px-5 gap-4 select-none">
+          <div className="flex flex-row gap-1.25 mb-4.75 items-center">
             <img src={"/icons/check.svg"} alt="check icon" />
-            <h2 className="text-base text-[#00D26A]  font-medium">Included</h2>
+            <h2 className="text-base text-[#00D26A] font-medium">Included</h2>
           </div>
 
-          <div className="flex flex-row gap-1.25 mb-4.75">
+          <div className="flex flex-row gap-1.25 mb-4.75 items-center">
             <img src={"/icons/minus.svg"} alt="minus icon" />
             <h2 className="text-base text-[#FF5454] font-medium">Excluded</h2>
           </div>
         </div>
 
-        <div className="flex justify-between  gap-2.5">
+        <div className="grid grid-cols-2 gap-4 px-5">
           <div className="space-y-2.5">
             {included.length <= 0 && (
-              <span className="text-gray-500 mx-7.5 text-sm text-center">
+              <span className="text-gray-500 text-sm">
                 Empty
               </span>
             )}
@@ -42,7 +42,7 @@ function Included_Excluded({
           </div>
           <div className="space-y-2.5">
             {excluded.length <= 0 && (
-              <span className="text-gray-500  mx-7.5 text-sm text-center">
+              <span className="text-gray-500 text-sm">
                 Empty
               </span>
             )}

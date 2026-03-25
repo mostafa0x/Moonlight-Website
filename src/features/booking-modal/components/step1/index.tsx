@@ -4,49 +4,26 @@ import Included_Excluded from "@/features/booking-modal/components/step1/Include
 import Overview from "@/features/booking-modal/components/step1/Overview";
 import { memo } from "react";
 
-function Step1() {
+function Step1({included,excluded,destinations,description}:{
+  included:string[]
+  excluded:string[]
+  destinations:string[]
+  description:string
+}) {
   return (
     <div className="flex flex-col w-full ">
       <div className="mb-3">
         <Overview
-          description="Experience the majesty of the ancient world with our exclusive VIP tour
-        Experience the majesty of the ancient world with our exclusive VIP tour"
+          description={description}
         />
       </div>
       <div className="mb-5">
         <Destinations
-          destinations={[
-            "Giza",
-            "Cairo",
-            "Alexandria",
-            "Luxor",
-            "Aswan",
-            "Sharm El Sheikh",
-            "Hurghada",
-            "Marsa Alam",
-            "Dahab",
-            "Nuweiba",
-            "Taba",
-            "Siwa Oasis",
-            "Fayoum",
-            "Ain Sokhna",
-            "Port Said",
-            "Ismailia",
-            "Suez",
-            "El Gouna",
-            "Safaga",
-            "El Quseir",
-            "Abu Simbel",
-            "Kom Ombo",
-            "Edfu",
-            "Minya",
-            "Sohag",
-            "Qena",
-          ]}
+          destinations={destinations}
         />
       </div>
       <div>
-        <Included_Excluded included={[]} excluded={[]} />
+        <Included_Excluded included={included} excluded={excluded} />
       </div>
       <div className=" absolute bottom-4.5 right-6.75 md:right-9">
         <div className="flex justify-end pt-4.25">

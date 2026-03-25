@@ -2,7 +2,7 @@
 
 export default function EgyptianLoader() {
   return (
-    <div className="flex flex-col items-center justify-center h-full min-h-[400px] w-full bg-black/90 backdrop-blur-md rounded-[20px] overflow-hidden relative">
+    <div className="flex flex-col items-center justify-center h-full min-h-[400px] w-full bg-black/90 backdrop-blur-md rounded-[20px] overflow-hidden relative select-none">
       {/* Background hieroglyphs - faint golden texture */}
       <div className="absolute inset-0 opacity-[0.03] select-none pointer-events-none grid grid-cols-4 gap-4 p-8 overflow-hidden">
         {Array.from({ length: 16 }).map((_, i) => (

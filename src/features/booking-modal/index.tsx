@@ -21,7 +21,7 @@ export default function BookingModal() {
       destinations: "none",
     },
   });
-  const { step, tourId } = useBookingContext();
+  const { step, tourId  ,lang} = useBookingContext();
   
   const { data: pkg, isLoading } = useGetPackage(tourId);
 
@@ -53,7 +53,7 @@ export default function BookingModal() {
               )}
               {step === 1 && (
                 <div className="flex px-2.5 lg:px-5.25 py-4 flex-1 overflow-y-auto scrollbar-hide">
-                  <Step1 />
+                  <Step1 description={pkg.description} destinations={pkg.destinations} included={pkg.included} excluded={pkg.excluded}/>
                 </div>
               )}
               {step === 2 && (

@@ -1,10 +1,12 @@
 "use client";
 import type { BookingContextProps } from "@/features/booking-modal/types";
+import { useParams } from "next/navigation";
 import { createContext, useCallback, useContext, useState } from "react";
 
 const BookingContext = createContext<BookingContextProps>({
   isOpen: false,
   tourId: "",
+  lang:"en",
   step: 1,
   nextStep: () => {},
   prevStep: () => {},
@@ -16,6 +18,8 @@ export default function BookingContextProvider({
 }: {
   children: React.ReactNode;
 }) {
+  const {langParam}= useParams()
+  const lang=langParam as string
   // const query = useSearchParams();
   // const tourId = query.get("tourId");
   const [step, setStep] = useState(1);
@@ -36,7 +40,7 @@ export default function BookingContextProvider({
 
   return (
     <BookingContext.Provider
-      value={{ isOpen, tourId, step, nextStep, prevStep, handleSetTourId }}
+      value={{ isOpen,lang, tourId, step, nextStep, prevStep, handleSetTourId }}
     >
       {children}
     </BookingContext.Provider>

@@ -2,13 +2,16 @@ import { NextResponse } from "next/server";
 
 export async function GET(
   request: Request,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ id: string  }> }
 ) {
   const { id } = await params;
+  const { searchParams } = new URL(request.url);
+  const locale = searchParams.get("locale") || "en";
+  
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
   try {
-    const response = await fetch(`${baseUrl}/packages/${id}`, {
+    const response = await fetch(`${baseUrl}/packages/${id}?lang=${locale}`, {
       cache: "no-store",
     });
 
