@@ -14,17 +14,27 @@ import EgyptianLoader from "@/shared/components/EgyptianLoader";
 import { useEffect } from "react";
 
 export default function BookingModal() {
+   const { step, tourId, lang, setTotalSteps } = useBookingContext();
+  const { data: pkg, isLoading } = useGetPackage(tourId);
   const methods = useForm({
     defaultValues: {
-      adults: 1,
-      children: 0,
-      tourGuideLanguage: "English",
-      totalPrice: 0,
-      destinations: "none",
+      adultsNumber: 12,
+      kidsNumber: 0,
+      tourguideLanguage: "en",
+      totalPrice: pkg?.startingPrice,
+      selectedDestinations: [] as string[],
+      tourDate: "",
+      customerName: "",
+      customerPhone: "",
+      nationality: "",
+      pickupZoneId: "",
+      address: "",
+      promoCode: "",
+      paymentPreference: "deposit",
     },
   });
-  const { step, tourId, lang, setTotalSteps } = useBookingContext();
-  const { data: pkg, isLoading } = useGetPackage(tourId);
+ 
+  const { setValue, control, watch } = methods;
 
   const hasCustomizations = pkg?.customizations && pkg.customizations.length > 0;
 
@@ -33,6 +43,70 @@ export default function BookingModal() {
       setTotalSteps(hasCustomizations ? 5 : 4);
     }
   }, [hasCustomizations, pkg, setTotalSteps]);
+
+  const watchedFields = watch([
+    "adultsNumber",
+    "kidsNumber",
+    "tourguideLanguage",
+    "pickupZoneId",
+    "promoCode",
+    "paymentPreference",
+    ...(pkg?.customizations?.map((c) => c.groupId) || []),
+  ] as any);
+
+  useEffect(() => {
+    if (!pkg) return;
+
+    const calculatePrice = async () => {
+      const values: any = methods.getValues();
+      const selectedDestinations: string[] = [];
+
+      pkg.customizations?.forEach((group) => {
+        const groupValue = values[group.groupId];
+        if (Array.isArray(groupValue)) {
+          selectedDestinations.push(...groupValue);
+        } else if (groupValue) {
+          selectedDestinations.push(groupValue);
+        }
+      });
+
+      const body = {
+        packageId: pkg.packageId,
+        adultsNumber: values.adultsNumber,
+        kidsNumber: values.kidsNumber,
+        tourguideLanguage: values.tourguideLanguage,
+        selectedDestinations,
+        pickupZoneId: values.pickupZoneId || "",
+        promoCode: values.promoCode || "",
+        paymentPreference: values.paymentPreference || "deposit",
+      };
+
+      console.log("Calculating price with body:", body);
+
+      try {
+        const response = await fetch("/api/bookings/calculate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        });
+        if (response.ok) {
+          const result = await response.json();
+          
+          setValue("totalPrice", result.data.totalAmount || 0);
+          setValue("selectedDestinations", selectedDestinations);
+        }
+      } catch (error) {
+        console.error("Calculation error:", error);
+      }
+    };
+
+    calculatePrice();
+  }, [
+    ...watchedFields,
+    pkg,
+    methods,
+    setValue,
+  ]);
 
   if (!tourId) return null;
 

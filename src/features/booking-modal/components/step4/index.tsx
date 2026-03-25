@@ -8,19 +8,19 @@ export default function Step4() {
       <div className="grid grid-cols-1 md:grid-cols-2 space-x-3 space-y-2.75 mt-3">
         <CustomInput
           label="Full Name"
-          name="name"
+          name="customerName"
           type="text"
           placeholder="enter your name..."
         />
         <CustomInput
           label="Phone Number"
-          name="phone"
+          name="customerPhone"
           type="tel"
           placeholder="enter your phone number..."
         />
         <CustomInput
           label="Tour Date"
-          name="name"
+          name="tourDate"
           type="date"
           placeholder="date tour"
         />
@@ -33,9 +33,9 @@ export default function Step4() {
       </div>
       <div className="mt-4">
         <CustomTextarea
-          name={"note"}
-          label={"Notes"}
-          placeholder={"enter notes"}
+          name={"address"}
+          label={"Address (Hotel / Local Address)"}
+          placeholder={"enter your address..."}
         />
       </div>
     </div>

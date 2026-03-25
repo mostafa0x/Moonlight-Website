@@ -22,7 +22,7 @@ export default function Step2() {
             <TourLanguageSelector />
           </div>
             <PickLocation
-        name="pickup or pick off"
+        name="pickupZoneId"
         label="Pickup Location"
         options={["one", "two", "three"]}
       />

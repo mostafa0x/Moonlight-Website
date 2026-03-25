@@ -1,3 +1,4 @@
+import { useFormContext } from "react-hook-form";
 import { memo } from "react";
 
 function PickLocation({
@@ -9,6 +10,7 @@ function PickLocation({
   label: string;
   options: string[];
 }) {
+  const { register } = useFormContext();
   return (
     <div className="space-y-2">
       <label
@@ -20,6 +22,7 @@ function PickLocation({
       <select
         aria-label={`${name} select`}
         id={name}
+        {...register(name)}
         className="w-full h-[60px]  bg-[#131313] border border-[#313131] rounded-[15px] px-3.5"
         defaultValue={options[0]}
       >

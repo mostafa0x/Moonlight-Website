@@ -4,17 +4,17 @@ import useClickOutside from "@/shared/hooks/useClickOutside";
 import { memo, useState } from "react";
 import { useController, useFormContext } from "react-hook-form";
 
-const options = ["English", "Spanish", "French", "Italian"];
+const options = ["en", "es", "fr", "it"];
 
 function TourLanguageSelector() {
   const [open, setOpen] = useState(false);
-  const name = "tourGuideLanguage";
+  const name = "tourguideLanguage";
   const { containerRef } = useClickOutside(() => setOpen(false));
 
   const { control } = useFormContext();
   const {
-    field: { value = "English", onChange },
-  } = useController({ name, control, defaultValue: "English" });
+    field: { value = "en", onChange },
+  } = useController({ name, control, defaultValue: "en" });
 
   return (
     <div ref={containerRef} className="relative w-full select-none">

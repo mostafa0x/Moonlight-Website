@@ -6,11 +6,11 @@ import { useController, useFormContext } from "react-hook-form";
 interface PeopleCounterProps {
   label: string;
   hint: string;
-  name: "adults" | "children";
+  name: "adultsNumber" | "kidsNumber";
 }
 
 function PeopleCounterItem({ label, hint, name }: PeopleCounterProps) {
-  const isAdults = name === "adults";
+  const isAdults = name === "adultsNumber";
   const { control, setValue } = useFormContext();
   const minLimit = isAdults ? 1 : 0;
 
