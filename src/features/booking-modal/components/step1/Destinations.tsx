@@ -13,10 +13,7 @@ function Destinations({ destinations }: { destinations: string[] }) {
         ref={ref}
         {...events}
         className={clsx(
-          "grid gap-3.5 scrollbar-custom overflow-x-auto snap-x snap-mandatory lg:snap-none pb-3.75",
-          destinations.length > 6
-            ? "grid-rows-2 grid-flow-col cursor-grab active:cursor-grabbing scroll-smooth"
-            : "grid-cols-4",
+          "grid grid-rows-1 grid-flow-col auto-cols-max gap-3.5 scrollbar-custom overflow-x-auto pb-3.75 cursor-grab active:cursor-grabbing scroll-smooth",
         )}
       >
         {destinations.map((item) => (

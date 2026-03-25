@@ -20,10 +20,10 @@ function FooterModal({ step }: { step: number }) {
       <div
         className={clsx(
           "flex md:flex-row items-center gap-4",
-          step === 4 && "flex-col-reverse",
+          step === 5 && "flex-col-reverse",
         )}
       >
-        {step === 4 ? (
+        {step === 5 ? (
           <div className="flex flex-row gap-1.5">
             <img
               src={"/icons/visa.webp"}
@@ -51,7 +51,7 @@ function FooterModal({ step }: { step: number }) {
             </span>
           </div>
         )}
-        {step === 4 ? (
+        {step === 5 ? (
           <ConfirmBooking callback={() => {}} />
         ) : (
           <NextStepBtn nextStep={nextStep} />

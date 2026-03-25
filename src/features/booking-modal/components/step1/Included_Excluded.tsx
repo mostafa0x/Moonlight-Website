@@ -11,7 +11,7 @@ function Included_Excluded({
 }) {
   const { ref, events } = useDragScroll("Y");
   return (
-    <div className="w-full h-75 md:h-85 xl:h-70 bg-[#131313] border border-[#313131] p-2.5 rounded-[20px]">
+    <div className="w-full h-95 sm:h-95 md:h-95 xl:h-80 bg-[#131313] border border-[#313131] p-2.5 rounded-[20px]">
       <div
         ref={ref}
         {...events}

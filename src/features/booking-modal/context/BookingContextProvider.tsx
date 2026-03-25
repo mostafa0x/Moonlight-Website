@@ -6,11 +6,13 @@ import { createContext, useCallback, useContext, useState } from "react";
 const BookingContext = createContext<BookingContextProps>({
   isOpen: false,
   tourId: "",
-  lang:"en",
+  lang: "en",
   step: 1,
+  totalSteps: 5,
   nextStep: () => {},
   prevStep: () => {},
   handleSetTourId: () => {},
+  setTotalSteps: () => {},
 });
 
 export default function BookingContextProvider({
@@ -18,17 +20,16 @@ export default function BookingContextProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const {langParam}= useParams()
-  const lang=langParam as string
-  // const query = useSearchParams();
-  // const tourId = query.get("tourId");
+  const { langParam } = useParams();
+  const lang = langParam as string;
   const [step, setStep] = useState(1);
+  const [totalSteps, setTotalSteps] = useState(5);
 
   const [tourId, setTourId] = useState("");
   const isOpen = !!tourId;
   const nextStep = useCallback(() => {
-    setStep((s) => (s < 5 ? s + 1 : 4));
-  }, []);
+    setStep((s) => (s < totalSteps ? s + 1 : totalSteps));
+  }, [totalSteps]);
 
   const prevStep = useCallback(() => {
     setStep((s) => (s !== 1 ? s - 1 : 1));
@@ -36,11 +37,22 @@ export default function BookingContextProvider({
 
   const handleSetTourId = useCallback((tour: string) => {
     setTourId(tour);
+    setStep(1); // reset step when tour changes
   }, []);
 
   return (
     <BookingContext.Provider
-      value={{ isOpen,lang, tourId, step, nextStep, prevStep, handleSetTourId }}
+      value={{
+        isOpen,
+        lang,
+        tourId,
+        step,
+        totalSteps,
+        nextStep,
+        prevStep,
+        handleSetTourId,
+        setTotalSteps,
+      }}
     >
       {children}
     </BookingContext.Provider>

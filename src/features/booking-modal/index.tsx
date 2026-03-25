@@ -8,8 +8,10 @@ import { FormProvider, useForm } from "react-hook-form";
 import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
 import Step3 from "@/features/booking-modal/components/step3";
 import Step4 from "@/features/booking-modal/components/step4";
+import Step5 from "@/features/booking-modal/components/step5";
 import { useGetPackage } from "@/features/booking-modal/hooks";
 import EgyptianLoader from "@/shared/components/EgyptianLoader";
+import { useEffect } from "react";
 
 export default function BookingModal() {
   const methods = useForm({
@@ -21,9 +23,16 @@ export default function BookingModal() {
       destinations: "none",
     },
   });
-  const { step, tourId  ,lang} = useBookingContext();
-  
+  const { step, tourId, lang, setTotalSteps } = useBookingContext();
   const { data: pkg, isLoading } = useGetPackage(tourId);
+
+  const hasCustomizations = pkg?.customizations && pkg.customizations.length > 0;
+
+  useEffect(() => {
+    if (pkg) {
+      setTotalSteps(hasCustomizations ? 5 : 4);
+    }
+  }, [hasCustomizations, pkg, setTotalSteps]);
 
   if (!tourId) return null;
 
@@ -63,12 +72,21 @@ export default function BookingModal() {
               )}
               {step === 3 && (
                 <div className="px-3.5 lg:px-14.25 py-4 flex-1 overflow-y-auto scrollbar-hide">
-                  <Step3 />
+                  {hasCustomizations ? (
+                     <Step3 customizations={pkg.customizations} />
+                  ) : (
+                    <Step4 />
+                  )}
                 </div>
               )}
               {step === 4 && (
                 <div className="px-3.5 lg:px-14.25 py-4 flex-1 overflow-y-auto scrollbar-hide">
-                  <Step4 />
+                  {hasCustomizations ? <Step4 /> : <Step5 />}
+                </div>
+              )}
+              {step === 5 && hasCustomizations && (
+                <div className="px-3.5 lg:px-14.25 py-4 flex-1 overflow-y-auto scrollbar-hide">
+                  <Step5 />
                 </div>
               )}
               {step !== 1 && (

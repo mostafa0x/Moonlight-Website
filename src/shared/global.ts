@@ -24,11 +24,19 @@ export type PackageDetailsType = {
   packageName: string;
   packageImage: string;
   startingPrice: number;
-    description:string
-  destinations:string[]
-  included:string[]
-  excluded:string[]
-  customizations:string[]
+  description: string;
+  destinations: string[];
+  included: string[];
+  excluded: string[];
+  customizations: {
+    title: string;
+    groupId: string;
+    options: {
+      id: string;
+      name: string;
+    }[];
+    maxSelect: number;
+  }[];
   governorate: string;
   currency: string;
   availabilityStatus: string;

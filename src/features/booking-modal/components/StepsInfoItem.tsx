@@ -1,7 +1,9 @@
+import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
 import clsx from "clsx";
 import { memo } from "react";
 
 function StepsInfoItem({ id, step }: { id: number; step: number }) {
+  const { totalSteps } = useBookingContext();
   const isActive = step > id;
   return (
     <div className="flex flex-row  items-center">
@@ -17,10 +19,10 @@ function StepsInfoItem({ id, step }: { id: number; step: number }) {
           <img src={"/icons/check-fill.svg"} alt="check icon" />
         )}
       </div>
-      {id < 4 && (
+      {id < totalSteps && (
         <div
           className={clsx(
-            "bg-[#F2C975] w-22.5 sm:w-34 outline-1",
+            "bg-[#F2C975] w-15 sm:w-26 outline-1",
             isActive ? "outline-[#F2C975]" : "outline-[#343434]",
           )}
         />

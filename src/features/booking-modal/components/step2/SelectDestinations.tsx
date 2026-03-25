@@ -1,16 +1,34 @@
 import SelectDestinationsItem from "@/features/booking-modal/components/step2/SelectDestinationsItem";
+import type { PackageDetailsType } from "@/shared/global";
 import { memo } from "react";
 
-function SelectDestinations() {
+function SelectDestinations({
+  customizations,
+}: {
+  customizations: PackageDetailsType["customizations"];
+}) {
+  if (!customizations || customizations.length === 0) return null;
+
   return (
-    <div className="mb-6.25 md:mb-1.25">
-      <h2 className="text-base text-[#F2C975] font-medium">
-        Select Destinations
-      </h2>
-      <div className="flex flex-col md:flex-row justify-between md:items-center gap-2.5 my-1.25 ">
-        <SelectDestinationsItem label="Grand Egyptian Museum" />
-        <SelectDestinationsItem label="Museum or Civilization Museum" />
-      </div>
+    <div className="space-y-4">
+      {customizations.map((group) => (
+        <div key={group.groupId} className="space-y-2">
+          <h2 className="text-base text-[#F2C975] font-medium">
+            {group.title}
+          </h2>
+          <div className=" flex flex-wrap  gap-2.5">
+            {group.options.map((option) => (
+              <SelectDestinationsItem
+                key={option.id}
+                label={option.name}
+                groupId={group.groupId}
+                optionId={option.id}
+                maxSelect={group.maxSelect}
+              />
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
