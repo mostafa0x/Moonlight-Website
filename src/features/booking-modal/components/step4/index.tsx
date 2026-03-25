@@ -31,13 +31,13 @@ export default function Step4() {
           placeholder="enter your nationality..."
         />
       </div>
-      <div className="mt-4">
+      {/* <div className="mt-4">
         <CustomTextarea
           name={"address"}
           label={"Address (Hotel / Local Address)"}
           placeholder={"enter your address..."}
         />
-      </div>
+      </div> */}
     </div>
   );
 }

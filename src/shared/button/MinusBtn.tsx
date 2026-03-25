@@ -2,12 +2,23 @@
 import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
 import { memo } from "react";
 
-function MinusBtn({ callback }: { callback: () => void }) {
+function MinusBtn({
+  callback,
+  disabled,
+}: {
+  callback: () => void;
+  disabled?: boolean;
+}) {
   return (
     <button
       onClick={callback}
+      disabled={disabled}
       aria-label="minus button"
-      className="flex flex-row justify-center items-center bg-[#262626] disabled:cursor-not-allowed disabled:opacity-50 hover:bg-[#747171]  w-[26px] h-[26px] rounded-full select-none cursor-pointer"
+      className={`flex flex-row justify-center items-center w-[26px] h-[26px] rounded-full select-none transition-colors ${
+        disabled
+          ? "bg-[#1f1f1f] text-[#4d4d4d] cursor-not-allowed"
+          : "bg-[#262626] hover:bg-[#747171] text-white cursor-pointer"
+      }`}
     >
       -
     </button>

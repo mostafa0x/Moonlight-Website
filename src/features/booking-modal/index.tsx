@@ -27,10 +27,10 @@ export default function BookingModal() {
       customerName: "",
       customerPhone: "",
       nationality: "",
-      pickupZoneId: "",
+      pickupLocation: "Giza",
       address: "",
       promoCode: "",
-      paymentPreference: "deposit",
+      paymentPreference: "full",
     },
   });
  
@@ -43,16 +43,6 @@ export default function BookingModal() {
       setTotalSteps(hasCustomizations ? 5 : 4);
     }
   }, [hasCustomizations, pkg, setTotalSteps]);
-
-  const watchedFields = watch([
-    "adultsNumber",
-    "kidsNumber",
-    "tourguideLanguage",
-    "pickupZoneId",
-    "promoCode",
-    "paymentPreference",
-    ...(pkg?.customizations?.map((c) => c.groupId) || []),
-  ] as any);
 
   useEffect(() => {
     if (!pkg) return;
@@ -76,13 +66,11 @@ export default function BookingModal() {
         kidsNumber: values.kidsNumber,
         tourguideLanguage: values.tourguideLanguage,
         selectedDestinations,
-        pickupZoneId: values.pickupZoneId || "",
+        pickupLocation: values.pickupLocation || "",
         promoCode: values.promoCode || "",
-        paymentPreference: values.paymentPreference || "deposit",
+        paymentPreference: values.paymentPreference || "full",
       };
-
-      console.log("Calculating price with body:", body);
-
+   console.log("Calculating price with body:", body);
       try {
         const response = await fetch("/api/bookings/calculate", {
           method: "POST",
@@ -91,7 +79,6 @@ export default function BookingModal() {
         });
         if (response.ok) {
           const result = await response.json();
-          
           setValue("totalPrice", result.data.totalAmount || 0);
           setValue("selectedDestinations", selectedDestinations);
         }
@@ -100,13 +87,28 @@ export default function BookingModal() {
       }
     };
 
+    // Initial calculation
     calculatePrice();
-  }, [
-    ...watchedFields,
-    pkg,
-    methods,
-    setValue,
-  ]);
+
+    // Subscribe to changes
+    const subscription = methods.watch((value, { name }) => {
+      const triggerFields = [
+        "adultsNumber",
+        "kidsNumber",
+        "tourguideLanguage",
+        "pickupLocation",
+        "promoCode",
+        "paymentPreference",
+        ...(pkg.customizations?.map((c) => c.groupId) || []),
+      ];
+
+      if (name && triggerFields.includes(name)) {
+        calculatePrice();
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, [pkg, methods, setValue]);
 
   if (!tourId) return null;
 

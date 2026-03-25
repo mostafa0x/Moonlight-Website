@@ -1,7 +1,7 @@
 import PeopleCounter from "@/features/booking-modal/components/step2/PeopleCounter";
 import SelectDestinations from "@/features/booking-modal/components/step2/SelectDestinations";
 import TourLanguageSelector from "@/features/booking-modal/components/step2/TourLanguageSelector";
-import PickLocation from "@/features/booking-modal/components/step3/PickLocation";
+import PickLocation from "@/features/booking-modal/components/step2/PickLocation";
 import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
 
 export default function Step2() {
@@ -22,9 +22,9 @@ export default function Step2() {
             <TourLanguageSelector />
           </div>
             <PickLocation
-        name="pickupZoneId"
+        name="pickupLocation"
         label="Pickup Location"
-        options={["one", "two", "three"]}
+        options={["Giza", "Cairo", "Luxor"]}
       />
         </div>
       </div>

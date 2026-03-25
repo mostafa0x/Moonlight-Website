@@ -1,5 +1,5 @@
 import SelectDestinations from "@/features/booking-modal/components/step2/SelectDestinations";
-import PickLocation from "@/features/booking-modal/components/step3/PickLocation";
+import PickLocation from "@/features/booking-modal/components/step2/PickLocation";
 import type { PackageDetailsType } from "@/shared/global";
 import React from "react";
 
