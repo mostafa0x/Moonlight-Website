@@ -28,7 +28,7 @@ function PackageSection({
         >
           {packages.map((pkg, i) => (
             <Link
-              href={"/?tourId=1"}
+              href={`/?tourId=${pkg.packageId}`}
               prefetch={false}
               key={pkg.packageId}
               className={`flex-none w-79.5 snap-start pl-3.25 ${

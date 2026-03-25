@@ -4,6 +4,7 @@ import { createContext, useCallback, useContext, useState } from "react";
 
 const BookingContext = createContext<BookingContextProps>({
   isOpen: false,
+  tourId: "",
   step: 1,
   nextStep: () => {},
   prevStep: () => {},
@@ -35,7 +36,7 @@ export default function BookingContextProvider({
 
   return (
     <BookingContext.Provider
-      value={{ isOpen, step, nextStep, prevStep, handleSetTourId }}
+      value={{ isOpen, tourId, step, nextStep, prevStep, handleSetTourId }}
     >
       {children}
     </BookingContext.Provider>
