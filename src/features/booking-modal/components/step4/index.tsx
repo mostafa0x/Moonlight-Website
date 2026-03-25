@@ -5,7 +5,7 @@ export default function Step4() {
   return (
     <div>
       <h1 className="text-base text-[#F2C975] font-medium">Contact Details</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 space-x-3 space-y-2.75 mt-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] space-x-3 space-y-2.75 mt-3">
         <CustomInput
           label="Full Name"
           name="customerName"
@@ -31,13 +31,13 @@ export default function Step4() {
           placeholder="enter your nationality..."
         />
       </div>
-      {/* <div className="mt-4">
+      <div className="mt-4">
         <CustomTextarea
           name={"address"}
           label={"Address (Hotel / Local Address)"}
           placeholder={"enter your address..."}
         />
-      </div> */}
+      </div>
     </div>
   );
 }

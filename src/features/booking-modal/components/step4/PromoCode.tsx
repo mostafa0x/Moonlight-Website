@@ -1,6 +1,8 @@
+import { useFormContext } from "react-hook-form";
 import { memo } from "react";
 
 function PromoCode() {
+  const { register } = useFormContext();
   return (
     <div className=" space-y-5.5">
       <h2 className="text-base text-[#F2C975] font-medium">Promo Code</h2>
@@ -8,7 +10,8 @@ function PromoCode() {
         <input
           placeholder="ENTER CODE"
           type="text"
-          className="bg-[#131313] border border-[#313131] rounded-[5px] text-[12px] text-[#8B8B8Bpx] px-3.75 py-1.5 w-full"
+          {...register("promoCode")}
+          className="bg-[#131313] border border-[#313131] rounded-[5px] text-[12px] text-[#8B8B8Bpx] px-3.75 py-1.5 w-full uppercase"
         />
         {/* <button
           aria-label="apply button"

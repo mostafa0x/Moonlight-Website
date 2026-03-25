@@ -1,14 +1,36 @@
-import BackBtn from "@/features/booking-modal/components/BackBtn";
-import ConfirmBooking from "@/features/booking-modal/components/ConfirmBooking";
-import NextStepBtn from "@/features/booking-modal/components/NextStepBtn";
+import BackBtn from "./BackBtn";
+import ConfirmBooking from "./ConfirmBooking";
+import NextStepBtn from "./NextStepBtn";
 import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
+import { useGetPackage } from "@/features/booking-modal/hooks";
 import clsx from "clsx";
 import { memo } from "react";
 import { useController, useFormContext } from "react-hook-form";
 
 function FooterModal({ step }: { step: number }) {
-  const { nextStep, prevStep } = useBookingContext();
-  const { control } = useFormContext();
+  const { nextStep, prevStep, tourId } = useBookingContext();
+  const { data: pkg } = useGetPackage(tourId);
+  const { control, trigger } = useFormContext();
+
+  const handleNext = async () => {
+    const hasCustomizations =
+      pkg?.customizations && pkg.customizations.length > 0;
+    const isContactStep = hasCustomizations ? step === 4 : step === 3;
+
+    if (isContactStep) {
+      const isValid = await trigger([
+        "customerName",
+        "customerPhone",
+        "tourDate",
+        "nationality",
+        "address",
+      ]);
+      if (isValid) nextStep();
+    } else {
+      nextStep();
+    }
+  };
+
   const name = "totalPrice";
   const {
     field: { value = 0 },
@@ -54,7 +76,7 @@ function FooterModal({ step }: { step: number }) {
         {step === 5 ? (
           <ConfirmBooking callback={() => {}} />
         ) : (
-          <NextStepBtn nextStep={nextStep} />
+          <NextStepBtn nextStep={handleNext} />
         )}
       </div>
     </div>

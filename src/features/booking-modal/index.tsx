@@ -13,15 +13,21 @@ import { useGetPackage } from "@/features/booking-modal/hooks";
 import EgyptianLoader from "@/shared/components/EgyptianLoader";
 import { useEffect } from "react";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { bookingSchema } from "./schema";
+
 export default function BookingModal() {
-   const { step, tourId, lang, setTotalSteps } = useBookingContext();
+  const { step, tourId, lang, setTotalSteps } = useBookingContext();
   const { data: pkg, isLoading } = useGetPackage(tourId);
+
   const methods = useForm({
+    resolver: zodResolver(bookingSchema),
+    mode: "onChange",
     defaultValues: {
-      adultsNumber: 12,
+      adultsNumber: 1,
       kidsNumber: 0,
       tourguideLanguage: "en",
-      totalPrice: pkg?.startingPrice,
+      totalPrice: pkg?.startingPrice || 0,
       selectedDestinations: [] as string[],
       tourDate: "",
       customerName: "",
@@ -116,7 +122,7 @@ export default function BookingModal() {
     <FormProvider {...methods}>
       <div className="fixed inset-0 z-9999 flex items-center justify-center bg-black/50 modal-fade-up pt-8 pb-6 backdrop-blur-sm">
         <div className="relative w-92.25 sm:w-157 h-full rounded-[20px] bg-black overflow-hidden flex flex-col">
-          <div className="absolute right-2.75 top-1.25 z-1000">
+          <div className="absolute right-4.25 top-4.25 z-1000">
             <CloseBtn />
           </div>
 

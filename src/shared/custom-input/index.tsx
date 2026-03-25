@@ -1,4 +1,6 @@
+import { useFormContext } from "react-hook-form";
 import { memo } from "react";
+import clsx from "clsx";
 
 function CustomInput({
   label,
@@ -11,6 +13,13 @@ function CustomInput({
   type: "text" | "date" | "tel" | "email";
   placeholder: string;
 }) {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
+  const error = errors[name];
+
   return (
     <div className="flex w-full flex-col gap-1">
       <label
@@ -22,12 +31,27 @@ function CustomInput({
       <input
         id={name}
         aria-label={`${label} input`}
-        className="bg-[#131313] border border-[#313131] w-full h-8 rounded-[5px] px-3.75 py-1.5 text-sm text-[#8B8B8B] font-medium"
-        name={name}
+        {...register(name)}
+        onInput={(e) => {
+          if (type === "tel") {
+            const target = e.target as HTMLInputElement;
+            target.value = target.value.replace(/\D/g, "");
+          }
+        }}
+        className={clsx(
+          "bg-[#131313] border w-full h-8 rounded-[5px] px-3.75 py-1.5 text-sm text-[#8B8B8B] font-medium transition-colors focus:outline-none",
+          error ? "border-red-500" : "border-[#313131] focus:border-[#F2C975]",
+        )}
         placeholder={placeholder}
         type={type}
-        min={new Date().toISOString().split("T")[0]}
+        autoComplete="off"
+        min={type === "date" ? new Date().toISOString().split("T")[0] : undefined}
       />
+      {error && (
+        <span className="text-sm text-red-500 font-medium">
+          {error.message as string}
+        </span>
+      )}
     </div>
   );
 }
