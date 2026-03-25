@@ -6,11 +6,13 @@ import { useGetPackage } from "@/features/booking-modal/hooks";
 import clsx from "clsx";
 import { memo } from "react";
 import { useController, useFormContext } from "react-hook-form";
+import { useTranslations } from "next-intl";
 
 function FooterModal({ step }: { step: number }) {
   const { nextStep, prevStep, tourId } = useBookingContext();
   const { data: pkg } = useGetPackage(tourId);
   const { control, trigger } = useFormContext();
+  const t = useTranslations("bookingModal.footer");
 
   const handleNext = async () => {
     const hasCustomizations =
@@ -66,7 +68,7 @@ function FooterModal({ step }: { step: number }) {
         ) : (
           <div className="flex flex-col text-right">
             <span className="text-base text-[#8B8B8B] font-semibold">
-              Total Price
+              {t("totalPrice")}
             </span>
             <span className="text-[20px] text-[#F2C975] font-medium">
               {value}$

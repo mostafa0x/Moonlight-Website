@@ -1,6 +1,7 @@
 import Included_Excluded_Item from "@/features/booking-modal/components/step1/Included_Excluded_Item";
 import useDragScroll from "@/shared/hooks/useDragScroll";
 import { memo } from "react";
+import { useTranslations } from "next-intl";
 
 function Included_Excluded({
   included = [],
@@ -9,6 +10,7 @@ function Included_Excluded({
   included: string[];
   excluded: string[];
 }) {
+  const t = useTranslations("bookingModal.step1");
   const { ref, events } = useDragScroll("Y");
   return (
     <div className="w-full h-95 sm:h-95 md:h-80 xl:h-80 bg-[#131313] border border-[#313131] p-2.5 rounded-[20px]">
@@ -20,12 +22,12 @@ function Included_Excluded({
         <div className="grid grid-cols-2 px-5 gap-4 select-none">
           <div className="flex flex-row gap-1.25 mb-4.75 items-center">
             <img src={"/icons/check.svg"} alt="check icon" />
-            <h2 className="text-base text-[#00D26A] font-medium">Included</h2>
+            <h2 className="text-base text-[#00D26A] font-medium">{t("included")}</h2>
           </div>
 
           <div className="flex flex-row gap-1.25 mb-4.75 items-center">
             <img src={"/icons/minus.svg"} alt="minus icon" />
-            <h2 className="text-base text-[#FF5454] font-medium">Excluded</h2>
+            <h2 className="text-base text-[#FF5454] font-medium">{t("excluded")}</h2>
           </div>
         </div>
 
@@ -33,7 +35,7 @@ function Included_Excluded({
           <div className="space-y-2.5">
             {included.length <= 0 && (
               <span className="text-gray-500 text-sm">
-                Empty
+                {t("empty")}
               </span>
             )}
             {included.map((item, index) => (
@@ -43,7 +45,7 @@ function Included_Excluded({
           <div className="space-y-2.5">
             {excluded.length <= 0 && (
               <span className="text-gray-500 text-sm">
-                Empty
+                {t("empty")}
               </span>
             )}
             {excluded.map((item, index) => (

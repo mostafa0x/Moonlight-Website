@@ -1,6 +1,7 @@
 import { useFormContext } from "react-hook-form";
 import { memo, useState } from "react";
 import clsx from "clsx";
+import { useTranslations } from "next-intl";
 
 function CustomTextarea({
   name,
@@ -17,12 +18,13 @@ function CustomTextarea({
     formState: { errors },
   } = useFormContext();
 
+  const t = useTranslations("bookingModal.step4");
   const [loading, setLoading] = useState(false);
   const error = errors[name];
 
   const handleGetLocation = () => {
     if (!navigator.geolocation) {
-      alert("Geolocation is not supported by your browser.");
+      alert(t("alerts.notSupported"));
       return;
     }
 
@@ -31,22 +33,18 @@ function CustomTextarea({
       async (position) => {
         try {
           const { latitude, longitude } = position.coords;
-          const response = await fetch(
-            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`,
-          );
-          const data = await response.json();
           const address = `${latitude}, ${longitude}`;
           setValue(name, address, { shouldValidate: true });
         } catch (err) {
           console.error("Error fetching address:", err);
-          alert("Could not fetch address. Please enter it manually.");
+          alert(t("alerts.fetchError"));
         } finally {
           setLoading(false);
         }
       },
       (err) => {
         console.error("Geolocation error:", err);
-        alert("Permission denied or location not found.");
+        alert(t("alerts.denied"));
         setLoading(false);
       },
     );
@@ -67,21 +65,9 @@ function CustomTextarea({
           {loading ? (
             <div className="w-3 h-3 border-2 border-[#F2C975] border-t-transparent rounded-full animate-spin" />
           ) : (
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
+            <img src={"/icons/location-outlined.svg"} alt="icon" />
           )}
-          {loading ? "Getting location..." : "Use Current Location"}
+          {loading ? t("gettingLocation") : t("useLocation")}
         </button>
       </div>
       <textarea

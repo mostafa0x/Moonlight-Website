@@ -3,12 +3,15 @@ import useDragScroll from "@/shared/hooks/useDragScroll";
 import clsx from "clsx";
 import { memo } from "react";
 
+import { useTranslations } from "next-intl";
+
 function Destinations({ destinations }: { destinations: string[] }) {
+  const t = useTranslations("bookingModal.step1");
   const { ref, events } = useDragScroll("X");
 
   return (
     <div className=" space-y-2.5">
-      <h2 className="text-[20px] text-[#F2C975] font-medium">Destinations</h2>
+      <h2 className="text-[20px] text-[#F2C975] font-medium">{t("destinations")}</h2>
       <div
         ref={ref}
         {...events}

@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { memo } from "react";
+import { useTranslations } from "next-intl";
 
 function PaymentMethodCard({
   type,
@@ -10,6 +11,7 @@ function PaymentMethodCard({
   isActive: boolean;
   onClick: () => void;
 }) {
+  const t = useTranslations("bookingModal.step5");
   const isFull = type === "full";
   return (
     <div
@@ -26,7 +28,7 @@ function PaymentMethodCard({
           isActive ? "text-[#F2C975] " : "text-[#86868B]",
         )}
       >
-        {isFull ? "Credit Card (Full)" : "Deposit (25%)"}
+        {isFull ? t("paymentFull") : t("paymentDeposit")}
       </span>
     </div>
   );

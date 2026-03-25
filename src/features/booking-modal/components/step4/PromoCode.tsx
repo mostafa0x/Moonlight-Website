@@ -1,14 +1,17 @@
 import { useFormContext } from "react-hook-form";
 import { memo } from "react";
+import { useTranslations } from "next-intl";
 
 function PromoCode() {
   const { register } = useFormContext();
+  const t = useTranslations("bookingModal.step5");
+
   return (
     <div className=" space-y-5.5">
-      <h2 className="text-base text-[#F2C975] font-medium">Promo Code</h2>
+      <h2 className="text-base text-[#F2C975] font-medium">{t("promoTitle")}</h2>
       <div className="flex flex-row gap-3">
         <input
-          placeholder="ENTER CODE"
+          placeholder={t("promoPlaceholder")}
           type="text"
           {...register("promoCode")}
           className="bg-[#131313] border border-[#313131] rounded-[5px] text-[12px] text-[#8B8B8Bpx] px-3.75 py-1.5 w-full uppercase"

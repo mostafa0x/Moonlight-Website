@@ -11,17 +11,20 @@ import Step4 from "@/features/booking-modal/components/step4";
 import Step5 from "@/features/booking-modal/components/step5";
 import { useGetPackage } from "@/features/booking-modal/hooks";
 import EgyptianLoader from "@/shared/components/EgyptianLoader";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { bookingSchema } from "./schema";
+import { getBookingSchema } from "./schema";
+import { useTranslations } from "next-intl";
 
 export default function BookingModal() {
   const { step, tourId, lang, setTotalSteps } = useBookingContext();
   const { data: pkg, isLoading } = useGetPackage(tourId);
+  const timeoutRef = useRef<NodeJS.Timeout>(null);
 
+  const t = useTranslations("bookingModal");
   const methods = useForm({
-    resolver: zodResolver(bookingSchema),
+    resolver: zodResolver(getBookingSchema(t)),
     mode: "onChange",
     defaultValues: {
       adultsNumber: 1,
@@ -96,7 +99,7 @@ export default function BookingModal() {
     // Initial calculation
     calculatePrice();
 
-    // Subscribe to changes
+    // Subscribe to changes with debounce
     const subscription = methods.watch((value, { name }) => {
       const triggerFields = [
         "adultsNumber",
@@ -109,11 +112,17 @@ export default function BookingModal() {
       ];
 
       if (name && triggerFields.includes(name)) {
-        calculatePrice();
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        timeoutRef.current = setTimeout(() => {
+          calculatePrice();
+        }, 500);
       }
     });
 
-    return () => subscription.unsubscribe();
+    return () => {
+      subscription.unsubscribe();
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
   }, [pkg, methods, setValue]);
 
   if (!tourId) return null;

@@ -1,17 +1,19 @@
 import PeopleCounterItem from "@/features/booking-modal/components/step2/PeopleCounterItem";
 import { memo } from "react";
+import { useTranslations } from "next-intl";
 
 function PeopleCounter() {
+  const t = useTranslations("bookingModal.step2");
   return (
     <>
       <PeopleCounterItem
-        label="Adults"
-        hint="Age 12+"
+        label={t("adults")}
+        hint={t("ageAdult")}
         name="adultsNumber"
       />
       <PeopleCounterItem
-        label="Children"
-        hint="Age 2-11( Kids are 50% off )"
+        label={t("children")}
+        hint={t("ageChild")}
         name="kidsNumber"
       />
     </>

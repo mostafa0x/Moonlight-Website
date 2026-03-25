@@ -11,14 +11,12 @@
     ],
     "lastUpdated": "Last Updated: March 2026",
     "intro": "Welcome to Moonlight. By browsing our website, booking a tour, or using our services, you agree to comply with and be bound by the following Terms of Service. Please review them carefully before making any reservations.",
-
     "booking": {
       "title": "Booking and Payments",
       "currency": "Currency: All transactions and tour prices are quoted and processed in US Dollars (USD) or Euros (EUR).",
       "paymentGateway": "Payment Gateway: We utilize PayPal Business API for secure payment processing. By completing a booking, you also agree to PayPal's Acceptable Use Policy.",
       "confirmation": "Confirmation: A booking is only considered final and confirmed once the full payment is successfully received by Moonlight, and the tour status is updated to \"Confirmed\" in your user profile on our website."
     },
-
     "cancellation": {
       "title": "Cancellation and Refund Policy",
       "intro": "We meticulously plan our tours and secure commitments with local vendors in advance. Therefore, the following strict cancellation policy applies to all bookings:",
@@ -26,24 +24,20 @@
       "advance": "Advance Cancellations (More than 24 Hours): If you cancel your booking more than 24 hours in advance (Local Egypt Time - EET), a refund will be issued, minus a 15% cancellation fee. This fee covers non-refundable transaction processing fees and administrative scheduling costs.",
       "forceMajeure": "Force Majeure: In the rare event that Moonlight must cancel a tour due to extreme weather, security concerns, or unexpected closure of archaeological sites, a full refund or an alternative date will be offered."
     },
-
     "refunds": {
       "title": "Refund Processing",
       "text1": "All approved refunds will be processed back to the original method of payment (via PayPal).",
       "text2": "Please note that it may take several business days for the refunded amount to reflect in your account, depending on your bank or credit card provider's policies."
     },
-
     "itinerary": {
       "title": "Itinerary and Route Changes",
       "text": "Moonlight reserves the right to slightly alter tour itineraries, routes, or timings without prior notice if required by local authorities, traffic conditions, or other operational necessities, ensuring the overall quality of the tour is maintained."
     },
-
     "insurance": {
       "title": "Travel Insurance and Health",
       "text1": "Flight delays, sudden illnesses, or personal emergencies occurring within 24 hours of the tour are not exempt from our cancellation policy. We strongly advise guests to purchase comprehensive Travel Insurance to cover such unforeseen events and claim any losses through their insurance provider.",
       "text2": "Moonlight is not liable for any injuries, illnesses, or loss of personal property that occur during the tours."
     },
-
     "conduct": {
       "title": "Code of Conduct",
       "text": "We expect all guests to respect Egyptian laws, cultural norms, and historical monuments. We reserve the right to refuse service or terminate a tour prematurely, without a refund, if a guest's behavior is deemed illegal, highly disruptive, or disrespectful to local heritage."
@@ -61,7 +55,6 @@
       "Moonlight travel terms"
     ],
     "intro": "At Moonlight, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Moonlight and how we use it.",
-
     "collect": {
       "title": "Information We Collect",
       "intro": "We only collect personal information that you voluntarily provide to us when you inquire about our services or book a tour. This may include:",
@@ -69,7 +62,6 @@
       "contact": "Contact Data: Email address and phone number (WhatsApp).",
       "travel": "Travel Data: Preferences, dates of travel, and number of guests."
     },
-
     "use": {
       "title": "How We Use Your Information",
       "intro": "We use the information we collect in various ways, including to:",
@@ -80,19 +72,16 @@
         "Improve your experience on our website."
       ]
     },
-
     "security": {
       "title": "Data Security & Sharing",
       "noSharing": "No Third-Party Sharing: We do not sell, rent, or share your personal information with third parties for marketing purposes.",
       "providers": "Service Providers: Your data is only shared with essential service providers (e.g., Nile Cruise operators or hotel bookings) when necessary to fulfill your tour reservation.",
       "protection": "Protection: We implement standard security measures to protect your data from unauthorized access."
     },
-
     "logs": {
       "title": "Log Files",
       "text": "Moonlight follows a standard procedure of using log files. These files log visitors when they visit websites. The information collected includes internet protocol (IP) addresses, browser type, and date/time stamps. These are not linked to any information that is personally identifiable."
     },
-
     "rights": {
       "title": "Your Data Rights",
       "items": [
@@ -101,7 +90,6 @@
         "Request that we delete your personal data after your tour is completed."
       ]
     },
-
     "consent": {
       "title": "Consent",
       "text": "By using our website, you hereby consent to our Privacy Policy and agree to its terms."
@@ -123,7 +111,6 @@
       "title": "Who We Are",
       "text": "At Moonlight, we don’t just offer tours; we take you on a journey through time. Born out of a deep passion for Egypt's magnificent history, Moonlight was created to provide a personalized travel experience that goes beyond the ordinary, making every visit to ancient landmarks a story to remember."
     },
-
     "what": {
       "title": "What We Do",
       "intro": "We specialize in organizing and managing bespoke tours within Egypt, focusing on the archaeological treasures and museums that defined civilization:",
@@ -134,7 +121,6 @@
         "Coming Soon: Expanding our horizons to the golden sands and magic of Luxor and Aswan."
       ]
     },
-
     "why": {
       "title": "Why Moonlight?",
       "text": "We believe that great travel is all about the details. We meticulously plan every step of your trip to ensure comfort, safety, and insightful discovery. Whether you are looking for an educational museum tour or a peaceful Nile cruise under the moonlight, we are here to make it happen with professionalism and heart."
@@ -151,10 +137,8 @@
       "Cairo tour concierge",
       "Moonlight Egypt travel contact"
     ],
-
     "phone": "Phone",
     "email": "Email",
-
     "form": {
       "firstName": "First name",
       "lastName": "Last name",
@@ -178,5 +162,79 @@
     "contact": "Contact",
     "allRights": "All Rights Reserved.",
     "designedBy": "Designed by"
+  },
+  "bookingModal": {
+    "header": {
+      "startingFrom": "starting from",
+      "price": "Price",
+      "morePeopleLessPrice": "More people, less price"
+    },
+    "footer": {
+      "totalPrice": "Total Price",
+      "bookNow": "BOOK NOW",
+      "next": "Next",
+      "back": "Back",
+      "confirm": "Confirm Booking"
+    },
+    "step1": {
+      "description": "Description",
+      "included": "Included",
+      "excluded": "Excluded",
+      "destinations": "Destinations",
+      "empty": "Empty"
+    },
+    "step2": {
+      "travelersTitle": "Number of Travelers",
+      "adults": "Adults",
+      "children": "Children",
+      "ageAdult": "Age 12+",
+      "ageChild": "Age 0-11",
+      "guideLanguage": "Tour Guide Language",
+      "pickupTitle": "Pickup Location"
+    },
+    "step4": {
+      "contactTitle": "Contact Details",
+      "fullName": "Full Name",
+      "phoneNumber": "Phone Number",
+      "tourDate": "Tour Date",
+      "nationality": "Nationality",
+      "address": "Address (Hotel / Local Address)",
+      "useLocation": "Use Current Location",
+      "gettingLocation": "Getting location...",
+      "alerts": {
+        "notSupported": "Geolocation is not supported by your browser.",
+        "fetchError": "Could not fetch address. Please enter it manually.",
+        "denied": "Permission denied or location not found."
+      },
+      "placeholders": {
+        "name": "enter your name...",
+        "phone": "enter your phone number...",
+        "nationality": "enter your nationality...",
+        "address": "enter your address...",
+        "date": "date tour"
+      }
+    },
+    "step5": {
+      "summaryTitle": "Booking Summary",
+      "tour": "Tour",
+      "date": "Date",
+      "travelers": "Travelers",
+      "language": "Guide Language",
+      "destinations": "Selected Destinations",
+      "totalPrice": "Total Price",
+      "promoTitle": "Promo Code",
+      "promoPlaceholder": "ENTER CODE",
+      "paymentTitle": "Payment Method",
+      "paymentFull": "Credit Card (Full)",
+      "paymentDeposit": "Deposit (25%)"
+    },
+    "errors": {
+      "name": "Full name is required",
+      "phone": "Phone number must be at least 10 digits",
+      "date": "Tour date is required",
+      "nationality": "Nationality is required",
+      "address": "Address is required",
+      "language": "Language is required"
+    }
   }
 }

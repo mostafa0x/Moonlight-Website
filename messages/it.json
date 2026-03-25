@@ -1,7 +1,7 @@
 {
   "terms": {
     "title": "Termini di Servizio",
-    "description": "Leggi i Termini di Servizio di Moonlight, incluse le condizioni di prenotazione, la politica di cancellazione, i metodi di pagamento, i rimborsi e le responsabilità dei viaggiatori per i tour in Egitto.",
+    "description": "Leggi i Termini di Servizio di Moonlight, comprese le condizioni di prenotazione, la politica di cancellazione, i metodi di pagamento, i rimborsi e le responsabilità del viaggiatore per i tour in Egitto.",
     "keywords": [
       "termini tour Moonlight",
       "condizioni prenotazione tour",
@@ -10,166 +10,220 @@
       "termini viaggio Moonlight"
     ],
     "lastUpdated": "Ultimo aggiornamento: Marzo 2026",
-    "intro": "Benvenuti su Moonlight. Utilizzando il nostro sito o prenotando un tour accetti i seguenti Termini di Servizio.",
+    "intro": "Benvenuti su Moonlight. Navigando nel nostro sito web, prenotando un tour o utilizzando i nostri servizi, accettate di rispettare ed essere vincolati dai seguenti Termini di Servizio. Vi preghiamo di visionarli attentamente prima di effettuare qualsiasi prenotazione.",
     "booking": {
-      "title": "Prenotazioni e Pagamenti",
-      "currency": "Valuta: Tutte le transazioni sono processate in Dollari USA (USD) o Euro (EUR).",
-      "paymentGateway": "Gateway di pagamento: utilizziamo PayPal Business API per pagamenti sicuri.",
-      "confirmation": "Conferma: una prenotazione è confermata solo dopo il pagamento completo."
+      "title": "Prenotazione e Pagamenti",
+      "currency": "Valuta: Tutte le transazioni e i prezzi dei tour sono quotati e processati in Dollari Statunitensi (USD) o Euro (EUR).",
+      "paymentGateway": "Gateway di Pagamento: Utilizziamo l'API di PayPal Business per l'elaborazione sicura dei pagamenti. Completando una prenotazione, accettate anche la Politica di Utilizzo Accettabile di PayPal.",
+      "confirmation": "Conferma: Una prenotazione è considerata definitiva e confermata solo dopo che il pagamento completo è stato ricevuto con successo da Moonlight."
     },
     "cancellation": {
       "title": "Politica di Cancellazione e Rimborso",
-      "intro": "Pianifichiamo attentamente i nostri tour con fornitori locali.",
-      "sameDay": "Cancellazioni nello stesso giorno o meno di 24 ore prima: nessun rimborso.",
-      "advance": "Cancellazioni con più di 24 ore di anticipo: rimborso meno il 15%.",
-      "forceMajeure": "Forza maggiore: rimborso completo o nuova data in caso di circostanze straordinarie."
+      "intro": "Pianifichiamo meticolosamente i nostri tour e assicuriamo impegni con i fornitori locali con anticipo. Pertanto, a tutte le prenotazioni si applica la seguente rigida politica di cancellazione:",
+      "sameDay": "Cancellazioni lo stesso giorno e entro 24 ore (No-Show): Se cancellate il vostro tour il giorno programmato, o meno di 24 ore prima dell'orario di inizio concordato (Ora locale dell'Egitto - EET), non verrà emesso alcun rimborso.",
+      "advance": "Cancellazioni Anticipate (Oltre 24 ore): Se cancellate la vostra prenotazione con più di 24 ore di anticipo, verrà emesso un rimborso, deducendo una penale di cancellazione del 15%.",
+      "forceMajeure": "Forza Maggiore: Nel raro caso in cui Moonlight debba cancellare un tour a causa di condizioni meteorologiche estreme o problemi di sicurezza, verrà offerto un rimborso completo o una data alternativa."
     },
     "refunds": {
       "title": "Elaborazione dei Rimborsi",
-      "text1": "I rimborsi approvati saranno processati tramite PayPal.",
-      "text2": "Potrebbero essere necessari diversi giorni lavorativi."
+      "text1": "Tutti i rimborsi approvati saranno elaborati sul metodo di pagamento originale (tramite PayPal).",
+      "text2": "Si prega di notare che potrebbero essere necessari diversi giorni lavorativi affinché l'importo rimborsato venga visualizzato sul vostro conto."
     },
     "itinerary": {
-      "title": "Modifiche all'Itinerario",
-      "text": "Moonlight può modificare itinerari o orari se necessario."
+      "title": "Itinerario e Cambiamenti di Percorso",
+      "text": "Moonlight si riserva il diritto di modificare leggermente gli itinerari dei tour senza preavviso se richiesto dalle autorità locali o dalle condizioni del traffico."
     },
     "insurance": {
-      "title": "Assicurazione di Viaggio",
-      "text1": "Ritardi dei voli o emergenze personali non sono esenti dalla politica di cancellazione.",
-      "text2": "Moonlight non è responsabile per lesioni o perdite durante i tour."
+      "title": "Assicurazione di Viaggio e Sanitaria",
+      "text1": "Consigliamo vivamente agli ospiti di stipulare un'Assicurazione di Viaggio completa per coprire eventi imprevisti.",
+      "text2": "Moonlight non è responsabile per eventuali lesioni o perdita di proprietà personale durante i tour."
     },
     "conduct": {
       "title": "Codice di Condotta",
-      "text": "Gli ospiti devono rispettare le leggi egiziane e i monumenti storici."
+      "text": "Tutti gli ospiti sono tenuti a rispettare le leggi egiziane e i monumenti storici."
     }
   },
   "privacy": {
     "title": "Informativa sulla Privacy",
-    "description": "Découvrez comment Moonlight collecte, utilise et protège vos informations personnelles lorsque vous demandez des informations ou réservez des visites en Égypte via notre site web.",
-    "keywords": [
-      "termini tour Moonlight",
-      "condizioni prenotazione tour",
-      "politica tour Egitto",
-      "politica cancellazione tour Egitto",
-      "termini viaggio Moonlight"
-    ],
+    "description": "Scopri come Moonlight raccoglie, utilizza e protegge le tue informazioni personali.",
     "effectiveDate": "Data di entrata in vigore: Marzo 2026",
-    "intro": "Per Moonlight la privacy dei visitatori è una priorità.",
+    "keywords": [
+      "privacy Moonlight",
+      "protezione dati"
+    ],
+    "intro": "In Moonlight, la privacy dei nostri visitatori è una priorità.",
     "collect": {
-      "title": "Informazioni raccolte",
-      "intro": "Raccogliamo solo i dati forniti volontariamente.",
-      "identification": "Dati identificativi: Nome e nazionalità.",
-      "contact": "Dati di contatto: Email e numero di telefono.",
-      "travel": "Dati di viaggio: Preferenze, date e numero di ospiti."
+      "title": "Informazioni che Raccogliamo",
+      "intro": "Raccogliamo solo le informazioni fornite volontariamente:",
+      "identification": "Identificazione: Nome e nazionalità.",
+      "contact": "Contatto: Email e numero di telefono (WhatsApp).",
+      "travel": "Viaggio: Preferenze di viaggio, date e numero di ospiti."
     },
-
     "use": {
-      "title": "Come utilizziamo le informazioni",
-      "intro": "Utilizziamo i dati per:",
+      "title": "Come Usiamo le Tue Informazioni",
+      "intro": "Utilizziamo le informazioni raccolte per:",
       "items": [
-        "Gestire il sito web.",
-        "Comunicare per organizzare il tour.",
+        "Gestire e mantenere il nostro sito web.",
+        "Comunicare con te per pianificare il tuo tour.",
         "Inviare conferme di prenotazione.",
-        "Migliorare l'esperienza utente."
+        "Migliorare l'esperienza dell'utente."
       ]
     },
-
     "security": {
-      "title": "Sicurezza dei dati",
-      "noSharing": "Non vendiamo né condividiamo dati personali per marketing.",
-      "providers": "I dati sono condivisi solo con fornitori necessari.",
-      "protection": "Adottiamo misure di sicurezza standard."
+      "title": "Sicurezza e Condivisione dei Dati",
+      "noSharing": "Non vendiamo né condividiamo i tuoi dati personali con terzi per finalità di marketing.",
+      "providers": "I dati sono condivisi solo con fornitori essenziali per lo svolgimento del tour.",
+      "protection": "Implementiamo misure di sicurezza standard del settore."
     },
-
     "logs": {
-      "title": "File di log",
+      "title": "File di Log",
       "text": "Moonlight utilizza file di log per analizzare le visite al sito."
     },
-
     "rights": {
-      "title": "Diritti sui dati",
+      "title": "I Tuoi Diritti",
       "items": [
-        "Richiedere una copia dei dati.",
-        "Richiedere la correzione dei dati.",
-        "Richiedere la cancellazione dopo il tour."
+        "Richiedere una copia dei tuoi dati.",
+        "Richiedere la correzione di dati errati.",
+        "Richiedere la cancellazione dei dati dopo il tour."
       ]
     },
-
     "consent": {
       "title": "Consenso",
-      "text": "Utilizzando il sito accetti questa politica."
+      "text": "Utilizzando il sito, accetti la nostra Informativa sulla Privacy."
     }
   },
   "about": {
-    "title": "Moonlight.. La vostra guida alla magia della storia egizia",
-    "description": "Scopri Moonlight, la tua guida per tour indimenticabili in Egitto tra Il Cairo, Giza, Alessandria e crociere sul Nilo.",
+    "title": "Su Moonlight",
+    "description": "Scopri Moonlight, la tua guida di fiducia per tour indimenticabili in Egitto.",
     "keywords": [
-      "tour Moonlight Egitto",
-      "guida viaggio Egitto",
-      "tour piramidi Giza",
-      "crociera Nilo Egitto",
-      "tour Alessandria",
-      "tour storia egizia"
+      "Egitto tour",
+      "guida di viaggio"
     ],
-    "subtitle": "Votre guide vers la magie de l'histoire égyptienne",
+    "subtitle": "La Tua Guida alla Magia della Storia Egizia",
     "who": {
-      "title": "Chi siamo",
-      "text": "In Moonlight vi accompagniamo in un viaggio nel tempo."
+      "title": "Chi Siamo",
+      "text": "In Moonlight non offriamo solo tour; ti accompagniamo in un viaggio nel tempo."
     },
-
     "what": {
-      "title": "Cosa facciamo",
-      "intro": "Organizziamo tour in Egitto concentrati sui tesori archeologici.",
+      "title": "Cosa Facciamo",
+      "intro": "Siamo specializzati in esperienze personalizzate in Egitto:",
       "items": [
-        "Il Cairo e Giza: tour delle Piramidi.",
-        "Alessandria: scoperta della Sposa del Mediterraneo.",
+        "Il Cairo e Giza: Piramidi e musei.",
+        "Alessandria: Patrimonio greco-romano.",
         "Crociere sul Nilo.",
         "Prossimamente: Luxor e Assuan."
       ]
     },
-
     "why": {
-      "title": "Perché Moonlight?",
-      "text": "Crediamo che il vero viaggio sia nei dettagli."
+      "title": "Perché Scegliere Moonlight?",
+      "text": "Crediamo che un grande viaggio risieda nei dettagli."
     }
   },
   "contact": {
     "title": "Contattaci",
-    "headline": "Contatta il nostro team di concierge per iniziare a pianificare la tua avventura egiziana su misura.",
-    "description": "Contatta Moonlight per pianificare il tuo tour personalizzato in Egitto.",
+    "headline": "Mettiti in contatto con il nostro team per pianificare la tua avventura personalizzata.",
+    "description": "Contatta Moonlight per pianificare il tuo viaggio in Egitto.",
     "keywords": [
-      "contatto tour Egitto",
-      "Moonlight contatti viaggio",
-      "prenotazione tour Egitto",
-      "tour privati Egitto",
-      "viaggio Egitto contatto"
+      "contatti Moonlight"
     ],
-
     "phone": "Telefono",
     "email": "Email",
-
     "form": {
       "firstName": "Nome",
       "lastName": "Cognome",
-      "emailAddress": "Indirizzo email",
+      "emailAddress": "Indirizzo Email",
       "message": "Messaggio",
       "send": "Invia messaggio"
     }
   },
   "navbar": {
     "home": "Home",
-    "about": "Chi Siamo",
-    "contact": "Contatto",
-    "privacy": "Politica sulla Privacy",
-    "terms": "Termini di Utilizzo",
-    "login": "Accedi"
+    "about": "Chi siamo",
+    "contact": "Contatti",
+    "privacy": "Privacy",
+    "terms": "Termini",
+    "login": "Login"
   },
   "footer": {
-    "terms": "Termini di utilizzo",
-    "privacy": "Informativa sulla privacy",
+    "terms": "Termini di servizio",
+    "privacy": "Informativa sulla Privacy",
     "about": "Chi siamo",
-    "contact": "Contatto",
+    "contact": "Contatti",
     "allRights": "Tutti i diritti riservati.",
     "designedBy": "Progettato da"
+  },
+  "bookingModal": {
+    "header": {
+      "startingFrom": "a partire da",
+      "price": "Prezzo",
+      "morePeopleLessPrice": "Più persone, meno paghi"
+    },
+    "footer": {
+      "totalPrice": "Prezzo Totale",
+      "bookNow": "PRENOTA ORA",
+      "next": "Avanti",
+      "back": "Indietro",
+      "confirm": "Conferma Prenotazione"
+    },
+    "step1": {
+      "description": "Descrizione",
+      "included": "Incluso",
+      "excluded": "Escluso",
+      "destinations": "Destinazioni",
+      "empty": "Vuoto"
+    },
+    "step2": {
+      "travelersTitle": "Numero di Viaggiatori",
+      "adults": "Adulti",
+      "children": "Bambini",
+      "ageAdult": "Età 12+",
+      "ageChild": "Età 0-11",
+      "guideLanguage": "Lingua della Guida",
+      "pickupTitle": "Luogo di Ritiro"
+    },
+    "step4": {
+      "contactTitle": "Dettagli di Contatto",
+      "fullName": "Nome Completo",
+      "phoneNumber": "Numero di Telefono",
+      "tourDate": "Data del Tour",
+      "nationality": "Nazionalità",
+      "address": "Indirizzo (Hotel / Locale)",
+      "useLocation": "Usa Posizione Attuale",
+      "gettingLocation": "Recupero posizione...",
+      "alerts": {
+        "notSupported": "La geolocalizzazione non è supportata dal tuo browser.",
+        "fetchError": "Impossibile recuperare l’indirizzo. Inseriscilo manualmente.",
+        "denied": "Permesso negato o posizione non trovata."
+      },
+      "placeholders": {
+        "name": "inserisci il tuo nome...",
+        "phone": "inserisci il tuo numero...",
+        "nationality": "inserisci la tua nazionalità...",
+        "address": "inserisci il tuo indirizzo...",
+        "date": "data del tour"
+      }
+    },
+    "step5": {
+      "summaryTitle": "Riepilogo Prenotazione",
+      "tour": "Tour",
+      "date": "Data",
+      "travelers": "Viaggiatori",
+      "language": "Lingua della Guida",
+      "destinations": "Destinazioni Selezionate",
+      "totalPrice": "Prezzo Totale",
+      "promoTitle": "Codice Promo",
+      "promoPlaceholder": "INSERISCI CODICE",
+      "paymentTitle": "Metodo di Pagamento",
+      "paymentFull": "Carta di Credito (Totale)",
+      "paymentDeposit": "Deposito (25%)"
+    },
+    "errors": {
+      "name": "Il nome completo è richiesto",
+      "phone": "Il numero deve essere di almeno 10 cifre",
+      "date": "La data del tour è richiesta",
+      "nationality": "La nazionalità è richiesta",
+      "address": "L'indirizzo è richiesto",
+      "language": "La lingua è richiesta"
+    }
   }
 }
