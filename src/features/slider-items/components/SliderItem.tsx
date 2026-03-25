@@ -35,11 +35,11 @@ function SliderItem({
     <div className="relative w-full lg:w-75 xl:w-75 2xl:w-15 h-95.75 md:h-112.5 lg:h-136.25 select-none">
       <div
         className={cn(
-          "absolute left-1/2 top-1/2 -translate-x-[50%] lg:-translate-x-[60%] xl:-translate-x-[70%] -translate-y-1/2 w-[330px] sm:w-[530px] xl:w-[730px] h-full transition-all duration-400 ease-in-out",
+          "absolute left-1/2 top-1/2 -translate-y-1/2 w-[330px] sm:w-[530px] xl:w-[730px] h-full transition-all duration-500 ease-in-out transform",
           isExiting
             ? "opacity-0 translate-x-full"
             : isVisible
-              ? "opacity-100"
+              ? "opacity-100 translate-x-[-50%] lg:translate-x-[-60%] xl:translate-x-[-70%]"
               : "translate-x-full opacity-0",
         )}
       >

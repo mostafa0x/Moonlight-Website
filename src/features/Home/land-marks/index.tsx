@@ -12,6 +12,7 @@ import { useAutoSlider } from "@/features/slider-items/hooks";
 import TitleSliderItem from "@/features/slider-items/components/TitleSliderItem";
 import { useIsMobile } from "@/shared/hooks/useCheckMobile";
 import SliderItemSkeleton from "@/features/slider-items/components/SliderItemSkeleton";
+import { cn } from "@/shared/lib/utils";
 
 function LandMarks({
   currentPage,
@@ -34,14 +35,19 @@ function LandMarks({
       <div className="flex w-full lg:max-w-7xl flex-col lg:flex-row lg:justify-between">
         <div className="lg:w-1/2">
           <h1
-            className={`text-2xl lg:text-6xl font-bold mb-6 ${isPageInView && "animate-fade-right"} animate-ease-in animate-duration-500`}
+            className={cn(
+              "text-2xl lg:text-6xl font-bold mb-6 transition-all duration-500 ease-in-out transform",
+              isPageInView
+                ? "translate-x-0 opacity-100"
+                : "-translate-x-full opacity-0",
+            )}
           >
             {titleHeader}
           </h1>
           {isMobileDevice && (
             <>
               <TitleSliderItem
-                name={currentSlide.title}
+                item={currentSlide}
                 isVisible={isPageInView}
               />
               <SliderItem
@@ -52,8 +58,7 @@ function LandMarks({
             </>
           )}
           <SliderItemHeader
-            name={currentSlide.title}
-            description={currentSlide.description}
+            item={currentSlide}
             isVisible={isPageInView}
           />
         </div>
