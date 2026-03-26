@@ -26,7 +26,12 @@ export default function Step2() {
           <PickLocation
             name="pickupLocation"
             label={t("pickupTitle")}
-            options={["Giza", "Cairo", "Luxor"]}
+            options={Object.entries(
+              t.raw("pickupLocations") as Record<string, string>
+            ).map(([value, label]) => ({
+              label,
+              value,
+            }))}
           />
         </div>
       </div>

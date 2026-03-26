@@ -182,7 +182,21 @@
       "ageAdult": "Âge 12+",
       "ageChild": "Âge 0-11",
       "guideLanguage": "Langue du Guide",
-      "pickupTitle": "Lieu de Prise en Charge"
+      "pickupTitle": "Lieu de Prise en Charge",
+      "pickupLocations": {
+        "Cairo International Airport": "Aéroport International du Caire",
+        "Sphinx International Airport": "Aéroport International du Sphinx",
+        "New Administrative Capital": "Nouvelle Capitale Administrative",
+        "The 5th Settlement": "Le 5ème Rassemblement",
+        "Heliopolis": "Héliopolis",
+        "Nasr City": "Cité Nasr",
+        "New Cairo City": "Nouveau Caire",
+        "El Sheikh Zayed City": "Ville de Sheikh Zayed",
+        "6th of October City": "Ville du 6 Octobre",
+        "Old Cairo": "Vieux Caire",
+        "Downtown Cairo": "Centre-ville du Caire",
+        "Giza": "Gizeh"
+      }
     },
     "step4": {
       "contactTitle": "Détails de Contact",
