@@ -131,7 +131,7 @@ export default async function page({
         flexDirection: "column",
       }}
     >
-      <Home data={updatedData} tourId={tourId} />
+      <Home data={updatedData} />
     </div>
   );
 }

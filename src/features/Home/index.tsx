@@ -18,28 +18,23 @@ import { FullPage } from "react-abohook-fullpage";
 
 export default function Home({
   data,
-  tourId,
 }: {
   data: HomeDataType[];
-  tourId: string;
 }) {
   const [currentPage, setCurrentPage] = useState(0);
-  const { isOpen, handleSetTourId } = useBookingContext();
+  const { isOpen } = useBookingContext();
 
   useEffect(() => {
-    handleSetTourId(tourId);
-    return () => {
-      handleSetTourId("");
-    };
-  }, [tourId]);
-
+    console.log(isOpen);
+    
+  }, [isOpen]);
   return (
     <FullPage
       directionDots="right"
       duration={500}
       enableContextMenu
       onChange={setCurrentPage}
-      // disable={isOpen}
+      disable={isOpen}
     >
       <FullPage.Section>
         <Page1 currentPage={currentPage} />

@@ -1,7 +1,7 @@
 "use client";
 import type { BookingContextProps } from "@/features/booking-modal/types";
-import { useParams } from "next/navigation";
-import { createContext, useCallback, useContext, useState } from "react";
+import { useParams, useSearchParams } from "next/navigation";
+import { createContext, useCallback, useContext, useEffect, useState } from "react";
 
 const BookingContext = createContext<BookingContextProps>({
   isOpen: false,
@@ -20,12 +20,15 @@ export default function BookingContextProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const { langParam } = useParams();
-  const lang = langParam as string;
+  const { locale } = useParams();
+  const lang = locale as string;
   const [step, setStep] = useState(1);
   const [totalSteps, setTotalSteps] = useState(5);
 
   const [tourId, setTourId] = useState("");
+  const searchParams = useSearchParams();
+  const bookingParam = searchParams.get("tourId");
+
   const isOpen = !!tourId;
   const nextStep = useCallback(() => {
     setStep((s) => (s < totalSteps ? s + 1 : totalSteps));
@@ -39,6 +42,24 @@ export default function BookingContextProvider({
     setTourId(tour);
     setStep(1); // reset step when tour changes
   }, []);
+
+  useEffect(() => {
+    handleSetTourId(bookingParam || "");
+  }, [bookingParam, handleSetTourId]);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   return (
     <BookingContext.Provider

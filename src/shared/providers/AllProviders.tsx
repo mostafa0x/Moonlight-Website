@@ -10,10 +10,12 @@ export default function AllProviders({
 }) {
   return (
     <ReactQueryProvider>
-      <BookingContextProvider>
-        {children}
-        <BookingModalProvider />
-      </BookingContextProvider>
+      <Suspense fallback={null}>
+        <BookingContextProvider>
+          {children}
+          <BookingModalProvider />
+        </BookingContextProvider>
+      </Suspense>
     </ReactQueryProvider>
   );
 }

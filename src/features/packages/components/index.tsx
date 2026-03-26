@@ -3,6 +3,7 @@ import PackageSectionHeader from "@/features/packages/components/PackageSectionH
 import { memo } from "react";
 import PackageCardSkeleton from "@/features/packages/components/PackageCardSkeleton";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import type { PackageType } from "@/shared/global";
 
 function PackageSection({
@@ -16,6 +17,8 @@ function PackageSection({
   isInView: boolean;
   isLoading?: boolean;
 }) {
+  const { locale } = useParams();
+
   return (
     <div className="w-full h-full flex">
       <div className="flex flex-col w-full h-full justify-center  gap-11 z-10">
@@ -28,7 +31,7 @@ function PackageSection({
         >
           {packages.map((pkg, i) => (
             <Link
-              href={`/?tourId=${pkg.packageId}`}
+              href={`/${locale}/?tourId=${pkg.packageId}`}
               prefetch={false}
               key={pkg.packageId}
               className={`flex-none w-79.5 snap-start pl-3.25 ${
