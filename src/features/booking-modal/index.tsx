@@ -27,7 +27,7 @@ export default function BookingModal() {
     resolver: zodResolver(getBookingSchema(t)),
     mode: "onChange",
     defaultValues: {
-      adultsNumber: 1,
+      adultsNumber: 12,
       kidsNumber: 0,
       tourguideLanguage: "en",
       totalPrice: pkg?.startingPrice || 0,
@@ -96,11 +96,46 @@ export default function BookingModal() {
       }
     };
 
+    // Set default selections for specific packages
+    if (pkg.packageId === "1d0e1402-78a2-4366-a59b-13f38d9a8486") {
+      pkg.customizations?.forEach((group) => {
+        if (group.options.some((o) => o.id === "dest-nmec")) {
+          const other = group.options.find((o) => o.id !== "dest-nmec")?.id;
+          const defaults = other ? ["dest-nmec", other] : ["dest-nmec"];
+          setValue(
+            group.groupId as any,
+            group.maxSelect === 1
+              ? "dest-nmec"
+              : defaults.slice(0, Math.min(group.maxSelect, 2))
+          );
+        } else if (group.options.length > 0) {
+          setValue(
+            group.groupId as any,
+            group.maxSelect === 1 ? group.options[0].id : [group.options[0].id]
+          );
+        }
+      });
+    } else if (pkg.packageId === "617ff210-e29a-4ebe-bfa7-6e904275e9f5") {
+      pkg.customizations?.forEach((group) => {
+        if (group.maxSelect >= 3) {
+          setValue(
+            group.groupId as any,
+            group.options.slice(0, 3).map((o) => o.id)
+          );
+        }
+      });
+    }
+
     // Initial calculation
     calculatePrice();
 
     // Subscribe to changes with debounce
     const subscription = methods.watch((value, { name }) => {
+      // Log specifically when phone number changes for the user
+      if (name === "customerPhone") {
+        console.log("Phone changed! Full value (E.164):", value.customerPhone);
+      }
+
       const triggerFields = [
         "adultsNumber",
         "kidsNumber",
@@ -108,6 +143,7 @@ export default function BookingModal() {
         "pickupLocation",
         "promoCode",
         "paymentPreference",
+        "customerPhone",
         ...(pkg.customizations?.map((c) => c.groupId) || []),
       ];
 

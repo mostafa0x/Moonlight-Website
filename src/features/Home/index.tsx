@@ -39,7 +39,7 @@ export default function Home({
       duration={500}
       enableContextMenu
       onChange={setCurrentPage}
-      disable={isOpen}
+      // disable={isOpen}
     >
       <FullPage.Section>
         <Page1 currentPage={currentPage} />

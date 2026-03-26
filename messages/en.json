@@ -233,7 +233,7 @@
     },
     "errors": {
       "name": "Full name is required",
-      "phone": "Phone number must be at least 10 digits",
+      "phone": "Invalid phone number",
       "date": "Tour date is required",
       "nationality": "Nationality is required",
       "address": "Address is required",
