@@ -133,7 +133,13 @@
       "lastName": "Apelido",
       "emailAddress": "Email",
       "message": "Mensagem",
-      "send": "Enviar"
+      "send": "Enviar",
+      "errors": {
+        "firstName": "O nome deve ter pelo menos 2 caracteres",
+        "lastName": "O sobrenome deve ter pelo menos 2 caracteres",
+        "email": "Endereço de e-mail inválido",
+        "message": "A mensagem deve ter pelo menos 10 caracteres"
+      }
     }
   },
   "navbar": {
@@ -244,6 +250,7 @@
     }
   },
   "home": {
+    "viewMore": "ver mais",
     "hero": {
       "title": "Viagem Premium",
       "subtitle": "Descubra o Egito como um local"

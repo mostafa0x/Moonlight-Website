@@ -1,7 +1,6 @@
 import { getTranslations } from "next-intl/server";
-import CustomTextarea from "@/features/booking-modal/components/step3/CustomTextarea";
-import CustomInput from "@/shared/custom-input";
 import type { Metadata } from "next";
+import ContactForm from "./ContactForm";
 
 export async function generateMetadata({
   params,
@@ -62,8 +61,13 @@ export async function generateMetadata({
     },
   };
 }
-export default async function Page() {
-  const t = await getTranslations("contact");
+export default async function Page({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "contact" })
 
   return (
     <div className="flex justify-center items-center w-full h-full pt-20 px-6.25 pb-7.5">
@@ -96,44 +100,8 @@ export default async function Page() {
           </a>
         </div>
 
-        {/* Form */}
-        <div className="space-y-5.25">
-          <div className="flex flex-row gap-2.5">
-            <CustomInput
-              label={t("form.firstName")}
-              name="firstName"
-              type="text"
-              placeholder={t("form.firstName")}
-            />
-
-            <CustomInput
-              label={t("form.lastName")}
-              name="lastName"
-              type="text"
-              placeholder={t("form.lastName")}
-            />
-          </div>
-
-          <CustomInput
-            label={t("form.emailAddress")}
-            name="email"
-            type="email"
-            placeholder={t("form.emailAddress")}
-          />
-
-          <CustomTextarea
-            name="message"
-            label={t("form.message")}
-            placeholder={t("form.message")}
-          />
-
-          <button
-            aria-label="send message contact us"
-            className="bg-[#F2C975] hover:bg-[#b69555] text-base rounded-[10px] px-6 py-1.75 cursor-pointer text-black font-medium"
-          >
-            {t("form.send")}
-          </button>
-        </div>
+        {/* Form Container */}
+        <ContactForm />
       </div>
     </div>
   );

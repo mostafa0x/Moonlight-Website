@@ -5,15 +5,15 @@ import { memo } from "react";
 import { useTranslations } from "next-intl";
 import Avatar from "@/shared/components/avatar";
 
-function NavBar({ userToken = "xx" }: { userToken?: string }) {
+function NavBar({ locale, userToken = "xx" }: { locale: string; userToken?: string }) {
   const t = useTranslations("navbar");
 
   const LINKS = [
-    { title: t("home"), link: "/" },
-    { title: t("about"), link: "/about" },
-    { title: t("contact"), link: "/contact" },
-    { title: t("privacy"), link: "/privacy" },
-    { title: t("terms"), link: "/terms" },
+    { title: t("home"), link: `/${locale}` },
+    { title: t("about"), link: `/${locale}/about` },
+    { title: t("contact"), link: `/${locale}/contact` },
+    { title: t("privacy"), link: `/${locale}/privacy` },
+    { title: t("terms"), link: `/${locale}/terms` },
   ];
 
   return (

@@ -42,7 +42,7 @@ function PackageSection({
                 paddingRight: i === packages.length - 1 ? 13 : 0,
               }}
             >
-              {isLoading ? <PackageCardSkeleton /> : <PackageCard pkg={pkg} />}
+              {isLoading ? <PackageCardSkeleton /> : <PackageCard pkg={pkg} priority={i < 2 && isInView} />}
             </Link>
           ))}
         </div>

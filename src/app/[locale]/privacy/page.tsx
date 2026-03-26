@@ -57,8 +57,13 @@ export async function generateMetadata({
     },
   };
 }
-export default async function Page() {
-  const t = await getTranslations("privacy");
+export default async function Page({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "privacy" });
 
   return (
     <div className="flex justify-center items-center w-full h-screen pt-20 px-6.25 pb-7.5">

@@ -16,6 +16,7 @@ function Avatar({ size = 34 }: { size?: number }) {
         fill
         fetchPriority="low"
         className=" object-cover "
+        sizes={`${size}px`}
       />
     </div>
   );

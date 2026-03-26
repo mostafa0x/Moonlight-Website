@@ -11,7 +11,6 @@ async function fetchData(lang: string) {
   } catch (err) {
     console.log(err);
     return [];
-    // throw err;
   }
 }
 
@@ -23,9 +22,8 @@ export default async function page({
   params: { locale: string };
 }) {
   const { locale } = await params;
-  setRequestLocale(locale);
   const { tourId } = await searchParams;
-  const t = await getTranslations("home");
+  const t = await getTranslations({ locale, namespace: "home" });
 
   const dataAll: HomeDataType[] = [
     {

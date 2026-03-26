@@ -144,7 +144,13 @@
       "lastName": "Last name",
       "emailAddress": "Email address",
       "message": "Message",
-      "send": "Send message"
+      "send": "Send message",
+      "errors": {
+        "firstName": "First name must be at least 2 characters",
+        "lastName": "Last name must be at least 2 characters",
+        "email": "Invalid email address",
+        "message": "Message must be at least 10 characters"
+      }
     }
   },
   "navbar": {
@@ -255,6 +261,7 @@
     }
   },
   "home": {
+    "viewMore": "view more",
     "hero": {
       "title": "Premium Travel",
       "subtitle": "Discover Egypt like a local"

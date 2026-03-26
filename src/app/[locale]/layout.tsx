@@ -56,7 +56,7 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AllProviders>
-            <NavBar />
+            <NavBar locale={locale} />
             {children}
             <BackgroundImage />
           </AllProviders>

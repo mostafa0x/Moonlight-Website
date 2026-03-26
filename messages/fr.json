@@ -133,7 +133,13 @@
       "lastName": "Nom",
       "emailAddress": "Adresse Email",
       "message": "Message",
-      "send": "Envoyer le message"
+      "send": "Envoyer le message",
+      "errors": {
+        "firstName": "Le prénom doit comporter au moins 2 caractères",
+        "lastName": "Le nom doit comporter au moins 2 caractères",
+        "email": "Adresse e-mail invalide",
+        "message": "Le message doit comporter au moins 10 caractères"
+      }
     }
   },
   "navbar": {
@@ -244,6 +250,7 @@
     }
   },
   "home": {
+    "viewMore": "voir plus",
     "hero": {
       "title": "Voyage Premium",
       "subtitle": "Découvrez l'Égypte comme un local"

@@ -51,7 +51,6 @@ export async function generateMetadata({
 
 export default async function Page({ params }: { params: { locale: string } }) {
   const { locale } = await params;
-  console.log(locale);
 
   const t = await getTranslations({ locale, namespace: "about" });
   return (

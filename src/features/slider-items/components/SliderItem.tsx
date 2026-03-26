@@ -43,25 +43,28 @@ function SliderItem({
               : "translate-x-full opacity-0",
         )}
       >
+        {/* Placeholder - only show if main image hasn't loaded */}
         {!loaded && (
           <Image
             src="/imgs/placeholder.webp"
             alt="loading"
             fill
-            sizes="(max-width: 768px) 100vw, 402px"
+            sizes="(max-width: 640px) 330px, (max-width: 1280px) 530px, 730px"
             className="object-contain blur-sm"
+            priority={isFirstItem}
           />
         )}
 
+        {/* Main Image */}
         <Image
           src={displayItem.imageUrl}
           alt={displayItem.title}
           fill
           priority={isFirstItem}
-          sizes="(max-width: 768px) 100vw, 730px}"
+          sizes="(max-width: 640px) 330px, (max-width: 1280px) 530px, 730px"
           onLoad={handleCacheImage}
           className={cn(
-            "object-contain transition-opacity duration-500 ",
+            "object-contain transition-opacity duration-500",
             loaded ? "opacity-100" : "opacity-0",
           )}
         />
