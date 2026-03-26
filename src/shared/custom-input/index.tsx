@@ -20,7 +20,7 @@ function CustomInput({
 }: {
   label: string;
   name: string;
-  type: "text" | "date" | "tel" | "email";
+  type: "text" | "date" | "tel" | "email" | "nationality";
   placeholder: string;
 }) {
   const {
@@ -92,7 +92,7 @@ function CustomInput({
             </button>
 
             {open && (
-              <div className="absolute top-full mt-1 w-[250px] bg-[#1a1a1a] border border-[#313131] rounded-[8px] overflow-hidden z-[9999] shadow-2xl">
+              <div className="absolute top-full mt-1 w-[250px] bg-[#1a1a1a] border border-[#313131] rounded-[8px] overflow-hidden z-9999 shadow-2xl">
                 <div className="p-2 border-b border-[#313131]">
                   <input
                     autoFocus
@@ -142,6 +142,79 @@ function CustomInput({
             placeholder={placeholder}
             autoComplete="off"
           />
+        </div>
+
+        {error && (
+          <span className="text-sm text-red-500 font-medium">
+            {error.message as string}
+          </span>
+        )}
+      </div>
+    );
+  }
+
+  if (type === "nationality") {
+    return (
+      <div className="flex w-full flex-col gap-1" ref={containerRef}>
+        <label
+          className="text-base text-[#8B8B8B] font-medium select-none"
+          htmlFor={name}
+        >
+          {label}
+        </label>
+
+        <div className="relative">
+          <button
+            type="button"
+            onClick={() => setOpen(!open)}
+            className={clsx(
+              "bg-[#131313] border w-full h-8 rounded-[5px] px-3.75 py-1.5 flex items-center justify-between text-sm text-white font-medium transition-colors hover:border-[#F2C975] cursor-pointer",
+              error ? "border-red-500" : "border-[#313131]"
+            )}
+          >
+            <span className={clsx(!field.value && "text-[#4b4b4b]")}>
+              {field.value || placeholder}
+            </span>
+            <img
+              src="/icons/arrow-down.svg"
+              className={clsx("w-3 transition-transform", open && "rotate-180")}
+              alt=""
+            />
+          </button>
+
+          {open && (
+            <div className="absolute top-full mt-1 w-full bg-[#1a1a1a] border border-[#313131] rounded-[8px] overflow-hidden z-9999 shadow-2xl">
+              <div className="p-2 border-b border-[#313131]">
+                <input
+                  autoFocus
+                  type="text"
+                  placeholder="Search country..."
+                  className="w-full bg-[#131313] border border-[#313131] rounded-md px-2 py-1 text-sm text-white focus:outline-none focus:border-[#F2C975]"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+              </div>
+              <div className="max-h-[200px] overflow-y-auto scrollbar-hide">
+                {filteredCountries.map((c) => (
+                  <div
+                    key={c.name}
+                    onClick={() => {
+                      field.onChange(c.name);
+                      setOpen(false);
+                      setSearch("");
+                    }}
+                    className={clsx(
+                      "px-3 py-2 text-sm text-white hover:bg-[#F2C975]/10 cursor-pointer flex items-center gap-2 transition-colors",
+                      field.value === c.name && "bg-[#F2C975]/20"
+                    )}
+                  >
+                    <span>{c.emoji}</span>
+                    <span>{c.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {error && (

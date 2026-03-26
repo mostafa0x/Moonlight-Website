@@ -17,7 +17,7 @@ function HeaderModal({
         <h1 className="text-base truncate w-70 md:w-full md:text-2xl text-white font-bold">{titleTour}</h1>
         <div className="flex flex-row gap-5.5 mt-1.75 items-center">
           <span className="text-[20px] text-[#F2C975] font-medium">
-            {t("price")}
+            {price}$
           </span>
           <div className="flex flex-row gap-1.5 w-full items-center">
             <img src={"/icons/group.svg"} alt="group icon" />

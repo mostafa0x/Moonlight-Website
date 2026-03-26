@@ -10,7 +10,7 @@ function Step5() {
       <div className="mt-2">
         <PromoCode />
       </div>
-      <div className="mt-4.75">
+      <div className="mt-2.75">
         <PaymentMethod />
       </div>
     </div>

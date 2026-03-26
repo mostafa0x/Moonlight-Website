@@ -20,24 +20,28 @@ export default function Step4() {
             type="text"
             placeholder={t("placeholders.name")}
           />
-          <CustomInput
-            label={t("phoneNumber")}
-            name="customerPhone"
-            type="tel"
-            placeholder={t("placeholders.phone")}
-          />
-          <CustomInput
-            label={t("tourDate")}
-            name="tourDate"
-            type="date"
-            placeholder={t("placeholders.date")}
-          />
-          <CustomInput
+           <CustomInput
             label={t("nationality")}
             name="nationality"
-            type="text"
+            type="nationality"
             placeholder={t("placeholders.nationality")}
           />
+          <div className="md:col-span-2">
+            <CustomInput
+              label={t("phoneNumber")}
+              name="customerPhone"
+              type="tel"
+              placeholder={t("placeholders.phone")}
+            />
+          </div>
+          <div className="md:col-span-2">
+            <CustomInput
+              label={t("tourDate")}
+              name="tourDate"
+              type="date"
+              placeholder={t("placeholders.date")}
+            />
+          </div>
           <div className="md:col-span-2">
             <CustomTextarea
               label={t("address")}
