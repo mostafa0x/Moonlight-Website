@@ -37,14 +37,12 @@ function CustomTextarea({
           const address = `${latitude}, ${longitude}`;
           setValue(name, address, { shouldValidate: true });
         } catch (err) {
-          console.error("Error fetching address:", err);
           alert(t("alerts.fetchError"));
         } finally {
           setLoading(false);
         }
       },
       (err) => {
-        console.error("Geolocation error:", err);
         alert(t("alerts.denied"));
         setLoading(false);
       },

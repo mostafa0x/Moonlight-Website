@@ -12,7 +12,7 @@ function PickLocation({
 }) {
   const { register } = useFormContext();
   return (
-    <div className="space-y-2">
+    <div className="flex flex-col space-y-2">
       <label
         htmlFor={name}
         className="text-base text-[#8B8B8B] font-medium select-none"
@@ -23,12 +23,12 @@ function PickLocation({
         aria-label={`${name} select`}
         id={name}
         {...register(name)}
-        className="w-full h-[60px] bg-[#131313] border border-[#313131] rounded-[15px] px-3.5 text-white"
+        className=" h-15 bg-[#131313] border border-[#313131] rounded-[15px] px-3.5 text-white"
         defaultValue={options[0]?.value}
       >
         {options.map((item) => (
           <option
-            className="text-[12px] text-white font-medium bg-[#131313]"
+            className="text-sm text-white font-medium bg-[#131313]"
             key={item.value}
             value={item.value}
           >

@@ -327,5 +327,12 @@
         }
       ]
     }
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "loginWithGoogle": "Login with Google",
+    "welcome": "Welcome",
+    "error": "Authentication error"
   }
 }
