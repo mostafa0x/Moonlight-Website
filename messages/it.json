@@ -242,5 +242,72 @@
       "address": "L'indirizzo è richiesto",
       "language": "La lingua è richiesta"
     }
+  },
+  "home": {
+    "hero": {
+      "title": "Viaggio Premium",
+      "subtitle": "Scopri l'Egitto come un locale"
+    },
+    "sections": {
+      "giza": "Giza",
+      "cairo": "Il Cairo",
+      "alexandria": "Alessandria",
+      "nile": "Crociera sul Nilo"
+    },
+    "landmarks": {
+      "giza": [
+        {
+          "title": "Maschera d'oro",
+          "description": "Questa famosa maschera in oro massiccio poggiava sui resti mummificati di Tutankhamon. Cattura perfettamente il suo volto reale trasformandolo negli dei Osiride e Ra, con iscrizioni divine protettive sul retro.",
+          "imageUrl": "/imgs/packages/giza/totankhamun.webp"
+        },
+        {
+          "title": "Anubi su una cassa",
+          "description": "Trovata all'interno del Tesoro, questa cassa a forma di pilone poggia su una slitta. Uno sciacallo Anubi nero e oro è seduto sopra, a guardia di scomparti nascosti pieni di oggetti sacri e gioielli preziosi.",
+          "imageUrl": "/imgs/packages/giza/anubis.webp"
+        },
+        {
+          "title": "Coffinette canopica",
+          "description": "Questo sarcofago in miniatura in oro massiccio conteneva gli organi mummificati del re. Riccamente decorato con corniola, vetro colorato e incantesimi di Iside, i cartigli alterati suggeriscono che fosse originariamente destinato a un'altra sepoltura reale, non a Tutankhamon.",
+          "imageUrl": "/imgs/packages/giza/canopic_coffinette.webp"
+        }
+      ],
+      "cairo": [
+        {
+          "title": "Moschea di Muhammad Ali",
+          "description": "Conosciuta come la Moschea di Alabastro, questo capolavoro in stile turco del 1848 nella Cittadella presenta i minareti gemelli più alti d'Egitto e una magnifica cupola centrale costruita da Muhammad Ali Pasha.",
+          "imageUrl": "/imgs/packages/cairo/ali.webp"
+        },
+        {
+          "title": "Sinagoga Ben Ezra",
+          "description": "Ben Ezra è la sinagoga più antica d'Egitto. È famosa per il suo hekhal decorato con arabescos e la storica scoperta della Geniza del Cairo, un tesoro di 850 anni di documenti rari.",
+          "imageUrl": "/imgs/packages/cairo/m3bd.webp"
+        }
+      ],
+      "alexandria": [
+        {
+          "title": "Forte di Qaitbay",
+          "description": "Costruita sulle rovine dell'antico Faro di Alessandria nel 1477, la Cittadella di Qaitbay è una massiccia fortezza mediterranea in pietra calcarea dotata di torri difensive, un cortile e l'iconica torre principale a tre piani.",
+          "imageUrl": "/imgs/packages/alex/castel.webp"
+        },
+        {
+          "title": "Teatro Romano",
+          "description": "Situato ad Alessandria, questo anfiteatro romano a forma di U del IV secolo fungeva da auditorium e consiglio cittadino bizantino. Presenta mura in pietra calcarea, sedili in marmo e suggestive colonne di granito.",
+          "imageUrl": "/imgs/packages/alex/masr7.webp"
+        }
+      ],
+      "nile": [
+        {
+          "title": "Crociera sul Nilo",
+          "description": "Vivi la magia del Nilo nel cuore del Cairo a bordo di una crociera indimenticabile. Scopri la bellezza e i monumenti storici della capitale sotto un cielo stellato, con una cena lussuosa e un'autentica atmosfera egiziana. Un viaggio davvero magico ti aspetta!",
+          "imageUrl": "/imgs/packages/nile/nile1.webp"
+        },
+        {
+          "title": "Crociera sul Nilo",
+          "description": "Vivi la magia del Nilo nel cuore del Cairo a bordo di una crociera indimenticabile. Scopri la bellezza e i monumenti storici della capitale sotto un cielo stellato, con una cena lussuosa e un'autentica atmosfera egiziana. Un viaggio davvero magico ti aspetta!",
+          "imageUrl": "/imgs/packages/nile/nile2.webp"
+        }
+      ]
+    }
   }
 }

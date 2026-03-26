@@ -6,15 +6,17 @@ function PackagesPage({
   currentPage,
   packages,
   titleHeader,
+  page,
 }: {
   currentPage: number;
   packages: PackageType[];
   titleHeader: string;
+  page: number;
 }) {
-  const isInView = currentPage === 2;
+  const isInView = currentPage === page;
 
   return (
-    <div className="relative  h-screen w-full flex overflow-hidden pt-7.5 lg:pt-5 px-0 lg:px-22.5 ">
+    <div className="relative h-screen w-full flex overflow-hidden pt-7.5 lg:pt-5 px-0 lg:px-22.5 scrollbar-hide">
       <PackageSection
         title={titleHeader}
         packages={packages}

@@ -27,7 +27,7 @@ export default function BookingModal() {
     resolver: zodResolver(getBookingSchema(t)),
     mode: "onChange",
     defaultValues: {
-      adultsNumber: 12,
+      adultsNumber: 1,
       kidsNumber: 0,
       tourguideLanguage: "en",
       totalPrice: pkg?.startingPrice || 0,

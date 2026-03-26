@@ -54,6 +54,7 @@ export default function Home({
             currentPage={currentPage}
             packages={pg.packages}
             titleHeader={pg.name}
+            page={pg.page + 1}
           />
         </FullPage.Section>,
       ])}

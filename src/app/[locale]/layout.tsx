@@ -3,6 +3,8 @@ import AllProviders from "@/shared/providers/AllProviders";
 import NavBar from "@/shared/components/nav-bar";
 import BackgroundImage from "@/shared/components/background-image/BackgroundImage";
 import { NextIntlClientProvider } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import { redirect } from "next/navigation";
 export const dynamic = "force-static";
 export const dynamicParams = false;
 
@@ -32,10 +34,15 @@ export default async function LocaleLayout({
   children,
   params,
 }: LocaleLayoutProps) {
-  const { locale } = (await params) as {
-    locale: "en" | "fr" | "it" | "es" | "pt";
-  };
-  const messagesMap = {
+  const { locale } = (await params);
+  setRequestLocale(locale);
+  
+  const supportedLocales = ["en", "fr", "it", "es", "pt"];
+  if (!supportedLocales.includes(locale)) {
+    redirect("/en");
+  }
+
+  const messagesMap: any = {
     en: () => import("../../../messages/en.json"),
     fr: () => import("../../../messages/fr.json"),
     it: () => import("../../../messages/it.json"),

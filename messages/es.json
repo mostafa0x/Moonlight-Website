@@ -242,5 +242,72 @@
       "address": "La dirección es obligatoria",
       "language": "El idioma es obligatorio"
     }
+  },
+  "home": {
+    "hero": {
+      "title": "Viaje Premium",
+      "subtitle": "Descubre Egipto como un local"
+    },
+    "sections": {
+      "giza": "Guiza",
+      "cairo": "El Cairo",
+      "alexandria": "Alejandría",
+      "nile": "Crucero por el Nilo"
+    },
+    "landmarks": {
+      "giza": [
+        {
+          "title": "Máscara dorada",
+          "description": "Esta famosa máscara de oro macizo descansaba sobre los restos momificados de Tutankamón. Captura perfectamente su rostro real mientras lo transforma en los dioses Osiris y Re, con inscripciones divinas protectoras detrás.",
+          "imageUrl": "/imgs/packages/giza/totankhamun.webp"
+        },
+        {
+          "title": "Anubis en un cofre",
+          "description": "Encontrado dentro del Tesoro, este cofre en forma de pilón descansa sobre un trineo. Un llamativo chacal Anubis negro y dorado se sienta encima, custodiando compartimentos ocultos llenos de objetos sagrados y joyas preciosas.",
+          "imageUrl": "/imgs/packages/giza/anubis.webp"
+        },
+        {
+          "title": "Féretro canope",
+          "description": "Este ataúd de oro macizo en miniatura contenía los órganos momificados del rey. Ricamente decorado con cornalina, vidrio de colores y hechizos de Isis, los cartuchos alterados sugieren que originalmente fue destinado a otro entierro real, no a Tutankamón.",
+          "imageUrl": "/imgs/packages/giza/canopic_coffinette.webp"
+        }
+      ],
+      "cairo": [
+        {
+          "title": "Mezquita de Muhammad Alí",
+          "description": "Conocida como la Mezquita de Alabastro, esta obra maestra de estilo turco de 1848 en la Ciudadela cuenta con los minaretes gemelos más altos de Egipto y una magnífica cúpula central construida por Muhammad Alí Pasha.",
+          "imageUrl": "/imgs/packages/cairo/ali.webp"
+        },
+        {
+          "title": "Sinagoga Ben Ezra",
+          "description": "Ben Ezra es la sinagoga más antigua de Egipto. Es famosa por su hejal decorado con arabescos y el descubrimiento histórico de la Geniza de El Cairo, un tesoro de 850 años de antigüedad de documentos raros.",
+          "imageUrl": "/imgs/packages/cairo/m3bd.webp"
+        }
+      ],
+      "alexandria": [
+        {
+          "title": "Ciudadela de Qaitbay",
+          "description": "Construida sobre las ruinas del antiguo Faro de Alejandría en 1477, la Ciudadela de Qaitbay es una enorme fortaleza mediterránea de piedra caliza que cuenta con torres defensivas, un patio y una icónica torre principal de tres pisos.",
+          "imageUrl": "/imgs/packages/alex/castel.webp"
+        },
+        {
+          "title": "Teatro Romano",
+          "description": "Ubicado en Alejandría, este anfiteatro romano en forma de U del siglo IV sirvió como auditorio y consejo municipal bizantino. Presenta muros de piedra caliza, asientos de mármol y llamativas columnas de granito.",
+          "imageUrl": "/imgs/packages/alex/masr7.webp"
+        }
+      ],
+      "nile": [
+        {
+          "title": "Crucero por el Nilo",
+          "description": "¡Experimente la magia del Nilo en el corazón de El Cairo a bordo de un crucero inolvidable! Descubra la belleza y los monumentos históricos de la capital bajo un cielo estrellado, con una cena de lujo y un ambiente egipcio auténtico. ¡Un viaje verdaderamente mágico le espera!",
+          "imageUrl": "/imgs/packages/nile/nile1.webp"
+        },
+        {
+          "title": "Crucero por el Nilo",
+          "description": "¡Experimente la magia del Nilo en el corazón de El Cairo a bordo de un crucero inolvidable! Descubra la belleza y los monumentos históricos de la capital bajo un cielo estrellado, con una cena de lujo y un ambiente egipcio auténtico. ¡Un viaje verdaderamente mágico le espera!",
+          "imageUrl": "/imgs/packages/nile/nile2.webp"
+        }
+      ]
+    }
   }
 }
