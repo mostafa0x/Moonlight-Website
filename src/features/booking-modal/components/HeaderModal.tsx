@@ -33,7 +33,9 @@ function HeaderModal({
         src={image}
         alt="modal img"
         fill
+        sizes="(max-width: 768px) 100vw, 630px"
         className="object-cover"
+        priority
       />
     </div>
   );

@@ -4,9 +4,11 @@ import Link from "next/link";
 import { memo } from "react";
 import { useTranslations } from "next-intl";
 import Avatar from "@/shared/components/avatar";
+import { useAuth } from "@/shared/providers/AuthProvider";
 
-function NavBar({ locale, userToken = "xx" }: { locale: string; userToken?: string }) {
+function NavBar({ locale }: { locale: string }) {
   const t = useTranslations("navbar");
+  const { isLoggedIn, userData, setShowLoginModal, signOut } = useAuth();
 
   const LINKS = [
     { title: t("home"), link: `/${locale}` },
@@ -32,18 +34,26 @@ function NavBar({ locale, userToken = "xx" }: { locale: string; userToken?: stri
             {link.title}
           </Link>
         ))}
-        {userToken ? (
-          <Link href={"/profile"} className="flex flex-row gap-1 items-center">
-            <Avatar />
-            <span className="text-base text-white font-bold">Alex</span>
-          </Link>
+        {isLoggedIn ? (
+          <div className="flex flex-row gap-4 items-center">
+            <Link href={`/${locale}/profile`} className="flex flex-row gap-1 items-center">
+              <Avatar src={userData?.avatar || ""} />
+              <span className="text-base text-white font-bold">{userData?.name?.split(' ')[0]}</span>
+            </Link>
+            <button 
+              onClick={() => signOut()}
+              className="text-xs text-red-500 hover:text-red-400 font-bold uppercase cursor-pointer"
+            >
+              {t("logout") || "Logout"}
+            </button>
+          </div>
         ) : (
-          <Link
-            href={"/login"}
-            className="font-bold font-cairo text-base  xl:text-xl text-white hover:text-gray-300 select-none"
+          <button
+            onClick={() => setShowLoginModal(true)}
+            className="font-bold font-cairo text-base xl:text-xl text-white hover:text-[#F2C975] select-none cursor-pointer"
           >
-            Login
-          </Link>
+            {t("login") || "Login"}
+          </button>
         )}
       </div>
     </div>

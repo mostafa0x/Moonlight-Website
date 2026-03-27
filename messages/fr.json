@@ -148,7 +148,8 @@
     "contact": "Contact",
     "privacy": "Confidentialité",
     "terms": "Conditions",
-    "login": "Connexion"
+    "login": "Connexion",
+    "logout": "Déconnexion"
   },
   "footer": {
     "terms": "Conditions d'utilisation",
@@ -316,5 +317,14 @@
         }
       ]
     }
+  },
+  "auth": {
+    "login": "Se connecter",
+    "logout": "Se déconnecter",
+    "loginWithGoogle": "Se connecter avec Google",
+    "welcome": "Bienvenue",
+    "loginDescription": "Veuillez vous connecter pour continuer votre réservation et enregistrer vos informations.",
+    "error": "Erreur d'authentification",
+    "secureVoyage": "Sécurisez votre voyage vers l'histoire"
   }
 }

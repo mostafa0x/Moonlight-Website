@@ -148,7 +148,8 @@
     "contact": "Contacto",
     "privacy": "Privacidade",
     "terms": "Termos",
-    "login": "Login"
+    "login": "Login",
+    "logout": "Sair"
   },
   "footer": {
     "terms": "Termos de uso",
@@ -316,5 +317,14 @@
         }
       ]
     }
+  },
+  "auth": {
+    "login": "Entrar",
+    "logout": "Sair",
+    "loginWithGoogle": "Entrar com Google",
+    "welcome": "Bem-vindo",
+    "loginDescription": "Faça login para continuar com sua reserva e salvar suas informações.",
+    "error": "Erro de autenticação",
+    "secureVoyage": "Segure sua viagem à história"
   }
 }

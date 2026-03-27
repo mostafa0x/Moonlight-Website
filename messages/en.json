@@ -159,7 +159,8 @@
     "contact": "Contact",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
-    "login": "Login"
+    "login": "Login",
+    "logout": "Logout"
   },
   "footer": {
     "terms": "Terms of use",
@@ -333,6 +334,8 @@
     "logout": "Logout",
     "loginWithGoogle": "Login with Google",
     "welcome": "Welcome",
-    "error": "Authentication error"
+    "loginDescription": "Please login to proceed with your booking and save your information.",
+    "error": "Authentication error",
+    "secureVoyage": "Secure your voyage to history"
   }
 }

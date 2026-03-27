@@ -7,12 +7,14 @@ import clsx from "clsx";
 import { memo } from "react";
 import { useController, useFormContext } from "react-hook-form";
 import { useTranslations } from "next-intl";
+import { useAuth } from "@/shared/providers/AuthProvider";
 
 function FooterModal({ step }: { step: number }) {
   const { nextStep, prevStep, tourId } = useBookingContext();
   const { data: pkg } = useGetPackage(tourId);
   const { control, trigger } = useFormContext();
   const t = useTranslations("bookingModal.footer");
+  const { isLoggedIn, setShowLoginModal } = useAuth();
 
   const handleNext = async () => {
     const hasCustomizations =
@@ -20,6 +22,10 @@ function FooterModal({ step }: { step: number }) {
     const isContactStep = hasCustomizations ? step === 4 : step === 3;
 
     if (isContactStep) {
+      if (!isLoggedIn) {
+        setShowLoginModal(true);
+        return;
+      }
       const isValid = await trigger([
         "customerName",
         "customerPhone",
