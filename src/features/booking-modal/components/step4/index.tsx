@@ -20,53 +20,53 @@ export default function Step4() {
 
   return (
     <div className="flex flex-col ">
-        <div className="flex items-center justify-between">
-          <h1 className="text-base text-[#F2C975] font-medium">
-            {t("contactTitle")}
-          </h1>
-          {!user && (
-            <div className="scale-90 origin-right">
-              <GoogleAuthButton />
-            </div>
-          )}
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] mt-2">
+      <div className="flex items-center justify-between">
+        <h1 className="text-base text-[#F2C975] font-medium">
+          {t("contactTitle")}
+        </h1>
+        {!user && (
+          <div className="scale-90 origin-right">
+            <GoogleAuthButton />
+          </div>
+        )}
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-2">
+        <CustomInput
+          label={t("fullName")}
+          name="customerName"
+          type="text"
+          placeholder={t("placeholders.name")}
+        />
+        <CustomInput
+          label={t("nationality")}
+          name="nationality"
+          type="nationality"
+          placeholder={t("placeholders.nationality")}
+        />
+        <div className="md:col-span-2">
           <CustomInput
-            label={t("fullName")}
-            name="customerName"
-            type="text"
-            placeholder={t("placeholders.name")}
+            label={t("phoneNumber")}
+            name="customerPhone"
+            type="tel"
+            placeholder={t("placeholders.phone")}
           />
-           <CustomInput
-            label={t("nationality")}
-            name="nationality"
-            type="nationality"
-            placeholder={t("placeholders.nationality")}
-          />
-          <div className="md:col-span-2">
-            <CustomInput
-              label={t("phoneNumber")}
-              name="customerPhone"
-              type="tel"
-              placeholder={t("placeholders.phone")}
-            />
-          </div>
-          <div className="md:col-span-2">
-            <CustomInput
-              label={t("tourDate")}
-              name="tourDate"
-              type="date"
-              placeholder={t("placeholders.date")}
-            />
-          </div>
-          <div className="md:col-span-2">
-            <CustomTextarea
-              label={t("address")}
-              name="address"
-              placeholder={t("placeholders.address")}
-            />
-          </div>
         </div>
+        <div className="md:col-span-2">
+          <CustomInput
+            label={t("tourDate")}
+            name="tourDate"
+            type="date"
+            placeholder={t("placeholders.date")}
+          />
+        </div>
+        <div className="md:col-span-2">
+          <CustomTextarea
+            label={t("address")}
+            name="address"
+            placeholder={t("placeholders.address")}
+          />
+        </div>
+      </div>
     </div>
   );
 }
