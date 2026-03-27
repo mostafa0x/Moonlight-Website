@@ -38,7 +38,7 @@ function CustomInput({
 
   const filteredCountries = useMemo(() => {
     return countriesData.filter((c) =>
-      c.name.toLowerCase().includes(search.toLowerCase()) || 
+      c.name.toLowerCase().includes(search.toLowerCase()) ||
       c.code.includes(search)
     );
   }, [search]);
@@ -64,13 +64,20 @@ function CustomInput({
     ? field.value.slice(selectedCountry.code.length)
     : "";
 
+  const minDate = useMemo(() => {
+    if (type !== "date") return undefined;
+    const date = new Date();
+    date.setDate(date.getDate() + 1);
+    return date.toISOString().split("T")[0];
+  }, [type]);
+
   if (type === "tel") {
     return (
       <div className="flex w-full flex-col gap-1">
         <label className="text-base text-[#8B8B8B] font-medium select-none" htmlFor={name}>
           {label}
         </label>
-        
+
         <div className="flex gap-2">
           {/* Country Selector */}
           <div ref={containerRef} className="relative">
@@ -78,7 +85,7 @@ function CustomInput({
               type="button"
               onClick={() => setOpen(!open)}
               className={clsx(
-                "bg-[#131313] border border-[#313131] h-8 rounded-[5px] px-2 flex items-center gap-2 text-sm text-white font-medium transition-colors hover:border-[#F2C975] cursor-pointer w-[110px] whitespace-nowrap",
+                "bg-[#131313] border border-[#313131] h-8 rounded-[5px] px-2 flex items-center gap-2 text-sm text-white font-medium transition-colors hover:border-[#F2C975] cursor-pointer w-27.5 whitespace-nowrap",
                 error && "border-red-500"
               )}
             >
@@ -92,7 +99,7 @@ function CustomInput({
             </button>
 
             {open && (
-              <div className="absolute top-full mt-1 w-[250px] bg-[#1a1a1a] border border-[#313131] rounded-[8px] overflow-hidden z-9999 shadow-2xl">
+              <div className="absolute top-full mt-1 w-62.5 bg-[#1a1a1a] border border-[#313131] rounded-lg overflow-hidden z-9999 shadow-2xl">
                 <div className="p-2 border-b border-[#313131]">
                   <input
                     autoFocus
@@ -103,7 +110,7 @@ function CustomInput({
                     onChange={(e) => setSearch(e.target.value)}
                   />
                 </div>
-                <div className="max-h-[200px] overflow-y-auto scrollbar-hide">
+                <div className="max-h-50 overflow-y-auto scrollbar-hide">
                   {filteredCountries.map((c) => (
                     <div
                       key={c.name}
@@ -183,7 +190,7 @@ function CustomInput({
           </button>
 
           {open && (
-            <div className="absolute top-full mt-1 w-full bg-[#1a1a1a] border border-[#313131] rounded-[8px] overflow-hidden z-9999 shadow-2xl">
+            <div className="absolute top-full mt-1 w-full bg-[#1a1a1a] border border-[#313131] rounded-lg overflow-hidden z-9999 shadow-2xl">
               <div className="p-2 border-b border-[#313131]">
                 <input
                   autoFocus
@@ -194,7 +201,7 @@ function CustomInput({
                   onChange={(e) => setSearch(e.target.value)}
                 />
               </div>
-              <div className="max-h-[200px] overflow-y-auto scrollbar-hide">
+              <div className="max-h-50 overflow-y-auto scrollbar-hide">
                 {filteredCountries.map((c) => (
                   <div
                     key={c.name}
@@ -246,7 +253,19 @@ function CustomInput({
         placeholder={placeholder}
         type={type}
         autoComplete="off"
-        min={type === "date" ? new Date().toISOString().split("T")[0] : undefined}
+        min={minDate}
+        onKeyDown={(e) => {
+          if (type === "date") e.preventDefault();
+        }}
+        onClick={(e) => {
+          if (type === "date") {
+            try {
+              (e.currentTarget as HTMLInputElement).showPicker();
+            } catch (err) {
+              console.warn("Picker not supported or failed", err);
+            }
+          }
+        }}
       />
       {error && (
         <span className="text-sm text-red-500 font-medium">

@@ -255,6 +255,14 @@
       "DUPLICATE_BOOKING": "Questa prenotazione è già stata inviata.",
       "INTERNAL_SERVER_ERROR": "Si è verificato un errore sul server. Riprova più tardi.",
       "UNKNOWN_ERROR": "Si è verificato un errore imprevisto. Riprova."
+    },
+    "payment": {
+      "success": {
+        "title": "Prenotazione Confermata",
+        "subtitle": "Benvenuti in un Viaggio Indimenticabile",
+        "description": "La tua prenotazione è stata elaborata con successo. Riceverai a breve un'e-mail con tutti i dettagli.",
+        "button": "Torna alla Home"
+      }
     }
   },
   "home": {

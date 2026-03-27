@@ -266,6 +266,14 @@
       "DUPLICATE_BOOKING": "This booking has already been submitted.",
       "INTERNAL_SERVER_ERROR": "An error occurred on the server. Please try again later.",
       "UNKNOWN_ERROR": "An unexpected error occurred. Please try again."
+    },
+    "payment": {
+      "success": {
+        "title": "Booking Confirmed",
+        "subtitle": "Welcome to an Unforgettable Journey",
+        "description": "Your booking is successfully processed. You will receive an email with all the details shortly.",
+        "button": "Back to Home"
+      }
     }
   },
   "home": {

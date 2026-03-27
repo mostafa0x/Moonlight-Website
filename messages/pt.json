@@ -255,6 +255,14 @@
       "DUPLICATE_BOOKING": "Esta reserva já foi submetida.",
       "INTERNAL_SERVER_ERROR": "Ocorreu um erro no servidor. Por favor, tente mais tarde.",
       "UNKNOWN_ERROR": "Ocorreu um erro inesperado. Por favor, tente novamente."
+    },
+    "payment": {
+      "success": {
+        "title": "Reserva Confirmada",
+        "subtitle": "Bem-vindo a uma Viagem Inesquecível",
+        "description": "A sua reserva foi processada com sucesso. Receberá um e-mail com todos os detalhes em breve.",
+        "button": "Voltar ao Início"
+      }
     }
   },
   "home": {

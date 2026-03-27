@@ -82,9 +82,20 @@ function FooterModal({ step }: { step: number }) {
         },
         body: JSON.stringify(payload),
       });
-
       if (response.ok) {
-        window.location.reload();
+        const result = await response.json();
+        if (result.status === "success" && result.data?.paymentUrl) {
+          window.location.href = result.data.paymentUrl;
+        } else if (result.status === "error") {
+          const errorCode = result.code || "UNKNOWN_ERROR";
+          try {
+            setErrorMsg(te(errorCode));
+          } catch {
+            setErrorMsg(result.message || te("UNKNOWN_ERROR"));
+          }
+        } else {
+          window.location.reload();
+        }
       } else {
         const errorData = await response.json();
         const errorCode = errorData.code || "UNKNOWN_ERROR";
