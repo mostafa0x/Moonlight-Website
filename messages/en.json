@@ -259,6 +259,13 @@
       "nationality": "Nationality is required",
       "address": "Address is required",
       "language": "Language is required"
+    },
+    "backendErrors": {
+      "VALIDATION_ERROR": "The tour date must be at least 1 day in the future (Cairo time).",
+      "AUTH_ERROR": "Your session has expired or is invalid. Please log in again.",
+      "DUPLICATE_BOOKING": "This booking has already been submitted.",
+      "INTERNAL_SERVER_ERROR": "An error occurred on the server. Please try again later.",
+      "UNKNOWN_ERROR": "An unexpected error occurred. Please try again."
     }
   },
   "home": {

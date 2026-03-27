@@ -16,6 +16,7 @@ import { useEffect, useRef } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { getBookingSchema } from "./schema";
 import { useTranslations } from "next-intl";
+import { supabase } from "@/shared/lib/supabase";
 
 export default function BookingModal() {
   const { step, tourId, lang, setTotalSteps } = useBookingContext();
@@ -42,10 +43,22 @@ export default function BookingModal() {
       paymentPreference: "full",
     },
   });
- 
+
   const { setValue, control, watch } = methods;
 
   const hasCustomizations = pkg?.customizations && pkg.customizations.length > 0;
+
+  useEffect(() => {
+    const logSession = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session) {
+        console.log("Current Supabase Access Token:", session.access_token);
+      } else {
+        console.log("No active Supabase session found.");
+      }
+    };
+    logSession();
+  }, []);
 
   useEffect(() => {
     if (pkg) {
@@ -79,7 +92,7 @@ export default function BookingModal() {
         promoCode: values.promoCode || "",
         paymentPreference: values.paymentPreference || "full",
       };
-   console.log("Calculating price with body:", body);
+      console.log("Calculating price with body:", body);
       try {
         const response = await fetch("/api/bookings/calculate", {
           method: "POST",
@@ -189,7 +202,7 @@ export default function BookingModal() {
               )}
               {step === 1 && (
                 <div className="flex px-2.5 lg:px-5.25 py-4 flex-1 overflow-y-auto scrollbar-hide">
-                  <Step1 description={pkg.description} destinations={pkg.destinations} included={pkg.included} excluded={pkg.excluded}/>
+                  <Step1 description={pkg.description} destinations={pkg.destinations} included={pkg.included} excluded={pkg.excluded} />
                 </div>
               )}
               {step === 2 && (
@@ -200,7 +213,7 @@ export default function BookingModal() {
               {step === 3 && (
                 <div className="px-3.5 lg:px-14.25 py-4 flex-1 overflow-y-auto scrollbar-hide">
                   {hasCustomizations ? (
-                     <Step3 customizations={pkg.customizations} />
+                    <Step3 customizations={pkg.customizations} />
                   ) : (
                     <Step4 />
                   )}

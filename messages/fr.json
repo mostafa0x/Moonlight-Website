@@ -248,6 +248,13 @@
       "nationality": "La nationalité est obligatoire",
       "address": "L'adresse est obligatoire",
       "language": "La langue est obligatoire"
+    },
+    "backendErrors": {
+      "VALIDATION_ERROR": "La date du voyage doit être au moins 1 jour dans le futur (Heure du Caire).",
+      "AUTH_ERROR": "Votre session a expiré ou est invalide. Veuillez vous reconnecter.",
+      "DUPLICATE_BOOKING": "Cette réservation a déjà été soumise.",
+      "INTERNAL_SERVER_ERROR": "Une erreur est survenue sur le serveur. Veuillez réessayer plus tard.",
+      "UNKNOWN_ERROR": "Une erreur inattendue est survenue. Veuillez réessayer."
     }
   },
   "home": {

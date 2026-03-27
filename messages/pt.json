@@ -248,6 +248,13 @@
       "nationality": "A nacionalidade é obrigatória",
       "address": "O endereço é obrigatório",
       "language": "A língua é obrigatória"
+    },
+    "backendErrors": {
+      "VALIDATION_ERROR": "A data do tour deve ser pelo menos 1 dia no futuro (hora do Cairo).",
+      "AUTH_ERROR": "A sua sessão expirou ou é inválida. Por favor, faça login novamente.",
+      "DUPLICATE_BOOKING": "Esta reserva já foi submetida.",
+      "INTERNAL_SERVER_ERROR": "Ocorreu um erro no servidor. Por favor, tente mais tarde.",
+      "UNKNOWN_ERROR": "Ocorreu um erro inesperado. Por favor, tente novamente."
     }
   },
   "home": {

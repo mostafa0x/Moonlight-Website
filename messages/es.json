@@ -248,6 +248,13 @@
       "nationality": "La nacionalidad es obligatoria",
       "address": "La dirección es obligatoria",
       "language": "El idioma es obligatorio"
+    },
+    "backendErrors": {
+      "VALIDATION_ERROR": "La fecha del tour debe ser al menos 1 día en el futuro (hora de El Cairo).",
+      "AUTH_ERROR": "Tu sesión ha caducado o no es válida. Por favor, inicia sesión de nuevo.",
+      "DUPLICATE_BOOKING": "Esta reserva ya ha sido enviada.",
+      "INTERNAL_SERVER_ERROR": "Ocurrió un error en el servidor. Por favor, inténtalo más tarde.",
+      "UNKNOWN_ERROR": "Ocurrió un error inesperado. Por favor, inténtalo de nuevo."
     }
   },
   "home": {
