@@ -22,12 +22,16 @@ export default function Home({
   data: HomeDataType[];
 }) {
   const [currentPage, setCurrentPage] = useState(0);
+  const [mounted, setMounted] = useState(false);
   const { isOpen } = useBookingContext();
 
   useEffect(() => {
+    setMounted(true);
     console.log(isOpen);
-    
   }, [isOpen]);
+
+  if (!mounted) return null;
+
   return (
     <FullPage
       directionDots="right"
@@ -39,8 +43,8 @@ export default function Home({
       <FullPage.Section>
         <Page1 currentPage={currentPage} />
       </FullPage.Section>
-      {data.map((pg) => [
-        <FullPage.Section key={pg.name}>
+      {data.flatMap((pg) => [
+        <FullPage.Section key={`${pg.name}-landmarks`}>
           <LandMarks
             currentPage={currentPage}
             landmarks={pg.landmarks}
@@ -49,7 +53,7 @@ export default function Home({
           />
         </FullPage.Section>,
 
-        <FullPage.Section key={pg.name}>
+        <FullPage.Section key={`${pg.name}-packages`}>
           <PackagesPage
             currentPage={currentPage}
             packages={pg.packages}

@@ -62,8 +62,8 @@ export default async function LocaleLayout({
 
   const messages = (await messagesMap[locale]()).default;
   return (
-    <html lang={locale} className={`${cairo.variable} scrollbar-hide`}>
-      <body>
+    <html lang={locale} className={`${cairo.variable} scrollbar-hide`} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AllProviders>
             <NavBar locale={locale} />

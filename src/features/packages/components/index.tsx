@@ -34,11 +34,11 @@ function PackageSection({
               href={`/${locale}/?tourId=${pkg.packageId}`}
               prefetch={false}
               key={pkg.packageId}
-              className={`flex-none w-79.5 snap-start pl-3.25 ${
+              className={`flex-none w-79.5 snap-start pl-3.25 transition-all duration-700 ease-in-out ${
                 packages.length > 1 ? "lg:flex-1 lg:min-w-79.5 lg:w-auto" : ""
-              } ${isInView && "slide-fade-up blur-none"}`}
+              } ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
               style={{
-                animationDelay: `${i * 0.3}s`,
+                transitionDelay: isInView ? `${i * 0.15}s` : "0s",
                 paddingRight: i === packages.length - 1 ? 13 : 0,
               }}
             >
