@@ -7,6 +7,7 @@ import type { PackageType } from "@/shared/global";
 import PackageCard from "@/features/packages/components/PackageCard";
 import PackageSectionHeader from "@/features/packages/components/PackageSectionHeader";
 import PackageCardSkeleton from "@/features/packages/components/PackageCardSkeleton";
+import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
 
 interface PackageSectionProps {
   title: string;
@@ -26,6 +27,7 @@ function PackageSection({
   isLoading = false,
 }: PackageSectionProps) {
   const { locale } = useParams();
+  const { handleSetTourId } = useBookingContext();
 
   return (
     <section className="flex h-full w-full" aria-labelledby={`section-title-${title.replace(/\s+/g, '-').toLowerCase()}`}>
@@ -34,20 +36,18 @@ function PackageSection({
 
         <ul
           role="list"
-          className={`flex overflow-x-auto overflow-y-hidden scroll-smooth pb-4 scrollbar-custom snap-x snap-mandatory ${
-            packages.length === 1 ? "justify-center" : ""
-          }`}
+          className={`flex overflow-x-auto overflow-y-hidden scroll-smooth pb-4 scrollbar-custom snap-x snap-mandatory ${packages.length === 1 ? "justify-center" : ""
+            }`}
           aria-label={`List of tours in ${title}`}
         >
           {packages.map((pkg, i) => {
             const isLast = i === packages.length - 1;
-            
+
             return (
               <li
                 key={pkg.packageId}
-                className={`flex-none w-80 snap-start pl-3 2xl:w-96 transition-all duration-700 ease-in-out ${
-                  packages.length > 1 ? "lg:flex-1 lg:min-w-80 lg:w-auto" : ""
-                } ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+                className={`flex-none w-80 snap-start pl-3 2xl:w-96 transition-all duration-700 ease-in-out ${packages.length > 1 ? "lg:flex-1 lg:min-w-80 lg:w-auto" : ""
+                  } ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                 style={{
                   transitionDelay: isInView ? `${i * 0.15}s` : "0s",
                   paddingRight: isLast ? "1rem" : "0",
@@ -55,7 +55,15 @@ function PackageSection({
               >
                 <Link
                   href={`/${locale}/?tourId=${pkg.packageId}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    // Open modal immediately without server re-render
+                    handleSetTourId(pkg.packageId);
+                    // Update URL for bookmarking/navigation without triggering RSC
+                    window.history.pushState({}, '', `/${locale}/?tourId=${pkg.packageId}`);
+                  }}
                   prefetch={false}
+                  scroll={false}
                   className="block h-full w-full"
                   aria-label={`View details for ${pkg.packageName}`}
                 >

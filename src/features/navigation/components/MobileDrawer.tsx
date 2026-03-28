@@ -56,7 +56,7 @@ function MobileDrawer({ isOpen, onClose, locale }: MobileDrawerProps) {
       {/* Drawer Content */}
       <aside
         className={cn(
-          "fixed top-0 right-0 z-[1002] h-full w-[85%] max-w-[360px] border-l border-[#F2C975]/30 bg-[#0a0a0a] shadow-[0_0_50px_rgba(0,0,0,0.8)] transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1)",
+          "fixed top-0 right-0 z-[1002] h-full w-[85%] max-w-[360px] border-l border-[#F2C975]/30 bg-[#0a0a0a] shadow-[0_0_50px_rgba(0,0,0,0.8)] select-none transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1)",
           isOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
@@ -83,19 +83,30 @@ function MobileDrawer({ isOpen, onClose, locale }: MobileDrawerProps) {
 
             {/* Profile/Login Section */}
             {isLoggedIn ? (
-              <div className="mb-8 flex items-center gap-4 rounded-xl border border-white/5 bg-white/5 p-4">
-                <Avatar src={userData?.avatar || ""} />
-                <div className="flex flex-col">
-                  <span className="font-cairo text-base font-bold text-white leading-tight">
-                    {userData?.name || "User"}
-                  </span>
-                  <button
-                    onClick={() => signOut()}
-                    className="text-left text-[10px] font-bold uppercase text-red-500/80 hover:text-red-400 transition-colors"
-                  >
-                    {t("logout") || "Logout"}
-                  </button>
-                </div>
+              <div className="mb-8 flex items-center gap-4 rounded-xl border border-white/5 bg-white/5 p-4 transition-all hover:bg-white/10">
+                <Link 
+                  href={`/${locale}/profile`}
+                  onClick={onClose}
+                  className="flex flex-1 items-center gap-4 cursor-pointer"
+                >
+                  <Avatar src={userData?.avatar || ""} />
+                  <div className="flex flex-col">
+                    <span className="font-cairo text-base font-bold text-white leading-tight">
+                      {userData?.name || "User"}
+                    </span>
+                  </div>
+                </Link>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    signOut();
+                    onClose();
+                  }}
+                  className="text-[10px] font-bold uppercase text-red-500/80 hover:text-red-400 transition-colors cursor-pointer"
+                >
+                  {t("logout") || "Logout"}
+                </button>
               </div>
             ) : (
               <button
@@ -146,7 +157,7 @@ function MobileDrawer({ isOpen, onClose, locale }: MobileDrawerProps) {
                     key={lang.code}
                     onClick={() => handleLanguageChange(lang.code)}
                     className={cn(
-                      "flex items-center justify-center gap-2 rounded-xl border border-white/5 bg-white/5 py-3 transition-all hover:bg-white/10 active:scale-95",
+                      "flex items-center justify-center gap-2 rounded-xl border border-white/5 bg-white/5 py-3 transition-all hover:bg-white/10 active:scale-95 cursor-pointer",
                       locale === lang.code && "border-[#F2C975]/30 bg-[#F2C975]/5 text-[#F2C975]"
                     )}
                   >
