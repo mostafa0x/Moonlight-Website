@@ -1,27 +1,40 @@
 "use client";
-import { memo } from "react";
 
-function PlusBtn({
-  callback,
-  disabled,
-}: {
-  callback: () => void;
+import { memo } from "react";
+import { cn } from "@/shared/lib/utils";
+import BaseIconButton from "./BaseIconButton";
+
+interface PlusBtnProps {
+  callback: (e: React.MouseEvent) => void;
   disabled?: boolean;
-}) {
+  className?: string;
+}
+
+/**
+ * PlusBtn Component
+ * Optimized interactive button for incrementing or adding items.
+ * 
+ * Best Practices:
+ * - Uses BaseIconButton for logic reuse and design consistency.
+ * - Memoized to prevent re-renders when parent state changes.
+ * - Semantic button typing and accessibility attributes.
+ */
+function PlusBtn({ callback, disabled, className }: PlusBtnProps) {
   return (
-    <button
+    <BaseIconButton
       onClick={callback}
       disabled={disabled}
-      aria-label="plus button"
-      className={`flex flex-row justify-center items-center w-[26px] h-[26px] rounded-full select-none transition-colors ${
-        disabled
-          ? "bg-[#1f1f1f] text-[#4d4d4d] cursor-not-allowed"
-          : "bg-[#262626] hover:bg-[#05703b] text-white cursor-pointer"
-      }`}
+      ariaLabel="plus button"
+      className={cn(
+        "hover:bg-emerald-700 focus:ring-emerald-500/50",
+        className
+      )}
     >
-      +
-    </button>
+      <span className="text-lg font-bold leading-none -translate-y-px" aria-hidden="true">+</span>
+    </BaseIconButton>
   );
 }
+
+PlusBtn.displayName = "PlusBtn";
 
 export default memo(PlusBtn);

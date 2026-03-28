@@ -149,7 +149,9 @@
     "privacy": "Privacidade",
     "terms": "Termos",
     "login": "Login",
-    "logout": "Sair"
+    "logout": "Sair",
+    "menu": "Menu",
+    "language": "Idioma"
   },
   "footer": {
     "terms": "Termos de uso",

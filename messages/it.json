@@ -149,7 +149,9 @@
     "privacy": "Privacy",
     "terms": "Termini",
     "login": "Login",
-    "logout": "Disconnetti"
+    "logout": "Disconnetti",
+    "menu": "Menu",
+    "language": "Lingua"
   },
   "footer": {
     "terms": "Termini di servizio",

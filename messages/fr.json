@@ -149,7 +149,9 @@
     "privacy": "Confidentialité",
     "terms": "Conditions",
     "login": "Connexion",
-    "logout": "Déconnexion"
+    "logout": "Déconnexion",
+    "menu": "Menu",
+    "language": "Langue"
   },
   "footer": {
     "terms": "Conditions d'utilisation",
