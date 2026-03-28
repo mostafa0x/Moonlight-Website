@@ -1,27 +1,48 @@
 "use client";
-import { useTranslations } from "next-intl";
 
-export default function EgyptianLoader() {
+import { memo } from "react";
+import { useTranslations } from "next-intl";
+import { cn } from "@/shared/lib/utils";
+
+/**
+ * EgyptianLoader Component
+ * Immersive Pharaonic-themed loading experience.
+ * Optimized for performance and accessibility.
+ */
+function EgyptianLoader() {
   const t = useTranslations("loader");
 
   return (
-    <div className="flex flex-col items-center justify-center h-full min-h-100 w-full bg-black/90 backdrop-blur-md rounded-[20px] overflow-hidden relative select-none">
-
-
+    <div
+      role="status"
+      aria-busy="true"
+      aria-live="polite"
+      className="relative flex h-full min-h-100 w-full flex-col items-center justify-center overflow-hidden rounded-[20px] bg-black/90 select-none backdrop-blur-md"
+    >
+      {/* Animation Container */}
       <div className="relative flex items-center justify-center">
         {/* Glow effect */}
-        <div className="absolute w-40 h-40 bg-[#F2C975]/15 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute h-40 w-40 animate-pulse rounded-full bg-[#F2C975]/15 blur-3xl" aria-hidden="true" />
 
         {/* Spinning Rings - Pharaonic Style */}
-        <div className="absolute w-32 h-32 border border-t-[#F2C975] border-r-transparent border-b-[#F2C975]/20 border-l-transparent rounded-full animate-spin animate-duration-[4s]" />
-        <div className="absolute w-36 h-36 border border-t-transparent border-r-[#F2C975]/40 border-b-transparent border-l-[#F2C975]/40 rounded-full animate-reverse-spin animate-duration-[3s]" />
+        <div
+          className="absolute h-32 w-32 animate-spin rounded-full border border-b-[#F2C975]/20 border-l-transparent border-r-transparent border-t-[#F2C975]"
+          style={{ animationDuration: '4s' }}
+          aria-hidden="true"
+        />
+        <div
+          className="absolute h-36 w-36 animate-reverse-spin rounded-full border border-b-transparent border-l-[#F2C975]/40 border-r-[#F2C975]/40 border-t-transparent"
+          style={{ animationDuration: '3s' }}
+          aria-hidden="true"
+        />
 
         {/* The Eye of Horus - Centerpiece */}
         <svg
           viewBox="0 0 100 100"
-          className="w-24 h-24 drop-shadow-[0_0_15px_rgba(242,201,117,1)] filter brightness-110"
+          className="h-24 w-24 brightness-110 drop-shadow-[0_0_15px_rgba(242,201,117,1)]"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
         >
           {/* Eye Outline */}
           <path
@@ -50,23 +71,26 @@ export default function EgyptianLoader() {
         </svg>
 
         {/* Orbiting particles */}
-        <div className="absolute w-full h-full">
-          <div className="absolute top-0 left-1/2 w-2 h-2 bg-[#F2C975] rounded-full -translate-x-1/2 -translate-y-4 shadow-[0_0_8px_#F2C975] animate-spin-orbit" />
+        <div className="absolute h-full w-full" aria-hidden="true">
+          <div className="animate-spin-orbit absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 -translate-y-4 rounded-full bg-[#F2C975] shadow-[0_0_8px_#F2C975]" />
         </div>
       </div>
 
-      <div className="mt-12 text-center z-10">
-        <h2 className="text-[#F2C975] font-serif tracking-[0.4em] text-xl mb-3 animate-pulse uppercase [text-shadow:0_0_10px_rgba(242,201,117,0.5)]">
+      {/* Loading Text & Status */}
+      <div className="z-10 mt-12 text-center">
+        <h2 className="mb-3 animate-pulse font-serif text-xl tracking-[0.4em] text-[#F2C975] uppercase [text-shadow:0_0_10px_rgba(242,201,117,0.5)]">
           Moonlight
         </h2>
-        <p className="text-[#F2C975]/60 text-sm font-medium tracking-widest mt-1">
+        <p className="mt-1 text-sm font-medium tracking-widest text-[#F2C975]/60">
           {t("unlockingWonders")}
         </p>
-        <div className="flex gap-3 justify-center mt-6">
+
+        {/* Animated Bouncing Dots */}
+        <div className="mt-6 flex justify-center gap-3" aria-hidden="true">
           {[0, 1, 2].map((i) => (
             <div
               key={i}
-              className="w-2 h-2 bg-linear-to-b from-[#F2C975] to-[#8C6D2E] rounded-full animate-bounce shadow-[0_0_5px_#F2C975]"
+              className="h-2 w-2 animate-bounce rounded-full bg-linear-to-b from-[#F2C975] to-[#8C6D2E] shadow-[0_0_5px_#F2C975]"
               style={{ animationDelay: `${i * 0.2}s` }}
             />
           ))}
@@ -92,3 +116,7 @@ export default function EgyptianLoader() {
     </div>
   );
 }
+
+EgyptianLoader.displayName = "EgyptianLoader";
+
+export default memo(EgyptianLoader);
