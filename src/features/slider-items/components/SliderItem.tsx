@@ -1,76 +1,82 @@
 "use client";
 
+import { memo, useState, useEffect, useMemo } from "react";
+import Image from "next/image";
 import { useExitSlider } from "@/features/slider-items/hooks";
 import type { LandmarksType } from "@/shared/global";
 import { cn } from "@/shared/lib/utils";
-import Image from "next/image";
-import { memo, useState, useEffect } from "react";
 
-const imageCache = new Set<string>();
+interface SliderItemProps {
+  item: LandmarksType;
+  index?: number;
+  isVisible: boolean;
+}
 
+/**
+ * SliderItem Component
+ * Manages individual slide presentation with entrance/exit transitions.
+ * Refactored for performance and bundle size.
+ */
 function SliderItem({
   item,
   index = 0,
   isVisible,
-}: {
-  item: LandmarksType;
-  index: number;
-  isVisible: boolean;
-}) {
+}: SliderItemProps) {
   const { displayItem, isExiting } = useExitSlider(item);
+  const [isLoaded, setIsLoaded] = useState(false);
+
   const isFirstItem = index === 0;
 
-  const [loaded, setLoaded] = useState(imageCache.has(displayItem.imageUrl));
-
-  const handleCacheImage = () => {
-    imageCache.add(displayItem.imageUrl);
-    setLoaded(true);
-  };
-
+  // Reset loaded state when image changes
   useEffect(() => {
-    setLoaded(imageCache.has(displayItem.imageUrl));
+    setIsLoaded(false);
   }, [displayItem.imageUrl]);
 
+  // Optimized class names for the container
+  const containerClasses = useMemo(() => cn(
+    "absolute left-1/2 top-1/2 h-full w-[330px] -translate-y-1/2 transition-all duration-500 ease-in-out sm:w-[530px] xl:w-[730px]",
+    isExiting
+      ? "translate-x-full opacity-0 scale-95"
+      : isVisible
+        ? "translate-x-[-45%] opacity-100 scale-100 lg:translate-x-[-50%] xl:translate-x-[-55%]"
+        : "translate-x-full opacity-0"
+  ), [isExiting, isVisible]);
+
   return (
-    <div className="relative w-full lg:w-75 xl:w-75 2xl:w-15 h-95.75 md:h-112.5 lg:h-136.25 select-none">
-      <div
-        className={cn(
-          "absolute left-1/2 top-1/2 -translate-y-1/2 w-[330px] sm:w-[530px] xl:w-[730px] h-full transition-all duration-500 ease-in-out transform",
-          isExiting
-            ? "opacity-0 translate-x-full"
-            : isVisible
-              ? "opacity-100 translate-x-[-50%] lg:translate-x-[-60%] xl:translate-x-[-70%]"
-              : "translate-x-full opacity-0",
-        )}
-      >
-        {/* Placeholder - only show if main image hasn't loaded */}
-        {!loaded && (
-          <Image
-            src="/imgs/placeholder.webp"
-            alt="loading"
-            fill
-            sizes="(max-width: 640px) 330px, (max-width: 1280px) 530px, 730px"
-            className="object-contain blur-sm"
-            priority={isFirstItem}
+    <div
+      className="relative w-full h-136 select-none md:h-136 lg:h-136 xl:h-140 xl:w-80"
+      aria-hidden={!isVisible}
+    >
+      <figure className={containerClasses}>
+        {/* Loading Skeleton / Background */}
+        {!isLoaded && (
+          <div
+            className="skeleton absolute inset-0 rounded-lg bg-white/5 opacity-50"
+            aria-hidden="true"
           />
         )}
 
-        {/* Main Image */}
         <Image
+          key={displayItem.imageUrl}
           src={displayItem.imageUrl}
           alt={displayItem.title}
           fill
-          priority={isFirstItem}
+          priority={isFirstItem || isVisible}
           sizes="(max-width: 640px) 330px, (max-width: 1280px) 530px, 730px"
-          onLoad={handleCacheImage}
+          onLoad={() => setIsLoaded(true)}
+          onError={() => setIsLoaded(true)}
           className={cn(
-            "object-contain transition-opacity duration-500",
-            loaded ? "opacity-100" : "opacity-0",
+            "object-contain transition-all duration-700 ease-out",
+            isLoaded ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-95 blur-sm"
           )}
         />
-      </div>
+
+        {/* Caption can be added here if needed semantically */}
+      </figure>
     </div>
   );
 }
+
+SliderItem.displayName = "SliderItem";
 
 export default memo(SliderItem);

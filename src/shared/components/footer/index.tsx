@@ -1,58 +1,85 @@
 "use client";
-import SocialIcon from "@/shared/components/icons/SocialIcon";
+import { memo, useMemo } from "react";
 import Link from "next/link";
-import { memo } from "react";
 import { useTranslations } from "next-intl";
+import SocialIcon from "@/shared/components/icons/SocialIcon";
 
+/**
+ * FooterPage Component
+ * Site-wide footer with branding, social links, and navigation.
+ * Refactored for performance and semantic HTML perfection.
+ */
 function FooterPage() {
   const t = useTranslations("footer");
 
-  const PAGES = [
-    { name: t("terms"), link: "#" },
-    { name: t("privacy"), link: "#" },
-    { name: t("about"), link: "#" },
-    { name: t("contact"), link: "#" },
-  ];
+  // Memoize pages to avoid recreation on every render
+  const footerLinks = useMemo(() => [
+    { name: t("terms"), link: "/terms" },
+    { name: t("privacy"), link: "/privacy" },
+    { name: t("about"), link: "/about" },
+    { name: t("contact"), link: "/contact" },
+  ], [t]);
 
   return (
-    <div className="flex flex-col w-full h-full justify-between pb-4.75 lg:pb-0 pt-28.5 lg:pt-0 lg:justify-center items-center">
+    <footer
+      className="flex h-full w-full flex-col items-center justify-between pt-28 pb-6 lg:justify-center lg:pt-0 lg:pb-0"
+      aria-labelledby="footer-heading"
+    >
       <div className="space-y-12">
-        <div className="items-center flex flex-col">
-          Logo
-          <h1 className="text-5xl text-[#F2C975] font-cairo font-medium ">
+        {/* Branding Section */}
+        <div className="flex flex-col items-center">
+          <h2 id="footer-heading" className="sr-only">Footer</h2>
+          <div className="mb-4 text-[#F2C975]" aria-hidden="true">
+            {/* Future: Add Actual Logo Component here */}
+            LOGO
+          </div>
+          <h1 className="font-cairo text-4xl font-medium tracking-widest text-[#F2C975] md:text-5xl uppercase">
             MOON LIGHT
           </h1>
         </div>
-        <div className="flex flex-row gap-16.5 items-center justify-center">
-          <SocialIcon icon="facebook" />
-          <SocialIcon icon="tiktok" />
-          <SocialIcon icon="instagram" />
-        </div>
-        <div className="flex space-y-5.5 lg:space-y-0 lg:space-x-12.5 flex-col lg:flex-row items-center justify-center">
-          {PAGES.map((page) => (
-            <Link
-              key={page.name}
-              href={page.link}
-              className="text-[20px] font-cairo text-[#8B8B8B] font-bold hover:text-gray-200"
-            >
-              {page.name}
-            </Link>
-          ))}
-        </div>
+
+        {/* Social Media Links */}
+        <nav aria-label="Social Media">
+          <ul className="flex items-center justify-center gap-12" role="list">
+            <li><SocialIcon icon="facebook" /></li>
+            <li><SocialIcon icon="tiktok" /></li>
+            <li><SocialIcon icon="instagram" /></li>
+          </ul>
+        </nav>
+
+        {/* Navigation Links */}
+        <nav aria-label="Footer Navigation">
+          <ul className="flex flex-col items-center justify-center gap-6 lg:flex-row lg:gap-12" role="list">
+            {footerLinks.map((page) => (
+              <li key={page.name}>
+                <Link
+                  href={page.link}
+                  className="font-cairo text-lg font-bold text-[#8B8B8B] transition-colors hover:text-white"
+                >
+                  {page.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
-      <div className="flex flex-col mt-20">
-        <div className="hidden lg:flex outline-1 outline-[#8B8B8B] w-197 justify-center items-center" />
-        <div className="flex gap-1.25 items-start justify-between">
-          <span className="text-[#8B8B8B] text-[16px] font-bold font-cairo">
+
+      {/* Copyright & Credits Section */}
+      <div className="mt-20 flex w-full max-w-4xl flex-col items-center px-6">
+        <div className="mb-6 hidden h-px w-full bg-white/10 lg:block" aria-hidden="true" />
+        <div className="flex w-full flex-row items-center justify-between text-[#8B8B8B]">
+          <small className="font-cairo text-sm font-bold sm:text-base">
             © 2026 {t("allRights")}
-          </span>
-          <span className="text-[#8B8B8B] text-[16px] font-bold font-cairo">
-            {t("designedBy")} Echo+
-          </span>
+          </small>
+          <small className="font-cairo text-sm font-bold sm:text-base">
+            {t("designedBy")} <span className="text-[#F2C975]">Echo+</span>
+          </small>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
+
+FooterPage.displayName = "FooterPage";
 
 export default memo(FooterPage);

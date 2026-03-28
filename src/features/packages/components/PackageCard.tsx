@@ -1,46 +1,93 @@
-import type { PackageType } from "@/shared/global";
-import Image from "next/image";
-import { memo } from "react";
-import { useTranslations } from "next-intl";
+"use client";
 
-function PackageCard({
-  pkg,
-  priority = false,
-}: {
+import { memo, useMemo } from "react";
+import Image from "next/image";
+import { useTranslations } from "next-intl";
+import type { PackageType } from "@/shared/global";
+
+interface PackageCardProps {
   pkg: PackageType;
   priority?: boolean;
-}) {
-  const { packageName, packageImage, startingPrice } = pkg;
+}
+
+/**
+ * PackageCard Component
+ * Refactored for performance and accessibility based on Vercel/React best practices.
+ */
+function PackageCard({ pkg, priority = false }: PackageCardProps) {
   const t = useTranslations("home");
 
+  // Destructure for cleaner access
+  const { packageName, packageImage, startingPrice, currency } = pkg;
+
+  // Format price if needed or use simple format
+  const formattedPrice = useMemo(() => {
+    return `${startingPrice}${currency === "USD" ? "$" : ` ${currency}`}`;
+  }, [startingPrice, currency]);
+
   return (
-    <div className="relative w-full h-130 rounded-2xl overflow-hidden select-none cursor-pointer group">
-      <Image
-        src={packageImage}
-        alt={packageName}
-        fill
-        priority={priority}
-        sizes="(max-width: 640px) 318px, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 435px"
-        className="object-cover transition-transform duration-500 ease-out group-hover:scale-130"
+    <article
+      className="group relative h-130 w-full cursor-pointer overflow-hidden rounded-2xl select-none"
+      aria-label={packageName}
+    >
+      {/* Background Image with Hover Zoom */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={packageImage}
+          alt={`Image of ${packageName} tour`}
+          fill
+          priority={priority}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 450px"
+          quality={85}
+          className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+        />
+      </div>
+
+      {/* Gradient Overlay for Text Legibility */}
+      <div
+        className="absolute inset-x-0 bottom-0 z-10 h-1/2 bg-linear-to-t from-black/90 via-black/40 to-transparent pointer-events-none"
+        aria-hidden="true"
       />
 
-      <div className="relative w-full h-full bg-linear-to-b from-transparent from-10% to-black to-95% z-5 pointer-events-none" />
+      {/* Content Container */}
+      <div className="absolute inset-x-0 bottom-0 z-20 flex flex-col gap-2 p-6 pb-4">
+        <h2 className="font-cairo text-2xl font-bold text-white drop-shadow-md">
+          {packageName}
+        </h2>
 
-      <div className="absolute w-full z-6 bottom-0 left-0 pb-2.75 px-4">
-        <div>
-          <h1 className="font-semibold text-2xl text-white">{packageName}</h1>
-        </div>
-        <div className="flex items-center justify-between">
-          <p className="font-medium text-[32px] text-[#F2C975]">
-            {startingPrice}$
-          </p>
-          <p className="font-medium text-[16px] text-[#F2C975] underline underline-offset-3">
-            {t("viewMore")}
-          </p>
+        <div className="flex items-end justify-between">
+          <div className="flex flex-col">
+
+            <p className="font-cairo text-[32px] font-bold leading-tight text-[#F2C975]">
+              {formattedPrice}
+            </p>
+          </div>
+
+          <div className="flex items-center gap-1.5 rounded-full bg-white/10 px-4 py-2 backdrop-blur-md border border-white/20 text-[#F2C975] transition-all group-hover:bg-[#F2C975] group-hover:text-black hover:scale-105 active:scale-95 shadow-lg">
+            <span className="text-sm font-bold uppercase tracking-tight">
+              {t("viewMore")}
+            </span>
+            {/* Simple arrow icon for better UX */}
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M5 12h14m-7-7 7 7-7 7" />
+            </svg>
+          </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
+
+// Named export for better devtool debugging
+PackageCard.displayName = "PackageCard";
 
 export default memo(PackageCard);
