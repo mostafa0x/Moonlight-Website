@@ -1,5 +1,5 @@
 import BookingContextProvider from "@/features/booking-modal/context/BookingContextProvider";
-import BookingModalProvider from "@/features/booking-modal/prodviders/BookingModalProvider";
+import BookingModalProvider from "@/features/booking-modal/providers/BookingModalProvider";
 import ReactQueryProvider from "@/shared/providers/ReactQueryProvider";
 import React, { Suspense } from "react";
 import { AuthProvider } from "@/shared/providers/AuthProvider";

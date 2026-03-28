@@ -1,8 +1,8 @@
 import BackBtn from "./BackBtn";
 import ConfirmBooking from "./ConfirmBooking";
 import NextStepBtn from "./NextStepBtn";
-import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
-import { useGetPackage } from "@/features/booking-modal/hooks";
+import { useBookingState, useBookingActions } from "@/features/booking-modal/context/BookingContextProvider";
+import { useGetPackage } from "../hooks/index";
 import clsx from "clsx";
 import { memo, useEffect, useState } from "react";
 import { useController, useFormContext } from "react-hook-form";
@@ -12,7 +12,9 @@ import { supabase } from "@/shared/lib/supabase";
 import EgyptianLoader from "@/shared/components/EgyptianLoader";
 
 function FooterModal({ step }: { step: number }) {
-  const { nextStep, prevStep, tourId, totalSteps } = useBookingContext();
+  const { tourId, totalSteps } = useBookingState();
+  const { nextStep, prevStep } = useBookingActions();
+
   const { data: pkg } = useGetPackage(tourId);
   const { control, trigger, getValues } = useFormContext();
   const t = useTranslations("bookingModal.footer");

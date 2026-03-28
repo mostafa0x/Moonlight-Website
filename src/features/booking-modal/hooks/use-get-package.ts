@@ -3,8 +3,9 @@ import { useParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import type { PackageDetailsType } from "@/shared/global";
 
-export const useGetPackage = (id: string) => {
-  const { locale } = useParams();
+export const useGetPackage = (id: string | null) => {
+  const params = useParams();
+  const locale = params?.locale;
   
   return useQuery({
     queryKey: ["package", id, locale],

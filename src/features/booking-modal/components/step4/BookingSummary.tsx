@@ -2,7 +2,7 @@ import { useFormContext, useWatch } from "react-hook-form";
 import BookingSummaryItem from "@/features/booking-modal/components/step4/BookingSummaryItem";
 import { memo } from "react";
 import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
-import { useGetPackage } from "@/features/booking-modal/hooks";
+import { useGetPackage } from "../../hooks/index";
 import { useTranslations } from "next-intl";
 
 function BookingSummary() {
