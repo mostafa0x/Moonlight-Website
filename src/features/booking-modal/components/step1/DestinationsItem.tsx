@@ -1,16 +1,29 @@
 import { memo } from "react";
 
-function DestinationsItem({ title }: { title: string }) {
+interface DestinationsItemProps {
+  title: string;
+}
+
+/**
+ * Single Destination Item within the list.
+ */
+function DestinationsItem({ title }: DestinationsItemProps) {
   return (
-    <div className="flex items-center w-fit bg-[#171717] border border-[#343434] rounded-[20px] gap-0.75 p-1.75 pr-4.75 select-none container">
-      <img src="/icons/location-outlined.svg" alt="location" />
-      <span
-        className="text-[14px] text-white font-medium whitespace-nowrap"
-        title={title}
-      >
+    <article
+      className="flex items-center gap-2 p-2 px-4 bg-[#1A1A1A] hover:bg-[#252525] border border-[#343434] rounded-full transition-all duration-200 select-none group"
+      title={title}
+    >
+      <img
+        src="/icons/location-outlined.svg"
+        alt="location"
+        width={16}
+        height={16}
+        className="opacity-70 group-hover:opacity-100 transition-opacity"
+      />
+      <span className="text-sm text-white font-medium whitespace-nowrap">
         {title}
       </span>
-    </div>
+    </article>
   );
 }
 

@@ -4,11 +4,11 @@ import Included_Excluded from "@/features/booking-modal/components/step1/Include
 import Overview from "@/features/booking-modal/components/step1/Overview";
 import { memo } from "react";
 
-function Step1({included,excluded,destinations,description}:{
-  included:string[]
-  excluded:string[]
-  destinations:string[]
-  description:string
+function Step1({ included, excluded, destinations, description }: {
+  included: string[]
+  excluded: string[]
+  destinations: string[]
+  description: string
 }) {
   return (
     <div className="flex flex-col w-full ">
