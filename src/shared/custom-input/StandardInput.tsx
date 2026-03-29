@@ -4,7 +4,7 @@ import { memo, useMemo } from "react";
 import { cn } from "@/shared/lib/utils";
 import FieldWrapper from "./FieldWrapper";
 
-const StandardInput = memo(({ label, name, type, placeholder, error, register }: any) => {
+const StandardInput = ({ label, name, type, placeholder, error, register }: any) => {
   const minDate = useMemo(() => {
     if (type !== "date") return undefined;
     const d = new Date(); d.setDate(d.getDate() + 1);
@@ -25,7 +25,8 @@ const StandardInput = memo(({ label, name, type, placeholder, error, register }:
       />
     </FieldWrapper>
   );
-});
+};
+
 
 StandardInput.displayName = "StandardInput";
 

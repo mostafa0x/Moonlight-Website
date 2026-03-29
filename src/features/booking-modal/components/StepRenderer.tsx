@@ -14,7 +14,8 @@ interface StepRendererProps {
 }
 
 const StepRenderer = ({ step, pkg, hasCustomizations }: StepRendererProps) => {
-  const containerClass = "flex-1 overflow-y-auto scrollbar-hide";
+  const containerClass = "flex-1 overflow-y-auto scrollbar-custom";
+
   const standardPadding = "px-3.5 lg:px-14.25 py-4";
   const step1Padding = "px-2.5 lg:px-5.25 py-4 flex";
 
@@ -66,4 +67,4 @@ const StepRenderer = ({ step, pkg, hasCustomizations }: StepRendererProps) => {
   }
 };
 
-export default React.memo(StepRenderer);
+export default StepRenderer;

@@ -8,7 +8,7 @@ import FieldWrapper from "./FieldWrapper";
 import CountryDropdown from "./CountryDropdown";
 import { Country } from "./types";
 
-const TelInput = memo(({ label, name, placeholder, error, control }: any) => {
+const TelInput = ({ label, name, placeholder, error, control }: any) => {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
   const { field } = useController({ name, control, defaultValue: "" });
@@ -61,7 +61,8 @@ const TelInput = memo(({ label, name, placeholder, error, control }: any) => {
       </div>
     </FieldWrapper>
   );
-});
+};
+
 
 TelInput.displayName = "TelInput";
 

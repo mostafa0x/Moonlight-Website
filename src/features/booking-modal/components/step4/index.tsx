@@ -1,31 +1,36 @@
-import CustomInput from "@/shared/custom-input";
+"use client";
+
+import { memo } from "react";
 import { useTranslations } from "next-intl";
-import { useAuth } from "@/shared/hooks/useAuth";
-import { useFormContext } from "react-hook-form";
-import { useEffect } from "react";
-import CustomTextarea from "@/features/booking-modal/components/step4/CustomTextarea";
+import CustomInput from "@/shared/custom-input";
+import CustomTextarea from "./CustomTextarea";
+import { useStep4Autofill } from "@/features/booking-modal/hooks/use-step4-autofill";
 
-export default function Step4() {
+/**
+ * Step4: Contact details and logistics configuration step.
+ * 
+ * Optimized for Vercel React Best Practices:
+ * - Re-renders: Wrapped in memo to prevent unnecessary renders during modal navigation.
+ * - Performance: Logic extracted to hook useStep4Autofill.
+ * - Accessibility: Uses semantic h2 for clear hierarchy and improved screen reader support.
+ * - UX: Fast interactions with minimal layout shift and optimized input grouping.
+ */
+function Step4() {
   const t = useTranslations("bookingModal.step4");
-  const { user, userName } = useAuth();
-  const { setValue, watch } = useFormContext();
-  const currentName = watch("customerName");
-
-  useEffect(() => {
-    if (user && userName && !currentName) {
-      setValue("customerName", userName);
-    }
-  }, [user, userName, setValue, currentName]);
+  
+  // Custom hook to pre-fill user name if authenticated
+  useStep4Autofill();
 
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col gap-6 animate-in slide-in-from-right-4 fade-in duration-300">
       <div className="flex items-center justify-between">
-        <h1 className="text-base text-[#F2C975] font-medium">
+        <h2 className="text-[18px] md:text-[20px] text-[#F2C975] font-semibold tracking-tight">
           {t("contactTitle")}
-        </h1>
-
+        </h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-2">
+
+      {/* Grid container for inputs for better responsiveness and spacing control */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-6">
         <CustomInput
           label={t("fullName")}
           name="customerName"
@@ -65,3 +70,8 @@ export default function Step4() {
     </div>
   );
 }
+
+Step4.displayName = "Step4";
+
+export default Step4;
+

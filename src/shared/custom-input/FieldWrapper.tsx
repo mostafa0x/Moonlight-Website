@@ -9,7 +9,7 @@ interface FieldWrapperProps {
   children: React.ReactNode;
 }
 
-const FieldWrapper = memo(({ label, name, error, children }: FieldWrapperProps) => (
+const FieldWrapper = ({ label, name, error, children }: FieldWrapperProps) => (
   <div className="flex w-full flex-col gap-2">
     <label className="text-sm font-bold text-[#8B8B8B] select-none" htmlFor={name}>
       {label}
@@ -21,8 +21,9 @@ const FieldWrapper = memo(({ label, name, error, children }: FieldWrapperProps) 
       </span>
     )}
   </div>
-));
+);
 
 FieldWrapper.displayName = "FieldWrapper";
 
 export default FieldWrapper;
+

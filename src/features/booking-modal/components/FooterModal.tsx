@@ -27,13 +27,16 @@ function FooterModal({ step }: { step: number }) {
     setErrorMsg(null);
     const hasCustomizations =
       pkg?.customizations && pkg.customizations.length > 0;
-    const isContactStep = hasCustomizations ? step === 4 : step === 3;
+    
+    // We enforce login and validation before moving to the final Summary step.
+    const isMovingToSummary = step === totalSteps - 1;
 
-    if (isContactStep) {
+    if (isMovingToSummary) {
       if (!isLoggedIn) {
         setShowLoginModal(true);
         return;
       }
+      
       const isValid = await trigger([
         "customerName",
         "customerPhone",
@@ -41,6 +44,7 @@ function FooterModal({ step }: { step: number }) {
         "nationality",
         "address",
       ]);
+      
       if (isValid) nextStep();
     } else {
       nextStep();
@@ -51,6 +55,15 @@ function FooterModal({ step }: { step: number }) {
     try {
       setLoading(true);
       setErrorMsg(null);
+
+      // Final validation safeguard before API submission
+      const isValid = await trigger();
+      if (!isValid) {
+        setLoading(false);
+        setErrorMsg("Please fix the errors in your details.");
+        return;
+      }
+
       const { data: { session } } = await supabase.auth.getSession();
 
       if (!session) {

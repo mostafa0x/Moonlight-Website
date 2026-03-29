@@ -217,7 +217,7 @@
       "phoneNumber": "Número de Telefone",
       "tourDate": "Data do Tour",
       "nationality": "Nacionalidade",
-      "address": "Endereço (Hotel / Local)",
+      "address": "Endereço",
       "useLocation": "Usar Localização Atual",
       "gettingLocation": "Obtendo localização...",
       "alerts": {

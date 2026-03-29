@@ -16,6 +16,7 @@ interface CountryDropdownProps {
   setSearch: (s: string) => void;
   filteredCountries: Country[];
   customTrigger?: React.ReactNode;
+  error?: any;
 }
 
 const CountryDropdown = memo(({
@@ -28,7 +29,8 @@ const CountryDropdown = memo(({
   search,
   setSearch,
   filteredCountries,
-  customTrigger
+  customTrigger,
+  error
 }: CountryDropdownProps) => {
   const { containerRef } = useClickOutside(() => {
     setIsOpen(false);
@@ -43,7 +45,10 @@ const CountryDropdown = memo(({
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="flex h-10 w-full cursor-pointer items-center justify-between gap-2 rounded-lg border border-[#313131] bg-[#131313] px-4 text-sm text-white transition-all hover:border-[#F2C975]"
+          className={cn(
+            "flex h-10 w-full cursor-pointer items-center justify-between gap-2 rounded-lg border bg-[#131313] px-4 text-sm text-white transition-all hover:border-[#F2C975]",
+            error ? "border-red-500" : "border-[#313131]"
+          )}
         >
           <span className={cn(!(selectedName || selectedCode) && "text-[#4b4b4b]")}>
             {selectedName || placeholder}

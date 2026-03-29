@@ -228,7 +228,7 @@
       "phoneNumber": "Phone Number",
       "tourDate": "Tour Date",
       "nationality": "Nationality",
-      "address": "Address (Hotel / Local Address)",
+      "address": "Address",
       "useLocation": "Use Current Location",
       "gettingLocation": "Getting location...",
       "alerts": {

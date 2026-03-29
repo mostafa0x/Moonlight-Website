@@ -1,6 +1,6 @@
 "use client";
-import { useFormContext } from "react-hook-form";
-import { memo, useState } from "react";
+import { useFormContext, useFormState } from "react-hook-form";
+import { useState } from "react";
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
 
@@ -13,15 +13,13 @@ function CustomTextarea({
   label: string;
   placeholder: string;
 }) {
-  const {
-    register,
-    setValue,
-    formState: { errors },
-  } = useFormContext();
-
+  const { register, setValue, control } = useFormContext();
+  const { errors } = useFormState({ control, name: name as any });
+  
   const t = useTranslations("bookingModal.step4");
   const [loading, setLoading] = useState(false);
   const error = errors[name];
+
 
   const handleGetLocation = () => {
     if (!navigator.geolocation) {
@@ -88,4 +86,4 @@ function CustomTextarea({
   );
 }
 
-export default memo(CustomTextarea);
+export default CustomTextarea;

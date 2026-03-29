@@ -217,7 +217,7 @@
       "phoneNumber": "Numéro de Téléphone",
       "tourDate": "Date du Tour",
       "nationality": "Nationalité",
-      "address": "Adresse (Hôtel / Local)",
+      "address": "Adresse",
       "useLocation": "Utiliser Ma Position",
       "gettingLocation": "Récupération en cours...",
       "alerts": {

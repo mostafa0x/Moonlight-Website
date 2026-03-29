@@ -6,7 +6,7 @@ import countriesData from "./countries.json";
 import FieldWrapper from "./FieldWrapper";
 import CountryDropdown from "./CountryDropdown";
 
-const NationalityInput = memo(({ label, name, placeholder, error, control }: any) => {
+const NationalityInput = ({ label, name, placeholder, error, control }: any) => {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
   const { field } = useController({ name, control, defaultValue: "" });
@@ -25,10 +25,12 @@ const NationalityInput = memo(({ label, name, placeholder, error, control }: any
         onSelect={(c) => { field.onChange(c.name); setOpen(false); }}
         placeholder={placeholder}
         selectedName={field.value}
+        error={error}
       />
     </FieldWrapper>
   );
-});
+};
+
 
 NationalityInput.displayName = "NationalityInput";
 
