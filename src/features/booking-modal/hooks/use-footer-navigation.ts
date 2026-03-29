@@ -23,16 +23,7 @@ export function useFooterNavigation({ step, totalSteps, pkg }: UseFooterNavigati
     const isMovingToSummary = step === totalSteps - 1;
 
     if (isMovingToSummary) {
-      if (!isLoggedIn) {
-        // --- Persistence Logic ---
-        // Save form state to localStorage before opening login modal
-        const formValues = getValues();
-        savePendingBooking(pkg.packageId, formValues, step);
-        
-        setShowLoginModal(true);
-        return;
-      }
-      
+      // 1. ALWAYS validate the custom contact fields first
       const isValid = await trigger([
         "customerName",
         "customerPhone",
@@ -40,8 +31,19 @@ export function useFooterNavigation({ step, totalSteps, pkg }: UseFooterNavigati
         "nationality",
         "address",
       ]);
+
+      if (!isValid) return; // Stop here if form has errors
+
+      // 2. Only check for login AFTER we ensure the data is valid
+      if (!isLoggedIn) {
+        const formValues = getValues();
+        savePendingBooking(pkg.packageId, formValues, step);
+        setShowLoginModal(true);
+        return;
+      }
       
-      if (isValid) nextStep();
+      // 3. User is logged in and data is valid -> proceed
+      nextStep();
     } else {
       nextStep();
     }

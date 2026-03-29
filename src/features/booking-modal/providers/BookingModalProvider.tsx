@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useBookingState, useBookingActions } from "@/features/booking-modal/context/BookingContextProvider";
+import { useBookingPersistence } from "@/features/booking-modal/hooks/use-booking-persistence";
 
 /**
  * Lazy-loaded BookingModal to optimize bundle size and FCP/LCP.
@@ -20,6 +21,7 @@ const BookingModal = dynamic(() => import("@/features/booking-modal"), {
 export default function BookingModalProvider() {
   const { isOpen } = useBookingState();
   const { handleSetTourId } = useBookingActions();
+  const { clearPendingBooking } = useBookingPersistence();
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -32,17 +34,18 @@ export default function BookingModalProvider() {
         try {
           const data = JSON.parse(saved);
           if (data.tourId) {
-            // console.log("Detected pending booking, auto-opening modal for tour:", data.tourId);
-            
-            // Just set the state. BookingContextProvider's 2-way sync will maintain the URL.
+            // Restore the state to trigger the modal opening via URL
             handleSetTourId(data.tourId);
+            
+            // NOTE: We don't clear storage here. The inner BookingModal component
+            // will pick up the data, restore form fields, and then clear it.
           }
         } catch (e) {
           console.error("Failed to parse pending booking for auto-open", e);
         }
       }
     }
-  }, [isOpen, handleSetTourId]);
+  }, [isOpen, handleSetTourId, clearPendingBooking]);
 
 
   if (!isOpen) return null;

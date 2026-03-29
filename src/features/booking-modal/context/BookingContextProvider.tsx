@@ -64,36 +64,37 @@ export default function BookingContextProvider({
     setStep((s) => (s !== 1 ? s - 1 : 1));
   }, []);
 
+  /**
+   * handleSetTourId: Updates the URL to trigger the state change.
+   * This ensures the URL is the single source of truth and prevents sync loops.
+   */
   const handleSetTourId = useCallback((tour: string) => {
-    setTourId(tour);
+    const params = new URLSearchParams(searchParams.toString());
+    if (tour) {
+      params.set("tourId", tour);
+    } else {
+      params.delete("tourId");
+    }
+    // Update the URL. The useEffect below will catch this and update local state.
+    router.replace(`?${params.toString()}`, { scroll: false });
     setStep(1); // Reset step when switching tours
-  }, []);
+  }, [router, searchParams]);
 
   // --- SYNC LOGIC ---
 
-  // 1. Sync FROM URL to STATE (Only on mount or when URL param actually changes)
+  /**
+   * Sync from URL to STATE.
+   * This is the only sync direction, making URL the source of truth for tourId.
+   */
   useEffect(() => {
-    if (bookingParam && tourId !== bookingParam) {
-      setTourId(bookingParam);
+    const nextTourId = bookingParam || "";
+    if (tourId !== nextTourId) {
+      setTourId(nextTourId);
+      // Only reset step if we're actually changing tours or closing
       setStep(1);
     }
-  }, [bookingParam]); // Minimal dependencies to prevent loops
+  }, [bookingParam, tourId]); 
 
-  // 2. Sync FROM STATE to URL (To maintain consistency when programmatically opened)
-  useEffect(() => {
-    const currentParam = searchParams.get("tourId") || "";
-    if (tourId && tourId !== currentParam) {
-      // Push state to URL so it persists and works with browser back/forward
-      const params = new URLSearchParams(searchParams.toString());
-      params.set("tourId", tourId);
-      router.replace(`?${params.toString()}`, { scroll: false });
-    } else if (!tourId && currentParam) {
-      // Clear URL if modal is closed
-      const params = new URLSearchParams(searchParams.toString());
-      params.delete("tourId");
-      router.replace(`?${params.toString()}`, { scroll: false });
-    }
-  }, [tourId, router, searchParams]);
 
 
   // --- CONTEXT VALUES ---

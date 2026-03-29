@@ -8,6 +8,7 @@ import { useAuth } from "@/shared/providers/AuthProvider";
 import SimpleCloseBtn from "@/shared/button/SimpleCloseBtn";
 import { supabase } from "@/shared/lib/supabase";
 import { cn } from "@/shared/lib/utils";
+import { useBookingPersistence } from "@/features/booking-modal/hooks/use-booking-persistence";
 
 /**
  * LoginModal Component
@@ -16,20 +17,26 @@ import { cn } from "@/shared/lib/utils";
  */
 function LoginModal() {
   const { showLoginModal, setShowLoginModal } = useAuth();
+  const { clearPendingBooking } = useBookingPersistence();
   const pathname = usePathname();
   const t = useTranslations("auth");
+
+  const handleClose = useCallback(() => {
+    setShowLoginModal(false);
+    clearPendingBooking();
+  }, [setShowLoginModal, clearPendingBooking]);
 
   // Close modal on Escape key press
   useEffect(() => {
     if (!showLoginModal) return;
 
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setShowLoginModal(false);
+      if (e.key === "Escape") handleClose();
     };
 
     window.addEventListener("keydown", handleEscape);
     return () => window.removeEventListener("keydown", handleEscape);
-  }, [showLoginModal, setShowLoginModal]);
+  }, [showLoginModal, handleClose]);
 
   const handleGoogleLogin = useCallback(async () => {
     try {
@@ -68,7 +75,7 @@ function LoginModal() {
       className="fixed inset-0 z-10000 flex items-center justify-center bg-black/90 p-4 shadow-2xl backdrop-blur-md animate-in fade-in duration-500"
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) {
-          setShowLoginModal(false);
+          handleClose();
         }
       }}
     >
@@ -86,7 +93,7 @@ function LoginModal() {
           <SimpleCloseBtn
             onClick={(e) => {
               e.stopPropagation();
-              setShowLoginModal(false);
+              handleClose();
             }}
           />
         </div>
