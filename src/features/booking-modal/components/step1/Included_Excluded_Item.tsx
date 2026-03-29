@@ -16,10 +16,10 @@ function Included_Excluded_Item({ title, icon }: IncludedExcludedItemProps) {
       title={title}
       role="listitem"
     >
-      <div className="flex-shrink-0">
+      <div className="shrink-0">
         <img
           src={`/icons/ellipse-${icon}.svg`}
-          alt="" 
+          alt=""
           aria-hidden="true"
           className="w-1.75 h-1.75 object-contain"
           loading="lazy"

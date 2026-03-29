@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
-export default function useDragScroll(alignment?: "X" | "Y") {
-  const ref = useRef<HTMLDivElement | null>(null);
+export default function useDragScroll<T extends HTMLElement = HTMLDivElement>(alignment?: "X" | "Y") {
+  const ref = useRef<T | null>(null);
   const isX = alignment === "X";
 
   let isDown = false;

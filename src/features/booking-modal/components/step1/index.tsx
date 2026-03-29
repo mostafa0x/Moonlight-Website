@@ -12,12 +12,12 @@ function Step1({ included, excluded, destinations, description }: {
 }) {
   return (
     <div className="flex flex-col w-full ">
-      <div className="mb-3">
+      <div className="mb-1">
         <Overview
           description={description}
         />
       </div>
-      <div className="mb-5">
+      <div className="mb-2">
         <Destinations
           destinations={destinations}
         />
