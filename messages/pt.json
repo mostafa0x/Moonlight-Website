@@ -207,6 +207,10 @@
         "Giza": "Gizé"
       }
     },
+    "step3": {
+      "title": "Personalize sua excursão",
+      "subtitle": "Selecione os destinos e monumentos que deseja incluir em sua viagem."
+    },
     "step4": {
       "contactTitle": "Detalhes de Contacto",
       "fullName": "Nome Completo",

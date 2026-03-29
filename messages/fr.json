@@ -207,6 +207,10 @@
         "Giza": "Gizeh"
       }
     },
+    "step3": {
+      "title": "Personnalisez votre voyage",
+      "subtitle": "Sélectionnez les destinations et les monuments que vous souhaitez inclure dans votre voyage."
+    },
     "step4": {
       "contactTitle": "Détails de Contact",
       "fullName": "Nom Complet",
