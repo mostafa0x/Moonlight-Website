@@ -1,9 +1,9 @@
-import CustomTextarea from "@/features/booking-modal/components/step3/CustomTextarea";
 import CustomInput from "@/shared/custom-input";
 import { useTranslations } from "next-intl";
 import { useAuth } from "@/shared/hooks/useAuth";
 import { useFormContext } from "react-hook-form";
 import { useEffect } from "react";
+import CustomTextarea from "@/features/booking-modal/components/step4/CustomTextarea";
 
 export default function Step4() {
   const t = useTranslations("bookingModal.step4");

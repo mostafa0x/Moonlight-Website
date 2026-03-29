@@ -218,6 +218,10 @@
         "Giza": "Giza"
       }
     },
+    "step3": {
+      "title": "Customize Your Tour",
+      "subtitle": "Select the destinations and landmarks you'd like to include in your trip."
+    },
     "step4": {
       "contactTitle": "Contact Details",
       "fullName": "Full Name",

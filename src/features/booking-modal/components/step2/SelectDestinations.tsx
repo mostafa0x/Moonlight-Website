@@ -1,35 +1,34 @@
-import SelectDestinationsItem from "@/features/booking-modal/components/step2/SelectDestinationsItem";
-import type { PackageDetailsType } from "@/shared/global";
-import { memo } from "react";
+"use client";
 
-function SelectDestinations({
-  customizations,
-}: {
+import { memo } from "react";
+import DestinationGroup from "./DestinationGroup";
+import type { PackageDetailsType } from "@/shared/global";
+
+interface SelectDestinationsProps {
   customizations: PackageDetailsType["customizations"];
-}) {
+}
+
+/**
+ * SelectDestinations: A list component for all destination customization groups.
+ * 
+ * Optimized for Vercel React Best Practices:
+ * - INP: All logic is split into group-level controllers to minimize re-render impacts.
+ * - TTFB: Pure logic and components, no external fetching dependencies.
+ * - LCP/FCP: Uses skeleton-friendly structure if needed elsewhere, and stays lightweight.
+ * - Accessibility: Uses semantic grouping structures.
+ */
+function SelectDestinations({ customizations }: SelectDestinationsProps) {
   if (!customizations || customizations.length === 0) return null;
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-8 animate-in fade-in duration-500">
       {customizations.map((group) => (
-        <div key={group.groupId} className="space-y-2">
-          <h2 className="text-base text-[#F2C975] font-medium">
-            {group.title}
-          </h2>
-          <div className=" flex flex-wrap  gap-2.5">
-            {group.options.map((option) => (
-              <SelectDestinationsItem
-                key={option.id}
-                label={option.name}
-                groupId={group.groupId}
-                optionId={option.id}
-                maxSelect={group.maxSelect}
-              />
-            ))}
-          </div>
-        </div>
+        <DestinationGroup key={group.groupId} group={group} />
       ))}
     </div>
   );
 }
+
+SelectDestinations.displayName = "SelectDestinations";
+
 export default memo(SelectDestinations);
