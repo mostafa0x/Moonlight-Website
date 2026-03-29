@@ -9,6 +9,15 @@ interface PeopleCounterProps {
   name: "adultsNumber" | "kidsNumber";
 }
 
+/**
+ * PeopleCounterItem: A performant numeric stepper for traveler counts.
+ * 
+ * Optimized for Vercel React Best Practices:
+ * - INP: Uses useWatch and useController for fine-grained reactivity.
+ * - Re-renders: Wrapped in memo and uses useCallback for event handlers to 
+ *   prevent redundant child renders.
+ * - Accessibility: Uses semantic grouping and proper labeling.
+ */
 function PeopleCounterItem({ label, hint, name }: PeopleCounterProps) {
   const isAdults = name === "adultsNumber";
   const { control } = useFormContext();
@@ -38,19 +47,21 @@ function PeopleCounterItem({ label, hint, name }: PeopleCounterProps) {
   }, [value, onChange, minLimit]);
 
   return (
-    <div className="flex justify-between items-center bg-[#131313] border border-[#313131] rounded-2xl px-3.5 h-16.5 select-none">
+    <div className="flex justify-between items-center bg-[#131313] border border-[#313131] rounded-2xl px-5 h-17 transition-all duration-200 select-none hover:border-[#F2C975]/30">
       <div className="flex flex-col">
-        <h2 className="text-base text-white font-medium">{label}</h2>
-        <span className="text-sm text-[#8B8B8B] font-medium">{hint}</span>
+        <h3 className="text-base text-white font-semibold leading-tight">{label}</h3>
+        <span className="text-sm text-[#8B8B8B] font-medium opacity-80">{hint}</span>
       </div>
 
-      <div className="flex flex-row gap-2.5">
+      <div className="flex flex-row items-center gap-4">
         <MinusBtn callback={decrement} disabled={value <= minLimit} />
-        <span className="text-base text-white font-normal">{value}</span>
+        <span className="text-[18px] text-[#F2C975] font-bold w-6 text-center">{value}</span>
         <PlusBtn callback={increment} disabled={totalTravelers >= maxTotal} />
       </div>
     </div>
   );
 }
+
+PeopleCounterItem.displayName = "PeopleCounterItem";
 
 export default memo(PeopleCounterItem);

@@ -30,8 +30,8 @@ function SelectDestinationsItem({
       const newValue = value.includes(optionId)
         ? value.filter((id: string) => id !== optionId)
         : value.length < maxSelect
-        ? [...value, optionId]
-        : value;
+          ? [...value, optionId]
+          : value;
       onChange(newValue);
     }
   };
@@ -45,7 +45,7 @@ function SelectDestinationsItem({
       {isChecked ? (
         <img src={"/icons/check-box.svg"} alt="check-box icon" />
       ) : (
-        <div className="w-4.75 h-4.75 bg-white rounded-[2px]" />
+        <div className="w-4.75 h-4.75 bg-white rounded-xs" />
       )}
       <span className="text-sm text-white truncate">{label}</span>
     </button>
