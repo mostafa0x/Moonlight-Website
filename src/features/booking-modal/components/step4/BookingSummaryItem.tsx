@@ -19,7 +19,7 @@ function BookingSummaryItem({ label, hint }: { label: string; hint: any }) {
       </h2>
 
       {/* Value (Hint): Allows wrapping for long names while maintaining right alignment */}
-      <span className="text-sm text-white font-medium text-right leading-snug break-words max-w-[65%]">
+      <span className="text-sm text-white font-medium text-right leading-snug wrap-break-word max-w-[65%]">
         {displayHint}
       </span>
     </div>

@@ -1,32 +1,54 @@
 "use client";
 
+import { useEffect } from "react";
 import dynamic from "next/dynamic";
-import { useBookingState } from "@/features/booking-modal/context/BookingContextProvider";
-import EgyptianLoader from "@/shared/components/EgyptianLoader";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useBookingState, useBookingActions } from "@/features/booking-modal/context/BookingContextProvider";
 
 /**
  * Lazy-loaded BookingModal to optimize bundle size and FCP/LCP.
- * The modal contains heavy form logic and step-rendering which should 
- * not be in the initial page hydration path.
  */
 const BookingModal = dynamic(() => import("@/features/booking-modal"), {
   ssr: false,
-
 });
+
 
 /**
  * BookingModalProvider: Controls the conditional mounting of the Dynamic Modal.
- * 
- * Performance Wins:
- * - Code Splitting: Bundle size -XX KB for early page loads.
- * - Resource Management: JS/Assets for the modal only fetch when 'isOpen' is true.
- * - Interaction (INP): Avoids heavy component initialization during initial app boot.
+ * Now includes initialization logic to auto-reopen pending bookings after auth redirect.
  */
 export default function BookingModalProvider() {
   const { isOpen } = useBookingState();
+  const { handleSetTourId } = useBookingActions();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  // Automatic Re-opening Logic
+  useEffect(() => {
+    // Only check for restoration if no modal is currently open
+    if (!isOpen) {
+      const saved = typeof window !== "undefined" ? localStorage.getItem("pending_booking_data") : null;
+      if (saved) {
+        try {
+          const data = JSON.parse(saved);
+          if (data.tourId) {
+            // console.log("Detected pending booking, auto-opening modal for tour:", data.tourId);
+            
+            // Just set the state. BookingContextProvider's 2-way sync will maintain the URL.
+            handleSetTourId(data.tourId);
+          }
+        } catch (e) {
+          console.error("Failed to parse pending booking for auto-open", e);
+        }
+      }
+    }
+  }, [isOpen, handleSetTourId]);
+
 
   if (!isOpen) return null;
 
   return <BookingModal />;
 }
+
+
 

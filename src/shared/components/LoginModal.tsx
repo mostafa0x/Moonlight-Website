@@ -65,7 +65,7 @@ function LoginModal() {
       role="dialog"
       aria-modal="true"
       aria-labelledby="login-title"
-      className="fixed inset-0 z-1000 flex items-center justify-center bg-black/90 p-4 shadow-2xl backdrop-blur-md animate-in fade-in duration-500"
+      className="fixed inset-0 z-10000 flex items-center justify-center bg-black/90 p-4 shadow-2xl backdrop-blur-md animate-in fade-in duration-500"
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) {
           setShowLoginModal(false);

@@ -1,6 +1,6 @@
 "use client";
 
-import { useParams, useSearchParams } from "next/navigation";
+import { useParams, useSearchParams, useRouter } from "next/navigation";
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { useBodyScrollLock } from "../hooks/use-body-scroll-lock";
 
@@ -21,6 +21,7 @@ interface BookingState {
 interface BookingActions {
   nextStep: () => void;
   prevStep: () => void;
+  setStep: (step: number) => void;
   handleSetTourId: (tour: string) => void;
   setTotalSteps: (total: number) => void;
 }
@@ -44,6 +45,7 @@ export default function BookingContextProvider({
   const [totalSteps, setTotalSteps] = useState(5);
   const [tourId, setTourId] = useState("");
 
+  const router = useRouter();
   const searchParams = useSearchParams();
   const bookingParam = searchParams.get("tourId");
 
@@ -67,15 +69,32 @@ export default function BookingContextProvider({
     setStep(1); // Reset step when switching tours
   }, []);
 
-  // --- SIDE EFFECTS ---
+  // --- SYNC LOGIC ---
 
-  // Synchronize state with URL search params
+  // 1. Sync FROM URL to STATE (Only on mount or when URL param actually changes)
   useEffect(() => {
-    const currentTourId = bookingParam || "";
-    if (tourId !== currentTourId) {
-      handleSetTourId(currentTourId);
+    if (bookingParam && tourId !== bookingParam) {
+      setTourId(bookingParam);
+      setStep(1);
     }
-  }, [bookingParam, tourId, handleSetTourId]);
+  }, [bookingParam]); // Minimal dependencies to prevent loops
+
+  // 2. Sync FROM STATE to URL (To maintain consistency when programmatically opened)
+  useEffect(() => {
+    const currentParam = searchParams.get("tourId") || "";
+    if (tourId && tourId !== currentParam) {
+      // Push state to URL so it persists and works with browser back/forward
+      const params = new URLSearchParams(searchParams.toString());
+      params.set("tourId", tourId);
+      router.replace(`?${params.toString()}`, { scroll: false });
+    } else if (!tourId && currentParam) {
+      // Clear URL if modal is closed
+      const params = new URLSearchParams(searchParams.toString());
+      params.delete("tourId");
+      router.replace(`?${params.toString()}`, { scroll: false });
+    }
+  }, [tourId, router, searchParams]);
+
 
   // --- CONTEXT VALUES ---
 
@@ -94,10 +113,11 @@ export default function BookingContextProvider({
     (): BookingActions => ({
       nextStep,
       prevStep,
+      setStep,
       handleSetTourId,
       setTotalSteps,
     }),
-    [nextStep, prevStep, handleSetTourId, setTotalSteps]
+    [nextStep, prevStep, setStep, handleSetTourId, setTotalSteps]
   );
 
   return (

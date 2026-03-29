@@ -75,7 +75,7 @@ function FooterModal({ step }: { step: number }) {
         )}
 
         {step === totalSteps ? (
-          <ConfirmBooking callback={submitBooking} />
+          <ConfirmBooking callback={submitBooking} isLoading={loading} />
         ) : (
           <NextStepBtn nextStep={handleNext} />
         )}

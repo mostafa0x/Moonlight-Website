@@ -1,6 +1,7 @@
 import { useBookingActions } from "@/features/booking-modal/context/BookingContextProvider";
 import { useFormContext } from "react-hook-form";
 import { useAuth } from "@/shared/providers/AuthProvider";
+import { useBookingPersistence } from "./use-booking-persistence";
 
 interface UseFooterNavigationProps {
   step: number;
@@ -10,15 +11,12 @@ interface UseFooterNavigationProps {
 
 /**
  * useFooterNavigation: Logic for step navigation and contact step validation.
- * 
- * Benefits:
- * - Better INP: Isolated navigation logic prevents unnecessary UI complexity.
- * - Modularity: Validation logic is shared between Step-level and Footer-level triggers.
  */
 export function useFooterNavigation({ step, totalSteps, pkg }: UseFooterNavigationProps) {
   const { nextStep, prevStep } = useBookingActions();
-  const { trigger } = useFormContext();
+  const { trigger, getValues } = useFormContext();
   const { isLoggedIn, setShowLoginModal } = useAuth();
+  const { savePendingBooking } = useBookingPersistence();
 
   const handleNext = async () => {
     // Specifically enforce validation before moving to the final stage (Summary)
@@ -26,6 +24,11 @@ export function useFooterNavigation({ step, totalSteps, pkg }: UseFooterNavigati
 
     if (isMovingToSummary) {
       if (!isLoggedIn) {
+        // --- Persistence Logic ---
+        // Save form state to localStorage before opening login modal
+        const formValues = getValues();
+        savePendingBooking(pkg.packageId, formValues, step);
+        
         setShowLoginModal(true);
         return;
       }
@@ -46,3 +49,4 @@ export function useFooterNavigation({ step, totalSteps, pkg }: UseFooterNavigati
 
   return { handleNext, prevStep };
 }
+
