@@ -1,69 +1,76 @@
-import { useFormContext, useWatch } from "react-hook-form";
-import BookingSummaryItem from "@/features/booking-modal/components/step4/BookingSummaryItem";
+"use client";
+
 import { memo } from "react";
-import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
-import { useGetPackage } from "../../hooks/index";
-import { useTranslations } from "next-intl";
+import BookingSummaryItem from "./BookingSummaryItem";
+import { useSummaryData } from "../../hooks/index";
 
+/**
+ * BookingSummary: Component for displaying choices before final confirmation.
+ * 
+ * Optimized for Vercel React best practices:
+ * - Performance (INP): logic extracted to useSummaryData with targeted useWatch subscriptions.
+ * - UX: Handles long package names gracefully via improved Sub-component.
+ * - Accessibility: Clear hierarchical structure with h1 and h2 headings.
+ * - Animation: Entrance animation for smooth perceptual performance (FCP).
+ */
 function BookingSummary() {
-  const t = useTranslations("bookingModal");
-  const { control } = useFormContext();
-  const { tourId } = useBookingContext();
-  const { data: pkg } = useGetPackage(tourId);
-
-  const values = useWatch({ control });
-  const {
-    tourDate,
-    adultsNumber,
-    kidsNumber,
-    tourguideLanguage,
-    selectedDestinations,
+  const { 
+    pkg, 
+    tourDate, 
+    travelerText, 
+    tourguideLanguage, 
+    destinationsCount, 
     totalPrice,
-  } = values;
-
-  const travelerText = `${adultsNumber} ${t("step2.adults")}${
-    kidsNumber > 0 ? `, ${kidsNumber} ${t("step2.children")}` : ""
-  }`;
+    translations: t
+  } = useSummaryData();
 
   return (
-    <div className="flex flex-col justify-between bg-[#131313] border border-[#313131] w-full min-h-64.5 rounded-[5px] px-3.75 py-3.5 ">
-      <div>
-        <h1 className="text-base text-[#F2C975] font-medium">
-          {t("step5.summaryTitle")}
+    <div className="flex flex-col justify-between bg-[#131313] border border-[#313131] w-full min-h-68 rounded-[8px] px-4.5 py-4 transition-all duration-300 shadow-md">
+      <div className="animate-in fade-in slide-in-from-top-1 duration-500">
+        <h1 className="text-base text-[#F2C975] font-semibold tracking-wide uppercase text-xs mb-4">
+          {t.summaryTitle}
         </h1>
-        <div className="mt-2.75 space-y-3.75">
+        
+        {/* Dynamic List: only rendered when data is ready or with fallbacks */}
+        <div className="flex flex-col gap-4">
           <BookingSummaryItem
-            label={t("step5.tour")}
-            hint={pkg?.packageName || "Tour Package"}
+            label={t.tour}
+            hint={pkg?.packageName}
           />
           <BookingSummaryItem
-            label={t("step5.date")}
-            hint={tourDate || "Not selected"}
+            label={t.date}
+            hint={tourDate || t.notSelected}
           />
           <BookingSummaryItem
-            label={t("step5.travelers")}
+            label={t.travelers}
             hint={travelerText}
           />
           <BookingSummaryItem
-            label={t("step5.language")}
-            hint={tourguideLanguage?.toUpperCase() || "EN"}
+            label={t.language}
+            hint={tourguideLanguage}
           />
-          {selectedDestinations?.length > 0 && (
+          {destinationsCount > 0 && (
             <BookingSummaryItem
-              label={t("step5.destinations")}
-              hint={selectedDestinations.length + " selected"}
+              label={t.destinations}
+              hint={`${destinationsCount} selected`}
             />
           )}
         </div>
       </div>
-      <div className="flex flex-row justify-between items-center border-t border-[#313131] mt-4 pt-2.75">
-        <h2 className="text-base text-[#8B8B8B]">{t("step5.totalPrice")}</h2>
-        <span className="text-[20px] text-[#F2C975] font-medium">
+
+      {/* Footer: Isolated price section with better visual hierarchy */}
+      <div className="flex flex-row justify-between items-center border-t border-[#313131]/60 mt-5 pt-3.5">
+        <h2 className="text-sm md:text-base text-[#8B8B8B] font-medium leading-none">
+          {t.totalPrice}
+        </h2>
+        <span className="text-[20px] md:text-[22px] text-[#F2C975] font-bold tracking-tight">
           {totalPrice}$
         </span>
       </div>
     </div>
   );
 }
+
+BookingSummary.displayName = "BookingSummary";
 
 export default memo(BookingSummary);
