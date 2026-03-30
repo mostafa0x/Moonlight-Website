@@ -23,7 +23,6 @@ export default function BookingModalProvider() {
   const { handleSetTourId } = useBookingActions();
   const { clearPendingBooking } = useBookingPersistence();
   const router = useRouter();
-  const searchParams = useSearchParams();
 
   // Automatic Re-opening Logic
   useEffect(() => {

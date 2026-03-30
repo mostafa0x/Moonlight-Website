@@ -1,7 +1,7 @@
 "use client";
 
-import { useParams, useSearchParams, useRouter } from "next/navigation";
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import React, { createContext, useCallback, useContext, useEffect, useMemo, useState, Suspense } from "react";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { useBodyScrollLock } from "../hooks/use-body-scroll-lock";
 
 /**
@@ -45,10 +45,6 @@ export default function BookingContextProvider({
   const [totalSteps, setTotalSteps] = useState(5);
   const [tourId, setTourId] = useState("");
 
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const bookingParam = searchParams.get("tourId");
-
   const isOpen = !!tourId;
 
   // Handle body scroll locking via specialized hook
@@ -64,38 +60,28 @@ export default function BookingContextProvider({
     setStep((s) => (s !== 1 ? s - 1 : 1));
   }, []);
 
+  const router = useRouter();
+  
   /**
-   * handleSetTourId: Updates the URL to trigger the state change.
-   * This ensures the URL is the single source of truth and prevents sync loops.
+   * handleSetTourId: Updates the state and the URL.
+   * Note: This function itself doesn't use useSearchParams to avoid suspending the provider.
+   * It relies on next/navigation's router which is safe.
    */
   const handleSetTourId = useCallback((tour: string) => {
-    const params = new URLSearchParams(searchParams.toString());
+    setTourId(tour);
+    setStep(1);
+    
+    // Update URL manually if we want to avoid useSearchParams here.
+    // Or we can just let the BookingURLSync handle the URL update via an effect if needed.
+    // However, it's safer to just push/replace the URL.
+    const url = new URL(window.location.href);
     if (tour) {
-      params.set("tourId", tour);
+      url.searchParams.set("tourId", tour);
     } else {
-      params.delete("tourId");
+      url.searchParams.delete("tourId");
     }
-    // Update the URL. The useEffect below will catch this and update local state.
-    router.replace(`?${params.toString()}`, { scroll: false });
-    setStep(1); // Reset step when switching tours
-  }, [router, searchParams]);
-
-  // --- SYNC LOGIC ---
-
-  /**
-   * Sync from URL to STATE.
-   * This is the only sync direction, making URL the source of truth for tourId.
-   */
-  useEffect(() => {
-    const nextTourId = bookingParam || "";
-    if (tourId !== nextTourId) {
-      setTourId(nextTourId);
-      // Only reset step if we're actually changing tours or closing
-      setStep(1);
-    }
-  }, [bookingParam, tourId]); 
-
-
+    router.replace(url.pathname + url.search, { scroll: false });
+  }, [router]);
 
   // --- CONTEXT VALUES ---
 
@@ -125,9 +111,52 @@ export default function BookingContextProvider({
     <BookingStateContext.Provider value={stateValue}>
       <BookingActionsContext.Provider value={actionsValue}>
         {children}
+        {/*
+          URL Sync is moved to a sibling component wrapped in Suspense.
+          This prevents useSearchParams from suspending the entire children tree.
+        */}
+        <Suspense fallback={null}>
+          <BookingURLSync 
+            setTourId={setTourId} 
+            tourId={tourId} 
+            setStep={setStep} 
+          />
+        </Suspense>
       </BookingActionsContext.Provider>
     </BookingStateContext.Provider>
   );
+}
+
+/**
+ * BookingURLSync: Handles synchronization between the URL (tourId) and local state.
+ * Isolated in a component to localized Suspense impact.
+ */
+function BookingURLSync({ 
+  setTourId, 
+  tourId, 
+  setStep 
+}: { 
+  setTourId: (id: string) => void;
+  tourId: string;
+  setStep: (step: number) => void;
+}) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const bookingParam = searchParams.get("tourId");
+
+  // Sync from URL to STATE
+  useEffect(() => {
+    const nextTourId = bookingParam || "";
+    if (tourId !== nextTourId) {
+      setTourId(nextTourId);
+      setStep(1);
+    }
+  }, [bookingParam, tourId, setTourId, setStep]);
+
+  // We could also put handleSetTourId logic here if we wanted it to be the source of truth
+  // for URL updates, but keeping the state sync is the priority.
+  
+  return null;
 }
 
 /**
