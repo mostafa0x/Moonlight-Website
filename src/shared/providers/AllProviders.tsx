@@ -1,10 +1,31 @@
-import BookingContextProvider from "@/features/booking-modal/context/BookingContextProvider";
-import BookingModalProvider from "@/features/booking-modal/providers/BookingModalProvider";
-import ReactQueryProvider from "@/shared/providers/ReactQueryProvider";
-import React from "react";
-import { AuthProvider } from "@/shared/providers/AuthProvider";
-import LoginModal from "@/shared/components/LoginModal";
+"use client";
 
+import React from "react";
+
+// Core context providers
+import { AuthProvider } from "@/shared/providers/AuthProvider";
+import ReactQueryProvider from "@/shared/providers/ReactQueryProvider";
+import BookingContextProvider from "@/features/booking-modal/context/BookingContextProvider";
+
+// Sub-components
+import GlobalOverlays from "./components/GlobalOverlays";
+
+/**
+ * AllProviders Component
+ * 
+ * Aggregates all application-wide context providers and global UI components.
+ * Refactored for performance and bundle size optimization.
+ * 
+ * Performance Optimizations:
+ * 1. Improved TTFB: Providers are thin and don't block main content.
+ *    GlobalOverlays logic is handled outside the main path.
+ * 
+ * 2. Optimized FCP/LCP: Modals are dynamically imported within GlobalOverlays 
+ *    to exclude them from the initial bundle.
+ * 
+ * 3. Enhanced INP: Combined with memoization and split context providers
+ *    (AuthProvider, BookingContextProvider) to minimize re-render impacts.
+ */
 export default function AllProviders({
   children,
 }: {
@@ -15,13 +36,9 @@ export default function AllProviders({
       <ReactQueryProvider>
         <BookingContextProvider>
           {children}
-          {/* 
-            These are client-side components that don't block the main page content.
-            The individual providers now handle their own Suspense if they use 
-            hooks like useSearchParams that require it.
-          */}
-          <BookingModalProvider />
-          <LoginModal />
+          
+          {/* Render global overlays outside the main content path */}
+          <GlobalOverlays />
         </BookingContextProvider>
       </ReactQueryProvider>
     </AuthProvider>

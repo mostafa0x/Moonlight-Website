@@ -4,8 +4,8 @@ import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { getContactSchema, type ContactSchemaType } from "./schema";
 import CustomInput from "@/shared/custom-input";
-import CustomTextarea from "@/features/booking-modal/components/step3/CustomTextarea";
 import { useTranslations } from "next-intl";
+import CustomTextarea from "@/features/booking-modal/components/step4/CustomTextarea";
 
 export default function ContactForm() {
   const t = useTranslations("contact");
