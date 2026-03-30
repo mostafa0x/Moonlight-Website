@@ -7,15 +7,11 @@ export const useExitSlider = (
 ) => {
   const [displayItem, setDisplayItem] = useState(slide);
   const [isExiting, setIsExiting] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
-
   useEffect(() => {
     if (slide.title !== displayItem.title) {
       setIsExiting(true);
 
       const timeoutChange = setTimeout(() => {
-        // setDisplayItem(slide);
-        setIsLoaded(true);
         setDisplayItem(slide);
       }, exitDuration + 200);
 
@@ -23,19 +19,19 @@ export const useExitSlider = (
         clearTimeout(timeoutChange);
       };
     }
-  }, [slide, displayItem]);
+  }, [slide, displayItem, exitDuration]);
+
   useEffect(() => {
-    if (!isLoaded) return;
+    if (!isExiting) return;
 
     const timeout = setTimeout(() => {
       setIsExiting(false);
-      setIsLoaded(false);
     }, exitDuration + 200);
 
     return () => {
       clearTimeout(timeout);
     };
-  }, [isLoaded, slide]);
+  }, [isExiting, exitDuration]);
 
   return { displayItem, isExiting };
 };

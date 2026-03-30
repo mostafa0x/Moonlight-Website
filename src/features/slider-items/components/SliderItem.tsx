@@ -1,10 +1,9 @@
-"use client";
-
-import { memo, useState, useEffect, useMemo } from "react";
-import Image from "next/image";
+import { memo, useMemo } from "react";
 import { useExitSlider } from "@/features/slider-items/hooks";
+import { useImageLoader } from "@/features/slider-items/hooks/useImageLoader";
 import type { LandmarksType } from "@/shared/global";
 import { cn } from "@/shared/lib/utils";
+import SliderImage from "./SliderImage";
 
 interface SliderItemProps {
   item: LandmarksType;
@@ -15,7 +14,7 @@ interface SliderItemProps {
 /**
  * SliderItem Component
  * Manages individual slide presentation with entrance/exit transitions.
- * Refactored for performance and bundle size.
+ * Refactored using Vercel best practices for performance and INP.
  */
 function SliderItem({
   item,
@@ -23,57 +22,43 @@ function SliderItem({
   isVisible,
 }: SliderItemProps) {
   const { displayItem, isExiting } = useExitSlider(item);
-  const [isLoaded, setIsLoaded] = useState(false);
-
   const isFirstItem = index === 0;
 
-  // Reset loaded state when image changes
-  useEffect(() => {
-    setIsLoaded(false);
-  }, [displayItem.imageUrl]);
+  // Custom hook for image loading state and cache detection
+  const { isLoaded, onImageLoad } = useImageLoader(displayItem.imageUrl);
 
-  // Optimized class names for the container
+  // Memoized classes for the container to improve responsiveness and performance
   const containerClasses = useMemo(() => cn(
-    "absolute left-1/2 top-1/2 h-full w-[330px] -translate-y-1/2 transition-all duration-500 ease-in-out sm:w-[530px] xl:w-[730px]",
+    "absolute left-1/2 top-1/2 h-full transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)]",
+    "w-[85vw] sm:w-[70vw] lg:w-[45vw] xl:w-[35vw]", // Fluid width based on viewport
+    "-translate-y-1/2 translate-x-[-50%]", // Center by default
     isExiting
-      ? "translate-x-full opacity-0 scale-95"
+      ? "translate-x-full opacity-0 scale-90 rotate-3 blur-lg"
       : isVisible
-        ? "translate-x-[-45%] opacity-100 scale-100 lg:translate-x-[-50%] xl:translate-x-[-55%]"
-        : "translate-x-full opacity-0"
+        ? "opacity-100 scale-100 rotate-0 blur-0 translate-x-[-50%] lg:translate-x-[-5%] xl:translate-x-[-15%]" // Offset for desktop
+        : "translate-x-[150%] opacity-0 scale-95 -rotate-2"
   ), [isExiting, isVisible]);
 
   return (
-    <div
-      className="relative w-full h-136 select-none md:h-136 lg:h-136 xl:h-140 xl:w-80"
+    <article
+      className="relative w-full h-[45vh] sm:h-[55vh] lg:h-[70vh] xl:h-[75vh] select-none overflow-visible"
       aria-hidden={!isVisible}
     >
-      <figure className={containerClasses}>
-        {/* Loading Skeleton / Background */}
-        {!isLoaded && (
-          <div
-            className="skeleton absolute inset-0 rounded-lg bg-white/5 opacity-50"
-            aria-hidden="true"
-          />
-        )}
-
-        <Image
-          key={displayItem.imageUrl}
+      <div className={containerClasses}>
+        <SliderImage
           src={displayItem.imageUrl}
           alt={displayItem.title}
-          fill
+          isLoaded={isLoaded}
           priority={isFirstItem || isVisible}
-          sizes="(max-width: 640px) 330px, (max-width: 1280px) 530px, 730px"
-          onLoad={() => setIsLoaded(true)}
-          onError={() => setIsLoaded(true)}
+          onLoad={onImageLoad}
           className={cn(
-            "object-contain transition-all duration-700 ease-out",
-            isLoaded ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-95 blur-sm"
+            "h-full w-full",
+            "aspect-[3/4] sm:aspect-4/3 lg:aspect-auto object-cover rounded-2xl md:rounded-3xl"
           )}
         />
-
-        {/* Caption can be added here if needed semantically */}
-      </figure>
-    </div>
+        
+      </div>
+    </article>
   );
 }
 

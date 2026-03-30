@@ -1,22 +1,17 @@
-"use client";
-
-import type { ItemSliderType, LandmarksType } from "@/shared/global";
-const SliderItem = dynamic(
-  () => import("@/features/slider-items/components/SliderItem"),
-  { ssr: false, loading: () => <SliderItemSkeleton /> },
-);
-import SliderItemHeader from "@/features/slider-items/components/SliderItemHeader";
 import { memo } from "react";
-import dynamic from "next/dynamic";
 import { useAutoSlider } from "@/features/slider-items/hooks";
-import TitleSliderItem from "@/features/slider-items/components/TitleSliderItem";
-import { useIsMobile } from "@/shared/hooks/useCheckMobile";
-import SliderItemSkeleton from "@/features/slider-items/components/SliderItemSkeleton";
+import LandmarkSlide from "@/features/slider-items/components/LandmarkSlide";
 import { cn } from "@/shared/lib/utils";
+import type { LandmarksType } from "@/shared/global";
 
+/**
+ * LandMarks Section
+ * A premium, fully responsive slider showcasing cultural landmarks.
+ * Refactored for a unified "Single Slide" experience that works on all viewports.
+ */
 function LandMarks({
   currentPage,
-  landmarks,
+  landmarks = [],
   titleHeader,
   page,
 }: {
@@ -26,51 +21,46 @@ function LandMarks({
   page: number;
 }) {
   const isPageInView = currentPage === page;
+
+  // Custom hook for managing the auto-advancing slide index
   const currentIndex = useAutoSlider(isPageInView, landmarks.length, 7500);
-  const currentSlide = landmarks[currentIndex];
-  const isMobileDevice = useIsMobile();
 
   return (
-    <section className="h-screen w-full flex overflow-hidden pt-18.5 lg:pt-43.25 px-6.25 lg:px-18.25">
-      <div className="flex w-full lg:max-w-7xl flex-col lg:flex-row lg:justify-between">
-        <div className="lg:w-1/2">
-          <h1
+    <section
+      className="h-screen w-full relative overflow-hidden select-none"
+      aria-label="Cultural Landmarks Gallery"
+    >
+      {/* Decorative Branding / Static Section Title */}
+      <h1 className="absolute top-20 left-10 lg:top-20 lg:left-20 text-white/30 text-2xl font-bold tracking-[0.5em] uppercase z-50">
+        {titleHeader}
+      </h1>
+
+      <div className="relative w-full h-full lg:max-w-7xl mx-auto">
+        {landmarks.map((landmark, idx) => (
+          <LandmarkSlide
+            key={`${landmark.title}-${idx}`}
+            item={landmark}
+            isVisible={idx === currentIndex}
+            slideNumber={String(idx + 1).padStart(2, "0")}
+            totalSlides={String(landmarks.length).padStart(2, "0")}
+          />
+        ))}
+      </div>
+
+      {/* Slide Navigation Dots (Optional aesthetic touch) */}
+      <div className="absolute right-6 bottom-10  lg:-translate-y-1/2 flex lg:flex-col gap-3 z-50 opacity-60">
+        {landmarks.map((_, idx) => (
+          <div
+            key={idx}
             className={cn(
-              "text-2xl lg:text-6xl font-bold mb-6 transition-all duration-500 ease-in-out transform",
-              isPageInView
-                ? "translate-x-0 opacity-100"
-                : "-translate-x-full opacity-0",
+              "transition-all duration-300 rounded-full",
+              idx === currentIndex ? "bg-[#F2C975] w-8 h-1 lg:h-8 lg:w-1" : "bg-white/20 w-3 h-1 lg:h-3 lg:w-1"
             )}
-          >
-            {titleHeader}
-          </h1>
-          {isMobileDevice && (
-            <>
-              <TitleSliderItem
-                item={currentSlide}
-                isVisible={isPageInView}
-              />
-              <SliderItem
-                item={currentSlide}
-                index={currentIndex}
-                isVisible={isPageInView}
-              />
-            </>
-          )}
-          <SliderItemHeader
-            item={currentSlide}
-            isVisible={isPageInView}
           />
-        </div>
-        {!isMobileDevice && (
-          <SliderItem
-            item={currentSlide}
-            index={currentIndex}
-            isVisible={isPageInView}
-          />
-        )}
+        ))}
       </div>
     </section>
   );
 }
+
 export default memo(LandMarks);
