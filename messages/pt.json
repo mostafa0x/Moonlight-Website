@@ -316,9 +316,9 @@
       ],
       "alexandria": [
         {
-          "title": "Forte de Qaitbay",
-          "description": "Construído sobre as ruínas do antigo Farol de Alexandria em 1477, a Cidadela de Qaitbay é uma enorme fortaleza mediterrânea de calcário com torres defensivas, um pátio e uma torre principal icônica de três andares.",
-          "imageUrl": "/imgs/packages/alex/castel.webp"
+          "title": "Cabeça de Alexandre, o Grande",
+          "description": "Descoberta nos jardins do distrito de Alexandria, esta cabeça de mármore branco representa Alexandre, o Grande, com seus característicos cabelos ondulados e olhar intenso, simbolizando o legado helenístico que definiu a cidade.",
+          "imageUrl": "/imgs/packages/alex/alexander_head.webp"
         },
         {
           "title": "Teatro Romano",
@@ -328,14 +328,14 @@
       ],
       "nile": [
         {
-          "title": "Cruzeiro pelo Nilo",
-          "description": "Experimente la magia del Nilo no coração do Cairo a bordo de um cruzeiro inesquecível. Descubra a beleza e os marcos históricos da capital sob um céu estrelado, com um jantar luxuoso e um ambiente egípcio autêntico. Uma viagem verdadeiramente mágica espera por você!",
-          "imageUrl": "/imgs/packages/nile/nile1.webp"
-        },
+          "title": "Jantar em Barca Faraônica",
+          "description": "Embarque em uma autêntica odisseia egípcia a bordo da Barca Faraônica. Este jantar-cruzeiro de 5 estrelas oferece um buffet aberto de especialidades grelhadas egípcias premium enquanto você assiste à performance hipnótica da Tanoura e aos shows de dança do ventre.",
+          "imageUrl": "/imgs/packages/nile/nile_pharaonic_real.webp"
+         },
         {
-          "title": "Cruzeiro pelo Nilo",
-          "description": "Experimente la magia del Nilo no coração do Cairo a bordo de um cruzeiro inesquecível. Descubra a beleza e os marcos históricos da capital sob um céu estrelado, com um jantar luxuoso e um ambiente egípcio autêntico. Uma viagem verdadeiramente mágica espera por você!",
-          "imageUrl": "/imgs/packages/nile/nile2.webp"
+          "title": "Cruzeiro Panorâmico Moderno",
+          "description": "Experimente o charme cosmopolita noturno do Cairo em um luxuoso cruzeiro panorâmico. Desfrute de un buffet internacional de classe mundial e hospitalidade de elite enquanto a orla histórica da cidade —incluindo a Torre do Cairo brilhante e os arranha-céus do centro— desfilam com graça à sua frente.",
+          "imageUrl": "/imgs/packages/nile/nile_modern_real.webp"
         }
       ]
     }

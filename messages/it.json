@@ -316,9 +316,9 @@
       ],
       "alexandria": [
         {
-          "title": "Forte di Qaitbay",
-          "description": "Costruita sulle rovine dell'antico Faro di Alessandria nel 1477, la Cittadella di Qaitbay è una massiccia fortezza mediterranea in pietra calcarea dotata di torri difensive, un cortile e l'iconica torre principale a tre piani.",
-          "imageUrl": "/imgs/packages/alex/castel.webp"
+          "title": "Testa di Alessandro Magno",
+          "description": "Scoperta nei giardini del distretto di Alessandria, questa testa di marmo bianco rappresenta Alessandro Magno con i suoi caratteristici capelli ondulati e lo sguardo intenso, a simboleggiare l'eredità ellenistica che ha definito la città.",
+          "imageUrl": "/imgs/packages/alex/alexander_head.webp"
         },
         {
           "title": "Teatro Romano",
@@ -328,14 +328,14 @@
       ],
       "nile": [
         {
-          "title": "Crociera sul Nilo",
-          "description": "Vivi la magia del Nilo nel cuore del Cairo a bordo di una crociera indimenticabile. Scopri la bellezza e i monumenti storici della capitale sotto un cielo stellato, con una cena lussuosa e un'autentica atmosfera egiziana. Un viaggio davvero magico ti aspetta!",
-          "imageUrl": "/imgs/packages/nile/nile1.webp"
+          "title": "Cena su Barca Faraonica",
+          "description": "Imbarcatevi in un'autentica odissea egiziana a bordo della Barca Faraonica. Questa cena in crociera a 5 stelle offre un buffet aperto di specialità grill egiziane di primo livello mentre assistete allo spettacolo ipnotico della Tanoura e a esibizioni di danza orientale.",
+          "imageUrl": "/imgs/packages/nile/nile_pharaonic_real.webp"
         },
         {
-          "title": "Crociera sul Nilo",
-          "description": "Vivi la magia del Nilo nel cuore del Cairo a bordo di una crociera indimenticabile. Scopri la bellezza e i monumenti storici della capitale sotto un cielo stellato, con una cena lussuosa e un'autentica atmosfera egiziana. Un viaggio davvero magico ti aspetta!",
-          "imageUrl": "/imgs/packages/nile/nile2.webp"
+          "title": "Crociera Panoramica Moderna",
+          "description": "Vivete il fascino cosmopolita notturno del Cairo su un lussuoso incrociatore panoramico. Godetevi un buffet internazionale di classe mondiale e un'ospitalità d'élite mentre il lungofiume storico —inclusa la Torre del Cairo scintillante e i grattacieli del centro— sfila con grazia davanti alle vostre vetrate a tutta altezza.",
+          "imageUrl": "/imgs/packages/nile/nile_modern_real.webp"
         }
       ]
     }

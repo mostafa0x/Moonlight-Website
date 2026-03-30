@@ -327,9 +327,9 @@
       ],
       "alexandria": [
         {
-          "title": "Qaitbay Fort",
-          "description": "Built over the ruins of Alexandria’s ancient Lighthouse in 1477, Qaitbay Citadel is a massive limestone Mediterranean fortress featuring defensive towers, a courtyard, and an iconic three-floored main tower.",
-          "imageUrl": "/imgs/packages/alex/castel.webp"
+          "title": "Head of Alexander the Great",
+          "description": "Discovered in the gardens of the Alexandria district, this white marble head represents Alexander the Great with his characteristic wavy hair and intense gaze, symbolizing the Hellenistic legacy that defined the city.",
+          "imageUrl": "/imgs/packages/alex/alexander_head.webp"
         },
         {
           "title": "Roman Theatre",
@@ -339,14 +339,14 @@
       ],
       "nile": [
         {
-          "title": "Nile Cruise",
-          "description": "Experience the magic of the Nile in the heart of Cairo aboard an unforgettable cruise. Discover the capital's beauty and historic landmarks under a starry sky, complete with a luxurious dinner and an authentic Egyptian ambiance. A truly magical journey awaits!",
-          "imageUrl": "/imgs/packages/nile/nile1.webp"
+          "title": "Pharaonic Dinner Sail",
+          "description": "Embark on an authentic Egyptian odyssey aboard the Pharaonic Barge. This 5-star dinner cruise offers an open buffet of premium Egyptian grilled specialties as you witness the hypnotic Tanoura whirling dervish and live belly dancing shows against the illuminated Cairo skyline.",
+          "imageUrl": "/imgs/packages/nile/nile_pharaonic_real.webp"
         },
         {
-          "title": "Nile Cruise",
-          "description": "Experience the magic of the Nile in the heart of Cairo aboard an unforgettable cruise. Discover the capital's beauty and historic landmarks under a starry sky, complete with a luxurious dinner and an authentic Egyptian ambiance. A truly magical journey awaits!",
-          "imageUrl": "/imgs/packages/nile/nile2.webp"
+          "title": "Modern Panoramic Cruiser",
+          "description": "Experience Cairo's nightly cosmopolitan charm on a sleek, luxury panoramic cruiser. Enjoy a world-class international buffet and elite hospitality as the historic city waterfront—including the glowing Cairo Tower and downtown skyscrapers—drifts gracefully by from your floor-to-ceiling windows.",
+          "imageUrl": "/imgs/packages/nile/nile_modern_real.webp"
         }
       ]
     }

@@ -316,9 +316,9 @@
       ],
       "alexandria": [
         {
-          "title": "Citadelle de Qaitbay",
-          "description": "Construite sur les ruines de l’ancien phare d’Alexandrie en 1477, la citadelle de Qaitbay est une impressionnante forteresse méditerranéenne en calcaire dotée de tours défensives, d’une cour et d’une tour principale emblématique de trois étages.",
-          "imageUrl": "/imgs/packages/alex/castel.webp"
+          "title": "Tête d'Alexandre le Grand",
+          "description": "Découverte dans les jardins du district d'Alexandrie, cette tête en marbre blanc représente Alexandre le Grand avec ses cheveux ondulés caractéristiques et son regard intense, symbolisant l'héritage hellénistique qui a défini la ville.",
+          "imageUrl": "/imgs/packages/alex/alexander_head.webp"
         },
         {
           "title": "Théâtre romain",
@@ -328,14 +328,14 @@
       ],
       "nile": [
         {
-          "title": "Croisière sur le Nil",
-          "description": "Vivez la magie du Nil au cœur du Caire à bord d'une croisière inoubliable. Découvrez la beauté et les monuments historiques de la capitale sous un ciel étoilé, avec un dîner luxueux et une ambiance égyptienne authentique. Un voyage vraiment magique vous attend !",
-          "imageUrl": "/imgs/packages/nile/nile1.webp"
+          "title": "Dîner sur Barque Pharaonique",
+          "description": "Embarquez pour une authentique odyssée égyptienne à bord de la Barque Pharaonique. Ce dîner-croisière 5 étoiles propose un buffet ouvert de spécialités grillées égyptiennes de premier choix pendant que vous assistez au spectacle hypnotique de la Tanoura et à des prestations de dance orientale.",
+          "imageUrl": "/imgs/packages/nile/nile_pharaonic_real.webp"
         },
         {
-          "title": "Croisière sur le Nil",
-          "description": "Vivez la magie du Nil au cœur du Caire à bord d'une croisière inoubliable. Découvrez la beauté et les monuments historiques de la capitale sous un ciel étoilé, avec un dîner luxueux et une ambiance égyptienne authentique. Un voyage vraiment magique vous attend !",
-          "imageUrl": "/imgs/packages/nile/nile2.webp"
+          "title": "Croiseur Panoramique Moderne",
+          "description": "Découvrez le charme cosmopolite du Caire de nuit sur un croiseur panoramique de luxe. Profitez d'un buffet international de classe mondiale et d'une hospitalité d'élite pendant que les berges historiques de la ville —incluant la Tour du Caire scintillante et les gratte-ciel du centre-ville— défilent avec grâce devant vos baies vitrées.",
+          "imageUrl": "/imgs/packages/nile/nile_modern_real.webp"
         }
       ]
     }
