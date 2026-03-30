@@ -1,3 +1,4 @@
+"use client";
 import { memo, useMemo } from "react";
 import { useExitSlider } from "@/features/slider-items/hooks";
 import { useImageLoader } from "@/features/slider-items/hooks/useImageLoader";

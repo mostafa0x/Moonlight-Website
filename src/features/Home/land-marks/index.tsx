@@ -1,3 +1,4 @@
+"use client";
 import { memo } from "react";
 import { useAutoSlider } from "@/features/slider-items/hooks";
 import LandmarkSlide from "@/features/slider-items/components/LandmarkSlide";
