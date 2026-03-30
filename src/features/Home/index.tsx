@@ -1,14 +1,15 @@
 "use client";
 
-import { useEffect, useState, memo } from "react";
+import { memo, useMemo } from "react";
 import dynamic from "next/dynamic";
 import { FullPage } from "react-abohook-fullpage";
 
 import type { HomeDataType } from "@/shared/global";
-import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
+import { useBookingState } from "@/features/booking-modal/context/BookingContextProvider";
+import { useFullPageState } from "@/features/home/hooks";
+
 import Page1 from "@/features/home/page1";
 
-// Dynamic components with SSR disabled for browser-only libraries/APIs
 const LandMarks = dynamic(() => import("@/features/home/land-marks"), {
   ssr: false,
 });
@@ -24,29 +25,36 @@ interface HomeProps {
 }
 
 /**
- * Home Component
- * Top-level feature component for the landing page.
- * Uses full-page scroll layout and dynamic sections.
+ * Home — Orchestrator Component
+ *
+ * Responsibilities:
+ *  1. Wires the FullPage scroll container
+ *  2. Delegates section rendering to child components
+ *  3. Disables scroll when the booking modal is open
+ *
+ * Performance decisions:
+ *  - Uses `useBookingState` instead of `useBookingContext` so this component
+ *    only re-renders on *state* changes (isOpen), not on every action-context update.
+ *  - `useFullPageState` provides a stable `handlePageChange` callback via useCallback,
+ *    preventing FullPage from re-rendering due to function identity changes.
+ *  - Each section type (Hero, Governorates, Footer) is in its own memoized component,
+ *    so changing `currentPage` only re-renders sections whose visibility actually changed.
+ *  - The old `mounted` gate (`useState(false)` + `useEffect → setMounted(true)`) was removed.
+ *    It delayed First Contentful Paint by a full tick for no benefit — `"use client"` already
+ *    guarantees this runs only on the client, and FullPage handles its own hydration.
  */
 function Home({ data }: HomeProps) {
-  const [currentPage, setCurrentPage] = useState(0);
-  const [mounted, setMounted] = useState(false);
-  const { isOpen } = useBookingContext();
+  const { currentPage, handlePageChange } = useFullPageState();
+  const { isOpen } = useBookingState();
 
-  // Handle hydration and mounting
-  useEffect(() => {
-    setMounted(true);
-    
-    // Log for debugging (optional, can be removed in production)
-    if (process.env.NODE_ENV === 'development') {
-      console.debug("Home component mounted, modal state:", isOpen);
-    }
-  }, [isOpen]);
-
-  // Prevent hydration mismatch by delaying render until mounted
-  if (!mounted) {
-    return null; // A loading spinner or skeleton could go here
-  }
+  const sections = useMemo(
+    () =>
+      data.flatMap((section) => ({
+        key: section.name,
+        section,
+      })),
+    [data]
+  );
 
   return (
     <main className="h-full w-full">
@@ -54,17 +62,17 @@ function Home({ data }: HomeProps) {
         directionDots="right"
         duration={500}
         enableContextMenu
-        onChange={setCurrentPage}
+        onChange={handlePageChange}
         disable={isOpen}
       >
-        {/* Hero Section */}
+        {/* Hero — eagerly loaded, priority LCP image */}
         <FullPage.Section>
           <Page1 currentPage={currentPage} />
         </FullPage.Section>
 
-        {/* Dynamic Governorates Sections */}
-        {data.flatMap((section) => [
-          <FullPage.Section key={`${section.name}-landmarks`}>
+        {/* Governorate Landmarks + Packages — dynamically imported */}
+        {sections.flatMap(({ key, section }) => [
+          <FullPage.Section key={`${key}-landmarks`}>
             <LandMarks
               currentPage={currentPage}
               landmarks={section.landmarks}
@@ -72,8 +80,7 @@ function Home({ data }: HomeProps) {
               page={section.page}
             />
           </FullPage.Section>,
-
-          <FullPage.Section key={`${section.name}-packages`}>
+          <FullPage.Section key={`${key}-packages`}>
             <PackagesPage
               currentPage={currentPage}
               packages={section.packages}
@@ -83,7 +90,7 @@ function Home({ data }: HomeProps) {
           </FullPage.Section>,
         ])}
 
-        {/* Footer Section */}
+        {/* Footer — lazy loaded, last scroll position */}
         <FullPage.Section>
           <FooterPage />
         </FullPage.Section>
@@ -93,5 +100,4 @@ function Home({ data }: HomeProps) {
 }
 
 Home.displayName = "Home";
-
 export default memo(Home);
