@@ -38,8 +38,8 @@ function Page1({ currentPage }: { currentPage: number }) {
           {/* Bottom Depth Gradient */}
           <div className="absolute inset-0 bg-linear-to-t from-black via-black/10 to-transparent pointer-events-none" />
 
-          {/* Subtle Grain / Dust Texture (Optional aesthetic touch) */}
-          <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+
+
         </div>
       </div>
 

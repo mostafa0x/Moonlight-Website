@@ -1,6 +1,6 @@
 "use client";
 
-import { memo } from "react";
+import { memo, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/shared/lib/utils";
@@ -13,20 +13,21 @@ interface LanguageSelectorProps {
 
 /**
  * LanguageSelector - Language choice grid in the mobile drawer.
+ * Memoized to prevent re-renders when parent state changes (e.g. drawer open/close).
  */
 function LanguageSelector({ currentLocale, onClose }: LanguageSelectorProps) {
   const t = useTranslations("navbar");
   const pathname = usePathname();
   const router = useRouter();
 
-  const handleLanguageChange = (newLocale: string) => {
+  // useCallback prevents recreation of this function on every render → improves INP
+  const handleLanguageChange = useCallback((newLocale: string) => {
     if (!pathname) return;
     const segments = pathname.split("/");
     segments[1] = newLocale;
-    const newPath = segments.join("/");
-    router.push(newPath);
+    router.push(segments.join("/"));
     onClose();
-  };
+  }, [pathname, router, onClose]);
 
   return (
     <div className="border-t border-white/10 pt-4 pb-10">

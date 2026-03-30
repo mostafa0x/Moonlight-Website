@@ -1,6 +1,6 @@
 "use client";
 
-import { memo } from "react";
+import { memo, useCallback } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import Avatar from "@/shared/components/avatar";
@@ -13,18 +13,29 @@ interface DrawerProfileProps {
 
 /**
  * DrawerProfile - Handles user authentication states in the mobile drawer.
+ * Memoized + stable callbacks to avoid cascading re-renders.
  */
 function DrawerProfile({ onClose, locale }: DrawerProfileProps) {
   const t = useTranslations("navbar");
   const { isLoggedIn, userData, setShowLoginModal, signOut } = useAuth();
 
+  // Stable references → prevents reconciler from seeing new props on memo'd children
+  const handleLoginClick = useCallback(() => {
+    setShowLoginModal(true);
+    onClose();
+  }, [setShowLoginModal, onClose]);
+
+  const handleSignOut = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    signOut();
+    onClose();
+  }, [signOut, onClose]);
+
   if (!isLoggedIn) {
     return (
       <button
-        onClick={() => {
-          setShowLoginModal(true);
-          onClose();
-        }}
+        onClick={handleLoginClick}
         className="mb-8 w-full rounded-xl border border-[#F2C975]/30 bg-[#F2C975]/5 py-3.5 text-center font-cairo text-base font-black text-[#F2C975] shadow-lg transition-all hover:bg-[#F2C975]/10 active:scale-95 sm:py-4"
       >
         {t("login") || "Login"}
@@ -47,12 +58,7 @@ function DrawerProfile({ onClose, locale }: DrawerProfileProps) {
         </div>
       </Link>
       <button
-        onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          signOut();
-          onClose();
-        }}
+        onClick={handleSignOut}
         className="text-[10px] font-bold uppercase text-red-500/80 hover:text-red-400 transition-colors cursor-pointer"
       >
         {t("logout") || "Logout"}
