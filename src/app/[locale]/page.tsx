@@ -18,8 +18,8 @@ export default async function page({
   searchParams,
   params,
 }: {
-  searchParams: { tourId: string };
-  params: { locale: string };
+  searchParams: Promise<{ tourId: string }>;
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
   const { tourId } = await searchParams;

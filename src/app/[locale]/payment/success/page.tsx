@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 
-export default async function PaymentSuccessPage({ params }: { params: { locale: string } }) {
+export default async function PaymentSuccessPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "bookingModal.payment.success" });
 
