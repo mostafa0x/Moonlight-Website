@@ -22,9 +22,9 @@ function LandmarkSlide({ item, isVisible, slideNumber, totalSlides }: LandmarkSl
   const { isLoaded, onImageLoad } = useImageLoader(item.imageUrl);
 
   return (
-    <div 
+    <div
       className={cn(
-        "absolute inset-0 w-full h-full transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]",
+        "absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out",
         isVisible ? "opacity-100 scale-100 rotate-0 blur-0 z-20" : "opacity-0 scale-105 rotate-1 blur-lg z-10 pointer-events-none"
       )}
     >
@@ -53,13 +53,13 @@ function LandmarkSlide({ item, isVisible, slideNumber, totalSlides }: LandmarkSl
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
         )}>
           {/* Slide Indicator */}
-          <div className="flex items-center gap-4 mb-4 lg:mb-8">
+          {/* <div className="flex items-center gap-4 mb-4 lg:mb-8">
             <span className="text-[#F2C975] text-sm lg:text-base font-bold tracking-[0.3em] uppercase">
               {slideNumber}
             </span>
             <div className="w-12 h-px bg-[#F2C975]" />
             <span className="text-white/60 text-sm lg:text-base font-medium tracking-widest">{totalSlides}</span>
-          </div>
+          </div> */}
 
           <h2 className={cn(
             "font-cairo text-5xl md:text-7xl lg:text-9xl font-black text-white mb-6 uppercase leading-[0.9]",
