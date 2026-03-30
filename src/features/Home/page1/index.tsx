@@ -1,24 +1,53 @@
-import HeroSectionHeader from "@/features/home/page1/components/HeroSectionHeader";
-import Image from "next/image";
-
 import { memo } from "react";
+import Image from "next/image";
+import HeroSectionHeader from "@/features/home/page1/components/HeroSectionHeader";
+import { cn } from "@/shared/lib/utils";
+
+/**
+ * Page1 - Hero Section
+ * The primary entry point for the homepage.
+ * Optimized for LCP (Largest Contentful Paint) and premium aesthetics.
+ */
 function Page1({ currentPage }: { currentPage: number }) {
   return (
-    <div className="h-screen w-full flex overflow-hidden ">
-      <div className={`w-full h-full  absolute top-0 left-0 z-[-2] `}>
+    <section 
+      className="h-screen w-full relative overflow-hidden bg-black select-none"
+      aria-label="Welcome to Moonlight"
+    >
+      {/* Background Image Container - Optimized for LCP */}
+      <div className="absolute inset-0 z-0">
         <Image
           src={"/backgrounds/background.webp"}
-          alt="background image"
+          alt="Ancient Egypt Moonlight Experience"
           fill
           priority
           fetchPriority="high"
           loading="eager"
-          sizes="(max-width: 768px) 100vw, 100vw"
-          className="object-cover"
+          sizes="100vw"
+          className={cn(
+            "object-cover transition-transform duration-[8000ms] ease-out",
+            currentPage === 1 ? "scale-110" : "scale-100"
+          )}
         />
+        
+        {/* Cinematic Overlays Layer */}
+        <div className="absolute inset-0 z-10">
+          {/* Subtle Vignette */}
+          <div className="absolute inset-0 bg-radial-gradient from-transparent via-black/30 to-black/80 pointer-events-none" />
+          
+          {/* Bottom Depth Gradient */}
+          <div className="absolute inset-0 bg-linear-to-t from-black via-black/10 to-transparent pointer-events-none" />
+          
+          {/* Subtle Grain / Dust Texture (Optional aesthetic touch) */}
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+        </div>
       </div>
-      <HeroSectionHeader />
-    </div>
+
+      {/* Content Component */}
+      <div className="relative z-20 h-full w-full">
+        <HeroSectionHeader />
+      </div>
+    </section>
   );
 }
 

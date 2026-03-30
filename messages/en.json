@@ -286,7 +286,8 @@
     "viewMore": "view more",
     "hero": {
       "title": "Premium Travel",
-      "subtitle": "Discover Egypt like a local"
+      "subtitle": "Discover Egypt like a local",
+      "journey": "The Journey Begins"
     },
     "sections": {
       "giza": "Giza",
