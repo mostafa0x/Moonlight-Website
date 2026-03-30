@@ -22,10 +22,10 @@ function LandmarkSlide({ item, isVisible, slideNumber, totalSlides }: LandmarkSl
   const { isLoaded, onImageLoad } = useImageLoader(item.imageUrl);
 
   return (
-    <div
+    <div 
       className={cn(
-        "absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out",
-        isVisible ? "opacity-100 scale-100 z-20" : "opacity-0 scale-105 z-10 pointer-events-none"
+        "absolute inset-0 w-full h-full transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]",
+        isVisible ? "opacity-100 scale-100 rotate-0 blur-0 z-20" : "opacity-0 scale-105 rotate-1 blur-lg z-10 pointer-events-none"
       )}
     >
       {/* Immersive Background Image */}
@@ -37,7 +37,7 @@ function LandmarkSlide({ item, isVisible, slideNumber, totalSlides }: LandmarkSl
           priority={isVisible}
           onLoad={onImageLoad}
           className={cn(
-            "h-full w-full object-cover transition-transform duration-[4000ms] ease-linear",
+            "h-full w-full object-cover transition-transform duration-4000 ease-linear",
             isVisible ? "scale-110" : "scale-100"
           )}
         />

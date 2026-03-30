@@ -26,12 +26,18 @@ function LandMarks({
   const currentIndex = useAutoSlider(isPageInView, landmarks.length, 7500);
 
   return (
-    <section
-      className="h-screen w-full relative overflow-hidden select-none"
+    <section 
+      className={cn(
+        "h-screen w-full relative overflow-hidden select-none transition-all duration-1000 ease-in-out",
+        isPageInView ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-95 blur-xl pointer-events-none"
+      )}
       aria-label="Cultural Landmarks Gallery"
     >
       {/* Decorative Branding / Static Section Title */}
-      <h1 className="absolute top-20 left-10 lg:top-20 lg:left-20 text-white/30 text-2xl font-bold tracking-[0.5em] uppercase z-50">
+      <h1 className={cn(
+        "absolute top-20 left-10 lg:top-20 lg:left-20 text-white/30 text-2xl font-bold tracking-[0.5em] uppercase z-50 transition-all duration-1000",
+        isPageInView ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
+      )}>
         {titleHeader}
       </h1>
 
@@ -40,25 +46,14 @@ function LandMarks({
           <LandmarkSlide
             key={`${landmark.title}-${idx}`}
             item={landmark}
-            isVisible={idx === currentIndex}
+            isVisible={idx === currentIndex && isPageInView}
             slideNumber={String(idx + 1).padStart(2, "0")}
             totalSlides={String(landmarks.length).padStart(2, "0")}
           />
         ))}
       </div>
 
-      {/* Slide Navigation Dots (Optional aesthetic touch) */}
-      <div className="absolute right-6 bottom-10  lg:-translate-y-1/2 flex lg:flex-col gap-3 z-50 opacity-60">
-        {landmarks.map((_, idx) => (
-          <div
-            key={idx}
-            className={cn(
-              "transition-all duration-300 rounded-full",
-              idx === currentIndex ? "bg-[#F2C975] w-8 h-1 lg:h-8 lg:w-1" : "bg-white/20 w-3 h-1 lg:h-3 lg:w-1"
-            )}
-          />
-        ))}
-      </div>
+
     </section>
   );
 }

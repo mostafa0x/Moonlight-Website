@@ -53,10 +53,10 @@ function SliderItem({
           onLoad={onImageLoad}
           className={cn(
             "h-full w-full",
-            "aspect-[3/4] sm:aspect-4/3 lg:aspect-auto object-cover rounded-2xl md:rounded-3xl"
+            "aspect-3/4 sm:aspect-4/3 lg:aspect-auto object-cover rounded-2xl md:rounded-3xl"
           )}
         />
-        
+
       </div>
     </article>
   );
