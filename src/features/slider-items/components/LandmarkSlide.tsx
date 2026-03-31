@@ -49,8 +49,8 @@ function LandmarkSlide({ item, isVisible, slideNumber, totalSlides }: LandmarkSl
       {/* Content Layer */}
       <div className="relative h-full w-full flex flex-col justify-end px-6 md:px-12 lg:px-24 pb-20 lg:pb-24 z-20">
         <div className={cn(
-          "max-w-4xl transition-all duration-1000 delay-300 transform",
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+          "max-w-4xl transition-all duration-1200 delay-300 transform",
+          isVisible ? "opacity-100 translate-x-0 blur-0" : "opacity-0 -translate-x-24 blur-md"
         )}>
           {/* Slide Indicator */}
           {/* <div className="flex items-center gap-4 mb-4 lg:mb-8">

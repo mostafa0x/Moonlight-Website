@@ -44,17 +44,19 @@ function LandMarks({
 
       <div className="relative w-full h-full">
         {landmarks.map((landmark, idx) => {
-          const isVisibleSlide = idx === currentIndex && isPageInView;
+          // Determine if the slide is the current one, the next one, or the previous one.
+          // This "Buffer" (±1) is essential to keep animations working while saving TBT.
+          const isNear = Math.abs(idx - currentIndex) <= 1;
+          const isWrapAroundPrev = currentIndex === 0 && idx === landmarks.length - 1;
+          const isWrapAroundNext = currentIndex === landmarks.length - 1 && idx === 0;
           
-          // Performance Optimization: Only render the current slide into the DOM.
-          // This prevents 20+ heavy landmark images from burdening the TBT on mobile.
-          if (!isVisibleSlide) return null;
+          if (!isNear && !isWrapAroundPrev && !isWrapAroundNext) return null;
 
           return (
             <LandmarkSlide
               key={`${landmark.title}-${idx}`}
               item={landmark}
-              isVisible={isVisibleSlide}
+              isVisible={idx === currentIndex && isPageInView}
               slideNumber={String(idx + 1).padStart(2, "0")}
               totalSlides={String(landmarks.length).padStart(2, "0")}
             />
