@@ -48,9 +48,10 @@ function SliderImage({
         src={src}
         alt={alt}
         fill
-        quality={60}
+        quality={40}
         priority={priority}
-        sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 730px"
+        sizes="100vw"
+        fetchPriority={priority ? "high" : "low"}
         onLoad={onLoad}
         onError={onLoad} // Still mark as loaded to hide placeholder on error
         className={cn(

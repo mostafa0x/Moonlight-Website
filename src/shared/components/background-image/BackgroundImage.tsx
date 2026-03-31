@@ -33,9 +33,11 @@ function BackgroundImage({ isHasOverlay = true }: { isHasOverlay?: boolean }) {
           alt="background pages"
           fill
           priority={false}
-          quality={60}
+          loading="lazy"
+          fetchPriority="low"
+          quality={40}
           className="object-cover"
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, 100vw"
         />
       </div>
     </>

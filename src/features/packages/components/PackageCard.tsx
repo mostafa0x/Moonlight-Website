@@ -37,8 +37,8 @@ function PackageCard({ pkg, priority = false }: PackageCardProps) {
           alt={`Image of ${packageName} tour`}
           fill
           priority={priority}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 450px"
-          quality={60}
+          sizes="(max-width: 640px) 308px, (max-width: 1024px) 308px, 511px"
+          quality={40}
           fetchPriority="low"
           className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
         />

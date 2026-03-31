@@ -24,18 +24,19 @@
   }
 }
 
+html,
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-cairo), sans-serif;
-}
-
-/* باقي الكود زي ما هو */
-html,
-body {
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  scroll-snap-align: start;
+  /* Optimization: Correct font rendering for a premium feel */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern";
+  
+  /* Ensure a stable layout by preventing unwanted scroll shifts */
+  scroll-behavior: smooth !important;
 }
 
 section {

@@ -20,15 +20,12 @@ function Page1({ currentPage }: { currentPage: number }) {
           src={"/backgrounds/background.webp"}
           alt="Ancient Egypt Moonlight Experience"
           fill
+          quality={40}
           priority
           fetchPriority="high"
           loading="eager"
-          quality={60}
-          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 100vw, 1920px"
-          className={cn(
-            "object-cover transition-transform duration-8000 ease-out",
-            currentPage === 1 ? "scale-110" : "scale-100"
-          )}
+          sizes="100vw"
+          className="object-cover"
         />
 
         {/* Cinematic Overlays Layer */}

@@ -1,7 +1,6 @@
 import Home from "@/features/home";
 import type { HomeDataType } from "@/shared/global";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { NextIntlClientProvider } from "next-intl";
 
 async function fetchData(lang: string) {
   try {
@@ -69,25 +68,9 @@ export default async function page({
     };
   });
 
-  const messagesMap: any = {
-    en: () => import("../../../messages/en.json"),
-    fr: () => import("../../../messages/fr.json"),
-    it: () => import("../../../messages/it.json"),
-    es: () => import("../../../messages/es.json"),
-    pt: () => import("../../../messages/pt.json"),
-  };
-
-  const allMessages = (await messagesMap[locale]()).default;
-  const pageMessages = {
-    home: allMessages.home,
-    bookingModal: allMessages.bookingModal,
-  };
-
   return (
     <div className="flex flex-col">
-      <NextIntlClientProvider locale={locale} messages={pageMessages}>
-        <Home data={updatedData} />
-      </NextIntlClientProvider>
+      <Home data={updatedData} />
     </div>
   );
 }
