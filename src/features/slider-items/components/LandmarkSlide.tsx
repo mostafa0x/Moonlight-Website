@@ -25,7 +25,7 @@ function LandmarkSlide({ item, isVisible, slideNumber, totalSlides }: LandmarkSl
     <div
       className={cn(
         "absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out",
-        isVisible ? "opacity-100 scale-100 rotate-0 blur-0 z-20" : "opacity-0 scale-105 rotate-1 blur-lg z-10 pointer-events-none"
+        isVisible ? "opacity-100 scale-100 z-20" : "opacity-0 scale-105 z-10 pointer-events-none"
       )}
     >
       {/* Immersive Background Image */}

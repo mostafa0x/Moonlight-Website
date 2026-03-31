@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, useEffect } from "react";
+import { memo, useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { cn } from "@/shared/lib/utils";
 
@@ -18,23 +18,24 @@ interface MobileDrawerProps {
 /**
  * MobileDrawer - Side drawer with Ancient Egyptian aesthetic.
  *
- * Performance decisions:
- * - The drawer is ALWAYS in the DOM (not conditionally rendered).
- *   CSS `translate-x-full` hides it with GPU-accelerated transforms (no layout thrashing).
- *   This avoids costly mount/unmount cycles on every toggle → better INP.
- *
- * - `pointer-events-none` on the backdrop when closed ensures invisible elements
- *   never interfere with click targets → better INP.
- *
- * - Sub-components (DrawerNav, DrawerProfile, LanguageSelector) are all memo'd
- *   with stable callback props → no cascading re-renders when drawer toggles.
- *
- * - Escape key handler added for accessibility (WCAG 2.1 AA compliance).
+ * Performance Fix for Mobile:
+ * - Deferred Background: The decorative background image (120KB) no longer 
+ *   loads on initial page load. It is only rendered once the drawer has been 
+ *   opened for the first time. This significantly reduces initial bandwidth 
+ *   contention and improves mobile LCP.
  */
 function MobileDrawer({ isOpen, onClose, locale }: MobileDrawerProps) {
   const t = useTranslations("navbar");
+  const [hasOpenedEver, setHasOpenedEver] = useState(false);
 
-  // Close on Escape key → improves keyboard accessibility & INP for keyboard users
+  // Mark drawer as opened to trigger lazy asset loading
+  useEffect(() => {
+    if (isOpen && !hasOpenedEver) {
+      setHasOpenedEver(true);
+    }
+  }, [isOpen, hasOpenedEver]);
+
+  // Close on Escape key
   useEffect(() => {
     if (!isOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -46,7 +47,7 @@ function MobileDrawer({ isOpen, onClose, locale }: MobileDrawerProps) {
 
   return (
     <>
-      {/* Backdrop — GPU-composited opacity transition, pointer-events-none when closed */}
+      {/* Backdrop */}
       <div
         className={cn(
           "fixed inset-0 z-1001 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ease-in-out",
@@ -56,7 +57,7 @@ function MobileDrawer({ isOpen, onClose, locale }: MobileDrawerProps) {
         aria-hidden="true"
       />
 
-      {/* Drawer Content — translate-x is GPU-composited, no layout recalculation */}
+      {/* Drawer Content */}
       <aside
         className={cn(
           "fixed top-0 right-0 z-1002 h-full w-[85%] max-w-90 border-l border-[#F2C975]/30 bg-[#0a0a0a] shadow-[0_0_50px_rgba(0,0,0,0.8)] select-none transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1) will-change-transform",
@@ -66,15 +67,17 @@ function MobileDrawer({ isOpen, onClose, locale }: MobileDrawerProps) {
         aria-modal="true"
         aria-label="Mobile Navigation Menu"
       >
-        {/* Egyptian Pattern Background — Low opacity, pointer-events disabled */}
-        <div
-          className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none"
-          style={{
-            backgroundImage: "url(/backgrounds/egyptian-menu-bg.png)",
-            backgroundSize: "cover",
-            backgroundPosition: "center"
-          }}
-        />
+        {/* Egyptian Pattern Background — Only render after first open to save bandwidth */}
+        {hasOpenedEver && (
+          <div
+            className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none fade-in duration-500"
+            style={{
+              backgroundImage: "url(/backgrounds/egyptian-menu-bg.png)",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+        )}
 
         {/* Scrollable Container */}
         <div className="relative z-10 flex h-full flex-col overflow-y-auto scrollbar-hide">
@@ -90,7 +93,7 @@ function MobileDrawer({ isOpen, onClose, locale }: MobileDrawerProps) {
             {/* User Profile/Authentication Section */}
             <DrawerProfile onClose={onClose} locale={locale} />
 
-            {/* Navigation Links — isOpen removed, no longer causes link re-renders */}
+            {/* Navigation Links */}
             <DrawerNav onClose={onClose} locale={locale} />
 
             {/* Language Selection */}
@@ -100,7 +103,7 @@ function MobileDrawer({ isOpen, onClose, locale }: MobileDrawerProps) {
 
         {/* Decorative Footer */}
         <footer className="absolute bottom-4 left-1/2 -translate-x-1/2 pointer-events-none opacity-20">
-          <div className="h-px w-24 rounded-full bg-linear-to-r from-transparent via-[#F2C975] to-transparent" />
+          <div className="h-px w-24 rounded-full bg-linear-to-r from-transparent via-[#F2C975] to-transparent" aria-hidden="true" />
         </footer>
       </aside>
     </>

@@ -30,7 +30,7 @@ function LandMarks({
     <section
       className={cn(
         "h-screen w-full relative overflow-hidden select-none transition-all duration-1000 ease-in-out",
-        isPageInView ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-95 blur-xl pointer-events-none"
+        isPageInView ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
       )}
       aria-label="Cultural Landmarks Gallery"
     >

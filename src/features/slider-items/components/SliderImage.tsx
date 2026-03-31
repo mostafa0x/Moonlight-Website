@@ -46,7 +46,7 @@ function SliderImage({
         onError={onLoad} // Still mark as loaded to hide skeleton on error
         className={cn(
           "object-contain transition-all duration-1000 ease-out",
-          isLoaded ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-110 blur-xl"
+          isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-110"
         )}
       />
 
