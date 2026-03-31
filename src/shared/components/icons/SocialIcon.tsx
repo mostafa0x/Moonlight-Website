@@ -19,6 +19,8 @@ function SocialIcon({ icon }: { icon: "facebook" | "instagram" | "tiktok" }) {
         src={`/icons/${icon}.svg`}
         className="w-6 h-6 md:w-10.75 md:h-10.75"
         alt={icon}
+        loading="lazy"
+        fetchPriority="low"
       />
     </a>
   );

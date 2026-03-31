@@ -8,6 +8,8 @@ function PickOfHit() {
           src={"/icons/importend.svg"}
           alt="icon"
           className="w-[18px] h-[18px]"
+          loading="lazy"
+          fetchPriority="low"
         />
         <span className="text-base text-[#F2C975] font-medium">
           Important Information
@@ -18,6 +20,8 @@ function PickOfHit() {
           src={"/icons/location-outlined.svg"}
           alt="icon"
           className="w-[16px] h-[16px]"
+          loading="lazy"
+          fetchPriority="low"
         />
         <span className="text-[12px] text-white font-medium">
           Pickup and drop-off extra charge outside supported areas (Old Cairo,
@@ -25,7 +29,7 @@ function PickOfHit() {
         </span>
       </div>
       <div className="flex flex-row gap-1.5 items-center">
-        <img src={"/icons/time.svg"} alt="icon" className="w-[16px] h-[16px]" />
+        <img src={"/icons/time.svg"} alt="icon" className="w-[16px] h-[16px]" loading="lazy" fetchPriority="low" />
         <span className="text-sm text-white font-medium">
           Tour times start from 9:00 AM and end at 5:00 PM maximum.
         </span>
