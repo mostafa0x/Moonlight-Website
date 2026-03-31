@@ -40,8 +40,9 @@ function SliderImage({
         src={src}
         alt={alt}
         fill
+        quality={60}
         priority={priority}
-        sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 730px"
+        sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 730px"
         onLoad={onLoad}
         onError={onLoad} // Still mark as loaded to hide skeleton on error
         className={cn(

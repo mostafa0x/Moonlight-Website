@@ -23,7 +23,8 @@ function Page1({ currentPage }: { currentPage: number }) {
           priority
           fetchPriority="high"
           loading="eager"
-          sizes="100vw"
+          quality={60}
+          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 100vw, 1920px"
           className={cn(
             "object-cover transition-transform duration-8000 ease-out",
             currentPage === 1 ? "scale-110" : "scale-100"

@@ -43,15 +43,23 @@ function LandMarks({
       </h1>
 
       <div className="relative w-full h-full">
-        {landmarks.map((landmark, idx) => (
-          <LandmarkSlide
-            key={`${landmark.title}-${idx}`}
-            item={landmark}
-            isVisible={idx === currentIndex && isPageInView}
-            slideNumber={String(idx + 1).padStart(2, "0")}
-            totalSlides={String(landmarks.length).padStart(2, "0")}
-          />
-        ))}
+        {landmarks.map((landmark, idx) => {
+          const isVisibleSlide = idx === currentIndex && isPageInView;
+          
+          // Performance Optimization: Only render the current slide into the DOM.
+          // This prevents 20+ heavy landmark images from burdening the TBT on mobile.
+          if (!isVisibleSlide) return null;
+
+          return (
+            <LandmarkSlide
+              key={`${landmark.title}-${idx}`}
+              item={landmark}
+              isVisible={isVisibleSlide}
+              slideNumber={String(idx + 1).padStart(2, "0")}
+              totalSlides={String(landmarks.length).padStart(2, "0")}
+            />
+          );
+        })}
       </div>
 
 
