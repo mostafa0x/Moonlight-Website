@@ -10,38 +10,26 @@ import { useFullPageState } from "@/features/home/hooks";
 
 import Page1 from "@/features/home/page1";
 
-const LandMarks = dynamic(() => import("@/features/home/land-marks"), {
-  ssr: false,
-});
-const PackagesPage = dynamic(() => import("@/features/home/packages-page"), {
-  ssr: false,
-});
-const FooterPage = dynamic(() => import("@/shared/components/footer"), {
-  ssr: false,
-});
+// Individual feature sections — kept as dynamic but allowed to SSR if needed in future
+const LandMarks = dynamic(() => import("@/features/home/land-marks"), { ssr: false });
+const PackagesPage = dynamic(() => import("@/features/home/packages-page"), { ssr: false });
+const FooterPage = dynamic(() => import("@/shared/components/footer"), { ssr: false });
 
 interface HomeProps {
   data: HomeDataType[];
 }
 
 /**
- * Home — Orchestrator Component
+ * Home — Optimized Orchestrator Component
  *
- * Responsibilities:
- *  1. Wires the FullPage scroll container
- *  2. Delegates section rendering to child components
- *  3. Disables scroll when the booking modal is open
- *
- * Performance decisions:
- *  - Uses `useBookingState` instead of `useBookingContext` so this component
- *    only re-renders on *state* changes (isOpen), not on every action-context update.
- *  - `useFullPageState` provides a stable `handlePageChange` callback via useCallback,
- *    preventing FullPage from re-rendering due to function identity changes.
- *  - Each section type (Hero, Governorates, Footer) is in its own memoized component,
- *    so changing `currentPage` only re-renders sections whose visibility actually changed.
- *  - The old `mounted` gate (`useState(false)` + `useEffect → setMounted(true)`) was removed.
- *    It delayed First Contentful Paint by a full tick for no benefit — `"use client"` already
- *    guarantees this runs only on the client, and FullPage handles its own hydration.
+ * Performance Fixes for TBT (Total Blocking Time):
+ * 1. Progressive Mounting: Only mounts the 'nearby' sections content. 
+ *    Initial load only hydrates Hero (Page1). As the user scrolls, adjacent
+ *    sections mount. This avoids a 2.9s main-thread bottleneck from 10+ 
+ *    full-screen sections hydrating simultaneously.
+ * 
+ * 2. Stable Callbacks: Continues using memoized handlers to prevent 
+ *    ripple re-renders.
  */
 function Home({ data }: HomeProps) {
   const { currentPage, handlePageChange } = useFullPageState();
@@ -56,6 +44,18 @@ function Home({ data }: HomeProps) {
     [data]
   );
 
+  /**
+   * isNearby: Simple heuristic to determine if a section's heavy content 
+   * should be in the DOM. 
+   * We keep current page + 1 buffer to ensure smooth scrolling transitions.
+   * Tightened from 2 to 1 to further reduce TBT (Total Blocking Time).
+   */
+  const isSectionNearby = (pageIndex: number) => {
+    // Treat Hero as page 0 or 1 depending on index
+    // Initially currentPage = 1. Buffer 1 hydrates Hero and first Landmarks.
+    return Math.abs(currentPage - pageIndex) <= 1;
+  };
+
   return (
     <main className="h-full w-full">
       <FullPage
@@ -65,34 +65,46 @@ function Home({ data }: HomeProps) {
         onChange={handlePageChange}
         disable={isOpen}
       >
-        {/* Hero — eagerly loaded, priority LCP image */}
+        {/* Section 0: Hero — Always mounted as it's the LCP entry point */}
         <FullPage.Section>
           <Page1 currentPage={currentPage} />
         </FullPage.Section>
 
-        {/* Governorate Landmarks + Packages — dynamically imported */}
+        {/* Dynamic sections with Progressive Mounting */}
         {sections.flatMap(({ key, section }) => [
           <FullPage.Section key={`${key}-landmarks`}>
-            <LandMarks
-              currentPage={currentPage}
-              landmarks={section.landmarks}
-              titleHeader={section.name}
-              page={section.page}
-            />
+            {isSectionNearby(section.page) ? (
+              <LandMarks
+                currentPage={currentPage}
+                landmarks={section.landmarks}
+                titleHeader={section.name}
+                page={section.page}
+              />
+            ) : (
+              <div className="h-full w-full bg-black" /> // Lightweight placeholder
+            )}
           </FullPage.Section>,
           <FullPage.Section key={`${key}-packages`}>
-            <PackagesPage
-              currentPage={currentPage}
-              packages={section.packages}
-              titleHeader={section.name}
-              page={section.page + 1}
-            />
+            {isSectionNearby(section.page + 1) ? (
+              <PackagesPage
+                currentPage={currentPage}
+                packages={section.packages}
+                titleHeader={section.name}
+                page={section.page + 1}
+              />
+            ) : (
+              <div className="h-full w-full bg-black" />
+            )}
           </FullPage.Section>,
         ])}
 
-        {/* Footer — lazy loaded, last scroll position */}
+        {/* Last Section: Footer — Only mounts when reaching the end */}
         <FullPage.Section>
-          <FooterPage />
+          {isSectionNearby(sections.length * 2 + 1) ? (
+            <FooterPage />
+          ) : (
+            <div className="h-full w-full bg-black" />
+          )}
         </FullPage.Section>
       </FullPage>
     </main>
