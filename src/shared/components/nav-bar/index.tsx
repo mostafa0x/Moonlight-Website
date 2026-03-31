@@ -1,15 +1,21 @@
 "use client";
 
 import { memo, useState, useRef, useEffect, useCallback, useMemo } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 
-import { MenuBtn, MobileDrawer, useMobileMenu } from "@/features/navigation";
+import { MenuBtn, useMobileMenu } from "@/features/navigation";
 import { LANGUAGES } from "@/features/navigation/constants/languages";
 import Avatar from "@/shared/components/avatar";
 import { useAuth } from "@/shared/providers/AuthProvider";
 import { cn } from "@/shared/lib/utils";
+
+// Performance: Defer mobile drawer loading until interaction to reduce FCP/TBT blocking
+const MobileDrawer = dynamic(() => import("@/features/navigation").then((mod) => mod.MobileDrawer), { 
+  ssr: false 
+});
 
 /**
  * NavBar Component

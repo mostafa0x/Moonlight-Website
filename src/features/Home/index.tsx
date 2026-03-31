@@ -98,12 +98,14 @@ function Home({ data }: HomeProps) {
           </FullPage.Section>,
         ])}
 
-        {/* Last Section: Footer — Only mounts when reaching the end */}
+        {/* Last Section: Footer — Only mounts STRICTLY when reaching the end to save resources */}
         <FullPage.Section>
-          {isSectionNearby(sections.length * 2 + 1) ? (
+          {currentPage === sections.length * 2 + 1 ? (
             <FooterPage />
           ) : (
-            <div className="h-full w-full bg-black" />
+            <div className="h-full w-full bg-black flex items-center justify-center">
+              <div className="w-16 h-1 bg-[#F2C975]/20 rounded-full animate-pulse" />
+            </div>
           )}
         </FullPage.Section>
       </FullPage>

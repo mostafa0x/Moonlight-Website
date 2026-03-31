@@ -37,6 +37,7 @@ function SliderImage({
               fill
               className="object-contain"
               priority
+              sizes="(max-width: 768px) 288px, (max-width: 1024px) 256px, 384px"
             />
           </div>
         </div>

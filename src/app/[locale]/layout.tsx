@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 };
 
 const cairo = Cairo({
-  subsets: ["arabic"],
+  subsets: ["arabic", "latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-cairo",
   display: "swap",
@@ -61,10 +61,20 @@ export default async function LocaleLayout({
   };
 
   const messages = (await messagesMap[locale]()).default;
+  
+  // PERFORMANCE: Only pass GLOBAL messages to the layout provider.
+  // This reduces the initial HTML size (TTFB) and hydration time (TBT).
+  // Page-specific messages will be loaded by individual page providers if needed,
+  // or simply accessed directly in Server Components.
+  const globalNamespaces = ["navbar", "footer", "loader", "auth"];
+  const globalMessages = Object.fromEntries(
+    Object.entries(messages).filter(([key]) => globalNamespaces.includes(key))
+  );
+
   return (
     <html lang={locale} className={`${cairo.variable} scrollbar-hide`} suppressHydrationWarning>
-      <body suppressHydrationWarning>
-        <NextIntlClientProvider locale={locale} messages={messages}>
+      <body suppressHydrationWarning className="bg-black">
+        <NextIntlClientProvider locale={locale} messages={globalMessages}>
           <AllProviders>
             <NavBar locale={locale} />
             {children}
