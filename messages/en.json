@@ -359,5 +359,17 @@
     "loginDescription": "Please login to proceed with your booking and save your information.",
     "error": "Authentication error",
     "secureVoyage": "Secure your voyage to history"
+  },
+  "profile": {
+    "title": "Profile",
+    "upcomingTrips": "Upcoming Trips",
+    "pastTrips": "Past Trips",
+    "noUpcoming": "No upcoming trips found.",
+    "noPast": "No past experiences recorded.",
+    "signOut": "Sign Out",
+    "bookingCard": {
+      "viewTicket": "View Ticket",
+      "cancelBooking": "Cancel Booking"
+    }
   }
 }

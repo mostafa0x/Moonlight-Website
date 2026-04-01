@@ -17,7 +17,7 @@ function EgyptianLoader() {
       role="status"
       aria-busy="true"
       aria-live="polite"
-      className="relative flex h-full min-h-100 w-full flex-col items-center justify-center overflow-hidden rounded-[20px] bg-black/90 select-none backdrop-blur-md"
+      className="relative flex h-full min-h-screen w-full flex-col items-center justify-center overflow-hidden rounded-[20px] bg-black/90 select-none backdrop-blur-md"
     >
       {/* Animation Container */}
       <div className="relative flex items-center justify-center">
@@ -96,23 +96,6 @@ function EgyptianLoader() {
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes reverse-spin {
-          from { transform: rotate(360deg); }
-          to { transform: rotate(0deg); }
-        }
-        @keyframes spin-orbit {
-          from { transform: rotate(0deg) translateX(80px); }
-          to { transform: rotate(360deg) translateX(80px); }
-        }
-        .animate-reverse-spin {
-          animation: reverse-spin 3s linear infinite;
-        }
-        .animate-spin-orbit {
-          animation: spin-orbit 4s linear infinite;
-        }
-      `}</style>
     </div>
   );
 }

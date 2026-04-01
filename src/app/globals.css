@@ -4,6 +4,19 @@
 
 @theme {
   --font-cairo: var(--font-cairo);
+  
+  --animate-reverse-spin: reverse-spin 3s linear infinite;
+  --animate-spin-orbit: spin-orbit 4s linear infinite;
+
+  @keyframes reverse-spin {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+  }
+
+  @keyframes spin-orbit {
+    from { transform: rotate(0deg) translateX(80px); }
+    to { transform: rotate(360deg) translateX(80px); }
+  }
 }
 
 @theme inline {

@@ -17,20 +17,20 @@ function HeroSectionHeader() {
       {/* Decorative vertical line for high-end feel */}
       <div className="w-px h-16 bg-linear-to-b from-transparent via-[#F2C975] to-transparent mb-8" />
 
-      <header className="space-y-4 md:space-y-6 max-w-5xl">
-        {/* Static Title for instantaneous LCP */}
+      <header className="space-y-4 md:space-y-6 max-w-5xl contain-content">
+        {/* Static Title - Optimized as LCP candidate */}
         <h2 className={cn(
           "text-2xl sm:text-3xl md:text-5xl font-cairo font-bold text-white tracking-[0.2em] uppercase",
-          "drop-shadow-[0_0_15px_rgba(242,201,117,0.4)]"
+          "[text-shadow:0_0_15px_rgba(242,201,117,0.4)] antialiased font-synthesis-none"
         )}>
           {t("title")}
         </h2>
 
-        {/* Static Subtitle for instantaneous LCP */}
+        {/* Static Subtitle - Optimized as LCP candidate */}
         <h1 className={cn(
           "text-4xl sm:text-6xl md:text-8xl font-cairo font-black leading-tight",
           "bg-linear-to-b from-white via-white to-white/60 bg-clip-text text-transparent",
-          "drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+          "[text-shadow:0_10px_30px_rgba(0,0,0,0.5)] antialiased font-synthesis-none"
         )}>
           {t("subtitle")}
         </h1>

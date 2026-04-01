@@ -348,5 +348,17 @@
     "loginDescription": "Veuillez vous connecter pour continuer votre réservation et enregistrer vos informations.",
     "error": "Erreur d'authentification",
     "secureVoyage": "Sécurisez votre voyage vers l'histoire"
+  },
+  "profile": {
+    "title": "Profil",
+    "upcomingTrips": "Voyages à Venir",
+    "pastTrips": "Voyages Passés",
+    "noUpcoming": "Aucun voyage à venir trouvé.",
+    "noPast": "Aucune expérience passée enregistrée.",
+    "signOut": "Déconnexion",
+    "bookingCard": {
+        "viewTicket": "Voir le Billet",
+        "cancelBooking": "Annuler la Réservation"
+    }
   }
 }
