@@ -356,6 +356,9 @@
     "noUpcoming": "Aucun voyage à venir trouvé.",
     "noPast": "Aucune expérience passée enregistrée.",
     "signOut": "Déconnexion",
+    "errorTitle": "Voyage Interrompu",
+    "errorDescription": "Nous avons rencontré un problème lors de la récupération de votre historique de réservation. Veuillez vérifier votre connexion et réessayer.",
+    "retryButton": "Réessayer la Connexion",
     "bookingCard": {
         "viewTicket": "Voir le Billet",
         "cancelBooking": "Annuler la Réservation"

@@ -356,6 +356,9 @@
     "noUpcoming": "Nessun prossimo viaggio trovato.",
     "noPast": "Nessuna esperienza passata registrata.",
     "signOut": "Disconnetti",
+    "errorTitle": "Viaggio Interrotto",
+    "errorDescription": "Abbiamo riscontrato un problema nel recuperare la cronologia delle tue prenotazioni. Verifica la tua connessione e riprova.",
+    "retryButton": "Riprova Connessione",
     "bookingCard": {
         "viewTicket": "Vedi Biglietto",
         "cancelBooking": "Annulla Prenotazione"

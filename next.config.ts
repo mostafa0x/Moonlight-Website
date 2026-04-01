@@ -25,6 +25,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'https://moonlight-steel.vercel.app/api/:path*',
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);

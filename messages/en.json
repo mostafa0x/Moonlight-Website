@@ -367,6 +367,9 @@
     "noUpcoming": "No upcoming trips found.",
     "noPast": "No past experiences recorded.",
     "signOut": "Sign Out",
+    "errorTitle": "Voyage Interrupted",
+    "errorDescription": "We encountered an issue retrieving your booking history. Please ensure your connection is stable and try again.",
+    "retryButton": "Retry Connection",
     "bookingCard": {
       "viewTicket": "View Ticket",
       "cancelBooking": "Cancel Booking"

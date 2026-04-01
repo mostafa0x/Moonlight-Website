@@ -356,6 +356,9 @@
     "noUpcoming": "No se encontraron próximos viajes.",
     "noPast": "No se registraron experiencias pasadas.",
     "signOut": "Cerrar Sesión",
+    "errorTitle": "Viaje Interrumpido",
+    "errorDescription": "Encontramos un problema al recuperar su historial de reservas. Por favor, asegúrese de que su conexión sea estable e inténtelo de nuevo.",
+    "retryButton": "Reintentar Conexión",
     "bookingCard": {
         "viewTicket": "Ver Ticket",
         "cancelBooking": "Cancelar Reserva"

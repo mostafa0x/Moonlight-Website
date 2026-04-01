@@ -16,7 +16,7 @@ export function useProfileBookings() {
   const queryClient = useQueryClient();
 
   // 1. Fetching Bookings
-  const { data: bookings = [], isLoading, error } = useQuery<Booking[]>({
+  const { data: bookings = [], isLoading, error ,refetch} = useQuery<Booking[]>({
     queryKey: ["profile-bookings"],
     queryFn: async () => {
       const { data: { session } } = await supabase.auth.getSession();
@@ -34,8 +34,21 @@ export function useProfileBookings() {
       }
 
       const result = await response.json();
-      // Handle the case where the API might return the actual array in result.data or similar
-      return Array.isArray(result) ? result : (result.data || []);
+      const rawData = result.data || [];
+
+      // Mapping backend data (snake_case) to frontend (camelCase)
+      return rawData.map((item: any) => ({
+        id: item.id,
+        packageName: item.package_name || "Moonlight Experience", // Placeholder for now
+        tourDate: item.tour_date,
+        tourTime: item.tour_time || "09:00 AM",
+        status: item.status === "expired" ? "completed" : item.status,
+        paymentType: item.due_amount === 0 ? "full" : "deposit",
+        price: item.total_amount,
+        currency: item.currency || "$",
+        imageUrl: item.image_url || "/imgs/placeholder.webp",
+        ticketUrl: item.ticket_url,
+      })) as Booking[];
     },
     // Keep data fresh but don't over-fetch
     staleTime: 5 * 60 * 1000, 
@@ -73,5 +86,6 @@ export function useProfileBookings() {
     error,
     cancelBooking: cancelBookingMutation.mutate,
     isCancelling: cancelBookingMutation.isPending,
+    refetch
   };
 }
