@@ -363,5 +363,8 @@
         "viewTicket": "Voir le Billet",
         "cancelBooking": "Annuler la Réservation"
     }
+  },
+  "packages": {
+    "noPackagesAvailable": "Aucun circuit disponible dans cette section pour le moment."
   }
 }

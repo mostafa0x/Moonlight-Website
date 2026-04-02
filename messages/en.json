@@ -374,5 +374,8 @@
       "viewTicket": "View Ticket",
       "cancelBooking": "Cancel Booking"
     }
+  },
+  "packages": {
+    "noPackagesAvailable": "No tours available in this section at the moment."
   }
 }

@@ -113,8 +113,8 @@ export const ProfileFeature: React.FC = () => {
     );
   }
 
-  const upcomingTrips = bookings.filter(b => b.status.toLowerCase() === "upcoming");
-  const pastTrips = bookings.filter(b => b.status.toLowerCase() !== "upcoming");
+  const upcomingTrips = bookings.filter(b => ["Confirmed", "Confirmed deposit", "Cancellation requested"].includes(b.status));
+  const pastTrips = bookings.filter(b => ["Cancelled", "Failed"].includes(b.status));
 
   const avatarSrc = user?.user_metadata?.avatar_url || "/imgs/placeholder.webp";
 

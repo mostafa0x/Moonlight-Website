@@ -363,5 +363,8 @@
         "viewTicket": "Vedi Biglietto",
         "cancelBooking": "Annulla Prenotazione"
     }
+  },
+  "packages": {
+    "noPackagesAvailable": "Nessun tour disponibile in questa sezione al momento."
   }
 }

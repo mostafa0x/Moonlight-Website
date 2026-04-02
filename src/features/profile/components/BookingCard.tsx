@@ -19,21 +19,31 @@ interface BookingCardProps {
  */
 export const BookingCard: React.FC<BookingCardProps> = ({ booking, onCancel, isCancelling }) => {
   const t = useTranslations("profile.bookingCard");
-  const isUpcoming = booking.status?.toLowerCase() === "upcoming";
-  const isCancelled = booking.status?.toLowerCase() === "cancelled";
-  const isCompleted = booking.status?.toLowerCase() === "completed";
+  const isCancellable = booking.status === "Confirmed" || booking.status === "Confirmed deposit";
+  const isCancelled = booking.status === "Cancelled";
+  const isRequested = booking.status === "Cancellation requested";
+  const isFailed = booking.status === "Failed";
 
   const statusStyles = {
-    upcoming: "bg-yellow-500/10 text-yellow-500 border-yellow-500",
+    confirmed: "bg-emerald-500/10 text-emerald-500 border-emerald-500",
+    confirmedDeposit: "bg-teal-500/10 text-teal-500 border-teal-500",
+    requested: "bg-orange-500/10 text-orange-500 border-orange-500",
     cancelled: "bg-rose-500/10 text-rose-500 border-rose-500",
-    completed: "bg-zinc-800/10 text-zinc-500 border-zinc-500",
+    failed: "bg-zinc-800/10 text-zinc-500 border-zinc-500",
   };
 
-  const currentStatusStyle = isUpcoming
-    ? statusStyles.upcoming
-    : isCancelled
-      ? statusStyles.cancelled
-      : statusStyles.completed;
+  const getStatusStyle = (status: Booking["status"]) => {
+    switch (status) {
+      case "Confirmed": return statusStyles.confirmed;
+      case "Confirmed deposit": return statusStyles.confirmedDeposit;
+      case "Cancellation requested": return statusStyles.requested;
+      case "Cancelled": return statusStyles.cancelled;
+      case "Failed": return statusStyles.failed;
+      default: return statusStyles.failed;
+    }
+  };
+
+  const currentStatusStyle = getStatusStyle(booking.status);
 
   return (
     <div className="w-full flex flex-col md:flex-row bg-neutral-900 rounded-[10px] border border-zinc-800 overflow-hidden min-h-56 group hover:border-zinc-700 transition-colors">
@@ -48,19 +58,14 @@ export const BookingCard: React.FC<BookingCardProps> = ({ booking, onCancel, isC
               {booking.packageName}
             </h3>
 
-            {/* Price (Desktop) */}
-            <div className="hidden md:block text-white text-2xl font-normal font-cairo">
-              {booking.price} {booking.currency || "$"}
-            </div>
-
             {/* Status Badge (Absolute Position Mockup or Flex) */}
-            <div className={`px-2.5 py-1 rounded-[10px] border text-base font-normal font-cairo ${currentStatusStyle} md:absolute md:right-37.5 md:top-3.5`}>
+            <div className={`px-2.5 py-1 rounded-[10px] border text-base font-normal font-cairo ${currentStatusStyle}`}>
               {booking.status}
             </div>
           </div>
 
           <div className="text-zinc-500 text-base font-semibold font-cairo">
-            {booking.tourDate}, {booking.tourTime || "09:00 AM"}
+            {booking.tourDate}, {booking.tourTime || "--:--:--"}
           </div>
 
           {/* Payment Type */}
@@ -77,7 +82,7 @@ export const BookingCard: React.FC<BookingCardProps> = ({ booking, onCancel, isC
         {/* Footer Actions */}
         <div className="mt-4 flex flex-row md:items-center justify-between gap-4">
           <div className="flex items-center gap-6">
-            {booking.status?.toLowerCase() !== "cancelled" && (
+            {!isCancelled && !isFailed && !isRequested && (
               <a
                 href={booking.ticketUrl || "#"}
                 className="text-white text-lg font-semibold font-sans underline hover:text-white/80 transition-colors"
@@ -86,7 +91,7 @@ export const BookingCard: React.FC<BookingCardProps> = ({ booking, onCancel, isC
               </a>
             )}
 
-            {isUpcoming && (
+            {isCancellable && (
               <button
                 onClick={() => onCancel(booking.id)}
                 disabled={isCancelling}
@@ -99,7 +104,7 @@ export const BookingCard: React.FC<BookingCardProps> = ({ booking, onCancel, isC
           </div>
 
           {/* Price (Mobile) */}
-          <div className="md:hidden text-white text-2xl font-normal font-cairo self-end">
+          <div className="text-white text-2xl font-normal font-cairo self-end">
             {booking.price} {booking.currency || "$"}
           </div>
         </div>

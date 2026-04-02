@@ -42,7 +42,7 @@ export function useProfileBookings() {
         packageName: item.package_name || "Moonlight Experience", // Placeholder for now
         tourDate: item.tour_date,
         tourTime: item.tour_time || "09:00 AM",
-        status: item.status === "expired" ? "completed" : item.status,
+        status: item.status, // Let it use the new backend statuses directly
         paymentType: item.due_amount === 0 ? "full" : "deposit",
         price: item.total_amount,
         currency: item.currency || "$",
