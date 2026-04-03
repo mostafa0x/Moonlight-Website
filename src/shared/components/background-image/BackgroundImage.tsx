@@ -1,46 +1,32 @@
-"use client";
-
-import { useEffect, useState, memo } from "react";
+import { memo } from "react";
 import Image from "next/image";
 
 /**
- * BackgroundImage — Shared background for static pages
- * 
- * Performance:
- * This component uses 'Delayed Hydration' (isMounted state after 2s).
- * This removes it from the initial critical main-thread work (TBT), 
- * allowing the Hero section (Page1) to hydrate and interact faster.
+ * BackgroundImage — Fixed premium global background
  */
 function BackgroundImage({ isHasOverlay = true }: { isHasOverlay?: boolean }) {
-  const [isMounted, setIsMounted] = useState(false);
 
-  useEffect(() => {
-    // Defer rendering until main thread is likely idle
-    const timer = setTimeout(() => setIsMounted(true), 2000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (!isMounted) return null;
 
   return (
-    <>
+    <div className="bg-black">
+      {/* Immersive Overlay */}
       {isHasOverlay && (
-        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-80 z-[-1]" />
+        <div className="fixed inset-0 bg-black/70 pointer-events-none z-[-1]" />
       )}
-      <div className="w-full h-full absolute top-0 left-0 z-[-2]">
+
+      {/* Main Background Image - Fixed position */}
+      <div className="fixed inset-0 z-[-2] pointer-events-none">
         <Image
           src="/backgrounds/backgroundPages.webp"
-          alt="background pages"
+          alt="Ancient Egypt Moonlight Background"
           fill
-          priority={false}
-          loading="lazy"
-          fetchPriority="low"
-          quality={40}
+          priority
+          quality={50}
           className="object-cover"
-          sizes="(max-width: 768px) 100vw, 100vw"
+          sizes="100vw"
         />
       </div>
-    </>
+    </div>
   );
 }
 

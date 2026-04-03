@@ -351,10 +351,8 @@
   },
   "profile": {
     "title": "Perfil",
-    "upcomingTrips": "Próximos Viajes",
-    "pastTrips": "Viajes Pasados",
-    "noUpcoming": "No se encontraron próximos viajes.",
-    "noPast": "No se registraron experiencias pasadas.",
+    "myBookings": "Mis Reservas",
+    "noBookings": "No se encontraron reservas en su historial.",
     "signOut": "Cerrar Sesión",
     "errorTitle": "Viaje Interrumpido",
     "errorDescription": "Encontramos un problema al recuperar su historial de reservas. Por favor, asegúrese de que su conexión sea estable e inténtelo de nuevo.",

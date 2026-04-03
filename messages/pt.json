@@ -351,10 +351,8 @@
   },
   "profile": {
     "title": "Perfil",
-    "upcomingTrips": "Próximas Viagens",
-    "pastTrips": "Viagens Passadas",
-    "noUpcoming": "Nenhuma próxima viagem encontrada.",
-    "noPast": "Nenhuma experiência passada registrada.",
+    "myBookings": "Minhas Reservas",
+    "noBookings": "Nenhuma reserva encontrada no seu histórico.",
     "signOut": "Sair",
     "errorTitle": "Viagem Interrompida",
     "errorDescription": "Encontramos um problema ao recuperar o seu histórico de reservas. Por favor, verifique sua conexão e tente novamente.",

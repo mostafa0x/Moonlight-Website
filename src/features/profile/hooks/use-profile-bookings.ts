@@ -12,12 +12,13 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "";
  * - Seamless integration with Supabase for authentication (Bearer token)
  * - Optimistic UI updates for better perceived performance (INP/FCP)
  */
-export function useProfileBookings() {
+export function useProfileBookings(initialData: Booking[] = []) {
   const queryClient = useQueryClient();
 
   // 1. Fetching Bookings
   const { data: bookings = [], isLoading, error ,refetch} = useQuery<Booking[]>({
     queryKey: ["profile-bookings"],
+    initialData: initialData.length > 0 ? initialData : undefined,
     queryFn: async () => {
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) return [];

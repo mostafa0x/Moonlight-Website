@@ -11,7 +11,7 @@ import { cn } from "@/shared/lib/utils";
 function Page1({ currentPage }: { currentPage: number }) {
   return (
     <section
-      className="h-screen w-full relative overflow-hidden bg-black select-none"
+      className="h-screen w-full relative overflow-hidden bg-transparent select-none"
       aria-label="Welcome to Moonlight"
     >
       {/* Background Image Container - Optimized for LCP */}

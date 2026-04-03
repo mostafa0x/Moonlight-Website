@@ -4,7 +4,7 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/bookings/calculate`,
+      `https://moonlight-steel.vercel.app/api/bookings/calculate`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -13,8 +13,9 @@ export async function POST(req: NextRequest) {
     );
 
     if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
       return NextResponse.json(
-        { error: "Failed to calculate price" },
+        { error: errorData.message || "Failed to calculate price" },
         { status: response.status },
       );
     }

@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, useCallback, useMemo, useState } from "react";
+import { memo, useCallback, useMemo, useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { FullPage } from "react-abohook-fullpage";
 
@@ -9,10 +9,10 @@ import { useBookingState } from "@/features/booking-modal/context/BookingContext
 import { useFullPageState } from "@/features/home/hooks";
 
 import Page1 from "@/features/home/page1";
+import LandMarks from "@/features/home/land-marks";
+import PackagesPage from "@/features/home/packages-page";
 
 // Individual feature sections — kept as dynamic but allowed to SSR if needed in future
-const LandMarks = dynamic(() => import("@/features/home/land-marks"), { ssr: false });
-const PackagesPage = dynamic(() => import("@/features/home/packages-page"), { ssr: false });
 const FooterPage = dynamic(() => import("@/shared/components/footer"), { ssr: false });
 
 interface HomeProps {
@@ -51,18 +51,38 @@ function Home({ data }: HomeProps) {
     [data]
   );
 
+  // Pre-hydration state: Starts with Hero + Giza (2 pages)
+  const [preloadedPages, setPreloadedPages] = useState(2);
+
+  useEffect(() => {
+    // Staggered Hydration: Mount one section at a time every 400ms to keep main thread free
+    const interval = setInterval(() => {
+      setPreloadedPages((prev) => {
+        if (prev >= sections.length * 2 + 2) {
+          clearInterval(interval);
+          return prev;
+        }
+        return prev + 1;
+      });
+    }, 400);
+    return () => clearInterval(interval);
+  }, [sections.length]);
+
   /**
    * isSectionNearby: Intelligent Hydration Strategy
-   * Slashing 'Main-thread work' by deferring adjacent section hydration (Giza, etc)
-   * until after the first user interaction. Liberates ~1.5s of mobile CPU time.
+   * Optimized to eliminate "Scroll Lag" by:
+   * 1. Initial Load: Hero + Giza are hydrated immediately.
+   * 2. Background Wave: Other sections hydrate one by one in the background.
+   * 3. Sticky Mounting: Once a section is mounted, it stays mounted.
    */
   const isSectionNearby = (sectionPage: number) => {
-    if (typeof window === "undefined") return sectionPage <= 1; // Server-side hint
-    const isMobile = window.innerWidth < 768;
+    if (typeof window === "undefined") return sectionPage <= 2;
 
-    // Initial Hydration: Strict 0 for Mobile, 1 for Desktop
-    const buffer = (!hasInteracted && isMobile) ? 0 : 1;
-    return Math.abs(sectionPage - currentPage) <= buffer;
+    // Buffer for active scrolling
+    const buffer = hasInteracted ? 2 : 0;
+
+    // Return true if the page is within our preloaded horizon OR nearby current scroll
+    return sectionPage <= preloadedPages || sectionPage <= currentPage + buffer;
   };
 
   return (
@@ -90,7 +110,7 @@ function Home({ data }: HomeProps) {
                 page={section.page}
               />
             ) : (
-              <div className="h-full w-full bg-black" /> // Lightweight placeholder
+              <div className="h-full w-full bg-transparent" /> // Lightweight placeholder
             )}
           </FullPage.Section>,
           <FullPage.Section key={`${key}-packages`}>
@@ -102,14 +122,14 @@ function Home({ data }: HomeProps) {
                 page={section.page + 1}
               />
             ) : (
-              <div className="h-full w-full bg-black" />
+              <div className="h-full w-full bg-transparent" />
             )}
           </FullPage.Section>,
         ])}
 
-        {/* Last Section: Footer — Only mounts STRICTLY when reaching the end to save resources */}
+        {/* Last Section: Footer — Hydrated slightly before reaching the end for smoothness */}
         <FullPage.Section>
-          {currentPage === sections.length * 2 + 1 ? (
+          {currentPage >= sections.length * 2 - 1 ? (
             <FooterPage />
           ) : (
             <div className="h-full w-full bg-black flex items-center justify-center">

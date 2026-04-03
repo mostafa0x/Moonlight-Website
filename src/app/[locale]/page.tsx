@@ -2,10 +2,13 @@ import Home from "@/features/home";
 import type { HomeDataType } from "@/shared/global";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
+export const dynamic = "force-static";
+export const dynamicParams = false;
+
 async function fetchData(lang: string) {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/packages?lang=${lang}`,
+      `${process.env.NEXT_PUBLIC_WEBSITE_URL}${process.env.NEXT_PUBLIC_BASE_URL}/packages?lang=${lang}`,
     );
     return res.json();
   } catch (err) {
@@ -57,6 +60,7 @@ export default async function page({
   ];
 
   const { data = [] } = await fetchData(locale);
+
   const updatedData = dataAll.map((section) => {
     const filteredPackages = data.filter((pkg: any) =>
       pkg.governorate.toLowerCase().includes(section.governorate.toLowerCase()),

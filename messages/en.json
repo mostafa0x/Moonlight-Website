@@ -362,10 +362,8 @@
   },
   "profile": {
     "title": "Profile",
-    "upcomingTrips": "Upcoming Trips",
-    "pastTrips": "Past Trips",
-    "noUpcoming": "No upcoming trips found.",
-    "noPast": "No past experiences recorded.",
+    "myBookings": "My Bookings",
+    "noBookings": "No bookings found in your history.",
     "signOut": "Sign Out",
     "errorTitle": "Voyage Interrupted",
     "errorDescription": "We encountered an issue retrieving your booking history. Please ensure your connection is stable and try again.",

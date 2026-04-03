@@ -351,10 +351,8 @@
   },
   "profile": {
     "title": "Profil",
-    "upcomingTrips": "Voyages à Venir",
-    "pastTrips": "Voyages Passés",
-    "noUpcoming": "Aucun voyage à venir trouvé.",
-    "noPast": "Aucune expérience passée enregistrée.",
+    "myBookings": "Mes Réservations",
+    "noBookings": "Aucune réservation trouvée dans votre historique.",
     "signOut": "Déconnexion",
     "errorTitle": "Voyage Interrompu",
     "errorDescription": "Nous avons rencontré un problème lors de la récupération de votre historique de réservation. Veuillez vérifier votre connexion et réessayer.",

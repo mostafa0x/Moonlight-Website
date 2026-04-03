@@ -9,6 +9,7 @@ import BookingContextProvider from "@/features/booking-modal/context/BookingCont
 
 // Sub-components
 import GlobalOverlays from "./components/GlobalOverlays";
+import BackgroundImage from "@/shared/components/background-image/BackgroundImage";
 
 /**
  * AllProviders Component
@@ -36,7 +37,7 @@ export default function AllProviders({
       <ReactQueryProvider>
         <BookingContextProvider>
           {children}
-          
+
           {/* Render global overlays outside the main content path */}
           <GlobalOverlays />
         </BookingContextProvider>

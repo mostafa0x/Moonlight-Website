@@ -351,10 +351,8 @@
   },
   "profile": {
     "title": "Profilo",
-    "upcomingTrips": "Prossimi Viaggi",
-    "pastTrips": "Viaggi Passati",
-    "noUpcoming": "Nessun prossimo viaggio trovato.",
-    "noPast": "Nessuna esperienza passata registrata.",
+    "myBookings": "Le Mie Prenotazioni",
+    "noBookings": "Nessuna prenotazione trovata nella tua cronologia.",
     "signOut": "Disconnetti",
     "errorTitle": "Viaggio Interrotto",
     "errorDescription": "Abbiamo riscontrato un problema nel recuperare la cronologia delle tue prenotazioni. Verifica la tua connessione e riprova.",

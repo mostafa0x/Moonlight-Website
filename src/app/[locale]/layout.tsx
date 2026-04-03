@@ -7,8 +7,7 @@ import { setRequestLocale } from "next-intl/server";
 import { redirect } from "next/navigation";
 import { Metadata } from "next";
 import "../globals.css";
-export const dynamic = "force-static";
-export const dynamicParams = false;
+
 
 export function generateStaticParams() {
   return [
