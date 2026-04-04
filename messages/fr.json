@@ -375,5 +375,24 @@
   },
   "packages": {
     "noPackagesAvailable": "Aucun circuit disponible dans cette section pour le moment."
+  },
+  "ticket": {
+    "title": "Votre Billet de Voyage",
+    "description": "Consultez et scannez votre billet numérique pour votre prochaine aventure égyptienne avec Moonlight.",
+    "date": "DATE",
+    "time": "HEURE",
+    "reference": "RÉFÉRENCE",
+    "guests": "INVITÉS",
+    "pickupLocation": "LIEU DE PRISE EN CHARGE",
+    "paymentMethod": "MODE DE PAIEMENT",
+    "totalAmount": "MONTANT TOTAL",
+    "paymentStatus": "STATUT DU PAIEMENT",
+    "amountDueAtPickup": "MONTANT DÛ À LA PRISE EN CHARGE",
+    "fullyPaid": "ENTIÈREMENT PAYÉ",
+    "depositPaid": "ACOMPTE PAYÉ",
+    "scanCode": "Scannez ce code avec votre guide à la prise en charge",
+    "errorTitle": "Billet Introuvable",
+    "errorDescription": "Nous n'avons pas pu trouver le billet que vous recherchez. Veuillez vérifier l'URL ou votre profil.",
+    "backToProfile": "Retour au Profil"
   }
 }

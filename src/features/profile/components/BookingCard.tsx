@@ -2,9 +2,11 @@ import React from "react";
 import { Booking } from "../types";
 import { getTranslations } from "next-intl/server";
 import { CancelButton } from "./CancelButton";
+import Link from "next/link";
 
 interface BookingCardProps {
   booking: Booking;
+  locale: string;
 }
 
 /**
@@ -15,7 +17,7 @@ interface BookingCardProps {
  * - Reduced client-side JavaScript.
  * - Accurate SEO.
  */
-export const BookingCard: React.FC<BookingCardProps> = async ({ booking }) => {
+export async function BookingCard({ booking, locale }: BookingCardProps) {
   const t = await getTranslations("profile.bookingCard");
 
   // Normalizing status for logic checks (handling both PascalCase and snake_case)
@@ -66,31 +68,35 @@ export const BookingCard: React.FC<BookingCardProps> = async ({ booking }) => {
             {booking.tourDate}, {booking.tourTime || "--:--:--"}
           </div>
 
-          {/* Payment Type */}
-          <div className="flex items-center gap-2 mt-2">
-            <img
-              src={booking.paymentType === "deposit" ? "/icons/cash.svg" : "/icons/paymentIcon.svg"}
-              alt="payment"
-              className="w-5 h-5"
-            />
-            <span className="text-zinc-500 text-base font-semibold font-cairo uppercase">
-              {booking.paymentType || "N/A"}
-            </span>
+          <div className="flex flex-row gap-1.25 items-center">
+            <div className="text-zinc-200 text-base font-semibold font-cairo">
+              {booking.currency}  {booking.price}
+            </div>
+            <div className="flex flex-row  gap-2 ">
+              <img
+                src={booking.paymentType === "deposit" ? "/icons/cash.svg" : "/icons/paymentIcon.svg"}
+                alt="payment"
+                className="w-5 h-5"
+              />
+              <span className="text-zinc-500 text-base font-semibold font-cairo uppercase">
+                {booking.paymentType || "N/A"}
+              </span>
+            </div>
           </div>
+          {/* Payment Type */}
         </div>
 
         {/* Footer Actions */}
         <div className="mt-4 flex flex-row md:items-center justify-between gap-4">
           <div className="flex items-center gap-6">
             {!isCancelled && !isFailed && !isRequested && (
-              <a
-                href={booking.ticketUrl || "#"}
+              <Link
+                href={`/${locale}/ticket/${booking.id}`}
                 className="text-white text-lg font-semibold font-sans underline hover:text-white/80 transition-colors"
                 target="_blank"
-                rel="noopener noreferrer"
               >
                 {t("viewTicket")}
-              </a>
+              </Link>
             )}
 
 

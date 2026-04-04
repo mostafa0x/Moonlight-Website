@@ -10,7 +10,7 @@ import { LoginButton } from "./LoginButton";
  */
 export const LoginGateway: React.FC = () => {
   return (
-    <div className="h-screen w-full bg-black text-white flex flex-col items-center justify-center p-4 relative overflow-hidden">
+    <div className="h-screen w-full text-white flex flex-col items-center justify-center p-4 relative overflow-hidden">
       {/* Subtle Egyptian Themed Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-62.5 md:w-100 h-37.5 md:h-50 bg-[#F2C975]/10 blur-[80px] md:blur-[120px] rounded-full animate-pulse" />
 

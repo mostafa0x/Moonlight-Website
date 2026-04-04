@@ -386,5 +386,24 @@
   },
   "packages": {
     "noPackagesAvailable": "No tours available in this section at the moment."
+  },
+  "ticket": {
+    "title": "Your Voyage Ticket",
+    "description": "View and scan your digitial ticket for your upcoming Egyptian adventure with Moonlight.",
+    "date": "DATE",
+    "time": "TIME",
+    "reference": "REFERENCE",
+    "guests": "GUESTS",
+    "pickupLocation": "PICKUP LOCATION",
+    "paymentMethod": "PAYMENT METHOD",
+    "totalAmount": "TOTAL AMOUNT",
+    "paymentStatus": "PAYMENT STATUS",
+    "amountDueAtPickup": "AMOUNT DUE AT PICKUP",
+    "fullyPaid": "FULLY PAID",
+    "depositPaid": "DEPOSIT PAID",
+    "scanCode": "Scan this code with your guide at pickup",
+    "errorTitle": "Ticket Not Found",
+    "errorDescription": "We couldn't find the ticket you're looking for. Please check the URL or your profile.",
+    "backToProfile": "Back to Profile"
   }
 }

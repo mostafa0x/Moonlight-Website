@@ -374,6 +374,25 @@
     }
   },
   "packages": {
-    "noPackagesAvailable": "Não há tours disponíveis nesta seção no momento."
+    "noPackagesAvailable": "Nenhum passeio disponível nesta seção no momento."
+  },
+  "ticket": {
+    "title": "Seu Bilhete de Viagem",
+    "description": "Visualize e digitalize o seu bilhete digital para a sua próxima aventura egípcia com Moonlight.",
+    "date": "DATA",
+    "time": "HORA",
+    "reference": "REFERÊNCIA",
+    "guests": "HÓSPEDES",
+    "pickupLocation": "LOCAL DE RETIRADA",
+    "paymentMethod": "MÉTODO DE PAGAMENTO",
+    "totalAmount": "VALOR TOTAL",
+    "paymentStatus": "STATUS DO PAGAMENTO",
+    "amountDueAtPickup": "VALOR DEVIDO NA RETIRADA",
+    "fullyPaid": "TOTALMENTE PAGO",
+    "depositPaid": "DEPÓSITO PAGO",
+    "scanCode": "Digitalize este código com seu guia na retirada",
+    "errorTitle": "Bilhete Não Encontrado",
+    "errorDescription": "Não conseguimos encontrar o bilhete que você está procurando. Por favor, verifique a URL ou seu perfil.",
+    "backToProfile": "Volver ao Perfil"
   }
 }

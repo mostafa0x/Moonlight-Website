@@ -375,5 +375,24 @@
   },
   "packages": {
     "noPackagesAvailable": "Nessun tour disponibile in questa sezione al momento."
+  },
+  "ticket": {
+    "title": "Il Tuo Biglietto di Viaggio",
+    "description": "Visualizza e scansiona il tuo biglietto digitale per la tua prossima avventura egiziana con Moonlight.",
+    "date": "DATA",
+    "time": "ORARIO",
+    "reference": "RIFERIMENTO",
+    "guests": "OSPITI",
+    "pickupLocation": "LUOGO DI RITIRO",
+    "paymentMethod": "METODO DI PAGAMENTO",
+    "totalAmount": "IMPORTO TOTALE",
+    "paymentStatus": "STATO DEL PAGAMENTO",
+    "amountDueAtPickup": "IMPORTO DOVUTO AL RITIRO",
+    "fullyPaid": "SALDATO",
+    "depositPaid": "ACCONTO PAGATO",
+    "scanCode": "Scansiona questo codice con la tua guida al ritiro",
+    "errorTitle": "Biglietto Non Trovato",
+    "errorDescription": "Non siamo riusciti a trovare il biglietto che stai cercando. Controlla l'URL o il tuo profilo.",
+    "backToProfile": "Torna al Profilo"
   }
 }

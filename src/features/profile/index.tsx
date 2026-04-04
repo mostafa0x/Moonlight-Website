@@ -9,6 +9,7 @@ import { User } from "@supabase/supabase-js";
 interface ProfileFeatureProps {
   bookings: Booking[];
   user: User | null;
+  locale: string;
 }
 
 /**
@@ -19,7 +20,7 @@ interface ProfileFeatureProps {
  * - Minimal Client Hydration.
  * - Optimized Data Waterfalls (data is passed from page).
  */
-export const ProfileFeature: React.FC<ProfileFeatureProps> = async ({ bookings, user }) => {
+export async function ProfileFeature({ bookings, user, locale }: ProfileFeatureProps) {
   const t = await getTranslations("profile");
 
   if (!user) {
@@ -51,10 +52,11 @@ export const ProfileFeature: React.FC<ProfileFeatureProps> = async ({ bookings, 
                   <BookingCard
                     key={booking.id}
                     booking={booking}
+                    locale={locale}
                   />
                 ))
               ) : (
-                <div className="py-10 text-center text-zinc-600 font-cairo text-lg italic border border-dashed border-zinc-800 rounded-xl">
+                <div className="py-10 text-center text-zinc-600 bg-black/30 rounded-br-2xl font-cairo text-lg italic border border-dashed border-zinc-800 rounded-xl">
                   {t("noBookings")}
                 </div>
               )}
