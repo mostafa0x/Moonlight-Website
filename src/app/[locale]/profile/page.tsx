@@ -65,7 +65,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ locale
   const bookings = await fetchBookings();
 
   return (
-    <main className="w-full min-h-screen bg-black pt-20">
+    <main className="w-full min-h-screen pt-20">
       <Suspense fallback={<EgyptianLoader />}>
         {/* ProfileFeature is now a Server Component */}
         <ProfileFeature bookings={bookings} user={user} />

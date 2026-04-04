@@ -369,8 +369,19 @@
     "errorDescription": "We encountered an issue retrieving your booking history. Please ensure your connection is stable and try again.",
     "retryButton": "Retry Connection",
     "bookingCard": {
-      "viewTicket": "View Ticket",
-      "cancelBooking": "Cancel Booking"
+      "viewTicket": "View",
+      "cancelBooking": "Cancel",
+      "cancelModal": {
+        "title": "Cancel Booking?",
+        "message": "Are you sure you want to cancel this voyage? This action cannot be reversed.",
+        "confirm": "YES, CANCEL",
+        "cancel": "NO, KEEP IT"
+      },
+      "errorModal": {
+        "title": "Error",
+        "message": "An error occurred. Please try again later.",
+        "close": "Close"
+      }
     }
   },
   "packages": {

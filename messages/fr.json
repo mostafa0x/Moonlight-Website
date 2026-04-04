@@ -358,8 +358,19 @@
     "errorDescription": "Nous avons rencontré un problème lors de la récupération de votre historique de réservation. Veuillez vérifier votre connexion et réessayer.",
     "retryButton": "Réessayer la Connexion",
     "bookingCard": {
-        "viewTicket": "Voir le Billet",
-        "cancelBooking": "Annuler la Réservation"
+        "viewTicket": "Voir",
+      "cancelBooking": "Annuler",
+      "cancelModal": {
+        "title": "Annuler la réservation ?",
+        "message": "Êtes-vous sûr de vouloir annuler ce voyage ? Cette action est irréversible.",
+        "confirm": "OUI, ANNULER",
+        "cancel": "NON, LE GARDER"
+      },
+      "errorModal": {
+        "title": "Erreur",
+        "message": "Une erreur est survenue. Veuillez réessayer plus tard.",
+        "close": "Fermer"
+      }
     }
   },
   "packages": {

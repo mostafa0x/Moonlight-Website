@@ -358,8 +358,19 @@
     "errorDescription": "Encontramos um problema ao recuperar o seu histórico de reservas. Por favor, verifique sua conexão e tente novamente.",
     "retryButton": "Repetir Conexão",
     "bookingCard": {
-        "viewTicket": "Ver Bilhete",
-        "cancelBooking": "Cancelar Reserva"
+        "viewTicket": "Ver",
+      "cancelBooking": "Cancelar",
+      "cancelModal": {
+        "title": "Cancelar reserva?",
+        "message": "Tem certeza de que deseja cancelar esta viagem? Esta ação não pode ser desfeita.",
+        "confirm": "SIM, CANCELAR",
+        "cancel": "NÃO, MANTER"
+      },
+      "errorModal": {
+        "title": "Erro",
+        "message": "Ocorreu um erro. Por favor, tente novamente mais tarde.",
+        "close": "Fechar"
+      }
     }
   },
   "packages": {

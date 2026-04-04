@@ -17,10 +17,10 @@ interface BookingCardProps {
  */
 export const BookingCard: React.FC<BookingCardProps> = async ({ booking }) => {
   const t = await getTranslations("profile.bookingCard");
-  
+
   // Normalizing status for logic checks (handling both PascalCase and snake_case)
   const normalizedStatus = booking.status?.toLowerCase().replace(/_/g, " ") || "";
-  
+
   const isCancellable = normalizedStatus === "confirmed" || normalizedStatus === "confirmed deposit" || normalizedStatus === "pending";
   const isCancelled = normalizedStatus === "cancelled";
   const isRequested = normalizedStatus === "cancellation requested";
@@ -68,9 +68,9 @@ export const BookingCard: React.FC<BookingCardProps> = async ({ booking }) => {
 
           {/* Payment Type */}
           <div className="flex items-center gap-2 mt-2">
-            <img 
-              src={booking.paymentType === "deposit" ? "/icons/cash.svg" : "/icons/paymentIcon.svg"} 
-              alt="payment" 
+            <img
+              src={booking.paymentType === "deposit" ? "/icons/cash.svg" : "/icons/paymentIcon.svg"}
+              alt="payment"
               className="w-5 h-5"
             />
             <span className="text-zinc-500 text-base font-semibold font-cairo uppercase">
@@ -93,15 +93,13 @@ export const BookingCard: React.FC<BookingCardProps> = async ({ booking }) => {
               </a>
             )}
 
-            {isCancellable && (
-              <CancelButton bookingId={booking.id} />
-            )}
+
           </div>
 
           {/* Price Section */}
-          <div className="text-white text-2xl font-normal font-cairo self-end">
-            {booking.price} {booking.currency || "$"}
-          </div>
+          {isCancellable && (
+            <CancelButton bookingId={booking.id} />
+          )}
         </div>
       </div>
     </div>

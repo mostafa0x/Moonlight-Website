@@ -34,7 +34,7 @@ export const ProfileFeature: React.FC<ProfileFeatureProps> = async ({ bookings, 
   });
 
   return (
-    <div className="h-screen w-full bg-black text-white overflow-y-auto scrollbar-custom">
+    <div className="h-screen w-full  text-white overflow-y-auto scrollbar-custom">
       <div className="max-w-4xl lg:max-w-6xl mx-auto pt-10 md:pt-20 pb-40 md:pb-60 flex flex-col gap-10 md:gap-20 px-4">
         {/* Profile Header (Server Component) */}
         <ProfileHeader user={user} />

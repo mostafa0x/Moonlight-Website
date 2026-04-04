@@ -358,8 +358,19 @@
     "errorDescription": "Abbiamo riscontrato un problema nel recuperare la cronologia delle tue prenotazioni. Verifica la tua connessione e riprova.",
     "retryButton": "Riprova Connessione",
     "bookingCard": {
-        "viewTicket": "Vedi Biglietto",
-        "cancelBooking": "Annulla Prenotazione"
+        "viewTicket": "Visualizza",
+      "cancelBooking": "Annulla",
+      "cancelModal": {
+        "title": "Annullare la prenotazione?",
+        "message": "Sei sicuro di voler annullare questo viaggio? Questa azione è irreversibile.",
+        "confirm": "SÌ, ANNULLA",
+        "cancel": "NO, TIENILO"
+      },
+      "errorModal": {
+        "title": "Errore",
+        "message": "Si è verificato un errore. Riprova più tardi.",
+        "close": "Chiudi"
+      }
     }
   },
   "packages": {
