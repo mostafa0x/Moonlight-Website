@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from 'next/image';
 import { TicketData } from '../types';
 import { getTranslations } from 'next-intl/server';
@@ -7,6 +6,7 @@ import { clsx } from 'clsx';
 interface TicketCardProps {
   data: TicketData;
   referenceId: string;
+  locale: string;
 }
 
 /**
@@ -17,8 +17,9 @@ interface TicketCardProps {
  * - Minimal client JS.
  * - Performance (next/image for optimized paints).
  */
-export async function TicketCard({ data, referenceId }: TicketCardProps) {
-  const t = await getTranslations("ticket");
+export async function TicketCard({ data, referenceId, locale }: TicketCardProps) {
+  const t = await getTranslations({ locale, namespace: 'ticket' });
+
 
   const isFullyPaid = data.due_amount <= 0;
   const statusLabel = isFullyPaid ? t("fullyPaid") : t("depositPaid");

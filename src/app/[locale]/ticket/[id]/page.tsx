@@ -5,10 +5,10 @@ import { TicketCard, TicketResponse } from '@/features/ticket';
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 
-export async function generateMetadata({ 
-  params 
-}: { 
-  params: Promise<{ id: string; locale: string }> 
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ id: string; locale: string }>
 }): Promise<Metadata> {
   const { id, locale } = await params;
   const t = await getTranslations({ locale, namespace: 'ticket' });
@@ -17,13 +17,13 @@ export async function generateMetadata({
     title: `${t('title')} | #${id.slice(-6).toUpperCase()}`,
     description: t('description'),
     robots: {
-        index: false,
-        follow: true,
+      index: false,
+      follow: true,
     },
     openGraph: {
-        title: `${t('title')} | Moonlight Egypt`,
-        description: t('description'),
-        type: 'website',
+      title: `${t('title')} | Moonlight Egypt`,
+      description: t('description'),
+      type: 'website',
     }
   };
 }
@@ -62,7 +62,7 @@ export default async function TicketPage({
   params: Promise<{ id: string; locale: string }>;
 }) {
   const { id, locale } = await params;
-  const t = await getTranslations('ticket');
+  const t = await getTranslations({ locale, namespace: 'ticket' });
   const supabase = await createClient();
   const { data: { session } } = await supabase.auth.getSession();
 
@@ -107,7 +107,7 @@ export default async function TicketPage({
       </div>
 
       {/* Premium Ticket Card */}
-      <TicketCard data={ticketResponse.data} referenceId={id} />
+      <TicketCard data={ticketResponse.data} referenceId={id} locale={locale} />
 
       {/* Back Link */}
       <Link
