@@ -39,7 +39,6 @@ export async function cancelBookingAction(bookingId: string) {
 
     return { success: true };
   } catch (error: any) {
-    console.error("Server Action (Cancel Booking) Error:", error.message);
     return { success: false, error: error.message };
   }
 }

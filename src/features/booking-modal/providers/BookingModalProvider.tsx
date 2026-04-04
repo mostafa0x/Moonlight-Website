@@ -35,12 +35,11 @@ export default function BookingModalProvider() {
           if (data.tourId) {
             // Restore the state to trigger the modal opening via URL
             handleSetTourId(data.tourId);
-            
+
             // NOTE: We don't clear storage here. The inner BookingModal component
             // will pick up the data, restore form fields, and then clear it.
           }
         } catch (e) {
-          console.error("Failed to parse pending booking for auto-open", e);
         }
       }
     }

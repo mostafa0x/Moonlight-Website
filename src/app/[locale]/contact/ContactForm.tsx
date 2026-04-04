@@ -22,7 +22,6 @@ export default function ContactForm() {
   });
 
   const onSubmit = (data: ContactSchemaType) => {
-    console.log("Submitting contact message:", data);
   };
 
   return (

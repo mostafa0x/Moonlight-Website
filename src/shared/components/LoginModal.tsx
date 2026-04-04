@@ -50,7 +50,6 @@ function LoginModal() {
         },
       });
     } catch (error) {
-      console.error("Authentication error:", error);
     }
   }, [pathname]);
 

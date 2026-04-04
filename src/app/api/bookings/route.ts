@@ -39,8 +39,6 @@ export async function POST(req: NextRequest) {
     const idempotencyKey = req.headers.get("x-idempotency-key");
     const targetUrl = "https://moonlight-steel.vercel.app/api/bookings";
 
-    console.log("In Proxy - Authorization Header received:", authHeader ? `${authHeader.substring(0, 20)}...` : "NONE");
-    console.log("In Proxy - Idempotency Key received:", idempotencyKey);
 
     const response = await fetch(targetUrl, {
       method: "POST",

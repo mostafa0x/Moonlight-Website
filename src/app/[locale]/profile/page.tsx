@@ -22,16 +22,15 @@ export const metadata: Metadata = {
 export default async function ProfilePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const supabase = await createClient();
-  const { data: { session } } = await supabase.auth.getSession();
-
-  const user = session?.user ?? null;
+  const { data: { user } } = await supabase.auth.getUser(); // Secure verification
+  const { data: { session } } = await supabase.auth.getSession(); // Still needed for access_token
 
   // Data pre-fetching on the server
   const fetchBookings = async (): Promise<Booking[]> => {
     if (!session) return [];
 
     try {
-      const response = await fetch("https://moonlight-steel.vercel.app/api/bookings", {
+      const response = await fetch(`https://moonlight-steel.vercel.app/api/bookings?lang=${locale}`, {
         headers: {
           Authorization: `Bearer ${session.access_token}`,
           "Content-Type": "application/json",
@@ -42,8 +41,6 @@ export default async function ProfilePage({ params }: { params: Promise<{ locale
       if (!response.ok) return [];
 
       const result = await response.json();
-      console.log(result);
-
       const rawData = result.data || [];
 
       // Mapping logic moves to the server (0% client JS penalty)
@@ -60,7 +57,6 @@ export default async function ProfilePage({ params }: { params: Promise<{ locale
         ticketUrl: item.ticket_url,
       })) as Booking[];
     } catch (error) {
-      console.error("Server-side Fetching Error (Bookings):", error);
       return [];
     }
   };

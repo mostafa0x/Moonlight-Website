@@ -4,7 +4,7 @@ export interface Booking {
   packageName: string;
   tourDate: string;
   tourTime?: string;
-  status: 'Confirmed' | 'Confirmed deposit' | 'Cancellation requested' | 'Cancelled' | 'Failed';
+  status: 'Confirmed' | 'Confirmed deposit' | 'Cancellation requested' | 'Cancelled' | 'Failed' | 'pending';
   paymentType: 'deposit' | 'full';
   price: number;
   currency: string;

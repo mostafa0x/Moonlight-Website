@@ -18,10 +18,13 @@ interface BookingCardProps {
 export const BookingCard: React.FC<BookingCardProps> = async ({ booking }) => {
   const t = await getTranslations("profile.bookingCard");
   
-  const isCancellable = booking.status === "Confirmed" || booking.status === "Confirmed deposit";
-  const isCancelled = booking.status === "Cancelled";
-  const isRequested = booking.status === "Cancellation requested";
-  const isFailed = booking.status === "Failed";
+  // Normalizing status for logic checks (handling both PascalCase and snake_case)
+  const normalizedStatus = booking.status?.toLowerCase().replace(/_/g, " ") || "";
+  
+  const isCancellable = normalizedStatus === "confirmed" || normalizedStatus === "confirmed deposit" || normalizedStatus === "pending";
+  const isCancelled = normalizedStatus === "cancelled";
+  const isRequested = normalizedStatus === "cancellation requested";
+  const isFailed = normalizedStatus === "failed";
 
   const statusStyles = {
     confirmed: "bg-emerald-500/10 text-emerald-500 border-emerald-500",
@@ -29,16 +32,18 @@ export const BookingCard: React.FC<BookingCardProps> = async ({ booking }) => {
     requested: "bg-orange-500/10 text-orange-500 border-orange-500",
     cancelled: "bg-rose-500/10 text-rose-500 border-rose-500",
     failed: "bg-zinc-800/10 text-zinc-500 border-zinc-500",
+    pending: "bg-white/5 text-white/70 border-white/20",
   };
 
   const currentStatusStyle = (() => {
-    switch (booking.status) {
-      case "Confirmed": return statusStyles.confirmed;
-      case "Confirmed deposit": return statusStyles.confirmedDeposit;
-      case "Cancellation requested": return statusStyles.requested;
-      case "Cancelled": return statusStyles.cancelled;
-      case "Failed": return statusStyles.failed;
-      default: return statusStyles.failed;
+    switch (normalizedStatus) {
+      case "confirmed": return statusStyles.confirmed;
+      case "confirmed deposit": return statusStyles.confirmedDeposit;
+      case "cancellation requested": return statusStyles.requested;
+      case "cancelled": return statusStyles.cancelled;
+      case "failed": return statusStyles.failed;
+      case "pending": return statusStyles.pending;
+      default: return statusStyles.pending;
     }
   })();
 
@@ -51,8 +56,8 @@ export const BookingCard: React.FC<BookingCardProps> = async ({ booking }) => {
             <h3 className="text-white text-xl font-semibold font-cairo">
               {booking.packageName}
             </h3>
-            <div className={`px-2.5 py-1 rounded-[10px] border text-base font-normal font-cairo ${currentStatusStyle}`}>
-              {booking.status}
+            <div className={`px-2.5 py-1 rounded-[10px] border text-base font-normal font-cairo capitalize ${currentStatusStyle}`}>
+              {booking.status?.replace(/_/g, " ")}
             </div>
           </div>
 

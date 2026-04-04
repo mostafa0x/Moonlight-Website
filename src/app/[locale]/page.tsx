@@ -8,11 +8,10 @@ export const dynamicParams = false;
 async function fetchData(lang: string) {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_WEBSITE_URL}${process.env.NEXT_PUBLIC_BASE_URL}/packages?lang=${lang}`,
+      `https://moonlight-steel.vercel.app/api/packages?lang=${lang}`,
     );
     return res.json();
   } catch (err) {
-    console.log(err);
     return [];
   }
 }

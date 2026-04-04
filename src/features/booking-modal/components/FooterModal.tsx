@@ -12,10 +12,10 @@ import EgyptianLoader from "@/shared/components/EgyptianLoader";
 
 import { useAuth } from "@/shared/providers/AuthProvider";
 import { useBookingState } from "@/features/booking-modal/context/BookingContextProvider";
-import { 
-  useGetPackage, 
-  useBookingSubmit, 
-  useFooterNavigation 
+import {
+  useGetPackage,
+  useBookingSubmit,
+  useFooterNavigation
 } from "../hooks/index";
 
 /**
@@ -32,19 +32,18 @@ function FooterModal({ step }: { step: number }) {
   const { tourId, totalSteps } = useBookingState();
   const { setShowLoginModal } = useAuth();
   const { data: pkg } = useGetPackage(tourId);
-  
+
   // Custom hooks for complex interactions
-  const { submitBooking, loading, errorMsg, setErrorMsg } = useBookingSubmit({ 
-    tourId, 
-    setShowLoginModal 
-  });
-  
-  const { handleNext, prevStep } = useFooterNavigation({ 
-    step, 
-    totalSteps, 
-    pkg 
+  const { submitBooking, loading, errorMsg, setErrorMsg } = useBookingSubmit({
+    tourId,
+    setShowLoginModal
   });
 
+  const { handleNext, prevStep } = useFooterNavigation({
+    step,
+    totalSteps,
+    pkg
+  });
   // Auto-hide errors for better UX
   useEffect(() => {
     if (errorMsg) {
@@ -89,10 +88,10 @@ function FooterModal({ step }: { step: number }) {
  */
 const PriceDisplay = memo(({ label }: { label: string }) => {
   const { control } = useFormContext();
-  const { field: { value = 0 } } = useController({ 
-    name: "totalPrice", 
-    control, 
-    defaultValue: 0 
+  const { field: { value = 0 } } = useController({
+    name: "totalPrice",
+    control,
+    defaultValue: 0
   });
 
   return (

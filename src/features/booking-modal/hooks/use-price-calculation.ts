@@ -49,7 +49,7 @@ export const usePriceCalculation = (
         setValue("selectedDestinations", selectedDestinations);
       }
     } catch (error) {
-      console.error("Calculation error:", error);
+      
     }
   }, [pkg, getValues, setValue]);
 

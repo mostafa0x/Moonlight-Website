@@ -38,7 +38,6 @@ export const useBookingForm = (pkg?: PackageDetailsType) => {
         return { ...base, ...data.formValues };
       }
     } catch (e) {
-      console.error("Failed to restore initial booking values", e);
     }
     return base;
   };

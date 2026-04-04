@@ -30,13 +30,11 @@ export function useBookingPersistence() {
         return data;
       }
     } catch (e) {
-      console.error("Failed to parse pending booking data", e);
     }
     return null;
   }, []);
 
   const clearPendingBooking = useCallback(() => {
-    // console.log("Clearing pending booking data");
     localStorage.removeItem(STORAGE_KEY);
   }, []);
 
