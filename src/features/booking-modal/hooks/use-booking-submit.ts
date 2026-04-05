@@ -54,6 +54,7 @@ export function useBookingSubmit({ tourId, setShowLoginModal }: UseBookingSubmit
         customerPhone: values.customerPhone,
         nationality: values.nationality,
         address: values.address,
+        pickupLocation: values.pickupLocation,
         paymentPreference: values.paymentPreference,
       };
 

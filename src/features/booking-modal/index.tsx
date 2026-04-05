@@ -11,12 +11,12 @@ import StepRenderer from "./components/StepRenderer";
 import EgyptianLoader from "@/shared/components/EgyptianLoader";
 
 import { useBookingState, useBookingActions } from "@/features/booking-modal/context/BookingContextProvider";
-import { 
-  useGetPackage, 
-  useBookingForm, 
-  usePriceCalculation, 
+import {
+  useGetPackage,
+  useBookingForm,
+  usePriceCalculation,
   usePackageDefaults,
-  useBookingPersistence 
+  useBookingPersistence
 } from "./hooks/index";
 
 /**
@@ -35,20 +35,27 @@ export default function BookingModal() {
   const { step, tourId } = useBookingState();
   const { setTotalSteps, setStep } = useBookingActions();
   const { data: pkg, isLoading } = useGetPackage(tourId);
-  
+
   // Initialize form with base defaults 
   const methods = useBookingForm(pkg);
   const { reset } = methods;
 
+  useEffect(() => {
+    if (pkg) {
+      console.log("Package Data:", pkg);
+      console.log("Form Values:", methods.watch());
+    }
+  }, [pkg, methods.watch()])
+
   // Custom hooks to handle complex business logic
   usePriceCalculation(pkg, methods);
   usePackageDefaults(pkg, methods);
-  
+
   // Persistence hook for login-success flow
   const { getPendingBooking, clearPendingBooking } = useBookingPersistence();
 
-  const hasCustomizations = useMemo(() => 
-    !!(pkg?.customizations && pkg.customizations.length > 0), 
+  const hasCustomizations = useMemo(() =>
+    !!(pkg?.customizations && pkg.customizations.length > 0),
     [pkg?.customizations]
   );
 
@@ -63,11 +70,11 @@ export default function BookingModal() {
     if (pendingData) {
       // Restore all user input with 'keepDefaultValues' to avoid overwrites
       reset(pendingData.formValues, { keepDefaultValues: true });
-      
+
       // Determine the correct step to jump to for continuing (Step 4 for tours with customizations)
       const targetStep = hasCustomizations ? 4 : 3;
       setStep(targetStep);
-      
+
       // Clear persistence to ensure clean future launches
       clearPendingBooking();
     }
@@ -89,10 +96,10 @@ export default function BookingModal() {
         {isLoading ? (
           <EgyptianLoader />
         ) : pkg ? (
-          <ModalContent 
-            pkg={pkg} 
-            step={step} 
-            hasCustomizations={hasCustomizations} 
+          <ModalContent
+            pkg={pkg}
+            step={step}
+            hasCustomizations={hasCustomizations}
           />
         ) : (
           <div className="flex items-center justify-center h-full text-[#F2C975]">
@@ -131,17 +138,17 @@ const ModalContent = ({ pkg, step, hasCustomizations }: any) => (
         image={pkg.packageImage}
       />
     </div>
-    
+
     {step !== 1 && (
       <div className="animate-in fade-in duration-500">
         <StepsInfo step={step} />
       </div>
     )}
 
-    <StepRenderer 
-      step={step} 
-      pkg={pkg} 
-      hasCustomizations={hasCustomizations} 
+    <StepRenderer
+      step={step}
+      pkg={pkg}
+      hasCustomizations={hasCustomizations}
     />
 
     {step !== 1 && (
