@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Metadata } from 'next';
 import { createClient } from '@/shared/lib/supabase-server';
 import { TicketCard, TicketResponse } from '@/features/ticket';
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
+import EgyptianLoader from '@/shared/components/EgyptianLoader';
 
 export async function generateMetadata({
   params
@@ -98,35 +99,34 @@ export default async function TicketPage({
   }
 
   return (
-    <main className="min-h-screen  py-12 px-4 flex flex-col items-center justify-center gap-8">
-      <div className="flex flex-col items-center gap-2">
-        <h1 className="text-3xl font-bold font-cairo text-black">
-          {t('title')}
-        </h1>
+    <Suspense fallback={<EgyptianLoader />}>
 
-      </div>
 
-      {/* Premium Ticket Card */}
-      <TicketCard data={ticketResponse.data} referenceId={id} locale={locale} />
+      <main className="min-h-screen  py-18 px-4 flex flex-col items-center justify-center gap-2">
 
-      {/* Back Link */}
-      <Link
-        href={`/${locale}/profile`}
-        className="group flex items-center gap-2 text-zinc-500 hover:text-black transition-colors"
-      >
-        <svg
-          className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
+
+        {/* Premium Ticket Card */}
+        <TicketCard data={ticketResponse.data} referenceId={id} locale={locale} />
+
+        {/* Back Link */}
+        <Link
+          href={`/${locale}/profile`}
+          className="group flex items-center gap-2 text-zinc-200 hover:text-zinc-500 transition-colors"
         >
-          <path d="M19 12H5M12 19l-7-7 7-7" />
-        </svg>
-        <span className="font-semibold font-cairo underline underline-offset-4">
-          {t('backToProfile')}
-        </span>
-      </Link>
-    </main>
+          <svg
+            className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+          <span className="font-semibold font-cairo underline underline-offset-4">
+            {t('backToProfile')}
+          </span>
+        </Link>
+      </main>
+    </Suspense>
   );
 }

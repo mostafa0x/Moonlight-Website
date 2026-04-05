@@ -361,7 +361,8 @@
     "secureVoyage": "Secure your voyage to history"
   },
   "profile": {
-    "title": "Profile",
+    "title": "My Profile",
+    "description": "Manage your upcoming and past Egyptian adventures with Moonlight.",
     "myBookings": "My Bookings",
     "noBookings": "No bookings found in your history.",
     "signOut": "Sign Out",

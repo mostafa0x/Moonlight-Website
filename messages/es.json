@@ -350,7 +350,8 @@
     "secureVoyage": "Asegure su viaje a la historia"
   },
   "profile": {
-    "title": "Perfil",
+    "title": "Mi Perfil",
+    "description": "Gestiona tus aventuras egipcias pasadas y futuras con Moonlight.",
     "myBookings": "Mis Reservas",
     "noBookings": "No se encontraron reservas en su historial.",
     "signOut": "Cerrar Sesión",

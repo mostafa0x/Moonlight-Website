@@ -37,6 +37,7 @@ export async function TicketCard({ data, referenceId, locale }: TicketCardProps)
           fill
           className="object-cover"
           priority
+          sizes="(max-width: 440px) 100vw, 400px"
         />
         <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
         <div className="absolute bottom-4 left-6 right-4 text-white">

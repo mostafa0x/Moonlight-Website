@@ -350,7 +350,8 @@
     "secureVoyage": "Assicura il tuo viaggio nella storia"
   },
   "profile": {
-    "title": "Profilo",
+    "title": "Mio Profilo",
+    "description": "Gestisci le tue avventure egiziane fatte e future con Moonlight.",
     "myBookings": "Le Mie Prenotazioni",
     "noBookings": "Nessuna prenotazione trovata nella tua cronologia.",
     "signOut": "Disconnetti",

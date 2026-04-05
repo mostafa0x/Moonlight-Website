@@ -5,10 +5,30 @@ import { createClient } from '@/shared/lib/supabase-server';
 import { Booking } from '@/features/profile/types';
 import EgyptianLoader from '@/shared/components/EgyptianLoader';
 
-export const metadata: Metadata = {
-  title: 'My Profile | Moonlight Egypt',
-  description: 'Manage your upcoming and past Egyptian adventures with Moonlight.',
-};
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'profile' });
+
+  return {
+    title: `${t('title')} | Moonlight Egypt`,
+    description: t('description'),
+    robots: {
+      index: false,
+      follow: true,
+    },
+    openGraph: {
+      title: `${t('title')} | Moonlight Egypt`,
+      description: t('description'),
+      type: 'website',
+    }
+  };
+}
 
 /**
  * ProfilePage: Server-First Dashboard
@@ -64,7 +84,6 @@ export default async function ProfilePage({ params }: { params: Promise<{ locale
   const { data: { user } } = await supabase.auth.getUser(); // Secure verification
   const { data: { session } } = await supabase.auth.getSession(); // Still needed for access_token
 
-  // Data pre-fetching on the server
 
 
   // Parallelize Data Fetching (if more requests added)
