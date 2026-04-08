@@ -1,1 +1,0 @@
-export { useFullPageState } from "./useFullPageState";
