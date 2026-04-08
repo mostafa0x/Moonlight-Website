@@ -8,7 +8,7 @@ import { cn } from "@/shared/lib/utils";
  * The primary entry point for the homepage.
  * Optimized for LCP (Largest Contentful Paint) and premium aesthetics.
  */
-function Page1({ currentPage }: { currentPage: number }) {
+function Page1() {
   return (
     <section
       className="h-screen w-full relative overflow-hidden bg-transparent select-none"
@@ -49,4 +49,4 @@ function Page1({ currentPage }: { currentPage: number }) {
   );
 }
 
-export default memo(Page1);
+export default Page1;

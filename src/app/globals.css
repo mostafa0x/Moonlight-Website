@@ -61,10 +61,6 @@ body {
   height: 100%;
   overflow: hidden;
 }
-
-html {
-  scroll-behavior: auto !important;
-}
 /* 
 ::-webkit-scrollbar {
   display: none;
