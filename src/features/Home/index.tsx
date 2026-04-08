@@ -6,8 +6,8 @@ import Section from "@/features/home/components/Section";
 
 
 import Page1 from "@/features/home/page1";
-import LandMarks from "@/features/home/land-marks";
-import PackagesPage from "@/features/home/packages-page";
+import GovernorateSections from "@/features/home/components/GovernorateSections";
+
 
 
 interface HomeProps {
@@ -32,25 +32,9 @@ function Home({ data }: HomeProps) {
         <Page1 />
       </Section>
 
-      {/* Dynamic Data-Driven Sections */}
-      {data.map((item) => (
-        <div key={item.name} className="contents">
-          {/* Landmark Sections (Multiple) */}
-          <LandMarks
-            landmarks={item.landmarks}
-            titleHeader={item.name}
-          />
+      {/* Dynamic Data-Driven Sections — Each governorate gets its own Landmark + Packages blocks */}
+      <GovernorateSections data={data} />
 
-
-          {/* Packages Section */}
-          <Section id={`${item.governorate}-packages`}>
-            <PackagesPage
-              packages={item.packages}
-              titleHeader={item.name}
-            />
-          </Section>
-        </div>
-      ))}
 
 
       {/* Last Section: Footer */}
