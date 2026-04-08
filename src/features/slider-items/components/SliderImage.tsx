@@ -47,9 +47,10 @@ function SliderImage({
         onLoad={onLoad}
         onError={onLoad}
         className={cn(
-          "object-contain transition-opacity duration-700 ease-out",
+          "object-cover md:object-contain transition-opacity duration-700 ease-out",
           isLoaded ? "opacity-100" : "opacity-0"
         )}
+
       />
     </div>
 

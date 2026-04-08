@@ -69,7 +69,6 @@ export default function ScrollContainer({ children, className }: ScrollContainer
         }
       ` }} />
 
-
       <Swiper
         direction="vertical"
         slidesPerView={1}
@@ -78,27 +77,27 @@ export default function ScrollContainer({ children, className }: ScrollContainer
           forceToAxis: true,
           sensitivity: 1,
           releaseOnEdges: true,
-          thresholdDelta: 60, // Lighten the burden on high-precision desktop mice
+          thresholdDelta: 60,
         }}
         speed={1000}
         keyboard={{ enabled: true }}
         pagination={{
           clickable: true,
         }}
-        // Performance Optimizations for Desktop/Non-Phone
+        // Advanced Performance Suite
         watchSlidesProgress={true}
         resistanceRatio={0}
-        preventInteractionOnTransition={true}
-        modules={[Mousewheel, Pagination, Keyboard, Parallax]}
 
+        preventInteractionOnTransition={true}
+        observer={true}
+        observeParents={true}
+        modules={[Mousewheel, Pagination, Keyboard, Parallax]}
 
         className={cn("h-screen w-full", className)}
         allowTouchMove={true}
-        simulateTouch={false} // Performance: Disable mouse drag as touch on Desktop
+        simulateTouch={false}
         grabCursor={false}
       >
-
-
         {slides.map((child, index) => (
           <SwiperSlide key={index} className="h-full w-full overflow-hidden bg-transparent">
             {child}
@@ -108,4 +107,3 @@ export default function ScrollContainer({ children, className }: ScrollContainer
     </div>
   );
 }
-

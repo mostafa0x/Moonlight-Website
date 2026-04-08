@@ -45,7 +45,8 @@ function LandmarkSlide({ item, isVisible, slideNumber, totalSlides }: LandmarkSl
                 isLoaded={isLoaded}
                 priority={isVisible}
                 onLoad={onImageLoad}
-                className="h-full w-full object-contain"
+                className="h-full w-full object-cover md:object-contain"
+
               />
             </motion.div>
             {/* Dynamic Overlays */}
@@ -68,9 +69,10 @@ function LandmarkSlide({ item, isVisible, slideNumber, totalSlides }: LandmarkSl
                 <span className="text-white/40 font-mono text-base md:text-lg tracking-widest">{totalSlides}</span>
               </div>
 
-              <h2 className="font-cairo text-4xl md:text-6xl lg:text-9xl font-black text-white mb-4 lg:mb-6 uppercase leading-[1] md:leading-[0.9] bg-linear-to-r from-white via-white to-white/60 bg-clip-text">
+              <h2 className="font-cairo text-4xl md:text-6xl lg:text-9xl font-black text-white mb-4 lg:mb-6 uppercase leading-none md:leading-[0.9] bg-linear-to-r from-white via-white to-white/60 bg-clip-text">
                 {item.title}
               </h2>
+
 
 
               <p className="font-cairo text-lg md:text-xl lg:text-2xl text-white/80 leading-relaxed max-w-2xl">

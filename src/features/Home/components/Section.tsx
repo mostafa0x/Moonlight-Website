@@ -21,8 +21,8 @@ export default function Section({ children, id, className }: SectionProps) {
   return (
     <section
       id={id}
-      style={{ 
-        contentVisibility: "auto", 
+      style={{
+        contentVisibility: "auto",
         containIntrinsicSize: "100vh",
         scrollSnapStop: "always", // Key for fullpage.js feel
         willChange: "transform"
@@ -32,15 +32,15 @@ export default function Section({ children, id, className }: SectionProps) {
         className
       )}
     >
-       <motion.div 
-         initial={{ opacity: 0 }}
-         whileInView={{ opacity: 1 }}
-         viewport={{ once: true, amount: 0.1 }}
-         transition={{ duration: 0.8 }}
-         className="h-full w-full"
-       >
-         {children}
-       </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8 }}
+        className="h-full w-full"
+      >
+        {children}
+      </motion.div>
     </section>
   );
 }
