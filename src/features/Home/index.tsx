@@ -10,6 +10,8 @@ import GovernorateSections from "@/features/home/components/GovernorateSections"
 
 
 
+
+
 interface HomeProps {
   data: HomeDataType[];
 }
@@ -35,8 +37,6 @@ function Home({ data }: HomeProps) {
       {/* Dynamic Data-Driven Sections — Each governorate gets its own Landmark + Packages blocks */}
       <GovernorateSections data={data} />
 
-
-
       {/* Last Section: Footer */}
       <Section id="footer" className="bg-black">
         <FooterPage />
@@ -44,6 +44,8 @@ function Home({ data }: HomeProps) {
     </ScrollContainer>
   );
 }
+
+
 
 Home.displayName = "Home";
 export default Home;

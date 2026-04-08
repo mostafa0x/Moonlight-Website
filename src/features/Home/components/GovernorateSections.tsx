@@ -16,26 +16,31 @@ interface GovernorateSectionsProps {
 function GovernorateSections({ data }: GovernorateSectionsProps) {
   return (
     <>
-      {data.map((item) => (
-        <div key={item.name} className="contents">
-          {/* Landmark Sections (Multiple) */}
+      {data.flatMap((item) => [
+        ...item.landmarks.map((landmark, lIdx) => (
           <LandMarks
-            landmarks={item.landmarks}
+            key={`${item.governorate}-landmark-${lIdx}`}
+            id={`${item.governorate}-landmark-${lIdx}`}
+            landmark={landmark}
+            titleHeader={item.name}
+            index={lIdx}
+            total={item.landmarks.length}
+          />
+        )),
+        <Section 
+          key={`${item.governorate}-packages`} 
+          id={`${item.governorate}-packages`}
+        >
+          <PackagesPage
+            packages={item.packages}
             titleHeader={item.name}
           />
-
-          {/* Packages Section */}
-          <Section id={`${item.governorate}-packages`}>
-            <PackagesPage
-              packages={item.packages}
-              titleHeader={item.name}
-            />
-          </Section>
-        </div>
-      ))}
+        </Section>
+      ])}
     </>
   );
 }
+
 
 GovernorateSections.displayName = "GovernorateSections";
 export default memo(GovernorateSections);

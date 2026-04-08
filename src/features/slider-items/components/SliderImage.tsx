@@ -26,42 +26,33 @@ function SliderImage({
   className
 }: SliderImageProps) {
   return (
-    <div className={cn("relative overflow-hidden rounded-2xl bg-black/20 transition-all duration-500", className)}>
-      {/* Premium Placeholder Image Loader — Responsive & Centered */}
+    <div className={cn("relative w-full h-full overflow-hidden", className)}>
+
+      {/* Simple Spinner Loader */}
       {!isLoaded && (
-        <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/40 rounded-2xl">
-          <div className="relative w-72 h-32 md:w-64 md:h-64 lg:w-96 lg:h-96 opacity-30 animate-pulse">
-            <Image
-              src="/imgs/placeholder.webp"
-              alt="Loading..."
-              fill
-              className="object-contain"
-              priority
-              sizes="(max-width: 768px) 288px, (max-width: 1024px) 256px, 384px"
-            />
-          </div>
+        <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/40">
+          <div className="w-10 h-10 border-2 border-white/20 border-t-white/80 rounded-full animate-spin" />
         </div>
       )}
 
       <Image
-        key={src} // Reset internal image state when src changes
+        key={src}
         src={src}
         alt={alt}
         fill
-        quality={40}
+        quality={50}
         priority={priority}
         sizes="100vw"
         fetchPriority={priority ? "high" : "low"}
         onLoad={onLoad}
-        onError={onLoad} // Still mark as loaded to hide placeholder on error
+        onError={onLoad}
         className={cn(
-          "object-contain transition-all duration-1200 cubic-bezier(0.4, 0, 0.2, 1)",
-          isLoaded
-            ? "opacity-100 scale-100 blur-0"
-            : "opacity-0 scale-105 blur-sm"
+          "object-contain transition-opacity duration-700 ease-out",
+          isLoaded ? "opacity-100" : "opacity-0"
         )}
       />
     </div>
+
   );
 }
 

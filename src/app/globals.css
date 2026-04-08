@@ -42,25 +42,23 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-cairo), sans-serif;
-  /* Optimization: Correct font rendering for a premium feel */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern";
   
-  /* Ensure a stable layout by preventing unwanted scroll shifts */
-  scroll-behavior: smooth !important;
+  height: auto !important;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto !important;
 }
 
 section {
   height: 100vh;
 }
 
-html,
-body {
-  height: 100%;
-  overflow: hidden;
-}
+
+
 /* 
 ::-webkit-scrollbar {
   display: none;

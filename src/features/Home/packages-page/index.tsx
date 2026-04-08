@@ -20,7 +20,7 @@ function PackagesPage({
   titleHeader,
 }: PackagesPageProps) {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, scale: 0.99 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ amount: 0.4 }}

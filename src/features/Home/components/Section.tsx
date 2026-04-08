@@ -13,23 +13,38 @@ interface SectionProps {
 }
 
 /**
- * Section — A premium scroll-snap section wrapper.
- * Optimized as a Server Component for maximum performance.
+ * Section — High-performance scroll-snap section wrapper.
+ * Uses CSS 'content-visibility' to skip off-screen rendering and isolates
+ * animations to an inner container for zero-lag snapping.
  */
 export default function Section({ children, id, className }: SectionProps) {
   return (
-    <motion.section
+    <section
       id={id}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+      style={{ 
+        contentVisibility: "auto", 
+        containIntrinsicSize: "100vh",
+        scrollSnapStop: "always", // Key for fullpage.js feel
+        willChange: "transform"
+      } as any}
       className={cn(
-        "h-screen w-full snap-start snap-always relative overflow-hidden",
+        "h-screen w-full snap-start snap-always relative overflow-hidden contain-layout contain-paint",
         className
       )}
     >
-      {children}
-    </motion.section>
+       <motion.div 
+         initial={{ opacity: 0 }}
+         whileInView={{ opacity: 1 }}
+         viewport={{ once: true, amount: 0.1 }}
+         transition={{ duration: 0.8 }}
+         className="h-full w-full"
+       >
+         {children}
+       </motion.div>
+    </section>
   );
 }
+
+
+
 
