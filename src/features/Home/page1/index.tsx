@@ -1,7 +1,6 @@
 import { memo } from "react";
 import Image from "next/image";
 import HeroSectionHeader from "@/features/home/page1/components/HeroSectionHeader";
-import { cn } from "@/shared/lib/utils";
 
 /**
  * Page1 - Hero Section
@@ -49,4 +48,4 @@ function Page1() {
   );
 }
 
-export default Page1;
+export default memo(Page1);
