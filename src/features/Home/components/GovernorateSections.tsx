@@ -3,7 +3,6 @@ import { memo } from "react";
 import type { HomeDataType } from "@/shared/global";
 import LandMarks from "@/features/home/land-marks";
 import PackagesPage from "@/features/home/packages-page";
-import Section from "@/features/home/components/Section";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel } from "swiper/modules";
@@ -45,7 +44,7 @@ function GovernorateSections({ data }: GovernorateSectionsProps) {
             </SwiperSlide>
 
             {/* Sub-Section 2: Booking Packages */}
-            <SwiperSlide className="h-full w-full overflow-y-auto bg-black/40 backdrop-blur-md pt-24 px-6 lg:px-20 scrollbar-hide">
+            <SwiperSlide className="h-full w-full overflow-y-auto bg-black/40 backdrop-blur-md pt-24 px-0 lg:px-20 scrollbar-hide">
               <PackagesPage
                 packages={item.packages}
                 titleHeader={item.name}
