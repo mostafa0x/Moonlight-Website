@@ -14,6 +14,7 @@ import PackagesPage from "@/features/home/packages-page";
 
 interface HomeProps {
   data: HomeDataType[];
+  locale: string
 }
 
 /**
@@ -26,7 +27,7 @@ interface HomeProps {
  *    independently via Framer Motion's useInView (IntersectionObserver).
  * 4. Eliminated 'Progressive Hydration' hacks that were blocking the main thread.
  */
-function Home({ data }: HomeProps) {
+function Home({ data, locale }: HomeProps) {
   // 1 (Hero) + (data.length * 2) + 1 (Footer)
   const dotCount = 2 + (data.length * 2);
 
@@ -34,7 +35,7 @@ function Home({ data }: HomeProps) {
     <ScrollContainer dotCount={dotCount}>
       {/* Section 0: Hero — Always visible on load */}
       <Section id="hero">
-        <Page1 />
+        <Page1 locale={locale} />
       </Section>
 
       {/* Dynamic Journey: Each governorate gets its own Landmark and Packages sections */}

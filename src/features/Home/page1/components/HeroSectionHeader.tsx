@@ -6,9 +6,9 @@ import HeroContent from "./HeroContent";
  * Fetches translations on the server for optimal LCP and SEO.
  * Delegates animations to the HeroContent client component.
  */
-export default async function HeroSectionHeader() {
+export default async function HeroSectionHeader({ locale }: { locale: string }) {
   // Fetch translations server-side
-  const t = await getTranslations("home.hero");
+  const t = await getTranslations({ locale, namespace: "home.hero" });
 
   return (
     <HeroContent

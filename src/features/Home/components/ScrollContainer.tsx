@@ -119,7 +119,7 @@ export default function ScrollContainer({ children, className, dotCount }: Scrol
 
         className={cn("h-screen w-full", className)}
         allowTouchMove={true}
-        simulateTouch={false}
+        simulateTouch={true}
         grabCursor={false}
       >
         {slides.map((child, index) => (

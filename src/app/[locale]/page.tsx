@@ -17,14 +17,11 @@ async function fetchData(lang: string) {
 }
 
 export default async function page({
-  searchParams,
-  params,
+  params
 }: {
-  searchParams: Promise<{ tourId: string }>;
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const { tourId } = await searchParams;
   const t = await getTranslations({ locale, namespace: "home" });
 
   const dataAll: HomeDataType[] = [
@@ -73,7 +70,7 @@ export default async function page({
 
   return (
     <div className="flex flex-col">
-      <Home data={updatedData} />
+      <Home data={updatedData} locale={locale} />
     </div>
   );
 }

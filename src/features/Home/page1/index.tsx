@@ -7,7 +7,7 @@ import HeroSectionHeader from "@/features/home/page1/components/HeroSectionHeade
  * The primary entry point for the homepage.
  * Optimized for LCP (Largest Contentful Paint) and premium aesthetics.
  */
-function Page1() {
+function Page1({ locale }: { locale: string }) {
   return (
     <section
       className="h-screen w-full relative overflow-hidden bg-transparent select-none"
@@ -42,7 +42,7 @@ function Page1() {
 
       {/* Content Component */}
       <div className="relative z-20 h-full w-full">
-        <HeroSectionHeader />
+        <HeroSectionHeader locale={locale} />
       </div>
     </section>
   );

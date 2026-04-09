@@ -4,6 +4,11 @@
 
 @theme {
   --font-cairo: var(--font-cairo);
+
+  --spacing-6-25: 1.5625rem;
+  --spacing-107: 26.75rem;
+  --spacing-130: 32.5rem;
+  --spacing-157: 39.25rem;
   
   --animate-reverse-spin: reverse-spin 3s linear infinite;
   --animate-spin-orbit: spin-orbit 4s linear infinite;
