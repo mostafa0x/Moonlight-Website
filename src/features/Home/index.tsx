@@ -1,12 +1,12 @@
+import { Fragment } from "react";
 import FooterPage from "@/shared/components/footer";
 
 import type { HomeDataType } from "@/shared/global";
 import ScrollContainer from "@/features/home/components/ScrollContainer";
 import Section from "@/features/home/components/Section";
-
-
 import Page1 from "@/features/home/page1";
-import GovernorateSections from "@/features/home/components/GovernorateSections";
+import LandMarks from "@/features/home/land-marks";
+import PackagesPage from "@/features/home/packages-page";
 
 
 
@@ -34,8 +34,26 @@ function Home({ data }: HomeProps) {
         <Page1 />
       </Section>
 
-      {/* Dynamic Data-Driven Sections — Each governorate gets its own Landmark + Packages blocks */}
-      <GovernorateSections data={data} />
+      {/* Dynamic Journey: Each governorate gets its own Landmark and Packages sections */}
+      {data.flatMap((item) => [
+        /* Landmark Section: Cultural Horizontal Slide */
+        <Section key={`landmarks-${item.governorate}`} id={`landmarks-${item.governorate}`}>
+          <LandMarks
+            landmarks={item.landmarks}
+            titleHeader={item.name}
+          />
+        </Section>,
+
+        /* Packages Section: Vertical Package List */
+        <Section key={`packages-${item.governorate}`} id={`packages-${item.governorate}`}>
+          <div className="h-full w-full overflow-y-auto pt-10 md:pt-16 px-6 lg:px-20 scrollbar-hide">
+            <PackagesPage
+              packages={item.packages}
+              titleHeader={item.name}
+            />
+          </div>
+        </Section>
+      ])}
 
       {/* Last Section: Footer */}
       <Section id="footer" className="bg-black">

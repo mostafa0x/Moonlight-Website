@@ -41,7 +41,7 @@ export default function SectionDots({ sectionIds }: SectionDotsProps) {
   };
 
   return (
-    <nav className="fixed right-6 top-1/2 -translate-y-1/2 z-[100] hidden lg:flex flex-col gap-4">
+    <nav className="fixed right-6 top-1/2 -translate-y-1/2 z-100 hidden lg:flex flex-col gap-4">
       {sectionIds.map((id) => (
         <button
           key={id}

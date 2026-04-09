@@ -33,7 +33,7 @@ function PackageSection({
 
   return (
     <section className="flex h-full w-full" aria-labelledby={`section-title-${title.replace(/\s+/g, '-').toLowerCase()}`}>
-      <div className="z-10 flex h-full w-full flex-col justify-center gap-11">
+      <div className="z-10 flex h-full w-full flex-col justify-start pt-10 md:pt-16 gap-8 md:gap-11">
         <PackageSectionHeader title={title} isInView={isInView} />
 
         {packages.length === 0 && !isLoading ? (
@@ -42,7 +42,7 @@ function PackageSection({
               }`}
           >
             <div className="flex flex-col items-center gap-4">
-              <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center border border-white/10 mb-2">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center border border-white/10 mb-2">
                 <svg className="w-8 h-8 text-white/20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2v-6m16 0V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6m16 0h-3.333a2 2 0 01-1.862 1.268H9.195A2 2 0 017.333 12H4" />
                 </svg>

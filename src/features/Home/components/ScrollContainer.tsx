@@ -79,16 +79,24 @@ export default function ScrollContainer({ children, className }: ScrollContainer
           releaseOnEdges: true,
           thresholdDelta: 60,
         }}
-        speed={1000}
+        speed={800}
         keyboard={{ enabled: true }}
         pagination={{
           clickable: true,
         }}
-        // Advanced Performance Suite
-        watchSlidesProgress={true}
-        resistanceRatio={0}
 
-        preventInteractionOnTransition={true}
+        // Advanced Performance & Touch Suite
+        touchRatio={1.2}
+        threshold={5}
+        longSwipesRatio={0.1}
+        roundLengths={true}
+        resistance={true}
+        resistanceRatio={0.85}
+
+        watchSlidesProgress={true}
+        preventInteractionOnTransition={false}
+        touchStartPreventDefault={false}
+        passiveListeners={true}
         observer={true}
         observeParents={true}
         modules={[Mousewheel, Pagination, Keyboard, Parallax]}
