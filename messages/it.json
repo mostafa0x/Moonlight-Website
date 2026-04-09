@@ -311,7 +311,7 @@
         {
           "title": "Sinagoga Ben ‘Ezra",
           "description": "Ben ‘Ezra è la più antica sinagoga d'Egitto. È famosa per il suo hekhal decorato con arabeschi e la scoperta storica della Genizah del Cairo, un tesoro di documenti rari risalenti a 850 anni fa.",
-          "imageUrl": "/imgs/packages/cairo/m3bd.webp"
+          "imageUrl": "/imgs/packages/cairo/ben_ezra_new.png"
         }
       ],
       "alexandria": [
@@ -323,7 +323,7 @@
         {
           "title": "Teatro Romano",
           "description": "Situato ad Alessandria, questo anfiteatro romano a forma di U del IV secolo fungeva da auditorium e consiglio cittadino bizantino. Presenta mura in pietra calcarea, sedili in marmo e suggestive colonne di granito.",
-          "imageUrl": "/imgs/packages/alex/masr7.webp"
+          "imageUrl": "/imgs/packages/alex/roman_theatre_new.png"
         }
       ],
       "nile": [

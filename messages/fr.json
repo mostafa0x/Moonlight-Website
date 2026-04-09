@@ -311,7 +311,7 @@
         {
           "title": "Synagogue Ben ‘Ezra",
           "description": "Ben ‘Ezra est la plus ancienne synagogue d’Égypte. Elle est célèbre pour son hekhal décoré d’arabesques et la découverte historique de la Guenizah du Caire, un trésor de documents rares vieux de 850 ans.",
-          "imageUrl": "/imgs/packages/cairo/m3bd.webp"
+          "imageUrl": "/imgs/packages/cairo/ben_ezra_new.png"
         }
       ],
       "alexandria": [
@@ -323,7 +323,7 @@
         {
           "title": "Théâtre romain",
           "description": "Situé à Alexandrie, cet amphithéâtre romain en forme de U du IVe siècle servait d’auditorium et de conseil municipal byzantin. Il présente des murs en calcaire, des sièges en marbre et de frappantes colonnes de granit.",
-          "imageUrl": "/imgs/packages/alex/masr7.webp"
+          "imageUrl": "/imgs/packages/alex/roman_theatre_new.png"
         }
       ],
       "nile": [
