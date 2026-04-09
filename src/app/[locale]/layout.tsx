@@ -79,7 +79,7 @@ export default async function LocaleLayout({
   // );
 
   return (
-    <html lang={locale} className={`${cairo.variable} scrollbar-hide`} suppressHydrationWarning>
+    <html lang={locale} className={`${cairo.variable}`} suppressHydrationWarning>
       <body suppressHydrationWarning className="bg-black">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AllProviders>

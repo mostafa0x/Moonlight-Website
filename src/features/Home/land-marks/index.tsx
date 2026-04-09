@@ -75,10 +75,11 @@ function LandMarks({
         effect="fade"
         fadeEffect={{ crossFade: true }}
         autoplay={{
-          delay: 5000,
-          disableOnInteraction: true,
+          delay: 7500,
+          disableOnInteraction: false,
         }}
-        loop={landmarks.length > 1}
+        rewind={landmarks.length > 1}
+        grabCursor={true}
         mousewheel={{
           forceToAxis: true,
         }}

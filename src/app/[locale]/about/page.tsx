@@ -54,8 +54,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
 
   const t = await getTranslations({ locale, namespace: "about" });
   return (
-    <div className="flex justify-center items-center w-full h-full pt-20 px-6.25 pb-7.5">
-      <div className="flex flex-col h-full px-6.25 py-9 gap-6 scrollbar-custom overflow-y-auto bg-black w-107 md:w-157">
+    <div className="flex justify-center items-center w-full h-screen pt-20 px-6.25 pb-7.5">
+      <div className="flex flex-col max-h-[80vh] px-6.25 py-9 gap-6 scrollbar-custom overflow-y-auto bg-black w-107 md:w-157 rounded-lg">
         <h1 className="text-[#F2C975] font-bold text-4xl">{t("title")}</h1>
 
         <h2 className="text-white font-semibold text-base">{t("subtitle")}</h2>

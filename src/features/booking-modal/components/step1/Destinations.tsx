@@ -43,7 +43,7 @@ function Destinations({ destinations = [] }: DestinationsProps) {
           className={clsx(
             "grid grid-rows-1 grid-flow-col auto-cols-max gap-4",
             "overflow-x-auto pb-1 cursor-grab active:cursor-grabbing",
-            "scroll-smooth snap-x snap-mandatory overscroll-x-contain scrollbar-hide",
+            "scroll-smooth snap-x snap-mandatory overscroll-x-contain scrollbar-custom",
             "transition-all duration-300"
           )}
         >
