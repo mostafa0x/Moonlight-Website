@@ -87,7 +87,7 @@ export default async function Page({
             href="tel:0212031212"
             className="flex items-center gap-3.5 mt-3.5 text-[#8B8B8B] font-medium text-[14px] hover:text-white transition-colors"
           >
-            <img src="/icons/phone.svg" alt="phone" />
+            <img src="/icons/phone.svg" alt="phone" loading="lazy" fetchPriority="low" />
             <span>{t("phone")}: 0212031212</span>
           </a>
 
@@ -95,7 +95,7 @@ export default async function Page({
             href="mailto:echo@gmail.com"
             className="flex items-center gap-3.5 mt-3.5 text-[#8B8B8B] font-medium text-[14px] hover:text-white transition-colors"
           >
-            <img src="/icons/mail.svg" alt="email" />
+            <img src="/icons/mail.svg" alt="email" loading="lazy" fetchPriority="low" />
             <span>{t("email")}: echo@gmail.com</span>
           </a>
         </div>

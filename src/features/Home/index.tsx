@@ -27,8 +27,11 @@ interface HomeProps {
  * 4. Eliminated 'Progressive Hydration' hacks that were blocking the main thread.
  */
 function Home({ data }: HomeProps) {
+  // 1 (Hero) + (data.length * 2) + 1 (Footer)
+  const dotCount = 2 + (data.length * 2);
+
   return (
-    <ScrollContainer>
+    <ScrollContainer dotCount={dotCount}>
       {/* Section 0: Hero — Always visible on load */}
       <Section id="hero">
         <Page1 />
@@ -56,7 +59,7 @@ function Home({ data }: HomeProps) {
       ])}
 
       {/* Last Section: Footer */}
-      <Section id="footer" className="bg-black">
+      <Section id="footer" >
         <FooterPage />
       </Section>
     </ScrollContainer>

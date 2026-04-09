@@ -92,7 +92,7 @@ function PackageSection({
                       className="block h-full w-full"
                       aria-label={`View details for ${(pkg as PackageType)?.packageName}`}
                     >
-                      <PackageCard pkg={pkg as PackageType} priority={i < 2 && isInView} />
+                      <PackageCard pkg={pkg as PackageType} priority={false} />
                     </Link>
                   )}
                 </li>

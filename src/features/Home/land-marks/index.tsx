@@ -48,7 +48,7 @@ function LandMarks({
         initial={{ x: -20, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.2 }}
-        className="absolute top-20 left-10 lg:top-20 lg:left-20 text-white/30 text-2xl font-bold tracking-[0.5em] uppercase z-50 pointer-events-none"
+        className="absolute top-20 left-10 lg:top-20 lg:left-20 text-white/50 text-2xl font-bold tracking-[0.5em] uppercase z-50 pointer-events-none"
       >
         {titleHeader}
       </motion.h1>

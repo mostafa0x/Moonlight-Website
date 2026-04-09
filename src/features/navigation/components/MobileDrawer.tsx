@@ -60,7 +60,7 @@ function MobileDrawer({ isOpen, onClose, locale }: MobileDrawerProps) {
       {/* Drawer Content */}
       <aside
         className={cn(
-          "fixed top-0 right-0 z-1002 h-full w-[85%] max-w-90 border-l border-[#F2C975]/30 bg-[#0a0a0a] shadow-[0_0_50px_rgba(0,0,0,0.8)] select-none transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1) will-change-transform",
+          "fixed top-0 right-0 z-1002 h-full w-[85%] max-w-90 border-l border-[#F2C975]/60 bg-[#0a0a0a] text-white shadow-[0_0_50px_rgba(0,0,0,0.8)] transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1) will-change-transform",
           isOpen ? "translate-x-0" : "translate-x-full"
         )}
         role="dialog"

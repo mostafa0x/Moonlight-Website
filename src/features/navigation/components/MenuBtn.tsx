@@ -21,7 +21,7 @@ function MenuBtn({ isOpen, onClick, className }: MenuBtnProps) {
       aria-expanded={isOpen}
       onClick={onClick}
       className={cn(
-        "group relative flex h-11 w-11 select-none flex-col items-center justify-center gap-1.5 rounded-full border border-[#F2C975]/30 bg-black/40 shadow-lg transition-all hover:border-[#F2C975]/60 hover:bg-black/60 active:scale-95 cursor-pointer",
+        "group relative flex h-11 w-11 select-none flex-col items-center justify-center gap-1.5 rounded-full border border-[#F2C975]/50 bg-black/40 shadow-lg transition-all hover:border-[#F2C975]/70 hover:bg-black/60 active:scale-95 cursor-pointer",
         isOpen && "border-[#F2C975] bg-black/80",
         className
       )}

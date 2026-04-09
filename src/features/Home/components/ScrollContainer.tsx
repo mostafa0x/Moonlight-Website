@@ -13,45 +13,50 @@ import "swiper/css/parallax";
 interface ScrollContainerProps {
   children: ReactNode;
   className?: string;
+  dotCount?: number;
 }
 
-/**
- * ScrollContainer — Powered by Swiper.js (The industry-leading FREE alternative to FullPage.js)
- * Features:
- * 1. 1:1 Wheel Capture (One scroll = One section)
- * 2. Infinite Loop support (Optional)
- * 3. Mobile Touch & Desktop Keyboard support
- * 4. Premium Vertical Pagination dots
- */
-export default function ScrollContainer({ children, className }: ScrollContainerProps) {
+export default function ScrollContainer({ children, className, dotCount }: ScrollContainerProps) {
   // Flatten children to ensure each one becomes a slide
   const slides = Children.toArray(children);
+  const totalSlides = dotCount || slides.length;
 
   return (
     <div className="fixed inset-0 w-full h-full bg-transparent overflow-hidden">
       {/* Custom Styles for Swiper Bullets — Responsive across all screens */}
       <style dangerouslySetInnerHTML={{
         __html: `
+        .custom-pagination {
+          position: fixed !important;
+          right: 16px !important;
+          top: 50% !important;
+          transform: translateY(-50%) !important;
+          z-index: 50 !important;
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 0 !important;
+        }
+        @media (min-width: 1024px) {
+          .custom-pagination {
+            right: 40px !important;
+          }
+        }
         .swiper-pagination-bullet {
           width: 10px !important;
           height: 10px !important;
           background: rgba(255, 255, 255, 0.2) !important;
           opacity: 1 !important;
           border: 1px solid rgba(255, 255, 255, 0.4) !important;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+          transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
           margin: 12px 0 !important;
+          display: block !important;
+          cursor: pointer;
         }
         .swiper-pagination-bullet-active {
           background: #F2C975 !important;
           border-color: #F2C975 !important;
           height: 24px !important;
           border-radius: 20px !important;
-          box-shadow: 0 0 15px rgba(242, 201, 117, 0.5) !important;
-        }
-        .swiper-pagination-vertical.swiper-pagination-bullets {
-          right: 15px !important;
-          top: 50% !important;
-          transform: translateY(-50%) !important;
         }
 
         /* Large Screens (Desktop) */
@@ -63,11 +68,21 @@ export default function ScrollContainer({ children, className }: ScrollContainer
           .swiper-pagination-bullet-active {
             height: 32px !important;
           }
-          .swiper-pagination-vertical.swiper-pagination-bullets {
-            right: 40px !important;
-          }
         }
       ` }} />
+
+      {/* [SERVER-SIDE DOTS] These dots appear instantly for better LCP */}
+      <div className="custom-pagination swiper-pagination-vertical swiper-pagination-bullets">
+        {Array.from({ length: totalSlides }).map((_, i) => (
+          <span
+            key={i}
+            className={cn(
+              "swiper-pagination-bullet",
+              i === 0 && "swiper-pagination-bullet-active" // Initial state for LCP
+            )}
+          />
+        ))}
+      </div>
 
       <Swiper
         direction="vertical"
@@ -82,6 +97,7 @@ export default function ScrollContainer({ children, className }: ScrollContainer
         speed={800}
         keyboard={{ enabled: true }}
         pagination={{
+          el: ".custom-pagination",
           clickable: true,
         }}
 

@@ -20,7 +20,6 @@ function BackgroundImage({ isHasOverlay = true }: { isHasOverlay?: boolean }) {
           src="/backgrounds/backgroundPages.webp"
           alt="Ancient Egypt Moonlight Background"
           fill
-          priority
           quality={50}
           className="object-cover"
           sizes="100vw"

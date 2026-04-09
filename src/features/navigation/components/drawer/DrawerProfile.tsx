@@ -59,7 +59,7 @@ function DrawerProfile({ onClose, locale }: DrawerProfileProps) {
       </Link>
       <button
         onClick={handleSignOut}
-        className="text-[10px] font-bold uppercase text-red-500/80 hover:text-red-400 transition-colors cursor-pointer"
+        className="text-[10px] font-bold uppercase text-red-500 hover:text-red-400 transition-colors cursor-pointer"
       >
         {t("logout") || "Logout"}
       </button>

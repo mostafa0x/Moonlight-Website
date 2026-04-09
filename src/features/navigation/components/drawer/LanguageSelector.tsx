@@ -31,7 +31,7 @@ function LanguageSelector({ currentLocale, onClose }: LanguageSelectorProps) {
 
   return (
     <div className="border-t border-white/10 pt-4 pb-10">
-      <h3 className="mb-4 font-cairo text-[10px] font-bold uppercase tracking-widest text-white/30">
+      <h3 className="mb-4 font-cairo text-[10px] font-bold uppercase tracking-widest text-white/60">
         {t("language") || "Language"}
       </h3>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
@@ -40,7 +40,7 @@ function LanguageSelector({ currentLocale, onClose }: LanguageSelectorProps) {
             key={lang.code}
             onClick={() => handleLanguageChange(lang.code)}
             className={cn(
-              "flex items-center justify-center gap-2 rounded-xl border border-white/5 bg-white/5 py-3 transition-all hover:bg-white/10 active:scale-95 cursor-pointer",
+              "flex items-center justify-center gap-2 rounded-xl border border-white/5 bg-white/5 py-3 text-white/80 transition-all hover:bg-white/10 active:scale-95 cursor-pointer",
               currentLocale === lang.code && "border-[#F2C975]/30 bg-[#F2C975]/5 text-[#F2C975]"
             )}
           >
