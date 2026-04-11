@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import FooterPage from "@/shared/components/footer/index";
 
 import type { HomeDataType } from "@/shared/global";

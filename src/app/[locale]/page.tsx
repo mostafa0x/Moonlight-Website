@@ -1,6 +1,6 @@
-import Home from "@/features/home/index";
+import Home from "@/features/home/";
 import type { HomeDataType } from "@/shared/global";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
