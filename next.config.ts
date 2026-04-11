@@ -39,10 +39,18 @@ const nextConfig: NextConfig = {
     ];
   },
   async rewrites() {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
+    // Fallback to a safe internal path if API URL is missing to prevent build crash
+    // although ideally this should be defined in .env
+    const destination = apiUrl 
+      ? `${apiUrl}/auth/:path*` 
+      : "/404"; // Safe fallback starting with /
+
     return [
       {
         source: '/api/auth/:path*', 
-        destination: `${process.env.NEXT_PUBLIC_API_URL}/auth/:path*`,
+        destination,
       },
     ];
   },
