@@ -3,8 +3,8 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(req: NextRequest) {
   try {
     const authHeader = req.headers.get("Authorization");
-    // Use the absolute URL here to avoid recursion since BASE_URL is now "/api"
-    const targetUrl = "https://moonlight-steel.vercel.app/api/bookings";
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL;
+    const targetUrl = `${baseUrl}/bookings`;
 
     const response = await fetch(targetUrl, {
       method: "GET",
@@ -37,7 +37,8 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const authHeader = req.headers.get("Authorization");
     const idempotencyKey = req.headers.get("x-idempotency-key");
-    const targetUrl = "https://moonlight-steel.vercel.app/api/bookings";
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL;
+    const targetUrl = `${baseUrl}/bookings`;
 
 
     const response = await fetch(targetUrl, {

@@ -40,7 +40,8 @@ export async function generateMetadata({
 
 async function getTicketData(id: string, token: string, locale: string): Promise<TicketResponse | null> {
   try {
-    const response = await fetch(`https://moonlight-steel.vercel.app/api/ticket?id=${id}&lang=${locale}`, {
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL;
+    const response = await fetch(`${baseUrl}/ticket?id=${id}&lang=${locale}`, {
       headers: {
         Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json',

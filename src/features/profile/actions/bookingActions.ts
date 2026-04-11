@@ -20,7 +20,8 @@ export async function cancelBookingAction(bookingId: string) {
   }
 
   try {
-    const response = await fetch(`https://moonlight-steel.vercel.app/api/bookings/${bookingId}/cancel`, {
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL;
+    const response = await fetch(`${baseUrl}/bookings/${bookingId}/cancel`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${session.access_token}`,

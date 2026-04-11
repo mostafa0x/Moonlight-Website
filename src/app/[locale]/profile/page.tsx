@@ -44,7 +44,8 @@ const fetchBookings = async (session: any, locale: string): Promise<Booking[]> =
   if (!session) return [];
 
   try {
-    const response = await fetch(`https://moonlight-steel.vercel.app/api/bookings?lang=${locale}`, {
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL;
+    const response = await fetch(`${baseUrl}/bookings?lang=${locale}`, {
       headers: {
         Authorization: `Bearer ${session.access_token}`,
         "Content-Type": "application/json",

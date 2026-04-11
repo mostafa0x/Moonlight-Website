@@ -28,10 +28,9 @@ function FooterPage() {
         {/* Branding Section */}
         <div className="flex flex-col items-center">
           <h2 id="footer-heading" className="sr-only">Footer</h2>
-          <div className="mb-4 text-[#F2C975]" aria-hidden="true">
-            {/* Future: Add Actual Logo Component here */}
+          {/* <div className="mb-4 text-[#F2C975]" aria-hidden="true">
             LOGO
-          </div>
+          </div> */}
           <h1 className="font-cairo text-4xl font-medium tracking-widest text-[#F2C975] md:text-5xl uppercase">
             MOON LIGHT
           </h1>

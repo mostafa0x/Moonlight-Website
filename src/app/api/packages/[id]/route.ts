@@ -8,7 +8,7 @@ export async function GET(
   const { searchParams } = new URL(request.url);
   const locale = searchParams.get("locale") || "en";
   
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 
   try {
     const response = await fetch(`${baseUrl}/packages/${id}?lang=${locale}`, {

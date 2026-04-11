@@ -3,8 +3,9 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL;
     const response = await fetch(
-      `https://moonlight-steel.vercel.app/api/bookings/calculate`,
+      `${baseUrl}/bookings/calculate`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
