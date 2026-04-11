@@ -33,7 +33,10 @@ export async function cancelBookingAction(bookingId: string) {
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
-      throw new Error(errorData.error || "Failed to cancel booking.");
+      return { 
+        success: false, 
+        error: response.status === 401 ? "UNAUTHORIZED" : (errorData.error || "CANCEL_FAILED")
+      };
     }
 
     // Trigger on-demand revalidation for the profile page
@@ -42,6 +45,8 @@ export async function cancelBookingAction(bookingId: string) {
 
     return { success: true };
   } catch (error: any) {
-    return { success: false, error: error.message };
+    console.error("Cancel Booking Action Error:", error);
+    return { success: false, error: "NETWORK_ERROR" };
   }
 }
+

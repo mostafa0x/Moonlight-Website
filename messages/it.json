@@ -375,8 +375,15 @@
       "errorModal": {
         "title": "Errore",
         "message": "Si è verificato un errore. Riprova più tardi.",
+        "messages": {
+          "CANCEL_FAILED": "Non siamo riusciti ad annullare la tua prenotazione. Riprova o contatta il supporto.",
+          "UNAUTHORIZED": "La tua sessione è scaduta. Effettua nuovamente il login.",
+          "NETWORK_ERROR": "Connessione persa. Controlla la tua connessione internet e riprova.",
+          "INTERNAL_SERVER_ERROR": "Si è verificato un errore sul server. Il nostro team è stato informato."
+        },
         "close": "Chiudi"
       }
+
     }
   },
   "packages": {

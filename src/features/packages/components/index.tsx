@@ -74,7 +74,7 @@ function PackageSection({
                   }}
                 >
                   {isLoading ? (
-                    <div className="block h-full w-full">
+                    <div className="block w-full">
                       <PackageCardSkeleton />
                     </div>
                   ) : (
@@ -89,9 +89,10 @@ function PackageSection({
                       }}
                       prefetch={false}
                       scroll={false}
-                      className="block h-full w-full"
+                      className="block w-full"
                       aria-label={`View details for ${(pkg as PackageType)?.packageName}`}
                     >
+
                       <PackageCard pkg={pkg as PackageType} priority={false} />
                     </Link>
                   )}

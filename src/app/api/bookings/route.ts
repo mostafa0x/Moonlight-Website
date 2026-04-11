@@ -24,7 +24,7 @@ export async function GET(req: NextRequest) {
 
     if (!response.ok) {
       return NextResponse.json(
-        { error: "Failed to fetch bookings" },
+        { error: "FETCH_BOOKINGS_FAILED" },
         { status: response.status },
       );
     }
@@ -34,7 +34,7 @@ export async function GET(req: NextRequest) {
   } catch (error) {
     console.error("GET Bookings Error:", error);
     return NextResponse.json(
-      { error: "Internal Server Error" },
+      { error: "INTERNAL_SERVER_ERROR" },
       { status: 500 },
     );
   }
@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
     // Basic validation
     const validation = bookingSchema.safeParse(body);
     if (!validation.success) {
-      return NextResponse.json({ error: "Invalid booking data", details: validation.error.format() }, { status: 400 });
+      return NextResponse.json({ error: "INVALID_BOOKING_DATA", details: validation.error.format() }, { status: 400 });
     }
 
     const authHeader = req.headers.get("Authorization");
@@ -68,7 +68,7 @@ export async function POST(req: NextRequest) {
 
     if (!response.ok) {
       return NextResponse.json(
-        { error: "Failed to create booking" },
+        { error: "CREATE_BOOKING_FAILED" },
         { status: response.status },
       );
     }
@@ -78,9 +78,10 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error("POST Booking Error:", error);
     return NextResponse.json(
-      { error: "Internal Server Error" },
+      { error: "INTERNAL_SERVER_ERROR" },
       { status: 500 },
     );
   }
 }
+
 

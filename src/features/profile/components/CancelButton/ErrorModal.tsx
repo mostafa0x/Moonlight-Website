@@ -1,8 +1,8 @@
 "use client";
 import { useTranslations } from "next-intl";
 
-const ErrorModal = ({ onClose }: { onClose: () => void }) => {
-  const t = useTranslations("profile.bookingCard");
+const ErrorModal = ({ errorKey, onClose }: { errorKey: string; onClose: () => void }) => {
+  const t = useTranslations("profile.bookingCard.errorModal");
 
   return (
     <div className="fixed inset-0 z-100 flex items-center justify-center p-4 backdrop-blur-md bg-black/60 animate-in fade-in duration-500">
@@ -17,23 +17,24 @@ const ErrorModal = ({ onClose }: { onClose: () => void }) => {
                 <span className="text-4xl">🌪️</span>
             </div>
           </div>
-
           <div className="flex flex-col gap-3">
             <h3 className="text-2xl md:text-3xl font-bold font-cairo text-rose-500 uppercase tracking-wider">
-              {t("errorModal.title")}
+              {t("title")}
             </h3>
             <div className="h-px w-20 mx-auto bg-linear-to-r from-transparent via-rose-500/40 to-transparent" />
             <p className="text-zinc-400 font-cairo text-base md:text-lg italic leading-relaxed">
-              "{t("errorModal.message")}"
+              "{t(`messages.${errorKey}` as any) || t("message")}"
             </p>
           </div>
+
 
           <button
             onClick={onClose}
             className="w-full mt-4 py-4 bg-zinc-900 border border-zinc-800 text-[#F2C975] rounded-2xl font-cairo font-black text-lg hover:bg-zinc-800 transition-all duration-300 cursor-pointer"
           >
-            {t("errorModal.close")}
+            {t("close")}
           </button>
+
         </div>
         
         {/* Thematic Icon Placeholders */}

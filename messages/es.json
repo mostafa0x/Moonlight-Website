@@ -375,8 +375,15 @@
       "errorModal": {
         "title": "Error",
         "message": "Ocurrió un error. Por favor, inténtelo de nuevo más tarde.",
+        "messages": {
+          "CANCEL_FAILED": "No pudimos cancelar su reserva. Por favor, inténtelo de nuevo o contacte con soporte.",
+          "UNAUTHORIZED": "Su sesión ha caducado. Por favor, inicie sesión de nuevo.",
+          "NETWORK_ERROR": "Conexión perdida. Por favor, compruebe su internet e inténtelo de nuevo.",
+          "INTERNAL_SERVER_ERROR": "Ocurrió un error en el servidor. Nuestro equipo ha sido notificado."
+        },
         "close": "Cerrar"
       }
+
     }
   },
   "packages": {

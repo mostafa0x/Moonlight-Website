@@ -27,7 +27,7 @@ const ErrorModal = dynamic(() => import("./ErrorModal"), {
 export const CancelButton: React.FC<{ bookingId: string }> = ({ bookingId }) => {
   const [isPending, startTransition] = useTransition();
   const [showModal, setShowModal] = useState(false);
-  const [showError, setShowError] = useState(false);
+  const [errorKey, setErrorKey] = useState<string | null>(null);
   const t = useTranslations("profile.bookingCard");
 
   const handleConfirm = async () => {
@@ -37,10 +37,11 @@ export const CancelButton: React.FC<{ bookingId: string }> = ({ bookingId }) => 
         setShowModal(false);
       } else {
         setShowModal(false);
-        setShowError(true);
+        setErrorKey(result.error || "CANCEL_FAILED");
       }
     });
   };
+
 
   return (
     <>
@@ -67,9 +68,13 @@ export const CancelButton: React.FC<{ bookingId: string }> = ({ bookingId }) => 
         />
       )}
 
-      {showError && (
-        <ErrorModal onClose={() => setShowError(false)} />
+      {errorKey && (
+        <ErrorModal 
+          errorKey={errorKey} 
+          onClose={() => setErrorKey(null)} 
+        />
       )}
+
     </>
   );
 };

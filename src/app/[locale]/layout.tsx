@@ -54,17 +54,27 @@ export async function generateMetadata({
       siteName: "Moonlight Egypt",
       locale: locale,
       type: "website",
+      images: [
+        {
+          url: "/icon.png",
+          width: 512,
+          height: 512,
+          alt: "Moonlight Egypt Logo",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
+      images: ["/icon.png"],
     },
     // Performance: Preconnect to external asset hosts to reduce LCP discovery time
     other: {
       "dns-prefetch": "https://res.cloudinary.com",
       "preconnect": "https://res.cloudinary.com"
     }
+
   };
 }
 

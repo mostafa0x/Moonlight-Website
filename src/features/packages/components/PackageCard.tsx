@@ -30,19 +30,17 @@ function PackageCard({ pkg, priority = false }: PackageCardProps) {
       className="group relative h-130 w-full cursor-pointer overflow-hidden rounded-2xl select-none"
       aria-label={packageName}
     >
-      {/* Background Image with Hover Zoom */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={packageImage}
-          alt={`Image of ${packageName} tour`}
-          fill
-          priority={priority}
-          sizes="(max-width: 640px) 308px, (max-width: 1024px) 308px, 511px"
-          quality={40}
-          fetchPriority="low"
-          className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
-        />
-      </div>
+      <Image
+        src={packageImage}
+        alt={`Image of ${packageName} tour`}
+        fill
+        priority={priority}
+        sizes="(max-width: 640px) 308px, (max-width: 1024px) 308px, 511px"
+        quality={40}
+        fetchPriority="low"
+        className="z-0 object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+      />
+
 
       {/* Gradient Overlay for Text Legibility */}
       <div
