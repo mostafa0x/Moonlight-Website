@@ -3,7 +3,7 @@
 import { memo } from "react";
 
 import { motion } from "motion/react";
-import PackageSection from "@/features/packages/components";
+import PackageSection from "@/features/packages/components/index";
 import type { PackageType } from "@/shared/global";
 
 interface PackagesPageProps {

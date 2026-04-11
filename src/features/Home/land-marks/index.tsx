@@ -1,13 +1,11 @@
 "use client";
 
-import { memo, useRef, useState, useEffect } from "react";
+import { memo, useRef } from "react";
 import { motion, useInView } from "motion/react";
-import { useAutoSlider } from "@/features/slider-items/hooks";
 import LandmarkSlide from "@/features/slider-items/components/LandmarkSlide";
 import type { LandmarksType } from "@/shared/global";
 
 
-import Section from "@/features/home/components/Section";
 
 /**
  * LandMarks Section

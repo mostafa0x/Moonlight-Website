@@ -1,12 +1,12 @@
 import { Fragment } from "react";
-import FooterPage from "@/shared/components/footer";
+import FooterPage from "@/shared/components/footer/index";
 
 import type { HomeDataType } from "@/shared/global";
 import ScrollContainer from "@/features/home/components/ScrollContainer";
 import Section from "@/features/home/components/Section";
-import Page1 from "@/features/home/page1";
-import LandMarks from "@/features/home/land-marks";
-import PackagesPage from "@/features/home/packages-page";
+import Page1 from "@/features/home/page1/index";
+import LandMarks from "@/features/home/land-marks/index";
+import PackagesPage from "@/features/home/packages-page/index";
 
 
 
