@@ -289,36 +289,36 @@
         {
           "title": "Masque d'or",
           "description": "Ce célèbre masque en or massif reposait sur les restes momifiés de Toutânkhamon. Il capture parfaitement son visage royal tout en le transformant en dieux Osiris et Rê, avec des inscriptions divines protectrices à l'arrière.",
-          "imageUrl": "/imgs/packages/giza/totankhamun.webp"
+          "imageUrl": "/imgs/packages/giza/totankhamun.png"
         },
         {
           "title": "Anubis sur un coffre",
           "description": "Trouvé à l’intérieur du Trésor, ce coffre en forme de pylône repose sur un traîneau. Un chacal Anubis noir et or saisissant est assis au-dessus, gardant des compartiments cachés remplis d'objets sacrés et de bijoux précieux.",
-          "imageUrl": "/imgs/packages/giza/anubis.webp"
+          "imageUrl": "/imgs/packages/giza/anubis.png"
         },
         {
           "title": "Cercueil canope",
           "description": "Ce cercueil miniature en or massif contenait les organes momifiés du roi. Richement décoré de cornaline, de verre coloré et de sorts d'Isis, les cartouches altérés suggèrent qu'il était initialement destiné à une autre sépulture royale, pas à Toutânkhamon.",
-          "imageUrl": "/imgs/packages/giza/canopic_coffinette.webp"
+          "imageUrl": "/imgs/packages/giza/canopic_coffinette.png"
         }
       ],
       "cairo": [
         {
           "title": "Mosquée de Muhammad Ali",
           "description": "Connue sous le nom de Mosquée d'Albâtre, ce chef-d'œuvre de style turc de 1848 situé dans la Citadelle présente les minarets jumeaux les plus hauts d'Égypte et un magnifique dôme central construit par Muhammad Ali Pacha.",
-          "imageUrl": "/imgs/packages/cairo/ali.webp"
+          "imageUrl": "/imgs/packages/cairo/ali.png"
         },
         {
           "title": "Synagogue Ben ‘Ezra",
           "description": "Ben ‘Ezra est la plus ancienne synagogue d’Égypte. Elle est célèbre pour son hekhal décoré d’arabesques et la découverte historique de la Guenizah du Caire, un trésor de documents rares vieux de 850 ans.",
-          "imageUrl": "/imgs/packages/cairo/ben_ezra_new.png"
+          "imageUrl": "/imgs/packages/cairo/ben_ezra.png"
         }
       ],
       "alexandria": [
         {
           "title": "Tête d'Alexandre le Grand",
           "description": "Découverte dans les jardins du district d'Alexandrie, cette tête en marbre blanc représente Alexandre le Grand avec ses cheveux ondulés caractéristiques et son regard intense, symbolisant l'héritage hellénistique qui a défini la ville.",
-          "imageUrl": "/imgs/packages/alex/alexander_head.webp"
+          "imageUrl": "/imgs/packages/alex/alexander_head.png"
         },
         {
           "title": "Théâtre romain",
@@ -330,12 +330,12 @@
         {
           "title": "Dîner sur Barque Pharaonique",
           "description": "Embarquez pour une authentique odyssée égyptienne à bord de la Barque Pharaonique. Ce dîner-croisière 5 étoiles propose un buffet ouvert de spécialités grillées égyptiennes de premier choix pendant que vous assistez au spectacle hypnotique de la Tanoura et à des prestations de dance orientale.",
-          "imageUrl": "/imgs/packages/nile/nile_pharaonic_real.webp"
+          "imageUrl": "/imgs/packages/nile/nile_pharaonic_real.png"
         },
         {
           "title": "Croiseur Moderne",
           "description": "Découvrez le charme cosmopolite du Caire de nuit sur un croiseur panoramique de luxe. Profitez d'un buffet international de classe mondiale et d'une hospitalité d'élite pendant que les berges historiques de la ville —incluant la Tour du Caire scintillante et les gratte-ciel du centre-ville— défilent avec grâce devant vos baies vitrées.",
-          "imageUrl": "/imgs/packages/nile/nile_modern_real.webp"
+          "imageUrl": "/imgs/packages/nile/nile_modern_real.png"
         }
       ]
     }

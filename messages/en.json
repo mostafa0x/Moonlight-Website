@@ -300,36 +300,36 @@
         {
           "title": "Golden mask",
           "description": "This famous solid gold mask rested upon Tutankhamun’s mummified remains. It perfectly captures his royal face while transforming him into the gods Osiris and Re, featuring protective divine inscriptions behind.",
-          "imageUrl": "/imgs/packages/giza/totankhamun.webp"
+          "imageUrl": "/imgs/packages/giza/totankhamun.png"
         },
         {
           "title": "Anubis on a Chest",
           "description": "Found inside the Treasury, this pylon-shaped chest rests on a sledge. A striking black and gold Anubis jackal sits atop, guarding hidden compartments filled with sacred objects and precious jewellery.",
-          "imageUrl": "/imgs/packages/giza/anubis.webp"
+          "imageUrl": "/imgs/packages/giza/anubis.png"
         },
         {
           "title": "Canopic Coffinette",
           "description": "This miniature solid gold coffin held the king's mummified organs. Richly decorated with carnelian, coloured glass, and Isis spells, altered cartouches suggest it was originally intended for another royal burial not Tutankhamun.",
-          "imageUrl": "/imgs/packages/giza/canopic_coffinette.webp"
+          "imageUrl": "/imgs/packages/giza/canopic_coffinette.png"
         }
       ],
       "cairo": [
         {
           "title": "Muhammad Ali Mosque",
           "description": "Known as the Alabaster Mosque, this 1848 Turkish-style masterpiece in the Citadel features Egypt’s highest twin minarets and a magnificent central dome built by Muhammad Ali Pasha.",
-          "imageUrl": "/imgs/packages/cairo/ali.webp"
+          "imageUrl": "/imgs/packages/cairo/ali.png"
         },
         {
           "title": "Ben ‘Ezra Synagogue",
           "description": "Ben ‘Ezra is Egypt’s oldest synagogue. It is famous for its Arabesque-decorated hekhal and the historic discovery of the Cairo Geniza, an 850-year-old treasure of rare documents.",
-          "imageUrl": "/imgs/packages/cairo/ben_ezra_new.png"
+          "imageUrl": "/imgs/packages/cairo/ben_ezra.png"
         }
       ],
       "alexandria": [
         {
           "title": "Head of Alexander the Great",
           "description": "Discovered in the gardens of the Alexandria district, this white marble head represents Alexander the Great with his characteristic wavy hair and intense gaze, symbolizing the Hellenistic legacy that defined the city.",
-          "imageUrl": "/imgs/packages/alex/alexander_head.webp"
+          "imageUrl": "/imgs/packages/alex/alexander_head.png"
         },
         {
           "title": "Roman Theatre",
@@ -341,12 +341,12 @@
         {
           "title": "Pharaonic Dinner Sail",
           "description": "Embark on an authentic Egyptian odyssey aboard the Pharaonic Barge. This 5-star dinner cruise offers an open buffet of premium Egyptian grilled specialties as you witness the hypnotic Tanoura whirling dervish and live belly dancing shows against the illuminated Cairo skyline.",
-          "imageUrl": "/imgs/packages/nile/nile_pharaonic_real.webp"
+          "imageUrl": "/imgs/packages/nile/nile_modern_real.png"
         },
         {
           "title": "Modern Cruiser",
           "description": "Experience Cairo's nightly cosmopolitan charm on a sleek, luxury panoramic cruiser. Enjoy a world-class international buffet and elite hospitality as the historic city waterfront—including the glowing Cairo Tower and downtown skyscrapers—drifts gracefully by from your floor-to-ceiling windows.",
-          "imageUrl": "/imgs/packages/nile/nile_modern_real.webp"
+          "imageUrl": "/imgs/packages/nile/nile_pharaonic_real.png"
         }
       ]
     }

@@ -289,36 +289,36 @@
         {
           "title": "Máscara de ouro",
           "description": "Esta famosa máscara de ouro maciço repousava sobre os restos mumificados de Tutancâmon. Captura perfeitamente o seu rosto real enquanto o transforma nos deuses Osíris e Rá, con inscrições divinas protetoras na parte traseira.",
-          "imageUrl": "/imgs/packages/giza/totankhamun.webp"
+          "imageUrl": "/imgs/packages/giza/totankhamun.png"
         },
         {
           "title": "Anúbis em um baú",
           "description": "Encontrado dentro do Tesouro, este baú em forma de pilão descansa sobre um trenó. Um impressionante chacal Anúbis preto e dourado está sentado no topo, guardando compartimentos escondidos cheios de objetos sagrados e joias preciosas.",
-          "imageUrl": "/imgs/packages/giza/anubis.webp"
+          "imageUrl": "/imgs/packages/giza/anubis.png"
         },
         {
           "title": "Coffinette Canópico",
           "description": "Este caixão em miniatura de ouro maciço conteneva os órgãos mumificados do rei. Ricamente decorado com cornalina, vidro colorido e feitiços de Ísis, cartuchos alterados sugerem que foi originalmente planejado para outro sepultamento real, não Tutancâmon.",
-          "imageUrl": "/imgs/packages/giza/canopic_coffinette.webp"
+          "imageUrl": "/imgs/packages/giza/canopic_coffinette.png"
         }
       ],
       "cairo": [
         {
           "title": "Mesquita de Muhammad Ali",
           "description": "Conhecida como a Mesquita de Alabastro, esta obra-prima de estilo turco de 1848 na Cidadela apresenta os minaretes gêmeos mais altos do Egito e uma cúpula central magnífica construída por Muhammad Ali Pasha.",
-          "imageUrl": "/imgs/packages/cairo/ali.webp"
+          "imageUrl": "/imgs/packages/cairo/ali.png"
         },
         {
           "title": "Sinagoga Ben ‘Ezra",
           "description": "Ben ‘Ezra é a sinagoga mais antiga do Egito. É famosa por seu herhal decorado com arabescos e a descoberta histórica da Genizá do Cairo, um tesoro de documentos raros de 850 anos de idade.",
-          "imageUrl": "/imgs/packages/cairo/ben_ezra_new.png"
+          "imageUrl": "/imgs/packages/cairo/ben_ezra.png"
         }
       ],
       "alexandria": [
         {
           "title": "Cabeça de Alexandre, o Grande",
           "description": "Descoberta nos jardins do distrito de Alexandria, esta cabeça de mármore branco representa Alexandre, o Grande, com seus característicos cabelos ondulados e olhar intenso, simbolizando o legado helenístico que definiu a cidade.",
-          "imageUrl": "/imgs/packages/alex/alexander_head.webp"
+          "imageUrl": "/imgs/packages/alex/alexander_head.png"
         },
         {
           "title": "Teatro Romano",
@@ -330,12 +330,12 @@
         {
           "title": "Jantar em Barca Faraônica",
           "description": "Embarque em uma autêntica odisseia egípcia a bordo da Barca Faraônica. Este jantar-cruzeiro de 5 estrelas oferece um buffet aberto de especialidades grelhadas egípcias premium enquanto você assiste à performance hipnótica da Tanoura e aos shows de dança do ventre.",
-          "imageUrl": "/imgs/packages/nile/nile_pharaonic_real.webp"
+          "imageUrl": "/imgs/packages/nile/nile_pharaonic_real.png"
          },
         {
           "title": "Cruzeiro Moderno",
           "description": "Experimente o charme cosmopolita noturno do Cairo em um luxuoso cruzeiro panorâmico. Desfrute de un buffet internacional de classe mundial e hospitalidade de elite enquanto a orla histórica da cidade —incluindo a Torre do Cairo brilhante e os arranha-céus do centro— desfilam com graça à sua frente.",
-          "imageUrl": "/imgs/packages/nile/nile_modern_real.webp"
+          "imageUrl": "/imgs/packages/nile/nile_modern_real.png"
         }
       ]
     }

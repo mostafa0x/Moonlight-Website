@@ -9,7 +9,7 @@ import { cn } from "@/shared/lib/utils";
  */
 function PackageCardSkeleton() {
   return (
-    <div 
+    <div
       className="relative h-130 w-full overflow-hidden rounded-2xl bg-[#1a1a1a] shadow-lg animate-pulse"
       role="status"
       aria-label="Loading package..."
@@ -28,7 +28,7 @@ function PackageCardSkeleton() {
             <div className={cn(animations.skeleton, "h-3 w-20 rounded-full bg-white/5")} />
             <div className={cn(animations.skeleton, "h-10 w-32 rounded-lg bg-[#F2C975]/20")} />
           </div>
-          
+
           {/* Button Skeleton */}
           <div className={cn(animations.skeleton, "h-10 w-28 rounded-full bg-white/10")} />
         </div>
