@@ -13,11 +13,13 @@ import { revalidatePath } from "next/cache";
  */
 export async function cancelBookingAction(bookingId: string) {
   const supabase = await createClient();
-  const { data: { session } } = await supabase.auth.getSession();
+  const { data: { user } } = await supabase.auth.getUser();
+  const { data: { session } } = await supabase.auth.getSession(); // Still need session for access_token
 
-  if (!session) {
+  if (!user || !session) {
     throw new Error("Unauthorized: No active session found.");
   }
+
 
   try {
     const baseUrl = process.env.NEXT_PUBLIC_API_URL;

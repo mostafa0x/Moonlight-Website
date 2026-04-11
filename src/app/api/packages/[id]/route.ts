@@ -17,7 +17,7 @@ export async function GET(
 
     if (!response.ok) {
       return NextResponse.json(
-        { error: `API responded with ${response.status}` },
+        { error: "Content not available" },
         { status: response.status }
       );
     }
@@ -32,3 +32,4 @@ export async function GET(
     );
   }
 }
+
