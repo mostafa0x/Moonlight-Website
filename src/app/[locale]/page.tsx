@@ -1,4 +1,4 @@
-import Home from "@/features/home/";
+import Home from "@/features/home";
 import type { HomeDataType } from "@/shared/global";
 import { getTranslations } from "next-intl/server";
 
