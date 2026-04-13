@@ -109,14 +109,14 @@ const PriceDisplay = memo(({ label }: { label: string }) => {
  */
 const ErrorMessage = memo(({ message }: { message: string }) => {
   return (
-    <div className="absolute -top-14 left-0 right-0 flex justify-center z-100 px-4 pointer-events-none">
-      <div className="bg-[#0D0D0D]/90 backdrop-blur-md border border-[#F2C975]/40 px-6 py-2.5 rounded-2xl flex items-center gap-3 shadow-[0_10px_40px_-10px_rgba(242,201,117,0.2)] animate-in fade-in slide-in-from-bottom-3 duration-500 pointer-events-auto">
+    <div className="absolute bottom-[calc(100%+16px)] left-0 right-0 flex justify-center z-[100] px-4 pointer-events-none">
+      <div className="bg-[#0D0D0D]/90 backdrop-blur-md border border-[#F2C975]/40 px-6 py-2.5 rounded-2xl flex items-center gap-3 shadow-[0_10px_40px_-10px_rgba(242,201,117,0.2)] animate-in fade-in slide-in-from-bottom-3 duration-500 pointer-events-auto max-w-full w-fit">
         <div className="shrink-0">
           <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#F2C975]" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
           </svg>
         </div>
-        <span className="text-[#ff9191] text-xs font-medium tracking-wider uppercase">
+        <span className="text-[#ff9191] text-xs font-medium tracking-wider uppercase text-center break-words break-all sm:break-normal">
           {message}
         </span>
       </div>

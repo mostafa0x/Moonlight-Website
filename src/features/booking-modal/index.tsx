@@ -60,8 +60,8 @@ export default function BookingModal() {
   );
 
   /**
-   * Restoration Effect: Triggers when the modal content (pkg) is ready.
-   * If user was redirected, restores their data and jumps to the contact step.
+   * Restoration & Initialization Effect: Triggers when the modal content (pkg) is ready.
+   * If user was redirected, restores their data. Otherwise, sets the pkg default prices.
    */
   useEffect(() => {
     if (!pkg || !tourId) return;
@@ -77,6 +77,15 @@ export default function BookingModal() {
 
       // Clear persistence to ensure clean future launches
       clearPendingBooking();
+    } else {
+      // Normal launch: Wait for pkg then hydrate basic defaults like price
+      reset(
+        (prev: any) => ({
+          ...prev, 
+          totalPrice: pkg.startingPrice || 0 
+        }), 
+        { keepDefaultValues: true }
+      );
     }
   }, [pkg, tourId, hasCustomizations, reset, setStep, getPendingBooking, clearPendingBooking]);
 

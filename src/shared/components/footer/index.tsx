@@ -70,7 +70,7 @@ function FooterPage() {
             © 2026 {t("allRights")}
           </small>
           <small className="font-cairo text-sm font-bold sm:text-base">
-            {t("designedBy")} <span className="text-[#F2C975]">Echo+</span>
+            {t("designedBy")} <span className="text-[#F2C975]">Variable X</span>
           </small>
         </div>
       </div>

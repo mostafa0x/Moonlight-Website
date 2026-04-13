@@ -16,11 +16,11 @@ function PaymentMethod() {
     <div>
       <h1 className="text-base text-[#F2C975] font-medium">{t("paymentTitle")}</h1>
       <div className="flex flex-row justify-between gap-5.5 mt-2.5">
-        <PaymentMethodCard
+        {/* <PaymentMethodCard
           type="full"
           isActive={paymentPreference === "full"}
           onClick={() => setValue("paymentPreference", "full")}
-        />
+        /> */}
         <PaymentMethodCard
           type="deposit"
           isActive={paymentPreference === "deposit"}

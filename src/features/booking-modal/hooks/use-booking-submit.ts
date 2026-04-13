@@ -59,6 +59,7 @@ export function useBookingSubmit({ tourId, setShowLoginModal }: UseBookingSubmit
       };
 
       const idempotencyKey = crypto.randomUUID();
+      console.log("👉 Sending Fetch to /api/bookings with payload:", payload);
       const response = await fetch("/api/bookings", {
         method: "POST",
         headers: {
@@ -69,30 +70,60 @@ export function useBookingSubmit({ tourId, setShowLoginModal }: UseBookingSubmit
         body: JSON.stringify(payload),
       });
 
+      console.log("👉 Fetch /api/bookings completed with status:", response.status);
+
       if (response.ok) {
         const result = await response.json();
-        if (result.status === "success" && result.data?.paymentUrl) {
-          window.location.href = result.data.paymentUrl;
-        } else if (result.status === "error") {
-          const errorCode = result.code || "UNKNOWN_ERROR";
+        const paymentUrl = result.data?.paymentUrl || result.paymentUrl;
+        
+        if (paymentUrl) {
+          window.location.href = paymentUrl;
+        } else if (result.status === "error" || result.error) {
+          const errorCode = result.code || result.error || "UNKNOWN_ERROR";
           try {
             setErrorMsg(te(errorCode));
           } catch {
             setErrorMsg(result.message || te("UNKNOWN_ERROR"));
           }
         } else {
-          window.location.reload();
+          console.log("👉 Booking Success but no payment URL:", result);
+          try {
+            setErrorMsg(te("PAYMENT_URL_MISSING"));
+          } catch {
+            setErrorMsg(te("UNKNOWN_ERROR"));
+          }
         }
       } else {
-        const errorData = await response.json();
-        const errorCode = errorData.code || "UNKNOWN_ERROR";
+        const text = await response.text();
+        console.log("👉 Raw Error Response Text:", text);
+        let errorData;
         try {
-          setErrorMsg(te(errorCode));
-        } catch {
-          setErrorMsg(errorData.message || te("UNKNOWN_ERROR"));
+          errorData = JSON.parse(text);
+          console.log("👉 Parsed JSON errorData:", errorData);
+        } catch (e) {
+          console.error("👉 Failed to parse error response as JSON", e);
+          errorData = { code: "UNKNOWN_ERROR" };
+        }
+
+        const errorCode = errorData.code || errorData.error || "UNKNOWN_ERROR";
+        
+        // Whitelist of valid keys present in messages/*.json under bookingModal.backendErrors
+        // This prevents next-intl from logging MISSING_MESSAGE for unmapped backend codes
+        const knownErrors = [
+          "VALIDATION_ERROR", 
+          "AUTH_ERROR", 
+          "DUPLICATE_BOOKING", 
+          "INTERNAL_SERVER_ERROR"
+        ];
+        
+        if (knownErrors.includes(errorCode)) {
+          setErrorMsg(te(errorCode as any));
+        } else {
+          setErrorMsg(te("UNKNOWN_ERROR"));
         }
       }
     } catch (err) {
+      console.error("👉 Try/Catch Error in submitBooking:", err);
       setErrorMsg(te("INTERNAL_SERVER_ERROR"));
     } finally {
       setLoading(false);

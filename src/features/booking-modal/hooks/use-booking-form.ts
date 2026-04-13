@@ -7,7 +7,7 @@ import { PackageDetailsType } from "@/shared/global";
 
 export const useBookingForm = (pkg?: PackageDetailsType) => {
   const t = useTranslations("bookingModal");
-  
+
   // Logic to instantly restore pending data if available (e.g., after login redirect)
   const getInitialValues = () => {
     const base = {
@@ -23,7 +23,7 @@ export const useBookingForm = (pkg?: PackageDetailsType) => {
       pickupLocation: "Giza",
       address: "",
       promoCode: "",
-      paymentPreference: "full",
+      paymentPreference: "deposit",
     };
 
     if (typeof window === "undefined") return base;
