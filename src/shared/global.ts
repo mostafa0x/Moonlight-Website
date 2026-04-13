@@ -43,6 +43,8 @@ export type PackageDetailsType = {
 };
 export interface HomeDataType {
   name: string;
+  packageTitle: string
+
   governorate: string;
   page: number;
   landmarks: LandmarksType[];

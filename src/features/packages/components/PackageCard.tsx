@@ -22,7 +22,7 @@ function PackageCard({ pkg, priority = false }: PackageCardProps) {
 
   // Format price if needed or use simple format
   const formattedPrice = useMemo(() => {
-    return `${startingPrice}${currency === "USD" ? "$" : ` ${currency}`}`;
+    return `${currency === "USD" ? "$" : ` ${currency}`}${startingPrice}`;
   }, [startingPrice, currency]);
 
   return (
@@ -58,7 +58,10 @@ function PackageCard({ pkg, priority = false }: PackageCardProps) {
           <div className="flex flex-col">
 
             <p className="font-cairo text-[32px] font-bold leading-tight text-[#F2C975]">
-              {formattedPrice}
+              From {formattedPrice}
+            </p>
+            <p className="font-cairo text-sm font-extralight text-white">
+              Price varies by group size
             </p>
           </div>
 

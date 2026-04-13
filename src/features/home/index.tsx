@@ -27,11 +27,9 @@ interface HomeProps {
  * 4. Eliminated 'Progressive Hydration' hacks that were blocking the main thread.
  */
 function Home({ data, locale }: HomeProps) {
-  // 1 (Hero) + (data.length * 2) + 1 (Footer)
-  const dotCount = 2 + (data.length * 2);
 
   return (
-    <ScrollContainer dotCount={dotCount}>
+    <ScrollContainer>
       {/* Section 0: Hero — Always visible on load */}
       <Section id="hero">
         <Page1 locale={locale} />
@@ -49,10 +47,10 @@ function Home({ data, locale }: HomeProps) {
 
         /* Packages Section: Vertical Package List */
         <Section key={`packages-${item.governorate}`} id={`packages-${item.governorate}`}>
-          <div className="h-full w-full overflow-y-auto pt-10 md:pt-16 px-6 lg:px-20 scrollbar-hide">
+          <div className="h-full w-full overflow-y-auto pt-10 md:pt-16  lg:px-20 scrollbar-hide">
             <PackagesPage
               packages={item.packages}
-              titleHeader={item.name}
+              titleHeader={item.packageTitle}
             />
           </div>
         </Section>

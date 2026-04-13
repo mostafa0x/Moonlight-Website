@@ -280,8 +280,7 @@
     "viewMore": "ver mais",
     "hero": {
       "title": "Viagem Premium",
-      "subtitle": "Descubra o Egito como um local",
-      "journey": "A Jornada Começa"
+      "subtitle": "Descubra o Egito como um local"
     },
     "sections": {
       "giza": "Giza",
@@ -336,7 +335,7 @@
           "title": "Jantar em Barca Faraônica",
           "description": "Embarque em uma autêntica odisseia egípcia a bordo da Barca Faraônica. Este jantar-cruzeiro de 5 estrelas oferece um buffet aberto de especialidades grelhadas egípcias premium enquanto você assiste à performance hipnótica da Tanoura e aos shows de dança do ventre.",
           "imageUrl": "/imgs/packages/nile/nile_pharaonic_real.png"
-         },
+        },
         {
           "title": "Cruzeiro Moderno",
           "description": "Experimente o charme cosmopolita noturno do Cairo em um luxuoso cruzeiro panorâmico. Desfrute de un buffet internacional de classe mundial e hospitalidade de elite enquanto a orla histórica da cidade —incluindo a Torre do Cairo brilhante e os arranha-céus do centro— desfilam com graça à sua frente.",
@@ -364,7 +363,7 @@
     "errorDescription": "Encontramos um problema ao recuperar o seu histórico de reservas. Por favor, verifique sua conexão e tente novamente.",
     "retryButton": "Repetir Conexão",
     "bookingCard": {
-        "viewTicket": "Ver",
+      "viewTicket": "Ver",
       "cancelBooking": "Cancelar",
       "cancelModal": {
         "title": "Cancelar reserva?",
@@ -383,7 +382,6 @@
         },
         "close": "Fechar"
       }
-
     }
   },
   "packages": {

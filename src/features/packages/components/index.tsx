@@ -9,6 +9,12 @@ import PackageSectionHeader from "@/features/packages/components/PackageSectionH
 import PackageCardSkeleton from "@/features/packages/components/PackageCardSkeleton";
 import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
 import { useTranslations } from "next-intl";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+
+// Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
 
 interface PackageSectionProps {
   title: string;
@@ -53,25 +59,24 @@ function PackageSection({
             </div>
           </div>
         ) : (
-          <ul
-            role="list"
-            className={`flex overflow-x-auto overflow-y-hidden scroll-smooth pb-4 scrollbar-custom snap-x snap-mandatory ${packages.length === 1 ? "justify-center" : ""
-              }`}
-            aria-label={`List of tours in ${title}`}
+          <Swiper
+            modules={[Pagination]}
+            slidesPerView={"auto"}
+            centeredSlides={true}
+            spaceBetween={24}
+            grabCursor={true}
+            pagination={{
+              clickable: true,
+            }}
+            className={`w-full  pb-32 pt-4 transition-all duration-1000 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             {(isLoading && packages.length === 0 ? Array.from({ length: 4 }) : packages).map((pkg, i) => {
-              const isLast = (packages.length > 0 ? i === packages.length - 1 : i === 3);
               const packageId = (pkg as PackageType)?.packageId;
 
               return (
-                <li
+                <SwiperSlide
                   key={packageId || i}
-                  className={`flex-none w-80 snap-start pl-3 2xl:w-96 transition-all duration-700 ease-in-out ${(packages.length > 1 || (isLoading && packages.length === 0)) ? "lg:flex-1 lg:min-w-80 lg:w-auto" : ""
-                    } ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-                  style={{
-                    transitionDelay: isInView ? `${i * 0.15}s` : "0s",
-                    paddingRight: isLast ? "1rem" : "0",
-                  }}
+                  className="!w-[85vw] sm:!w-[340px] md:!w-[400px]"
                 >
                   {isLoading ? (
                     <div className="block w-full">
@@ -89,17 +94,37 @@ function PackageSection({
                       }}
                       prefetch={false}
                       scroll={false}
-                      className="block w-full"
+                      className="block w-full h-full"
                       aria-label={`View details for ${(pkg as PackageType)?.packageName}`}
                     >
-
                       <PackageCard pkg={pkg as PackageType} priority={false} />
                     </Link>
                   )}
-                </li>
+                </SwiperSlide>
               );
             })}
-          </ul>
+            {/* Inject minimal style for these specific swiper dots */}
+            <style dangerouslySetInnerHTML={{
+              __html: `
+              .swiper {
+                overflow: visible !important;
+              }
+              .swiper-pagination {
+                position: absolute !important;
+                bottom: -40px !important;
+              }
+              .swiper-pagination-bullet {
+                background: rgba(255, 255, 255, 0.8) !important;
+                opacity: 1 !important;
+                margin: 0 6px !important;
+              }
+              .swiper-pagination-bullet-active {
+                background: #F2C975 !important;
+                opacity: 1 !important;
+                transform: scale(1.3);
+              }
+            `}} />
+          </Swiper>
         )}
       </div>
     </section>

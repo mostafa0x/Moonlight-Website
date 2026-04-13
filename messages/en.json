@@ -288,52 +288,56 @@
     }
   },
   "home": {
-    "viewMore": "view more",
+    "viewMore": "view",
     "hero": {
-      "title": "Premium Travel",
-      "subtitle": "Discover Egypt like a local",
-      "journey": "The Journey Begins"
+      "title": "Explore Egypt",
+      "subtitle": "Every Stone here has a story"
     },
     "sections": {
-      "giza": "Giza",
-      "cairo": "Cairo",
-      "alexandria": "Alexandria",
+      "giza": "Treasures of Giza",
+      "cairo": "One City, Every Faith — It's Cairo",
+      "alexandria": "Where Alexander Left His Name, Alexandria",
       "nile": "Nile Cruise"
     },
     "landmarks": {
       "giza": [
         {
-          "title": "Golden mask",
-          "description": "This famous solid gold mask rested upon Tutankhamun’s mummified remains. It perfectly captures his royal face while transforming him into the gods Osiris and Re, featuring protective divine inscriptions behind.",
+          "title": "Tutankhamun Golden Mask",
+          "description": "5,000 treasures. Hidden for 3,000 years, guarded by Anubis himself. This mask was the last thing the world was meant to see — now yours to explore.",
           "imageUrl": "/imgs/packages/giza/totankhamun.png"
         },
         {
-          "title": "Anubis on a Chest",
-          "description": "Found inside the Treasury, this pylon-shaped chest rests on a sledge. A striking black and gold Anubis jackal sits atop, guarding hidden compartments filled with sacred objects and precious jewellery.",
+          "title": "Anubis",
+          "description": "Before you could reach the king, you had to pass him first. Sitting at the entrance of the Treasury — he wasn't just a guardian. He was the door.",
           "imageUrl": "/imgs/packages/giza/anubis.png"
         },
         {
           "title": "Canopic Coffinette",
-          "description": "This miniature solid gold coffin held the king's mummified organs. Richly decorated with carnelian, coloured glass, and Isis spells, altered cartouches suggest it was originally intended for another royal burial not Tutankhamun.",
+          "description": "Even in death, the king was never alone. His lungs, his liver, his stomach — each sealed in solid gold, embraced by goddesses. Because to be born again, nothing could be left behind.",
           "imageUrl": "/imgs/packages/giza/canopic_coffinette.png"
         }
       ],
       "cairo": [
         {
-          "title": "Muhammad Ali Mosque",
-          "description": "Known as the Alabaster Mosque, this 1848 Turkish-style masterpiece in the Citadel features Egypt’s highest twin minarets and a magnificent central dome built by Muhammad Ali Pasha.",
-          "imageUrl": "/imgs/packages/cairo/ali.png"
+          "title": "The Hanging Church",
+          "description": "Where the Holy Family once took refuge — Egypt's oldest church still stands to tell the story.",
+          "imageUrl": "/imgs/packages/cairo/ben_ezra.png"
         },
         {
-          "title": "Ben ‘Ezra Synagogue",
-          "description": "Ben ‘Ezra is Egypt’s oldest synagogue. It is famous for its Arabesque-decorated hekhal and the historic discovery of the Cairo Geniza, an 850-year-old treasure of rare documents.",
+          "title": "Ben Ezra Synagogue",
+          "description": "Egypt's oldest synagogue. The walls that witnessed 850 years of history, still holding their secrets.",
           "imageUrl": "/imgs/packages/cairo/ben_ezra.png"
+        },
+        {
+          "title": "Muhammad Ali Mosque",
+          "description": "Egypt's highest minarets. A dome that commands the Cairo skyline. Built by the man who shaped modern Egypt.",
+          "imageUrl": "/imgs/packages/cairo/ali.png"
         }
       ],
       "alexandria": [
         {
-          "title": "Head of Alexander the Great",
-          "description": "Discovered in the gardens of the Alexandria district, this white marble head represents Alexander the Great with his characteristic wavy hair and intense gaze, symbolizing the Hellenistic legacy that defined the city.",
+          "title": "Alexander the Great",
+          "description": "A Roman replica of a marble head of Conqueror of the Ancient World Alexander the Great.",
           "imageUrl": "/imgs/packages/alex/alexander_head.png"
         },
         {
@@ -347,11 +351,6 @@
           "title": "Pharaonic Dinner Sail",
           "description": "Embark on an authentic Egyptian odyssey aboard the Pharaonic Barge. This 5-star dinner cruise offers an open buffet of premium Egyptian grilled specialties as you witness the hypnotic Tanoura whirling dervish and live belly dancing shows against the illuminated Cairo skyline.",
           "imageUrl": "/imgs/packages/nile/nile_modern_real.png"
-        },
-        {
-          "title": "Modern Cruiser",
-          "description": "Experience Cairo's nightly cosmopolitan charm on a sleek, luxury panoramic cruiser. Enjoy a world-class international buffet and elite hospitality as the historic city waterfront—including the glowing Cairo Tower and downtown skyscrapers—drifts gracefully by from your floor-to-ceiling windows.",
-          "imageUrl": "/imgs/packages/nile/nile_pharaonic_real.png"
         }
       ]
     }
@@ -394,7 +393,6 @@
         },
         "close": "Close"
       }
-
     }
   },
   "packages": {

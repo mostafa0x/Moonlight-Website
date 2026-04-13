@@ -49,16 +49,16 @@ function LandmarkSlide({ item, isVisible, slideNumber, totalSlides }: LandmarkSl
       </div>
 
       {/* Premium Content Layer */}
-      <div className="relative h-full w-full flex flex-col justify-end px-6 md:px-12 lg:px-24 pb-12 lg:pb-32 z-20">
+      <div className="relative h-full w-full flex flex-col justify-end px-6 md:px-12 lg:px-24 pb-32 md:pb-48 lg:pb-64 z-20">
         <div className="max-w-5xl">
 
           {/* Title with Luxury Typography */}
-          <h2 className="font-cairo text-5xl md:text-8xl lg:text-[7rem] font-black text-white mb-6 lg:mb-10 uppercase leading-[0.85] tracking-tighter bg-linear-to-b from-white via-white to-white/40 bg-clip-text [text-shadow:0_20px_50px_rgba(0,0,0,0.5)]">
+          <h2 className="font-cairo text-3xl md:text-3xl  font-bold text-[#F2C975] mb-6 lg:mb-10 uppercase leading-[0.85] tracking-tighter bg-linear-to-b from-white via-white to-white/40 bg-clip-text [text-shadow:0_20px_50px_rgba(0,0,0,0.5)]">
             {item.title}
           </h2>
 
           {/* Description with Classic Styling */}
-          <p className="font-cairo text-lg md:text-2xl lg:text-3xl text-white/70 leading-relaxed max-w-3xl font-light italic">
+          <p className="font-cairo text-lg md:text-2xl lg:text-3xl text-white/70  max-w-3xl font-bold">
             {item.description}
           </p>
         </div>

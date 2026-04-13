@@ -280,8 +280,7 @@
     "viewMore": "ver más",
     "hero": {
       "title": "Viaje Premium",
-      "subtitle": "Descubre Egipto como un local",
-      "journey": "El Viaje Comienza"
+      "subtitle": "Descubre Egipto como un local"
     },
     "sections": {
       "giza": "Guiza",
@@ -364,7 +363,7 @@
     "errorDescription": "Encontramos un problema al recuperar su historial de reservas. Por favor, asegúrese de que su conexión sea estable e inténtelo de nuevo.",
     "retryButton": "Reintentar Conexión",
     "bookingCard": {
-        "viewTicket": "Ver",
+      "viewTicket": "Ver",
       "cancelBooking": "Cancelar",
       "cancelModal": {
         "title": "¿Cancelar reserva?",
@@ -383,7 +382,6 @@
         },
         "close": "Cerrar"
       }
-
     }
   },
   "packages": {

@@ -280,8 +280,7 @@
     "viewMore": "voir plus",
     "hero": {
       "title": "Voyage Premium",
-      "subtitle": "Découvrez l'Égypte comme un local",
-      "journey": "Le Voyage Commence"
+      "subtitle": "Découvrez l'Égypte comme un local"
     },
     "sections": {
       "giza": "Gizeh",
@@ -364,7 +363,7 @@
     "errorDescription": "Nous avons rencontré un problème lors de la récupération de votre historique de réservation. Veuillez vérifier votre connexion et réessayer.",
     "retryButton": "Réessayer la Connexion",
     "bookingCard": {
-        "viewTicket": "Voir",
+      "viewTicket": "Voir",
       "cancelBooking": "Annuler",
       "cancelModal": {
         "title": "Annuler la réservation ?",
@@ -383,7 +382,6 @@
         },
         "close": "Fermer"
       }
-
     }
   },
   "packages": {

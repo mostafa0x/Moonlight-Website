@@ -280,8 +280,7 @@
     "viewMore": "vedi di più",
     "hero": {
       "title": "Viaggio Premium",
-      "subtitle": "Scopri l'Egitto come un locale",
-      "journey": "Il Viaggio Inizia"
+      "subtitle": "Scopri l'Egitto come un locale"
     },
     "sections": {
       "giza": "Giza",
@@ -364,7 +363,7 @@
     "errorDescription": "Abbiamo riscontrato un problema nel recuperare la cronologia delle tue prenotazioni. Verifica la tua connessione e riprova.",
     "retryButton": "Riprova Connessione",
     "bookingCard": {
-        "viewTicket": "Visualizza",
+      "viewTicket": "Visualizza",
       "cancelBooking": "Annulla",
       "cancelModal": {
         "title": "Annullare la prenotazione?",
@@ -383,7 +382,6 @@
         },
         "close": "Chiudi"
       }
-
     }
   },
   "packages": {

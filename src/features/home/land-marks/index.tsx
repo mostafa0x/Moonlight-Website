@@ -13,7 +13,7 @@ import type { LandmarksType } from "@/shared/global";
  * delegating interactive slider logic to a focused sub-component.
  */
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Mousewheel, Pagination, Autoplay, EffectFade } from "swiper/modules";
+import { Mousewheel, Pagination, EffectFade } from "swiper/modules";
 
 // Extra Swiper Styles
 import "swiper/css";
@@ -46,20 +46,22 @@ function LandMarks({
         initial={{ x: -20, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.2 }}
-        className="absolute top-20 left-10 lg:top-20 lg:left-20 text-white/50 text-2xl font-bold tracking-[0.5em] uppercase z-50 pointer-events-none"
+        className="absolute top-20 left-[24px] lg:top-20 lg:left-20 text-white text-2xl font-bold   z-50 pointer-events-none"
       >
         {titleHeader}
       </motion.h1>
 
       <style dangerouslySetInnerHTML={{
         __html: `
-        .landmark-swiper .swiper-pagination-progressbar {
-          top: auto !important;
-          bottom: 0 !important;
-          height: 4px !important;
-          background: rgba(255, 255, 255, 0.1) !important;
+        .landmark-swiper .swiper-pagination {
+          bottom: 50px !important;
         }
-        .landmark-swiper .swiper-pagination-progressbar-fill {
+        .landmark-swiper .swiper-pagination-bullet {
+          background: rgba(255, 255, 255, 0.5) !important;
+          opacity: 1 !important;
+          transition: background 0.3s ease;
+        }
+        .landmark-swiper .swiper-pagination-bullet-active {
           background: #F2C975 !important;
         }
       ` }} />
@@ -72,19 +74,15 @@ function LandMarks({
         spaceBetween={0}
         effect="fade"
         fadeEffect={{ crossFade: true }}
-        autoplay={{
-          delay: 7500,
-          disableOnInteraction: false,
-        }}
         rewind={landmarks.length > 1}
         grabCursor={true}
         mousewheel={{
           forceToAxis: true,
         }}
         pagination={{
-          type: "progressbar",
+          clickable: true,
         }}
-        modules={[Mousewheel, Pagination, Autoplay, EffectFade]}
+        modules={[Mousewheel, Pagination, EffectFade]}
         speed={800} // Snappier for better UX
         threshold={15} // Prevents jittery vertical scrolls from triggering horizontal slide
         touchReleaseOnEdges={true}

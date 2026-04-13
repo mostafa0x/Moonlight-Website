@@ -18,9 +18,8 @@ function PackageSectionHeader({ title, isInView }: PackageSectionHeaderProps) {
   return (
     <h2
       id={sectionId}
-      className={`font-cairo text-center text-2xl font-bold text-[#F2C975] md:text-4xl transition-all duration-700 ease-in-out select-none ${
-        isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-      }`}
+      className={`font-cairo text-left pl-[24px] text-2xl font-bold text-white md:text-4xl transition-all duration-700 ease-in-out select-none ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
     >
       {title}
     </h2>
