@@ -27,7 +27,7 @@ function PackageCard({ pkg, priority = false }: PackageCardProps) {
 
   return (
     <article
-      className="group relative h-130 w-full cursor-pointer overflow-hidden rounded-2xl select-none"
+      className="group relative h-[55vh] min-h-80 max-h-115 lg:max-h-130 w-full cursor-pointer overflow-hidden rounded-2xl select-none shadow-xl transition-all duration-300"
       aria-label={packageName}
     >
       <Image
@@ -36,7 +36,7 @@ function PackageCard({ pkg, priority = false }: PackageCardProps) {
         fill
         priority={priority}
         sizes="(max-width: 640px) 308px, (max-width: 1024px) 308px, 511px"
-        quality={40}
+        quality={70}
         fetchPriority="low"
         className="z-0 object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
       />

@@ -5,12 +5,13 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import type { PackageType } from "@/shared/global";
 import PackageCard from "@/features/packages/components/PackageCard";
-import PackageSectionHeader from "@/features/packages/components/PackageSectionHeader";
 import PackageCardSkeleton from "@/features/packages/components/PackageCardSkeleton";
+import SectionHeader from "@/shared/components/SectionHeader";
 import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
 import { useTranslations } from "next-intl";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
+import { motion } from "motion/react";
 
 // Swiper styles
 import "swiper/css";
@@ -40,9 +41,7 @@ function PackageSection({
   return (
     <section className="flex h-full w-full" aria-labelledby={`section-title-${title.replace(/\s+/g, '-').toLowerCase()}`}>
       <div className="z-10 flex h-full w-full flex-col justify-center items-center">
-        <div className=" w-full pt-30 lg:pt-43.5 xl:pt-27.5 z-20">
-          <PackageSectionHeader title={title} isInView={isInView} />
-        </div>
+        <SectionHeader title={title} />
 
         {packages.length === 0 && !isLoading ? (
           <div
@@ -61,7 +60,7 @@ function PackageSection({
             </div>
           </div>
         ) : (
-          <div className="flex-1 flex flex-col justify-center w-full min-h-0 mb-10 gap-8">
+          <div className="flex-1 flex flex-col justify-center w-full min-h-0 mb-4">
             <Swiper
               modules={[Pagination]}
               slidesPerView={"auto"}
@@ -75,7 +74,7 @@ function PackageSection({
                 640: { spaceBetween: 24 },
                 1024: { spaceBetween: 40 },
               }}
-              className={`w-full pb-32 pt-0 transition-all duration-1000 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              className={`w-full pb-16 pt-0 transition-all duration-1000 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                 }`}
             >
               {(isLoading && packages.length === 0 ? Array.from({ length: 4 }) : packages).map((pkg, i) => {
