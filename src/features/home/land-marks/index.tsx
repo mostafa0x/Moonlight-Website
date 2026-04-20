@@ -37,7 +37,7 @@ function LandMarks({
   landmarks = [],
   titleHeader,
 }: LandMarksProps) {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { amount: 0.1 });
 
   return (
@@ -45,22 +45,7 @@ function LandMarks({
       {/* Persistent Governorate Header */}
       <SectionHeader title={titleHeader} textColor="text-white" />
 
-      <style dangerouslySetInnerHTML={{
-        __html: `
-        .landmark-swiper .swiper-pagination {
-          bottom: 50px !important;
-        }
-        .landmark-swiper .swiper-pagination-bullet {
-          background: rgba(255, 255, 255, 0.5) !important;
-          opacity: 1 !important;
-          transition: background 0.3s ease;
-        }
-        .landmark-swiper .swiper-pagination-bullet-active {
-          background: #F2C975 !important;
-        }
-      ` }} />
-
-      {/* Nested Horizontal Swiper with Ancient Egyptian Style Transitions */}
+      {/* Nested Horizontal Swiper */}
       <Swiper
         direction="horizontal"
         nested={true}
@@ -68,6 +53,9 @@ function LandMarks({
         spaceBetween={0}
         effect="fade"
         fadeEffect={{ crossFade: true }}
+        watchSlidesProgress={true}
+        observer={true}
+        observeParents={true}
         rewind={landmarks.length > 1}
         grabCursor={true}
         mousewheel={{
@@ -77,14 +65,13 @@ function LandMarks({
           clickable: true,
         }}
         modules={[Mousewheel, Pagination, EffectFade]}
-        speed={800} // Snappier for better UX
-        threshold={15} // Prevents jittery vertical scrolls from triggering horizontal slide
+        speed={800}
+        threshold={20}
         touchReleaseOnEdges={true}
         className="h-full w-full landmark-swiper"
       >
-
         {landmarks.map((landmark, idx) => (
-          <SwiperSlide key={`${landmark.title}-${idx}`}>
+          <SwiperSlide key={idx} className="h-full w-full">
             <LandmarkSlide
               item={landmark}
               isVisible={isInView}
@@ -93,16 +80,25 @@ function LandMarks({
             />
           </SwiperSlide>
         ))}
+
+        <style dangerouslySetInnerHTML={{
+          __html: `
+          .landmark-swiper .swiper-pagination {
+            bottom: 40px !important;
+            z-index: 60 !important;
+          }
+          .landmark-swiper .swiper-pagination-bullet {
+            background: rgba(255, 255, 255, 0.4) !important;
+            opacity: 1 !important;
+          }
+          .landmark-swiper .swiper-pagination-bullet-active {
+            background: #F2C975 !important;
+          }
+        ` }} />
       </Swiper>
     </div>
   );
 }
 
-
-
 LandMarks.displayName = "LandMarks";
-export default memo(LandMarks);
-
-
-
-
+export default LandMarks;

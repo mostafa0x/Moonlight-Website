@@ -36,19 +36,21 @@ function Home({ data, locale }: HomeProps) {
       </Section>
 
       {/* Dynamic Journey: Each governorate gets its own Landmark and Packages sections */}
-      {data.flatMap((item) => [
+      {data.flatMap((item, idx) => [
         /* Landmark Section: Cultural Horizontal Slide */
-        <Section key={`landmarks-${item.governorate}`} id={`landmarks-${item.governorate}`}>
+        <Section key={`landmarks-${item.governorate}-${idx}`} id={`landmarks-${item.governorate}`}>
           <LandMarks
+            key={`landmarks-comp-${item.governorate}-${idx}`}
             landmarks={item.landmarks}
             titleHeader={item.name}
           />
         </Section>,
 
         /* Packages Section: Vertical Package List */
-        <Section key={`packages-${item.governorate}`} id={`packages-${item.governorate}`} className="overflow-visible">
+        <Section key={`packages-${item.governorate}-${idx}`} id={`packages-${item.governorate}`} className="overflow-visible">
           <div className="h-full w-full overflow-visible scrollbar-hide">
             <PackagesPage
+              key={`packages-comp-${item.governorate}-${idx}`}
               packages={item.packages}
               titleHeader={item.packageTitle}
             />

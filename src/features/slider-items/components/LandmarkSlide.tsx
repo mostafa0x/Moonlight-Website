@@ -20,9 +20,8 @@ interface LandmarkSlideProps {
 function LandmarkSlide({ item, isVisible, slideNumber, totalSlides }: LandmarkSlideProps) {
   const { isLoaded, onImageLoad } = useImageLoader(item.imageUrl);
 
-  // Still use isVisible for conditional rendering if needed, 
-  // but let swiper handle the primary slide transitions.
-  if (!isVisible) return null;
+  // We always render the slide content so Swiper can manage transitions
+  // even if the section is just partially in view.
 
   return (
     <div className="relative w-full h-full flex flex-col items-start pt-10 px-10 sm:px-12 md:pt-3 md:px-20 lg:px-24 overflow-hidden">

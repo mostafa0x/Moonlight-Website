@@ -36,7 +36,7 @@ function PackageCard({ pkg, priority = false }: PackageCardProps) {
         fill
         priority={priority}
         sizes="(max-width: 640px) 308px, (max-width: 1024px) 308px, 511px"
-        quality={70}
+        quality={75}
         fetchPriority="low"
         className="z-0 object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
       />
