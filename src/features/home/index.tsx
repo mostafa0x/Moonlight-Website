@@ -46,8 +46,8 @@ function Home({ data, locale }: HomeProps) {
         </Section>,
 
         /* Packages Section: Vertical Package List */
-        <Section key={`packages-${item.governorate}`} id={`packages-${item.governorate}`}>
-          <div className="h-full w-full overflow-y-auto pt-10 md:pt-16  lg:px-20 scrollbar-hide">
+        <Section key={`packages-${item.governorate}`} id={`packages-${item.governorate}`} className="overflow-visible">
+          <div className="h-full w-full overflow-visible scrollbar-hide">
             <PackagesPage
               packages={item.packages}
               titleHeader={item.packageTitle}

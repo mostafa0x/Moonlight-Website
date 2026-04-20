@@ -17,10 +17,9 @@ function BackgroundImage({ isHasOverlay = true }: { isHasOverlay?: boolean }) {
       {/* Main Background Image - Fixed position */}
       <div className="fixed inset-0 z-[-2] pointer-events-none">
         <Image
-          src="/backgrounds/backgroundPages.webp"
+          src="/backgrounds/backgroundPages.png"
           alt="Ancient Egypt Moonlight Background"
           fill
-          quality={50}
           className="object-cover"
           sizes="100vw"
         />

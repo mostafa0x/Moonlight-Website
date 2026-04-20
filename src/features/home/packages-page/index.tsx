@@ -25,7 +25,7 @@ function PackagesPage({
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ amount: 0.4 }}
       transition={{ duration: 0.8 }}
-      className="relative flex h-full w-full overflow-hidden px-0 pt-8 scrollbar-hide lg:px-20 lg:pt-5"
+      className="relative flex h-full w-full scrollbar-hide "
       aria-label={`Packages for ${titleHeader}`}
     >
       <PackageSection

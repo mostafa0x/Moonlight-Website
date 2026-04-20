@@ -304,53 +304,53 @@
         {
           "title": "Tutankhamun Golden Mask",
           "description": "5,000 treasures. Hidden for 3,000 years, guarded by Anubis himself. This mask was the last thing the world was meant to see — now yours to explore.",
-          "imageUrl": "/imgs/packages/giza/totankhamun.png"
+          "imageUrl": "/imgs/packages/giza/totankhamun.webp"
         },
         {
           "title": "Anubis",
           "description": "Before you could reach the king, you had to pass him first. Sitting at the entrance of the Treasury — he wasn't just a guardian. He was the door.",
-          "imageUrl": "/imgs/packages/giza/anubis.png"
+          "imageUrl": "/imgs/packages/giza/anubis.webp"
         },
         {
           "title": "Canopic Coffinette",
           "description": "Even in death, the king was never alone. His lungs, his liver, his stomach — each sealed in solid gold, embraced by goddesses. Because to be born again, nothing could be left behind.",
-          "imageUrl": "/imgs/packages/giza/canopic_coffinette.png"
+          "imageUrl": "/imgs/packages/giza/canopic_coffinette.webp"
         }
       ],
       "cairo": [
         {
           "title": "The Hanging Church",
           "description": "Where the Holy Family once took refuge — Egypt's oldest church still stands to tell the story.",
-          "imageUrl": "/imgs/packages/cairo/ben_ezra.png"
+          "imageUrl": "/imgs/packages/cairo/ben_ezra.webp"
         },
         {
           "title": "Ben Ezra Synagogue",
           "description": "Egypt's oldest synagogue. The walls that witnessed 850 years of history, still holding their secrets.",
-          "imageUrl": "/imgs/packages/cairo/ben_ezra.png"
+          "imageUrl": "/imgs/packages/cairo/ben_ezra.webp"
         },
         {
           "title": "Muhammad Ali Mosque",
           "description": "Egypt's highest minarets. A dome that commands the Cairo skyline. Built by the man who shaped modern Egypt.",
-          "imageUrl": "/imgs/packages/cairo/ali.png"
+          "imageUrl": "/imgs/packages/cairo/ali.webp"
         }
       ],
       "alexandria": [
         {
           "title": "Alexander the Great",
           "description": "A Roman replica of a marble head of Conqueror of the Ancient World Alexander the Great.",
-          "imageUrl": "/imgs/packages/alex/alexander_head.png"
+          "imageUrl": "/imgs/packages/alex/alexander_head.webp"
         },
         {
           "title": "Roman Theatre",
           "description": "Located in Alexandria, this 4th-century U-shaped Roman amphitheatre served as an auditorium and Byzantine city council. It features limestone walls, marble seating, and striking granite columns.",
-          "imageUrl": "/imgs/packages/alex/roman_theatre_new.png"
+          "imageUrl": "/imgs/packages/alex/roman_theatre_new.webp"
         }
       ],
       "nile": [
         {
           "title": "The Nile After Dark",
           "description": "Sufi whirling, belly dancing, and open buffet — all while Cairo's lights drift past your window.",
-          "imageUrl": "/imgs/packages/nile/nile_modern_real.png"
+          "imageUrl": "/imgs/packages/nile/nile_modern_real.webp"
         }
       ]
     }

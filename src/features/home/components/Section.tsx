@@ -24,13 +24,14 @@ export default function Section({ children, id, className }: SectionProps) {
     <section
       id={id}
       style={{
-        contentVisibility: "auto",
+        contentVisibility: className?.includes("overflow-visible") ? "visible" : "auto",
         containIntrinsicSize: "100vh",
         scrollSnapStop: "always",
         willChange: isHero ? "auto" : "transform",
       } as any}
       className={cn(
-        "h-screen w-full snap-start snap-always relative overflow-hidden contain-layout contain-paint",
+        "h-screen w-full snap-start snap-always relative",
+        !className?.includes("overflow-") && "overflow-hidden contain-layout contain-paint",
         className
       )}
     >

@@ -13,32 +13,7 @@ function Page1({ locale }: { locale: string }) {
       className="h-screen w-full relative overflow-hidden bg-transparent select-none"
       aria-label="Welcome to Moonlight"
     >
-      {/* Background Image Container - Optimized for LCP */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={"/backgrounds/background.webp"}
-          alt="Ancient Egypt Moonlight Experience"
-          fill
-          quality={40}
-          priority
-          fetchPriority="high"
-          loading="eager"
-          sizes="100vw"
-          className="object-cover"
-        />
 
-        {/* Cinematic Overlays Layer */}
-        <div className="absolute inset-0 z-10">
-          {/* Subtle Vignette */}
-          <div className="absolute inset-0 bg-radial-gradient from-transparent via-black/30 to-black/80 pointer-events-none" />
-
-          {/* Bottom Depth Gradient */}
-          <div className="absolute inset-0 bg-linear-to-t from-black via-black/10 to-transparent pointer-events-none" />
-
-
-
-        </div>
-      </div>
 
       {/* Content Component */}
       <div className="relative z-20 h-full w-full">

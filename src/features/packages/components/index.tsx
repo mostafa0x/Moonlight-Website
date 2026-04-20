@@ -39,12 +39,14 @@ function PackageSection({
 
   return (
     <section className="flex h-full w-full" aria-labelledby={`section-title-${title.replace(/\s+/g, '-').toLowerCase()}`}>
-      <div className="z-10 flex h-full w-full flex-col justify-start pt-10 md:pt-16 gap-8 md:gap-11">
-        <PackageSectionHeader title={title} isInView={isInView} />
+      <div className="z-10 flex h-full w-full flex-col justify-center items-center">
+        <div className=" w-full pt-[80px] md:pt-[104px] z-20">
+          <PackageSectionHeader title={title} isInView={isInView} />
+        </div>
 
         {packages.length === 0 && !isLoading ? (
           <div
-            className={`flex w-full items-center justify-center py-16 px-6 text-center transition-all duration-1000 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            className={`flex w-full flex-1 items-center justify-center py-16 px-6 text-center transition-all duration-1000 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
           >
             <div className="flex flex-col items-center gap-4">
@@ -59,72 +61,94 @@ function PackageSection({
             </div>
           </div>
         ) : (
-          <Swiper
-            modules={[Pagination]}
-            slidesPerView={"auto"}
-            centeredSlides={true}
-            spaceBetween={24}
-            grabCursor={true}
-            pagination={{
-              clickable: true,
-            }}
-            className={`w-full  pb-32 pt-4 transition-all duration-1000 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-          >
-            {(isLoading && packages.length === 0 ? Array.from({ length: 4 }) : packages).map((pkg, i) => {
-              const packageId = (pkg as PackageType)?.packageId;
+          <div className="flex-1 flex flex-col justify-center w-full min-h-0  gap-8">
+            <Swiper
+              modules={[Pagination]}
+              slidesPerView={"auto"}
+              centeredSlides={true}
+              spaceBetween={20}
+              grabCursor={true}
+              pagination={{
+                clickable: true,
+              }}
+              breakpoints={{
+                640: { spaceBetween: 24 },
+                1024: { spaceBetween: 40 },
+              }}
+              className={`w-full pb-32 pt-0 transition-all duration-1000 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
+            >
+              {(isLoading && packages.length === 0 ? Array.from({ length: 4 }) : packages).map((pkg, i) => {
+                const packageId = (pkg as PackageType)?.packageId;
 
-              return (
-                <SwiperSlide
-                  key={packageId || i}
-                  className="!w-[85vw] sm:!w-[340px] md:!w-[400px]"
-                >
-                  {isLoading ? (
-                    <div className="block w-full">
-                      <PackageCardSkeleton />
-                    </div>
-                  ) : (
-                    <Link
-                      href={`/${locale}/?tourId=${packageId}`}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        if (packageId) {
-                          handleSetTourId(packageId);
-                          window.history.pushState({}, '', `/${locale}/?tourId=${packageId}`);
-                        }
-                      }}
-                      prefetch={false}
-                      scroll={false}
-                      className="block w-full h-full"
-                      aria-label={`View details for ${(pkg as PackageType)?.packageName}`}
-                    >
-                      <PackageCard pkg={pkg as PackageType} priority={false} />
-                    </Link>
-                  )}
-                </SwiperSlide>
-              );
-            })}
-            {/* Inject minimal style for these specific swiper dots */}
-            <style dangerouslySetInnerHTML={{
-              __html: `
+                return (
+                  <SwiperSlide
+                    key={packageId || i}
+                    className="w-[85vw]! sm:w-95! md:w-105! lg:w-125! xl:w-137.5!"
+                  >
+                    {isLoading ? (
+                      <div className="block w-full">
+                        <PackageCardSkeleton />
+                      </div>
+                    ) : (
+                      <Link
+                        href={`/${locale}/?tourId=${packageId}`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          if (packageId) {
+                            handleSetTourId(packageId);
+                            window.history.pushState({}, '', `/${locale}/?tourId=${packageId}`);
+                          }
+                        }}
+                        prefetch={false}
+                        scroll={false}
+                        className="block w-full h-full"
+                        aria-label={`View details for ${(pkg as PackageType)?.packageName}`}
+                      >
+                        <PackageCard pkg={pkg as PackageType} priority={false} />
+                      </Link>
+                    )}
+                  </SwiperSlide>
+                );
+              })}
+              {/* Inject minimal style for Apple-style centering and pagination */}
+              <style dangerouslySetInnerHTML={{
+                __html: `
               .swiper {
                 overflow: visible !important;
+                padding: 0 0 !important;
+              }
+              .swiper-slide {
+                transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease !important;
+                opacity: 0.3 !important;
+                transform: scale(0.85) !important;
+                filter: blur(1px);
+              }
+              .swiper-slide-active {
+                opacity: 1 !important;
+                transform: scale(1.05) !important;
+                z-index: 10;
+                filter: blur(0px);
               }
               .swiper-pagination {
                 position: absolute !important;
                 bottom: -40px !important;
               }
               .swiper-pagination-bullet {
-                background: rgba(255, 255, 255, 0.8) !important;
+                background: rgba(255, 255, 255, 0.6) !important;
                 opacity: 1 !important;
                 margin: 0 6px !important;
+                transition: all 0.3s ease;
               }
               .swiper-pagination-bullet-active {
                 background: #F2C975 !important;
-                opacity: 1 !important;
-                transform: scale(1.3);
+                width: 24px !important;
+                border-radius: 4px !important;
+                transform: scale(1);
               }
             `}} />
-          </Swiper>
+            </Swiper>
+          </div>
         )}
       </div>
     </section>
