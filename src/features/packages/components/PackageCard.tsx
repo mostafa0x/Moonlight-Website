@@ -67,7 +67,7 @@ function PackageCard({ pkg, priority = false }: PackageCardProps) {
 
           <div className="flex items-center gap-1.5 rounded-full bg-white/10 px-4 py-2 backdrop-blur-md border border-white/20 text-[#F2C975] transition-all group-hover:bg-[#F2C975] group-hover:text-black hover:scale-105 active:scale-95 shadow-lg">
             <span className="text-sm font-bold uppercase tracking-tight">
-              {t("viewMore")}
+              {t("view")}
             </span>
             {/* Simple arrow icon for better UX */}
             <svg

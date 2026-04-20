@@ -160,17 +160,17 @@
   },
   "navbar": {
     "home": "Home",
-    "about": "About",
+    "about": "About us",
     "contact": "Contact",
     "privacy": "Privacy Policy",
-    "terms": "Terms of Use",
+    "terms": "Terms of Service",
     "login": "Login",
     "logout": "Logout",
     "menu": "Menu",
     "language": "Language"
   },
   "footer": {
-    "terms": "Terms of use",
+    "terms": "Terms of Service",
     "privacy": "Privacy Policy",
     "about": "About us",
     "contact": "Contact",
@@ -288,7 +288,7 @@
     }
   },
   "home": {
-    "viewMore": "view",
+    "view": "view",
     "hero": {
       "title": "Explore Egypt",
       "subtitle": "Every Stone here has a story"

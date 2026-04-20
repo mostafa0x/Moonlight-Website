@@ -149,17 +149,17 @@
   },
   "navbar": {
     "home": "Accueil",
-    "about": "À propos",
+    "about": "À propos de nous",
     "contact": "Contact",
     "privacy": "Confidentialité",
-    "terms": "Conditions",
+    "terms": "Conditions de Service",
     "login": "Connexion",
     "logout": "Déconnexion",
     "menu": "Menu",
     "language": "Langue"
   },
   "footer": {
-    "terms": "Conditions d'utilisation",
+    "terms": "Conditions de Service",
     "privacy": "Politique de Confidentialité",
     "about": "À propos de nous",
     "contact": "Contact",
@@ -277,7 +277,7 @@
     }
   },
   "home": {
-    "viewMore": "voir plus",
+    "view": "voir",
     "hero": {
       "title": "Voyage Premium",
       "subtitle": "Découvrez l'Égypte comme un local"

@@ -149,17 +149,17 @@
   },
   "navbar": {
     "home": "Início",
-    "about": "Sobre",
+    "about": "Sobre nós",
     "contact": "Contacto",
     "privacy": "Privacidade",
-    "terms": "Termos",
+    "terms": "Termos de Serviço",
     "login": "Login",
     "logout": "Sair",
     "menu": "Menu",
     "language": "Idioma"
   },
   "footer": {
-    "terms": "Termos de uso",
+    "terms": "Termos de Serviço",
     "privacy": "Privacidade",
     "about": "Sobre nós",
     "contact": "Contacto",
@@ -277,7 +277,7 @@
     }
   },
   "home": {
-    "viewMore": "ver mais",
+    "view": "ver",
     "hero": {
       "title": "Viagem Premium",
       "subtitle": "Descubra o Egito como um local"

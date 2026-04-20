@@ -13,8 +13,8 @@ import { useAuth } from "@/shared/providers/AuthProvider";
 import { cn } from "@/shared/lib/utils";
 
 // Performance: Defer mobile drawer loading until interaction to reduce FCP/TBT blocking
-const MobileDrawer = dynamic(() => import("@/features/navigation").then((mod) => mod.MobileDrawer), { 
-  ssr: false 
+const MobileDrawer = dynamic(() => import("@/features/navigation").then((mod) => mod.MobileDrawer), {
+  ssr: false
 });
 
 /**
@@ -30,7 +30,7 @@ function NavBar({ locale }: { locale: string }) {
 
   // Mobile Menu feature hook
   const { isOpen: isMenuOpen, toggle: toggleMenu, close: closeMenu } = useMobileMenu();
-  
+
   const [isDesktopLangOpen, setIsDesktopLangOpen] = useState(false);
   const desktopRef = useRef<HTMLDivElement>(null);
 
@@ -71,7 +71,7 @@ function NavBar({ locale }: { locale: string }) {
 
   return (
     <>
-      <nav 
+      <nav
         className="absolute inset-x-0 top-0 z-50 flex items-center justify-between px-6 pt-6 lg:px-20"
         aria-label="Main Navigation"
       >
@@ -104,8 +104,8 @@ function NavBar({ locale }: { locale: string }) {
 
           {isLoggedIn ? (
             <div className="flex items-center gap-6">
-              <Link 
-                href={`/${locale}/profile`} 
+              <Link
+                href={`/${locale}/profile`}
                 className="group flex items-center gap-2 transition-transform hover:scale-105"
               >
                 <Avatar src={userData?.avatar || ""} />
@@ -113,7 +113,7 @@ function NavBar({ locale }: { locale: string }) {
                   {userData?.name?.split(' ')[0]}
                 </span>
               </Link>
-              <button 
+              <button
                 onClick={() => signOut()}
                 className="cursor-pointer text-xs font-bold uppercase text-red-500 transition-colors hover:text-red-400"
               >
@@ -128,7 +128,7 @@ function NavBar({ locale }: { locale: string }) {
               {t("login") || "Login"}
             </button>
           )}
-          
+
           {/* Language Switcher Desktop */}
           <div className="relative flex items-center" ref={desktopRef}>
             <button
@@ -139,15 +139,15 @@ function NavBar({ locale }: { locale: string }) {
             >
               <span className="text-lg transition-transform group-hover:scale-110">{currentLang.flag}</span>
               <span className="text-xs font-bold uppercase tracking-widest">{currentLang.code}</span>
-              <img 
-                src="/icons/arrow-down.svg" 
-                alt="" 
-                className={cn("w-2.5 transition-transform duration-300", isDesktopLangOpen && "rotate-180")} 
+              <img
+                src="/icons/arrow-down.svg"
+                alt=""
+                className={cn("w-2.5 transition-transform duration-300", isDesktopLangOpen && "rotate-180")}
               />
             </button>
 
             {isDesktopLangOpen && (
-              <div 
+              <div
                 role="listbox"
                 className="absolute right-0 top-full mt-3 flex w-52 flex-col overflow-hidden rounded-2xl border border-[#F2C975]/30 bg-black/90 py-2 shadow-2xl backdrop-blur-3xl animate-in fade-in slide-in-from-top-4 duration-300"
               >
@@ -158,7 +158,7 @@ function NavBar({ locale }: { locale: string }) {
                     aria-selected={locale === lang.code}
                     onClick={() => handleLanguageChange(lang.code)}
                     className={cn(
-                      "group flex w-full items-center gap-4 px-5 py-3 text-sm text-white transition-all hover:bg-white/10",
+                      "group flex w-full items-center gap-4 px-5 py-3 text-sm text-white transition-all hover:bg-white/10 cursor-pointer",
                       locale === lang.code && "bg-[#F2C975]/5 font-bold text-[#F2C975]"
                     )}
                   >
@@ -176,10 +176,10 @@ function NavBar({ locale }: { locale: string }) {
       </nav>
 
       {/* Mobile Drawer Feature */}
-      <MobileDrawer 
-        isOpen={isMenuOpen} 
-        onClose={closeMenu} 
-        locale={locale} 
+      <MobileDrawer
+        isOpen={isMenuOpen}
+        onClose={closeMenu}
+        locale={locale}
       />
     </>
   );

@@ -152,14 +152,14 @@
     "about": "Chi siamo",
     "contact": "Contatti",
     "privacy": "Privacy",
-    "terms": "Termini",
+    "terms": "Termini di Servizio",
     "login": "Login",
     "logout": "Disconnetti",
     "menu": "Menu",
     "language": "Lingua"
   },
   "footer": {
-    "terms": "Termini di servizio",
+    "terms": "Termini di Servizio",
     "privacy": "Informativa sulla Privacy",
     "about": "Chi siamo",
     "contact": "Contatti",
@@ -277,7 +277,7 @@
     }
   },
   "home": {
-    "viewMore": "vedi di più",
+    "view": "vedi",
     "hero": {
       "title": "Viaggio Premium",
       "subtitle": "Scopri l'Egitto come un locale"
