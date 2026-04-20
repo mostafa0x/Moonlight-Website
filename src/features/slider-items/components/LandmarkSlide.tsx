@@ -25,7 +25,7 @@ function LandmarkSlide({ item, isVisible, slideNumber, totalSlides }: LandmarkSl
   if (!isVisible) return null;
 
   return (
-    <div className="relative w-full h-full flex flex-col items-start pt-10 px-10 sm:px-12 md:pt-3 lg:px-24 overflow-hidden">
+    <div className="relative w-full h-full flex flex-col items-start pt-10 px-10 sm:px-12 md:pt-3 md:px-20 lg:px-24 overflow-hidden">
       {/* Background Decorative Element */}
 
       {/* 1. Header/Title Section */}

@@ -18,8 +18,7 @@ const SectionHeader = memo(({ title, textColor = "text-[#F2C975]" }: SectionHead
       initial={{ x: -20, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ duration: 1, delay: 0.2 }}
-      viewport={{ once: true }}
-      className={`absolute top-25 left-7 md:top-23 md:left-7 lg:top-25 lg:left-17 xl:left-15 ${textColor} text-2xl font-bold z-50 pointer-events-none`}
+      className={`absolute top-25 left-7 md:top-23 md:left-15.5 lg:top-25 lg:left-17 xl:left-15 ${textColor} text-2xl font-bold z-50 pointer-events-none`}
     >
       {title}
     </motion.h1>
