@@ -25,43 +25,35 @@ function LandmarkSlide({ item, isVisible, slideNumber, totalSlides }: LandmarkSl
   if (!isVisible) return null;
 
   return (
-    <div className="absolute inset-0 w-full h-full overflow-hidden">
-      {/* Immersive Background Image */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="h-full w-full">
+    <div className="relative w-full h-full flex flex-col items-start pt-10 px-10 sm:px-12 md:pt-3 lg:px-24 overflow-hidden">
+      {/* Background Decorative Element */}
+
+      {/* 1. Header/Title Section */}
+      <div className="relative z-10 w-full pt-28 md:pt-32 pb-4 text-left">
+        <h2 className="font-cairo text-[20px] md:text-3xl font-bold text-[#F2C975]">
+          {item.title}
+        </h2>
+      </div>
+
+      {/* 2. Central Image Section */}
+      <div className="relative z-10 flex-1 w-full flex items-center justify-center min-h-0 my-0 md:my-2">
+        <div className="relative w-full h-full max-h-[75vh] md:max-h-[90vh] max-w-none rounded-2xl overflow-hidden group">
           <SliderImage
             src={item.imageUrl}
             alt={item.title}
             isLoaded={isLoaded}
-            priority={false}
+            priority={true}
             onLoad={onImageLoad}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-contain"
           />
         </div>
-
-        {/* Cinematic Layered Overlays */}
-        {/* 1. Dramatic Vignette */}
-        <div className="absolute inset-0 bg-radial-gradient from-transparent via-black/10 to-black/60 z-10" />
-        {/* 2. Content Gradient (Bottom-up) */}
-        <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent z-10" />
-        {/* 3. Subtle Side Gradient for offset text */}
-        <div className="absolute inset-x-0 inset-y-0 bg-linear-to-r from-black/50 via-transparent to-transparent z-10" />
       </div>
 
-      {/* Premium Content Layer */}
-      <div className="relative h-full w-full flex flex-col justify-end px-6 md:px-12 lg:px-24 pb-32 md:pb-48 lg:pb-64 z-20">
-        <div className="max-w-5xl">
-
-          {/* Title with Luxury Typography */}
-          <h2 className="font-cairo text-3xl md:text-3xl  font-bold text-[#F2C975] mb-6 lg:mb-10 uppercase leading-[0.85] tracking-tighter bg-linear-to-b from-white via-white to-white/40 bg-clip-text [text-shadow:0_20px_50px_rgba(0,0,0,0.5)]">
-            {item.title}
-          </h2>
-
-          {/* Description with Classic Styling */}
-          <p className="font-cairo text-lg md:text-2xl lg:text-3xl text-white/70  max-w-3xl font-bold">
-            {item.description}
-          </p>
-        </div>
+      {/* 3. Bottom Description Section */}
+      <div className="relative z-10 w-full pt-4 pb-24 md:pb-24 text-left max-w-4xl">
+        <p className="font-cairo text-base md:text-xl lg:text-2xl text-white/80 font-semibold">
+          {item.description}
+        </p>
       </div>
     </div>
   );

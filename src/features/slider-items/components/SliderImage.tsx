@@ -40,14 +40,13 @@ function SliderImage({
         src={src}
         alt={alt}
         fill
-        quality={50}
         priority={priority}
         sizes="100vw"
         fetchPriority={priority ? "high" : "low"}
         onLoad={onLoad}
         onError={onLoad}
         className={cn(
-          "object-cover md:object-contain transition-opacity duration-700 ease-out",
+          "object-contain transition-opacity duration-700 ease-out",
           isLoaded ? "opacity-100" : "opacity-0"
         )}
 
