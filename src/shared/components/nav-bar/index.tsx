@@ -11,6 +11,7 @@ import { LANGUAGES } from "@/features/navigation/constants/languages";
 import Avatar from "@/shared/components/avatar";
 import { useAuth } from "@/shared/providers/AuthProvider";
 import { cn } from "@/shared/lib/utils";
+import Logo from "@/shared/components/Logo";
 
 // Performance: Defer mobile drawer loading until interaction to reduce FCP/TBT blocking
 const MobileDrawer = dynamic(() => import("@/features/navigation").then((mod) => mod.MobileDrawer), {
@@ -76,8 +77,8 @@ function NavBar({ locale }: { locale: string }) {
         aria-label="Main Navigation"
       >
         {/* Brand Logo */}
-        <Link 
-          href={`/${locale}`} 
+        <Link
+          href={`/${locale}`}
           onClick={(e) => {
             if (pathname === `/${locale}`) {
               e.preventDefault();
@@ -86,7 +87,7 @@ function NavBar({ locale }: { locale: string }) {
           }}
           className="z-50 font-black tracking-widest text-[#F2C975] drop-shadow-lg transition-transform hover:scale-105"
         >
-          MOONLIGHT
+          <Logo />
         </Link>
 
         {/* Mobile Actions Container */}

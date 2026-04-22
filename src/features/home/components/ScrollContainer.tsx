@@ -42,8 +42,7 @@ export default function ScrollContainer({ children, className }: ScrollContainer
         mousewheel={{
           forceToAxis: true,
           sensitivity: 1,
-          releaseOnEdges: true,
-          thresholdDelta: 60,
+          releaseOnEdges: false,
         }}
         speed={800}
 // ... rest of the file
