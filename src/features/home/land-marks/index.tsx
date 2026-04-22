@@ -64,7 +64,7 @@ function LandMarks({
         pagination={{
           clickable: true,
         }}
-        modules={[Mousewheel, Pagination, EffectFade]}
+        modules={[Mousewheel, Pagination]}
         speed={800}
         threshold={20}
         touchReleaseOnEdges={true}

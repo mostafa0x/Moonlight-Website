@@ -2,26 +2,26 @@ import { memo } from "react";
 import Image from "next/image";
 
 /**
- * BackgroundImage — Fixed premium global background
+ * BackgroundImage — Fixed premium global background with custom GIF glowing hieroglyphs
  */
 function BackgroundImage({ isHasOverlay = true }: { isHasOverlay?: boolean }) {
-
-
   return (
     <div className="bg-black">
       {/* Immersive Overlay */}
       {isHasOverlay && (
-        <div className="fixed inset-0 bg-black/70 pointer-events-none z-[-1]" />
+        <div className="fixed inset-0 bg-black/75 pointer-events-none z-[-1]" />
       )}
 
       {/* Main Background Image - Fixed position */}
       <div className="fixed inset-0 z-[-2] pointer-events-none">
         <Image
-          src="/backgrounds/backgroundPages.png"
-          alt="Ancient Egypt Moonlight Background"
+          src="/backgrounds/backgroundPagesAnimated.gif"
+          alt="Ancient Egypt Moonlight Background GIF"
           fill
-          className="object-cover"
+          className="object-cover opacity-80"
           sizes="100vw"
+          priority
+          unoptimized
         />
       </div>
     </div>
@@ -29,3 +29,5 @@ function BackgroundImage({ isHasOverlay = true }: { isHasOverlay?: boolean }) {
 }
 
 export default memo(BackgroundImage);
+
+

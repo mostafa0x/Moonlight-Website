@@ -1,7 +1,8 @@
 "use client";
 
-import { ReactNode, Children } from "react";
+import { ReactNode, Children, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperType } from "swiper";
 import { Mousewheel, Keyboard, Parallax } from "swiper/modules";
 import { cn } from "@/shared/lib/utils";
 
@@ -15,6 +16,19 @@ interface ScrollContainerProps {
 }
 
 export default function ScrollContainer({ children, className }: ScrollContainerProps) {
+  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
+
+  useEffect(() => {
+    const handleScrollToTop = () => {
+      if (swiperInstance) {
+        swiperInstance.slideTo(0, 800);
+      }
+    };
+
+    window.addEventListener("scroll-to-top", handleScrollToTop);
+    return () => window.removeEventListener("scroll-to-top", handleScrollToTop);
+  }, [swiperInstance]);
+
   // Flatten children to ensure each one becomes a slide
   const slides = Children.toArray(children);
 
@@ -24,6 +38,7 @@ export default function ScrollContainer({ children, className }: ScrollContainer
         direction="vertical"
         slidesPerView={1}
         spaceBetween={0}
+        onSwiper={setSwiperInstance}
         mousewheel={{
           forceToAxis: true,
           sensitivity: 1,
@@ -31,6 +46,7 @@ export default function ScrollContainer({ children, className }: ScrollContainer
           thresholdDelta: 60,
         }}
         speed={800}
+// ... rest of the file
         keyboard={{ enabled: true }}
 
         // Advanced Performance & Touch Suite

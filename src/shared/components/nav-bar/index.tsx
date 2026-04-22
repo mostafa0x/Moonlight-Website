@@ -76,7 +76,16 @@ function NavBar({ locale }: { locale: string }) {
         aria-label="Main Navigation"
       >
         {/* Brand Logo */}
-        <Link href={`/${locale}`} className="z-50 font-black tracking-widest text-[#F2C975] drop-shadow-lg transition-transform hover:scale-105">
+        <Link 
+          href={`/${locale}`} 
+          onClick={(e) => {
+            if (pathname === `/${locale}`) {
+              e.preventDefault();
+              window.dispatchEvent(new CustomEvent("scroll-to-top"));
+            }
+          }}
+          className="z-50 font-black tracking-widest text-[#F2C975] drop-shadow-lg transition-transform hover:scale-105"
+        >
           MOONLIGHT
         </Link>
 
