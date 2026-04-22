@@ -33,19 +33,19 @@ export default function ScrollContainer({ children, className }: ScrollContainer
   const slides = Children.toArray(children);
 
   return (
-    <div className="fixed inset-0 w-full h-full bg-transparent overflow-hidden">
+    <div className="fixed inset-0 w-full h-full bg-transparent overflow-hidden" style={{ overscrollBehavior: "none" }}>
       <Swiper
         direction="vertical"
         slidesPerView={1}
         spaceBetween={0}
         onSwiper={setSwiperInstance}
         mousewheel={{
-          forceToAxis: true,
-          sensitivity: 1,
+          sensitivity: 1.1,
+          thresholdDelta: 0,
+          thresholdTime: 0,
           releaseOnEdges: false,
         }}
         speed={800}
-// ... rest of the file
         keyboard={{ enabled: true }}
 
         // Advanced Performance & Touch Suite
@@ -59,7 +59,7 @@ export default function ScrollContainer({ children, className }: ScrollContainer
         watchSlidesProgress={true}
         preventInteractionOnTransition={false}
         touchStartPreventDefault={false}
-        passiveListeners={true}
+        passiveListeners={false}
         observer={true}
         observeParents={true}
         modules={[Mousewheel, Keyboard, Parallax]}

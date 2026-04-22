@@ -85,7 +85,7 @@ function NavBar({ locale }: { locale: string }) {
               window.dispatchEvent(new CustomEvent("scroll-to-top"));
             }
           }}
-          className="z-50 font-black tracking-widest text-[#F2C975] drop-shadow-lg transition-transform hover:scale-105"
+          className="z-50 transition-transform hover:scale-105"
         >
           <Logo />
         </Link>
@@ -102,7 +102,7 @@ function NavBar({ locale }: { locale: string }) {
               <li key={link.title} className="whitespace-nowrap">
                 <Link
                   href={link.link}
-                  className="font-cairo text-sm font-bold text-white transition-colors hover:text-[#F2C975] select-none md:text-base xl:text-lg"
+                  className="font-cairo text-sm font-bold transition-colors hover:text-[#F2C975] select-none md:text-base xl:text-lg"
                 >
                   {link.title}
                 </Link>
