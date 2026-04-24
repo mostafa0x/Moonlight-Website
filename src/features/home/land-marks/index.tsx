@@ -1,17 +1,12 @@
 "use client";
 
 import { memo, useRef } from "react";
-import { motion, useInView } from "motion/react";
-import SectionHeader from "@/shared/components/SectionHeader";
+import { useInView } from "motion/react";
 import LandmarkSlide from "@/features/slider-items/components/LandmarkSlide";
 import type { LandmarksType } from "@/shared/global";
 
-
-
 /**
  * LandMarks Section
- * Optimized version: Handles structural layout as a static unit,
- * delegating interactive slider logic to a focused sub-component.
  */
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Pagination, EffectFade } from "swiper/modules";
@@ -25,7 +20,6 @@ import "swiper/css/effect-fade";
 interface LandMarksProps {
   id?: string;
   landmarks: LandmarksType[];
-  titleHeader: string;
 }
 
 /**
@@ -35,15 +29,12 @@ interface LandMarksProps {
  */
 function LandMarks({
   landmarks = [],
-  titleHeader,
 }: LandMarksProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { amount: 0.1 });
 
   return (
     <div ref={containerRef} className="relative w-full h-full select-none overflow-hidden">
-      {/* Persistent Governorate Header */}
-      <SectionHeader title={titleHeader} textColor="text-white" />
 
       {/* Nested Horizontal Swiper */}
       <Swiper
@@ -84,7 +75,7 @@ function LandMarks({
         <style dangerouslySetInnerHTML={{
           __html: `
           .landmark-swiper .swiper-pagination {
-            bottom: 40px !important;
+            bottom: 80px !important;
             z-index: 60 !important;
           }
           .landmark-swiper .swiper-pagination-bullet {

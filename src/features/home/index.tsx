@@ -42,7 +42,6 @@ function Home({ data, locale }: HomeProps) {
           <LandMarks
             key={`landmarks-comp-${item.governorate}-${idx}`}
             landmarks={item.landmarks}
-            titleHeader={item.name}
           />
         </Section>,
 

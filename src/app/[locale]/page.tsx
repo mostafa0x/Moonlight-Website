@@ -27,7 +27,6 @@ export default async function page({
 
   const dataAll: HomeDataType[] = [
     {
-      name: t("sections.giza"),
       packageTitle: "Tours in Giza",
       governorate: "giza",
       page: 1,
@@ -35,7 +34,6 @@ export default async function page({
       landmarks: t.raw("landmarks.giza"),
     },
     {
-      name: t("sections.cairo"),
       packageTitle: "Tours in cairo",
 
       governorate: "cairo",
@@ -44,7 +42,6 @@ export default async function page({
       landmarks: t.raw("landmarks.cairo"),
     },
     {
-      name: t("sections.alexandria"),
       packageTitle: "Tours in Alexandria",
 
       governorate: "alexandria",
@@ -53,8 +50,7 @@ export default async function page({
       landmarks: t.raw("landmarks.alexandria"),
     },
     {
-      name: t("sections.nile"),
-      packageTitle: t("sections.nile"),
+      packageTitle: "Nile Cruise",
 
       page: 7,
       governorate: "nile",

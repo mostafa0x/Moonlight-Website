@@ -24,19 +24,10 @@ function LandmarkSlide({ item, isVisible, slideNumber, totalSlides }: LandmarkSl
   // even if the section is just partially in view.
 
   return (
-    <div className="relative w-full h-full flex flex-col items-start pt-10 px-10 sm:px-12 md:pt-3 md:px-20 lg:px-24 overflow-hidden">
-      {/* Background Decorative Element */}
-
-      {/* 1. Header/Title Section */}
-      <div className="relative z-10 w-full pt-28 md:pt-32 pb-4 text-left">
-        <h2 className="font-cairo text-[20px] md:text-3xl font-bold text-[#F2C975]">
-          {item.title}
-        </h2>
-      </div>
-
-      {/* 2. Central Image Section */}
-      <div className="relative z-10 flex-1 w-full flex items-center justify-center min-h-0 my-0 md:my-2">
-        <div className="relative w-full h-full max-h-[75vh] md:max-h-[90vh] max-w-none rounded-2xl overflow-hidden group">
+    <div className="relative w-full h-full flex flex-col items-start pt-6 px-10 sm:px-12 md:px-20 lg:px-24 overflow-hidden">
+      {/* 2. Central Image Section (Now at the Top) */}
+      <div className="relative z-10 flex-1 w-full flex items-center justify-center min-h-0 my-0 md:my-2 mt-17.5">
+        <div className="relative w-full h-full max-h-[50vh] md:max-h-[60vh] max-w-none rounded-2xl overflow-hidden group">
           <SliderImage
             src={item.imageUrl}
             alt={item.title}
@@ -48,9 +39,12 @@ function LandmarkSlide({ item, isVisible, slideNumber, totalSlides }: LandmarkSl
         </div>
       </div>
 
-      {/* 3. Bottom Description Section */}
-      <div className="relative z-10 w-full pt-4 pb-24 md:pb-24 text-left max-w-4xl">
-        <p className="font-cairo text-base md:text-xl lg:text-2xl text-white/80 font-semibold">
+      {/* 1. Content Wrapper (Title + Description below image) */}
+      <div className="relative z-10 w-full pt-4 pb-32 md:pb-24 space-y-2 md:space-y-4 max-w-5xl">
+        <h2 className="font-cairo text-[20px] md:text-3xl font-bold text-[#F2C975]">
+          {item.title}
+        </h2>
+        <p className="font-cairo text-base md:text-xl lg:text-2xl text-white/80 font-semibold leading-relaxed">
           {item.description}
         </p>
       </div>

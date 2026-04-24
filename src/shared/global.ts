@@ -42,7 +42,6 @@ export type PackageDetailsType = {
   availabilityStatus: string;
 };
 export interface HomeDataType {
-  name: string;
   packageTitle: string
 
   governorate: string;

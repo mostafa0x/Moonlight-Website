@@ -282,12 +282,6 @@
       "title": "Voyage Premium",
       "subtitle": "Découvrez l'Égypte comme un local"
     },
-    "sections": {
-      "giza": "Gizeh",
-      "cairo": "Le Caire",
-      "alexandria": "Alexandrie",
-      "nile": "Croisière sur le Nil"
-    },
     "landmarks": {
       "giza": [
         {
