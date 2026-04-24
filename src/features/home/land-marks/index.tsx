@@ -75,8 +75,13 @@ function LandMarks({
         <style dangerouslySetInnerHTML={{
           __html: `
           .landmark-swiper .swiper-pagination {
-            bottom: 80px !important;
+            bottom: 120px !important;
             z-index: 60 !important;
+          }
+          @media (min-width: 768px) {
+            .landmark-swiper .swiper-pagination {
+              bottom: 80px !important;
+            }
           }
           .landmark-swiper .swiper-pagination-bullet {
             background: rgba(255, 255, 255, 0.4) !important;
