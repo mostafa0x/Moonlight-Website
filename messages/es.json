@@ -49,7 +49,7 @@
     }
   },
   "privacy": {
-    "title": "Política de Privacidad",
+    "title": "Política de privacidad",
     "description": "Conozca cómo Moonlight recopila, utiliza y protege su información personal.",
     "effectiveDate": "Fecha de entrada en vigor: Marzo 2026",
     "keywords": [
@@ -151,19 +151,19 @@
     "home": "Inicio",
     "about": "Sobre nosotros",
     "contact": "Contacto",
-    "privacy": "Privacidad",
-    "terms": "Términos de Servicio",
+    "privacy": "Política de privacidad",
+    "terms": "Términos de servicio",
     "login": "Iniciar sesión",
     "logout": "Cerrar sesión",
     "menu": "Menú",
     "language": "Idioma"
   },
   "footer": {
-    "terms": "Términos de Servicio",
-    "privacy": "Privacidad",
+    "terms": "Términos de servicio",
+    "privacy": "Política de privacidad",
     "about": "Sobre nosotros",
     "contact": "Contacto",
-    "allRights": "Todos los derechos reservados.",
+    "allRights": "© 2026 Todos los derechos reservados.",
     "designedBy": "Diseñado por"
   },
   "loader": {
@@ -277,63 +277,72 @@
     }
   },
   "home": {
-    "view": "ver",
+    "view": "Ver",
+    "from": "Desde",
+    "priceVaries": "El precio varía según el tamaño del grupo",
+    "packageTitles": {
+      "giza": "Tours en Guiza",
+      "cairo": "Tours en El Cairo",
+      "alexandria": "Tours en Alejandría",
+      "nile": "Tour en crucero por el Nilo"
+    },
     "hero": {
-      "title": "Viaje Premium",
-      "subtitle": "Descubre Egipto como un local"
+      "title": "Explora Egipto",
+      "subtitle": "Cada piedra aquí tiene una historia que contar."
+    },
+    "sectionTitles": {
+      "giza": "Tesoros de Guiza",
+      "cairo": "Una ciudad, todas las fe — esto es El Cairo",
+      "alexandria": "Donde Alejandro dejó su nombre — Alejandría",
+      "nile": "Crucero por el Nilo"
     },
     "landmarks": {
       "giza": [
         {
-          "title": "Máscara dorada",
-          "description": "Esta famosa máscara de oro macizo descansaba sobre los restos momificados de Tutankamón. Captura perfectamente su rostro real mientras lo transforma en los dioses Osiris y Re, con inscripciones divinas protectoras detrás.",
-          "imageUrl": "/imgs/packages/giza/totankhamun.png"
+          "title": "La máscara de oro de Tutankamón",
+          "description": "5.000 tesoros. Ocultos durante 3.000 años, custodiados por el propio Anubis. Esta máscara era lo último que el mundo debía ver — ahora es tuya para explorar.",
+          "imageUrl": "/imgs/packages/giza/totankhamun.webp"
         },
         {
-          "title": "Anubis en un cofre",
-          "description": "Encontrado dentro del Tesoro, este cofre en forma de pilón descansa sobre un trineo. Un llamativo chacal Anubis negro y dorado se sienta encima, custodiando compartimentos ocultos llenos de objetos sagrados y joyas preciosas.",
-          "imageUrl": "/imgs/packages/giza/anubis.png"
+          "title": "Anubis",
+          "description": "Antes de llegar al rey, tenías que pasar primero ante él. Sentado a la entrada del Tesoro — no era simplemente un guardián. Era la puerta misma.",
+          "imageUrl": "/imgs/packages/giza/anubis.webp"
         },
         {
-          "title": "Féretro canope",
-          "description": "Este ataúd de oro macizo en miniatura contenía los órganos momificados del rey. Ricamente decorado con cornalina, vidrio de colores y hechizos de Isis, los cartuchos alterados sugieren que originalmente fue destinado a otro entierro real, no a Tutankamón.",
-          "imageUrl": "/imgs/packages/giza/canopic_coffinette.png"
+          "title": "Coffineta canópica",
+          "description": "Incluso en la muerte, el rey nunca estuvo solo. Sus pulmones, su hígado, su estómago — cada uno sellado en oro macizo, abrazado por diosas. Porque para renacer, nada podía quedar atrás.",
+          "imageUrl": "/imgs/packages/giza/canopic_coffinette.webp"
         }
       ],
       "cairo": [
         {
-          "title": "Mezquita de Muhammad Alí",
-          "description": "Conocida como la Mezquita de Alabastro, esta obra maestra de estilo turco de 1848 en la Ciudadela cuenta con los minaretes gemelos más altos de Egipto y una magnífica cúpula central construida por Muhammad Alí Pasha.",
-          "imageUrl": "/imgs/packages/cairo/ali.png"
+          "title": "La Iglesia Colgante",
+          "description": "Donde la Sagrada Familia encontró refugio en otro tiempo — la iglesia más antigua de Egipto sigue en pie para contar su historia.",
+          "imageUrl": "/imgs/packages/cairo/ben_ezra.webp"
         },
         {
-          "title": "Sinagoga Ben ‘Ezra",
-          "description": "Ben ‘Ezra es la sinagoga más antigua de Egipto. Es famosa por su hekhal decorado con arabescos y el descubrimiento histórico de la Genizá de El Cairo, un tesoro de documentos raros de 850 años de antigüedad.",
-          "imageUrl": "/imgs/packages/cairo/ben_ezra.png"
+          "title": "La Sinagoga Ben Ezra",
+          "description": "La sinagoga más antigua de Egipto. Muros que fueron testigos de 850 años de historia, guardando aún sus secretos.",
+          "imageUrl": "/imgs/packages/cairo/ben_ezra.webp"
+        },
+        {
+          "title": "La Mezquita de Muhammad Ali",
+          "description": "Los minaretes más altos de El Cairo. Una cúpula que domina el horizonte de la ciudad. Construida por el hombre que dio forma al Egipto moderno.",
+          "imageUrl": "/imgs/packages/cairo/ali.webp"
         }
       ],
       "alexandria": [
         {
-          "title": "Cabeza de Alejandro Magno",
-          "description": "Descubierta en los jardines del distrito de Alejandría, esta cabeza de mármol blanco representa a Alejandro Magno con su característico cabello ondulado y mirada intensa, simbolizando el legado helenístico que definió la ciudad.",
-          "imageUrl": "/imgs/packages/alex/alexander_head.png"
-        },
-        {
-          "title": "Teatro Romano",
-          "description": "Ubicado en Alejandría, este anfiteatro romano en forma de U del siglo IV sirvió como auditorio y consejo municipal bizantino. Presenta muros de piedra caliza, asientos de mármol y llamativas columnas de granito.",
-          "imageUrl": "/imgs/packages/alex/roman_theatre_new.png"
+          "title": "Alejandro Magno",
+          "description": "Una réplica romana de una cabeza de mármol del Conquistador del Mundo Antiguo, Alejandro Magno.",
+          "imageUrl": "/imgs/packages/alex/alexander_head.webp"
         }
       ],
       "nile": [
         {
-          "title": "Navegación con Cena Faraónica",
-          "description": "Embárquese en una auténtica odisea egipcia a bordo de la Barcaza Faraónica. Este crucero con cena de 5 estrellas ofrece un buffet libre de especialidades egipcias mientras presencia el baile de la Tanoura y espectáculos de danza en vivo frente al horizonte iluminado de El Cairo.",
-          "imageUrl": "/imgs/packages/nile/nile_pharaonic_real.png"
-        },
-        {
-          "title": "Crucero Moderno",
-          "description": "Experimente el encanto cosmopolita nocturno de El Cairo en un lujoso crucero panorámico. Disfrute de un buffet internacional de clase mundial y una hospitalidad de élite mientras la histórica ribera de la ciudad —incluyendo la brillante Torre de El Cairo y los rascacielos del centro— desfilan con gracia ante sus ventanas panorámicas.",
-          "imageUrl": "/imgs/packages/nile/nile_modern_real.png"
+          "title": "El Nilo después del anochecer",
+          "description": "Danza sufí giratoria, danza del vientre y bufé libre — mientras las luces de El Cairo se deslizan suavemente ante su ventana.",
+          "imageUrl": "/imgs/packages/nile/nile_modern_real.webp"
         }
       ]
     }

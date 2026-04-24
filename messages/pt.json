@@ -49,7 +49,7 @@
     }
   },
   "privacy": {
-    "title": "Política de Privacidade",
+    "title": "Política de privacidade",
     "description": "Saiba como a Moonlight recolhe, utiliza e protege as suas informações pessoais.",
     "effectiveDate": "Data de Vigência: Março de 2026",
     "keywords": [
@@ -151,20 +151,20 @@
     "home": "Início",
     "about": "Sobre nós",
     "contact": "Contacto",
-    "privacy": "Privacidade",
-    "terms": "Termos de Serviço",
-    "login": "Login",
+    "privacy": "Política de privacidade",
+    "terms": "Termos de serviço",
+    "login": "Entrar",
     "logout": "Sair",
     "menu": "Menu",
     "language": "Idioma"
   },
   "footer": {
-    "terms": "Termos de Serviço",
-    "privacy": "Privacidade",
+    "terms": "Termos de serviço",
+    "privacy": "Política de privacidade",
     "about": "Sobre nós",
     "contact": "Contacto",
-    "allRights": "Todos os direitos reservados.",
-    "designedBy": "Desenhado por"
+    "allRights": "© 2026 Todos os direitos reservados.",
+    "designedBy": "Desenvolvido por"
   },
   "loader": {
     "unlockingWonders": "Desvendando Maravilhas Antigas..."
@@ -277,63 +277,72 @@
     }
   },
   "home": {
-    "view": "ver",
+    "view": "Ver",
+    "from": "A partir de",
+    "priceVaries": "O preço varia consoante o tamanho do grupo",
+    "packageTitles": {
+      "giza": "Tours em Gizé",
+      "cairo": "Tours no Cairo",
+      "alexandria": "Tours em Alexandria",
+      "nile": "Cruzeiro pelo Nilo"
+    },
     "hero": {
-      "title": "Viagem Premium",
-      "subtitle": "Descubra o Egito como um local"
+      "title": "Explore o Egito",
+      "subtitle": "Cada pedra aqui tem uma história para contar."
+    },
+    "sectionTitles": {
+      "giza": "Tesouros de Gizé",
+      "cairo": "Uma cidade, todas as fés — é o Cairo",
+      "alexandria": "Onde Alexandre deixou o seu nome — Alexandria",
+      "nile": "Cruzeiro pelo Nilo"
     },
     "landmarks": {
       "giza": [
         {
-          "title": "Máscara de ouro",
-          "description": "Esta famosa máscara de ouro maciço repousava sobre os restos mumificados de Tutancâmon. Captura perfeitamente o seu rosto real enquanto o transforma nos deuses Osíris e Rá, con inscrições divinas protetoras na parte traseira.",
-          "imageUrl": "/imgs/packages/giza/totankhamun.png"
+          "title": "A máscara de ouro de Tutancâmon",
+          "description": "5.000 tesouros. Escondidos durante 3.000 anos, guardados pelo próprio Anúbis. Esta máscara era a última coisa que o mundo deveria ver — agora é sua para explorar.",
+          "imageUrl": "/imgs/packages/giza/totankhamun.webp"
         },
         {
-          "title": "Anúbis em um baú",
-          "description": "Encontrado dentro do Tesouro, este baú em forma de pilão descansa sobre um trenó. Um impressionante chacal Anúbis preto e dourado está sentado no topo, guardando compartimentos escondidos cheios de objetos sagrados e joias preciosas.",
-          "imageUrl": "/imgs/packages/giza/anubis.png"
+          "title": "Anúbis",
+          "description": "Antes de chegar ao rei, era preciso passar por ele primeiro. Sentado à entrada do Tesouro — não era apenas um guardião. Era a própria porta.",
+          "imageUrl": "/imgs/packages/giza/anubis.webp"
         },
         {
-          "title": "Coffinette Canópico",
-          "description": "Este caixão em miniatura de ouro maciço conteneva os órgãos mumificados do rei. Ricamente decorado com cornalina, vidro colorido e feitiços de Ísis, cartuchos alterados sugerem que foi originalmente planejado para outro sepultamento real, não Tutancâmon.",
-          "imageUrl": "/imgs/packages/giza/canopic_coffinette.png"
+          "title": "Caixão canópico",
+          "description": "Mesmo na morte, o rei nunca esteve sozinho. Os seus pulmões, o seu fígado, o seu estômago — cada um selado em ouro maciço, abraçado por deusas. Porque para renascer, nada poderia ficar para trás.",
+          "imageUrl": "/imgs/packages/giza/canopic_coffinette.webp"
         }
       ],
       "cairo": [
         {
-          "title": "Mesquita de Muhammad Ali",
-          "description": "Conhecida como a Mesquita de Alabastro, esta obra-prima de estilo turco de 1848 na Cidadela apresenta os minaretes gêmeos mais altos do Egito e uma cúpula central magnífica construída por Muhammad Ali Pasha.",
-          "imageUrl": "/imgs/packages/cairo/ali.png"
+          "title": "A Igreja Suspensa",
+          "description": "Onde a Sagrada Família encontrou refúgio outrora — a igreja mais antiga do Egito ainda se ergue para contar a sua história.",
+          "imageUrl": "/imgs/packages/cairo/ben_ezra.webp"
         },
         {
-          "title": "Sinagoga Ben ‘Ezra",
-          "description": "Ben ‘Ezra é a sinagoga mais antiga do Egito. É famosa por seu herhal decorado com arabescos e a descoberta histórica da Genizá do Cairo, um tesoro de documentos raros de 850 anos de idade.",
-          "imageUrl": "/imgs/packages/cairo/ben_ezra.png"
+          "title": "A Sinagoga Ben Ezra",
+          "description": "A sinagoga mais antiga do Egito. Paredes que testemunharam 850 anos de história, guardando ainda os seus segredos.",
+          "imageUrl": "/imgs/packages/cairo/ben_ezra.webp"
+        },
+        {
+          "title": "A Mesquita de Muhammad Ali",
+          "description": "Os minaretes mais altos do Cairo. Uma cúpula que domina o horizonte da cidade. Construída pelo homem que moldou o Egito moderno.",
+          "imageUrl": "/imgs/packages/cairo/ali.webp"
         }
       ],
       "alexandria": [
         {
-          "title": "Cabeça de Alexandre, o Grande",
-          "description": "Descoberta nos jardins do distrito de Alexandria, esta cabeça de mármore branco representa Alexandre, o Grande, com seus característicos cabelos ondulados e olhar intenso, simbolizando o legado helenístico que definiu a cidade.",
-          "imageUrl": "/imgs/packages/alex/alexander_head.png"
-        },
-        {
-          "title": "Teatro Romano",
-          "description": "Localizado em Alexandria, este anfiteatro romano em forma de U do século IV serviu como auditório e conselho municipal bizantino. Apresenta paredes de calcário, assentos de mármore e colunas de granito impressionantes.",
-          "imageUrl": "/imgs/packages/alex/roman_theatre_new.png"
+          "title": "Alexandre, o Grande",
+          "description": "Uma réplica romana de uma cabeça em mármore do Conquistador do Mundo Antigo, Alexandre, o Grande.",
+          "imageUrl": "/imgs/packages/alex/alexander_head.webp"
         }
       ],
       "nile": [
         {
-          "title": "Jantar em Barca Faraônica",
-          "description": "Embarque em uma autêntica odisseia egípcia a bordo da Barca Faraônica. Este jantar-cruzeiro de 5 estrelas oferece um buffet aberto de especialidades grelhadas egípcias premium enquanto você assiste à performance hipnótica da Tanoura e aos shows de dança do ventre.",
-          "imageUrl": "/imgs/packages/nile/nile_pharaonic_real.png"
-        },
-        {
-          "title": "Cruzeiro Moderno",
-          "description": "Experimente o charme cosmopolita noturno do Cairo em um luxuoso cruzeiro panorâmico. Desfrute de un buffet internacional de classe mundial e hospitalidade de elite enquanto a orla histórica da cidade —incluindo a Torre do Cairo brilhante e os arranha-céus do centro— desfilam com graça à sua frente.",
-          "imageUrl": "/imgs/packages/nile/nile_modern_real.png"
+          "title": "O Nilo depois do anoitecer",
+          "description": "Dança sufi giratória, dança do ventre e buffet livre — enquanto as luzes do Cairo deslizam suavemente pela sua janela.",
+          "imageUrl": "/imgs/packages/nile/nile_modern_real.webp"
         }
       ]
     }
@@ -398,6 +407,6 @@
     "scanCode": "Digitalize este código com seu guia na retirada",
     "errorTitle": "Bilhete Não Encontrado",
     "errorDescription": "Não conseguimos encontrar o bilhete que você está procurando. Por favor, verifique a URL ou seu perfil.",
-    "backToProfile": "Volver ao Perfil"
+    "backToProfile": "Voltar ao Perfil"
   }
 }

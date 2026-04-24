@@ -49,7 +49,7 @@
     }
   },
   "privacy": {
-    "title": "Politique de Confidentialité",
+    "title": "Politique de confidentialité",
     "description": "Découvrez comment Moonlight recueille, utilise et protège vos informations personnelles.",
     "effectiveDate": "Date d'entrée en vigueur : Mars 2026",
     "keywords": [
@@ -151,19 +151,19 @@
     "home": "Accueil",
     "about": "À propos de nous",
     "contact": "Contact",
-    "privacy": "Confidentialité",
-    "terms": "Conditions de Service",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
     "login": "Connexion",
     "logout": "Déconnexion",
     "menu": "Menu",
     "language": "Langue"
   },
   "footer": {
-    "terms": "Conditions de Service",
-    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'utilisation",
+    "privacy": "Politique de confidentialité",
     "about": "À propos de nous",
     "contact": "Contact",
-    "allRights": "Tous droits réservés.",
+    "allRights": "© 2026 Tous droits réservés.",
     "designedBy": "Conçu par"
   },
   "loader": {
@@ -226,8 +226,8 @@
       "useLocation": "Utiliser Ma Position",
       "gettingLocation": "Récupération en cours...",
       "alerts": {
-        "notSupported": "La géolocalisation n’est pas prise en charge par votre navigateur.",
-        "fetchError": "Impossible de récupérer l’adresse. Veuillez la saisir manuellement.",
+        "notSupported": "La géolocalisation n'est pas prise en charge par votre navigateur.",
+        "fetchError": "Impossible de récupérer l'adresse. Veuillez la saisir manuellement.",
         "denied": "Autorisation refusée ou emplacement introuvable."
       },
       "placeholders": {
@@ -277,63 +277,72 @@
     }
   },
   "home": {
-    "view": "voir",
+    "view": "Voir",
+    "from": "À partir de",
+    "priceVaries": "Le prix varie selon la taille du groupe",
+    "packageTitles": {
+      "giza": "Circuits à Gizeh",
+      "cairo": "Circuits au Caire",
+      "alexandria": "Circuits à Alexandrie",
+      "nile": "Croisière sur le Nil"
+    },
     "hero": {
-      "title": "Voyage Premium",
-      "subtitle": "Découvrez l'Égypte comme un local"
+      "title": "Explorez l'Égypte",
+      "subtitle": "Chaque pierre ici a une histoire à raconter."
+    },
+    "sectionTitles": {
+      "giza": "Trésors de Gizeh",
+      "cairo": "Une ville, toutes les fois — c'est Le Caire",
+      "alexandria": "Là où Alexandre a laissé son nom — Alexandrie",
+      "nile": "Croisière sur le Nil"
     },
     "landmarks": {
       "giza": [
         {
-          "title": "Masque d'or",
-          "description": "Ce célèbre masque en or massif reposait sur les restes momifiés de Toutânkhamon. Il capture parfaitement son visage royal tout en le transformant en dieux Osiris et Rê, avec des inscriptions divines protectrices à l'arrière.",
-          "imageUrl": "/imgs/packages/giza/totankhamun.png"
+          "title": "Masque d'or de Toutânkhamon",
+          "description": "5 000 trésors. Cachés pendant 3 000 ans, gardés par Anubis lui-même. Ce masque était la dernière chose que le monde était censé contempler — il vous attend désormais.",
+          "imageUrl": "/imgs/packages/giza/totankhamun.webp"
         },
         {
-          "title": "Anubis sur un coffre",
-          "description": "Trouvé à l’intérieur du Trésor, ce coffre en forme de pylône repose sur un traîneau. Un chacal Anubis noir et or saisissant est assis au-dessus, gardant des compartiments cachés remplis d'objets sacrés et de bijoux précieux.",
-          "imageUrl": "/imgs/packages/giza/anubis.png"
+          "title": "Anubis",
+          "description": "Avant d'atteindre le roi, il fallait d'abord passer devant lui. Posté à l'entrée du Trésor — il n'était pas simplement un gardien. Il était la porte elle-même.",
+          "imageUrl": "/imgs/packages/giza/anubis.webp"
         },
         {
           "title": "Cercueil canope",
-          "description": "Ce cercueil miniature en or massif contenait les organes momifiés du roi. Richement décoré de cornaline, de verre coloré et de sorts d'Isis, les cartouches altérés suggèrent qu'il était initialement destiné à une autre sépulture royale, pas à Toutânkhamon.",
-          "imageUrl": "/imgs/packages/giza/canopic_coffinette.png"
+          "description": "Même dans la mort, le roi n'était jamais seul. Ses poumons, son foie, son estomac — chacun scellé dans de l'or massif, enlacé par des déesses. Car pour renaître, rien ne pouvait être laissé derrière.",
+          "imageUrl": "/imgs/packages/giza/canopic_coffinette.webp"
         }
       ],
       "cairo": [
         {
-          "title": "Mosquée de Muhammad Ali",
-          "description": "Connue sous le nom de Mosquée d'Albâtre, ce chef-d'œuvre de style turc de 1848 situé dans la Citadelle présente les minarets jumeaux les plus hauts d'Égypte et un magnifique dôme central construit par Muhammad Ali Pacha.",
-          "imageUrl": "/imgs/packages/cairo/ali.png"
+          "title": "L'Église Suspendue",
+          "description": "Là où la Sainte Famille trouva refuge autrefois — la plus ancienne église d'Égypte se dresse encore pour raconter son histoire.",
+          "imageUrl": "/imgs/packages/cairo/ben_ezra.webp"
         },
         {
-          "title": "Synagogue Ben ‘Ezra",
-          "description": "Ben ‘Ezra est la plus ancienne synagogue d’Égypte. Elle est célèbre pour son hekhal décoré d’arabesques et la découverte historique de la Guenizah du Caire, un trésor de documents rares vieux de 850 ans.",
-          "imageUrl": "/imgs/packages/cairo/ben_ezra.png"
+          "title": "La Synagogue Ben Ezra",
+          "description": "La plus ancienne synagogue d'Égypte. Des murs qui ont été témoins de 850 ans d'histoire, gardant encore leurs secrets.",
+          "imageUrl": "/imgs/packages/cairo/ben_ezra.webp"
+        },
+        {
+          "title": "La Mosquée Muhammad Ali",
+          "description": "Les minarets les plus hauts du Caire. Un dôme qui domine la ligne d'horizon de la ville. Bâtie par l'homme qui a façonné l'Égypte moderne.",
+          "imageUrl": "/imgs/packages/cairo/ali.webp"
         }
       ],
       "alexandria": [
         {
-          "title": "Tête d'Alexandre le Grand",
-          "description": "Découverte dans les jardins du district d'Alexandrie, cette tête en marbre blanc représente Alexandre le Grand avec ses cheveux ondulés caractéristiques et son regard intense, symbolisant l'héritage hellénistique qui a défini la ville.",
-          "imageUrl": "/imgs/packages/alex/alexander_head.png"
-        },
-        {
-          "title": "Théâtre romain",
-          "description": "Situé à Alexandrie, cet amphithéâtre romain en forme de U du IVe siècle servait d’auditorium et de conseil municipal byzantin. Il présente des murs en calcaire, des sièges en marbre et de frappantes colonnes de granit.",
-          "imageUrl": "/imgs/packages/alex/roman_theatre_new.png"
+          "title": "Alexandre le Grand",
+          "description": "Une réplique romaine d'une tête en marbre du Conquérant du Monde Antique, Alexandre le Grand.",
+          "imageUrl": "/imgs/packages/alex/alexander_head.webp"
         }
       ],
       "nile": [
         {
-          "title": "Dîner sur Barque Pharaonique",
-          "description": "Embarquez pour une authentique odyssée égyptienne à bord de la Barque Pharaonique. Ce dîner-croisière 5 étoiles propose un buffet ouvert de spécialités grillées égyptiennes de premier choix pendant que vous assistez au spectacle hypnotique de la Tanoura et à des prestations de dance orientale.",
-          "imageUrl": "/imgs/packages/nile/nile_pharaonic_real.png"
-        },
-        {
-          "title": "Croiseur Moderne",
-          "description": "Découvrez le charme cosmopolite du Caire de nuit sur un croiseur panoramique de luxe. Profitez d'un buffet international de classe mondiale et d'une hospitalité d'élite pendant que les berges historiques de la ville —incluant la Tour du Caire scintillante et les gratte-ciel du centre-ville— défilent avec grâce devant vos baies vitrées.",
-          "imageUrl": "/imgs/packages/nile/nile_modern_real.png"
+          "title": "Le Nil après la tombée de la nuit",
+          "description": "Danse soufie tournoyante, danse orientale, et buffet à volonté — tandis que les lumières du Caire défilent doucement derrière votre fenêtre.",
+          "imageUrl": "/imgs/packages/nile/nile_modern_real.webp"
         }
       ]
     }

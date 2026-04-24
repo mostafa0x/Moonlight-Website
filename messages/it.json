@@ -49,7 +49,7 @@
     }
   },
   "privacy": {
-    "title": "Informativa sulla Privacy",
+    "title": "Informativa sulla privacy",
     "description": "Scopri come Moonlight raccoglie, utilizza e protegge le tue informazioni personali.",
     "effectiveDate": "Data di entrata in vigore: Marzo 2026",
     "keywords": [
@@ -151,19 +151,19 @@
     "home": "Home",
     "about": "Chi siamo",
     "contact": "Contatti",
-    "privacy": "Privacy",
-    "terms": "Termini di Servizio",
-    "login": "Login",
-    "logout": "Disconnetti",
+    "privacy": "Informativa sulla privacy",
+    "terms": "Termini di servizio",
+    "login": "Accedi",
+    "logout": "Esci",
     "menu": "Menu",
     "language": "Lingua"
   },
   "footer": {
-    "terms": "Termini di Servizio",
-    "privacy": "Informativa sulla Privacy",
+    "terms": "Termini di servizio",
+    "privacy": "Informativa sulla privacy",
     "about": "Chi siamo",
     "contact": "Contatti",
-    "allRights": "Tutti i diritti riservati.",
+    "allRights": "© 2026 Tutti i diritti riservati.",
     "designedBy": "Progettato da"
   },
   "loader": {
@@ -227,7 +227,7 @@
       "gettingLocation": "Recupero posizione...",
       "alerts": {
         "notSupported": "La geolocalizzazione non è supportata dal tuo browser.",
-        "fetchError": "Impossibile recuperare l’indirizzo. Inseriscilo manualmente.",
+        "fetchError": "Impossibile recuperare l'indirizzo. Inseriscilo manualmente.",
         "denied": "Permesso negato o posizione non trovata."
       },
       "placeholders": {
@@ -277,63 +277,72 @@
     }
   },
   "home": {
-    "view": "vedi",
+    "view": "Scopri",
+    "from": "A partire da",
+    "priceVaries": "Il prezzo varia in base alla dimensione del gruppo",
+    "packageTitles": {
+      "giza": "Tour a Giza",
+      "cairo": "Tour al Cairo",
+      "alexandria": "Tour ad Alessandria",
+      "nile": "Crociera sul Nilo"
+    },
     "hero": {
-      "title": "Viaggio Premium",
-      "subtitle": "Scopri l'Egitto come un locale"
+      "title": "Esplora l'Egitto",
+      "subtitle": "Ogni pietra qui ha una storia da raccontare."
+    },
+    "sectionTitles": {
+      "giza": "Tesori di Giza",
+      "cairo": "Una città, ogni fede — è Il Cairo",
+      "alexandria": "Dove Alessandro lasciò il suo nome — Alessandria",
+      "nile": "Crociera sul Nilo"
     },
     "landmarks": {
       "giza": [
         {
-          "title": "Maschera d'oro",
-          "description": "Questa famosa maschera in oro massiccio poggiava sui resti mummificati di Tutankhamon. Cattura perfettamente il suo volto reale trasformandolo negli dei Osiride e Ra, con iscrizioni divine protettive sul retro.",
-          "imageUrl": "/imgs/packages/giza/totankhamun.png"
+          "title": "La maschera d'oro di Tutankhamon",
+          "description": "5.000 tesori. Celati per 3.000 anni, custoditi da Anubi in persona. Questa maschera era l'ultima cosa che il mondo avrebbe dovuto vedere — ora è tua da scoprire.",
+          "imageUrl": "/imgs/packages/giza/totankhamun.webp"
         },
         {
-          "title": "Anubi su una cassa",
-          "description": "Trovata all'interno del Tesoro, questa cassa a forma di pilone poggia su una slitta. Uno sciacallo Anubi nero e oro è seduto sopra, a guardia di scomparti nascosti pieni di oggetti sacri e gioielli preziosi.",
-          "imageUrl": "/imgs/packages/giza/anubis.png"
+          "title": "Anubi",
+          "description": "Prima di poter raggiungere il re, dovevi passare davanti a lui. Seduto all'ingresso del Tesoro — non era solo un guardiano. Era la porta stessa.",
+          "imageUrl": "/imgs/packages/giza/anubis.webp"
         },
         {
-          "title": "Coffinette canopica",
-          "description": "Questo sarcofago in miniatura in oro massiccio conteneva gli organi mummificati del re. Riccamente decorato con corniola, vetro colorato e incantesimi di Iside, i cartigli alterati suggeriscono che fosse originariamente destinato a un'altra sepoltura reale, non a Tutankhamon.",
-          "imageUrl": "/imgs/packages/giza/canopic_coffinette.png"
+          "title": "Canopo funerario",
+          "description": "Anche nella morte, il re non era mai solo. I suoi polmoni, il suo fegato, il suo stomaco — ognuno sigillato in oro massiccio, avvolto dalle dee. Perché per rinascere, nulla poteva essere lasciato indietro.",
+          "imageUrl": "/imgs/packages/giza/canopic_coffinette.webp"
         }
       ],
       "cairo": [
         {
-          "title": "Moschea di Muhammad Ali",
-          "description": "Conosciuta come la Moschea di Alabastro, questo capolavoro in stile turco del 1848 nella Cittadella presenta i minareti gemelli più alti d'Egitto e una magnifica cupola centrale costruita da Muhammad Ali Pasha.",
-          "imageUrl": "/imgs/packages/cairo/ali.png"
+          "title": "La Chiesa Sospesa",
+          "description": "Dove la Sacra Famiglia trovò rifugio un tempo — la chiesa più antica d'Egitto è ancora in piedi per raccontare la sua storia.",
+          "imageUrl": "/imgs/packages/cairo/ben_ezra.webp"
         },
         {
-          "title": "Sinagoga Ben ‘Ezra",
-          "description": "Ben ‘Ezra è la più antica sinagoga d'Egitto. È famosa per il suo hekhal decorato con arabeschi e la scoperta storica della Genizah del Cairo, un tesoro di documenti rari risalenti a 850 anni fa.",
-          "imageUrl": "/imgs/packages/cairo/ben_ezra.png"
+          "title": "La Sinagoga Ben Ezra",
+          "description": "La sinagoga più antica d'Egitto. Mura che hanno testimoniato 850 anni di storia, custodendo ancora i loro segreti.",
+          "imageUrl": "/imgs/packages/cairo/ben_ezra.webp"
+        },
+        {
+          "title": "La Moschea di Muhammad Ali",
+          "description": "I minareti più alti del Cairo. Una cupola che domina lo skyline della città. Costruita dall'uomo che ha plasmato l'Egitto moderno.",
+          "imageUrl": "/imgs/packages/cairo/ali.webp"
         }
       ],
       "alexandria": [
         {
-          "title": "Testa di Alessandro Magno",
-          "description": "Scoperta nei giardini del distretto di Alessandria, questa testa di marmo bianco rappresenta Alessandro Magno con i suoi caratteristici capelli ondulati e lo sguardo intenso, a simboleggiare l'eredità ellenistica che ha definito la città.",
-          "imageUrl": "/imgs/packages/alex/alexander_head.png"
-        },
-        {
-          "title": "Teatro Romano",
-          "description": "Situato ad Alessandria, questo anfiteatro romano a forma di U del IV secolo fungeva da auditorium e consiglio cittadino bizantino. Presenta mura in pietra calcarea, sedili in marmo e suggestive colonne di granito.",
-          "imageUrl": "/imgs/packages/alex/roman_theatre_new.png"
+          "title": "Alessandro Magno",
+          "description": "Una replica romana di una testa in marmo del Conquistatore del Mondo Antico, Alessandro Magno.",
+          "imageUrl": "/imgs/packages/alex/alexander_head.webp"
         }
       ],
       "nile": [
         {
-          "title": "Cena su Barca Faraonica",
-          "description": "Imbarcatevi in un'autentica odissea egiziana a bordo della Barca Faraonica. Questa cena in crociera a 5 stelle offre un buffet aperto di specialità grill egiziane di primo livello mentre assistete allo spettacolo ipnotico della Tanoura e a esibizioni di danza orientale.",
-          "imageUrl": "/imgs/packages/nile/nile_pharaonic_real.png"
-        },
-        {
-          "title": "Crociera Moderna",
-          "description": "Vivete il fascino cosmopolita notturno del Cairo su un lussuoso incrociatore panoramico. Godetevi un buffet internazionale di classe mondiale e un'ospitalità d'élite mentre il lungofiume storico —inclusa la Torre del Cairo scintillante e i grattacieli del centro— sfila con grazia davanti alle vostre vetrate a tutta altezza.",
-          "imageUrl": "/imgs/packages/nile/nile_modern_real.png"
+          "title": "Il Nilo dopo il tramonto",
+          "description": "Danza sufi rotante, danza del ventre e buffet aperto — mentre le luci del Cairo scorrono lentamente oltre il finestrino.",
+          "imageUrl": "/imgs/packages/nile/nile_modern_real.webp"
         }
       ]
     }

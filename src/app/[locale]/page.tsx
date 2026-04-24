@@ -27,31 +27,28 @@ export default async function page({
 
   const dataAll: HomeDataType[] = [
     {
-      packageTitle: "Tours in Giza",
+      packageTitle: t("packageTitles.giza"),
       governorate: "giza",
       page: 1,
       packages: [],
       landmarks: t.raw("landmarks.giza"),
     },
     {
-      packageTitle: "Tours in cairo",
-
+      packageTitle: t("packageTitles.cairo"),
       governorate: "cairo",
       page: 3,
       packages: [],
       landmarks: t.raw("landmarks.cairo"),
     },
     {
-      packageTitle: "Tours in Alexandria",
-
+      packageTitle: t("packageTitles.alexandria"),
       governorate: "alexandria",
       page: 5,
       packages: [],
       landmarks: t.raw("landmarks.alexandria"),
     },
     {
-      packageTitle: "Nile Cruise",
-
+      packageTitle: t("packageTitles.nile"),
       page: 7,
       governorate: "nile",
       packages: [],
