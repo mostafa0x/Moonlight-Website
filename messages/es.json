@@ -280,6 +280,7 @@
     "view": "Ver",
     "from": "Desde",
     "priceVaries": "El precio varía según el tamaño del grupo",
+    "bestSeller": "Más vendido",
     "packageTitles": {
       "giza": "Tours en Guiza",
       "cairo": "Tours en El Cairo",

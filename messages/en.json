@@ -291,6 +291,7 @@
     "view": "View",
     "from": "From",
     "priceVaries": "Price varies by group size",
+    "bestSeller": "Best Seller",
     "packageTitles": {
       "giza": "Tours in Giza",
       "cairo": "Tours in Cairo",
