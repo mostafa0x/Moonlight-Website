@@ -41,7 +41,6 @@ function PackageSection({
   return (
     <section className="flex h-full w-full" aria-labelledby={`section-title-${title.replace(/\s+/g, '-').toLowerCase()}`}>
       <div className="z-10 flex h-full w-full flex-col justify-center items-center">
-        <SectionHeader title={title} />
 
         {packages.length === 0 && !isLoading ? (
           <div
@@ -60,7 +59,8 @@ function PackageSection({
             </div>
           </div>
         ) : (
-          <div className="flex-1 flex flex-col justify-center w-full min-h-0 mb-4 mt-24">
+          <div className="flex-1 flex flex-col justify-center space-y-6 w-full min-h-0 mb-4">
+            <SectionHeader title={title} />
             <Swiper
               modules={[Pagination]}
               slidesPerView={"auto"}

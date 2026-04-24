@@ -5,20 +5,19 @@ import { motion } from "framer-motion";
 
 interface SectionHeaderProps {
   title: string;
-  textColor?: string;
 }
 
 /**
  * SectionHeader Component
  * A reusable, performant header with motion animations and responsive positioning.
  */
-const SectionHeader = memo(({ title, textColor = "text-[#F2C975]" }: SectionHeaderProps) => {
+const SectionHeader = memo(({ title }: SectionHeaderProps) => {
   return (
     <motion.h1
-      initial={{ y: -10, opacity: 0 }}
+      initial={{ y: +10, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 1, delay: 0.2 }}
-      className={`absolute top-42 left-1/2 -translate-x-1/2 w-full text-center ${textColor} text-2xl md:text-3xl font-bold z-50 pointer-events-none`}
+      className="w-full text-center text-white text-2xl md:text-3xl font-bold z-50"
     >
       {title}
     </motion.h1>
