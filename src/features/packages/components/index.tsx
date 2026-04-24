@@ -60,7 +60,7 @@ function PackageSection({
             </div>
           </div>
         ) : (
-          <div className="flex-1 flex flex-col justify-center w-full min-h-0 mb-4">
+          <div className="flex-1 flex flex-col justify-center w-full min-h-0 mb-4 mt-[60px]">
             <Swiper
               modules={[Pagination]}
               slidesPerView={"auto"}
