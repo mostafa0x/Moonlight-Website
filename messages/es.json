@@ -353,9 +353,9 @@
     "logout": "Cerrar sesión",
     "loginWithGoogle": "Iniciar sesión con Google",
     "welcome": "Bienvenido",
-    "loginDescription": "Inicie sesión para continuar con su reserva y guardar su información.",
+    "loginDescription": "Por favor, inicia sesión para continuar con tu reserva y guardar tu información.",
     "error": "Error de autenticación",
-    "secureVoyage": "Asegure su viaje a la historia"
+    "secureVoyage": "Asegura tu viaje a la historia"
   },
   "profile": {
     "title": "Mi Perfil",

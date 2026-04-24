@@ -353,9 +353,9 @@
     "logout": "Sair",
     "loginWithGoogle": "Entrar com Google",
     "welcome": "Bem-vindo",
-    "loginDescription": "Faça login para continuar com sua reserva e salvar suas informações.",
+    "loginDescription": "Por favor, inicie sessão para prosseguir com a sua reserva e guardar as suas informações.",
     "error": "Erro de autenticação",
-    "secureVoyage": "Segure sua viagem à história"
+    "secureVoyage": "Garanta a sua viagem à história"
   },
   "profile": {
     "title": "Meu Perfil",
