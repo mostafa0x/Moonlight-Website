@@ -4,6 +4,7 @@ import { memo, useMemo } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import type { PackageType } from "@/shared/global";
+import BestSeller from "@/features/packages/components/BestSeller";
 
 interface PackageCardProps {
   pkg: PackageType;
@@ -30,6 +31,7 @@ function PackageCard({ pkg, priority = false }: PackageCardProps) {
       className="group relative h-[55vh] min-h-80 max-h-115 lg:max-h-130 w-full cursor-pointer overflow-hidden rounded-2xl select-none shadow-xl transition-all duration-300"
       aria-label={packageName}
     >
+      <BestSeller />
       <Image
         src={packageImage}
         alt={`Image of ${packageName} tour`}

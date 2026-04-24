@@ -54,7 +54,7 @@ function PackageSection({
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2v-6m16 0V6a2 2 0 00-2-2H6a2 2 0 00-2 2v6m16 0h-3.333a2 2 0 01-1.862 1.268H9.195A2 2 0 017.333 12H4" />
                 </svg>
               </div>
-              <p className="text-white/30 text-lg font-light tracking-wide max-w-md">
+              <p className="text-white/60 text-lg font-light tracking-wide max-w-md">
                 {t("noPackagesAvailable")}
               </p>
             </div>
