@@ -33,12 +33,13 @@ export default function TestimonialsSection() {
                 {/* Content Box */}
                 <div className="flex flex-col lg:flex-row   items-stretch w-full min-h-0">
                     {/* Visual - High-Quality Image */}
-                    <div className="relative flex-1 min-h-[260px] md:min-h-[320px]md:h-full rounded-3xl hidden lg:block">
+                    <div className="relative flex-1 min-h-[300px] md:min-h-[370px] md:h-full rounded-3xl hidden lg:block overflow-hidden">
                         <Image
                             src="/imgs/travelers-at-the-pyramids.webp"
                             alt="Experience Egypt"
                             fill
-                            className="object-contain"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                            className="object-fill"
                             priority
                         />
                     </div>
