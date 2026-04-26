@@ -28,7 +28,7 @@ export default function TestimonialsSection() {
                             <span className="md:hidden text-color-grey-96">{t("mobileTitle")}</span>
                             <span className="hidden md:inline">{t("desktopTitle")}</span>
                         </h2>
-                        <p className="text-[10px] md:text-sm text-emerald-50 md:text-gray-200 max-w-75 md:max-w-150">
+                        <p className="text-[10px] md:text-sm text-emerald-50 md:text-gray-200 max-w-75 md:max-w-155">
                             <span className="md:hidden">{t("mobileSubtitle")}</span>
                             <span className="hidden md:inline">{t("desktopSubtitle")}</span>
                         </p>
@@ -37,7 +37,7 @@ export default function TestimonialsSection() {
                     {/* Content Box */}
                     <div className="flex flex-col lg:flex-row items-stretch w-full min-h-0">
                         {/* Visual - High-Quality Image */}
-                        <div className="relative flex-1 min-h-75 md:min-h-92.5 md:h-full rounded-3xl hidden lg:block overflow-hidden">
+                        <div className="relative flex-1 min-h-75 md:min-h-90   md:h-full rounded-3xl hidden lg:block overflow-hidden">
                             <Image
                                 src="/imgs/travelers-at-the-pyramids.webp"
                                 alt="Experience Egypt"
