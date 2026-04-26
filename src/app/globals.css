@@ -3,7 +3,12 @@
 @import "tailwind-scrollbar-hide/v4";
 
 @theme {
-  --font-cairo: var(--font-cairo);
+  --font-jakarta: var(--font-jakarta);
+
+  --color-color-grey-96: #f5f5f5;
+  --color-color-cyan-35: #00af87;
+  --color-color-grey-53: #4a4a4a;
+  --color-color-white-solid: #ffffff;
 
   --spacing-6-25: 1.5625rem;
   --spacing-107: 26.75rem;

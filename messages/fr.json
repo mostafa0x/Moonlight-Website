@@ -297,6 +297,15 @@
       "alexandria": "Là où Alexandre a laissé son nom — Alexandrie",
       "nile": "Croisière sur le Nil"
     },
+    "testimonials": {
+      "mobileTitle": "À travers leurs yeux",
+      "desktopTitle": "Témoignages de nos voyageurs",
+      "mobileSubtitle": "Vivez nos périples à travers les récits de ceux qui les ont réellement vécus",
+      "desktopSubtitle": "Découvrez comment nous avons rendu chaque voyage exceptionnel — selon ceux qui ont voyagé avec nous.",
+      "reviews": "Avis",
+      "rating": "4.93",
+      "tripAdvisor": "TripAdvisor"
+    },
     "landmarks": {
       "giza": [
         {

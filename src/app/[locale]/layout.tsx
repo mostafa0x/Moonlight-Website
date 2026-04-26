@@ -1,4 +1,4 @@
-import { Cairo } from "next/font/google";
+import { Cairo, Plus_Jakarta_Sans } from "next/font/google";
 import AllProviders from "@/shared/providers/AllProviders";
 import NavBar from "@/shared/components/nav-bar";
 import BackgroundImage from "@/shared/components/background-image/BackgroundImage";
@@ -88,6 +88,14 @@ const cairo = Cairo({
   preload: true,
 });
 
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-jakarta",
+  display: "swap",
+  preload: true,
+});
+
 interface LocaleLayoutProps {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
@@ -125,7 +133,7 @@ export default async function LocaleLayout({
   // );
 
   return (
-    <html lang={locale} className={`${cairo.variable}`} suppressHydrationWarning>
+    <html lang={locale} className={`${cairo.variable} ${jakarta.variable}`} suppressHydrationWarning>
       <body suppressHydrationWarning className="bg-black">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AllProviders>

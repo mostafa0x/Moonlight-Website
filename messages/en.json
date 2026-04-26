@@ -308,6 +308,15 @@
       "alexandria": "Where Alexander Left His Name, Alexandria",
       "nile": "Nile Cruise"
     },
+    "testimonials": {
+      "mobileTitle": "Through Their Eyes",
+      "desktopTitle": "Our Travelers Testimonials",
+      "mobileSubtitle": "Experience our journeys through the stories of those who actually lived them",
+      "desktopSubtitle": "See how we’ve made every journey exceptional — straight from those who’ve traveled with us.",
+      "reviews": "Reviews",
+      "rating": "4.93",
+      "tripAdvisor": "TripAdvisor"
+    },
     "landmarks": {
       "giza": [
         {

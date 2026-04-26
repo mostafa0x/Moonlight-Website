@@ -297,6 +297,15 @@
       "alexandria": "Onde Alexandre deixou o seu nome — Alexandria",
       "nile": "Cruzeiro pelo Nilo"
     },
+    "testimonials": {
+      "mobileTitle": "Através de seus olhos",
+      "desktopTitle": "Depoimentos de nossos viajantes",
+      "mobileSubtitle": "Viva nossas jornadas através das histórias de quem realmente as viveu",
+      "desktopSubtitle": "Veja como tornamos cada viagem excepcional — direto de quem viajou conosco.",
+      "reviews": "Avaliações",
+      "rating": "4.93",
+      "tripAdvisor": "TripAdvisor"
+    },
     "landmarks": {
       "giza": [
         {

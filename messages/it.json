@@ -297,6 +297,15 @@
       "alexandria": "Dove Alessandro lasciò il suo nome — Alessandria",
       "nile": "Crociera sul Nilo"
     },
+    "testimonials": {
+      "mobileTitle": "Attraverso i loro occhi",
+      "desktopTitle": "Testimonianze dei nostri viaggiatori",
+      "mobileSubtitle": "Vivi i nostri viaggi attraverso i racconti di chi li ha vissuti davvero",
+      "desktopSubtitle": "Scopri come abbiamo reso eccezionale ogni viaggio — direttamente da chi ha viaggiato con noi.",
+      "reviews": "Recensioni",
+      "rating": "4.93",
+      "tripAdvisor": "TripAdvisor"
+    },
     "landmarks": {
       "giza": [
         {

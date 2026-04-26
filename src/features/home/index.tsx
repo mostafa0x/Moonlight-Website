@@ -10,6 +10,8 @@ import PackagesPage from "@/features/home/packages-page/index";
 
 
 
+import Testimonials from "@/features/testimonials";
+
 
 interface HomeProps {
   data: HomeDataType[];
@@ -56,6 +58,11 @@ function Home({ data, locale }: HomeProps) {
           </div>
         </Section>
       ])}
+
+      {/* Social Proof: Testimonials Section */}
+      <Section id="testimonials">
+        <Testimonials />
+      </Section>
 
       {/* Last Section: Footer */}
       <Section id="footer" >
