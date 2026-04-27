@@ -417,5 +417,55 @@
     "errorTitle": "Boleto No Encontrado",
     "errorDescription": "No pudimos encontrar el boleto que estás buscando. Por favor, verifica la URL o tu perfil.",
     "backToProfile": "Volver al Perfil"
+  },
+  "packageDetails": {
+    "notFound": "Paquete No Encontrado",
+    "overview": "Descripción General",
+    "included": "Incluido",
+    "excluded": "Excluido",
+    "itinerary": "Itinerario",
+    "start": "Inicio",
+    "end": "Fin",
+    "duration": "Duración",
+    "hours": "8 Horas",
+    "groupSize": "Tamaño del Grupo",
+    "morePeopleLessPrice": "Más personas, mejor precio",
+    "priceVaries": "El precio varía según el tamaño del grupo",
+    "bookNow": "Reservar",
+    "highlightsTitle": "Destacados",
+    "highlights": {
+      "whyChooseUs": {
+        "title": "¿Por qué elegirnos?",
+        "content": "Ofrecemos el equilibrio perfecto: una experiencia de viaje excepcional en el corazón de Egipto a precios inmejorables. Su viaje con nosotros es más que una visita; es un viaje en el tiempo guiado por expertos de élite."
+      },
+      "cancellationPolicy": {
+        "title": "Política de Cancelación",
+        "content": "1. Las cancelaciones realizadas más de 5 días antes de la fecha del tour son elegibles para un reembolso, sujeto a tarifas estándar.\n\n2. Más de 5 días antes: Reembolsable. 5 días o menos: No reembolsable."
+      },
+      "whatYouShouldKnow": {
+        "title": "Lo que debes saber",
+        "content": "Recomendamos traer ropa cómoda, zapatos para caminar, protector solar, un sombrero y sus documentos de viaje."
+      }
+    },
+    "faqTitle": "Preguntas Frecuentes",
+    "faq": {
+      "customItinerary": {
+        "question": "¿Se puede personalizar el itinerario?",
+        "answer": "¡Absolutamente! Todos nuestros viajes son completamente flexibles. Puede ajustar la duración, hoteles, actividades o agregar experiencias especiales."
+      },
+      "deposit": {
+        "question": "¿Necesito pagar un depósito para confirmar la reserva?",
+        "answer": "En la mayoría de los casos, solo se requiere un pequeño depósito. El saldo restante se puede pagar antes de su llegada."
+      },
+      "whatToBring": {
+        "question": "¿Qué debo llevar conmigo al viaje?",
+        "answer": "Recomendamos traer ropa cómoda, zapatos para caminar, protector solar, un sombrero y sus documentos de viaje."
+      }
+    },
+    "reviewsTitle": "Reseñas",
+    "reviews": {
+      "title": "Testimonios de Nuestros Viajeros",
+      "subtitle": "Descubra cómo hemos hecho que cada viaje sea excepcional."
+    }
   }
 }

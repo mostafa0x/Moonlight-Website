@@ -42,7 +42,7 @@ export default function BookingContextProvider({
   const lang = (locale as string) || "en";
   
   const [step, setStep] = useState(1);
-  const [totalSteps, setTotalSteps] = useState(5);
+  const [totalSteps, setTotalSteps] = useState(4);
   const [tourId, setTourId] = useState("");
 
   const isOpen = !!tourId;

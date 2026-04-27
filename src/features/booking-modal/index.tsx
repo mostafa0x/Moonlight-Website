@@ -71,8 +71,9 @@ export default function BookingModal() {
       // Restore all user input with 'keepDefaultValues' to avoid overwrites
       reset(pendingData.formValues, { keepDefaultValues: true });
 
-      // Determine the correct step to jump to for continuing (Step 4 for tours with customizations)
-      const targetStep = hasCustomizations ? 4 : 3;
+      // Determine the correct step to jump to for continuing
+      // Steps shifted by -1 since step 1 (details) moved to standalone page
+      const targetStep = hasCustomizations ? 3 : 2;
       setStep(targetStep);
 
       // Clear persistence to ensure clean future launches
@@ -91,9 +92,10 @@ export default function BookingModal() {
 
 
   // Sync total steps based on package customization options
+  // Step 1 (details) moved to standalone page, so: customizations? 4 : 3
   useEffect(() => {
     if (pkg) {
-      setTotalSteps(hasCustomizations ? 5 : 4);
+      setTotalSteps(hasCustomizations ? 4 : 3);
     }
   }, [hasCustomizations, pkg, setTotalSteps]);
 
@@ -148,11 +150,9 @@ const ModalContent = ({ pkg, step, hasCustomizations }: any) => (
       />
     </div>
 
-    {step !== 1 && (
-      <div className="animate-in fade-in duration-500">
-        <StepsInfo step={step} />
-      </div>
-    )}
+    <div className="animate-in fade-in duration-500">
+      <StepsInfo step={step} />
+    </div>
 
     <StepRenderer
       step={step}
@@ -160,10 +160,8 @@ const ModalContent = ({ pkg, step, hasCustomizations }: any) => (
       hasCustomizations={hasCustomizations}
     />
 
-    {step !== 1 && (
-      <div className="mt-auto px-5.25 py-4 border-t border-white/5 bg-[#0D0D0D]">
-        <FooterModal step={step} />
-      </div>
-    )}
+    <div className="mt-auto px-5.25 py-4 border-t border-white/5 bg-[#0D0D0D]">
+      <FooterModal step={step} />
+    </div>
   </>
 );

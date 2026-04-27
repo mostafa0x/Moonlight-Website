@@ -417,5 +417,55 @@
     "errorTitle": "Billet Introuvable",
     "errorDescription": "Nous n'avons pas pu trouver le billet que vous recherchez. Veuillez vérifier l'URL ou votre profil.",
     "backToProfile": "Retour au Profil"
+  },
+  "packageDetails": {
+    "notFound": "Package Non Trouvé",
+    "overview": "Aperçu",
+    "included": "Inclus",
+    "excluded": "Exclus",
+    "itinerary": "Itinéraire",
+    "start": "Début",
+    "end": "Fin",
+    "duration": "Durée",
+    "hours": "8 Heures",
+    "groupSize": "Taille du Groupe",
+    "morePeopleLessPrice": "Plus de monde, prix réduit",
+    "priceVaries": "Le prix varie selon la taille du groupe",
+    "bookNow": "Réserver",
+    "highlightsTitle": "Points Forts",
+    "highlights": {
+      "whyChooseUs": {
+        "title": "Pourquoi Nous Choisir ?",
+        "content": "Nous offrons l'équilibre parfait : une expérience de voyage exceptionnelle au cœur de l'Égypte à des prix imbattables. Votre voyage avec nous est plus qu'une simple visite ; c'est un voyage dans le temps guidé par des experts d'élite."
+      },
+      "cancellationPolicy": {
+        "title": "Politique d'Annulation",
+        "content": "1. Les annulations effectuées plus de 5 jours avant la date du tour sont éligibles à un remboursement, sous réserve de frais d'annulation standard.\n\n2. Plus de 5 jours avant : Remboursable. 5 jours ou moins avant : Non remboursable."
+      },
+      "whatYouShouldKnow": {
+        "title": "Ce que vous devez savoir",
+        "content": "Nous recommandons d'apporter des vêtements confortables, des chaussures de marche, de la crème solaire, un chapeau et vos documents de voyage."
+      }
+    },
+    "faqTitle": "Questions Fréquentes",
+    "faq": {
+      "customItinerary": {
+        "question": "L'itinéraire peut-il être personnalisé ?",
+        "answer": "Absolument ! Tous nos voyages sont entièrement flexibles. Vous pouvez ajuster la durée, les hôtels, les activités ou ajouter des expériences spéciales."
+      },
+      "deposit": {
+        "question": "Dois-je payer un acompte pour confirmer la réservation ?",
+        "answer": "Dans la plupart des cas, seul un petit acompte est nécessaire. Le solde restant peut être réglé avant votre arrivée."
+      },
+      "whatToBring": {
+        "question": "Que dois-je emporter avec moi ?",
+        "answer": "Nous recommandons d'apporter des vêtements confortables, des chaussures de marche, de la crème solaire, un chapeau et vos documents de voyage."
+      }
+    },
+    "reviewsTitle": "Avis",
+    "reviews": {
+      "title": "Témoignages de Nos Voyageurs",
+      "subtitle": "Découvrez comment nous avons rendu chaque voyage exceptionnel."
+    }
   }
 }

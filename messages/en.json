@@ -428,5 +428,55 @@
     "errorTitle": "Ticket Not Found",
     "errorDescription": "We couldn't find the ticket you're looking for. Please check the URL or your profile.",
     "backToProfile": "Back to Profile"
+  },
+  "packageDetails": {
+    "notFound": "Package Not Found",
+    "overview": "Overview",
+    "included": "Included",
+    "excluded": "Excluded",
+    "itinerary": "Itinerary",
+    "start": "Start",
+    "end": "End",
+    "duration": "Duration",
+    "hours": "8 Hours",
+    "groupSize": "Group Size",
+    "morePeopleLessPrice": "More people, less price",
+    "priceVaries": "Price varies with group size",
+    "bookNow": "Book Now",
+    "highlightsTitle": "Highlights",
+    "highlights": {
+      "whyChooseUs": {
+        "title": "Why Choose Us?",
+        "content": "We deliver the perfect balance: an exceptional, high-quality travel experience in the heart of Egypt at unbeatable prices. Your journey with us is more than just a visit; it's a voyage through time led by elite, expert guides who bring history to life. Most importantly, we guarantee complete flexibility throughout your trip, allowing you to adjust your plans and explore at your own pace without any hassle. With us, your adventure is perfectly tailored to your comfort and your budget!"
+      },
+      "cancellationPolicy": {
+        "title": "Cancellation Policy",
+        "content": "1. Cancellations made more than 5 days prior to the tour date are eligible for a refund, subject to a standard cancellation fee. Bookings canceled within 5 days of departure are fully non-refundable.\n\n2. More than 5 Days Prior: Refundable (subject to standard cancellation fees). 5 Days or Less Prior: Fully non-refundable."
+      },
+      "whatYouShouldKnow": {
+        "title": "What you should know",
+        "content": "We recommend bringing comfortable clothing, walking shoes, sunscreen, a hat, and your travel documents."
+      }
+    },
+    "faqTitle": "Frequently Asked Questions",
+    "faq": {
+      "customItinerary": {
+        "question": "Can the itinerary be customized?",
+        "answer": "Absolutely! All our trips are fully flexible. You can adjust the duration, hotels, activities, or add special experiences to match your interests and travel style."
+      },
+      "deposit": {
+        "question": "Do I need to pay a deposit to confirm the booking?",
+        "answer": "In most cases, only a small deposit is required to secure your reservation. The remaining balance can be paid before your arrival. We'll provide full payment details once you confirm your trip."
+      },
+      "whatToBring": {
+        "question": "What should I bring with me on the trip?",
+        "answer": "We recommend bringing comfortable clothing, walking shoes, sunscreen, a hat, and your travel documents."
+      }
+    },
+    "reviewsTitle": "Reviews",
+    "reviews": {
+      "title": "Our Travelers Testimonials",
+      "subtitle": "See how we've made every journey exceptional — straight from those who've traveled with us."
+    }
   }
 }

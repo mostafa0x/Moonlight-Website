@@ -417,5 +417,55 @@
     "errorTitle": "Biglietto Non Trovato",
     "errorDescription": "Non siamo riusciti a trovare il biglietto che stai cercando. Controlla l'URL o il tuo profilo.",
     "backToProfile": "Torna al Profilo"
+  },
+  "packageDetails": {
+    "notFound": "Pacchetto Non Trovato",
+    "overview": "Panoramica",
+    "included": "Incluso",
+    "excluded": "Escluso",
+    "itinerary": "Itinerario",
+    "start": "Inizio",
+    "end": "Fine",
+    "duration": "Durata",
+    "hours": "8 Ore",
+    "groupSize": "Dimensione Gruppo",
+    "morePeopleLessPrice": "Più persone, meno paghi",
+    "priceVaries": "Il prezzo varia in base alla dimensione del gruppo",
+    "bookNow": "Prenota",
+    "highlightsTitle": "In Evidenza",
+    "highlights": {
+      "whyChooseUs": {
+        "title": "Perché Scegliere Noi?",
+        "content": "Offriamo il perfetto equilibrio: un'esperienza di viaggio eccezionale nel cuore dell'Egitto a prezzi imbattibili. Il vostro viaggio con noi è più di una semplice visita; è un viaggio nel tempo guidato da esperti d'élite."
+      },
+      "cancellationPolicy": {
+        "title": "Politica di Cancellazione",
+        "content": "1. Le cancellazioni effettuate oltre 5 giorni prima della data del tour sono rimborsabili, soggette a tariffe standard.\n\n2. Oltre 5 giorni prima: Rimborsabile. 5 giorni o meno: Non rimborsabile."
+      },
+      "whatYouShouldKnow": {
+        "title": "Cosa dovresti sapere",
+        "content": "Si consiglia di portare abbigliamento comodo, scarpe da passeggio, crema solare, un cappello e i documenti di viaggio."
+      }
+    },
+    "faqTitle": "Domande Frequenti",
+    "faq": {
+      "customItinerary": {
+        "question": "L'itinerario può essere personalizzato?",
+        "answer": "Assolutamente! Tutti i nostri viaggi sono completamente flessibili. Puoi regolare la durata, gli hotel, le attività o aggiungere esperienze speciali."
+      },
+      "deposit": {
+        "question": "Devo pagare un deposito per confermare la prenotazione?",
+        "answer": "Nella maggior parte dei casi, è necessario solo un piccolo deposito. Il saldo rimanente può essere pagato prima del vostro arrivo."
+      },
+      "whatToBring": {
+        "question": "Cosa devo portare con me?",
+        "answer": "Si consiglia di portare abbigliamento comodo, scarpe da passeggio, crema solare, un cappello e i documenti di viaggio."
+      }
+    },
+    "reviewsTitle": "Recensioni",
+    "reviews": {
+      "title": "Testimonianze dei Nostri Viaggiatori",
+      "subtitle": "Scopri come abbiamo reso eccezionale ogni viaggio."
+    }
   }
 }

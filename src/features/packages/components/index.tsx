@@ -7,7 +7,6 @@ import type { PackageType } from "@/shared/global";
 import PackageCard from "@/features/packages/components/PackageCard";
 import PackageCardSkeleton from "@/features/packages/components/PackageCardSkeleton";
 import SectionHeader from "@/shared/components/SectionHeader";
-import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
 import { useTranslations } from "next-intl";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
@@ -35,7 +34,6 @@ function PackageSection({
   isLoading = false,
 }: PackageSectionProps) {
   const { locale } = useParams();
-  const { handleSetTourId } = useBookingContext();
   const t = useTranslations("packages");
 
   return (
@@ -91,16 +89,8 @@ function PackageSection({
                       </div>
                     ) : (
                       <Link
-                        href={`/${locale}/?tourId=${packageId}`}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          if (packageId) {
-                            handleSetTourId(packageId);
-                            window.history.pushState({}, '', `/${locale}/?tourId=${packageId}`);
-                          }
-                        }}
-                        prefetch={false}
-                        scroll={false}
+                        href={`/${locale}/packages/${packageId}`}
+                        prefetch={true}
                         className="block w-full h-full"
                         aria-label={`View details for ${(pkg as PackageType)?.packageName}`}
                       >
