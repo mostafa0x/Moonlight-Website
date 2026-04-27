@@ -31,10 +31,9 @@ import {
  * - Auto-restoration: Detects if the user was interrupted (e.g., to login) and 
  *   restores form state to continue where they left off.
  */
-export default function BookingModal() {
-  const { step, tourId } = useBookingState();
+export default function BookingModal({ pkg }: { pkg: any }) {
+  const { step } = useBookingState();
   const { setTotalSteps, setStep } = useBookingActions();
-  const { data: pkg, isLoading } = useGetPackage(tourId);
 
   // Initialize form with base defaults 
   const methods = useBookingForm(pkg);
@@ -42,10 +41,9 @@ export default function BookingModal() {
 
   useEffect(() => {
     if (pkg) {
-      console.log("Package Data:", pkg);
-      console.log("Form Values:", methods.watch());
+      console.log("Package Data initialized in Modal", pkg.packageId);
     }
-  }, [pkg, methods.watch()])
+  }, [pkg])
 
   // Custom hooks to handle complex business logic
   usePriceCalculation(pkg, methods);
@@ -60,26 +58,25 @@ export default function BookingModal() {
   );
 
   /**
-   * Restoration & Initialization Effect: Triggers when the modal content (pkg) is ready.
+   * Restoration & Initialization Effect:
    * If user was redirected, restores their data. Otherwise, sets the pkg default prices.
    */
   useEffect(() => {
-    if (!pkg || !tourId) return;
+    if (!pkg) return;
 
-    const pendingData = getPendingBooking(tourId);
+    const pendingData = getPendingBooking(pkg.packageId);
     if (pendingData) {
       // Restore all user input with 'keepDefaultValues' to avoid overwrites
       reset(pendingData.formValues, { keepDefaultValues: true });
 
       // Determine the correct step to jump to for continuing
-      // Steps shifted by -1 since step 1 (details) moved to standalone page
       const targetStep = hasCustomizations ? 3 : 2;
       setStep(targetStep);
 
       // Clear persistence to ensure clean future launches
       clearPendingBooking();
     } else {
-      // Normal launch: Wait for pkg then hydrate basic defaults like price
+      // Normal launch: Hydrate basic defaults like price
       reset(
         (prev: any) => ({
           ...prev, 
@@ -88,35 +85,26 @@ export default function BookingModal() {
         { keepDefaultValues: true }
       );
     }
-  }, [pkg, tourId, hasCustomizations, reset, setStep, getPendingBooking, clearPendingBooking]);
+  }, [pkg, hasCustomizations, reset, setStep, getPendingBooking, clearPendingBooking]);
 
 
   // Sync total steps based on package customization options
-  // Step 1 (details) moved to standalone page, so: customizations? 4 : 3
   useEffect(() => {
     if (pkg) {
       setTotalSteps(hasCustomizations ? 4 : 3);
     }
   }, [hasCustomizations, pkg, setTotalSteps]);
 
-  if (!tourId) return null;
+  if (!pkg) return null;
 
   return (
     <FormProvider {...methods}>
       <ModalLayout>
-        {isLoading ? (
-          <EgyptianLoader />
-        ) : pkg ? (
-          <ModalContent
-            pkg={pkg}
-            step={step}
-            hasCustomizations={hasCustomizations}
-          />
-        ) : (
-          <div className="flex items-center justify-center h-full text-[#F2C975]">
-            Package not found
-          </div>
-        )}
+        <ModalContent
+          pkg={pkg}
+          step={step}
+          hasCustomizations={hasCustomizations}
+        />
       </ModalLayout>
     </FormProvider>
   );
@@ -161,7 +149,7 @@ const ModalContent = ({ pkg, step, hasCustomizations }: any) => (
     />
 
     <div className="mt-auto px-5.25 py-4 border-t border-white/5 bg-[#0D0D0D]">
-      <FooterModal step={step} />
+      <FooterModal step={step} pkg={pkg} />
     </div>
   </>
 );

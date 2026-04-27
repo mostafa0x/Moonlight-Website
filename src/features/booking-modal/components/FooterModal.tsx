@@ -13,7 +13,6 @@ import EgyptianLoader from "@/shared/components/EgyptianLoader";
 import { useAuth } from "@/shared/providers/AuthProvider";
 import { useBookingState } from "@/features/booking-modal/context/BookingContextProvider";
 import {
-  useGetPackage,
   useBookingSubmit,
   useFooterNavigation
 } from "../hooks/index";
@@ -27,11 +26,10 @@ import {
  * - Bundle Size: Component logic decoupled for better code splitting candidates.
  * - Accessibility: Clear button roles and dynamic aria states for loading.
  */
-function FooterModal({ step }: { step: number }) {
+function FooterModal({ step, pkg }: { step: number; pkg?: any }) {
   const t = useTranslations("bookingModal.footer");
   const { tourId, totalSteps } = useBookingState();
   const { setShowLoginModal } = useAuth();
-  const { data: pkg } = useGetPackage(tourId);
 
   // Custom hooks for complex interactions
   const { submitBooking, loading, errorMsg, setErrorMsg } = useBookingSubmit({
@@ -53,7 +51,7 @@ function FooterModal({ step }: { step: number }) {
   }, [errorMsg, setErrorMsg]);
 
   return (
-    <div className="relative flex flex-row justify-between items-center border-t border-[#313131] pt-3.5">
+    <div className={clsx("relative flex flex-row items-center border-t border-[#313131] pt-3.5", step === 1 ? "justify-end" : "justify-between")}>
       {/* Loading Overlay */}
       {loading && (
         <div className="fixed inset-0 z-1000000 flex items-center justify-center opacity-50 bg-black/20">
@@ -64,7 +62,9 @@ function FooterModal({ step }: { step: number }) {
       {/* Error Message UI */}
       {errorMsg && <ErrorMessage message={errorMsg} />}
 
-      <BackBtn prevStep={prevStep} />
+      {step != 1 &&
+        <BackBtn prevStep={prevStep} />
+      }
 
       <div className={clsx("flex md:flex-row items-center gap-4", step === totalSteps && "flex-col-reverse")}>
         {step === totalSteps ? (

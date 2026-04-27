@@ -59,7 +59,6 @@ export function useBookingSubmit({ tourId, setShowLoginModal }: UseBookingSubmit
       };
 
       const idempotencyKey = crypto.randomUUID();
-      console.log("👉 Sending Fetch to /api/bookings with payload:", payload);
       const response = await fetch("/api/bookings", {
         method: "POST",
         headers: {
@@ -69,8 +68,6 @@ export function useBookingSubmit({ tourId, setShowLoginModal }: UseBookingSubmit
         },
         body: JSON.stringify(payload),
       });
-
-      console.log("👉 Fetch /api/bookings completed with status:", response.status);
 
       if (response.ok) {
         const result = await response.json();
@@ -83,47 +80,44 @@ export function useBookingSubmit({ tourId, setShowLoginModal }: UseBookingSubmit
           try {
             setErrorMsg(te(errorCode));
           } catch {
-            setErrorMsg(result.message || te("UNKNOWN_ERROR"));
+            setErrorMsg(`Backend Error: ${result.message || errorCode}`);
           }
         } else {
-          console.log("👉 Booking Success but no payment URL:", result);
-          try {
-            setErrorMsg(te("PAYMENT_URL_MISSING"));
-          } catch {
-            setErrorMsg(te("UNKNOWN_ERROR"));
-          }
+          // Booking is successful but no payment URL was generated (e.g., zero cost or cash on arrival)
+          // Dynamically obtain the current language from the URL pathname to construct correct route
+          const currentPath = window.location.pathname;
+          const currentLocale = currentPath.split('/')[1] || "en";
+          window.location.href = `/${currentLocale}/payment/success`;
         }
       } else {
         const text = await response.text();
-        console.log("👉 Raw Error Response Text:", text);
         let errorData;
         try {
           errorData = JSON.parse(text);
-          console.log("👉 Parsed JSON errorData:", errorData);
         } catch (e) {
-          console.error("👉 Failed to parse error response as JSON", e);
-          errorData = { code: "UNKNOWN_ERROR" };
+          errorData = { code: "UNKNOWN_ERROR", message: text };
         }
 
-        const errorCode = errorData.code || errorData.error || "UNKNOWN_ERROR";
+        const errorCode = errorData?.details?.code || errorData.code || errorData.error || "UNKNOWN_ERROR";
+        const errorMessageRaw = errorData?.details?.message || errorData.message || 'Check console';
         
         // Whitelist of valid keys present in messages/*.json under bookingModal.backendErrors
-        // This prevents next-intl from logging MISSING_MESSAGE for unmapped backend codes
         const knownErrors = [
           "VALIDATION_ERROR", 
           "AUTH_ERROR", 
           "DUPLICATE_BOOKING", 
-          "INTERNAL_SERVER_ERROR"
+          "INTERNAL_SERVER_ERROR",
+          "PAYMENT_URL_MISSING"
         ];
         
         if (knownErrors.includes(errorCode)) {
           setErrorMsg(te(errorCode as any));
         } else {
-          setErrorMsg(te("UNKNOWN_ERROR"));
+          // Temporarily mapping unknown errors to the screen for debug visibility
+          setErrorMsg(`Backend Error (${errorCode}): ${errorMessageRaw}`);
         }
       }
     } catch (err) {
-      console.error("👉 Try/Catch Error in submitBooking:", err);
       setErrorMsg(te("INTERNAL_SERVER_ERROR"));
     } finally {
       setLoading(false);

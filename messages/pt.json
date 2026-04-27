@@ -250,7 +250,8 @@
       "promoPlaceholder": "INSERIR CÓDIGO",
       "paymentTitle": "Método de Pagamento",
       "paymentFull": "Cartão de Crédito (Total)",
-      "paymentDeposit": "Depósito (25%)"
+      "paymentDeposit": "Depósito (25%)",
+      "notAvailable": "Não disponível"
     },
     "errors": {
       "name": "O nome completo é obrigatório",
@@ -264,8 +265,9 @@
       "VALIDATION_ERROR": "A data do tour deve ser pelo menos 1 dia no futuro (hora do Cairo).",
       "AUTH_ERROR": "A sua sessão expirou ou é inválida. Por favor, faça login novamente.",
       "DUPLICATE_BOOKING": "Esta reserva já foi submetida.",
-      "INTERNAL_SERVER_ERROR": "Ocorreu um erro no servidor. Por favor, tente mais tarde.",
-      "UNKNOWN_ERROR": "Ocorreu um erro inesperado. Por favor, tente novamente."
+      "INTERNAL_SERVER_ERROR": "Ocorreu um erro no servidor. Por favor, tente novamente mais tarde.",
+      "UNKNOWN_ERROR": "Ocorreu um erro inesperado. Por favor, tente novamente.",
+      "PAYMENT_URL_MISSING": "Não foi possível gerar um link de pagamento. Por favor, tente novamente."
     },
     "payment": {
       "success": {

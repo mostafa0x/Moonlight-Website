@@ -250,7 +250,8 @@
       "promoPlaceholder": "INSERISCI CODICE",
       "paymentTitle": "Metodo di Pagamento",
       "paymentFull": "Carta di Credito (Totale)",
-      "paymentDeposit": "Deposito (25%)"
+      "paymentDeposit": "Deposito (25%)",
+      "notAvailable": "Non disponibile"
     },
     "errors": {
       "name": "Il nome completo è richiesto",
@@ -265,7 +266,8 @@
       "AUTH_ERROR": "La tua sessione è scaduta o non è valida. Effettua nuovamente il login.",
       "DUPLICATE_BOOKING": "Questa prenotazione è già stata inviata.",
       "INTERNAL_SERVER_ERROR": "Si è verificato un errore sul server. Riprova più tardi.",
-      "UNKNOWN_ERROR": "Si è verificato un errore imprevisto. Riprova."
+      "UNKNOWN_ERROR": "Si è verificato un errore imprevisto. Riprova.",
+      "PAYMENT_URL_MISSING": "Impossibile generare il link di pagamento. Riprova."
     },
     "payment": {
       "success": {

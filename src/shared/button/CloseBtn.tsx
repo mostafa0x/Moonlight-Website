@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { memo } from "react";
-import { useBookingContext } from "@/features/booking-modal/context/BookingContextProvider";
+import { useBookingActions } from "@/features/booking-modal/context/BookingContextProvider";
 import { cn } from "@/shared/lib/utils";
 
 /**
@@ -11,13 +11,13 @@ import { cn } from "@/shared/lib/utils";
  * Optimized for performance and design consistency.
  */
 function CloseBtn() {
-  const { lang } = useBookingContext();
+  const { handleSetTourId } = useBookingActions();
 
   return (
-    <Link
+    <button
+      onClick={() => handleSetTourId("")}
       aria-label="close booking modal"
-      href={`/${lang}`}
-      prefetch={false}
+      type="button"
       className={cn(
         "flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-transparent transition-all hover:scale-110 focus:outline-none focus:ring-2 focus:ring-[#F2C975]/50 active:scale-95"
       )}
@@ -28,7 +28,7 @@ function CloseBtn() {
         aria-hidden="true"
         className="h-full w-full object-contain"
       />
-    </Link>
+    </button>
   );
 }
 

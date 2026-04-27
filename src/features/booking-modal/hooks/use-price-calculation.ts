@@ -33,7 +33,7 @@ export const usePriceCalculation = (
       selectedDestinations,
       pickupLocation: values.pickupLocation || "",
       promoCode: values.promoCode || "",
-      paymentPreference: values.paymentPreference || "full",
+      paymentPreference: values.paymentPreference || "deposit",
     };
 
     try {

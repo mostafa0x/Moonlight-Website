@@ -10,6 +10,7 @@ import BookingBar from "./components/BookingBar";
 import Section from "@/features/home/components/Section";
 import FooterPage from "@/shared/components/footer/index";
 import TestimonialsSection from "@/features/testimonials/components/TestimonialsSection";
+import BookingModalWrapper from "./components/BookingModalWrapper";
 
 /**
  * PackageDetailsPage — Server Component
@@ -74,6 +75,9 @@ export default function PackageDetailsPage({
       <Section id="footer" >
         <FooterPage />
       </Section>
+
+      {/* Dynamic Modal Wrapper injected using Server Side Data */}
+      <BookingModalWrapper pkg={pkg} />
     </main>
   );
 }

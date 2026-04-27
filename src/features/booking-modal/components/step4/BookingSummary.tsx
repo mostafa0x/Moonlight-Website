@@ -13,16 +13,15 @@ import { useSummaryData } from "../../hooks/index";
  * - Accessibility: Clear hierarchical structure with h1 and h2 headings.
  * - Animation: Entrance animation for smooth perceptual performance (FCP).
  */
-function BookingSummary() {
+function BookingSummary({ pkg }: { pkg: any }) {
   const {
-    pkg,
     tourDate,
     travelerText,
     tourguideLanguage,
     destinationsCount,
     totalPrice,
     translations: t
-  } = useSummaryData();
+  } = useSummaryData(pkg);
 
   return (
     <div className="flex flex-col justify-between bg-[#131313] border border-[#313131] w-full min-h-68 rounded-lg px-4.5 py-4 transition-all duration-300 shadow-md">

@@ -12,11 +12,10 @@ import { useGetPackage } from "@/features/booking-modal/hooks/use-get-package";
  *   re-rendering the whole summary when unrelated fields (e.g. promo codes, session info) change.
  * - Separation of Concerns: Keeps the UI component clean and focused only on layout.
  */
-export function useSummaryData() {
+export function useSummaryData(pkg: any) {
   const t = useTranslations("bookingModal");
   const { control } = useFormContext();
   const { tourId } = useBookingState();
-  const { data: pkg } = useGetPackage(tourId);
 
   // Targeted useWatch to reduce unnecessary re-renders (improves INP)
   const watchedValues = useWatch({

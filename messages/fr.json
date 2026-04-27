@@ -250,7 +250,8 @@
       "promoPlaceholder": "ENTRER LE CODE",
       "paymentTitle": "Mode de Paiement",
       "paymentFull": "Carte de Crédito (Total)",
-      "paymentDeposit": "Acompte (25%)"
+      "paymentDeposit": "Acompte (25%)",
+      "notAvailable": "Indisponible"
     },
     "errors": {
       "name": "Le nom complet est obligatoire",
@@ -265,7 +266,8 @@
       "AUTH_ERROR": "Votre session a expiré ou est invalide. Veuillez vous reconnecter.",
       "DUPLICATE_BOOKING": "Cette réservation a déjà été soumise.",
       "INTERNAL_SERVER_ERROR": "Une erreur est survenue sur le serveur. Veuillez réessayer plus tard.",
-      "UNKNOWN_ERROR": "Une erreur inattendue est survenue. Veuillez réessayer."
+      "UNKNOWN_ERROR": "Une erreur inattendue est survenue. Veuillez réessayer.",
+      "PAYMENT_URL_MISSING": "Impossible de générer le lien de paiement. Veuillez réessayer."
     },
     "payment": {
       "success": {

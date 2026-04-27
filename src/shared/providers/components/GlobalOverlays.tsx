@@ -11,14 +11,6 @@ import dynamic from "next/dynamic";
  * It also reduces the initial JS bundle size that blocks First Contentful Paint (FCP).
  */
 
-const BookingModalProvider = dynamic(
-  () => import("@/features/booking-modal/providers/BookingModalProvider"),
-  { 
-    ssr: false, 
-    loading: () => null 
-  }
-);
-
 const LoginModal = dynamic(
   () => import("@/shared/components/LoginModal"),
   { 
@@ -42,10 +34,6 @@ const LoginModal = dynamic(
  */
 const GlobalOverlays = React.memo(() => (
   <>
-    <Suspense fallback={null}>
-      <BookingModalProvider />
-    </Suspense>
-    
     <Suspense fallback={null}>
       <LoginModal />
     </Suspense>

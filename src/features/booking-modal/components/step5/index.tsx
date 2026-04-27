@@ -3,10 +3,10 @@ import PaymentMethod from "@/features/booking-modal/components/step4/PaymentMeth
 import PromoCode from "@/features/booking-modal/components/step4/PromoCode";
 import { memo } from "react";
 
-function Step5() {
+function Step5({ pkg }: { pkg: any }) {
   return (
     <div>
-      <BookingSummary />
+      <BookingSummary pkg={pkg} />
       <div className="mt-2">
         <PromoCode />
       </div>

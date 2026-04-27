@@ -48,14 +48,14 @@ const StepRenderer = ({ step, pkg, hasCustomizations }: StepRendererProps) => {
     case 3:
       return (
         <div className={`${standardPadding} ${containerClass}`}>
-          {hasCustomizations ? <Step4 /> : <Step5 />}
+          {hasCustomizations ? <Step4 /> : <Step5 pkg={pkg} />}
         </div>
       );
     case 4:
       if (hasCustomizations) {
         return (
           <div className={`${standardPadding} ${containerClass}`}>
-            <Step5 />
+            <Step5 pkg={pkg} />
           </div>
         );
       }
