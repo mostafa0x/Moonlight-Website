@@ -27,7 +27,7 @@ function AccordionItem({
 
   return (
     <div
-      className="rounded-lg border border-orange-300 overflow-hidden transition-all duration-300 cursor-pointer group"
+      className="rounded-lg border border-orange-300 overflow-hidden transition-all duration-300 cursor-pointer group select-none"
       onClick={toggle}
 
       role="button"

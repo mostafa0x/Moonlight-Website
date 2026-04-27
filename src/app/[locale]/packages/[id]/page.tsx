@@ -74,16 +74,66 @@ export async function generateMetadata({
   if (!pkg) {
     return {
       title: t("notFound"),
+      description: "Package not found.",
     };
   }
 
+  // Fallback host, adjust to your real production domain
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.moonlight-tours.com";
+  const packageUrl = `${baseUrl}/${locale}/packages/${id}`;
+  
+  // Clean description (removes any stray HTML tags and prevents trailing spaces)
+  const cleanDescription = (pkg.description || "")
+    .replace(/<[^>]*>?/gm, "")
+    .trim()
+    .slice(0, 160) + "...";
+
+  // Dynamic SEO Keywords based on package data
+  const keywords = [
+    pkg.packageName,
+    "Egypt tours",
+    "Moonlight Travel",
+    "Egypt Vacation",
+    ...(pkg.destinations || []),
+  ];
+
   return {
-    title: pkg.packageName,
-    description: pkg.description?.slice(0, 160),
+    title: `${pkg.packageName} | Moonlight Tours`,
+    description: cleanDescription,
+    keywords: keywords.join(", "),
+    alternates: {
+      canonical: packageUrl,
+      languages: {
+        en: `${baseUrl}/en/packages/${id}`,
+        it: `${baseUrl}/it/packages/${id}`,
+        es: `${baseUrl}/es/packages/${id}`,
+        fr: `${baseUrl}/fr/packages/${id}`,
+        pt: `${baseUrl}/pt/packages/${id}`,
+      },
+    },
     openGraph: {
+      title: `${pkg.packageName} - Moonlight Tours`,
+      description: cleanDescription,
+      url: packageUrl,
+      siteName: "Moonlight Tours",
+      type: "website",
+      locale: locale,
+      images: pkg.packageImage
+        ? [
+            {
+              url: pkg.packageImage,
+              width: 1200,
+              height: 630,
+              alt: pkg.packageName,
+            },
+          ]
+        : [],
+    },
+    twitter: {
+      card: "summary_large_image",
       title: pkg.packageName,
-      description: pkg.description?.slice(0, 160),
-      images: pkg.packageImage ? [{ url: pkg.packageImage }] : [],
+      description: cleanDescription,
+      images: pkg.packageImage ? [pkg.packageImage] : [],
     },
   };
 }

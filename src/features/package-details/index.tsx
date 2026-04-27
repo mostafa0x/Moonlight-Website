@@ -7,6 +7,9 @@ import ItinerarySection from "./components/ItinerarySection";
 import HighlightsSection from "./components/HighlightsSection";
 import FAQSection from "./components/FAQSection";
 import BookingBar from "./components/BookingBar";
+import Section from "@/features/home/components/Section";
+import FooterPage from "@/shared/components/footer/index";
+import TestimonialsSection from "@/features/testimonials/components/TestimonialsSection";
 
 /**
  * PackageDetailsPage — Server Component
@@ -27,7 +30,7 @@ export default function PackageDetailsPage({
   locale,
 }: PackageDetailsPageProps) {
   return (
-    <main className="relative min-h-screen flex flex-col pb-60 lg:pb-54">
+    <main className="relative min-h-screen flex flex-col pb-5">
       {/* Hero Section */}
       <div className="w-full max-w-[1440px] mx-auto px-4 md:px-16 lg:px-20 pt-12 md:pt-28">
         {/* Package Title & Info */}
@@ -56,6 +59,10 @@ export default function PackageDetailsPage({
 
         {/* FAQ */}
         <FAQSection />
+
+        <div className=" w-full flex items-center justify-center mt-24">
+          <TestimonialsSection />
+        </div>
       </div>
 
       {/* Sticky Booking Bar */}
@@ -64,6 +71,9 @@ export default function PackageDetailsPage({
         currency={pkg.currency}
         packageId={pkg.packageId}
       />
+      <Section id="footer" >
+        <FooterPage />
+      </Section>
     </main>
   );
 }
