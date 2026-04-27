@@ -33,7 +33,24 @@ function NavBar({ locale }: { locale: string }) {
   const { isOpen: isMenuOpen, toggle: toggleMenu, close: closeMenu } = useMobileMenu();
 
   const [isDesktopLangOpen, setIsDesktopLangOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const desktopRef = useRef<HTMLDivElement>(null);
+
+  // Handle scroll detection for navbar background
+  useEffect(() => {
+    const handleScroll = (e: Event) => {
+      const target = e.target as HTMLElement | Document;
+      const top =
+        (target as HTMLElement).scrollTop ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        window.scrollY ||
+        0;
+      setIsScrolled(top > 20);
+    };
+    document.addEventListener("scroll", handleScroll, true);
+    return () => document.removeEventListener("scroll", handleScroll, true);
+  }, []);
 
   // Memoize current language based on locale prop
   const currentLang = useMemo(
@@ -73,7 +90,12 @@ function NavBar({ locale }: { locale: string }) {
   return (
     <>
       <nav
-        className="absolute inset-x-0 top-0 z-50 flex items-center justify-between px-6 pt-6 lg:px-20"
+        className={cn(
+          "sticky top-0 z-50 w-full flex items-center justify-between px-6 lg:px-20 transition-all duration-500 border-b",
+          isScrolled 
+            ? "py-3 md:py-4 bg-zinc-900/80 backdrop-blur-md shadow-lg border-white/10" 
+            : "pt-6 bg-transparent border-transparent"
+        )}
         aria-label="Main Navigation"
       >
         {/* Brand Logo */}

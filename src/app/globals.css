@@ -47,6 +47,10 @@
   }
 }
 
+:root {
+  --scrollbar-width: calc(100vw - 100%);
+}
+
 html,
 body {
   background: var(--background);

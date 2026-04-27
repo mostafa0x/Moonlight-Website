@@ -29,7 +29,7 @@ export default function PackageDetailsPage({
   return (
     <main className="relative min-h-screen flex flex-col pb-60 lg:pb-54">
       {/* Hero Section */}
-      <div className="w-full max-w-[1440px] mx-auto px-4 md:px-16 lg:px-20 pt-24 md:pt-28">
+      <div className="w-full max-w-[1440px] mx-auto px-4 md:px-16 lg:px-20 pt-12 md:pt-28">
         {/* Package Title & Info */}
         <PackageInfo pkg={pkg} />
 
@@ -41,6 +41,8 @@ export default function PackageDetailsPage({
       <div className="w-full max-w-[1440px] mx-auto px-4 md:px-16 lg:px-20 mt-4 flex flex-col gap-3 md:gap-20">
         {/* Overview */}
         <OverviewSection description={pkg.description} />
+        {/* Itinerary */}
+        <ItinerarySection destinations={pkg.destinations} />
 
         {/* Included & Excluded */}
         <IncludedExcludedSection
@@ -48,8 +50,6 @@ export default function PackageDetailsPage({
           excluded={pkg.excluded}
         />
 
-        {/* Itinerary */}
-        <ItinerarySection destinations={pkg.destinations} />
 
         {/* Highlights */}
         <HighlightsSection />
