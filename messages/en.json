@@ -286,6 +286,12 @@
         "subtitle": "Welcome to an Unforgettable Journey",
         "description": "Your booking is successfully processed. You will receive an email with all the details shortly.",
         "button": "Back to Home"
+      },
+      "failure": {
+        "title": "Payment Failed",
+        "subtitle": "Your journey encountered an issue",
+        "description": "We were unable to process your booking. This might be due to a payment issue or a connection problem. Please try again.",
+        "button": "Return to Home"
       }
     }
   },

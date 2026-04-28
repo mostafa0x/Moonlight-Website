@@ -275,6 +275,12 @@
         "subtitle": "Bienvenue dans un Voyage Inoubliable",
         "description": "Votre réservation a été traitée avec succès. Vous recevrez un e-mail avec tous les détails sous peu.",
         "button": "Retour à l'accueil"
+      },
+      "failure": {
+        "title": "Échec du Paiement",
+        "subtitle": "Votre voyage a rencontré un problème",
+        "description": "Nous n'avons pas pu traiter votre réservation. Cela peut être dû à un problème de paiement ou à un problème de connexion. Veuillez réessayer.",
+        "button": "Retour à l'Accueil"
       }
     }
   },

@@ -275,6 +275,12 @@
         "subtitle": "Bienvenido a un Viaje Inolvidable",
         "description": "Tu reserva se ha procesado con éxito. Recibirás un correo electrónico con todos los detalles en breve.",
         "button": "Volver al Inicio"
+      },
+      "failure": {
+        "title": "Pago Fallido",
+        "subtitle": "Tu viaje encontró un problema",
+        "description": "No pudimos procesar tu reserva. Esto puede deberse a un problema con el pago o un problema de conexión. Por favor, inténtalo de nuevo.",
+        "button": "Volver al Inicio"
       }
     }
   },

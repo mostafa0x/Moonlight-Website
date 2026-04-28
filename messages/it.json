@@ -275,6 +275,12 @@
         "subtitle": "Benvenuti in un Viaggio Indimenticabile",
         "description": "La tua prenotazione è stata elaborata con successo. Riceverai a breve un'e-mail con tutti i dettagli.",
         "button": "Torna alla Home"
+      },
+      "failure": {
+        "title": "Pagamento Fallito",
+        "subtitle": "Il tuo viaggio ha riscontrato un problema",
+        "description": "Non siamo stati in grado di elaborare la tua prenotazione. Ciò potrebbe essere dovuto a un problema di pagamento o a un problema di connessione. Per favore riprova.",
+        "button": "Torna alla Home"
       }
     }
   },
