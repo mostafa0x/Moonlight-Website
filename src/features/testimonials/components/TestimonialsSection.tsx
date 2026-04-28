@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { useRef } from "react";
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { reviews } from "../data/reviews";
 const TOTAL_REVIEWS = 1093;
@@ -15,8 +15,7 @@ const TOTAL_REVIEWS = 1093;
  */
 export default function TestimonialsSection() {
     const t = useTranslations("home.testimonials");
-    const prevRef = useRef<HTMLDivElement>(null);
-    const nextRef = useRef<HTMLDivElement>(null);
+    const [swiper, setSwiper] = useState<any>(null);
     return (
         <div className="w-full h-full flex flex-col items-center justify-center px-10 md:px-10 font-jakarta select-none">
             <div className="w-full max-w-275 max-h-[90vh] md:max-h-[85vh] bg-zinc-800/50 rounded-4xl border border-white/5 backdrop-blur-sm flex flex-col overflow-hidden">
@@ -65,14 +64,7 @@ export default function TestimonialsSection() {
                             <div className="flex-1 min-h-0">
                                 <Swiper
                                     modules={[Navigation]}
-                                    navigation={{
-                                        prevEl: prevRef.current,
-                                        nextEl: nextRef.current,
-                                    }}
-                                    onBeforeInit={(swiper: any) => {
-                                        swiper.params.navigation.prevEl = prevRef.current;
-                                        swiper.params.navigation.nextEl = nextRef.current;
-                                    }}
+                                    onSwiper={setSwiper}
                                     className="h-full w-full"
                                     loop={true}
                                     spaceBetween={30}
@@ -100,13 +92,13 @@ export default function TestimonialsSection() {
                             {/* Navigation Buttons */}
                             <div className="absolute right-6 bottom-6 md:right-10 md:bottom-10 flex gap-2 md:gap-4 z-10">
                                 <div
-                                    ref={prevRef}
+                                    onClick={() => swiper?.slidePrev()}
                                     className="w-8 h-8 md:w-12 md:h-12 bg-neutral-900 rounded-2xl md:rounded-3xl shadow-xl flex items-center justify-center cursor-pointer hover:bg-neutral-950 transition-all active:scale-95 border border-white/5"
                                 >
                                     <span className="text-orange-300 md:text-white text-lg md:text-2xl select-none">‹</span>
                                 </div>
                                 <div
-                                    ref={nextRef}
+                                    onClick={() => swiper?.slideNext()}
                                     className="w-8 h-8 md:w-12 md:h-12 bg-neutral-900 rounded-2xl md:rounded-3xl shadow-xl flex items-center justify-center cursor-pointer hover:bg-neutral-950 transition-all active:scale-95 border border-white/5"
                                 >
                                     <span className="text-orange-300 md:text-white text-lg md:text-2xl select-none">›</span>

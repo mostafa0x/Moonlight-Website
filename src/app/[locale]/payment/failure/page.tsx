@@ -9,7 +9,7 @@ export default async function PaymentFailurePage({ params }: { params: Promise<{
     <div className="min-h-[calc(100dvh-120px)] flex items-center justify-center px-4 py-8 relative overflow-hidden">
 
       {/* Failure Card */}
-      <div className="relative flex flex-col items-center justify-center h-auto max-h-[85dvh] w-full max-w-[90%] sm:max-w-md md:max-w-lg bg-[#0D0D0D] border-2 border-[#E57373]/30 rounded-[24px] md:rounded-[32px] px-4 py-5 md:py-8 text-center shadow-[0_20px_60px_-15px_rgba(229,115,115,0.15)] animate-in zoom-in-95 duration-700 overflow-y-auto scrollbar-hide">
+      <div className="relative flex flex-col items-center justify-center h-auto max-h-[85dvh] w-full max-w-[90%] sm:max-w-md md:max-w-lg bg-[#0D0D0D] border-2 border-[#E57373]/30 rounded-3xl md:rounded-4xl px-4 py-5 md:py-8 text-center shadow-[0_20px_60px_-15px_rgba(229,115,115,0.15)] animate-in zoom-in-95 duration-700 overflow-y-auto scrollbar-hide">
         {/* Top Glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 md:w-32 h-1 bg-[#E57373] blur-md opacity-40 rounded-full" />
 
