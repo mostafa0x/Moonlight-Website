@@ -7,8 +7,8 @@ import AccordionItem from "./AccordionItem";
  * Displays Frequently Asked Questions as expandable accordion items.
  * Questions and answers are loaded from translation files for full i18n support.
  */
-export default async function FAQSection() {
-  const t = await getTranslations("packageDetails");
+export default async function FAQSection({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale, namespace: "packageDetails" });
 
   const faqs = [
     {

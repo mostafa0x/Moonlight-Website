@@ -11,12 +11,14 @@ import { getTranslations } from "next-intl/server";
  */
 interface ItinerarySectionProps {
   destinations: string[];
+  locale: string
 }
 
 export default async function ItinerarySection({
   destinations = [],
+  locale
 }: ItinerarySectionProps) {
-  const t = await getTranslations("packageDetails");
+  const t = await getTranslations({ locale, namespace: "packageDetails" });
 
   if (destinations.length === 0) return null;
 

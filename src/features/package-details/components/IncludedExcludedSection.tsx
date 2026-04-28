@@ -12,13 +12,16 @@ import { getTranslations } from "next-intl/server";
 interface IncludedExcludedSectionProps {
   included: string[];
   excluded: string[];
+  locale: string;
 }
 
 export default async function IncludedExcludedSection({
   included = [],
   excluded = [],
+  locale
+
 }: IncludedExcludedSectionProps) {
-  const t = await getTranslations("packageDetails");
+  const t = await getTranslations({ locale, namespace: "packageDetails" });
 
   return (
     <section aria-labelledby="inclusions-heading">

@@ -7,8 +7,8 @@ import AccordionItem from "./AccordionItem";
  * Displays "Why Choose Us", "Cancellation Policy", and "What You Should Know"
  * as expandable accordion items matching the Figma design.
  */
-export default async function HighlightsSection() {
-  const t = await getTranslations("packageDetails");
+export default async function HighlightsSection({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale, namespace: "packageDetails" });
 
   const highlights = [
     {

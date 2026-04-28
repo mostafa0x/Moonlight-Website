@@ -428,6 +428,7 @@
   },
   "packageDetails": {
     "notFound": "Package Non Trouvé",
+    "notFoundDescription": "Le forfait touristique que vous recherchez n'existe pas.",
     "overview": "Aperçu",
     "included": "Inclus",
     "excluded": "Exclus",
@@ -437,6 +438,7 @@
     "duration": "Durée",
     "hours": "8 Heures",
     "groupSize": "Taille du Groupe",
+    "persons": "Personnes",
     "morePeopleLessPrice": "Plus de monde, prix réduit",
     "priceVaries": "Le prix varie selon la taille du groupe",
     "bookNow": "Réserver",

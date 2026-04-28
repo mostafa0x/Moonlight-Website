@@ -439,6 +439,7 @@
   },
   "packageDetails": {
     "notFound": "Package Not Found",
+    "notFoundDescription": "The tour package you're looking for doesn't exist.",
     "overview": "Overview",
     "included": "Included",
     "excluded": "Excluded",
@@ -448,6 +449,7 @@
     "duration": "Duration",
     "hours": "8 Hours",
     "groupSize": "Group Size",
+    "persons": "Persons",
     "morePeopleLessPrice": "More people, less price",
     "priceVaries": "Price varies with group size",
     "bookNow": "Book Now",

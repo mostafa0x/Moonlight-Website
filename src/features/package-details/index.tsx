@@ -33,33 +33,37 @@ export default function PackageDetailsPage({
   return (
     <main className="relative min-h-screen flex flex-col pb-5">
       {/* Hero Section */}
-      <div className="w-full max-w-[1440px] mx-auto px-4 md:px-16 lg:px-20 pt-12 md:pt-28">
+      <div className="w-full max-w-360 mx-auto px-4 md:px-16 lg:px-20 pt-12 md:pt-28">
         {/* Package Title & Info */}
-        <PackageInfo pkg={pkg} />
+        <PackageInfo pkg={pkg} locale={locale} />
 
         {/* Image Gallery */}
         <HeroGallery image={pkg.packageImage} name={pkg.packageName} />
       </div>
 
       {/* Content Sections */}
-      <div className="w-full max-w-[1440px] mx-auto px-4 md:px-16 lg:px-20 mt-4 flex flex-col gap-3 md:gap-20">
+      <div className="w-full max-w-360 mx-auto px-4 md:px-16 lg:px-20 mt-4 flex flex-col gap-3 md:gap-20">
         {/* Overview */}
-        <OverviewSection description={pkg.description} />
+        <OverviewSection description={pkg.description} locale={locale} />
         {/* Itinerary */}
-        <ItinerarySection destinations={pkg.destinations} />
+        <ItinerarySection destinations={pkg.destinations} locale={locale} />
 
         {/* Included & Excluded */}
         <IncludedExcludedSection
           included={pkg.included}
           excluded={pkg.excluded}
+          locale={locale}
         />
 
 
         {/* Highlights */}
-        <HighlightsSection />
+        <HighlightsSection
+          locale={locale}
+        />
 
         {/* FAQ */}
-        <FAQSection />
+        <FAQSection
+          locale={locale} />
 
         <div className=" w-full flex items-center justify-center mt-24">
           <TestimonialsSection />

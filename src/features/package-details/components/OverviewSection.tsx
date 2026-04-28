@@ -7,12 +7,14 @@ import { getTranslations } from "next-intl/server";
  */
 interface OverviewSectionProps {
   description: string;
+  locale: string
 }
 
 export default async function OverviewSection({
   description,
+  locale
 }: OverviewSectionProps) {
-  const t = await getTranslations("packageDetails");
+  const t = await getTranslations({ locale, namespace: "packageDetails" });
 
   if (!description) return null;
 

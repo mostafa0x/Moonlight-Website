@@ -74,7 +74,7 @@ export async function generateMetadata({
   if (!pkg) {
     return {
       title: t("notFound"),
-      description: "Package not found.",
+      description: t("notFoundDescription"),
     };
   }
 
@@ -158,14 +158,15 @@ export default async function Page({
   const pkg = await fetchPackageDetails(id, locale);
 
   if (!pkg) {
+    const t = await getTranslations({ locale, namespace: "packageDetails" });
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-[#F2C975] font-cairo mb-4">
-            Package Not Found
+            {t("notFound")}
           </h1>
           <p className="text-neutral-400 font-cairo">
-            The tour package you&apos;re looking for doesn&apos;t exist.
+            {t("notFoundDescription")}
           </p>
         </div>
       </div>

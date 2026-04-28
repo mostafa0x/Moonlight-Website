@@ -428,6 +428,7 @@
   },
   "packageDetails": {
     "notFound": "Pacchetto Non Trovato",
+    "notFoundDescription": "Il pacchetto turistico che stai cercando non esiste.",
     "overview": "Panoramica",
     "included": "Incluso",
     "excluded": "Escluso",
@@ -437,6 +438,7 @@
     "duration": "Durata",
     "hours": "8 Ore",
     "groupSize": "Dimensione Gruppo",
+    "persons": "Persone",
     "morePeopleLessPrice": "Più persone, meno paghi",
     "priceVaries": "Il prezzo varia in base alla dimensione del gruppo",
     "bookNow": "Prenota",

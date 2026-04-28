@@ -8,10 +8,11 @@ import { getTranslations } from "next-intl/server";
  */
 interface PackageInfoProps {
   pkg: PackageDetailsType;
+  locale: string
 }
 
-export default async function PackageInfo({ pkg }: PackageInfoProps) {
-  const t = await getTranslations("packageDetails");
+export default async function PackageInfo({ pkg, locale }: PackageInfoProps) {
+  const t = await getTranslations({ locale, namespace: "packageDetails" });
 
   return (
     <div className="mb-4 md:mb-6">
@@ -94,7 +95,7 @@ export default async function PackageInfo({ pkg }: PackageInfoProps) {
               {t("groupSize")}
             </span>
             <span className="text-white text-sm md:text-base font-bold font-cairo leading-tight">
-              1 - 12
+              1 - 12 {t("persons")}
             </span>
           </div>
         </div>
