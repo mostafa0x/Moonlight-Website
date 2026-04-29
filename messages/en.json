@@ -53,11 +53,11 @@
     "description": "Learn how Moonlight collects, uses, and protects your personal information when you inquire about or book tours in Egypt through our website.",
     "effectiveDate": "Effective Date: March 2026",
     "keywords": [
-      "Moonlight tours terms",
-      "tour booking terms",
-      "Egypt tours policy",
-      "cancellation policy Egypt tours",
-      "Moonlight travel terms"
+      "Moonlight privacy policy",
+      "Egypt tours privacy policy",
+      "tour booking privacy policy",
+      "Moonlight travel privacy",
+      "data protection Egypt tours"
     ],
     "intro": "At Moonlight, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Moonlight and how we use it.",
     "collect": {
@@ -460,6 +460,11 @@
   "packageDetails": {
     "notFound": "Package Not Found",
     "notFoundDescription": "The tour package you're looking for doesn't exist.",
+    "seoKeywords": [
+      "Egypt tours",
+      "Moonlight Travel",
+      "Egypt Vacation"
+    ],
     "overview": "Overview",
     "included": "Included",
     "excluded": "Excluded",

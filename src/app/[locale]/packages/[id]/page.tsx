@@ -91,14 +91,12 @@ export async function generateMetadata({
   // Dynamic SEO Keywords based on package data
   const keywords = [
     pkg.packageName,
-    "Egypt tours",
-    "Moonlight Travel",
-    "Egypt Vacation",
+    ...t.raw("seoKeywords"),
     ...(pkg.destinations || []),
   ];
 
   return {
-    title: `${pkg.packageName} | Moonlight Tours`,
+    title: `${pkg.packageName} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME || "Moonlight Tours"}`,
     description: cleanDescription,
     keywords: keywords.join(", "),
     alternates: {
@@ -112,10 +110,10 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: `${pkg.packageName} - Moonlight Tours`,
+      title: `${pkg.packageName} - ${process.env.NEXT_PUBLIC_WEBSITE_NAME || "Moonlight"}`,
       description: cleanDescription,
       url: packageUrl,
-      siteName: "Moonlight Tours",
+      siteName: process.env.NEXT_PUBLIC_WEBSITE_NAME || "Moonlight",
       type: "website",
       locale: locale,
       images: pkg.packageImage

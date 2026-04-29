@@ -449,6 +449,11 @@
   "packageDetails": {
     "notFound": "Package Non Trouvé",
     "notFoundDescription": "Le forfait touristique que vous recherchez n'existe pas.",
+    "seoKeywords": [
+      "circuits en Égypte",
+      "voyage Moonlight",
+      "vacances en Égypte"
+    ],
     "overview": "Aperçu",
     "included": "Inclus",
     "excluded": "Exclus",

@@ -449,6 +449,11 @@
   "packageDetails": {
     "notFound": "Pacchetto Non Trovato",
     "notFoundDescription": "Il pacchetto turistico che stai cercando non esiste.",
+    "seoKeywords": [
+      "tour in Egitto",
+      "viaggio Moonlight",
+      "vacanze in Egitto"
+    ],
     "overview": "Panoramica",
     "included": "Incluso",
     "excluded": "Escluso",

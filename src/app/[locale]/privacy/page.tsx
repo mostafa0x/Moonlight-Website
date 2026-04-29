@@ -18,13 +18,7 @@ export async function generateMetadata({
     title,
     description,
 
-    keywords: [
-      "Moonlight privacy policy",
-      "Egypt tours privacy policy",
-      "tour booking privacy policy",
-      "Moonlight travel privacy",
-      "data protection Egypt tours",
-    ],
+    keywords: t.raw("keywords"),
 
     openGraph: {
       title,

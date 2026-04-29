@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://moonlight-website-new-delta.vercel.app
+
+# Sitemaps
+Sitemap: https://moonlight-website-new-delta.vercel.app/sitemap.xml
