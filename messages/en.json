@@ -513,5 +513,10 @@
       "title": "Our Travelers Testimonials",
       "subtitle": "See how we've made every journey exceptional — straight from those who've traveled with us."
     }
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "backHome": "Back to Home"
   }
 }

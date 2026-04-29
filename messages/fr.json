@@ -502,5 +502,10 @@
       "title": "Témoignages de Nos Voyageurs",
       "subtitle": "Découvrez comment nous avons rendu chaque voyage exceptionnel."
     }
+  },
+  "notFound": {
+    "title": "Page non trouvée",
+    "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "backHome": "Retour à l'accueil"
   }
 }
