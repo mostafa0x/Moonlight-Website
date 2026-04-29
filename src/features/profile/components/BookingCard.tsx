@@ -62,9 +62,10 @@ export async function BookingCard({ booking, locale }: BookingCardProps) {
   };
 
   return (
-    <div className="w-full flex flex-col bg-neutral-900/40 backdrop-blur-md rounded-2xl border border-white/5 overflow-hidden group hover:border-[#F2C975]/30 transition-all duration-500 hover:shadow-[0_0_30px_rgba(242,201,117,0.05)]">
+    <div className="relative w-full flex flex-col bg-neutral-900/40 backdrop-blur-md rounded-2xl border border-white/5 overflow-hidden group hover:border-[#F2C975]/30 transition-all duration-500 hover:shadow-[0_0_30px_rgba(242,201,117,0.05)]">
+      <Link href={`/${locale}/ticket/${booking.id}`} className="absolute inset-0 z-10" />
       {/* Content Section */}
-      <div className="flex-1 p-5 md:p-8 flex flex-col justify-between relative bg-neutral-900/40">
+      <div className="flex-1 p-5 md:p-8 flex flex-col justify-between relative z-0 bg-neutral-900/40 select-none">
         <div className="flex flex-col gap-6">
           {/* Header */}
           <div className="flex items-start justify-between gap-4">
@@ -106,7 +107,7 @@ export async function BookingCard({ booking, locale }: BookingCardProps) {
                 {booking.price}
               </div>
             </div>
-            
+
             <div className="flex flex-col gap-1.5">
               <span className="text-zinc-500 text-xs font-semibold uppercase tracking-wider">{t("paymentType")}</span>
               <div className="flex items-center gap-2.5">
@@ -127,7 +128,7 @@ export async function BookingCard({ booking, locale }: BookingCardProps) {
 
         {/* Footer Actions */}
         <div className="mt-8 flex flex-row items-center justify-between gap-4 pt-5 border-t border-white/5">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 relative z-20">
             {!isCancelled && !isFailed && !isRequested && (
               <Link
                 href={`/${locale}/ticket/${booking.id}`}
@@ -143,7 +144,7 @@ export async function BookingCard({ booking, locale }: BookingCardProps) {
           </div>
 
           {isCancellable && (
-            <div className="shrink-0">
+            <div className="shrink-0 relative z-20">
               <CancelButton bookingId={booking.id} />
             </div>
           )}
