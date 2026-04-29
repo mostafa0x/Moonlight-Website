@@ -25,7 +25,7 @@ export async function TicketCard({ data, referenceId, locale }: TicketCardProps)
   const statusLabel = isFullyPaid ? t("fullyPaid") : t("depositPaid");
 
   // Format guests: Adults + Kids
-  const guestCount = `${data.adults_number} Adults${data.kids_number > 0 ? `, ${data.kids_number} Kids` : ""}`;
+  const guestCount = `${data.adults_number} ${t("adults")}${data.kids_number > 0 ? `, ${data.kids_number} ${t("kids")}` : ""}`;
 
   return (
     <div className="mx-auto w-full max-w-100 bg-white rounded-2xl overflow-hidden shadow-2xl transition-all hover:scale-[1.01] duration-300 select-none">

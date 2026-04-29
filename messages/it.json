@@ -432,6 +432,8 @@
     "time": "ORARIO",
     "reference": "RIFERIMENTO",
     "guests": "OSPITI",
+    "adults": "Adulti",
+    "kids": "Bambini",
     "pickupLocation": "LUOGO DI RITIRO",
     "paymentMethod": "METODO DI PAGAMENTO",
     "totalAmount": "IMPORTO TOTALE",

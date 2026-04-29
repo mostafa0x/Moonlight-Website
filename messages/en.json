@@ -443,6 +443,8 @@
     "time": "TIME",
     "reference": "REFERENCE",
     "guests": "GUESTS",
+    "adults": "Adults",
+    "kids": "Kids",
     "pickupLocation": "PICKUP LOCATION",
     "paymentMethod": "PAYMENT METHOD",
     "totalAmount": "TOTAL AMOUNT",

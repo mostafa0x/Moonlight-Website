@@ -17,7 +17,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: 'ticket' });
 
   return {
-    title: `${t('title')} | #${id.slice(-6).toUpperCase()}`,
+    title: `${t('title')}`,
     description: t('description'),
     robots: {
       index: false,

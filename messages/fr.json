@@ -432,6 +432,8 @@
     "time": "HEURE",
     "reference": "RÉFÉRENCE",
     "guests": "INVITÉS",
+    "adults": "Adultes",
+    "kids": "Enfants",
     "pickupLocation": "LIEU DE PRISE EN CHARGE",
     "paymentMethod": "MODE DE PAIEMENT",
     "totalAmount": "MONTANT TOTAL",

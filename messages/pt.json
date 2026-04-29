@@ -432,6 +432,8 @@
     "time": "HORA",
     "reference": "REFERÊNCIA",
     "guests": "HÓSPEDES",
+    "adults": "Adultos",
+    "kids": "Crianças",
     "pickupLocation": "LOCAL DE RETIRADA",
     "paymentMethod": "MÉTODO DE PAGAMENTO",
     "totalAmount": "VALOR TOTAL",
