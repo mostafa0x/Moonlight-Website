@@ -90,10 +90,10 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(242, 200, 117, 0.767); /* Semi-transparent gold */
+  background: rgba(242, 201, 117, 1); /* Semi-transparent gold */
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(242, 201, 117, 1); /* Solid gold on hover */
+  background: rgb(245, 221, 174); /* Solid gold on hover */
 }

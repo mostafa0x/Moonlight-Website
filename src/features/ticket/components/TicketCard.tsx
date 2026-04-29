@@ -28,7 +28,7 @@ export async function TicketCard({ data, referenceId, locale }: TicketCardProps)
   const guestCount = `${data.adults_number} Adults${data.kids_number > 0 ? `, ${data.kids_number} Kids` : ""}`;
 
   return (
-    <div className="mx-auto w-full max-w-100 bg-white rounded-2xl overflow-hidden shadow-2xl transition-all hover:scale-[1.01] duration-300">
+    <div className="mx-auto w-full max-w-100 bg-white rounded-2xl overflow-hidden shadow-2xl transition-all hover:scale-[1.01] duration-300 select-none">
       {/* Header Image */}
       <div className="relative w-full h-50">
         <Image
@@ -111,7 +111,7 @@ export async function TicketCard({ data, referenceId, locale }: TicketCardProps)
             </span>
             :
             <span className="text-[#CF142B] text-base md:text-base font-bold font-inter">
-              {data.due_amount}
+              ${data.due_amount}
             </span>
           }
         </div>
