@@ -376,6 +376,10 @@
   "profile": {
     "title": "Meu Perfil",
     "description": "Gira as suas aventuras egípcias passadas e futuras com o Moonlight.",
+    "loginGateway": {
+      "title": "Portal Moonlight",
+      "description": "\"Desvende sua história e garanta sua viagem conectando-se com sua embarcação.\""
+    },
     "myBookings": "Minhas Reservas",
     "noBookings": "Nenhuma reserva encontrada no seu histórico.",
     "signOut": "Sair",
@@ -385,6 +389,20 @@
     "bookingCard": {
       "viewTicket": "Ver",
       "cancelBooking": "Cancelar",
+      "totalAmount": "Montante Total",
+      "paymentType": "Tipo de Pagamento",
+      "paymentTypes": {
+        "deposit": "Depósito",
+        "full": "Pagamento Integral"
+      },
+      "status": {
+        "confirmed": "Confirmado",
+        "confirmedDeposit": "Depósito Confirmado",
+        "pending": "Pendente",
+        "cancelled": "Cancelado",
+        "cancellationRequested": "Cancelamento Solicitado",
+        "failed": "Falhou"
+      },
       "cancelModal": {
         "title": "Cancelar reserva?",
         "message": "Tem certeza de que deseja cancelar esta viagem? Esta ação não pode ser desfeita.",

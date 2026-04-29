@@ -387,6 +387,10 @@
   "profile": {
     "title": "My Profile",
     "description": "Manage your upcoming and past Egyptian adventures with Moonlight.",
+    "loginGateway": {
+      "title": "Moonlight Gateway",
+      "description": "\"Unveil your history and secure your voyage by connecting with your vessel.\""
+    },
     "myBookings": "My Bookings",
     "noBookings": "No bookings found in your history.",
     "signOut": "Sign Out",
@@ -396,6 +400,20 @@
     "bookingCard": {
       "viewTicket": "View",
       "cancelBooking": "Cancel",
+      "totalAmount": "Total Amount",
+      "paymentType": "Payment Type",
+      "paymentTypes": {
+        "deposit": "Deposit",
+        "full": "Full Payment"
+      },
+      "status": {
+        "confirmed": "Confirmed",
+        "confirmedDeposit": "Confirmed Deposit",
+        "pending": "Pending",
+        "cancelled": "Cancelled",
+        "cancellationRequested": "Cancellation Requested",
+        "failed": "Failed"
+      },
       "cancelModal": {
         "title": "Cancel Booking?",
         "message": "Are you sure you want to cancel this voyage? This action cannot be reversed.",

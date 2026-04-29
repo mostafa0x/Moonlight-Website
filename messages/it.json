@@ -376,6 +376,10 @@
   "profile": {
     "title": "Mio Profilo",
     "description": "Gestisci le tue avventure egiziane fatte e future con Moonlight.",
+    "loginGateway": {
+      "title": "Portale Moonlight",
+      "description": "\"Svela la tua storia e assicura il tuo viaggio connettendoti con la tua nave.\""
+    },
     "myBookings": "Le Mie Prenotazioni",
     "noBookings": "Nessuna prenotazione trovata nella tua cronologia.",
     "signOut": "Disconnetti",
@@ -385,6 +389,20 @@
     "bookingCard": {
       "viewTicket": "Visualizza",
       "cancelBooking": "Annulla",
+      "totalAmount": "Importo Totale",
+      "paymentType": "Tipo di Pagamento",
+      "paymentTypes": {
+        "deposit": "Acconto",
+        "full": "Pagamento Completo"
+      },
+      "status": {
+        "confirmed": "Confermato",
+        "confirmedDeposit": "Acconto Confermato",
+        "pending": "In attesa",
+        "cancelled": "Annullato",
+        "cancellationRequested": "Annullamento Richiesto",
+        "failed": "Fallito"
+      },
       "cancelModal": {
         "title": "Annullare la prenotazione?",
         "message": "Sei sicuro di voler annullare questo viaggio? Questa azione è irreversibile.",

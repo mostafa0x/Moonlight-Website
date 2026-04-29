@@ -1,6 +1,8 @@
 import React from "react";
 import { LoginButton } from "./LoginButton";
 
+import { getTranslations } from "next-intl/server";
+
 /**
  * LoginGateway: A Server Component for the restricted profile access view.
  * 
@@ -8,20 +10,22 @@ import { LoginButton } from "./LoginButton";
  * - 0% Client JS for the descriptive and themed elements.
  * - Maximum performance using server-side rendering for complex SVG/Layout.
  */
-export const LoginGateway: React.FC = () => {
+export const LoginGateway = async ({ locale }: { locale: string }) => {
+  const t = await getTranslations({ locale, namespace: "profile.loginGateway" });
+
   return (
-    <div className="h-screen w-full text-white flex flex-col items-center justify-center p-4 relative overflow-hidden">
+    <div className="w-full text-white flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 relative overflow-hidden">
       {/* Subtle Egyptian Themed Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-62.5 md:w-100 h-37.5 md:h-50 bg-[#F2C975]/10 blur-[80px] md:blur-[120px] rounded-full animate-pulse" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] md:w-[400px] h-[150px] md:h-[200px] bg-[#F2C975]/10 blur-[80px] md:blur-[120px] rounded-full animate-pulse" />
 
       {/* Thematic Pharaonic Card */}
-      <div className="relative z-10 flex flex-col items-center gap-4 md:gap-6 text-center max-w-95 w-full bg-neutral-950/90 backdrop-blur-md border-[1.5px] border-[#F2C975]/30 p-6 md:p-8 rounded-[30px] shadow-[0_0_40px_rgba(242,201,117,0.08)]">
+      <div className="relative z-10 flex flex-col items-center gap-5 md:gap-7 text-center w-full max-w-sm sm:max-w-md bg-neutral-950/90 backdrop-blur-md border-[1.5px] border-[#F2C975]/30 p-6 sm:p-8 md:p-10 rounded-[30px] shadow-[0_0_40px_rgba(242,201,117,0.08)] mx-auto">
         {/* Eye of Horus Icon - Minimalist */}
         <div className="relative group">
           <div className="absolute inset-0 bg-[#F2C975]/20 blur-xl rounded-full scale-110 group-hover:bg-[#F2C975]/30 transition-all duration-1000" />
           <svg
             viewBox="0 0 100 100"
-            className="relative w-16 h-16 md:w-20 md:h-20 group-hover:scale-105 transition-transform duration-700 brightness-110"
+            className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 group-hover:scale-105 transition-transform duration-700 brightness-110"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -32,13 +36,13 @@ export const LoginGateway: React.FC = () => {
           </svg>
         </div>
 
-        <div className="flex flex-col items-center gap-2 md:gap-4">
-          <h2 className="text-2xl md:text-3xl font-bold font-cairo uppercase tracking-[0.2em] text-[#F2C975]">
-            Moonlight Gateway
+        <div className="flex flex-col items-center gap-2 sm:gap-3 md:gap-4 w-full">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold font-cairo uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[#F2C975]">
+            {t("title")}
           </h2>
-          <div className="h-px w-24 md:w-32 bg-linear-to-r from-transparent via-[#F2C975] to-transparent" />
-          <p className="text-zinc-400 font-cairo text-sm md:text-base italic tracking-wide px-2">
-            "Unveil your history and secure your voyage by connecting with your vessel."
+          <div className="h-px w-20 sm:w-24 md:w-32 bg-linear-to-r from-transparent via-[#F2C975] to-transparent" />
+          <p className="text-zinc-400 font-cairo text-xs sm:text-sm md:text-base italic tracking-wide px-2 sm:px-4">
+            {t("description")}
           </p>
         </div>
 

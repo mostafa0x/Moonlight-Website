@@ -4,7 +4,8 @@ import { Metadata } from 'next';
 import { createClient } from '@/shared/lib/supabase-server';
 import { Booking } from '@/features/profile/types';
 import EgyptianLoader from '@/shared/components/EgyptianLoader';
-
+import FooterPage from "@/shared/components/footer/index";
+import Section from "@/features/home/components/Section";
 import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata({
@@ -91,11 +92,14 @@ export default async function ProfilePage({ params }: { params: Promise<{ locale
   const bookings = await fetchBookings(session, locale);
 
   return (
-    <main className="w-full min-h-screen pt-20">
+    <main className="w-full min-h-screen pt-12 pb-20 flex flex-col">
       <Suspense fallback={<EgyptianLoader />}>
         {/* ProfileFeature is now a Server Component */}
         <ProfileFeature bookings={bookings} user={user} locale={locale} />
       </Suspense>
+      <Section id="footer">
+        <FooterPage />
+      </Section>
     </main>
   );
 }

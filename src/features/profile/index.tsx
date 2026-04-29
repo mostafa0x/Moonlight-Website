@@ -21,10 +21,10 @@ interface ProfileFeatureProps {
  * - Optimized Data Waterfalls (data is passed from page).
  */
 export async function ProfileFeature({ bookings, user, locale }: ProfileFeatureProps) {
-  const t = await getTranslations("profile");
+  const t = await getTranslations({ locale, namespace: "profile" });
 
   if (!user) {
-    return <LoginGateway />;
+    return <LoginGateway locale={locale} />;
   }
 
   // Sort logic on the server to save client CPU
@@ -35,7 +35,7 @@ export async function ProfileFeature({ bookings, user, locale }: ProfileFeatureP
   });
 
   return (
-    <div className="h-screen w-full  text-white overflow-y-auto scrollbar-custom">
+    <div className="w-full text-white">
       <div className="max-w-4xl lg:max-w-6xl mx-auto pt-10 md:pt-20 pb-40 md:pb-60 flex flex-col gap-10 md:gap-20 px-4">
         {/* Profile Header (Server Component) */}
         <ProfileHeader user={user} />
