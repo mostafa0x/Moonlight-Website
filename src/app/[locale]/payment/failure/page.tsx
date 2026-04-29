@@ -1,12 +1,15 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
+import FooterPage from "@/shared/components/footer";
+import Section from "@/features/home/components/Section";
 
 export default async function PaymentFailurePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "bookingModal.payment.failure" });
 
   return (
-    <div className="min-h-[calc(100dvh-120px)] flex items-center justify-center px-4 py-8 relative overflow-hidden">
+    <div className="w-full min-h-screen flex flex-col">
+      <div className="flex-1 flex items-center justify-center px-4 py-8 relative overflow-hidden mt-20">
 
       {/* Failure Card */}
       <div className="relative flex flex-col items-center justify-center h-auto max-h-[85dvh] w-full max-w-[90%] sm:max-w-md md:max-w-lg bg-[#0D0D0D] border-2 border-[#E57373]/30 rounded-3xl md:rounded-4xl px-4 py-5 md:py-8 text-center shadow-[0_20px_60px_-15px_rgba(229,115,115,0.15)] animate-in zoom-in-95 duration-700 overflow-y-auto scrollbar-hide">
@@ -48,6 +51,10 @@ export default async function PaymentFailurePage({ params }: { params: Promise<{
           </svg>
         </Link>
       </div>
+      </div>
+      <Section id="footer">
+        <FooterPage />
+      </Section>
     </div>
   );
 }

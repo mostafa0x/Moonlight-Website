@@ -63,7 +63,7 @@ export async function BookingCard({ booking, locale }: BookingCardProps) {
 
   return (
     <div className="relative w-full flex flex-col bg-neutral-900/40 backdrop-blur-md rounded-2xl border border-white/5 overflow-hidden group hover:border-[#F2C975]/30 transition-all duration-500 hover:shadow-[0_0_30px_rgba(242,201,117,0.05)]">
-      <Link href={`/${locale}/ticket/${booking.id}`} className="absolute inset-0 z-10" />
+      {/* <Link href={`/${locale}/ticket/${booking.id}`} className="absolute inset-0 z-10" /> */}
       {/* Content Section */}
       <div className="flex-1 p-5 md:p-8 flex flex-col justify-between relative z-0 bg-neutral-900/40 select-none">
         <div className="flex flex-col gap-6">
