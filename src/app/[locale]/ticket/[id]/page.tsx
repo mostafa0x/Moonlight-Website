@@ -104,10 +104,9 @@ export default async function TicketPage({
   return (
     <div className="w-full min-h-screen flex flex-col">
       <Suspense fallback={<EgyptianLoader />}>
-        <main className="flex-1 pt-32 pb-10 px-4 flex flex-col items-center justify-center gap-2">
+        <main className="flex-1 pt-8 pb-16  px-4 flex flex-col items-center  justify-center gap-2">
           {/* Premium Ticket Card */}
           <TicketCard data={ticketResponse.data} referenceId={id} locale={locale} />
-
           {/* Back Link */}
           <Link
             href={`/${locale}/profile`}
@@ -122,7 +121,7 @@ export default async function TicketPage({
             >
               <path d="M19 12H5M12 19l-7-7 7-7" />
             </svg>
-            <span className="font-semibold font-cairo underline underline-offset-4">
+            <span className="font-semibold text-center font-cairo underline underline-offset-4">
               {t('backToProfile')}
             </span>
           </Link>

@@ -57,8 +57,8 @@ const fetchBookings = async (session: any, locale: string): Promise<Booking[]> =
     if (!response.ok) return [];
 
     const result = await response.json();
-    console.log(session.access_token);
-    console.log(result);
+    // console.log(session.access_token);
+    // console.log(result);
 
     const rawData = result.data || [];
 
