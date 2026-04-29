@@ -12,7 +12,7 @@ export default function NotFound() {
 
   return (
     <div className="flex flex-col items-center justify-between min-h-screen pt-32 pb-10 gap-16 w-full">
-      <div className="flex flex-col items-center justify-center flex-grow text-center px-4">
+      <div className="flex flex-col items-center justify-center grow text-center px-4">
         <h1 className="text-[#F2C975] font-bold text-7xl md:text-9xl mb-4 font-cairo">
           404
         </h1>
