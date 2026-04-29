@@ -1,7 +1,8 @@
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import ContactForm from "./ContactForm";
-
+import FooterPage from "@/shared/components/footer";
+import Section from "@/features/home/components/Section";
 export async function generateMetadata({
   params,
 }: {
@@ -70,8 +71,8 @@ export default async function Page({
   const t = await getTranslations({ locale, namespace: "contact" })
 
   return (
-    <div className="flex justify-center items-center w-full h-full pt-20 px-6.25 pb-7.5">
-      <div className="flex flex-col h-full px-6.25 py-9 gap-3 md:gap-6 bg-black w-107 md:w-157 rounded-[20px]">
+    <div className="flex flex-col items-center w-full min-h-screen pt-32 pb-10 gap-16">
+      <div className="flex flex-col h-full px-6-25 py-9 gap-3 md:gap-6 bg-black w-107 md:w-157 rounded-[20px]">
         <h1 className="text-white text-center font-bold text-4xl mb-5.5">
           {t("title").split(" ")[0]}{" "}
           <span className="text-[#F2C975]">{t("title").split(" ")[1]}</span>
@@ -103,6 +104,9 @@ export default async function Page({
         {/* Form Container */}
         <ContactForm />
       </div>
+      <Section id="footer">
+        <FooterPage />
+      </Section>
     </div>
   );
 }

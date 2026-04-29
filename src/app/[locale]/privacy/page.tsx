@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
-
+import FooterPage from "@/shared/components/footer";
+import Section from "@/features/home/components/Section";
 export async function generateMetadata({
   params,
 }: {
@@ -66,8 +67,8 @@ export default async function Page({
   const t = await getTranslations({ locale, namespace: "privacy" });
 
   return (
-    <div className="flex justify-center items-center w-full h-screen pt-20 px-6.25 pb-7.5">
-      <div className="flex flex-col max-h-[80vh] scrollbar-custom overflow-y-auto px-6.25 py-9 gap-4 md:gap-6 bg-black w-107 md:w-157 rounded-lg">
+    <div className="flex flex-col items-center w-full min-h-screen pt-32 pb-10 gap-16">
+      <div className="flex flex-col px-6-25 py-9 gap-4 md:gap-6 bg-black w-107 md:w-157 rounded-lg">
         <h1 className="text-[#F2C975] font-bold text-4xl mb-5.5">
           {t("title")}
         </h1>
@@ -152,6 +153,10 @@ export default async function Page({
           <p className="text-[#888888] text-sm">{t("consent.text")}</p>
         </div>
       </div>
+
+      <Section id="footer">
+        <FooterPage />
+      </Section>
     </div>
   );
 }

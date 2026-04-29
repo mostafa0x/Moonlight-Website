@@ -16,7 +16,7 @@ export const LoginGateway = async ({ locale }: { locale: string }) => {
   return (
     <div className="w-full text-white flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 relative overflow-hidden">
       {/* Subtle Egyptian Themed Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] md:w-[400px] h-[150px] md:h-[200px] bg-[#F2C975]/10 blur-[80px] md:blur-[120px] rounded-full animate-pulse" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-62.5 md:w-100 h-37.5 md:h-50 bg-[#F2C975]/10 blur-[80px] md:blur-[120px] rounded-full animate-pulse" />
 
       {/* Thematic Pharaonic Card */}
       <div className="relative z-10 flex flex-col items-center gap-5 md:gap-7 text-center w-full max-w-sm sm:max-w-md bg-neutral-950/90 backdrop-blur-md border-[1.5px] border-[#F2C975]/30 p-6 sm:p-8 md:p-10 rounded-[30px] shadow-[0_0_40px_rgba(242,201,117,0.08)] mx-auto">
