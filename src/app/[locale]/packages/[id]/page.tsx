@@ -5,9 +5,9 @@ import type { PackageDetailsType } from "@/shared/global";
 
 /**
  * SSG Configuration
- * Pages are statically generated at build time with ISR revalidation.
+ * Pages are statically generated at build time.
  */
-export const revalidate = 3600; // Revalidate every hour for fresh data
+export const revalidate = false; // Pure SSG, no ISR
 
 /**
  * Generate static params for all packages across all locales.
@@ -36,7 +36,7 @@ export async function generateStaticParams() {
 
 /**
  * Server-side data fetching for a single package.
- * Uses force-cache for SSG with ISR revalidation.
+ * Uses force-cache for pure SSG.
  */
 async function fetchPackageDetails(
   id: string,
@@ -46,7 +46,7 @@ async function fetchPackageDetails(
 
   try {
     const res = await fetch(`${baseUrl}/packages/${id}?lang=${locale}`, {
-      next: { revalidate: 3600 },
+      cache: "force-cache",
     });
 
     if (!res.ok) return null;
@@ -140,7 +140,7 @@ export async function generateMetadata({
  * Package Details Page — Server Component
  *
  * Architecture:
- * - Server-rendered at build time (SSG) with ISR revalidation
+ * - Server-rendered at build time (SSG)
  * - Data is fetched on the server, zero client-side data fetching for initial load
  * - Client interactivity is limited to accordion toggles and booking modal trigger
  * - Optimized for LCP: Hero images are priority-loaded, all above-fold content is server-rendered
