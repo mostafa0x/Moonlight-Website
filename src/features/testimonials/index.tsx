@@ -8,7 +8,7 @@ import TestimonialsSection from "@/features/testimonials/components/Testimonials
  * - Client-side interactivity limited to the Swiper slider.
  * - Optimized asset loading for the main showcase image.
  */
-export default async function Testimonials() {
+export default function Testimonials() {
   // In the future, data fetching could happen here:
   // const data = await getTestimonials();
 

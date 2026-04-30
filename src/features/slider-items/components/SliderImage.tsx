@@ -41,7 +41,7 @@ function SliderImage({
         alt={alt}
         fill
         priority={priority}
-        sizes="100vw"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         fetchPriority={priority ? "high" : "low"}
         onLoad={onLoad}
         onError={onLoad}
@@ -49,7 +49,6 @@ function SliderImage({
           "object-contain transition-opacity duration-700 ease-out",
           isLoaded ? "opacity-100" : "opacity-0"
         )}
-
       />
     </div>
 

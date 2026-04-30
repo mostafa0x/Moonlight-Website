@@ -32,7 +32,7 @@ function LandmarkSlide({ item, isVisible, slideNumber, totalSlides }: LandmarkSl
             src={item.imageUrl}
             alt={item.title}
             isLoaded={isLoaded}
-            priority={true}
+            priority={false}
             onLoad={onImageLoad}
             className="h-full w-full object-contain"
           />

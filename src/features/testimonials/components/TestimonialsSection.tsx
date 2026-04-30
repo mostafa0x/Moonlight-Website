@@ -41,9 +41,9 @@ export default function TestimonialsSection() {
                                 src="/imgs/travelers-at-the-pyramids.webp"
                                 alt="Experience Egypt"
                                 fill
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
                                 className="object-fill"
-                                priority
+                                quality={75}
                             />
                         </div>
                         {/* Testimonial Slider Card */}
@@ -73,7 +73,7 @@ export default function TestimonialsSection() {
                                         <SwiperSlide key={review.id} className="flex flex-col h-full bg-transparent">
                                             <div className="flex flex-col gap-4 md:gap-6">
                                                 {/* Avatar */}
-                                                <img src={"/icons/quote.webp.svg"} alt="quote" className="w-9 h-9" />
+                                                <Image src={"/icons/quote.webp.svg"} alt="quote" width={36} height={36} loading="lazy" className="w-9 h-9" />
                                                 {/* Review Text */}
                                                 <p className="text-emerald-50 md:text-white text-sm md:text-base font-normal">
                                                     "{review.text}"
@@ -112,9 +112,12 @@ export default function TestimonialsSection() {
                 <div className="w-full flex justify-center py-4 md:py-6">
                     <div className="px-3 py-1 sm:px-5 sm:py-3 bg-color-white-solid rounded-2xl shadow-[0px_12px_32px_0px_rgba(15,23,42,0.12)] flex justify-start items-center gap-3">
                         <div className="relative w-10 h-10 sm:w-14 sm:h-14 bg-neutral-100 rounded-[19px] overflow-hidden p-1">
-                            <img
+                            <Image
                                 src="/icons/TripAdvisor.svg"
                                 alt="TripAdvisor"
+                                width={56}
+                                height={56}
+                                loading="lazy"
                                 className="object-contain w-10 h-10 sm:w-14 sm:h-14"
                             />
                         </div>

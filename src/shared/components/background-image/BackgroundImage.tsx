@@ -21,7 +21,7 @@ function BackgroundImage({ isHasOverlay = true }: { isHasOverlay?: boolean }) {
           className="object-cover opacity-80"
           sizes="100vw"
           priority
-          unoptimized
+          fetchPriority="high"
         />
       </div>
     </div>
