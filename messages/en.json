@@ -234,13 +234,6 @@
       "tourDate": "Tour Date",
       "nationality": "Nationality",
       "address": "Address",
-      "useLocation": "Use Current Location",
-      "gettingLocation": "Getting location...",
-      "alerts": {
-        "notSupported": "Geolocation is not supported by your browser.",
-        "fetchError": "Could not fetch address. Please enter it manually.",
-        "denied": "Permission denied or location not found."
-      },
       "placeholders": {
         "name": "enter your name...",
         "phone": "enter your phone number...",

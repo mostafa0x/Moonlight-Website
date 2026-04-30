@@ -223,13 +223,6 @@
       "tourDate": "Fecha del Tour",
       "nationality": "Nacionalidad",
       "address": "Dirección",
-      "useLocation": "Usar Ubicación Actual",
-      "gettingLocation": "Obteniendo ubicación...",
-      "alerts": {
-        "notSupported": "La geolocalización no es compatible con su navegador.",
-        "fetchError": "No se pudo obtener la dirección. Por favor, ingrésela manualmente.",
-        "denied": "Permiso denegado o ubicación no encontrada."
-      },
       "placeholders": {
         "name": "ingrese su nombre...",
         "phone": "ingrese su teléfono...",
