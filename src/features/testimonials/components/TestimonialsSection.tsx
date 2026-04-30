@@ -73,7 +73,7 @@ export default function TestimonialsSection() {
                                         <SwiperSlide key={review.id} className="flex flex-col h-full bg-transparent">
                                             <div className="flex flex-col gap-4 md:gap-6">
                                                 {/* Avatar */}
-                                                <img src={"/icons/quote.webp.svg"} className="w-9 h-9" />
+                                                <img src={"/icons/quote.webp.svg"} alt="quote" className="w-9 h-9" />
                                                 {/* Review Text */}
                                                 <p className="text-emerald-50 md:text-white text-sm md:text-base font-normal">
                                                     "{review.text}"
