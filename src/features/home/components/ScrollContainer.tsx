@@ -8,7 +8,6 @@ import { cn } from "@/shared/lib/utils";
 
 // Swiper Styles
 import "swiper/css";
-import "swiper/css/effect-fade";
 
 interface ScrollContainerProps {
   children: ReactNode;
@@ -38,8 +37,7 @@ export default function ScrollContainer({ children, className }: ScrollContainer
         direction="vertical"
         slidesPerView={1}
         spaceBetween={0}
-        effect="fade"
-        fadeEffect={{ crossFade: true }}
+
         onSwiper={setSwiperInstance}
         mousewheel={{
           sensitivity: 1,
