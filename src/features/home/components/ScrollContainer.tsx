@@ -37,21 +37,20 @@ export default function ScrollContainer({ children, className }: ScrollContainer
         direction="vertical"
         slidesPerView={1}
         spaceBetween={0}
-
         onSwiper={setSwiperInstance}
         mousewheel={{
-          sensitivity: 1,
-          thresholdDelta: 0,
-          thresholdTime: 0,
+          sensitivity: 0.8,
+          thresholdDelta: 50,
+          thresholdTime: 500,
           releaseOnEdges: false,
         }}
-        speed={800}
+        speed={1000}
         keyboard={{ enabled: true }}
 
         // Advanced Performance & Touch Suite
         touchRatio={1}
-        threshold={10}
-        longSwipesRatio={0.5}
+        threshold={30}
+        longSwipesRatio={0.1}
         roundLengths={true}
         resistance={true}
         resistanceRatio={0.85}

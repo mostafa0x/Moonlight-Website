@@ -8,6 +8,7 @@ function Avatar({ size = 34, src }: { size?: number; src?: string }) {
       style={{
         width: size,
         height: size,
+        position: "relative",
       }}
       className={`relative  bg-black rounded-full overflow-hidden`}
     >
