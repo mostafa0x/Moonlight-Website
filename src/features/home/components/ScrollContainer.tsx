@@ -3,12 +3,12 @@
 import { ReactNode, Children, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
-import { Mousewheel, Keyboard, Parallax } from "swiper/modules";
+import { Mousewheel, Keyboard, EffectFade, Parallax } from "swiper/modules";
 import { cn } from "@/shared/lib/utils";
 
 // Swiper Styles
 import "swiper/css";
-import "swiper/css/parallax";
+import "swiper/css/effect-fade";
 
 interface ScrollContainerProps {
   children: ReactNode;
@@ -38,9 +38,11 @@ export default function ScrollContainer({ children, className }: ScrollContainer
         direction="vertical"
         slidesPerView={1}
         spaceBetween={0}
+        effect="fade"
+        fadeEffect={{ crossFade: true }}
         onSwiper={setSwiperInstance}
         mousewheel={{
-          sensitivity: 1.1,
+          sensitivity: 1,
           thresholdDelta: 0,
           thresholdTime: 0,
           releaseOnEdges: false,
@@ -52,19 +54,18 @@ export default function ScrollContainer({ children, className }: ScrollContainer
         touchRatio={1}
         threshold={10}
         longSwipesRatio={0.5}
-        roundLengths={false}
+        roundLengths={true}
         resistance={true}
         resistanceRatio={0.85}
-
-        watchSlidesProgress={false}
+        watchSlidesProgress={true}
         preventInteractionOnTransition={true}
         touchStartPreventDefault={false}
         passiveListeners={true}
         observer={true}
         observeParents={true}
-        modules={[Mousewheel, Keyboard]}
+        modules={[Mousewheel, Keyboard, Parallax]}
 
-        className={cn("h-screen w-full", className)}
+        className={cn("h-full w-full", className)}
         allowTouchMove={true}
         simulateTouch={true}
         grabCursor={false}

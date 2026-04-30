@@ -23,11 +23,9 @@ export default function Section({ children, id, className }: SectionProps) {
   return (
     <section
       id={id}
-      style={{
-        contentVisibility: "visible",
-      } as any}
+
       className={cn(
-        "h-screen w-full relative",
+        "h-full w-full relative",
         !className?.includes("overflow-") && "overflow-hidden",
         className
       )}
