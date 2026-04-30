@@ -32,7 +32,13 @@ export default function ScrollContainer({ children, className }: ScrollContainer
   const slides = Children.toArray(children);
 
   return (
-    <div className="fixed inset-0 w-full h-full bg-transparent overflow-hidden" style={{ overscrollBehavior: "none" }}>
+    <div 
+      className="fixed inset-0 w-full bg-transparent overflow-hidden" 
+      style={{ 
+        height: '100dvh',
+        overscrollBehavior: "none" 
+      }}
+    >
       <Swiper
         direction="vertical"
         slidesPerView={1}
@@ -53,7 +59,7 @@ export default function ScrollContainer({ children, className }: ScrollContainer
         longSwipesRatio={0.1}
         roundLengths={true}
         resistance={true}
-        resistanceRatio={0.85}
+        resistanceRatio={0}
         watchSlidesProgress={true}
         preventInteractionOnTransition={true}
         touchStartPreventDefault={false}
@@ -62,13 +68,18 @@ export default function ScrollContainer({ children, className }: ScrollContainer
         observeParents={true}
         modules={[Mousewheel, Keyboard, Parallax]}
 
-        className={cn("h-full w-full", className)}
+        style={{ height: '100dvh' }}
+        className={cn("w-full", className)}
         allowTouchMove={true}
         simulateTouch={true}
         grabCursor={false}
       >
         {slides.map((child, index) => (
-          <SwiperSlide key={index} className="h-full w-full overflow-hidden bg-transparent">
+          <SwiperSlide 
+            key={index} 
+            className="w-full overflow-hidden bg-transparent"
+            style={{ height: '100dvh' }}
+          >
             {child}
           </SwiperSlide>
         ))}
