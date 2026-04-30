@@ -79,9 +79,9 @@ export async function generateMetadata({
   }
 
   // Fallback host, adjust to your real production domain
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.moonlight-tours.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
   const packageUrl = `${baseUrl}/${locale}/packages/${id}`;
-  
+
   // Clean description (removes any stray HTML tags and prevents trailing spaces)
   const cleanDescription = (pkg.description || "")
     .replace(/<[^>]*>?/gm, "")
@@ -118,13 +118,13 @@ export async function generateMetadata({
       locale: locale,
       images: pkg.packageImage
         ? [
-            {
-              url: pkg.packageImage,
-              width: 1200,
-              height: 630,
-              alt: pkg.packageName,
-            },
-          ]
+          {
+            url: pkg.packageImage,
+            width: 1200,
+            height: 630,
+            alt: pkg.packageName,
+          },
+        ]
         : [],
     },
     twitter: {

@@ -8,9 +8,16 @@ import HighlightsSection from "./components/HighlightsSection";
 import FAQSection from "./components/FAQSection";
 import BookingBar from "./components/BookingBar";
 import Section from "@/features/home/components/Section";
-import FooterPage from "@/shared/components/footer/index";
-import TestimonialsSection from "@/features/testimonials/components/TestimonialsSection";
+import dynamic from "next/dynamic";
 import BookingModalWrapper from "./components/BookingModalWrapper";
+
+const FooterPage = dynamic(() => import("@/shared/components/footer/index"), {
+  loading: () => <div className="h-64 animate-pulse bg-zinc-800/20 w-full" />
+});
+
+const TestimonialsSection = dynamic(() => import("@/features/testimonials/components/TestimonialsSection"), {
+  loading: () => <div className="h-96 animate-pulse bg-zinc-800/20 rounded-4xl w-full" />
+});
 
 /**
  * PackageDetailsPage — Server Component
