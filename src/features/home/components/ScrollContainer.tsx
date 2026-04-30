@@ -32,11 +32,11 @@ export default function ScrollContainer({ children, className }: ScrollContainer
   const slides = Children.toArray(children);
 
   return (
-    <div 
-      className="fixed inset-0 w-full bg-transparent overflow-hidden" 
-      style={{ 
+    <div
+      className="fixed inset-0 w-full bg-transparent overflow-hidden"
+      style={{
         height: '100dvh',
-        overscrollBehavior: "none" 
+        overscrollBehavior: "none"
       }}
     >
       <Swiper
@@ -45,41 +45,37 @@ export default function ScrollContainer({ children, className }: ScrollContainer
         spaceBetween={0}
         onSwiper={setSwiperInstance}
         mousewheel={{
-          sensitivity: 0.8,
-          thresholdDelta: 50,
-          thresholdTime: 500,
+          sensitivity: 1.1,
+          thresholdDelta: 0,
+          thresholdTime: 0,
           releaseOnEdges: false,
         }}
-        speed={1000}
+        speed={800}
         keyboard={{ enabled: true }}
 
         // Advanced Performance & Touch Suite
-        touchRatio={1}
-        threshold={30}
+        touchRatio={1.2}
+        threshold={5}
         longSwipesRatio={0.1}
         roundLengths={true}
         resistance={true}
-        resistanceRatio={0}
+        resistanceRatio={0.85}
+
         watchSlidesProgress={true}
-        preventInteractionOnTransition={true}
+        preventInteractionOnTransition={false}
         touchStartPreventDefault={false}
         passiveListeners={true}
         observer={true}
         observeParents={true}
         modules={[Mousewheel, Keyboard, Parallax]}
 
-        style={{ height: '100dvh' }}
-        className={cn("w-full", className)}
+        className={cn("h-screen w-full", className)}
         allowTouchMove={true}
         simulateTouch={true}
         grabCursor={false}
       >
         {slides.map((child, index) => (
-          <SwiperSlide 
-            key={index} 
-            className="w-full overflow-hidden bg-transparent"
-            style={{ height: '100dvh' }}
-          >
+          <SwiperSlide key={index} className="h-full w-full overflow-hidden bg-transparent">
             {child}
           </SwiperSlide>
         ))}

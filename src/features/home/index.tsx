@@ -16,11 +16,6 @@ function Home({ data, locale }: HomeProps) {
     <HomeClientContent
       data={data}
       heroSection={
-        /* 
-          We pass the Hero section as a prop. Since it's created here 
-          in a Server Component, it remains a Server Component even 
-          when rendered inside the Client wrapper.
-        */
         <Section id="hero">
           <HeroSection locale={locale} />
         </Section>
