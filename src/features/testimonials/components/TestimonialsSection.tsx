@@ -50,14 +50,14 @@ export default function TestimonialsSection() {
                         <div className="relative flex-1 min-h-65 md:min-h-80 bg-zinc-800 rounded-2xl md:rounded-3xl p-5 md:p-8 shadow-lg overflow-hidden flex flex-col">
                             {/* Card Top Meta */}
                             <div className="flex justify-between items-center mb-4 md:mb-6">
-                                <span className="text-white md:text-pink-50 text-[10px] md:text-xs font-normal">
+                                <span className="text-white md:text-pink-50 text-sm md:text-xs font-normal">
                                     {TOTAL_REVIEWS} {t("reviews")}
                                 </span>
                                 <div className="flex items-center gap-1">
-                                    <span className="text-white md:text-pink-50 text-[10px] md:text-xs font-normal">
+                                    <span className="text-white md:text-pink-50 text-sm md:text-base font-normal">
                                         4.93
                                     </span>
-                                    <span className="text-yellow-500 text-[10px] md:text-xs">★★★★★</span>
+                                    <span className="text-yellow-500 text-sm md:text-base">★★★★★</span>
                                 </div>
                             </div>
                             {/* Swiper Slider Area */}

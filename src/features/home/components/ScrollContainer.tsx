@@ -35,7 +35,6 @@ export default function ScrollContainer({ children, className }: ScrollContainer
     <div
       className="fixed inset-0 w-full bg-transparent overflow-hidden"
       style={{
-        height: '100dvh',
         overscrollBehavior: "none"
       }}
     >
