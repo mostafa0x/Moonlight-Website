@@ -34,11 +34,7 @@ export default async function HeroSection({ locale }: HeroSectionProps) {
         </h1>
       </header>
 
-      {/* Optional: Subtle Overlay for better text legibility */}
-      <div 
-        className="absolute inset-0 bg-linear-to-b from-black/20 via-transparent to-black/40 pointer-events-none z-10" 
-        aria-hidden="true" 
-      />
+
     </section>
   );
 }

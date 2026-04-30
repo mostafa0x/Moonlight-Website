@@ -21,8 +21,8 @@ function PackagesPage({
 }: PackagesPageProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.99 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ amount: 0.4 }}
       transition={{ duration: 0.8 }}
       className="relative flex h-full w-full scrollbar-hide "

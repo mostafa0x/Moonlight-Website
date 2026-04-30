@@ -25,7 +25,6 @@ export default function Section({ children, id, className }: SectionProps) {
       id={id}
       style={{
         contentVisibility: "visible",
-        willChange: isHero ? "auto" : "transform",
       } as any}
       className={cn(
         "h-screen w-full relative",

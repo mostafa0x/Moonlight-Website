@@ -49,20 +49,20 @@ export default function ScrollContainer({ children, className }: ScrollContainer
         keyboard={{ enabled: true }}
 
         // Advanced Performance & Touch Suite
-        touchRatio={1.2}
-        threshold={5}
-        longSwipesRatio={0.1}
-        roundLengths={true}
+        touchRatio={1}
+        threshold={10}
+        longSwipesRatio={0.5}
+        roundLengths={false}
         resistance={true}
         resistanceRatio={0.85}
 
-        watchSlidesProgress={true}
-        preventInteractionOnTransition={false}
+        watchSlidesProgress={false}
+        preventInteractionOnTransition={true}
         touchStartPreventDefault={false}
         passiveListeners={true}
         observer={true}
         observeParents={true}
-        modules={[Mousewheel, Keyboard, Parallax]}
+        modules={[Mousewheel, Keyboard]}
 
         className={cn("h-screen w-full", className)}
         allowTouchMove={true}
