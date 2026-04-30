@@ -1,6 +1,6 @@
 import type { HomeDataType } from "@/shared/global";
 import Section from "@/features/home/components/Section";
-import Page1 from "@/features/home/page1/index";
+import HeroSection from "@/features/home/hero-section/index";
 import HomeClientContent from "./components/HomeClientContent";
 
 interface HomeProps {
@@ -22,7 +22,7 @@ function Home({ data, locale }: HomeProps) {
           when rendered inside the Client wrapper.
         */
         <Section id="hero">
-          <Page1 locale={locale} />
+          <HeroSection locale={locale} />
         </Section>
       }
     />
