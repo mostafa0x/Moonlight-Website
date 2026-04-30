@@ -80,9 +80,9 @@ export default function TestimonialsSection() {
                                                 </p>
                                                 {/* Author Info */}
                                                 <div className="flex flex-col">
-                                                    <h4 className="text-white text-sm md:text-xl font-bold leading-tight">
+                                                    <h3 className="text-white text-sm md:text-xl font-bold leading-tight">
                                                         {review.name}
-                                                    </h4>
+                                                    </h3>
                                                 </div>
                                             </div>
                                         </SwiperSlide>
@@ -112,12 +112,10 @@ export default function TestimonialsSection() {
                 <div className="w-full flex justify-center py-4 md:py-6">
                     <div className="px-3 py-1 sm:px-5 sm:py-3 bg-color-white-solid rounded-2xl shadow-[0px_12px_32px_0px_rgba(15,23,42,0.12)] flex justify-start items-center gap-3">
                         <div className="relative w-10 h-10 sm:w-14 sm:h-14 bg-neutral-100 rounded-[19px] overflow-hidden p-1">
-                            <Image
+                            <img
                                 src="/icons/TripAdvisor.svg"
                                 alt="TripAdvisor"
-                                width={56}
-                                height={56}
-                                loading="lazy"
+
                                 className="object-contain w-10 h-10 sm:w-14 sm:h-14"
                             />
                         </div>

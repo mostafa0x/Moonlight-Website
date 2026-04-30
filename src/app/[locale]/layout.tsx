@@ -134,7 +134,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${cairo.variable} ${jakarta.variable}`} suppressHydrationWarning>
-      <body suppressHydrationWarning className="bg-black">
+      <body suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AllProviders>
             <NavBar locale={locale} />
