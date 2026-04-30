@@ -37,11 +37,14 @@
 
 :root {
   --background: black;
+    --foreground: white;
+
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: black;
+    --foreground: white;
   }
 }
 

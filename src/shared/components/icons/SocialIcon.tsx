@@ -1,26 +1,32 @@
 import { memo } from "react";
 
-function SocialIcon({ icon }: { icon: "facebook" | "instagram" | "tiktok" }) {
-  const link =
-    icon === "facebook"
-      ? "#facebook"
-      : icon === "instagram"
-        ? "#insta"
-        : "#tiktok";
+export const SOCIAL_LINKS = {
+  facebook: "https://www.instagram.com/egypt_moonlight_tours?igsh=MWhyM2JyNm5wMnQzdg%3D%3D&utm_source=qr",
+  instagram: "https://www.instagram.com/egypt_moonlight_tours?igsh=MWhyM2JyNm5wMnQzdg%3D%3D&utm_source=qr",
+  tiktok: null, // Not found
+  whatsapp: "https://wa.me/201022500171",
+} as const;
+
+type IconType = keyof typeof SOCIAL_LINKS;
+
+function SocialIcon({ icon }: { icon: IconType }) {
+  const href = SOCIAL_LINKS[icon];
+
+  if (!href) return null;
+
   return (
     <a
-      href={link}
+      href={href}
       target="_blank"
-      aria-label={`${icon} link`}
       rel="noopener noreferrer"
-      className="relative flex border border-white rounded-full w-11 h-11 md:w-20.25 md:h-20.25 items-center justify-center hover:bg-gray-300/30 hover:scale-105 select-none cursor-pointer"
+      aria-label={`Follow us on ${icon}`}
+      className="relative flex items-center justify-center w-11 h-11 md:w-20.25 md:h-20.25 border border-white/20 rounded-full transition-all duration-300 hover:bg-white/10 hover:scale-110 active:scale-95 cursor-pointer select-none"
     >
       <img
         src={`/icons/${icon}.svg`}
-        className="w-6 h-6 md:w-10.75 md:h-10.75"
-        alt={icon}
+        alt={`${icon} icon`}
+        className="w-6 h-6 md:w-10.75 md:h-10.75 object-contain"
         loading="lazy"
-        fetchPriority="low"
       />
     </a>
   );

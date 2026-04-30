@@ -2,7 +2,7 @@
 import { memo, useMemo } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import SocialIcon from "@/shared/components/icons/SocialIcon";
+import SocialIcon, { SOCIAL_LINKS } from "@/shared/components/icons/SocialIcon";
 /**
  * FooterPage Component
  * Site-wide footer with branding, social links, and navigation.
@@ -39,9 +39,13 @@ function FooterPage() {
         {/* Social Media Links */}
         <nav aria-label="Social Media">
           <ul className="flex items-center justify-center gap-12" role="list">
-            <li><SocialIcon icon="facebook" /></li>
-            <li><SocialIcon icon="tiktok" /></li>
-            <li><SocialIcon icon="instagram" /></li>
+            {(Object.keys(SOCIAL_LINKS) as Array<keyof typeof SOCIAL_LINKS>).map((icon) => (
+              SOCIAL_LINKS[icon] && (
+                <li key={icon}>
+                  <SocialIcon icon={icon} />
+                </li>
+              )
+            ))}
           </ul>
         </nav>
 

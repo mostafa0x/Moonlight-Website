@@ -85,19 +85,19 @@ export default async function Page({
         {/* Phone + Email */}
         <div className="flex flex-col lg:flex-row gap-3 lg:gap-43.75">
           <a
-            href="tel:0212031212"
+            href="tel:201022500171"
             className="flex items-center gap-3.5 mt-3.5 text-[#8B8B8B] font-medium text-[14px] hover:text-white transition-colors"
           >
             <img src="/icons/phone.svg" alt="phone" loading="lazy" fetchPriority="low" />
-            <span>{t("phone")}: 0212031212</span>
+            <span>{t("phone")}: +201022500171</span>
           </a>
 
           <a
-            href="mailto:echo@gmail.com"
+            href="mailto:moonlightegypttours@gmail.com"
             className="flex items-center gap-3.5 mt-3.5 text-[#8B8B8B] font-medium text-[14px] hover:text-white transition-colors"
           >
             <img src="/icons/mail.svg" alt="email" loading="lazy" fetchPriority="low" />
-            <span>{t("email")}: echo@gmail.com</span>
+            <span>{t("email")}: moonlightegypttours@gmail.com</span>
           </a>
         </div>
 
