@@ -41,7 +41,8 @@ function SliderImage({
         alt={alt}
         fill
         priority={priority}
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+        quality={65}
         fetchPriority={priority ? "high" : "low"}
         onLoad={onLoad}
         onError={onLoad}

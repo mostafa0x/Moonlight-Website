@@ -20,6 +20,7 @@ function BackgroundImage({ isHasOverlay = true }: { isHasOverlay?: boolean }) {
           fill
           className="object-cover opacity-80"
           sizes="100vw"
+          quality={60}
           priority
           fetchPriority="high"
         />

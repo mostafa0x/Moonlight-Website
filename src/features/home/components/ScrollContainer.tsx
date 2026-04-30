@@ -59,7 +59,7 @@ export default function ScrollContainer({ children, className }: ScrollContainer
         watchSlidesProgress={true}
         preventInteractionOnTransition={false}
         touchStartPreventDefault={false}
-        passiveListeners={false}
+        passiveListeners={true}
         observer={true}
         observeParents={true}
         modules={[Mousewheel, Keyboard, Parallax]}

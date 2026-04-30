@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { cn } from "@/shared/lib/utils";
-import AnimatedSectionContent from "./AnimatedSectionContent";
+
 
 interface SectionProps {
   children: ReactNode;
@@ -33,17 +33,9 @@ export default function Section({ children, id, className }: SectionProps) {
         className
       )}
     >
-      {isHero ? (
-        // Hero Section: Render immediately at 100% opacity for LCP
-        <div className="h-full w-full">
-          {children}
-        </div>
-      ) : (
-        // Secondary Sections: Animate in when they enter the viewport
-        <AnimatedSectionContent>
-          {children}
-        </AnimatedSectionContent>
-      )}
+      <div className="h-full w-full">
+        {children}
+      </div>
     </section>
   );
 }
