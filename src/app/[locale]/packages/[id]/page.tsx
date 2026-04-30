@@ -78,9 +78,9 @@ export async function generateMetadata({
     };
   }
 
-  // Fallback host, adjust to your real production domain
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-  const packageUrl = `${baseUrl}/${locale}/packages/${id}`;
+  // Standardize on WEBSITE_URL for consistency across layout and pages
+  const baseUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || "http://localhost:3000";
+  const relativePath = `/${locale}/packages/${id}`;
 
   // Clean description (removes any stray HTML tags and prevents trailing spaces)
   const cleanDescription = (pkg.description || "")
@@ -100,19 +100,20 @@ export async function generateMetadata({
     description: cleanDescription,
     keywords: keywords.join(", "),
     alternates: {
-      canonical: packageUrl,
+      canonical: relativePath,
       languages: {
-        en: `${baseUrl}/en/packages/${id}`,
-        it: `${baseUrl}/it/packages/${id}`,
-        es: `${baseUrl}/es/packages/${id}`,
-        fr: `${baseUrl}/fr/packages/${id}`,
-        pt: `${baseUrl}/pt/packages/${id}`,
+        en: `/en/packages/${id}`,
+        it: `/it/packages/${id}`,
+        es: `/es/packages/${id}`,
+        fr: `/fr/packages/${id}`,
+        pt: `/pt/packages/${id}`,
+        "x-default": `/en/packages/${id}`,
       },
     },
     openGraph: {
       title: `${pkg.packageName} - ${process.env.NEXT_PUBLIC_WEBSITE_NAME || "Moonlight"}`,
       description: cleanDescription,
-      url: packageUrl,
+      url: relativePath,
       siteName: process.env.NEXT_PUBLIC_WEBSITE_NAME || "Moonlight",
       type: "website",
       locale: locale,

@@ -45,6 +45,7 @@ export async function generateMetadata({
         it: "/it",
         es: "/es",
         pt: "/pt",
+        "x-default": "/en",
       },
     },
     openGraph: {
