@@ -6,25 +6,25 @@ import Image from "next/image";
  */
 function BackgroundImage({ isHasOverlay = true }: { isHasOverlay?: boolean }) {
   return (
-    <div className="bg-black">
-      {/* Immersive Overlay */}
-      {isHasOverlay && (
-        <div className="fixed inset-0 bg-black/75 pointer-events-none z-[-1]" />
-      )}
-
-      {/* Main Background Image - Fixed position */}
-      <div className="fixed inset-0 z-[-2] pointer-events-none">
+    <div className="fixed inset-0 -z-10 bg-black pointer-events-none">
+      {/* Main Background Image */}
+      <div className="absolute inset-0">
         <Image
           src="/backgrounds/backgroundPages.webp"
-          alt="Ancient Egypt Moonlight Background "
+          alt="Ancient Egypt Moonlight Background"
           fill
           className="object-cover opacity-80"
           sizes="100vw"
-          quality={60}
+          quality={75}
           priority
           fetchPriority="high"
         />
       </div>
+
+      {/* Premium Overlay Layer */}
+      {isHasOverlay && (
+        <div className="absolute inset-0 bg-black/40" />
+      )}
     </div>
   );
 }

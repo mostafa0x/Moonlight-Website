@@ -21,7 +21,7 @@ function FooterPage() {
 
   return (
     <footer
-      className="flex h-full w-full flex-col items-center justify-center space-y-16 px-6"
+      className="flex h-full w-full flex-col items-center justify-center space-y-16 px-4 pb-12"
       aria-labelledby="footer-heading"
     >
       <div className="space-y-12">
