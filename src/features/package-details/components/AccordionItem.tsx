@@ -27,7 +27,7 @@ function AccordionItem({
 
   return (
     <div
-      className="rounded-lg border border-orange-300 overflow-hidden transition-all duration-300 cursor-pointer group select-none"
+      className="rounded-lg border border-[#F2C975] overflow-hidden transition-all duration-300 cursor-pointer group select-none"
       onClick={toggle}
 
       role="button"
@@ -35,7 +35,7 @@ function AccordionItem({
       aria-expanded={isOpen}
     >
       <div className="w-full px-4 py-4 flex items-center justify-between">
-        <span className="text-zinc-300 md:text-white text-base md:text-xl font-bold font-cairo leading-6 text-left">
+        <span className="text-zinc-100 md:text-white text-base md:text-xl font-bold font-cairo leading-6 text-left">
           {title}
         </span>
         <svg

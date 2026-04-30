@@ -29,7 +29,7 @@ export default async function HighlightsSection({ locale }: { locale: string }) 
     <section aria-labelledby="highlights-heading">
       <h2
         id="highlights-heading"
-        className="text-xl md:text-3xl font-bold text-orange-300 font-cairo mb-4 md:mb-6"
+        className="text-xl md:text-3xl font-bold text-[#F2C975] font-cairo mb-4 md:mb-6"
       >
         {t("highlightsTitle")}
       </h2>

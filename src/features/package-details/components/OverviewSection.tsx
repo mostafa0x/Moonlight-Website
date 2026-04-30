@@ -22,11 +22,11 @@ export default async function OverviewSection({
     <section aria-labelledby="overview-heading">
       <h2
         id="overview-heading"
-        className="text-xl md:text-3xl font-bold text-orange-300 font-cairo mb-3 md:mb-4"
+        className="text-xl md:text-3xl font-bold text-[#F2C975] font-cairo mb-3 md:mb-4"
       >
         {t("overview")}
       </h2>
-      <p className="text-base md:text-3xl font-medium text-neutral-200 font-cairo leading-relaxed md:leading-10">
+      <p className="text-base md:text-3xl font-medium text-zinc-100 font-cairo leading-relaxed md:leading-10">
         {description}
       </p>
     </section>

@@ -26,7 +26,7 @@ export default async function ItinerarySection({
     <section aria-labelledby="itinerary-heading">
       <h2
         id="itinerary-heading"
-        className="text-xl md:text-3xl font-bold text-orange-300 font-cairo mb-4 md:mb-16"
+        className="text-xl md:text-3xl font-bold text-[#F2C975] font-cairo mb-4 md:mb-16"
       >
         {t("itinerary")}
       </h2>
@@ -34,8 +34,8 @@ export default async function ItinerarySection({
       {/* Vertical Timeline Itinerary (All Screens) */}
       <div className="relative">
         {/* Start Badge */}
-        <div className="inline-block px-5 py-1 mb-4 bg-neutral-900 rounded-[20px] border border-orange-300">
-          <span className="text-orange-300 text-xl font-medium font-cairo">
+        <div className="inline-block px-5 py-1 mb-4 bg-neutral-900 rounded-[20px] border border-[#F2C975]">
+          <span className="text-[#F2C975] text-xl font-medium font-cairo">
             {t("start")}
           </span>
         </div>
@@ -68,8 +68,8 @@ export default async function ItinerarySection({
         </div>
 
         {/* End Badge */}
-        <div className="inline-block px-5 py-1 bg-neutral-900 rounded-[20px] border border-orange-300">
-          <span className="text-orange-300 text-xl font-medium font-cairo">
+        <div className="inline-block px-5 py-1 bg-neutral-900 rounded-[20px] border border-[#F2C975]">
+          <span className="text-[#F2C975] text-xl font-medium font-cairo">
             {t("end")}
           </span>
         </div>

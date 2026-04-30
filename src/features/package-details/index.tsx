@@ -38,7 +38,7 @@ export default function PackageDetailsPage({
   locale,
 }: PackageDetailsPageProps) {
   return (
-    <main className="relative min-h-screen flex flex-col pb-5">
+    <main className="relative min-h-screen flex flex-col pb-26">
       {/* Hero Section */}
       <div className="w-full max-w-360 mx-auto px-4 md:px-16 lg:px-20 pt-12 md:pt-28">
         {/* Package Title & Info */}
@@ -72,7 +72,7 @@ export default function PackageDetailsPage({
         <FAQSection
           locale={locale} />
 
-        <div className=" w-full flex items-center justify-center mt-24">
+        <div className=" w-full flex items-center justify-center mt-24 mb-8">
           <TestimonialsSection />
         </div>
       </div>

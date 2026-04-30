@@ -17,7 +17,7 @@ export default async function PackageInfo({ pkg, locale }: PackageInfoProps) {
   return (
     <div className="mb-4 md:mb-6">
       {/* Package Title */}
-      <h1 className="text-xl md:text-4xl font-bold text-orange-300 font-cairo uppercase tracking-wide">
+      <h1 className="text-xl md:text-4xl font-bold text-[#F2C975] font-cairo uppercase tracking-wide">
         {pkg.packageName}
       </h1>
 
@@ -30,7 +30,7 @@ export default async function PackageInfo({ pkg, locale }: PackageInfoProps) {
             height="20"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#10B981"
+            stroke="#34D399"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -41,7 +41,7 @@ export default async function PackageInfo({ pkg, locale }: PackageInfoProps) {
             <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
             <path d="M16 3.13a4 4 0 0 1 0 7.75" />
           </svg>
-          <span className="text-emerald-500 text-sm md:text-base font-medium font-cairo">
+          <span className="text-emerald-400 text-sm md:text-base font-medium font-cairo">
             {t("morePeopleLessPrice")}
           </span>
         </div>

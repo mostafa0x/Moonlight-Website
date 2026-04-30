@@ -29,7 +29,7 @@ export default async function FAQSection({ locale }: { locale: string }) {
     <section aria-labelledby="faq-heading">
       <h2
         id="faq-heading"
-        className="text-xl md:text-3xl font-bold text-orange-300 font-cairo mb-4 md:mb-6"
+        className="text-xl md:text-3xl font-bold text-[#F2C975] font-cairo mb-4 md:mb-6"
       >
         {t("faqTitle")}
       </h2>

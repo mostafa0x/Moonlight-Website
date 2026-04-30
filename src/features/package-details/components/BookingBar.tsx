@@ -48,10 +48,10 @@ function BookingBar({ price, currency, packageId }: BookingBarProps) {
       <div className="w-full max-w-[1440px] mx-auto px-4 md:px-16 lg:px-20 py-3 md:py-4 flex items-center justify-between">
         {/* Price Info */}
         <div className="flex flex-col">
-          <span className="text-2xl md:text-3xl font-medium text-orange-300 font-cairo">
+          <span className="text-2xl md:text-3xl font-medium text-[#F2C975] font-cairo">
             {formattedPrice}
           </span>
-          <span className="text-neutral-200 text-xs md:text-sm font-semibold font-cairo">
+          <span className="text-zinc-100 text-xs md:text-sm font-semibold font-cairo">
             {t("priceVaries")}
           </span>
         </div>
@@ -60,7 +60,7 @@ function BookingBar({ price, currency, packageId }: BookingBarProps) {
         <button
           type="button"
           onClick={handleBookNow}
-          className="px-8 md:px-12 py-3 md:py-3.5 bg-orange-300 hover:bg-[#D4A950] active:scale-95 rounded-2xl transition-all duration-200 cursor-pointer shadow-lg hover:shadow-xl flex items-center gap-3"
+          className="px-8 md:px-12 py-3 md:py-3.5 bg-[#F2C975] hover:bg-[#D4A950] active:scale-95 rounded-2xl transition-all duration-200 cursor-pointer shadow-lg hover:shadow-xl flex items-center gap-3"
         >
           <span className="text-neutral-900 text-base md:text-2xl font-bold font-cairo">
             {t("bookNow")}

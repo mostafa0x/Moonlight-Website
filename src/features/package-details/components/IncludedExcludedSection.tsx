@@ -30,7 +30,7 @@ export default async function IncludedExcludedSection({
         <div className="rounded-[20px] border border-zinc-800 backdrop-blur-sm p-4 md:p-5">
           <h3
             id="inclusions-heading"
-            className="text-lg font-medium text-emerald-500 font-cairo tracking-wide mb-3 md:mb-4"
+            className="text-lg font-medium text-emerald-400 font-cairo tracking-wide mb-3 md:mb-4"
           >
             {t("included")}
           </h3>
@@ -38,8 +38,8 @@ export default async function IncludedExcludedSection({
           <ul className="space-y-3 md:space-y-4">
             {included.map((item, index) => (
               <li key={`inc-${index}`} className="flex items-start gap-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0" />
-                <span className="text-neutral-200 text-base md:text-lg font-medium font-cairo leading-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 shrink-0" />
+                <span className="text-zinc-100 text-base md:text-lg font-medium font-cairo leading-6">
                   {item}
                 </span>
               </li>
@@ -49,15 +49,15 @@ export default async function IncludedExcludedSection({
 
         {/* Excluded Card */}
         <div className="rounded-[20px] border border-zinc-800 backdrop-blur-sm p-4 md:p-5">
-          <h3 className="text-lg font-medium text-rose-500 font-cairo tracking-wide mb-3 md:mb-4">
+          <h3 className="text-lg font-medium text-rose-400 font-cairo tracking-wide mb-3 md:mb-4">
             {t("excluded")}
           </h3>
 
           <ul className="space-y-3 md:space-y-4">
             {excluded.map((item, index) => (
               <li key={`exc-${index}`} className="flex items-start gap-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-2 shrink-0" />
-                <span className="text-neutral-200 text-base md:text-lg font-medium font-cairo leading-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2 shrink-0" />
+                <span className="text-zinc-100 text-base md:text-lg font-medium font-cairo leading-6">
                   {item}
                 </span>
               </li>
