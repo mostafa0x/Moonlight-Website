@@ -52,7 +52,7 @@ function FooterPage() {
               <li key={page.name}>
                 <Link
                   href={page.link}
-                  className="font-cairo text-lg font-bold text-[#e6e3e3] transition-colors hover:text-white"
+                  className="font-cairo text-lg font-bold text-zinc-100 transition-colors hover:text-white"
                 >
                   {page.name}
                 </Link>
@@ -65,7 +65,7 @@ function FooterPage() {
       {/* Copyright & Credits Section */}
       <div className="flex w-full max-w-4xl flex-col items-center px-6">
         <div className="mb-6 hidden h-px w-full bg-white/10 lg:block" aria-hidden="true" />
-        <div className="flex w-full flex-row items-center justify-between text-[#e6e3e3]">
+        <div className="flex w-full flex-row items-center justify-between text-zinc-100">
           <small className="font-cairo text-sm font-bold sm:text-base">
             © 2026 {t("allRights")}
           </small>

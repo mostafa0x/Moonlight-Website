@@ -18,7 +18,7 @@ export default function TestimonialsSection() {
     const [swiper, setSwiper] = useState<any>(null);
     return (
         <div className="w-full h-full flex flex-col items-center justify-center px-10 md:px-10 font-jakarta select-none">
-            <div className="w-full max-w-275 max-h-[90vh] md:max-h-[85vh] bg-zinc-800/50 rounded-4xl border border-white/5 backdrop-blur-sm flex flex-col overflow-hidden">
+            <div className="w-full max-w-275 max-h-[90vh] md:max-h-[85vh] bg-[#121214] rounded-4xl border border-white/10 backdrop-blur-sm flex flex-col overflow-hidden">
                 {/* Scrollable Content Area */}
                 <div className="flex-1 overflow-y-auto scrollbar-hide px-5 pt-4 md:px-8 md:pt-4 flex flex-col gap-4 md:gap-6">
                     {/* Header Section */}
@@ -121,7 +121,7 @@ export default function TestimonialsSection() {
                         </div>
                         <div className="flex flex-col">
                             <div className="flex flex-col leading-tight">
-                                <span className="text-color-cyan-35 text-base font-bold leading-5 md:leading-7">{t("tripAdvisor")}</span>
+                                <span className="text-[#007a5e] text-base font-bold leading-5 md:leading-7">{t("tripAdvisor")}</span>
                                 <div className="flex items-center gap-1">
                                     <span className="text-color-grey-53 text-base font-normal leading-5 md:leading-7">4.93/5 </span>
                                     <span className="text-yellow-500 text-base font-normal leading-5 md:leading-7">★★★★★</span>
