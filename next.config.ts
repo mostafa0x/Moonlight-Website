@@ -62,6 +62,16 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      // Redirect old sitemap shards to the single sitemap.xml
+      {
+        source: '/sitemap-:n.xml',
+        destination: '/sitemap.xml',
+        permanent: true, // 308 — tells Google to update its index
+      },
+    ];
+  },
 };
 
 
