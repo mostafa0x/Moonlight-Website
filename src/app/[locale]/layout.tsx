@@ -38,14 +38,14 @@ export async function generateMetadata({
     description: t("description"),
     keywords: t("keywords"),
     alternates: {
-      canonical: `/${locale}`,
+      canonical: `/${locale}`,   // ✅ Each locale page is its own canonical
       languages: {
         en: "/en",
         fr: "/fr",
         it: "/it",
         es: "/es",
         pt: "/pt",
-        "x-default": "/en",
+        "x-default": "/en",     // ✅ x-default = default language (since "/" redirects to "/en")
       },
     },
     openGraph: {
