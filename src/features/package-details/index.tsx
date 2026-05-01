@@ -37,7 +37,6 @@ export default function PackageDetailsPage({
   pkg,
   locale,
 }: PackageDetailsPageProps) {
-  console.log(pkg);
 
   return (
     <main className="relative min-h-screen flex flex-col pb-26">
