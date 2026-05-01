@@ -5,6 +5,7 @@ import { ProfileHeader } from "./components/ProfileHeader";
 import { LoginGateway } from "./components/LoginGateway";
 import { getTranslations } from "next-intl/server";
 import { User } from "@supabase/supabase-js";
+import { CancellationProvider } from "./context/CancellationContext";
 
 interface ProfileFeatureProps {
   bookings: Booking[];
@@ -46,21 +47,23 @@ export async function ProfileFeature({ bookings, user, locale }: ProfileFeatureP
             <h2 className="text-3xl md:text-4xl font-bold font-cairo px-4 md:px-0">
               {t("myBookings")}
             </h2>
-            <div className="flex flex-col gap-4 md:px-10">
-              {sortedBookings.length > 0 ? (
-                sortedBookings.map((booking) => (
-                  <BookingCard
-                    key={booking.id}
-                    booking={booking}
-                    locale={locale}
-                  />
-                ))
-              ) : (
-                <div className="py-10 text-center text-zinc-600 bg-black/30 rounded-br-2xl font-cairo text-lg italic border border-dashed border-zinc-800 rounded-xl">
-                  {t("noBookings")}
-                </div>
-              )}
-            </div>
+            <CancellationProvider>
+              <div className="flex flex-col gap-4 md:px-10">
+                {sortedBookings.length > 0 ? (
+                  sortedBookings.map((booking) => (
+                    <BookingCard
+                      key={booking.id}
+                      booking={booking}
+                      locale={locale}
+                    />
+                  ))
+                ) : (
+                  <div className="py-10 text-center text-zinc-600 bg-black/30 rounded-br-2xl font-cairo text-lg italic border border-dashed border-zinc-800 rounded-xl">
+                    {t("noBookings")}
+                  </div>
+                )}
+              </div>
+            </CancellationProvider>
           </div>
         </div>
       </div>
