@@ -263,7 +263,6 @@
       "phone": "Invalid phone number",
       "date": "Tour date is required",
       "nationality": "Nationality is required",
-      "address": "Address is required",
       "language": "Language is required"
     },
     "backendErrors": {

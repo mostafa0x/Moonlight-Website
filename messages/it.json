@@ -252,7 +252,6 @@
       "phone": "Il numero deve essere di almeno 10 cifre",
       "date": "La data del tour è richiesta",
       "nationality": "La nazionalità è richiesta",
-      "address": "L'indirizzo è richiesto",
       "language": "La lingua è richiesta"
     },
     "backendErrors": {

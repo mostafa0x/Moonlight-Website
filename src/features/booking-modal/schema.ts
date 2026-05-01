@@ -36,7 +36,7 @@ export const getBookingSchema = (t: (key: string) => string) =>
       }),
     nationality: z.string().min(1, t("errors.nationality")),
     pickupLocation: z.string().optional(),
-    address: z.string().min(2, t("errors.address")),
+    address: z.string().optional(),
     totalPrice: z.number().optional(),
     promoCode: z.string().optional(),
     paymentPreference: z.enum(["full", "deposit"]),

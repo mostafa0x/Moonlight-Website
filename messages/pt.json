@@ -252,7 +252,6 @@
       "phone": "O número de telefone deve ter pelo menos 10 dígitos",
       "date": "A data do tour é obrigatória",
       "nationality": "A nacionalidade é obrigatória",
-      "address": "O endereço é obrigatório",
       "language": "A língua é obrigatória"
     },
     "backendErrors": {

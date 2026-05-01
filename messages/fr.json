@@ -252,7 +252,6 @@
       "phone": "Le numéro doit avoir au moins 10 chiffres",
       "date": "La date du tour est obligatoire",
       "nationality": "La nationalité est obligatoire",
-      "address": "L'adresse est obligatoire",
       "language": "La langue est obligatoire"
     },
     "backendErrors": {

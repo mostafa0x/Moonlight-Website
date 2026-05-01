@@ -38,7 +38,7 @@ export default function BookingModal({ pkg }: { pkg: any }) {
   // Initialize form with base defaults 
   const methods = useBookingForm(pkg);
   const { reset } = methods;
-
+  console.log("pkg", pkg);
   useEffect(() => {
     if (pkg) {
       console.log("Package Data initialized in Modal", pkg.packageId);
@@ -79,9 +79,9 @@ export default function BookingModal({ pkg }: { pkg: any }) {
       // Normal launch: Hydrate basic defaults like price
       reset(
         (prev: any) => ({
-          ...prev, 
-          totalPrice: pkg.startingPrice || 0 
-        }), 
+          ...prev,
+          totalPrice: pkg.startingPrice || 0
+        }),
         { keepDefaultValues: true }
       );
     }
@@ -129,6 +129,7 @@ const ModalLayout = ({ children }: { children: React.ReactNode }) => (
  * Isolated to prevent unnecessary root-level re-renders.
  */
 const ModalContent = ({ pkg, step, hasCustomizations }: any) => (
+  
   <>
     <div>
       <HeaderModal
