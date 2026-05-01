@@ -10,7 +10,7 @@ const intlMiddleware = createMiddleware({
   defaultLocale,
 });
 
-export default async function proxy(request: NextRequest) {
+export default async function middleware(request: NextRequest) {
   // 1. تشغيل الـ i18n middleware
   let response = intlMiddleware(request);
 

@@ -57,7 +57,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: "/icon.png",
+          url: `${baseUrl}/icon.png`,
           width: 512,
           height: 512,
           alt: "Moonlight Egypt Logo",
@@ -65,10 +65,13 @@ export async function generateMetadata({
       ],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: ["/icon.png"],
+      images: [`${baseUrl}/icon.png`],
+    },
+    verification: {
+      google: "googlec06bd032c1c83941",
     },
     // Performance: Preconnect to external asset hosts to reduce LCP discovery time
     other: {
