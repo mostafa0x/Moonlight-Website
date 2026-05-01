@@ -252,7 +252,8 @@
       "phone": "Le numéro doit avoir au moins 10 chiffres",
       "date": "La date du tour est obligatoire",
       "nationality": "La nationalité est obligatoire",
-      "language": "La langue est obligatoire"
+      "language": "La langue est obligatoire",
+      "customization": "Veuillez compléter vos sélections pour continuer."
     },
     "backendErrors": {
       "VALIDATION_ERROR": "La date du voyage doit être au moins 1 jour dans le futur (Heure du Caire).",

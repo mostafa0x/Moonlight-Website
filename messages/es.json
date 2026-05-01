@@ -252,7 +252,8 @@
       "phone": "El número debe tener al menos 10 dígitos",
       "date": "La fecha del tour es obligatoria",
       "nationality": "La nacionalidad es obligatoria",
-      "language": "El idioma es obligatorio"
+      "language": "El idioma es obligatorio",
+      "customization": "Por favor, completa tus selecciones para continuar."
     },
     "backendErrors": {
       "VALIDATION_ERROR": "La fecha del tour debe ser al menos 1 día en el futuro (hora de El Cairo).",

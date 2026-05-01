@@ -114,13 +114,16 @@ export function useBookingSubmit({ tourId, setShowLoginModal }: UseBookingSubmit
           setErrorMsg(te(errorCode as any));
         } else {
           // Temporarily mapping unknown errors to the screen for debug visibility
-          setErrorMsg(`Backend Error (${errorCode}): ${errorMessageRaw}`);
+          setErrorMsg(`${errorCode}: ${errorMessageRaw}`);
+      setLoading(false);
+
         }
       }
     } catch (err) {
       setErrorMsg(te("INTERNAL_SERVER_ERROR"));
-    } finally {
+
       setLoading(false);
+    } finally {
     }
   };
 

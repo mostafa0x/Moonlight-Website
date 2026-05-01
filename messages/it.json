@@ -252,7 +252,8 @@
       "phone": "Il numero deve essere di almeno 10 cifre",
       "date": "La data del tour è richiesta",
       "nationality": "La nazionalità è richiesta",
-      "language": "La lingua è richiesta"
+      "language": "La lingua è richiesta",
+      "customization": "Si prega di completare le selezioni per procedere."
     },
     "backendErrors": {
       "VALIDATION_ERROR": "La data del tour deve essere almeno 1 giorno nel futuro (ora del Cairo).",

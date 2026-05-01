@@ -263,7 +263,8 @@
       "phone": "Invalid phone number",
       "date": "Tour date is required",
       "nationality": "Nationality is required",
-      "language": "Language is required"
+      "language": "Language is required",
+      "customization": "Please complete your selections to proceed."
     },
     "backendErrors": {
       "VALIDATION_ERROR": "The tour date must be at least 1 day in the future (Cairo time).",
