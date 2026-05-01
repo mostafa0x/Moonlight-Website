@@ -143,7 +143,8 @@
         "firstName": "El nombre debe tener al menos 2 caracteres",
         "lastName": "El apellido debe tener al menos 2 caracteres",
         "email": "Dirección de correo electrónico no válida",
-        "message": "El mensaje debe tener al menos 10 caracteres"
+        "message": "El mensaje debe tener al menos 10 caracteres",
+        "submitError": "Ocurrió un problema, por favor contáctenos a través de nuestras redes sociales"
       }
     }
   },

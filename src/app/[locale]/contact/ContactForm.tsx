@@ -58,21 +58,21 @@ export default function ContactForm() {
         setValue(key as keyof ContactSchemaType, data[key]);
       });
       sessionStorage.removeItem("contact_form_data");
-      
+
       // Auto submit if user is now logged in
-      const checkAndSubmit = async () => {
-        const user = await getUserInfo();
-        if (user) {
-          methods.handleSubmit(onSubmit)();
-        }
-      };
-      checkAndSubmit();
+      // const checkAndSubmit = async () => {
+      //   const user = await getUserInfo();
+      //   if (user) {
+      //     methods.handleSubmit(onSubmit)();
+      //   }
+      // };
+      // checkAndSubmit();
     }
   }, [setValue]);
 
   const onSubmit = async (data: ContactSchemaType) => {
     const user = await getUserInfo();
-    
+
     if (!user) {
       // Save data and show modal
       sessionStorage.setItem("contact_form_data", JSON.stringify(data));
@@ -87,10 +87,10 @@ export default function ContactForm() {
         setIsSuccess(true);
         methods.reset();
       } else {
-        alert(result.error || "Failed to send message");
+        alert(t("form.errors.submitError"));
       }
     } catch (error) {
-      alert("An unexpected error occurred.");
+      alert(t("form.errors.submitError"));
     } finally {
       setIsSubmitting(false);
     }
@@ -103,15 +103,15 @@ export default function ContactForm() {
         className="space-y-5.25 w-full"
       >
         {isSuccess ? (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             className="p-6 bg-[#F2C975]/10 border border-[#F2C975]/30 rounded-[15px] text-center"
           >
             <h3 className="text-[#F2C975] text-xl font-bold mb-2">Message Sent!</h3>
             <p className="text-zinc-400">We will get back to you shortly.</p>
-            <button 
-              type="button" 
+            <button
+              type="button"
               onClick={() => setIsSuccess(false)}
               className="mt-4 text-[#F2C975] text-sm underline cursor-pointer"
             >

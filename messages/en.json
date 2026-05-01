@@ -154,7 +154,8 @@
         "firstName": "First name must be at least 2 characters",
         "lastName": "Last name must be at least 2 characters",
         "email": "Invalid email address",
-        "message": "Message must be at least 10 characters"
+        "message": "Message must be at least 10 characters",
+        "submitError": "A problem occurred, please contact us via our social media pages"
       }
     }
   },
