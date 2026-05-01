@@ -3,8 +3,8 @@ import { memo } from "react";
 export const SOCIAL_LINKS = {
   facebook: "https://www.instagram.com/egypt_moonlight_tours?igsh=MWhyM2JyNm5wMnQzdg%3D%3D&utm_source=qr",
   instagram: "https://www.instagram.com/egypt_moonlight_tours?igsh=MWhyM2JyNm5wMnQzdg%3D%3D&utm_source=qr",
-  tiktok: null, // Not found
-  whatsapp: "https://wa.me/201022500171",
+  tiktok: "https://www.tiktok.com/@moonlight.egypt.t?_r=1&_t=ZS-95zKwdNacy5",
+  whatsapp: null,
 } as const;
 
 type IconType = keyof typeof SOCIAL_LINKS;

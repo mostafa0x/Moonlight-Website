@@ -26,7 +26,10 @@ function SliderImage({
   className
 }: SliderImageProps) {
   return (
-    <div className={cn("relative w-full h-full overflow-hidden", className)}>
+    <div 
+      className={cn("relative w-full h-full overflow-hidden", className)}
+      style={{ position: 'relative' }} // Explicitly ensure relative for Next.js Image fill
+    >
 
       {/* Simple Spinner Loader */}
       {!isLoaded && (
@@ -47,7 +50,10 @@ function SliderImage({
         onLoad={onLoad}
         onError={onLoad}
         className={cn(
-          "object-contain transition-opacity duration-700 ease-out",
+          "transition-opacity duration-700 ease-out",
+          // If object-fit class is passed in className, tailwind-merge might not apply it to Image
+          // So we should ideally parse it, but for now we'll ensure object-contain/cover is handled
+          className?.includes("object-cover") ? "object-cover" : "object-contain",
           isLoaded ? "opacity-100" : "opacity-0"
         )}
       />
