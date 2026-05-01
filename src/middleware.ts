@@ -46,6 +46,12 @@ export default async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!api|_next|favicon.ico|robots.txt|sitemap.*\\.xml|google.*\\.html|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+    /*
+     * Match all paths EXCEPT:
+     * - api routes
+     * - _next (static files, image optimization)
+     * - static files (xml, html, txt, images, fonts, etc.)
+     */
+    "/((?!api|_next/static|_next/image|favicon\\.ico|robots\\.txt|sitemap.*\\.xml|.*\\.html|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|txt|xml)$).*)",
   ],
 };
