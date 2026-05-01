@@ -22,16 +22,16 @@ export default async function HeroSection({ locale }: HeroSectionProps) {
       className="h-screen w-full relative flex flex-col items-center justify-center overflow-hidden bg-transparent select-none px-6 text-center"
       aria-label="Welcome to Moonlight"
     >
-      <header className="space-y-4 md:space-y-6 max-w-5xl contain-content z-20">
-        {/* Main Title - EXPLORE EGYPT (LCP Element) */}
-        <h2 className="text-4xl sm:text-6xl md:text-5xl font-cairo font-bold text-white tracking-[0.2em] uppercase [text-shadow:0_0_15px_rgba(242,201,117,0.4)] antialiased">
+      <header className="space-y-4 md:space-y-6 max-w-5xl z-20">
+        {/* Main Title - LCP Element — must be h1 for SEO + LCP scoring */}
+        <h1 className="text-4xl sm:text-6xl md:text-5xl font-cairo font-bold text-white tracking-[0.2em] uppercase [text-shadow:0_0_15px_rgba(242,201,117,0.4)] antialiased">
           {t("title")}
-        </h2>
+        </h1>
 
         {/* Subtitle - Slogan */}
-        <h1 className="text-2xl sm:text-3xl md:text-3xl font-cairo font-bold leading-tight bg-linear-to-b from-white via-white to-white/60 bg-clip-text text-transparent [text-shadow:0_10px_30px_rgba(0,0,0,0.5)] antialiased">
+        <p className="text-2xl sm:text-3xl md:text-3xl font-cairo font-bold leading-tight bg-linear-to-b from-white via-white to-white/60 bg-clip-text text-transparent [text-shadow:0_10px_30px_rgba(0,0,0,0.5)] antialiased">
           {t("subtitle")}
-        </h1>
+        </p>
       </header>
 
 

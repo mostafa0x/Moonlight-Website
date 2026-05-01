@@ -138,12 +138,22 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${cairo.variable} ${jakarta.variable}`} suppressHydrationWarning>
+      <head>
+        {/* LCP Critical: Preload background image so browser fetches it at HTML parse time,
+            not after React renders the BackgroundImage component */}
+        <link
+          rel="preload"
+          as="image"
+          href="/backgrounds/backgroundPages.webp"
+          type="image/webp"
+        />
+      </head>
       <body suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AllProviders>
+            <BackgroundImage />
             <NavBar locale={locale} />
             {children}
-            <BackgroundImage />
           </AllProviders>
         </NextIntlClientProvider>
       </body>

@@ -34,7 +34,7 @@ export async function generateMetadata({
       description: t("description"),
       images: [
         {
-          url: "/icon.png?v=2",
+          url: "/icon.png",
           width: 1200,
           height: 630,
           alt: "Moonlight Egypt",
@@ -45,7 +45,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: ["/icon.png?v=2"],
+      images: ["/icon.png"],
     },
   };
 }
