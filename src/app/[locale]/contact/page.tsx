@@ -46,19 +46,19 @@ export async function generateMetadata({
 
       images: [
         {
-          url: "/images/og-contact.jpg",
-          width: 1200,
-          height: 630,
+          url: "/icon.png",
+          width: 512,
+          height: 512,
           alt: `Contact ${process.env.NEXT_PUBLIC_WEBSITE_NAME} Egypt Tours`,
         },
       ],
     },
 
     twitter: {
-      card: "summary_large_image",
+      card: "summary",
       title,
       description,
-      images: ["/images/og-contact.jpg"],
+      images: ["/icon.png"],
     },
   };
 }
