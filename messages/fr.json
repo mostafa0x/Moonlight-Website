@@ -242,6 +242,7 @@
       "totalPrice": "Prix Total",
       "promoTitle": "Code Promo",
       "promoPlaceholder": "ENTRER LE CODE",
+      "apply": "Appliquer",
       "paymentTitle": "Mode de Paiement",
       "paymentFull": "Carte de Crédito (Total)",
       "paymentDeposit": "Acompte (25%)",

@@ -8,11 +8,9 @@ import CloseBtn from "@/shared/button/CloseBtn";
 import StepsInfo from "./components/StepsInfo";
 import FooterModal from "./components/FooterModal";
 import StepRenderer from "./components/StepRenderer";
-import EgyptianLoader from "@/shared/components/EgyptianLoader";
 
 import { useBookingState, useBookingActions } from "@/features/booking-modal/context/BookingContextProvider";
 import {
-  useGetPackage,
   useBookingForm,
   usePriceCalculation,
   usePackageDefaults,
@@ -38,12 +36,8 @@ export default function BookingModal({ pkg }: { pkg: any }) {
   // Initialize form with base defaults 
   const methods = useBookingForm(pkg);
   const { reset } = methods;
-  console.log("pkg", pkg);
-  useEffect(() => {
-    if (pkg) {
-      console.log("Package Data initialized in Modal", pkg.packageId);
-    }
-  }, [pkg])
+
+
 
   // Custom hooks to handle complex business logic
   usePriceCalculation(pkg, methods);
@@ -129,7 +123,7 @@ const ModalLayout = ({ children }: { children: React.ReactNode }) => (
  * Isolated to prevent unnecessary root-level re-renders.
  */
 const ModalContent = ({ pkg, step, hasCustomizations }: any) => (
-  
+
   <>
     <div>
       <HeaderModal

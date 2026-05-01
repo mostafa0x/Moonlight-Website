@@ -253,6 +253,7 @@
       "totalPrice": "Total Price",
       "promoTitle": "Promo Code",
       "promoPlaceholder": "ENTER CODE",
+      "apply": "Apply",
       "paymentTitle": "Payment Method",
       "paymentFull": "Credit Card (Full)",
       "paymentDeposit": "Deposit (25%)",

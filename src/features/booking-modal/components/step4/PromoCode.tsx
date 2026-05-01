@@ -16,12 +16,12 @@ function PromoCode() {
           {...register("promoCode")}
           className="bg-[#131313] border border-[#313131] rounded-[5px] text-[12px] text-[#8B8B8Bpx] px-3.75 py-1.5 w-full uppercase"
         />
-        {/* <button
+        <button
           aria-label="apply button"
-          className="w-[84px] h-[32px] bg-[#131313] hover:bg-[#575555] rounded-[5px] border border-[#F2C975] text-[12px] text-[#F2C975]"
+          className="w-24.5 h-8 bg-[#131313] hover:bg-[#575555] rounded-[5px] border border-[#F2C975] text-[12px] text-[#F2C975] cursor-pointer"
         >
-          Apply
-        </button> */}
+          {t("apply")}
+        </button>
       </div>
     </div>
   );
