@@ -99,7 +99,7 @@ const PriceDisplay = memo(({ label }: { label: string }) => {
     <div className="flex flex-col text-right">
       <span className="text-base text-[#8B8B8B] font-semibold">{label}</span>
       <span className="text-[20px] text-[#F2C975] font-medium transition-all duration-300">
-        {value}$
+        ${value}
       </span>
     </div>
   );
@@ -130,7 +130,7 @@ const ErrorMessage = memo(({ message }: { message: string }) => {
  */
 const PaymentIcons = memo(() => (
   <div className="flex flex-row gap-1.5 grayscale-[0.2] hover:grayscale-0 transition-all duration-300">
-    {["visa", "master-card", "paypal"].map((card) => (
+    {["paypal"].map((card) => (
       <img
         key={card}
         src={`/icons/${card}.webp`}

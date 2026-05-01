@@ -1,6 +1,7 @@
 import Home from "@/features/home";
 import type { HomeDataType } from "@/shared/global";
 import { getTranslations } from "next-intl/server";
+import { Metadata } from "next";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -15,6 +16,38 @@ async function fetchData(lang: string) {
   } catch (err) {
     return [];
   }
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "layout" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      images: [
+        {
+          url: "/icon.png",
+          width: 512,
+          height: 512,
+          alt: "Moonlight Egypt",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: ["/icon.png"],
+    },
+  };
 }
 
 export default async function page({
