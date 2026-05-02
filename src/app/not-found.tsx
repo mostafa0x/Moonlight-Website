@@ -22,17 +22,17 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export default function GlobalNotFound() {
+  // We use a div instead of html/body because Next.js automatically provides a DefaultLayout 
+  // around the root not-found.tsx, which already contains html and body tags.
   return (
-    <html lang="en" className={`${cairo.variable} ${jakarta.variable}`}>
-      <body>
-        <NextIntlClientProvider locale="en" messages={enMessages}>
-          <AllProviders>
-            <BackgroundImage />
-            <NavBar locale="en" />
-            <NotFoundPage />
-          </AllProviders>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <div className={`${cairo.variable} ${jakarta.variable}`}>
+      <NextIntlClientProvider locale="en" messages={enMessages}>
+        <AllProviders>
+          <BackgroundImage />
+          <NavBar locale="en" />
+          <NotFoundPage />
+        </AllProviders>
+      </NextIntlClientProvider>
+    </div>
   );
 }
