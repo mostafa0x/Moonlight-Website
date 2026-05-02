@@ -3,6 +3,8 @@ import BackgroundImage from "@/shared/components/background-image/BackgroundImag
 import NotFoundPage from "./[locale]/not-found";
 import { NextIntlClientProvider } from "next-intl";
 import enMessages from "../../messages/en.json";
+import NavBar from "@/shared/components/nav-bar";
+import AllProviders from "@/shared/providers/AllProviders";
 import "./globals.css";
 
 const cairo = Cairo({
@@ -24,8 +26,11 @@ export default function GlobalNotFound() {
     <html lang="en" className={`${cairo.variable} ${jakarta.variable}`}>
       <body>
         <NextIntlClientProvider locale="en" messages={enMessages}>
-          <BackgroundImage />
-          <NotFoundPage />
+          <AllProviders>
+            <BackgroundImage />
+            <NavBar locale="en" />
+            <NotFoundPage />
+          </AllProviders>
         </NextIntlClientProvider>
       </body>
     </html>
