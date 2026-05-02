@@ -1,9 +1,7 @@
 import createMiddleware from "next-intl/middleware";
 import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
-
-const locales = ["en", "fr", "it", "es", "pt"];
-const defaultLocale = "en";
+import { locales, defaultLocale } from "@/i18n/config";
 
 const intlMiddleware = createMiddleware({
   locales,

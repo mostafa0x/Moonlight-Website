@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import PackageDetailsPage from "@/features/package-details";
 import type { PackageDetailsType } from "@/shared/global";
+import { locales } from "@/i18n/config";
 
 /**
  * SSG Configuration
@@ -15,7 +16,6 @@ export const revalidate = false; // Pure SSG, no ISR
  */
 export async function generateStaticParams() {
   const baseUrl = process.env.NEXT_PUBLIC_API_URL;
-  const locales = ["en", "fr", "it", "es", "pt"];
 
   try {
     // Fetch all packages once to get IDs

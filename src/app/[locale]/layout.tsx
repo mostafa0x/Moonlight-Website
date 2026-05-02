@@ -6,16 +6,11 @@ import { NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { redirect } from "next/navigation";
 import { Metadata } from "next";
+import { locales } from "@/i18n/config";
 
 
 export function generateStaticParams() {
-  return [
-    { locale: "en" },
-    { locale: "fr" },
-    { locale: "it" },
-    { locale: "es" },
-    { locale: "pt" },
-  ];
+  return locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
@@ -93,8 +88,7 @@ export default async function LocaleLayout({
   const { locale } = (await params);
   setRequestLocale(locale);
 
-  const supportedLocales = ["en", "fr", "it", "es", "pt"];
-  if (!supportedLocales.includes(locale)) {
+  if (!locales.includes(locale as any)) {
     redirect("/en");
   }
 

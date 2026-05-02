@@ -2,6 +2,25 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import FooterPage from "@/shared/components/footer";
 import Section from "@/features/home/components/Section";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "bookingModal.payment.failure" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    robots: {
+      index: false,
+      follow: false,
+    },
+  };
+}
 
 export default async function PaymentFailurePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

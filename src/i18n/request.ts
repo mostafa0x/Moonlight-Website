@@ -1,11 +1,10 @@
 import { getRequestConfig } from "next-intl/server";
+import { locales, defaultLocale } from "@/i18n/config";
 
 export default getRequestConfig(async ({ locale }) => {
-  const locales = ["en", "fr", "it", "es", "pt"];
-  
-  // Validate locale or fallback to "en"
-  if (!locale || !locales.includes(locale)) {
-    locale = "en";
+  // Validate locale or fallback to default
+  if (!locale || !locales.includes(locale as any)) {
+    locale = defaultLocale;
   }
 
   return {
