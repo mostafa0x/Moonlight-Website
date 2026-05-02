@@ -1,12 +1,11 @@
-import { Cairo, Plus_Jakarta_Sans } from "next/font/google";
 import AllProviders from "@/shared/providers/AllProviders";
 import NavBar from "@/shared/components/nav-bar";
 import BackgroundImage from "@/shared/components/background-image/BackgroundImage";
+import SetHtmlLang from "@/shared/components/SetHtmlLang";
 import { NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { redirect } from "next/navigation";
 import { Metadata } from "next";
-import "../globals.css";
 
 
 export function generateStaticParams() {
@@ -82,24 +81,6 @@ export async function generateMetadata({
   };
 }
 
-const cairo = Cairo({
-  subsets: ["arabic", "latin"],
-  // Optimization: Using 'variable' allows us to load a single font file for all weights,
-  // reducing HTTP requests and total font payload while providing granular control.
-  weight: "variable",
-  variable: "--font-cairo",
-  display: "swap",
-  preload: true,
-});
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-jakarta",
-  display: "swap",
-  preload: true,
-});
-
 interface LocaleLayoutProps {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
@@ -127,36 +108,16 @@ export default async function LocaleLayout({
 
   const messages = (await messagesMap[locale]()).default;
 
-  // PERFORMANCE: Only pass GLOBAL messages to the layout provider.
-  // This reduces the initial HTML size (TTFB) and hydration time (TBT).
-  // Page-specific messages will be loaded by individual page providers if needed,
-  // or simply accessed directly in Server Components.
-  // const globalNamespaces = ["navbar", "footer", "loader", "auth"];
-  // const globalMessages = Object.fromEntries(
-  //   Object.entries(messages).filter(([key]) => globalNamespaces.includes(key))
-  // );
-
   return (
-    <html lang={locale} className={`${cairo.variable} ${jakarta.variable}`} suppressHydrationWarning>
-      <head>
-        {/* LCP Critical: Preload background image so browser fetches it at HTML parse time,
-            not after React renders the BackgroundImage component */}
-        <link
-          rel="preload"
-          as="image"
-          href="/backgrounds/backgroundPages.webp"
-          type="image/webp"
-        />
-      </head>
-      <body suppressHydrationWarning>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <AllProviders>
-            <BackgroundImage />
-            <NavBar locale={locale} />
-            {children}
-          </AllProviders>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      {/* Update <html lang=""> to match the current locale */}
+      <SetHtmlLang locale={locale} />
+      <AllProviders>
+        <BackgroundImage />
+        <NavBar locale={locale} />
+        {children}
+      </AllProviders>
+    </NextIntlClientProvider>
   );
 }
+
