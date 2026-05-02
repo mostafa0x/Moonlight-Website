@@ -6,9 +6,9 @@ import Image from "next/image";
  */
 function BackgroundImage({ isHasOverlay = true }: { isHasOverlay?: boolean }) {
   return (
-    <div className="fixed inset-0 -z-10 bg-black pointer-events-none" style={{ position: "fixed" }}>
+    <div className="fixed inset-0 -z-10 bg-black pointer-events-none">
       {/* Main Background Image */}
-      <div className="absolute inset-0" style={{ position: "absolute" }}>
+      <div className="absolute inset-0">
         <Image
           src="/backgrounds/backgroundPages.webp"
           alt="Ancient Egypt Moonlight Background"
