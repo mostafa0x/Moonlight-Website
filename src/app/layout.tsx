@@ -31,15 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${cairo.variable} ${jakarta.variable}`} suppressHydrationWarning>
-      <head>
-        {/* LCP Critical: Preload background image at HTML parse time */}
-        <link
-          rel="preload"
-          as="image"
-          href="/backgrounds/backgroundPages.webp"
-          type="image/webp"
-        />
-      </head>
+      <head />
       <body suppressHydrationWarning>
         {children}
       </body>
