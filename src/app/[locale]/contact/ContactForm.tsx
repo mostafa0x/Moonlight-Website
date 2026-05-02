@@ -31,22 +31,24 @@ export default function ContactForm() {
 
   const { setValue } = methods;
 
+  const fillUser = async () => {
+    const user = await getUserInfo();
+    if (user) {
+      if (user.name) {
+        const names = user.name.split(" ");
+        setValue("firstName", names[0] || "");
+        setValue("lastName", names.slice(1).join(" ") || "");
+      }
+      if (user.email) {
+        setValue("email", user.email);
+      }
+    }
+  };
+
   // Auto-fill if user is logged in
   useEffect(() => {
-    const fillUser = async () => {
-      const user = await getUserInfo();
-      if (user) {
-        if (user.name) {
-          const names = user.name.split(" ");
-          setValue("firstName", names[0] || "");
-          setValue("lastName", names.slice(1).join(" ") || "");
-        }
-        if (user.email) {
-          setValue("email", user.email);
-        }
-      }
-    };
     fillUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setValue]);
 
   // Load saved data from sessionStorage after redirect
@@ -112,7 +114,10 @@ export default function ContactForm() {
             <p className="text-zinc-400">We will get back to you shortly.</p>
             <button
               type="button"
-              onClick={() => setIsSuccess(false)}
+              onClick={() => {
+                setIsSuccess(false);
+                fillUser();
+              }}
               className="mt-4 text-[#F2C975] text-sm underline cursor-pointer"
             >
               Send another message
