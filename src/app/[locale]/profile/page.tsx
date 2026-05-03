@@ -93,7 +93,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ locale
 
   return (
     <main className="w-full min-h-screen pt-12 pb-12 flex flex-col">
-      <Suspense fallback={<EgyptianLoader />}>
+      <Suspense fallback={<EgyptianLoader fullScreen />}>
         {/* ProfileFeature is now a Server Component */}
         <ProfileFeature bookings={bookings} user={user} locale={locale} />
       </Suspense>

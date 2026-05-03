@@ -58,7 +58,7 @@ export async function ProfileFeature({ bookings, user, locale }: ProfileFeatureP
                     />
                   ))
                 ) : (
-                  <div className="py-10 text-center text-zinc-600 bg-black/30 rounded-br-2xl font-cairo text-lg italic border border-dashed border-zinc-800 rounded-xl">
+                  <div className="py-10 text-center text-white bg-black/30 rounded-br-2xl font-cairo text-lg italic border border-dashed border-zinc-800 rounded-xl">
                     {t("noBookings")}
                   </div>
                 )}

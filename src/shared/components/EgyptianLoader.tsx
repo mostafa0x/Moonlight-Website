@@ -9,7 +9,7 @@ import { cn } from "@/shared/lib/utils";
  * Immersive Pharaonic-themed loading experience.
  * Optimized for performance and accessibility.
  */
-function EgyptianLoader() {
+function EgyptianLoader({ fullScreen = false }: { fullScreen?: boolean } = {}) {
   const t = useTranslations("loader");
 
   return (
@@ -17,7 +17,12 @@ function EgyptianLoader() {
       role="status"
       aria-busy="true"
       aria-live="polite"
-      className="relative flex h-full min-h-screen w-full flex-col items-center justify-center overflow-hidden rounded-[20px] bg-black/90 select-none backdrop-blur-md"
+      className={cn(
+        "flex flex-col items-center justify-center overflow-hidden bg-black/90 select-none backdrop-blur-md",
+        fullScreen
+          ? "fixed inset-0 z-100000"
+          : "relative h-full min-h-screen w-full rounded-[20px]"
+      )}
     >
       {/* Animation Container */}
       <div className="relative flex items-center justify-center">
