@@ -15,7 +15,7 @@ const StandardInput = ({ label, name, type, placeholder, error, register }: any)
     <FieldWrapper label={label} name={name} error={error}>
       <input
         id={name} type={type} {...register(name)}
-        className={cn("bg-[#131313] border w-full h-10 rounded-lg px-4 text-sm font-medium text-white transition-all outline-none", 
+        className={cn("bg-[#131313] border w-full h-10 rounded-lg px-4 text-sm font-medium text-white placeholder-[#8B8B8B] transition-all outline-none", 
           error ? "border-red-500" : "border-[#313131] focus:border-[#F2C975]",
           type === "date" && "[&::-webkit-calendar-picker-indicator]:invert-[1] cursor-pointer"
         )}

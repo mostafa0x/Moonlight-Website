@@ -125,7 +125,7 @@ export default function ContactForm() {
           </motion.div>
         ) : (
           <>
-            <div className="flex flex-row gap-2.5">
+            <div className="flex flex-col sm:flex-row gap-2.5">
               <CustomInput
                 label={t("form.firstName")}
                 name="firstName"

@@ -5,8 +5,9 @@ import Image from "next/image";
  * BackgroundImage — Fixed premium global background with custom GIF glowing hieroglyphs
  */
 function BackgroundImage({ isHasOverlay = true }: { isHasOverlay?: boolean }) {
+
   return (
-    <div className="fixed inset-0 -z-10 bg-black pointer-events-none">
+    <div className="fixed inset-0 -z-10 bg-black pointer-events-none overflow-hidden">
       {/* Main Background Image */}
       <div className="absolute inset-0">
         <Image

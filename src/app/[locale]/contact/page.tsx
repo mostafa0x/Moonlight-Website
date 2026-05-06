@@ -72,7 +72,7 @@ export default async function Page({
 
   return (
     <div className="flex flex-col items-center w-full min-h-screen pt-32 pb-10 gap-16">
-      <div className="flex flex-col h-full px-6-25 py-9 gap-3 md:gap-6 bg-black w-107 md:w-157 rounded-[20px]">
+      <div className="flex flex-col items-center h-full px-6 md:px-12 py-9 gap-3 md:gap-6 bg-black w-[95%] md:w-157 mx-auto rounded-[20px]">
         <h1 className="text-white text-center font-bold text-4xl mb-5.5">
           {t("title").split(" ")[0]}{" "}
           <span className="text-[#F2C975]">{t("title").split(" ")[1]}</span>
@@ -83,7 +83,7 @@ export default async function Page({
         </h2>
 
         {/* Phone + Email */}
-        <div className="flex flex-col lg:flex-row gap-3 lg:gap-43.75">
+        <div className="flex flex-col items-start lg:flex-row gap-3 lg:gap-43.75 w-full justify-start">
           <a
             href="tel:201022500171"
             className="flex items-center gap-3.5 mt-3.5 text-[#8B8B8B] font-medium text-[14px] hover:text-white transition-colors"

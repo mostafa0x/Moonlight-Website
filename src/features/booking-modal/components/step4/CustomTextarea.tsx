@@ -27,7 +27,7 @@ function CustomTextarea({
         id={name}
         {...register(name)}
         className={clsx(
-          "w-full bg-[#131313] border resize-none rounded-[5px] px-2 py-1.5 text-sm md:text-base text-white transition-colors focus:outline-none",
+          "w-full bg-[#131313] border resize-none rounded-[5px] px-2 py-1.5 text-sm md:text-base text-white placeholder-[#8B8B8B] transition-colors focus:outline-none",
           error ? "border-red-500" : "border-[#313131] focus:border-[#F2C975]",
         )}
         rows={4}

@@ -28,14 +28,20 @@ export default function NavContainer({ children }: NavContainerProps) {
 
   return (
     <nav
-      className={cn(
-        "sticky top-0 z-50 w-full flex items-center justify-between px-6 lg:px-20 transition-all duration-500 border-b",
-        isScrolled
-          ? "py-3 md:py-4 bg-zinc-900/80 backdrop-blur-md shadow-lg border-white/10"
-          : "pt-6 bg-transparent border-transparent"
-      )}
+      className="sticky top-0 z-50 w-full flex items-center justify-between px-6 lg:px-20 py-4 md:py-6"
       aria-label="Main Navigation"
     >
+      {/* Background Layer - Decoupled to fix iOS horizontal scroll bug from shadow/blur */}
+      <div
+        className={cn(
+          "absolute inset-0 -z-10 w-full transition-colors duration-500 border-b overflow-x-clip",
+          isScrolled
+            ? "bg-zinc-900/80 backdrop-blur-md shadow-lg border-white/10"
+            : "bg-transparent border-transparent shadow-none"
+        )}
+        aria-hidden="true"
+      />
+      
       {children}
     </nav>
   );

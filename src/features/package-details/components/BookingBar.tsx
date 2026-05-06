@@ -21,18 +21,6 @@ interface BookingBarProps {
 function BookingBar({ price, currency, packageId }: BookingBarProps) {
   const { handleSetTourId } = useBookingActions();
   const t = useTranslations("packageDetails");
-  const [scrollbarWidth, setScrollbarWidth] = useState(0);
-
-  useEffect(() => {
-    // Dynamically calculate the exact physical width of the OS scrollbar
-    const calculateOffset = () => {
-      setScrollbarWidth(window.innerWidth - document.body.clientWidth);
-    };
-    
-    calculateOffset();
-    window.addEventListener("resize", calculateOffset);
-    return () => window.removeEventListener("resize", calculateOffset);
-  }, []);
 
   const formattedPrice = `${currency === "USD" ? "$" : ` ${currency}`}${price}`;
 
@@ -41,11 +29,8 @@ function BookingBar({ price, currency, packageId }: BookingBarProps) {
   };
 
   return (
-    <div 
-      className="fixed bottom-0 left-0 z-50 bg-black/80 backdrop-blur-md border-t border-white/10 pb-[env(safe-area-inset-bottom)] shadow-[0_-10px_40px_rgba(0,0,0,0.5)]"
-      style={{ right: `${scrollbarWidth}px` }}
-    >
-      <div className="w-full max-w-[1440px] mx-auto px-4 md:px-16 lg:px-20 py-3 md:py-4 flex items-center justify-between">
+    <div className="fixed bottom-0 left-0 right-0 z-999 bg-black/80 backdrop-blur-md border-t border-white/10 pb-[env(safe-area-inset-bottom)] shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+      <div className="w-full max-w-360 mx-auto px-4 md:px-16 lg:px-20 py-3 md:py-4 flex items-center justify-between">
         {/* Price Info */}
         <div className="flex flex-col">
           <span className="text-2xl md:text-3xl font-medium text-[#F2C975] font-cairo">
