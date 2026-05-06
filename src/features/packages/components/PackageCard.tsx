@@ -19,7 +19,7 @@ function PackageCard({ pkg, priority = false }: PackageCardProps) {
   const t = useTranslations("home");
 
   // Destructure for cleaner access
-  const { packageName, packageImage, startingPrice, currency } = pkg;
+  const { packageName, packageImage, startingPrice, currency, isBestSeller } = pkg;
 
   // Format price if needed or use simple format
   const formattedPrice = useMemo(() => {
@@ -31,7 +31,9 @@ function PackageCard({ pkg, priority = false }: PackageCardProps) {
       className="group relative h-[55vh] min-h-80 max-h-115 lg:max-h-130 w-full cursor-pointer overflow-hidden rounded-2xl select-none shadow-xl transition-all duration-300"
       aria-label={packageName}
     >
-      <BestSeller />
+      {isBestSeller &&
+        <BestSeller />
+      }
       <Image
         src={packageImage}
         alt={`Image of ${packageName} tour`}

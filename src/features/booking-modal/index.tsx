@@ -30,6 +30,7 @@ import {
  *   restores form state to continue where they left off.
  */
 export default function BookingModal({ pkg }: { pkg: any }) {
+
   const { step } = useBookingState();
   const { setTotalSteps, setStep } = useBookingActions();
 

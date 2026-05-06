@@ -13,6 +13,8 @@ export const usePriceCalculation = (
   const calculatePrice = useCallback(async () => {
     if (!pkg) return;
 
+    setValue("isCalculatingPrice", true);
+
     const values = getValues();
     const selectedDestinations: string[] = [];
 
@@ -45,11 +47,20 @@ export const usePriceCalculation = (
 
       if (response.ok) {
         const result = await response.json();
-        setValue("totalPrice", result.data.totalAmount || 0);
+        
+        if (result.data) {
+          setValue("totalPrice", result.data.totalAmount || 0);
+          setValue("dueAmount", result.data.dueAmount || 0);
+          setValue("payNowAmount", result.data.payNowAmount || 0);
+        }
+        
+        setValue("promoStatus", result.promoStatus ?? null);
         setValue("selectedDestinations", selectedDestinations);
       }
     } catch (error) {
-      
+      console.error("Price calculation failed", error);
+    } finally {
+      setValue("isCalculatingPrice", false);
     }
   }, [pkg, getValues, setValue]);
 
@@ -71,12 +82,18 @@ export const usePriceCalculation = (
     ];
 
     const subscription = watch((value, { name }) => {
-      if (name && triggerFields.includes(name)) {
-        if (timeoutRef.current) clearTimeout(timeoutRef.current);
-        timeoutRef.current = setTimeout(() => {
-          calculatePrice();
-        }, 500);
-      }
+      // Ignore updates to our own calculation state to prevent infinite loops
+      const internalFields = ["isCalculatingPrice", "promoStatus", "totalPrice", "dueAmount", "payNowAmount", "selectedDestinations"];
+      if (name && internalFields.includes(name)) return;
+
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      
+      // Show loading state immediately (deferred slightly to avoid RHF sync update issues)
+      setTimeout(() => setValue("isCalculatingPrice", true), 0);
+      
+      timeoutRef.current = setTimeout(() => {
+        calculatePrice();
+      }, 500);
     });
 
     return () => {

@@ -31,14 +31,14 @@ function FooterPage() {
           {/* <div className="mb-4 text-[#F2C975]" aria-hidden="true">
             LOGO
           </div> */}
-          <h1 className="font-cairo text-4xl font-medium tracking-widest text-[#F2C975] md:text-5xl uppercase">
+          <h1 className="font-cairo text-center text-4xl font-medium tracking-widest text-[#F2C975] md:text-5xl uppercase">
             MOON LIGHT
           </h1>
         </div>
 
         {/* Social Media Links */}
         <nav aria-label="Social Media">
-          <ul className="flex items-center justify-center gap-12" role="list">
+          <ul className="flex items-center justify-center gap-12 flex-wrap" role="list">
             {(Object.keys(SOCIAL_LINKS) as Array<keyof typeof SOCIAL_LINKS>).map((icon) => (
               SOCIAL_LINKS[icon] && (
                 <li key={icon}>

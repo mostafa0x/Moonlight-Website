@@ -14,7 +14,7 @@ export type PackageType = {
   packageName: string;
   packageImage: string;
   startingPrice: number;
-
+isBestSeller:boolean
   governorate: string;
   currency: string;
   availabilityStatus: string;
