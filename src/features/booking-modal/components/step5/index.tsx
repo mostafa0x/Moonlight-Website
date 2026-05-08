@@ -17,4 +17,4 @@ function Step5({ pkg }: { pkg: any }) {
   );
 }
 
-export default memo(Step5);
+export default Step5;

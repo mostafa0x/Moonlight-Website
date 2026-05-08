@@ -54,11 +54,22 @@ export const usePriceCalculation = (
           setValue("payNowAmount", result.data.payNowAmount || 0);
         }
         
-        setValue("promoStatus", result.promoStatus ?? null);
+        // Extract promoStatus from either root level or data object
+        const finalPromoStatus = result.promoStatus ?? result.data?.promoStatus ?? null;
+        setValue("promoStatus", finalPromoStatus);
         setValue("selectedDestinations", selectedDestinations);
+      } else {
+        const errorResult = await response.json().catch(() => ({}));
+        const finalPromoStatus = errorResult.promoStatus ?? errorResult.data?.promoStatus ?? null;
+        if (finalPromoStatus !== null) {
+          setValue("promoStatus", finalPromoStatus);
+        } else if (values.promoCode) {
+          // If the calculation failed and there's a promo code, it's safe to mark it invalid.
+          setValue("promoStatus", "not valid");
+        }
       }
     } catch (error) {
-      console.error("Price calculation failed", error);
+      
     } finally {
       setValue("isCalculatingPrice", false);
     }
@@ -77,18 +88,23 @@ export const usePriceCalculation = (
       "pickupLocation",
       "promoCode",
       "paymentPreference",
-      "customerPhone",
       ...(pkg.customizations?.map((c) => c.groupId) || []),
     ];
 
-    const subscription = watch((value, { name }) => {
-      // Ignore updates to our own calculation state to prevent infinite loops
-      const internalFields = ["isCalculatingPrice", "promoStatus", "totalPrice", "dueAmount", "payNowAmount", "selectedDestinations"];
-      if (name && internalFields.includes(name)) return;
+    const subscription = watch((value, { name, type }) => {
+      
+      // If name is undefined, it's a bulk update (like reset), so we should calculate
+      // Otherwise, only recalculate if the changed field is in our list
+      const shouldTrigger = !name || triggerFields.includes(name);
+      
+      if (!shouldTrigger) return;
+
+      // Prevent infinite loops if we are already calculating
+      if (name === "isCalculatingPrice") return;
 
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
       
-      // Show loading state immediately (deferred slightly to avoid RHF sync update issues)
+      // Show loading state immediately
       setTimeout(() => setValue("isCalculatingPrice", true), 0);
       
       timeoutRef.current = setTimeout(() => {
@@ -100,7 +116,7 @@ export const usePriceCalculation = (
       subscription.unsubscribe();
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
-  }, [pkg, calculatePrice, watch]);
+  }, [pkg, calculatePrice, watch, setValue]);
 
   return { calculatePrice };
 };

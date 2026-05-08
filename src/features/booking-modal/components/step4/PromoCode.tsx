@@ -1,23 +1,25 @@
 "use client";
 
-import { useFormContext } from "react-hook-form";
-import { memo } from "react";
+import { useFormContext, useWatch } from "react-hook-form";
 import { useTranslations } from "next-intl";
 
 function PromoCode() {
-  const { register, watch } = useFormContext();
+  const { register, control } = useFormContext();
   const t = useTranslations("bookingModal.step5");
-  const promoStatus = watch("promoStatus");
-  const isCalculating = watch("isCalculatingPrice");
-  const promoCodeValue = watch("promoCode");
+  
+  const promoStatus = useWatch({ name: "promoStatus", control });
+  const isCalculating = useWatch({ name: "isCalculatingPrice", control });
+  const promoCodeValue = useWatch({ name: "promoCode", control });
 
   let statusClasses = "border-[#313131] focus:ring-[#F2C975]";
 
+  const normalizedStatus = String(promoStatus || "").toLowerCase();
+
   if (promoCodeValue && promoCodeValue.trim() !== "") {
-    if (promoStatus === "valid") {
-      statusClasses = "border-[#22c55e] shadow-[0_0_8px_rgba(34,197,94,0.4)] focus:ring-[#22c55e]";
-    } else if (promoStatus === "not valid") {
-      statusClasses = "border-[#ef4444] shadow-[0_0_8px_rgba(239,68,68,0.4)] focus:ring-[#ef4444]";
+    if (normalizedStatus === "valid" || normalizedStatus === "true") {
+      statusClasses = "border-[#22c55e] shadow-[0_0_8px_rgba(34,197,94,0.4)] focus:ring-[#22c55e] text-[#22c55e] bg-green-500/5";
+    } else if (normalizedStatus === "not valid" || normalizedStatus === "invalid" || normalizedStatus === "false") {
+      statusClasses = "border-[#ef4444] shadow-[0_0_8px_rgba(239,68,68,0.4)] focus:ring-[#ef4444] text-[#ef4444] bg-red-500/5";
     }
   }
 
@@ -29,7 +31,7 @@ function PromoCode() {
           placeholder={t("promoPlaceholder")}
           type="text"
           {...register("promoCode")}
-          className={`bg-[#131313] border rounded-[5px] text-[12px] text-[#8B8B8B] px-3.75 py-1.5 w-full uppercase transition-all duration-300 outline-none focus:ring-1 ${statusClasses}`}
+          className={`bg-[#131313] border rounded-[5px] text-[12px] text-[#8B8B8B] px-3.75 py-1.5 w-full uppercase transition-all duration-300 outline-none focus:outline-none focus:bg-[#131313]! focus:ring-1 focus:ring-offset-0 [&:-webkit-autofill]:shadow-[0_0_0px_1000px_#131313_inset] [&:-webkit-autofill]:[-webkit-text-fill-color:#8B8B8B] ${statusClasses}`}
         />
         {isCalculating && (
           <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center">
@@ -44,4 +46,4 @@ function PromoCode() {
   );
 }
 
-export default memo(PromoCode);
+export default PromoCode;

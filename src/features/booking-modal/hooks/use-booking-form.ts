@@ -24,6 +24,8 @@ export const useBookingForm = (pkg?: PackageDetailsType) => {
       address: "",
       promoCode: "",
       paymentPreference: "deposit",
+      isCalculatingPrice: false,
+      promoStatus: null,
     };
 
     if (typeof window === "undefined") return base;

@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
       const errorData = await response.json().catch(() => ({}));
       console.log(errorData);
       return NextResponse.json(
-        { error: errorData.message || "Failed to calculate price" },
+        { error: errorData.message || "Failed to calculate price", ...errorData },
         { status: response.status },
       );
     }
