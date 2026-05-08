@@ -79,8 +79,10 @@ export function useBookingSubmit({ tourId, setShowLoginModal }: UseBookingSubmit
           const errorCode = result.code || result.error || "UNKNOWN_ERROR";
           try {
             setErrorMsg(te(errorCode));
+
           } catch {
             setErrorMsg(`Backend Error: ${result.message || errorCode}`);
+
           }
         } else {
           // Booking is successful but no payment URL was generated (e.g., zero cost or cash on arrival)
@@ -96,6 +98,7 @@ export function useBookingSubmit({ tourId, setShowLoginModal }: UseBookingSubmit
           errorData = JSON.parse(text);
         } catch (e) {
           errorData = { code: "UNKNOWN_ERROR", message: text };
+
         }
 
         const errorCode = errorData?.details?.code || errorData.code || errorData.error || "UNKNOWN_ERROR";
@@ -112,18 +115,19 @@ export function useBookingSubmit({ tourId, setShowLoginModal }: UseBookingSubmit
         
         if (knownErrors.includes(errorCode)) {
           setErrorMsg(te(errorCode as any));
+
         } else {
           // Temporarily mapping unknown errors to the screen for debug visibility
           setErrorMsg(`${errorCode}: ${errorMessageRaw}`);
-      setLoading(false);
 
         }
       }
     } catch (err) {
       setErrorMsg(te("INTERNAL_SERVER_ERROR"));
 
-      setLoading(false);
     } finally {
+      setLoading(false);
+
     }
   };
 
