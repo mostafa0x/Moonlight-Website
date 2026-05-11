@@ -7,7 +7,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendContactEmail(formData: {
   firstName: string;
-  lastName: string;
+  lastName?: string;
   email: string;
   message: string;
 }) {
@@ -17,8 +17,10 @@ export async function sendContactEmail(formData: {
 
     let emailContent = formData.message;
     
+    const fullName = `${formData.firstName} ${formData.lastName || ""}`.trim();
+
     if (user) {
-      const name = user.user_metadata.full_name || user.user_metadata.name || `${formData.firstName} ${formData.lastName}`;
+      const name = user.user_metadata.full_name || user.user_metadata.name || fullName;
       const email = user.email;
       emailContent += `\n\n---\nSent by: ${name} (${email})`;
     }
@@ -26,7 +28,7 @@ export async function sendContactEmail(formData: {
     const { data, error } = await resend.emails.send({
       from: "Moonlight Contact Form <onboarding@resend.dev>", // Replace with your verified domain in production
       to: ["moonlightegypttours@gmail.com"],
-      subject: `New Contact Message from ${formData.firstName} ${formData.lastName}`,
+      subject: `New Contact Message from ${fullName}`,
       text: emailContent,
       replyTo: formData.email,
     });

@@ -3,7 +3,7 @@ import { z } from "zod";
 export const getContactSchema = (t: (key: string) => string) =>
   z.object({
     firstName: z.string().min(2, t("form.errors.firstName")),
-    lastName: z.string().min(2, t("form.errors.lastName")),
+    lastName: z.string().optional(),
     email: z.string().email(t("form.errors.email")),
     message: z.string().min(10, t("form.errors.message")),
   });

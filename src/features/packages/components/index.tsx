@@ -10,7 +10,6 @@ import SectionHeader from "@/shared/components/SectionHeader";
 import { useTranslations } from "next-intl";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
-import { motion } from "motion/react";
 
 // Swiper styles
 import "swiper/css";

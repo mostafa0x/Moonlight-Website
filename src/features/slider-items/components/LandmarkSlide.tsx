@@ -15,7 +15,6 @@ interface LandmarkSlideProps {
 /**
  * LandmarkSlide Component
  * Professional/Luxury edition: Static version with cinematic overlays.
- * Removed Framer Motion and CSS animations for maximum performance.
  */
 function LandmarkSlide({ item, isVisible, slideNumber, totalSlides }: LandmarkSlideProps) {
   const { isLoaded, onImageLoad } = useImageLoader(item.imageUrl);

@@ -1,7 +1,6 @@
 "use client";
 
-import { memo, useRef } from "react";
-import { useInView } from "motion/react";
+import { useRef, useState, useEffect } from "react";
 import LandmarkSlide from "@/features/slider-items/components/LandmarkSlide";
 import type { LandmarksType } from "@/shared/global";
 
@@ -31,7 +30,24 @@ function LandMarks({
   landmarks = [],
 }: LandMarksProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { amount: 0.1 });
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+    
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+    
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <div ref={containerRef} className="relative w-full h-full select-none overflow-hidden">

@@ -10,7 +10,6 @@ import { useEffect, useState } from "react";
 import { getUserInfo } from "@/shared/lib/supabase";
 import { useAuth } from "@/shared/providers/AuthProvider";
 import { sendContactEmail } from "./actions";
-import { motion } from "framer-motion";
 
 export default function ContactForm() {
   const t = useTranslations("contact");
@@ -105,10 +104,8 @@ export default function ContactForm() {
         className="space-y-5.25 w-full"
       >
         {isSuccess ? (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="p-6 bg-[#F2C975]/10 border border-[#F2C975]/30 rounded-[15px] text-center"
+          <div
+            className="p-6 bg-[#F2C975]/10 border border-[#F2C975]/30 rounded-[15px] text-center animate-fade-up animate-duration-500"
           >
             <h3 className="text-[#F2C975] text-xl font-bold mb-2">Message Sent!</h3>
             <p className="text-zinc-400">We will get back to you shortly.</p>
@@ -122,7 +119,7 @@ export default function ContactForm() {
             >
               Send another message
             </button>
-          </motion.div>
+          </div>
         ) : (
           <>
             <div className="flex flex-col sm:flex-row gap-2.5">
