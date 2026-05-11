@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Zoom, Keyboard } from "swiper/modules";
@@ -31,7 +32,7 @@ export default function GalleryModal({ images, isOpen, onClose, initialIndex }: 
 
   if (!isOpen || !mounted) return null;
 
-  return (
+  const modalContent = (
     <div className="fixed inset-0 z-9999 flex items-center justify-center bg-black/95 backdrop-blur-md transition-opacity duration-300 select-none">
       <button
         onClick={onClose}
@@ -43,7 +44,8 @@ export default function GalleryModal({ images, isOpen, onClose, initialIndex }: 
         </svg>
       </button>
 
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .swiper-pagination-bullets {
           position: fixed !important;
           bottom: max(24px, env(safe-area-inset-bottom)) !important;
@@ -123,4 +125,6 @@ export default function GalleryModal({ images, isOpen, onClose, initialIndex }: 
       </div>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 }
