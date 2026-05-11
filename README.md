@@ -96,5 +96,5 @@ It also supports automatic Sitemap generation for SEO using `next-sitemap`, whic
 
 ---
 <div align="center">
-  <p>Developed by <b>Mostafa Ahmed</b>.</p>
+  <p>Developed by <b>Mostafa Ahmed </b>.</p>
 </div>
