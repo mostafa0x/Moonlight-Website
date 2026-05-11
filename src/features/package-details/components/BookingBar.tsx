@@ -1,6 +1,7 @@
 "use client";
 
 import { memo, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { useBookingActions } from "@/features/booking-modal/context/BookingContextProvider";
 import { useTranslations } from "next-intl";
 
@@ -21,6 +22,11 @@ interface BookingBarProps {
 function BookingBar({ price, currency, packageId }: BookingBarProps) {
   const { handleSetTourId } = useBookingActions();
   const t = useTranslations("packageDetails");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const formattedPrice = `${currency === "USD" ? "$" : ` ${currency}`}${price}`;
 
@@ -28,7 +34,7 @@ function BookingBar({ price, currency, packageId }: BookingBarProps) {
     handleSetTourId(packageId);
   };
 
-  return (
+  const content = (
     <div className="fixed bottom-0 left-0 right-0 z-999 bg-black/80 backdrop-blur-md border-t border-white/10 pb-[env(safe-area-inset-bottom)] shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
       <div className="w-full max-w-360 mx-auto px-4 md:px-16 lg:px-20 py-3 md:py-4 flex items-center justify-between">
         {/* Price Info */}
@@ -67,6 +73,10 @@ function BookingBar({ price, currency, packageId }: BookingBarProps) {
       </div>
     </div>
   );
+
+  if (!mounted) return null;
+
+  return createPortal(content, document.body);
 }
 
 BookingBar.displayName = "BookingBar";

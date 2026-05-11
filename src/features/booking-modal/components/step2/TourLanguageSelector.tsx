@@ -9,7 +9,6 @@ const languageNames: Record<string, string> = {
   es: "Español",
   fr: "Français",
   it: "Italiano",
-  pt: "Português",
 };
 
 const options = Object.keys(languageNames);
@@ -32,7 +31,7 @@ function TourLanguageSelector() {
       <label htmlFor={name} className="text-base text-[#8B8B8B] font-medium px-1 select-none">
         {t("guideLanguage")}
       </label>
-      
+
       <div className="relative group">
         <select
           id={name}
@@ -50,7 +49,7 @@ function TourLanguageSelector() {
         {/* Custom Chevron icon to maintain premium look while using native select */}
         <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#8B8B8B] group-hover:text-[#F2C975] transition-colors">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="m6 9 6 6 6-6"/>
+            <path d="m6 9 6 6 6-6" />
           </svg>
         </div>
       </div>

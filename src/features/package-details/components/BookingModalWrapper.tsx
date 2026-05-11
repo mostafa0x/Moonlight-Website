@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import dynamic from "next/dynamic";
 import { useBookingState, useBookingActions } from "@/features/booking-modal/context/BookingContextProvider";
 
@@ -12,6 +13,11 @@ const BookingModal = dynamic(() => import("@/features/booking-modal"), {
 export default function BookingModalWrapper({ pkg }: { pkg: any }) {
   const { isOpen } = useBookingState();
   const { handleSetTourId } = useBookingActions();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Automatic Re-opening Logic after Login Redirect
   useEffect(() => {
@@ -31,7 +37,7 @@ export default function BookingModalWrapper({ pkg }: { pkg: any }) {
     }
   }, [isOpen, handleSetTourId, pkg.packageId]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted) return null;
 
-  return <BookingModal pkg={pkg} />;
+  return createPortal(<BookingModal pkg={pkg} />, document.body);
 }
