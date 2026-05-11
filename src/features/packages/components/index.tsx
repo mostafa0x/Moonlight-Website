@@ -99,7 +99,7 @@ function PackageSection({
                   </SwiperSlide>
                 );
               })}
-              {/* Inject minimal style for Apple-style centering and pagination */}
+              {/* Inject highly optimized styles for performance (Hardware accelerated, no blur, optimized transitions) */}
               <style dangerouslySetInnerHTML={{
                 __html: `
               .swiper {
@@ -107,32 +107,31 @@ function PackageSection({
                 padding: 0 0 !important;
               }
               .swiper-slide {
-                transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease !important;
-                opacity: 0.3 !important;
-                transform: scale(0.85) !important;
-                filter: blur(1px);
+                transition: opacity 0.3s ease-out, transform 0.3s ease-out !important;
+                opacity: 0.6 !important;
+                transform: translate3d(0, 0, 0) scale(0.95) !important;
+                will-change: opacity, transform;
               }
               .swiper-slide-active {
                 opacity: 1 !important;
-                transform: scale(1.05) !important;
+                transform: translate3d(0, 0, 0) scale(1) !important;
                 z-index: 10;
-                filter: blur(0px);
               }
               .swiper-pagination {
                 position: absolute !important;
                 bottom: -40px !important;
               }
               .swiper-pagination-bullet {
-                background: rgba(255, 255, 255, 0.6) !important;
+                background: rgba(255, 255, 255, 0.5) !important;
                 opacity: 1 !important;
                 margin: 0 6px !important;
-                transition: all 0.3s ease;
+                transition: background-color 0.3s ease, width 0.3s ease !important;
+                will-change: width, background-color;
               }
               .swiper-pagination-bullet-active {
                 background: #F2C975 !important;
                 width: 24px !important;
                 border-radius: 4px !important;
-                transform: scale(1);
               }
             `}} />
             </Swiper>
