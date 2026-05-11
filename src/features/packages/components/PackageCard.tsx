@@ -45,7 +45,7 @@ function PackageCard({ pkg, priority = false }: PackageCardProps) {
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
         quality={65}
         fetchPriority="low"
-        className="z-0 object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+        className="z-0 object-cover transition-transform duration-700 ease-in-out group-hover:scale-110 will-change-transform"
       />
 
 
@@ -72,7 +72,7 @@ function PackageCard({ pkg, priority = false }: PackageCardProps) {
             </p>
           </div>
 
-          <div className="flex items-center gap-1.5 rounded-full bg-white/10 px-4 py-2 backdrop-blur-md border border-white/20 text-[#F2C975] transition-all group-hover:bg-[#F2C975] group-hover:text-black hover:scale-105 active:scale-95 shadow-lg">
+          <div className="flex items-center gap-1.5 rounded-full bg-white/10 px-4 py-2 backdrop-blur-md border border-white/20 text-[#F2C975] transition-all duration-300 ease-out group-hover:bg-[#F2C975] group-hover:text-black hover:scale-105 active:scale-95 shadow-lg">
             <span className="text-sm font-bold uppercase tracking-tight">
               {t("view")}
             </span>

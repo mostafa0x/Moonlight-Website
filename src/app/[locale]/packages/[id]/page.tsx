@@ -170,5 +170,9 @@ export default async function Page({
     );
   }
 
-  return <PackageDetailsPage pkg={pkg} locale={locale} />;
+  return (
+    <div className="animate-fade-up animate-once animate-duration-800 animate-ease-out">
+      <PackageDetailsPage pkg={pkg} locale={locale} />
+    </div>
+  );
 }

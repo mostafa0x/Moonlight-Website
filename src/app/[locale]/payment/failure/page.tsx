@@ -27,7 +27,7 @@ export default async function PaymentFailurePage({ params }: { params: Promise<{
   const t = await getTranslations({ locale, namespace: "bookingModal.payment.failure" });
 
   return (
-    <div className="w-full min-h-screen flex flex-col">
+    <div className="w-full min-h-screen flex flex-col animate-fade-up animate-once animate-duration-800 animate-ease-out">
       <div className="flex-1 flex items-center justify-center px-4 py-8 relative overflow-hidden mt-20 mb-16">
 
         {/* Failure Card */}

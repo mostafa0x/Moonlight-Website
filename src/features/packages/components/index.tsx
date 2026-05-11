@@ -41,7 +41,7 @@ function PackageSection({
 
         {packages.length === 0 && !isLoading ? (
           <div
-            className={`flex w-full flex-1 items-center justify-center py-16 px-6 text-center transition-all duration-1000 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            className={`flex w-full flex-1 items-center justify-center py-16 px-6 text-center transition-all duration-1000 ease-out ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
           >
             <div className="flex flex-col items-center gap-4">
@@ -71,7 +71,7 @@ function PackageSection({
                 640: { spaceBetween: 24 },
                 1024: { spaceBetween: 40 },
               }}
-              className={`w-full pb-16 pt-0 transition-all duration-1000 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              className={`w-full pb-16 pt-0 transition-all duration-1000 ease-out ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                 }`}
             >
               {(isLoading && packages.length === 0 ? Array.from({ length: 4 }) : packages).map((pkg, i) => {

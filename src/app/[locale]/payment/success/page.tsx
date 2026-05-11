@@ -26,7 +26,7 @@ export default async function PaymentSuccessPage({ params }: { params: Promise<{
   const t = await getTranslations({ locale, namespace: "bookingModal.payment.success" });
 
   return (
-    <div className="w-full min-h-screen flex flex-col">
+    <div className="w-full min-h-screen flex flex-col animate-fade-up animate-once animate-duration-800 animate-ease-out">
       <div className="flex-1 flex items-center justify-center px-4 py-8 relative overflow-hidden mt-20 mb-16">
         {/* Success Card */}
         <div className="relative flex flex-col items-center justify-center h-auto max-h-[85dvh] w-full max-w-[90%] sm:max-w-md md:max-w-lg bg-[#0D0D0D] border-2 border-[#F2C975]/30 rounded-3xl md:rounded-4xl px-4 py-5 md:py-8 text-center shadow-[0_20px_60px_-15px_rgba(242,201,117,0.15)] animate-in zoom-in-95 duration-700 overflow-y-auto scrollbar-hide">

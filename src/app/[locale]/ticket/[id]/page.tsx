@@ -102,7 +102,7 @@ export default async function TicketPage({
   }
 
   return (
-    <div className="w-full min-h-screen flex flex-col mt-8 md:mt-4">
+    <div className="w-full min-h-screen flex flex-col mt-8 md:mt-4 animate-fade-up animate-once animate-duration-800 animate-ease-out">
       <Suspense fallback={<EgyptianLoader fullScreen />}>
         <main className="flex-1 pt-8 pb-16  px-4 flex flex-col items-center  justify-center gap-2">
           {/* Premium Ticket Card */}
