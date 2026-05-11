@@ -27,18 +27,25 @@ export function useFooterNavigation({ step, totalSteps, pkg, setErrorMsg }: UseF
     
     if (hasCustomizations && step === 2) {
       const formValues = getValues();
-      let allSelected = true;
+      let isValidCustomization = true;
       
       for (const group of pkg.customizations) {
         const val = formValues[group.groupId];
-        const isEmpty = !val || (Array.isArray(val) && val.length === 0);
-        if (isEmpty) {
-          allSelected = false;
-          break;
+        
+        if (group.maxSelect === 1) {
+          if (!val) {
+            isValidCustomization = false;
+            break;
+          }
+        } else if (group.maxSelect > 1) {
+          if (!Array.isArray(val) || val.length !== group.maxSelect) {
+            isValidCustomization = false;
+            break;
+          }
         }
       }
       
-      if (!allSelected) {
+      if (!isValidCustomization) {
         if (setErrorMsg) {
           setErrorMsg(t("customization"));
         }
