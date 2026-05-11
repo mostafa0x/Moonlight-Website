@@ -236,12 +236,12 @@
       "phoneNumber": "Phone Number",
       "tourDate": "Tour Date",
       "nationality": "Nationality",
-      "address": "Address",
+      "address": "Hotel Location",
       "placeholders": {
         "name": "enter your name...",
         "phone": "enter your phone number...",
         "nationality": "enter your nationality...",
-        "address": "enter your address...",
+        "address": "enter hotel location...",
         "date": "date tour"
       }
     },

@@ -225,12 +225,12 @@
       "phoneNumber": "Numéro de Téléphone",
       "tourDate": "Date du Tour",
       "nationality": "Nationalité",
-      "address": "Adresse",
+      "address": "Emplacement de l'Hôtel",
       "placeholders": {
         "name": "entrez votre nom...",
         "phone": "entrez votre numéro...",
         "nationality": "entrez votre nationalité...",
-        "address": "entrez votre adresse...",
+        "address": "entrez l'emplacement de l'hôtel...",
         "date": "date du tour"
       }
     },
