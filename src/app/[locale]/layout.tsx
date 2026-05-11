@@ -71,8 +71,21 @@ export async function generateMetadata({
     other: {
       "dns-prefetch": "https://res.cloudinary.com",
       "preconnect": "https://res.cloudinary.com"
-    }
-
+    },
+    icons: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        url: '/favicon-black.ico',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        url: '/favicon.ico',
+        media: '(prefers-color-scheme: dark)',
+      },
+    ],
   };
 }
 
