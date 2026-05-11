@@ -42,10 +42,9 @@ export type PackageDetailsType = {
   availabilityStatus: string;
 };
 export interface HomeDataType {
-  packageTitle: string
+  packageTitle: string;
 
   governorate: string;
-  page: number;
   landmarks: LandmarksType[];
   packages: PackageType[];
 }

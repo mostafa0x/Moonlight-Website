@@ -4,20 +4,13 @@ import { useRef, useState, useEffect } from "react";
 import LandmarkSlide from "@/features/slider-items/components/LandmarkSlide";
 import type { LandmarksType } from "@/shared/global";
 
-/**
- * LandMarks Section
- */
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Mousewheel, Pagination, EffectFade } from "swiper/modules";
+import { Mousewheel, Pagination } from "swiper/modules";
 
-// Extra Swiper Styles
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/effect-fade";
-
 
 interface LandMarksProps {
-  id?: string;
   landmarks: LandmarksType[];
 }
 
@@ -26,55 +19,43 @@ interface LandMarksProps {
  * Implements a nested horizontal swiper for exploring landmarks
  * within a single vertical full-page section.
  */
-function LandMarks({
-  landmarks = [],
-}: LandMarksProps) {
+function LandMarks({ landmarks = [] }: LandMarksProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsInView(entry.isIntersecting);
       },
       { threshold: 0.1 }
     );
-    
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-    
-    return () => {
-      observer.disconnect();
-    };
+
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   return (
     <div ref={containerRef} className="relative w-full h-full select-none overflow-hidden">
-
-      {/* Nested Horizontal Swiper */}
       <Swiper
         direction="horizontal"
-        nested={true}
+        nested
         slidesPerView={1}
         spaceBetween={0}
-        effect="fade"
-        fadeEffect={{ crossFade: true }}
-        watchSlidesProgress={true}
-        observer={true}
-        observeParents={true}
+        watchSlidesProgress
+        observer
+        observeParents
         rewind={landmarks.length > 1}
-        grabCursor={true}
-        mousewheel={{
-          forceToAxis: true,
-        }}
-        pagination={{
-          clickable: true,
-        }}
+        grabCursor
+        mousewheel={{ forceToAxis: true }}
+        pagination={{ clickable: true }}
         modules={[Mousewheel, Pagination]}
         speed={800}
         threshold={20}
-        touchReleaseOnEdges={true}
+        touchReleaseOnEdges
         className="h-full w-full landmark-swiper"
       >
         {landmarks.map((landmark, idx) => (
@@ -88,8 +69,8 @@ function LandMarks({
           </SwiperSlide>
         ))}
 
-        <style dangerouslySetInnerHTML={{
-          __html: `
+        {/* Pagination Styles */}
+        <style>{`
           .landmark-swiper .swiper-pagination {
             bottom: 120px !important;
             z-index: 60 !important;
@@ -106,7 +87,7 @@ function LandMarks({
           .landmark-swiper .swiper-pagination-bullet-active {
             background: #F2C975 !important;
           }
-        ` }} />
+        `}</style>
       </Swiper>
     </div>
   );
