@@ -32,7 +32,7 @@ export default function GalleryModal({ images, isOpen, onClose, initialIndex }: 
   if (!isOpen || !mounted) return null;
 
   return (
-    <div className="fixed inset-0 z-9999 flex items-center justify-center bg-black/95 backdrop-blur-md transition-opacity duration-300">
+    <div className="fixed inset-0 z-9999 flex items-center justify-center bg-black/95 backdrop-blur-md transition-opacity duration-300 select-none">
       <button
         onClick={onClose}
         className="absolute top-4 right-4 md:top-6 md:right-6 z-10000 p-2 text-white bg-white/10 rounded-full hover:bg-white/20 transition-colors"
@@ -43,16 +43,67 @@ export default function GalleryModal({ images, isOpen, onClose, initialIndex }: 
         </svg>
       </button>
 
+      <style dangerouslySetInnerHTML={{ __html: `
+        .swiper-pagination-bullets {
+          position: fixed !important;
+          bottom: max(24px, env(safe-area-inset-bottom)) !important;
+          left: 0 !important;
+          width: 100% !important;
+          z-index: 2147483647 !important;
+          display: flex !important;
+          justify-content: center !important;
+          flex-wrap: wrap !important;
+          gap: 6px !important;
+          padding: 0 16px !important;
+        }
+        .swiper-pagination-bullet {
+          background: #ffffff !important;
+          opacity: 0.4 !important;
+          width: 8px !important;
+          height: 8px !important;
+          border-radius: 50% !important;
+          display: block !important;
+          cursor: pointer !important;
+          transition: all 0.3s ease !important;
+        }
+        .swiper-pagination-bullet-active {
+          background: #F2C975 !important;
+          opacity: 1 !important;
+          transform: scale(1.2) !important;
+        }
+        .swiper-button-next, .swiper-button-prev {
+          z-index: 2147483647 !important;
+        }
+        @media (min-width: 768px) {
+          .swiper-pagination-bullets {
+            gap: 8px !important;
+            bottom: 30px !important;
+          }
+          .swiper-pagination-bullet {
+            width: 10px !important;
+            height: 10px !important;
+          }
+        }
+      `}} />
+
       <div className="w-full h-full flex items-center justify-center">
         <Swiper
           modules={[Navigation, Pagination, Zoom, Keyboard]}
           initialSlide={initialIndex}
           navigation
-          pagination={{ clickable: true, dynamicBullets: true }}
+          pagination={{ clickable: true }}
           zoom={{ maxRatio: 3, minRatio: 1 }}
           keyboard={{ enabled: true, onlyInViewport: false }}
           grabCursor={true}
-          className="w-full h-full max-h-screen"
+          className="w-full h-full max-h-screen pb-16"
+          style={{
+            "--swiper-navigation-color": "#F2C975",
+            "--swiper-pagination-color": "#F2C975",
+            "--swiper-pagination-bullet-inactive-color": "#ffffff",
+            "--swiper-pagination-bullet-inactive-opacity": "0.4",
+            "--swiper-pagination-bullet-size": "10px",
+            "--swiper-pagination-bottom": "24px",
+          } as React.CSSProperties}
         >
           {images.map((src, idx) => (
             <SwiperSlide key={idx} className="flex items-center justify-center overflow-hidden">
