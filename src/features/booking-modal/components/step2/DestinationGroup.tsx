@@ -32,7 +32,7 @@ function DestinationGroup({ group }: DestinationGroupProps) {
           {group.title}
         </h3>
         {group.maxSelect > 1 && (
-          <span className="text-xs text-[#8B8B8B] font-medium px-2 py-0.5 bg-color-white-solid/5 rounded-full border border-white/10 uppercase tracking-wider">
+          <span className="text-xs text-[#8B8B8B] font-medium px-2 py-0.5 bg-color-white-solid/5 rounded-full border border-white/10 uppercase ">
             {t("select", { count: group.maxSelect })}
           </span>
         )}

@@ -13,13 +13,27 @@ export function useStep4Autofill() {
   const { user, userName } = useAuth();
   const { setValue, watch } = useFormContext();
   
-  // Watch only the customerName to determine if we should auto-fill
+  // Watch fields to determine if we should auto-fill
   const currentName = watch("customerName");
+  const currentPhone = watch("customerPhone");
+  const currentNationality = watch("nationality");
 
   useEffect(() => {
     // Only auto-fill if the user is authenticated and the field is currently empty
     if (user && userName && !currentName) {
       setValue("customerName", userName, { shouldValidate: true });
     }
-  }, [user, userName, setValue, currentName]);
+
+    if (typeof window !== "undefined") {
+      const savedPhone = localStorage.getItem("customerPhone");
+      if (savedPhone && !currentPhone) {
+        setValue("customerPhone", savedPhone, { shouldValidate: true });
+      }
+
+      const savedNationality = localStorage.getItem("nationality");
+      if (savedNationality && !currentNationality) {
+        setValue("nationality", savedNationality, { shouldValidate: true });
+      }
+    }
+  }, [user, userName, setValue, currentName, currentPhone, currentNationality]);
 }

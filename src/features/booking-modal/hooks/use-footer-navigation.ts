@@ -68,9 +68,19 @@ export function useFooterNavigation({ step, totalSteps, pkg, setErrorMsg }: UseF
 
       if (!isValid) return; // Stop here if form has errors
 
+      const formValues = getValues();
+
+      if (typeof window !== "undefined") {
+        if (formValues.customerPhone) {
+          localStorage.setItem("customerPhone", formValues.customerPhone);
+        }
+        if (formValues.nationality) {
+          localStorage.setItem("nationality", formValues.nationality);
+        }
+      }
+
       // 2. Only check for login AFTER we ensure the data is valid
       if (!isLoggedIn) {
-        const formValues = getValues();
         savePendingBooking(pkg.packageId, formValues, step);
         setShowLoginModal(true);
         return;
