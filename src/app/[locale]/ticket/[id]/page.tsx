@@ -91,8 +91,8 @@ export default async function TicketPage({
     return (
       <div className="min-h-screen flex items-center justify-center  p-4">
         <div className="text-center">
-          <h1 className="text-2xl font-bold font-cairo text-black mb-4">{t('errorTitle')}</h1>
-          <p className="text-zinc-600 mb-6">{t('errorDescription')}</p>
+          <h1 className="text-2xl font-bold font-cairo text-white mb-4">{t('errorTitle')}</h1>
+          <p className="text-zinc-200 mb-6">{t('errorDescription')}</p>
           <Link href={`/${locale}/profile`} className="px-6 py-3 bg-black text-white rounded-lg font-bold">
             {t('backToProfile')}
           </Link>
