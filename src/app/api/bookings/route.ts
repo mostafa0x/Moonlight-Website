@@ -68,12 +68,10 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify(validation.data),
     });
 
-    // console.log("👉 Backend Response Status:", response.status);
 
     if (!response.ok) {
       let backErr;
       try { backErr = await response.json(); } catch(e) {}
-      // console.error("👉 CREATE_BOOKING_FAILED from Backend:", backErr);
       return NextResponse.json(
         { error: "CREATE_BOOKING_FAILED", details: backErr },
         { status: response.status },
@@ -81,10 +79,8 @@ export async function POST(req: NextRequest) {
     }
 
     const data = await response.json();
-    // console.log("👉 Backend Response Data:", data);
     return NextResponse.json(data);
   } catch (error) {
-    // console.error("POST Booking Error:", error);
     return NextResponse.json(
       { error: "INTERNAL_SERVER_ERROR" },
       { status: 500 },
