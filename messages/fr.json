@@ -157,7 +157,8 @@
     "login": "Connexion",
     "logout": "Déconnexion",
     "menu": "Menu",
-    "language": "Langue"
+    "language": "Langue",
+    "myBookings": "Mes Réservations"
   },
   "footer": {
     "terms": "Conditions d'utilisation",

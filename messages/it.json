@@ -157,7 +157,8 @@
     "login": "Accedi",
     "logout": "Esci",
     "menu": "Menu",
-    "language": "Lingua"
+    "language": "Lingua",
+    "myBookings": "Le Mie Prenotazioni"
   },
   "footer": {
     "terms": "Termini di servizio",

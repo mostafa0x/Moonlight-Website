@@ -168,7 +168,8 @@
     "login": "Login",
     "logout": "Logout",
     "menu": "Menu",
-    "language": "Language"
+    "language": "Language",
+    "myBookings": "My Bookings"
   },
   "footer": {
     "terms": "Terms of Service",

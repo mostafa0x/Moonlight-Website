@@ -18,7 +18,7 @@ export default function AuthSection({ locale }: { locale: string }) {
         >
           <Avatar src={userData?.avatar || ""} />
           <span className="font-cairo text-base font-bold text-white group-hover:text-[#F2C975]">
-            My Booking
+            {t("myBookings")}
           </span>
         </Link>
         <button

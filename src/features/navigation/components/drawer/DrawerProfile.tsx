@@ -53,7 +53,7 @@ function DrawerProfile({ onClose, locale }: DrawerProfileProps) {
         <Avatar src={userData?.avatar || ""} />
         <div className="flex flex-col">
           <span className="font-cairo text-base font-bold text-white leading-tight">
-            {userData?.name || "User"}
+            {t("myBookings")}
           </span>
         </div>
       </Link>

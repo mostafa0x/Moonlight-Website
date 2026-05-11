@@ -157,7 +157,8 @@
     "login": "Entrar",
     "logout": "Sair",
     "menu": "Menu",
-    "language": "Idioma"
+    "language": "Idioma",
+    "myBookings": "Minhas Reservas"
   },
   "footer": {
     "terms": "Termos de serviço",
