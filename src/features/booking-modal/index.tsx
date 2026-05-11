@@ -130,7 +130,7 @@ const ModalContent = ({ pkg, step, hasCustomizations }: any) => (
       <HeaderModal
         titleTour={pkg.packageName}
         price={pkg.startingPrice.toString()}
-        image={pkg.packageImage}
+        image={Array.isArray(pkg.packageImage) ? pkg.packageImage[0] : pkg.packageImage}
       />
     </div>
 

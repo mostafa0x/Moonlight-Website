@@ -21,6 +21,9 @@ function PackageCard({ pkg, priority = false }: PackageCardProps) {
   // Destructure for cleaner access
   const { packageName, packageImage, startingPrice, currency, isBestSeller } = pkg;
 
+  // The home package API returns a single string image
+  const imageSrc = packageImage;
+
   // Format price if needed or use simple format
   const formattedPrice = useMemo(() => {
     return `${currency === "USD" ? "$" : ` ${currency}`}${startingPrice}`;
@@ -35,7 +38,7 @@ function PackageCard({ pkg, priority = false }: PackageCardProps) {
         <BestSeller />
       }
       <Image
-        src={packageImage}
+        src={imageSrc}
         alt={`Image of ${packageName} tour`}
         fill
         priority={priority}

@@ -22,7 +22,7 @@ isBestSeller:boolean
 export type PackageDetailsType = {
   packageId: string;
   packageName: string;
-  packageImage: string;
+  packageImage: string | string[];
   startingPrice: number;
   description: string;
   destinations: string[];
