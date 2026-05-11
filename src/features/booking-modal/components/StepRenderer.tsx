@@ -10,6 +10,7 @@ interface StepRendererProps {
   step: number;
   pkg: PackageDetailsType;
   hasCustomizations: boolean;
+  onLocationChange?: (overrides?: any) => void;
 }
 
 /**
@@ -24,7 +25,7 @@ interface StepRendererProps {
  * - Step 3: Contact if customizations, else Summary (old Step 4)
  * - Step 4: Summary if customizations (old Step 5)
  */
-const StepRenderer = ({ step, pkg, hasCustomizations }: StepRendererProps) => {
+const StepRenderer = ({ step, pkg, hasCustomizations, onLocationChange }: StepRendererProps) => {
   const containerClass = "flex-1 overflow-y-auto scrollbar-custom";
   const standardPadding = "px-3.5 lg:px-14.25 py-4";
 
@@ -32,7 +33,7 @@ const StepRenderer = ({ step, pkg, hasCustomizations }: StepRendererProps) => {
     case 1:
       return (
         <div className={`${standardPadding} ${containerClass}`}>
-          <Step2 />
+          <Step2 onLocationChange={onLocationChange} />
         </div>
       );
     case 2:

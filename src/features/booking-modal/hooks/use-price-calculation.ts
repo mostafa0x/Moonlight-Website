@@ -10,12 +10,12 @@ export const usePriceCalculation = (
   const timeoutRef = useRef<NodeJS.Timeout>(null);
   const { setValue, getValues, watch } = methods;
 
-  const calculatePrice = useCallback(async () => {
+  const calculatePrice = useCallback(async (overrides?: any) => {
     if (!pkg) return;
 
     setValue("isCalculatingPrice", true);
 
-    const values = getValues();
+    const values = { ...getValues(), ...overrides };
     const selectedDestinations: string[] = [];
 
     pkg.customizations?.forEach((group) => {
@@ -37,6 +37,7 @@ export const usePriceCalculation = (
       promoCode: values.promoCode || "",
       paymentPreference: values.paymentPreference || "deposit",
     };
+    
 
     try {
       const response = await fetch("/api/bookings/calculate", {

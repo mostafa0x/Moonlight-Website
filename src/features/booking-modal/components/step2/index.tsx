@@ -13,7 +13,7 @@ import { useTranslations } from "next-intl";
  * - Accessibility: Uses semantic h2 for the travelers title and ensures consistent label hierarchy.
  * - Bundle Size: Removed unused imports (SelectDestinations).
  */
-function Step2() {
+function Step2({ onLocationChange }: { onLocationChange?: (overrides?: any) => void }) {
   const t = useTranslations("bookingModal.step2");
 
   return (
@@ -43,6 +43,7 @@ function Step2() {
             label,
             value,
           }))}
+          onChange={onLocationChange}
         />
       </div>
     </div>

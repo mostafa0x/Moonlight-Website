@@ -41,7 +41,7 @@ export default function BookingModal({ pkg }: { pkg: any }) {
 
 
   // Custom hooks to handle complex business logic
-  usePriceCalculation(pkg, methods);
+  const { calculatePrice } = usePriceCalculation(pkg, methods);
   usePackageDefaults(pkg, methods);
 
   // Persistence hook for login-success flow
@@ -99,6 +99,7 @@ export default function BookingModal({ pkg }: { pkg: any }) {
           pkg={pkg}
           step={step}
           hasCustomizations={hasCustomizations}
+          calculatePrice={calculatePrice}
         />
       </ModalLayout>
     </FormProvider>
@@ -123,7 +124,7 @@ const ModalLayout = ({ children }: { children: React.ReactNode }) => (
  * ModalContent Component: Renders the header, info, steps, and footer.
  * Isolated to prevent unnecessary root-level re-renders.
  */
-const ModalContent = ({ pkg, step, hasCustomizations }: any) => (
+const ModalContent = ({ pkg, step, hasCustomizations, calculatePrice }: any) => (
 
   <>
     <div>
@@ -142,6 +143,7 @@ const ModalContent = ({ pkg, step, hasCustomizations }: any) => (
       step={step}
       pkg={pkg}
       hasCustomizations={hasCustomizations}
+      onLocationChange={calculatePrice}
     />
 
     <div className="mt-auto px-5.25 py-4 border-t border-white/5 bg-[#0D0D0D]">

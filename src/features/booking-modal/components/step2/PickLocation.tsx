@@ -1,7 +1,7 @@
 "use client";
 
 import { memo } from "react";
-import { useFormContext } from "react-hook-form";
+import { useFormContext, useWatch } from "react-hook-form";
 
 interface LocationOption {
   label: string;
@@ -12,6 +12,7 @@ interface PickLocationProps {
   name: string;
   label: string;
   options: LocationOption[];
+  onChange?: (overrides?: any) => void;
 }
 
 /**
@@ -22,8 +23,16 @@ interface PickLocationProps {
  * - Performance: Minimal state, using native select for fast I/O.
  * - Accessibility: Native elements provide the best screen reader support.
  */
-function PickLocation({ name, label, options }: PickLocationProps) {
-  const { register } = useFormContext();
+function PickLocation({ name, label, options, onChange }: PickLocationProps) {
+  const { register, setValue, control } = useFormContext();
+  const registered = register(name);
+  
+  // Use watch to make the select controlled, ensuring it stays in sync with form state
+  const currentValue = useWatch({
+    control,
+    name,
+    defaultValue: options[0]?.value || ""
+  });
 
   return (
     <div className="flex flex-col gap-2 relative w-full select-none">
@@ -37,8 +46,19 @@ function PickLocation({ name, label, options }: PickLocationProps) {
       <div className="relative group">
         <select
           id={name}
-          {...register(name)}
-          defaultValue={options[0]?.value || ""}
+          {...registered}
+          value={currentValue}
+          onChange={async (e) => {
+            const newValue = e.target.value;
+            // 1. Update the form state immediately and wait for it
+            setValue(name, newValue, { shouldValidate: true, shouldDirty: true });
+            
+            // 2. Call the original register onChange to maintain form behavior
+            await registered.onChange(e);
+            
+            // 3. Trigger the external calculation function with immediate value override
+            if (onChange) onChange({ [name]: newValue });
+          }}
           className="w-full h-15 bg-[#131313] border border-[#313131] rounded-2xl px-4 text-white text-lg font-semibold appearance-none transition-all duration-200 cursor-pointer hover:border-[#F2C975]/30 focus:outline-none focus:ring-1 focus:ring-[#F2C975]/30"
         >
           {options.map((opt) => (
