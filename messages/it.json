@@ -215,7 +215,8 @@
     },
     "step3": {
       "title": "Personalizza il tuo tour",
-      "subtitle": "Seleziona le destinazioni e i monumenti che desideri includere nel tuo viaggio."
+      "subtitle": "Seleziona le destinazioni e i monumenti che desideri includere nel tuo viaggio.",
+      "select": "Seleziona {count}"
     },
     "step4": {
       "contactTitle": "Dettagli di Contatto",

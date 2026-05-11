@@ -1,9 +1,11 @@
 "use client";
 
-import { memo, useCallback } from "react";
+import { memo } from "react";
 import SelectDestinationsItem from "./SelectDestinationsItem";
 import { useDestinationSelection } from "@/features/booking-modal/hooks/use-destination-selection";
 import type { PackageDetailsType } from "@/shared/global";
+
+import { useTranslations } from "next-intl";
 
 type GroupType = PackageDetailsType["customizations"][number];
 
@@ -21,6 +23,7 @@ interface DestinationGroupProps {
  */
 function DestinationGroup({ group }: DestinationGroupProps) {
   const { isSelected, toggleOption } = useDestinationSelection(group.groupId, group.maxSelect);
+  const t = useTranslations("bookingModal.step3");
 
   return (
     <div key={group.groupId} className="space-y-3">
@@ -30,7 +33,7 @@ function DestinationGroup({ group }: DestinationGroupProps) {
         </h3>
         {group.maxSelect > 1 && (
           <span className="text-xs text-[#8B8B8B] font-medium px-2 py-0.5 bg-color-white-solid/5 rounded-full border border-white/10 uppercase tracking-wider">
-            Select {group.maxSelect}
+            {t("select", { count: group.maxSelect })}
           </span>
         )}
       </div>

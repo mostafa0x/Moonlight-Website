@@ -226,7 +226,8 @@
     },
     "step3": {
       "title": "Customize Your Tour",
-      "subtitle": "Select the destinations and landmarks you'd like to include in your trip."
+      "subtitle": "Select the destinations and landmarks you'd like to include in your trip.",
+      "select": "Select {count}"
     },
     "step4": {
       "contactTitle": "Contact Details",

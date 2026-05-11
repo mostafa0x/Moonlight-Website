@@ -215,7 +215,8 @@
     },
     "step3": {
       "title": "Personalize sua excursão",
-      "subtitle": "Selecione os destinos e monumentos que deseja incluir em sua viagem."
+      "subtitle": "Selecione os destinos e monumentos que deseja incluir em sua viagem.",
+      "select": "Selecione {count}"
     },
     "step4": {
       "contactTitle": "Detalhes de Contacto",
