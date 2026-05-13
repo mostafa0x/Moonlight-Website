@@ -11,7 +11,8 @@ import NextStepBtn from "./NextStepBtn";
 import EgyptianLoader from "@/shared/components/EgyptianLoader";
 
 import { useAuth } from "@/shared/providers/AuthProvider";
-import { useBookingState } from "@/features/booking-modal/context/BookingContextProvider";
+import { useBookingState, useBookingActions } from "@/features/booking-modal/context/BookingContextProvider";
+import Link from "next/link";
 import {
   useBookingSubmit,
   useFooterNavigation
@@ -28,7 +29,9 @@ import {
  */
 function FooterModal({ step, pkg }: { step: number; pkg?: any }) {
   const t = useTranslations("bookingModal.footer");
-  const { tourId, totalSteps } = useBookingState();
+  const tAuth = useTranslations("auth");
+  const { tourId, totalSteps, lang } = useBookingState();
+  const { handleSetTourId } = useBookingActions();
   const { setShowLoginModal } = useAuth();
 
   // Custom hooks for complex interactions
@@ -75,7 +78,27 @@ function FooterModal({ step, pkg }: { step: number; pkg?: any }) {
         )}
 
         {step === totalSteps ? (
-          <ConfirmBooking callback={submitBooking} isLoading={loading} />
+          <div className="flex flex-col items-center md:items-end gap-1.5">
+            <ConfirmBooking callback={submitBooking} isLoading={loading} />
+            <p className="text-[11px] text-[#8B8B8B] max-w-50 text-center md:text-right leading-tight">
+              {tAuth("agreement.prefix")}
+              <Link
+                href={`/${lang}/terms`}
+                onClick={() => handleSetTourId("")}
+                className="font-semibold text-[#A1A1A1] underline hover:text-[#F2C975]"
+              >
+                {tAuth("agreement.terms")}
+              </Link>
+              {tAuth("agreement.and")}
+              <Link
+                href={`/${lang}/privacy`}
+                onClick={() => handleSetTourId("")}
+                className="font-semibold text-[#A1A1A1] underline hover:text-[#F2C975]"
+              >
+                {tAuth("agreement.privacy")}
+              </Link>
+            </p>
+          </div>
         ) : (
           <NextStepBtn nextStep={handleNext} />
         )}
