@@ -368,7 +368,13 @@
     "welcome": "Bienvenue",
     "loginDescription": "Veuillez vous connecter pour finaliser votre réservation et enregistrer vos informations.",
     "error": "Erreur d'authentification",
-    "secureVoyage": "Réservez votre voyage vers l'histoire"
+    "secureVoyage": "Réservez votre voyage vers l'histoire",
+    "agreement": {
+      "prefix": "En continuant, vous acceptez nos ",
+      "and": " et notre ",
+      "terms": "Conditions d'utilisation",
+      "privacy": "Politique de confidentialité"
+    }
   },
   "profile": {
     "title": "Mon Profil",

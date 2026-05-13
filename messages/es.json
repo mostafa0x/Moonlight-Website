@@ -368,7 +368,13 @@
     "welcome": "Bienvenido",
     "loginDescription": "Por favor, inicia sesión para continuar con tu reserva y guardar tu información.",
     "error": "Error de autenticación",
-    "secureVoyage": "Asegura tu viaje a la historia"
+    "secureVoyage": "Asegura tu viaje a la historia",
+    "agreement": {
+      "prefix": "Al continuar, aceptas nuestros ",
+      "and": " y la ",
+      "terms": "Términos de servicio",
+      "privacy": "Política de privacidad"
+    }
   },
   "profile": {
     "title": "Mi Perfil",

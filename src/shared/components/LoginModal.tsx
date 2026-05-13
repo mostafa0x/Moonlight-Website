@@ -2,7 +2,8 @@
 
 import { memo, useCallback, useEffect, useMemo } from "react";
 import { usePathname } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import Link from "next/link";
 
 import { useAuth } from "@/shared/providers/AuthProvider";
 import SimpleCloseBtn from "@/shared/button/SimpleCloseBtn";
@@ -19,6 +20,7 @@ function LoginModal() {
   const { showLoginModal, setShowLoginModal } = useAuth();
   const { clearPendingBooking } = useBookingPersistence();
   const pathname = usePathname();
+  const locale = useLocale();
   const t = useTranslations("auth");
 
   const handleClose = useCallback(() => {
@@ -159,12 +161,25 @@ function LoginModal() {
             </span>
           </button>
 
-          {/* Decorative Egyptian-style dots */}
-          <div className="mt-8 flex gap-4 opacity-20" aria-hidden="true">
-            <div className="h-1.5 w-1.5 rounded-full bg-[#F2C975]" />
-            <div className="h-1.5 w-1.5 rounded-full bg-[#F2C975]" />
-            <div className="h-1.5 w-1.5 rounded-full bg-[#F2C975]" />
-          </div>
+          {/* Terms and Privacy Agreement */}
+          <p className="mt-6 text-xs leading-relaxed text-[#8B8B8B]">
+            {t("agreement.prefix")}
+            <Link
+              href={`/${locale}/terms`}
+              onClick={handleClose}
+              className="font-semibold text-[#A1A1A1] underline decoration-[#F2C975]/30 underline-offset-4 transition-colors hover:text-[#F2C975] hover:decoration-[#F2C975]"
+            >
+              {t("agreement.terms")}
+            </Link>
+            {t("agreement.and")}
+            <Link
+              href={`/${locale}/privacy`}
+              onClick={handleClose}
+              className="font-semibold text-[#A1A1A1] underline decoration-[#F2C975]/30 underline-offset-4 transition-colors hover:text-[#F2C975] hover:decoration-[#F2C975]"
+            >
+              {t("agreement.privacy")}
+            </Link>
+          </p>
         </div>
       </div>
     </div>
