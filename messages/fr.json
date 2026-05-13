@@ -409,6 +409,9 @@
       "cancelModal": {
         "title": "Annuler la réservation ?",
         "message": "Êtes-vous sûr de vouloir annuler ce voyage ? Cette action est irréversible.",
+        "reasonLabel": "Motif d'annulation",
+        "reasonPlaceholder": "Veuillez indiquer le motif de l'annulation (min. 10 caractères)...",
+        "reasonMinLength": "Minimum 10 caractères requis",
         "confirm": "OUI, ANNULER",
         "cancel": "NON, LE GARDER"
       },

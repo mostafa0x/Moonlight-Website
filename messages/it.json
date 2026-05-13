@@ -409,6 +409,9 @@
       "cancelModal": {
         "title": "Annullare la prenotazione?",
         "message": "Sei sicuro di voler annullare questo viaggio? Questa azione è irreversibile.",
+        "reasonLabel": "Motivo dell'annullamento",
+        "reasonPlaceholder": "Si prega di indicare il motivo dell'annullamento (min. 10 caratteri)...",
+        "reasonMinLength": "Minimo 10 caratteri richiesti",
         "confirm": "SÌ, ANNULLA",
         "cancel": "NO, TIENILO"
       },

@@ -420,6 +420,9 @@
       "cancelModal": {
         "title": "Cancel Booking?",
         "message": "Are you sure you want to cancel this voyage? This action cannot be reversed.",
+        "reasonLabel": "Cancellation Reason",
+        "reasonPlaceholder": "Please provide a reason for cancellation (min. 10 characters)...",
+        "reasonMinLength": "Minimum 10 characters required",
         "confirm": "YES, CANCEL",
         "cancel": "NO, KEEP IT"
       },

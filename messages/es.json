@@ -409,6 +409,9 @@
       "cancelModal": {
         "title": "¿Cancelar reserva?",
         "message": "¿Estás seguro de que quieres cancelar este viaje? Esta acción no se puede deshacer.",
+        "reasonLabel": "Motivo de cancelación",
+        "reasonPlaceholder": "Por favor, indique el motivo de la cancelación (mín. 10 caracteres)...",
+        "reasonMinLength": "Se requieren al menos 10 caracteres",
         "confirm": "SÌ, CANCELAR",
         "cancel": "NO, MANTENERLO"
       },

@@ -11,7 +11,7 @@ import { revalidatePath } from "next/cache";
  * - No client-side JS needed for the fetch logic.
  * - Automatic cache revalidation using revalidatePath.
  */
-export async function cancelBookingAction(bookingId: string) {
+export async function cancelBookingAction(bookingId: string, reason: string) {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   const { data: { session } } = await supabase.auth.getSession(); // Still need session for access_token
@@ -29,6 +29,7 @@ export async function cancelBookingAction(bookingId: string) {
         Authorization: `Bearer ${session.access_token}`,
         "Content-Type": "application/json",
       },
+      body: JSON.stringify({ reason }),
     });
 
     if (!response.ok) {

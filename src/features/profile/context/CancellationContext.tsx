@@ -25,11 +25,11 @@ export const CancellationProvider: React.FC<{ children: React.ReactNode }> = ({ 
     setShowModal(true);
   };
 
-  const handleConfirm = async () => {
+  const handleConfirm = async (reason: string) => {
     if (!bookingId) return;
     
     startTransition(async () => {
-      const result = await cancelBookingAction(bookingId);
+      const result = await cancelBookingAction(bookingId, reason);
       if (result.success) {
         setShowModal(false);
         setBookingId(null);
