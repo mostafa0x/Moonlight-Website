@@ -11,7 +11,7 @@ function CustomTextarea({
   label: string;
   placeholder: string;
 }) {
-  const { register, control } = useFormContext();
+  const { register, control, getValues } = useFormContext();
   const { errors } = useFormState({ control, name: name as any });
   
   const error = errors[name];
@@ -26,6 +26,7 @@ function CustomTextarea({
       <textarea
         id={name}
         {...register(name)}
+        defaultValue={getValues(name)}
         className={clsx(
           "w-full bg-[#131313] border resize-none rounded-[5px] px-2 py-1.5 text-sm md:text-base text-white placeholder-[#8B8B8B] transition-colors focus:outline-none",
           error ? "border-red-500" : "border-[#313131] focus:border-[#F2C975]",

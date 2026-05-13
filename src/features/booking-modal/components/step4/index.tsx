@@ -17,7 +17,7 @@ import { useStep4Autofill } from "@/features/booking-modal/hooks/use-step4-autof
  */
 function Step4() {
   const t = useTranslations("bookingModal.step4");
-  
+
   // Custom hook to pre-fill user name if authenticated
   useStep4Autofill();
 

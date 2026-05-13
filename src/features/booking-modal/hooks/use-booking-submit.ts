@@ -74,6 +74,9 @@ export function useBookingSubmit({ tourId, setShowLoginModal }: UseBookingSubmit
         const paymentUrl = result.data?.paymentUrl || result.paymentUrl;
         
         if (paymentUrl) {
+          if (typeof window !== "undefined") {
+            localStorage.removeItem("pending_booking_data");
+          }
           window.location.href = paymentUrl;
         } else if (result.status === "error" || result.error) {
           const errorCode = result.code || result.error || "UNKNOWN_ERROR";
@@ -86,6 +89,9 @@ export function useBookingSubmit({ tourId, setShowLoginModal }: UseBookingSubmit
           }
         } else {
           // Booking is successful but no payment URL was generated (e.g., zero cost or cash on arrival)
+          if (typeof window !== "undefined") {
+            localStorage.removeItem("pending_booking_data");
+          }
           // Dynamically obtain the current language from the URL pathname to construct correct route
           const currentPath = window.location.pathname;
           const currentLocale = currentPath.split('/')[1] || "en";

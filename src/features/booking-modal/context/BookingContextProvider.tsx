@@ -63,6 +63,11 @@ export default function BookingContextProvider({
   const handleSetTourId = useCallback((tour: string) => {
     setTourId(tour);
     setStep(1);
+    if (!tour) {
+      if (typeof window !== "undefined") {
+        localStorage.removeItem("pending_booking_data");
+      }
+    }
   }, []);
 
   // --- CONTEXT VALUES ---

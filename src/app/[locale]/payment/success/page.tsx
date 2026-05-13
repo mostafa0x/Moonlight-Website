@@ -24,6 +24,7 @@ export async function generateMetadata({
 export default async function PaymentSuccessPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "bookingModal.payment.success" });
+  const tNavbar = await getTranslations({ locale, namespace: "navbar" });
 
   return (
     <div className="w-full min-h-screen flex flex-col animate-fade-up animate-once animate-duration-800 animate-ease-out">
@@ -57,12 +58,12 @@ export default async function PaymentSuccessPage({ params }: { params: Promise<{
             {t("description")}
           </p>
 
-          {/* Back Button */}
+          {/* Action Button: My Bookings */}
           <Link
-            href={`/${locale}`}
+            href={`/${locale}/profile`}
             className="group relative inline-flex items-center justify-center gap-3 px-8 md:px-10 py-3 md:py-3.5 bg-[#F2C975] text-black rounded-full font-bold text-xs md:text-sm uppercase tracking-wider transition-all hover:bg-[#887142] hover:scale-105 active:scale-95 shadow-[0_10px_30px_-5px_rgba(242,201,117,0.4)]"
           >
-            <span>{t("button")}</span>
+            <span>{tNavbar("myBookings")}</span>
             <svg viewBox="0 0 24 24" className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>

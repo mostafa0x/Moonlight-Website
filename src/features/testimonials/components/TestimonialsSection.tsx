@@ -42,7 +42,7 @@ export default function TestimonialsSection() {
                                 alt="Experience Egypt"
                                 fill
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
-                                className="object-fill"
+                                className="object-contain"
                             />
                         </div>
                         {/* Testimonial Slider Card */}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { FormProvider } from "react-hook-form";
 
 import HeaderModal from "./components/HeaderModal";
@@ -44,8 +44,8 @@ export default function BookingModal({ pkg }: { pkg: any }) {
   const { calculatePrice } = usePriceCalculation(pkg, methods);
   usePackageDefaults(pkg, methods);
 
-  // Persistence hook for login-success flow
-  const { getPendingBooking, clearPendingBooking } = useBookingPersistence();
+  // Persistence hook for continuous auto-saving
+  const { getPendingBooking, savePendingBooking } = useBookingPersistence();
 
   const hasCustomizations = useMemo(() =>
     !!(pkg?.customizations && pkg.customizations.length > 0),
@@ -54,7 +54,8 @@ export default function BookingModal({ pkg }: { pkg: any }) {
 
   /**
    * Restoration & Initialization Effect:
-   * If user was redirected, restores their data. Otherwise, sets the pkg default prices.
+   * If user reloaded or was redirected, restores their input data and exact step.
+   * Otherwise, sets the pkg default prices.
    */
   useEffect(() => {
     if (!pkg) return;
@@ -65,11 +66,8 @@ export default function BookingModal({ pkg }: { pkg: any }) {
       reset(pendingData.formValues, { keepDefaultValues: true });
 
       // Determine the correct step to jump to for continuing
-      const targetStep = hasCustomizations ? 3 : 2;
+      const targetStep = pendingData.step || (hasCustomizations ? 3 : 2);
       setStep(targetStep);
-
-      // Clear persistence to ensure clean future launches
-      clearPendingBooking();
     } else {
       // Normal launch: Hydrate basic defaults like price
       reset(
@@ -80,7 +78,61 @@ export default function BookingModal({ pkg }: { pkg: any }) {
         { keepDefaultValues: true }
       );
     }
-  }, [pkg, hasCustomizations, reset, setStep, getPendingBooking, clearPendingBooking]);
+  }, [pkg, hasCustomizations, reset, setStep, getPendingBooking]);
+
+  const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  /**
+   * High-Performance Continuous Auto-Save Effect:
+   * Instantly synchronizes high-priority single keys (tourDate, phone, nationality) to localStorage,
+   * while debouncing the heavy global JSON persistence by 400ms to guarantee absolute zero typing lag.
+   */
+  useEffect(() => {
+    if (!pkg?.packageId) return;
+
+    const pending = getPendingBooking(pkg.packageId);
+    // Avoid saving initial mounting state if restoration hasn't caught up to the target step yet
+    if (pending && pending.step && pending.step !== step) {
+      return;
+    }
+
+    savePendingBooking(pkg.packageId, methods.getValues(), step);
+
+    const subscription = methods.watch((value) => {
+      if (debounceTimerRef.current) {
+        clearTimeout(debounceTimerRef.current);
+      }
+
+      // Safely extract only defined properties from live 'value' scope to preserve cache integrity
+      const safeValue: any = {};
+      if (value) {
+        Object.keys(value).forEach((key) => {
+          if ((value as any)[key] !== undefined) {
+            safeValue[key] = (value as any)[key];
+          }
+        });
+      }
+      const latestValues = { ...methods.getValues(), ...safeValue };
+
+      // Instantly persist single individual keys for instant UI state recovery across reloads
+      if (typeof window !== "undefined") {
+        if (safeValue.customerPhone) localStorage.setItem("customerPhone", safeValue.customerPhone);
+        if (safeValue.nationality) localStorage.setItem("nationality", safeValue.nationality);
+      }
+
+      // Debounce global object stringification and writing to maximize main-thread responsiveness
+      debounceTimerRef.current = setTimeout(() => {
+        savePendingBooking(pkg.packageId, latestValues, step);
+      }, 400);
+    });
+
+    return () => {
+      subscription.unsubscribe();
+      if (debounceTimerRef.current) {
+        clearTimeout(debounceTimerRef.current);
+      }
+    };
+  }, [pkg?.packageId, step, methods, savePendingBooking, getPendingBooking]);
 
 
   // Sync total steps based on package customization options

@@ -12,13 +12,13 @@ import StandardInput from "./StandardInput";
  * Optimized to re-render precisely when validation errors for its specific 'name' change.
  */
 function CustomInput(props: CustomInputProps) {
-  const { register, control } = useFormContext();
+  const { register, control, getValues } = useFormContext();
   
   // Specifically subscribe to errors for this field name to ensure immediate UI feedback
   const { errors } = useFormState({ control, name: props.name as any });
   const error = errors[props.name];
 
-  const commonProps = { ...props, error, control, register };
+  const commonProps = { ...props, error, control, register, getValues };
 
   switch (props.type) {
     case "tel":
