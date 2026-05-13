@@ -44,6 +44,13 @@ const nextConfig: NextConfig = {
           { key: 'Content-Type', value: 'application/xml; charset=utf-8' },
         ],
       },
+      {
+        // Explicit Content-Type for robots.txt so Lighthouse/crawlers can download and parse it correctly
+        source: '/robots.txt',
+        headers: [
+          { key: 'Content-Type', value: 'text/plain; charset=utf-8' },
+        ],
+      },
     ];
   },
   async rewrites() {

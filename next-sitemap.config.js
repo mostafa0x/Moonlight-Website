@@ -10,4 +10,14 @@ module.exports = {
     '*/ticket/*',
     '/icon.png',
   ],
+  robotsTxtOptions: {
+    transformRobotsTxt: async (_, robotsTxt) => {
+      // Remove the non-standard Host directive and its preceding comment
+      // since Googlebot/Lighthouse flags 'Host:' as an unknown/invalid directive.
+      return robotsTxt
+        .replace(/# Host\nHost: .*\n?/g, '')
+        .replace(/Host: .*\n?/g, '');
+    },
+  },
 }
+

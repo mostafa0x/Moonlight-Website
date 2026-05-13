@@ -2,8 +2,6 @@
 User-agent: *
 Allow: /
 
-# Host
-Host: https://www.egyptmoonlighttours.com
 
 # Sitemaps
 Sitemap: https://www.egyptmoonlighttours.com/sitemap.xml
