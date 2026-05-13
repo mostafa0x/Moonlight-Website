@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Soft glowing outer circle -->
+  <circle cx="50" cy="50" r="45" fill="url(#goldGrad)" fill-opacity="0.15" stroke="url(#goldGrad)" stroke-width="1.5" />
+  
+  <!-- Outer Wreath Left Wreath -->
+  <path d="M 50 12 C 28 12 12 32 18 65 C 20 75 28 85 45 88" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round" />
+  <!-- Left Leaves -->
+  <path d="M 22 40 Q 15 35 22 30 Q 28 35 22 40 Z" fill="url(#goldGrad)" />
+  <path d="M 17 52 Q 10 47 17 42 Q 23 47 17 52 Z" fill="url(#goldGrad)" />
+  <path d="M 20 65 Q 14 62 20 56 Q 26 62 20 65 Z" fill="url(#goldGrad)" />
+  <path d="M 30 78 Q 25 78 30 70 Q 36 75 30 78 Z" fill="url(#goldGrad)" />
+  <path d="M 33 25 Q 25 20 35 18 Q 40 22 33 25 Z" fill="url(#goldGrad)" />
+
+  <!-- Outer Wreath Right Wreath -->
+  <path d="M 50 12 C 72 12 88 32 82 65 C 80 75 72 85 55 88" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round" />
+  <!-- Right Leaves -->
+  <path d="M 78 40 Q 85 35 78 30 Q 72 35 78 40 Z" fill="url(#goldGrad)" />
+  <path d="M 83 52 Q 90 47 83 42 Q 77 47 83 52 Z" fill="url(#goldGrad)" />
+  <path d="M 80 65 Q 86 62 80 56 Q 74 62 80 65 Z" fill="url(#goldGrad)" />
+  <path d="M 70 78 Q 75 78 70 70 Q 64 75 70 78 Z" fill="url(#goldGrad)" />
+  <path d="M 67 25 Q 75 20 65 18 Q 60 22 67 25 Z" fill="url(#goldGrad)" />
+
+  <!-- Center Shield / Star Medallion -->
+  <polygon points="50,22 62,48 50,75 38,48" fill="url(#goldGradInner)" opacity="0.8" />
+  <polygon points="50,28 58,52 50,70 42,52" fill="#FFFFFF" />
+  
+  <!-- Central Premium Star -->
+  <path d="M 50 36 L 53 43 L 60 43 L 54 47 L 56 54 L 50 50 L 44 54 L 46 47 L 40 43 L 47 43 Z" fill="url(#goldGrad)" />
+
+  <!-- Bottom Elegant Ribbon Bow -->
+  <path d="M 50 85 L 42 96 L 47 87 Z" fill="url(#goldGrad)" />
+  <path d="M 50 85 L 58 96 L 53 87 Z" fill="url(#goldGrad)" />
+  <circle cx="50" cy="85" r="3" fill="#FFFFFF" />
+
+  <!-- Gradients Definition -->
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCE07D" />
+      <stop offset="50%" stop-color="#DFAC34" />
+      <stop offset="100%" stop-color="#996E14" />
+    </linearGradient>
+    <linearGradient id="goldGradInner" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFEFA6" />
+      <stop offset="50%" stop-color="#D19E2B" />
+      <stop offset="100%" stop-color="#6E4E0A" />
+    </linearGradient>
+  </defs>
+</svg>

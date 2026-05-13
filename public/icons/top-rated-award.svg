@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Outer glowing sunburst rays -->
+  <g stroke="url(#emeraldGold)" stroke-width="1.5" opacity="0.7">
+    <line x1="50" y1="5" x2="50" y2="15" />
+    <line x1="50" y1="85" x2="50" y2="95" />
+    <line x1="5" y1="50" x2="15" y2="50" />
+    <line x1="85" y1="50" x2="95" y2="50" />
+    <line x1="18" y1="18" x2="25" y2="25" />
+    <line x1="82" y1="82" x2="75" y2="75" />
+    <line x1="82" y1="18" x2="75" y2="25" />
+    <line x1="18" y1="82" x2="25" y2="75" />
+  </g>
+
+  <!-- Thick premium double gold ring -->
+  <circle cx="50" cy="50" r="34" fill="#022012" stroke="url(#emeraldGold)" stroke-width="3" />
+  <circle cx="50" cy="50" r="30" fill="none" stroke="#FFFFFF" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.6" />
+
+  <!-- Center Golden Crown / Stars -->
+  <path d="M 32 58 L 36 38 L 43 48 L 50 32 L 57 48 L 64 38 L 68 58 Z" fill="url(#emeraldGold)" />
+  <path d="M 32 58 L 68 58 L 65 64 L 35 64 Z" fill="#FFFFFF" opacity="0.9" />
+
+  <!-- Embedded Tiny Diamonds on the Crown -->
+  <circle cx="36" cy="38" r="1.5" fill="#FFFFFF" />
+  <circle cx="50" cy="32" r="1.5" fill="#FFFFFF" />
+  <circle cx="64" cy="38" r="1.5" fill="#FFFFFF" />
+
+  <!-- Center Star Overlay -->
+  <path d="M 50 42 L 51.5 46.5 L 56 46.5 L 52.5 49 L 53.5 53.5 L 50 51 L 46.5 53.5 L 47.5 49 L 44 46.5 L 48.5 46.5 Z" fill="#FFEAA7" />
+
+  <defs>
+    <linearGradient id="emeraldGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCE07D" />
+      <stop offset="40%" stop-color="#E2B13C" />
+      <stop offset="70%" stop-color="#00AF87" />
+      <stop offset="100%" stop-color="#013A20" />
+    </linearGradient>
+  </defs>
+</svg>

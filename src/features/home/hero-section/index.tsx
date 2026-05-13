@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import TripadvisorTrophies from "./components/TripadvisorTrophies";
 
 interface HeroSectionProps {
   locale: string;
@@ -12,6 +13,7 @@ interface HeroSectionProps {
  * 2. Flattened component structure to reduce React tree depth and processing.
  * 3. Static rendering (no entrance animations) for instantaneous LCP.
  * 4. High-priority text rendering with antialiasing and text-shadow for premium feel.
+ * 5. Integrated horizontal scrolling Tripadvisor awards with zero client JS.
  */
 export default async function HeroSection({ locale }: HeroSectionProps) {
   // Fetch translations directly in the server component for best performance
@@ -22,7 +24,7 @@ export default async function HeroSection({ locale }: HeroSectionProps) {
       className="h-screen w-full relative flex flex-col items-center justify-center overflow-hidden bg-transparent select-none px-6 text-center"
       aria-label="Welcome to Moonlight"
     >
-      <header className="space-y-4 md:space-y-6 max-w-5xl z-20">
+      <header className="space-y-4 md:space-y-6 max-w-5xl z-20 w-full">
         {/* Main Title - LCP Element — must be h1 for SEO + LCP scoring */}
         <h1 className="text-4xl sm:text-6xl md:text-5xl font-cairo font-bold text-white tracking-[0.2em] uppercase [text-shadow:0_0_15px_rgba(242,201,117,0.4)] antialiased">
           {t("title")}
@@ -32,9 +34,11 @@ export default async function HeroSection({ locale }: HeroSectionProps) {
         <p className="text-2xl sm:text-3xl md:text-3xl font-cairo font-bold leading-tight bg-linear-to-b from-white via-white to-white/60 bg-clip-text text-transparent [text-shadow:0_10px_30px_rgba(0,0,0,0.5)] antialiased">
           {t("subtitle")}
         </p>
+
+        {/* Tripadvisor Trophies / Awards (Horizontally scrollable if overflowing) */}
+        <TripadvisorTrophies />
       </header>
-
-
     </section>
   );
 }
+
