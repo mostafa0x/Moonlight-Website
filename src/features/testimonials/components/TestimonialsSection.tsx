@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { reviews } from "../data/reviews";
-const TOTAL_REVIEWS = 1093;
+const TOTAL_REVIEWS = 1112;
 
 /**
  * TestimonialsSection Client Component
@@ -36,7 +36,7 @@ export default function TestimonialsSection() {
                     {/* Content Box */}
                     <div className="flex flex-col lg:flex-row items-stretch w-full min-h-0">
                         {/* Visual - High-Quality Image */}
-                        <div className="relative flex-1 min-h-75 md:min-h-90   md:h-full rounded-3xl hidden lg:block overflow-hidden">
+                        {/* <div className="relative flex-1 min-h-75 md:min-h-90   md:h-full rounded-3xl hidden lg:block overflow-hidden">
                             <Image
                                 src="/imgs/travelers-at-the-pyramids.webp"
                                 alt="Experience Egypt"
@@ -45,7 +45,7 @@ export default function TestimonialsSection() {
                                 className="object-fill"
                                 quality={75}
                             />
-                        </div>
+                        </div> */}
                         {/* Testimonial Slider Card */}
                         <div className="relative flex-1 min-h-65 md:min-h-80 bg-zinc-800 rounded-2xl md:rounded-3xl p-5 md:p-8 shadow-lg overflow-hidden flex flex-col">
                             {/* Card Top Meta */}
