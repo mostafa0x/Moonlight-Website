@@ -70,16 +70,9 @@ function FooterModal({ step, pkg }: { step: number; pkg?: any }) {
         <BackBtn prevStep={prevStep} />
       }
 
-      <div className={clsx("flex md:flex-row items-center gap-4", step === totalSteps && "flex-col-reverse")}>
+      <div className="flex items-center gap-4">
         {step === totalSteps ? (
-          <PaymentIcons />
-        ) : (
-          <PriceDisplay label={t("totalPrice")} />
-        )}
-
-        {step === totalSteps ? (
-          <div className="flex flex-col items-center md:items-end gap-1.5">
-            <ConfirmBooking callback={submitBooking} isLoading={loading} />
+          <div className="flex flex-col-reverse md:flex-row items-center gap-2 md:gap-3">
             <p className="text-[11px] text-[#8B8B8B] max-w-50 text-center md:text-right leading-tight">
               {tAuth("agreement.prefix")}
               <Link
@@ -98,9 +91,13 @@ function FooterModal({ step, pkg }: { step: number; pkg?: any }) {
                 {tAuth("agreement.privacy")}
               </Link>
             </p>
+            <ConfirmBooking callback={submitBooking} isLoading={loading} />
           </div>
         ) : (
-          <NextStepBtn nextStep={handleNext} />
+          <>
+            <PriceDisplay label={t("totalPrice")} />
+            <NextStepBtn nextStep={handleNext} />
+          </>
         )}
       </div>
     </div>
@@ -148,25 +145,8 @@ const ErrorMessage = memo(({ message }: { message: string }) => {
   );
 });
 
-/**
- * PaymentIcons Component: Displays supported payment methods.
- */
-const PaymentIcons = memo(() => (
-  <div className="flex flex-row gap-1.5 grayscale-[0.2] hover:grayscale-0 transition-all duration-300">
-    {["paypal"].map((card) => (
-      <img
-        key={card}
-        src={`/icons/${card}.webp`}
-        alt={card}
-        className="w-[30] h-7.5 md:w-12.5 md:h-12.5 object-contain"
-      />
-    ))}
-  </div>
-));
-
 FooterModal.displayName = "FooterModal";
 PriceDisplay.displayName = "PriceDisplay";
 ErrorMessage.displayName = "ErrorMessage";
-PaymentIcons.displayName = "PaymentIcons";
 
 export default memo(FooterModal);
