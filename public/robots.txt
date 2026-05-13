@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://moonlight-website-new-delta.vercel.app
+Host: https://www.egyptmoonlighttours.com
 
 # Sitemaps
-Sitemap: https://moonlight-website-new-delta.vercel.app/sitemap.xml
+Sitemap: https://www.egyptmoonlighttours.com/sitemap.xml
