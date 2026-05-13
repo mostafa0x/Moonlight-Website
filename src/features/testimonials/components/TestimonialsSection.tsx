@@ -34,15 +34,15 @@ export default function TestimonialsSection() {
                     </div>
 
                     {/* Content Box */}
-                    <div className="flex flex-col lg:flex-row items-stretch w-full min-h-0">
+                    <div className="flex flex-col md:flex-row items-stretch w-full min-h-0 gap-2">
                         {/* Visual - High-Quality Image */}
-                        <div className="relative flex-1 min-h-75 md:min-h-90   md:h-full rounded-3xl hidden lg:block overflow-hidden">
+                        <div className="relative flex-1 min-h-75 md:min-h-90   md:h-full rounded-3xl hidden md:block overflow-hidden">
                             <Image
                                 src="/imgs/travelers-at-the-pyramids.webp"
                                 alt="Experience Egypt"
                                 fill
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
-                                className="object-contain"
+                                className="object-cover"
                             />
                         </div>
                         {/* Testimonial Slider Card */}
