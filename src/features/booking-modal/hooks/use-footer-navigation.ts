@@ -87,8 +87,10 @@ export function useFooterNavigation({ step, totalSteps, pkg, setErrorMsg }: UseF
       }
       
       // 3. User is logged in and data is valid -> proceed
+      savePendingBooking(pkg.packageId, formValues, step + 1);
       nextStep();
     } else {
+      savePendingBooking(pkg.packageId, getValues(), step + 1);
       nextStep();
     }
   };

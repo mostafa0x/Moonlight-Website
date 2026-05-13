@@ -1,7 +1,7 @@
 "use client";
 
 import { memo } from "react";
-import { useFormContext } from "react-hook-form";
+import { useFormContext, useWatch } from "react-hook-form";
 import { useTranslations } from "next-intl";
 
 const languageNames: Record<string, string> = {
@@ -14,30 +14,45 @@ const languageNames: Record<string, string> = {
 const options = Object.keys(languageNames);
 
 /**
- * TourLanguageSelector: A styled native HTML select for guaranteed guide language visibility.
+ * TourLanguageSelector: A fully controlled styled native HTML select for guide language selection.
  * 
  * Optimized for Vercel React Best Practices:
- * - Reliability: Native select options always appear on top of all DOM containers.
- * - Performance: Minimal state, using standard register() for fast I/O.
- * - Accessibility: Native elements provide the best screen reader support out of the box.
+ * - Reliability: Fully synchronized with react-hook-form state via useWatch to support seamless persistence.
+ * - Accessibility: Native elements provide robust screen reader support out of the box.
  */
 function TourLanguageSelector() {
   const t = useTranslations("bookingModal.step2");
-  const { register } = useFormContext();
+  const { register, setValue, control } = useFormContext();
   const name = "tourguideLanguage";
+  const registered = register(name);
+
+  // Use watch to make the select controlled, ensuring it stays in sync with form state across reloads
+  const currentValue = useWatch({
+    control,
+    name,
+    defaultValue: "en",
+  });
 
   return (
-    <div className="relative w-full flex flex-col gap-2">
-      <label htmlFor={name} className="text-base text-[#8B8B8B] font-medium px-1 select-none">
+    <div className="relative w-full flex flex-col gap-2 select-none">
+      <label htmlFor={name} className="text-base text-[#8B8B8B] font-medium px-1">
         {t("guideLanguage")}
       </label>
 
       <div className="relative group">
         <select
           id={name}
-          {...register(name)}
+          {...registered}
+          value={currentValue}
+          onChange={async (e) => {
+            const newValue = e.target.value;
+            // 1. Update the form state immediately and wait for it
+            setValue(name, newValue, { shouldValidate: true, shouldDirty: true });
+
+            // 2. Execute original register onChange to trigger form subscription callbacks
+            await registered.onChange(e);
+          }}
           className="w-full h-15 bg-[#131313] border border-[#313131] rounded-2xl px-4 text-white text-lg font-semibold cursor-pointer appearance-none transition-all duration-200 hover:border-[#F2C975]/30 focus:outline-none focus:ring-1 focus:ring-[#F2C975]/30"
-          defaultValue="en"
         >
           {options.map((item) => (
             <option key={item} value={item} className="bg-[#131313] text-white py-2">
