@@ -211,12 +211,12 @@ export default async function Page({
   };
 
   return (
-    <div className="animate-fade-up animate-once animate-duration-800 animate-ease-out">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <PackageDetailsPage pkg={pkg} locale={locale} />
-    </div>
+    </>
   );
 }
