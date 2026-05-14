@@ -35,7 +35,7 @@ export default async function ItinerarySection({
       <div className="relative">
         {/* Start Badge */}
         <div className="inline-block px-5 py-1 mb-4 bg-neutral-900 rounded-[20px] border border-[#F2C975]">
-          <span className="text-[#F2C975] text-xl font-medium font-cairo">
+          <span className="text-[#F2C975] text-base md:text-xl font-medium font-cairo">
             {t("start")}
           </span>
         </div>
@@ -69,7 +69,7 @@ export default async function ItinerarySection({
 
         {/* End Badge */}
         <div className="inline-block px-5 py-1 bg-neutral-900 rounded-[20px] border border-[#F2C975]">
-          <span className="text-[#F2C975] text-xl font-medium font-cairo">
+          <span className="text-[#F2C975] text-base md:text-xl font-medium font-cairo">
             {t("end")}
           </span>
         </div>
