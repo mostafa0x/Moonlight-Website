@@ -78,8 +78,6 @@ export async function generateMetadata({
     };
   }
 
-  // Standardize on WEBSITE_URL for consistency across layout and pages
-  const baseUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || "http://localhost:3000";
   const relativePath = `/${locale}/packages/${id}`;
 
   // Clean description (removes any stray HTML tags and prevents trailing spaces)
@@ -95,8 +93,12 @@ export async function generateMetadata({
     ...(pkg.destinations || []),
   ];
 
+  const images = Array.isArray(pkg.packageImage)
+    ? pkg.packageImage
+    : [pkg.packageImage || "/icon.png"];
+
   return {
-    title: `${pkg.packageName} | ${process.env.NEXT_PUBLIC_WEBSITE_NAME || "Moonlight Tours"}`,
+    title: pkg.packageName,
     description: cleanDescription,
     keywords: keywords.join(", "),
     alternates: {
@@ -111,26 +113,19 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: `${pkg.packageName} - ${process.env.NEXT_PUBLIC_WEBSITE_NAME || "Moonlight"}`,
-      description: cleanDescription,
-      url: relativePath,
-      siteName: process.env.NEXT_PUBLIC_WEBSITE_NAME || "Moonlight",
-      type: "website",
-      locale: locale,
-      images: [
-        {
-          url: "/icon.png",
-          width: 512,
-          height: 512,
-          alt: pkg.packageName,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary",
       title: pkg.packageName,
       description: cleanDescription,
-      images: ["/icon.png"],
+      url: relativePath,
+      siteName: process.env.NEXT_PUBLIC_WEBSITE_NAME || "Moonlight Tours",
+      type: "website",
+      locale: locale,
+      images: images,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: pkg.packageName,
+      description: cleanDescription,
+      images: images,
     },
   };
 }
