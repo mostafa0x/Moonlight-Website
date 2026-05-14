@@ -481,6 +481,8 @@
     "hours": "8 Hours",
     "groupSize": "Group Size",
     "persons": "Persons",
+    "tourType": "Tour Type",
+    "privateTour": "Private Tour",
     "morePeopleLessPrice": "More people, less price",
     "priceVaries": "Price varies with group size",
     "bookNow": "Book Now",

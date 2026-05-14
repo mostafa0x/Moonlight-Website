@@ -470,6 +470,8 @@
     "hours": "8 Horas",
     "groupSize": "Tamanho do Grupo",
     "persons": "Pessoas",
+    "tourType": "Tipo de Tour",
+    "privateTour": "Tour Privado",
     "morePeopleLessPrice": "Mais pessoas, melhor preço",
     "priceVaries": "O preço varia consoante o tamanho do grupo",
     "bookNow": "Reservar",
