@@ -35,7 +35,8 @@ export default function ScrollContainer({ children, className }: ScrollContainer
     <div
       className="fixed inset-0 w-full bg-transparent overflow-hidden"
       style={{
-        overscrollBehavior: "none"
+        overscrollBehavior: "none",
+        touchAction: "none",
       }}
     >
       <Swiper
@@ -54,7 +55,7 @@ export default function ScrollContainer({ children, className }: ScrollContainer
 
         // Advanced Performance & Touch Suite
         touchRatio={1.2}
-        threshold={5}
+        threshold={2}
         longSwipesRatio={0.1}
         roundLengths={true}
         resistance={true}
@@ -63,7 +64,7 @@ export default function ScrollContainer({ children, className }: ScrollContainer
         watchSlidesProgress={true}
         preventInteractionOnTransition={false}
         touchStartPreventDefault={false}
-        passiveListeners={true}
+        passiveListeners={false}
         observer={true}
         observeParents={true}
         modules={[Mousewheel, Keyboard, Parallax]}
