@@ -170,8 +170,57 @@ export default async function Page({
     );
   }
 
+  // Standardize on WEBSITE_URL for consistency across layout and pages
+  const baseUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || "http://localhost:3000";
+  const absoluteUrl = `${baseUrl}/${locale}/packages/${id}`;
+
+  // Helper to ensure image URLs are absolute
+  const resolveImageUrl = (img: string) =>
+    img.startsWith("http") ? img : `${baseUrl}${img.startsWith("/") ? "" : "/"}${img}`;
+
+  const images = Array.isArray(pkg.packageImage)
+    ? pkg.packageImage.map(resolveImageUrl)
+    : [resolveImageUrl(pkg.packageImage || "/icon.png")];
+
+  // Map currency symbol to ISO code if needed for standard Schema validation
+  const priceCurrency = pkg.currency === "$" ? "USD" : pkg.currency || "USD";
+
+  // Clean description (removes any stray HTML tags)
+  const cleanDescription = (pkg.description || "")
+    .replace(/<[^>]*>?/gm, "")
+    .trim();
+
+  // Construct JSON-LD Schema for rich snippet price & tour info
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": ["Product", "TouristTrip"],
+    name: pkg.packageName,
+    image: images,
+    description: cleanDescription,
+    sku: pkg.packageId,
+    brand: {
+      "@type": "Brand",
+      name: process.env.NEXT_PUBLIC_WEBSITE_NAME || "Moonlight Tours",
+    },
+    offers: {
+      "@type": "Offer",
+      price: pkg.startingPrice,
+      priceCurrency: priceCurrency,
+      availability: "https://schema.org/InStock",
+      url: absoluteUrl,
+      seller: {
+        "@type": "TravelAgency",
+        name: process.env.NEXT_PUBLIC_WEBSITE_NAME || "Moonlight Tours",
+      },
+    },
+  };
+
   return (
     <div className="animate-fade-up animate-once animate-duration-800 animate-ease-out">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <PackageDetailsPage pkg={pkg} locale={locale} />
     </div>
   );
