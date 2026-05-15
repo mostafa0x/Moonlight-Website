@@ -86,11 +86,16 @@ export async function generateMetadata({
     .trim()
     .slice(0, 160) + "...";
 
-  // Dynamic SEO Keywords based on package data
+  // Dynamic SEO Keywords — combines package-specific data with broad brand keywords
   const keywords = [
     pkg.packageName,
+    `${pkg.packageName} Moonlight`,
+    `${pkg.governorate} tour`,
+    `${pkg.governorate} tours`,
+    `Moonlight ${pkg.governorate}`,
     ...t.raw("seoKeywords"),
     ...(pkg.destinations || []),
+    ...(pkg.destinations || []).map((d: string) => `${d} tour`),
   ];
 
   const images = Array.isArray(pkg.packageImage)

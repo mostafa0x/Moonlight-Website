@@ -115,8 +115,25 @@ export default async function LocaleLayout({
 
   const messages = (await messagesMap[locale]()).default;
 
+  const baseUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || "http://localhost:3000";
+
+  // WebSite structured data — tells Google the correct site name
+  // instead of falling back to the domain name in search results.
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Moonlight Egypt",
+    alternateName: ["Moonlight", "Moonlight Tours", "Egypt Moonlight Tours"],
+    url: baseUrl,
+  };
+
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
+      {/* WebSite JSON-LD: overrides domain name in Google search results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
       {/* Update <html lang=""> to match the current locale */}
       <SetHtmlLang locale={locale} />
       <AllProviders>
