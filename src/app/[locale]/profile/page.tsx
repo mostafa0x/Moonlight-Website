@@ -7,7 +7,8 @@ import EgyptianLoader from '@/shared/components/EgyptianLoader';
 import FooterPage from "@/shared/components/footer/index";
 import Section from "@/features/home/components/Section";
 import { getTranslations } from 'next-intl/server';
-
+export const dynamic = 'force-static';
+export const dynamicParams = false;
 export async function generateMetadata({
   params
 }: {
