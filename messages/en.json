@@ -10,95 +10,179 @@
     "keywords": [
       "Moonlight tours terms",
       "tour booking terms",
-      "Egypt tours policy",
-      "cancellation policy Egypt tours",
-      "Moonlight travel terms"
+      "Egypt tours policy"
     ],
-    "lastUpdated": "Last Updated: March 2026",
-    "intro": "Welcome to Moonlight. By browsing our website, booking a tour, or using our services, you agree to comply with and be bound by the following Terms of Service. Please review them carefully before making any reservations.",
-    "booking": {
-      "title": "Booking and Payments",
-      "currency": "Currency: All transactions and tour prices are quoted and processed in US Dollars (USD) or Euros (EUR).",
-      "paymentGateway": "Payment Gateway: We utilize PayPal Business API for secure payment processing. By completing a booking, you also agree to PayPal's Acceptable Use Policy.",
-      "confirmation": "Confirmation: A booking is only considered final and confirmed once the full payment is successfully received by Moonlight, and the tour status is updated to \"Confirmed\" in your user profile on our website."
-    },
-    "cancellation": {
-      "title": "Cancellation and Refund Policy",
-      "intro": "We meticulously plan our tours and secure commitments with local vendors in advance. Therefore, the following strict cancellation policy applies to all bookings:",
-      "sameDay": "Same-Day & 24-Hour Cancellations (No-Show): If you cancel your tour on the scheduled day, or less than 24 hours before the agreed start time (Local Egypt Time - EET), no refund will be issued (100% cancellation fee applies).",
-      "advance": "Advance Cancellations (More than 24 Hours): If you cancel your booking more than 24 hours in advance (Local Egypt Time - EET), a refund will be issued, minus a 15% cancellation fee. This fee covers non-refundable transaction processing fees and administrative scheduling costs.",
-      "forceMajeure": "Force Majeure: In the rare event that Moonlight must cancel a tour due to extreme weather, security concerns, or unexpected closure of archaeological sites, a full refund or an alternative date will be offered."
-    },
-    "refunds": {
-      "title": "Refund Processing",
-      "text1": "All approved refunds will be processed back to the original method of payment (via PayPal).",
-      "text2": "Please note that it may take several business days for the refunded amount to reflect in your account, depending on your bank or credit card provider's policies."
-    },
-    "itinerary": {
-      "title": "Itinerary and Route Changes",
-      "text": "Moonlight reserves the right to slightly alter tour itineraries, routes, or timings without prior notice if required by local authorities, traffic conditions, or other operational necessities, ensuring the overall quality of the tour is maintained."
-    },
-    "insurance": {
-      "title": "Travel Insurance and Health",
-      "text1": "Flight delays, sudden illnesses, or personal emergencies occurring within 24 hours of the tour are not exempt from our cancellation policy. We strongly advise guests to purchase comprehensive Travel Insurance to cover such unforeseen events and claim any losses through their insurance provider.",
-      "text2": "Moonlight is not liable for any injuries, illnesses, or loss of personal property that occur during the tours."
-    },
-    "conduct": {
-      "title": "Code of Conduct",
-      "text": "We expect all guests to respect Egyptian laws, cultural norms, and historical monuments. We reserve the right to refuse service or terminate a tour prematurely, without a refund, if a guest's behavior is deemed illegal, highly disruptive, or disrespectful to local heritage."
-    }
+    "lastUpdated": "Last Updated: May 2026",
+    "intro": [
+      "Welcome to Moonlight. By browsing our website, booking a tour, or using our services, you agree to comply with and be bound by the following Terms of Service. Please review them carefully before making any reservations."
+    ],
+    "sections": [
+      {
+        "content": [
+          "the entire trip fare must be paid in cash, and we only accept US dollars, euros, British pounds, and Egyptian pounds. We do not accept coins."
+        ]
+      },
+      {
+        "title": "Itinerary and Route Changes",
+        "content": [
+          "Moonlight reserves the right to slightly alter tour itineraries, routes, or timings without prior notice if required by local authorities, traffic conditions, or other operational necessities, ensuring the overall quality of the tour is maintained."
+        ]
+      },
+      {
+        "title": "Travel Insurance and Health",
+        "content": [
+          "We strongly advise guests to purchase comprehensive Travel Insurance to cover such unforeseen events and claim any losses through their insurance provider.",
+          "Moonlight is not liable for any injuries, illnesses, or loss of personal property that occur during the tours."
+        ]
+      },
+      {
+        "title": "Code of Conduct",
+        "content": [
+          "We expect all guests to respect Egyptian laws, cultural norms, and historical monuments. We reserve the right to refuse service or terminate a tour prematurely, without a refund, if a guest's behavior is deemed illegal, highly disruptive, or disrespectful to local heritage."
+        ]
+      }
+    ]
   },
   "privacy": {
     "title": "Privacy Policy",
-    "description": "Learn how Moonlight collects, uses, and protects your personal information when you inquire about or book tours in Egypt through our website.",
-    "effectiveDate": "Effective Date: March 2026",
+    "description": "Privacy Notice for Moonlight.",
     "keywords": [
       "Moonlight privacy policy",
-      "Egypt tours privacy policy",
-      "tour booking privacy policy",
-      "Moonlight travel privacy",
-      "data protection Egypt tours"
+      "Egypt tours privacy policy"
     ],
-    "intro": "At Moonlight, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Moonlight and how we use it.",
-    "collect": {
-      "title": "Information We Collect",
-      "intro": "We only collect personal information that you voluntarily provide to us when you inquire about our services or book a tour. This may include:",
-      "identification": "Identification Data: Name and nationality.",
-      "contact": "Contact Data: Email address and phone number (WhatsApp).",
-      "travel": "Travel Data: Preferences, dates of travel, and number of guests."
-    },
-    "use": {
-      "title": "How We Use Your Information",
-      "intro": "We use the information we collect in various ways, including to:",
-      "items": [
-        "Provide, operate, and maintain our website.",
-        "Communicate with you to plan and customize your Egyptian tour.",
-        "Send you booking confirmations and essential travel updates.",
-        "Improve your experience on our website."
-      ]
-    },
-    "security": {
-      "title": "Data Security & Sharing",
-      "noSharing": "No Third-Party Sharing: We do not sell, rent, or share your personal information with third parties for marketing purposes.",
-      "providers": "Service Providers: Your data is only shared with essential service providers (e.g., Nile Cruise operators or hotel bookings) when necessary to fulfill your tour reservation.",
-      "protection": "Protection: We implement standard security measures to protect your data from unauthorized access."
-    },
-    "logs": {
-      "title": "Log Files",
-      "text": "Moonlight follows a standard procedure of using log files. These files log visitors when they visit websites. The information collected includes internet protocol (IP) addresses, browser type, and date/time stamps. These are not linked to any information that is personally identifiable."
-    },
-    "rights": {
-      "title": "Your Data Rights",
-      "items": [
-        "Request a copy of the personal data we hold about you.",
-        "Request that we correct any information you believe is inaccurate.",
-        "Request that we delete your personal data after your tour is completed."
-      ]
-    },
-    "consent": {
-      "title": "Consent",
-      "text": "By using our website, you hereby consent to our Privacy Policy and agree to its terms."
-    }
+    "lastUpdated": "Last updated May 19, 2026",
+    "intro": [
+      "This Privacy Notice for Moonlight (\"we,\" \"us,\" or \"our\") describes how and why we might access, collect, store, use, and/or share (\"process\") your personal information when you use our services (\"Services\"), including when you:",
+      "• Visit our website at egyptmoonlighttours.com or any of our websites that links to this Privacy Notice",
+      "• Engage with us in other related ways, including any marketing or events",
+      "Questions or concerns? Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at moonlightegypttours@gmail.com."
+    ],
+    "summaryTitle": "SUMMARY OF KEY POINTS",
+    "summaryIntro": "This summary provides key points from our Privacy Notice, but you can find out more details about any of these topics by finding the section you are looking for below.",
+    "summaryItems": [
+      "What personal information do we process? When you visit, use, or navigate our Services, we may process personal information depending on how you interact with us and the Services.",
+      "Do we process any sensitive personal information? We do not process sensitive personal information.",
+      "Do we collect any information from third parties? We do not collect any information from third parties.",
+      "How do we process your information? We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with the law.",
+      "In what situations and with which parties do we share personal information? We may share information in specific situations and with specific third parties.",
+      "How do we keep your information safe? We have adequate organizational and technical processes and procedures in place to protect your personal information.",
+      "What are your rights? Depending on your geographical location, applicable privacy law may mean you have certain rights regarding your personal information.",
+      "How do you exercise your rights? The easiest way to exercise your rights is by submitting a data subject access request or by contacting us.",
+      "Want to learn more about what we do with any information we collect? Review the Privacy Notice in full."
+    ],
+    "sections": [
+      {
+        "title": "1. WHAT INFORMATION DO WE COLLECT?",
+        "content": [
+          "Personal information you disclose to us",
+          "In short: We collect personal information that you provide to us.",
+          "We collect personal information that you voluntarily provide to us when you register on the Services, express an interest in obtaining information about us or our products and Services, when you participate in activities on the Services, or otherwise when you contact us.",
+          "Personal Information Provided by You. The personal information that we collect depends on the context of your interactions with us and the Services, the choices you make, and the products and features you use. The personal information we collect may include the following:",
+          "• names",
+          "• phone numbers",
+          "• email addresses",
+          "Sensitive Information. We do not process sensitive information.",
+          "Social Media Login Data. We may provide you with the option to register with us using your existing social media account details, like your Facebook, X, or other social media account.",
+          "All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information.",
+          "Google API",
+          "Our use of information received from Google APIs will adhere to the Google API Services User Data Policy, including the Limited Use requirements."
+        ]
+      },
+      {
+        "title": "2. HOW DO WE PROCESS YOUR INFORMATION?",
+        "content": [
+          "In Short: We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with the law.",
+          "We process your personal information for a variety of reasons, depending on how you interact with our Services, including:",
+          "• To facilitate account creation and authentication and otherwise manage user accounts.",
+          "• To save or protect an individual's vital interests."
+        ]
+      },
+      {
+        "title": "3. WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR INFORMATION?",
+        "content": [
+          "In short: We only process your personal information when we believe it is necessary and we have a valid legal reason (i.e., legal basis) to do so under applicable law.",
+          "If you are located in the EU or UK, this section applies to you.",
+          "The General Data Protection Regulation (GDPR) and UK GDPR require us to explain the valid legal bases we rely on in order to process your personal information.",
+          "• Consent.",
+          "• Performance of a Contract.",
+          "• Legal Obligations.",
+          "• Vital Interests.",
+          "If you are located in Canada, this section applies to you.",
+          "We may process your information if you have given us specific permission (i.e., express consent) to use your personal information for a specific purpose, or in situations where your permission can be inferred."
+        ]
+      },
+      {
+        "title": "4. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?",
+        "content": [
+          "In Short: We may share information in specific situations described in this section and/or with the following third parties.",
+          "We may need to share your personal information in the following situations:",
+          "• Business Transfers. We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company."
+        ]
+      },
+      {
+        "title": "5. HOW DO WE HANDLE YOUR SOCIAL LOGINS?",
+        "content": [
+          "In Short: If you choose to register or log in to our Services using a social media account, we may have access to certain information about you.",
+          "Our Services offer you the ability to register and log in using your third-party social media account details. Where you choose to do this, we will receive certain profile information about you from your social media provider."
+        ]
+      },
+      {
+        "title": "6. HOW LONG DO WE KEEP YOUR INFORMATION?",
+        "content": [
+          "In Short: We keep your information for as long as necessary to fulfill the purposes outlined in this Privacy Notice unless otherwise required by law.",
+          "We will only keep your personal information for as long as it is necessary for the purposes set out in this Privacy Notice."
+        ]
+      },
+      {
+        "title": "7. HOW DO WE KEEP YOUR INFORMATION SAFE?",
+        "content": [
+          "In short: We aim to protect your personal information through a system of organizational and technical security measures.",
+          "We have implemented appropriate and reasonable technical and organizational security measures designed to protect the security of any personal information we process. However, no electronic transmission over the Internet can be guaranteed to be 100% secure."
+        ]
+      },
+      {
+        "title": "8. DO WE COLLECT INFORMATION FROM MINORS?",
+        "content": [
+          "In short: We do not knowingly collect data from or market to children under 18 years of age.",
+          "We do not knowingly collect, solicit data from, or market to children under 18 years of age. If you become aware of any data we may have collected from children under age 18, please contact us at moonlightegypttours@gmail.com."
+        ]
+      },
+      {
+        "title": "9. WHAT ARE YOUR PRIVACY RIGHTS?",
+        "content": [
+          "In Short: Depending on your state of residence in the US or in certain regions, you have rights that allow you greater access to and control over your personal information.",
+          "In some regions (like the EEA, UK, Switzerland, and Canada), you have certain rights under applicable data protection laws. These may include the right (i) to request access to and obtain a copy of your personal information; (ii) to request rectification or erasure; (iii) to restrict the processing of your personal information; (iv) if applicable, to data portability.",
+          "We will consider and act upon any request in accordance with applicable data protection laws.",
+          "Withdrawing your consent: If we are relying on your consent to process your personal information, you have the right to withdraw your consent at any time.",
+          "Account Information: If you would at any time like to review or change the information in your account or terminate your account, you can contact us."
+        ]
+      },
+      {
+        "title": "10. CONTROLS FOR DO-NOT-TRACK FEATURES",
+        "content": [
+          "Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track (\"DNT\") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected."
+        ]
+      },
+      {
+        "title": "11. DO WE MAKE UPDATES TO THIS NOTICE?",
+        "content": [
+          "In short: Yes, we will update this notice as necessary to stay compliant with relevant laws.",
+          "We may update this Privacy Notice from time to time. The updated version will be indicated by an updated \"Revised\" date at the top of this Privacy Notice."
+        ]
+      },
+      {
+        "title": "12. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?",
+        "content": [
+          "If you have questions or comments about this notice, you may email us at moonlightegypttours@gmail.com."
+        ]
+      },
+      {
+        "title": "13. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?",
+        "content": [
+          "Based on the applicable laws of your country or state of residence in the US, you may have the right to request access to the personal information we collect from you, details about how we have processed it, correct inaccuracies, or delete your personal information."
+        ]
+      }
+    ]
   },
   "about": {
     "title": "About Moonlight.. Your Guide to the Magic of Egyptian History",
