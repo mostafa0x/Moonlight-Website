@@ -3,8 +3,7 @@ import type { HomeDataType } from "@/shared/global";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 
-export const dynamic = "force-static";
-export const dynamicParams = false;
+
 
 export async function generateMetadata({
   params,
