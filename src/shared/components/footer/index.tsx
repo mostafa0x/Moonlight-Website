@@ -30,7 +30,7 @@ function FooterPage() {
           <h2 id="footer-heading" className="sr-only">Footer</h2>
 
           <h1 className="font-cairo text-center text-4xl font-medium tracking-widest text-[#F2C975] md:text-5xl uppercase">
-            Moonlight | Egypt Premium Tours
+            Moonlight Egypt Tours
           </h1>
         </div>
 
