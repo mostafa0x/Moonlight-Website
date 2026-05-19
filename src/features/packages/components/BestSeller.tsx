@@ -10,8 +10,10 @@ import { useTranslations } from "next-intl";
  * Features a "fiery" aesthetic with glassmorphism, gradients, and subtle animations.
  * Optimized for performance using React.memo and minimal client-side logic.
  */
-function BestSeller() {
+function BestSeller({ id }: { id: string }) {
     const t = useTranslations("home");
+    const isGizaPkg = id === "d0adeacb-ea72-4a82-b05e-bbb5eb90211c"
+
 
     return (
         <div
@@ -25,7 +27,7 @@ function BestSeller() {
                         {t("bestSeller")}
                     </span>
                     <span className="text-orange-500 text-base font-semibold font-cairo leading-none">
-                        1.1k
+                        {isGizaPkg ? "1.1K" : "1.2K"}
                     </span>
                 </div>
             </div>

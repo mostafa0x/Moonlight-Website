@@ -71,28 +71,19 @@ export function useBookingSubmit({ tourId, setShowLoginModal }: UseBookingSubmit
 
       if (response.ok) {
         const result = await response.json();
-        const paymentUrl = result.data?.paymentUrl || result.paymentUrl;
-        
-        if (paymentUrl) {
-          if (typeof window !== "undefined") {
-            localStorage.removeItem("pending_booking_data");
-          }
-          window.location.href = paymentUrl;
-        } else if (result.status === "error" || result.error) {
+
+        if (result.status === "error" || result.error) {
           const errorCode = result.code || result.error || "UNKNOWN_ERROR";
           try {
             setErrorMsg(te(errorCode));
-
           } catch {
-            setErrorMsg(`Backend Error: ${result.message || errorCode}`);
-
+            setErrorMsg(te("UNKNOWN_ERROR"));
           }
+          setLoading(false);
         } else {
-          // Booking is successful but no payment URL was generated (e.g., zero cost or cash on arrival)
           if (typeof window !== "undefined") {
             localStorage.removeItem("pending_booking_data");
           }
-          // Dynamically obtain the current language from the URL pathname to construct correct route
           const currentPath = window.location.pathname;
           const currentLocale = currentPath.split('/')[1] || "en";
           window.location.href = `/${currentLocale}/payment/success`;
@@ -103,37 +94,31 @@ export function useBookingSubmit({ tourId, setShowLoginModal }: UseBookingSubmit
         try {
           errorData = JSON.parse(text);
         } catch (e) {
-          errorData = { code: "UNKNOWN_ERROR", message: text };
-
+          errorData = { code: "UNKNOWN_ERROR" };
         }
 
         const errorCode = errorData?.details?.code || errorData.code || errorData.error || "UNKNOWN_ERROR";
-        const errorMessageRaw = errorData?.details?.message || errorData.message || 'Check console';
-        
+
         // Whitelist of valid keys present in messages/*.json under bookingModal.backendErrors
         const knownErrors = [
-          "VALIDATION_ERROR", 
-          "AUTH_ERROR", 
-          "DUPLICATE_BOOKING", 
+          "VALIDATION_ERROR",
+          "AUTH_ERROR",
+          "DUPLICATE_BOOKING",
           "INTERNAL_SERVER_ERROR",
-          "PAYMENT_URL_MISSING"
+          "PAYMENT_URL_MISSING",
+          "UNKNOWN_ERROR"
         ];
-        
+
         if (knownErrors.includes(errorCode)) {
           setErrorMsg(te(errorCode as any));
-
         } else {
-          // Temporarily mapping unknown errors to the screen for debug visibility
-          setErrorMsg(`${errorCode}: ${errorMessageRaw}`);
-
+          setErrorMsg(te("UNKNOWN_ERROR"));
         }
+        setLoading(false);
       }
     } catch (err) {
       setErrorMsg(te("INTERNAL_SERVER_ERROR"));
-
-    } finally {
       setLoading(false);
-
     }
   };
 

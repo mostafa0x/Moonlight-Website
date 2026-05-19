@@ -35,7 +35,7 @@ function PackageCard({ pkg, priority = false }: PackageCardProps) {
       aria-label={packageName}
     >
       {isBestSeller &&
-        <BestSeller />
+        <BestSeller id={pkg.packageId} />
       }
       <Image
         src={imageSrc}

@@ -26,7 +26,7 @@ export const usePriceCalculation = (
         selectedDestinations.push(groupValue);
       }
     });
-
+    const promoCodeUpper = values.promoCode.toLocaleUpperCase()
     const body = {
       packageId: pkg.packageId,
       adultsNumber: values.adultsNumber,
@@ -34,10 +34,10 @@ export const usePriceCalculation = (
       tourguideLanguage: values.tourguideLanguage,
       selectedDestinations,
       pickupLocation: values.pickupLocation || "",
-      promoCode: values.promoCode || "",
+      promoCode: promoCodeUpper || "",
       paymentPreference: values.paymentPreference || "deposit",
     };
-    
+
 
     try {
       const response = await fetch("/api/bookings/calculate", {
@@ -48,13 +48,13 @@ export const usePriceCalculation = (
 
       if (response.ok) {
         const result = await response.json();
-        
+
         if (result.data) {
           setValue("totalPrice", result.data.totalAmount || 0);
           setValue("dueAmount", result.data.dueAmount || 0);
           setValue("payNowAmount", result.data.payNowAmount || 0);
         }
-        
+
         // Extract promoStatus from either root level or data object
         const finalPromoStatus = result.promoStatus ?? result.data?.promoStatus ?? null;
         setValue("promoStatus", finalPromoStatus);
@@ -70,7 +70,7 @@ export const usePriceCalculation = (
         }
       }
     } catch (error) {
-      
+
     } finally {
       setValue("isCalculatingPrice", false);
     }
@@ -93,21 +93,21 @@ export const usePriceCalculation = (
     ];
 
     const subscription = watch((value, { name, type }) => {
-      
+
       // If name is undefined, it's a bulk update (like reset), so we should calculate
       // Otherwise, only recalculate if the changed field is in our list
       const shouldTrigger = !name || triggerFields.includes(name);
-      
+
       if (!shouldTrigger) return;
 
       // Prevent infinite loops if we are already calculating
       if (name === "isCalculatingPrice") return;
 
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
-      
+
       // Show loading state immediately
       setTimeout(() => setValue("isCalculatingPrice", true), 0);
-      
+
       timeoutRef.current = setTimeout(() => {
         calculatePrice();
       }, 500);

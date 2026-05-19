@@ -108,7 +108,7 @@ export async function BookingCard({ booking, locale }: BookingCardProps) {
               </div>
             </div>
 
-            <div className="flex flex-col gap-1.5">
+            {/* <div className="flex flex-col gap-1.5">
               <span className="text-zinc-500 text-xs font-semibold uppercase tracking-wider">{t("paymentType")}</span>
               <div className="flex items-center gap-2.5">
                 <div className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center border border-white/10 shadow-inner">
@@ -122,7 +122,7 @@ export async function BookingCard({ booking, locale }: BookingCardProps) {
                   {booking.paymentType ? t(`paymentTypes.${booking.paymentType.toLowerCase()}` as any) : "N/A"}
                 </span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 

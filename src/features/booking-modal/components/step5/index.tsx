@@ -10,9 +10,9 @@ function Step5({ pkg }: { pkg: any }) {
       <div className="mt-2">
         <PromoCode />
       </div>
-      <div className="mt-2.75">
+      {/* <div className="mt-2.75">
         <PaymentMethod />
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -45,7 +45,7 @@ function Step4() {
         />
         <div className="md:col-span-2">
           <CustomInput
-            label={t("phoneNumber")}
+            label={t("Whatsapp number")}
             name="customerPhone"
             type="tel"
             placeholder={t("placeholders.phone")}
