@@ -507,13 +507,9 @@
         "title": "¿Por qué elegirnos?",
         "content": "Ofrecemos el equilibrio perfecto: una experiencia de viaje excepcional en el corazón de Egipto a precios inmejorables. Su viaje con nosotros es más que una visita; es un viaje en el tiempo guiado por expertos de élite."
       },
-      "cancellationPolicy": {
-        "title": "Política de Cancelación",
-        "content": "1. Las cancelaciones realizadas más de 5 días antes de la fecha del tour son elegibles para un reembolso, sujeto a tarifas estándar.\n\n2. Más de 5 días antes: Reembolsable. 5 días o menos: No reembolsable."
-      },
       "whatYouShouldKnow": {
         "title": "Lo que debes saber",
-        "content": "Recomendamos traer ropa cómoda, zapatos para caminar, protector solar, un sombrero y sus documentos de viaje."
+        "content": "La tarifa completa del viaje debe pagarse en efectivo, y solo aceptamos dólares estadounidenses, euros, libras esterlinas y libras egipcias. No aceptamos monedas."
       }
     },
     "faqTitle": "Preguntas Frecuentes",
@@ -521,10 +517,6 @@
       "customItinerary": {
         "question": "¿Se puede personalizar el itinerario?",
         "answer": "¡Absolutamente! Todos nuestros viajes son completamente flexibles. Puede ajustar la duración, hoteles, actividades o agregar experiencias especiales."
-      },
-      "deposit": {
-        "question": "¿Necesito pagar un depósito para confirmar la reserva?",
-        "answer": "En la mayoría de los casos, solo se requiere un pequeño depósito. El saldo restante se puede pagar antes de su llegada."
       },
       "whatToBring": {
         "question": "¿Qué debo llevar conmigo al viaje?",

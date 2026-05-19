@@ -16,10 +16,6 @@ export default async function HighlightsSection({ locale }: { locale: string }) 
       content: t("highlights.whyChooseUs.content"),
     },
     {
-      title: t("highlights.cancellationPolicy.title"),
-      content: t("highlights.cancellationPolicy.content"),
-    },
-    {
       title: t("highlights.whatYouShouldKnow.title"),
       content: t("highlights.whatYouShouldKnow.content"),
     },

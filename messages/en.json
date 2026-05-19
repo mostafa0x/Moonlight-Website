@@ -516,13 +516,9 @@
         "title": "Why Choose Us?",
         "content": "We deliver the perfect balance: an exceptional, high-quality travel experience in the heart of Egypt at unbeatable prices. Your journey with us is more than just a visit; it's a voyage through time led by elite, expert guides who bring history to life. Most importantly, we guarantee complete flexibility throughout your trip, allowing you to adjust your plans and explore at your own pace without any hassle. With us, your adventure is perfectly tailored to your comfort and your budget!"
       },
-      "cancellationPolicy": {
-        "title": "Cancellation Policy",
-        "content": "1. Cancellations made more than 5 days prior to the tour date are eligible for a refund, subject to a standard cancellation fee. Bookings canceled within 5 days of departure are fully non-refundable.\n\n2. More than 5 Days Prior: Refundable (subject to standard cancellation fees). 5 Days or Less Prior: Fully non-refundable."
-      },
       "whatYouShouldKnow": {
         "title": "What you should know",
-        "content": "We recommend bringing comfortable clothing, walking shoes, sunscreen, a hat, and your travel documents."
+        "content": "the entire trip fare must be paid in cash, and we only accept US dollars, euros, British pounds, and Egyptian pounds. We do not accept coins."
       }
     },
     "faqTitle": "Frequently Asked Questions",
@@ -530,10 +526,6 @@
       "customItinerary": {
         "question": "Can the itinerary be customized?",
         "answer": "Absolutely! All our trips are fully flexible. You can adjust the duration, hotels, activities, or add special experiences to match your interests and travel style."
-      },
-      "deposit": {
-        "question": "Do I need to pay a deposit to confirm the booking?",
-        "answer": "In most cases, only a small deposit is required to secure your reservation. The remaining balance can be paid before your arrival. We'll provide full payment details once you confirm your trip."
       },
       "whatToBring": {
         "question": "What should I bring with me on the trip?",

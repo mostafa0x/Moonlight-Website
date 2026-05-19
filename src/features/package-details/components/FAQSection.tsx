@@ -16,10 +16,6 @@ export default async function FAQSection({ locale }: { locale: string }) {
       answer: t("faq.customItinerary.answer"),
     },
     {
-      question: t("faq.deposit.question"),
-      answer: t("faq.deposit.answer"),
-    },
-    {
       question: t("faq.whatToBring.question"),
       answer: t("faq.whatToBring.answer"),
     },
