@@ -18,9 +18,9 @@ export default function TestimonialsSection() {
     const [swiper, setSwiper] = useState<any>(null);
     return (
         <div className="w-full h-full flex flex-col items-center justify-center px-10 md:px-10 font-jakarta select-none">
-            <div className="w-full max-w-275 max-h-[90vh] md:max-h-[85vh] bg-[#121214] rounded-4xl border border-white/10 backdrop-blur-sm flex flex-col overflow-hidden">
+            <div className="w-full max-w-275 bg-[#121214] rounded-4xl border border-white/10 backdrop-blur-sm flex flex-col overflow-hidden">
                 {/* Scrollable Content Area */}
-                <div className="flex-1 overflow-y-auto scrollbar-hide px-5 pt-4 md:px-8 md:pt-4 flex flex-col gap-4 md:gap-6">
+                <div className="flex-1 px-5 pt-4 pb-5 md:px-8 md:pt-4 md:pb-8 flex flex-col gap-4 md:gap-6">
                     {/* Header Section */}
                     <div className="flex flex-col items-center text-center gap-1 md:gap-1.5">
                         <h2 className="text-lg md:text-2xl font-bold text-neutral-50">
@@ -36,14 +36,16 @@ export default function TestimonialsSection() {
                     {/* Content Box */}
                     <div className="flex flex-col md:flex-row items-stretch w-full min-h-0 gap-2">
                         {/* Visual - High-Quality Image */}
-                        <div className="relative flex-1 min-h-75 md:min-h-90   md:h-full rounded-3xl hidden md:block overflow-hidden">
-                            <Image
-                                src="/imgs/travelers-at-the-pyramids.webp"
-                                alt="Experience Egypt"
-                                fill
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
-                                className="object-cover"
-                            />
+                        <div className="relative flex-1 min-h-75 md:min-h-90 hidden md:block">
+                            <div className="absolute inset-0 rounded-3xl overflow-hidden">
+                                <Image
+                                    src="/imgs/travelers-at-the-pyramids.webp"
+                                    alt="Experience Egypt"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+                                    className="object-cover"
+                                />
+                            </div>
                         </div>
                         {/* Testimonial Slider Card */}
                         <div className="relative flex-1 min-h-65 md:min-h-80 bg-zinc-800 rounded-2xl md:rounded-3xl p-5 md:p-8 shadow-lg overflow-hidden flex flex-col">
