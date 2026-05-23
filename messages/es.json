@@ -537,7 +537,8 @@
     "scanCode": "Escanea este código con tu guía al momento de la recogida",
     "errorTitle": "Boleto No Encontrado",
     "errorDescription": "No pudimos encontrar el boleto que estás buscando. Por favor, verifica la URL o tu perfil.",
-    "backToProfile": "Volver al Perfil"
+    "backToProfile": "Volver al Perfil",
+    "defaultPickupLocation": "Vestíbulo de su hotel"
   },
   "packageDetails": {
     "notFound": "Paquete No Encontrado",

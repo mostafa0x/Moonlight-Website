@@ -66,6 +66,8 @@ export async function TicketCard({ data, referenceId, locale }: TicketCardProps)
             <span className="text-white text-sm font-medium font-cairo">{data.tour_date}</span>
           </div>
           <div className="flex flex-col gap-1 text-right">
+            <span className="text-zinc-400 text-sm font-bold tracking-wider font-cairo uppercase">{t("totalAmount")}</span>
+            <span className="text-white text-sm font-medium font-cairo">${data.total_amount}</span>
           </div>
           <div className="flex flex-col gap-1">
             <span className="text-zinc-400 text-sm font-bold tracking-wider font-cairo uppercase">{t("guests")}</span>
@@ -79,7 +81,7 @@ export async function TicketCard({ data, referenceId, locale }: TicketCardProps)
           <div className="flex items-center gap-2">
             <img src="/icons/location-dot.svg" alt="" className="w-4 h-4" />
             <span className="text-white text-sm font-medium font-cairo truncate">
-              {data.pickup_location || "Lobby of your hotel"}
+              {data.pickup_location || t("defaultPickupLocation")}
             </span>
           </div>
         </div>

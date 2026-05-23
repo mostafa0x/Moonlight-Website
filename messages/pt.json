@@ -537,7 +537,8 @@
     "scanCode": "Digitalize este código com seu guia na retirada",
     "errorTitle": "Bilhete Não Encontrado",
     "errorDescription": "Não conseguimos encontrar o bilhete que você está procurando. Por favor, verifique a URL ou seu perfil.",
-    "backToProfile": "Voltar ao Perfil"
+    "backToProfile": "Voltar ao Perfil",
+    "defaultPickupLocation": "Saguão do seu hotel"
   },
   "packageDetails": {
     "notFound": "Pacote Não Encontrado",

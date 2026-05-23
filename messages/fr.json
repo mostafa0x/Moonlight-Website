@@ -537,7 +537,8 @@
     "scanCode": "Scannez ce code avec votre guide à la prise en charge",
     "errorTitle": "Billet Introuvable",
     "errorDescription": "Nous n'avons pas pu trouver le billet que vous recherchez. Veuillez vérifier l'URL ou votre profil.",
-    "backToProfile": "Retour au Profil"
+    "backToProfile": "Retour au Profil",
+    "defaultPickupLocation": "Hall de votre hôtel"
   },
   "packageDetails": {
     "notFound": "Package Non Trouvé",

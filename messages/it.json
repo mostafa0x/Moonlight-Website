@@ -537,7 +537,8 @@
     "scanCode": "Scansiona questo codice con la tua guida al ritiro",
     "errorTitle": "Biglietto Non Trovato",
     "errorDescription": "Non siamo riusciti a trovare il biglietto che stai cercando. Controlla l'URL o il tuo profilo.",
-    "backToProfile": "Torna al Profilo"
+    "backToProfile": "Torna al Profilo",
+    "defaultPickupLocation": "Hall del tuo hotel"
   },
   "packageDetails": {
     "notFound": "Pacchetto Non Trovato",
