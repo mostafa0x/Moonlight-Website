@@ -13,6 +13,7 @@ interface PackageInfoProps {
 
 export default async function PackageInfo({ pkg, locale }: PackageInfoProps) {
   const t = await getTranslations({ locale, namespace: "packageDetails" });
+  const is2Hours = pkg.packageId === "e50e5b53-f3a5-42ef-9150-1421f250227d" ? 2 : 8
 
   return (
     <div className="mb-4 md:mb-6">
@@ -67,7 +68,7 @@ export default async function PackageInfo({ pkg, locale }: PackageInfoProps) {
               {t("duration")}
             </span>
             <span className="text-white text-sm md:text-base font-bold font-cairo leading-tight">
-              {t("hours")}
+              {is2Hours + " " + t("hours")}
             </span>
           </div>
         </div>

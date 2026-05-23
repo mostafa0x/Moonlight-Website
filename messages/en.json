@@ -586,7 +586,7 @@
     "start": "Hotel Pickup",
     "end": "Hotel Drop-off",
     "duration": "Duration",
-    "hours": "8 Hours",
+    "hours": "Hours",
     "groupSize": "Group Size",
     "persons": "Persons",
     "tourType": "Tour Type",
