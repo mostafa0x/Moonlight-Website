@@ -97,13 +97,20 @@ export function useBookingSubmit({ tourId, setShowLoginModal }: UseBookingSubmit
           errorData = { code: "UNKNOWN_ERROR" };
         }
 
-        const errorCode = errorData?.details?.code || errorData.code || errorData.error || "UNKNOWN_ERROR";
+        const errorCode = errorData?.details?.code || errorData?.details?.error || errorData.code || errorData.error || "UNKNOWN_ERROR";
+        console.log("--- booking-submit debug ---", {
+          text,
+          errorData,
+          errorCode
+        });
 
         // Whitelist of valid keys present in messages/*.json under bookingModal.backendErrors
         const knownErrors = [
           "VALIDATION_ERROR",
           "AUTH_ERROR",
           "DUPLICATE_BOOKING",
+          "USER_CAPACITY_LIMIT",
+          "GLOBAL_CAPACITY_LIMIT",
           "INTERNAL_SERVER_ERROR",
           "PAYMENT_URL_MISSING",
           "UNKNOWN_ERROR"

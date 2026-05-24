@@ -349,6 +349,8 @@
       "VALIDATION_ERROR": "A data do tour deve ser pelo menos 1 dia no futuro (hora do Cairo).",
       "AUTH_ERROR": "A sua sessão expirou ou é inválida. Por favor, faça login novamente.",
       "DUPLICATE_BOOKING": "Esta reserva já foi submetida.",
+      "USER_CAPACITY_LIMIT": "Não há tours disponíveis para este dia.",
+      "GLOBAL_CAPACITY_LIMIT": "Não há tours disponíveis para este dia.",
       "INTERNAL_SERVER_ERROR": "Ocorreu um erro no servidor. Por favor, tente novamente mais tarde.",
       "UNKNOWN_ERROR": "Ocorreu um erro inesperado. Por favor, tente novamente.",
       "PAYMENT_URL_MISSING": "Não foi possível gerar um link de pagamento. Por favor, tente novamente."
