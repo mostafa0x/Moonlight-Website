@@ -591,6 +591,7 @@
     "tourType": "Type de Tour",
     "privateTour": "Tour Privé",
     "morePeopleLessPrice": "Plus de monde, prix réduit",
+    "sameDayBookingNote": "Vous pouvez réserver ce circuit avec tout autre circuit le même jour.",
     "priceVaries": "Le prix varie selon la taille du groupe",
     "bookNow": "Réserver",
     "highlightsTitle": "Points Forts",

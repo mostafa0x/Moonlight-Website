@@ -598,6 +598,7 @@
     "tourType": "Tour Type",
     "privateTour": "Private Tour",
     "morePeopleLessPrice": "More people, less price",
+    "sameDayBookingNote": "You can book this tour with any other tour on the same day.",
     "priceVaries": "Price varies with group size",
     "bookNow": "Book Now",
     "highlightsTitle": "Highlights",

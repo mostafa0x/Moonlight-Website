@@ -127,6 +127,27 @@ export default async function PackageInfo({ pkg, locale }: PackageInfoProps) {
           </div>
         </div>
       </div>
+
+      {/* Same Day Booking Note */}
+      <div className="mt-4 flex items-center gap-2 text-stone-300 text-xs md:text-sm font-cairo">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#F2C975"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="w-4 h-4 shrink-0 text-[#F2C975]"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 16v-4" />
+          <path d="M12 8h.01" />
+        </svg>
+        <span className="leading-tight">{t("sameDayBookingNote")}</span>
+      </div>
+
     </div>
   );
 }
