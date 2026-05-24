@@ -33,7 +33,7 @@ const StepRenderer = ({ step, pkg, hasCustomizations, onLocationChange }: StepRe
     case 1:
       return (
         <div className={`${standardPadding} ${containerClass}`}>
-          <Step2 onLocationChange={onLocationChange} />
+          <Step2 onLocationChange={onLocationChange} packageId={pkg.packageId} />
         </div>
       );
     case 2:

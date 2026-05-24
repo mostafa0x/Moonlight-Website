@@ -13,7 +13,13 @@ import { useTranslations } from "next-intl";
  * - Accessibility: Uses semantic h2 for the travelers title and ensures consistent label hierarchy.
  * - Bundle Size: Removed unused imports (SelectDestinations).
  */
-function Step2({ onLocationChange }: { onLocationChange?: (overrides?: any) => void }) {
+function Step2({ 
+  onLocationChange,
+  packageId
+}: { 
+  onLocationChange?: (overrides?: any) => void;
+  packageId?: string;
+}) {
   const t = useTranslations("bookingModal.step2");
 
   return (
@@ -32,7 +38,7 @@ function Step2({ onLocationChange }: { onLocationChange?: (overrides?: any) => v
         </div>
 
         {/* Individual logistic configuration units */}
-        <TourLanguageSelector />
+        {packageId !== "e50e5b53-f3a5-42ef-9150-1421f250227d" && <TourLanguageSelector />}
         
         <PickLocation
           name="pickupLocation"
