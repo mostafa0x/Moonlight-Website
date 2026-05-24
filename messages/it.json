@@ -357,7 +357,7 @@
       "success": {
         "title": "Prenotazione Confermata",
         "subtitle": "Benvenuti in un Viaggio Indimenticabile",
-        "description": "La tua prenotazione è stata elaborata con successo. Riceverai a breve un'e-mail con tutti i dettagli.",
+        "description": "Grazie! Abbiamo ricevuto i tuoi dati. Ti preghiamo di notare che la tua prenotazione è attualmente in fase di revisione e non è ancora confermata. Ti invieremo un'e-mail con la conferma finale non appena sarà elaborata.",
         "button": "Torna alla Home"
       },
       "failure": {

@@ -366,7 +366,7 @@
       "success": {
         "title": "Booking Confirmed",
         "subtitle": "Welcome to an Unforgettable Journey",
-        "description": "Your booking is successfully processed. You will receive an email with all the details shortly.",
+        "description": "Thank you! We have received your details. Please note that your booking is currently under review and not yet confirmed. We will email you the final confirmation as soon as it is processed.",
         "button": "Back to Home"
       },
       "failure": {

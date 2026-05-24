@@ -357,7 +357,7 @@
       "success": {
         "title": "Réservation Confirmée",
         "subtitle": "Bienvenue dans un Voyage Inoubliable",
-        "description": "Votre réservation a été traitée avec succès. Vous recevrez un e-mail avec tous les détails sous peu.",
+        "description": "Merci ! Nous avons bien reçu vos informations. Veuillez noter que votre réservation est actuellement en cours d'examen et n'est pas encore confirmée. Nous vous enverrons un e-mail avec la confirmation finale dès qu'elle sera traitée.",
         "button": "Retour à l'accueil"
       },
       "failure": {

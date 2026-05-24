@@ -357,7 +357,7 @@
       "success": {
         "title": "Reserva Confirmada",
         "subtitle": "Bem-vindo a uma Viagem Inesquecível",
-        "description": "A sua reserva foi processada com sucesso. Receberá um e-mail com todos os detalhes em breve.",
+        "description": "Obrigado! Recebemos os seus dados. Por favor, note que a sua reserva está atualmente em análise e ainda não está confirmada. Enviaremos um e-mail com a confirmação final assim que for processada.",
         "button": "Voltar ao Início"
       },
       "failure": {
