@@ -98,11 +98,11 @@ export function useBookingSubmit({ tourId, setShowLoginModal }: UseBookingSubmit
         }
 
         const errorCode = errorData?.details?.code || errorData?.details?.error || errorData.code || errorData.error || "UNKNOWN_ERROR";
-        console.log("--- booking-submit debug ---", {
-          text,
-          errorData,
-          errorCode
-        });
+        // console.log("--- booking-submit debug ---", {
+        //   text,
+        //   errorData,
+        //   errorCode
+        // });
 
         // Whitelist of valid keys present in messages/*.json under bookingModal.backendErrors
         const knownErrors = [
