@@ -540,6 +540,9 @@
     "errorTitle": "Biglietto Non Trovato",
     "errorDescription": "Non siamo riusciti a trovare il biglietto che stai cercando. Controlla l'URL o il tuo profilo.",
     "backToProfile": "Torna al Profilo",
+    "cashOnly": "Solo contanti: L'intera tariffa deve essere pagata in contanti.",
+    "acceptedCurrencies": "Valute accettate: USD, EUR, GBP e EGP (Solo banconote, no monete).",
+    "keepTicket": "Biglietto: Si prega di conservare questo biglietto per presentarlo come prova dell'avvenuta prenotazione.",
     "defaultPickupLocation": "Hall del tuo hotel"
   },
   "packageDetails": {

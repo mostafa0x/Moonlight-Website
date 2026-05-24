@@ -540,6 +540,9 @@
     "errorTitle": "Boleto No Encontrado",
     "errorDescription": "No pudimos encontrar el boleto que estás buscando. Por favor, verifica la URL o tu perfil.",
     "backToProfile": "Volver al Perfil",
+    "cashOnly": "Solo efectivo: La tarifa completa debe pagarse en efectivo.",
+    "acceptedCurrencies": "Monedas aceptadas: USD, EUR, GBP y EGP (Solo billetes, no se aceptan monedas).",
+    "keepTicket": "Boleto: Conserve este boleto para presentarlo como prueba de su reserva exitosa.",
     "defaultPickupLocation": "Vestíbulo de su hotel"
   },
   "packageDetails": {

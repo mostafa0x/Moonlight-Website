@@ -86,7 +86,24 @@ export async function TicketCard({ data, referenceId, locale }: TicketCardProps)
           </div>
         </div>
 
+        {/* Dashed Separator */}
+        <div className="relative z-10 border-t border-dashed border-white/10 my-2" />
 
+        {/* Payment Terms & Instructions */}
+        <div className="relative z-10 space-y-3 text-xs font-cairo text-zinc-300 leading-relaxed">
+          <p className="flex items-start gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#F2C975] mt-1.5 shrink-0" />
+            <span>{t("cashOnly")}</span>
+          </p>
+          <p className="flex items-start gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#F2C975] mt-1.5 shrink-0" />
+            <span>{t("acceptedCurrencies")}</span>
+          </p>
+          <p className="flex items-start gap-2 pt-2 border-t border-white/5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#F2C975] mt-1.5 shrink-0" />
+            <span>{t("keepTicket")}</span>
+          </p>
+        </div>
 
       </div>
     </div>

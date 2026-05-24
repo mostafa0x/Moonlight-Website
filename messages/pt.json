@@ -540,6 +540,9 @@
     "errorTitle": "Bilhete Não Encontrado",
     "errorDescription": "Não conseguimos encontrar o bilhete que você está procurando. Por favor, verifique a URL ou seu perfil.",
     "backToProfile": "Voltar ao Perfil",
+    "cashOnly": "Apenas dinheiro: A tarifa total deve ser paga em dinheiro.",
+    "acceptedCurrencies": "Moedas aceitas: USD, EUR, GBP e EGP (Apenas notas, sem moedas).",
+    "keepTicket": "Bilhete: Por favor, guarde este bilhete para apresentá-lo como comprovante de sua reserva bem-sucedida.",
     "defaultPickupLocation": "Saguão do seu hotel"
   },
   "packageDetails": {

@@ -540,6 +540,9 @@
     "errorTitle": "Billet Introuvable",
     "errorDescription": "Nous n'avons pas pu trouver le billet que vous recherchez. Veuillez vérifier l'URL ou votre profil.",
     "backToProfile": "Retour au Profil",
+    "cashOnly": "Espèces uniquement : L'intégralité du prix doit être payée en espèces.",
+    "acceptedCurrencies": "Devises acceptées : USD, EUR, GBP et EGP (Billets uniquement, pas de pièces).",
+    "keepTicket": "Billet : Veuillez conserver ce billet pour le présenter comme preuve de votre réservation réussie.",
     "defaultPickupLocation": "Hall de votre hôtel"
   },
   "packageDetails": {

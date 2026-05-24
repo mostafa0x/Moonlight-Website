@@ -549,6 +549,9 @@
     "errorTitle": "Ticket Not Found",
     "errorDescription": "We couldn't find the ticket you're looking for. Please check the URL or your profile.",
     "backToProfile": "Back to Profile",
+    "cashOnly": "Cash Only: The entire fare must be paid in cash.",
+    "acceptedCurrencies": "Accepted Currencies: USD, EUR, GBP, and EGP (Banknotes only, no coins).",
+    "keepTicket": "Ticket: Please keep this ticket to present it as proof of your successful booking.",
     "defaultPickupLocation": "Lobby of your hotel"
   },
   "packageDetails": {
