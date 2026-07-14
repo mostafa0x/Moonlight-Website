@@ -1,100 +1,403 @@
+# ✨ Moonlight Website
+
 <div align="center">
-  <h1>🌙 Moonlight Website</h1>
-  <p>A comprehensive tourism booking platform and modern admin dashboard built with the latest web technologies to deliver an ultra-fast, seamless user experience.</p>
+
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat-square&logo=tailwind-css&logoColor=white)
+
+**منصة ويب حديثة وأنيقة لحجز الرحلات والسياحة مع لوحة تحكم إدارية متقدمة**
+
+[🌐 زيارة الموقع](https://moonlight-website-new-delta.vercel.app) • [🐛 الإبلاغ عن مشاكل](https://github.com/mostafa0x/Moonlight-Website/issues) • [💪 المساهمة](CONTRIBUTING.md)
+
 </div>
 
 ---
 
-## 🚀 Key Features
+## 📋 المحتويات
 
-- **Complete Booking System**: A user-friendly interface for booking tours and customizing travel packages.
-- **Admin Dashboard**: Full management of bookings and tickets with secure authentication and real-time updates (Server-Side Rendering).
-- **Internationalization (i18n)**: Full support for multiple languages and routing using `next-intl`.
-- **Promo Codes System**: Instant validation of discount codes and dynamic price calculation.
-- **Modern & Interactive UI**: 
-  - Automatic support for Light/Dark mode.
-  - Smooth scrolling effects using `Lenis`.
-  - High-performance professional image galleries using `Swiper`.
-- **High Performance**: Built on Next.js (App Router) maximizing the use of Server Components for improved SEO and loading speeds.
+- [📖 نظرة عامة](#-نظرة-عامة)
+- [✨ الميزات الرئيسية](#-الميزات-الرئيسية)
+- [🛠️ المتطلبات](#️-المتطلبات)
+- [📦 التثبيت والإعداد](#-التثبيت-والإعداد)
+- [🚀 الاستخدام](#-الاستخدام)
+- [📁 بنية المشروع](#-بنية-المشروع)
+- [🎨 المكتبات والتقنيات المستخدمة](#-المكتبات-والتقنيات-المستخدمة)
+- [🚀 النشر والتوزيع](#-النشر-والتوزيع)
+- [🤝 المساهمة](#-المساهمة)
+- [📄 الترخيص](#-الترخيص)
+- [📞 التواصل](#-التواصل)
 
-## 🛠 Tech Stack
+---
 
-### Core Framework
-- **Next.js 15+** (App Router & Server Components)
-- **React 19**
-- **TypeScript**
+## 📖 نظرة عامة
 
-### Database & Authentication
-- **Supabase** (Database & Auth)
+**Moonlight Website** هو منصة ويب متكاملة لحجز الرحلات والعطلات السياحية مع لوحة تحكم إدارية قوية. يجمع المشروع بين أحدث تقنيات الويب لتوفير تجربة مستخدم سلسة وسريعة جداً.
 
-### Styling & UI
-- **Tailwind CSS v4**
-- **Lenis** (Smooth Scrolling)
-- **Swiper** (Carousels & Galleries)
+### 🎯 الأهداف
+- ✅ توفير منصة احترافية لحجز الرحلات والعطلات
+- ✅ لوحة تحكم إدارية متقدمة مع مصادقة آمنة
+- ✅ دعم متعدد اللغات والمناطق الجغرافية
+- ✅ أداء عالي جداً وسرعة استجابة فائقة
+- ✅ تجربة مستخدم استثنائية على جميع الأجهزة
 
-### State Management & Forms
-- **React Query (TanStack)**
-- **React Hook Form** + **Zod** (Form Management & Validation)
+---
 
-### Other Tools
-- **Next-Intl** (Internationalization)
-- **Resend** (Email Service)
+## ✨ الميزات الرئيسية
 
-## 📂 Project Structure
+### 🎫 نظام الحجز الكامل
+- 📝 واجهة سهلة الاستخدام لحجز الرحلات
+- 🎯 تخصيص وتعديل حزم السفر
+- 💳 نظام دفع آمن وموثوق
+- 📧 تأكيد الحجز عبر البريد الإلكتروني
 
-The project relies on an organized architecture to separate features from shared components, making it scalable and easy to maintain:
+### 🛡️ لوحة التحكم الإدارية
+- 👨‍💼 إدارة كاملة للحجوزات والتذاكر
+- 🔐 مصادقة آمنة (SSR Authentication)
+- ⚡ تحديثات فورية في الوقت الفعلي
+- 📊 تقارير وإحصائيات مفصلة
 
-```text
-├── public/             # Static assets (Images, Icons)
-├── messages/           # Translation files for different languages (i18n)
-└── src/
-    ├── app/            # Main application routes (App Router)
-    ├── features/       # Project-specific features (Components, Hooks, Services)
-    ├── i18n/           # Internationalization routing & configuration
-    └── shared/         # Shared components and utilities (UI Components, Utils)
+### 🌐 دعم متعدد اللغات
+- 🗣️ دعم كامل للغات المتعددة
+- 🌍 توجيه ديناميكي حسب اللغة
+- 🔤 ترجمة احترافية لكل المحتوى
+
+### 💰 نظام كود الخصم
+- ✅ التحقق الفوري من كود الخصم
+- 🧮 حساب السعر ديناميكي
+- 📉 تطبيق الخصم التلقائي
+
+### 🎨 واجهة حديثة وتفاعلية
+- 🌓 دعم الوضع الليلي والفاتح تلقائياً
+- ✨ رسوم متحركة سلسة (Lenis)
+- 🖼️ معارض صور احترافية (Swiper)
+- 📱 تصميم مستجيب تماماً
+
+### ⚡ أداء عالي جداً
+- 🚀 بناء على Next.js مع Server Components
+- 🔄 استدعاءات الخادم محسّنة
+- 📈 تحسين محركات البحث (SEO)
+- 🗺️ خريطة الموقع التلقائية
+
+---
+
+## 🛠️ المتطلبات
+
+قبل البدء، تأكد من توفر المتطلبات التالية:
+
+- **Node.js** إصدار 18 أو أحدث
+- **npm** أو **yarn** أو **pnpm**
+- **حساب Supabase** (لقاعدة البيانات والمصادقة)
+
+### التحقق من الإصدارات المثبتة:
+
+```bash
+node --version    # v18+
+npm --version     # 8+
 ```
 
-## ⚙️ Prerequisites
+---
 
-Before running the project, ensure you have the following installed:
-- Node.js (Version 18 or higher)
-- npm, yarn, or pnpm
-- A [Supabase](https://supabase.com) account to set up the database and authentication.
+## 📦 التثبيت والإعداد
 
-## 💻 Getting Started
+### 1️⃣ استنساخ المشروع
 
-1. **Clone the repository:**
+```bash
+git clone https://github.com/mostafa0x/Moonlight-Website.git
+cd Moonlight-Website
+```
+
+### 2️⃣ تثبيت المكتبات
+
+```bash
+npm install
+# أو باستخدام yarn
+yarn install
+# أو باستخدام pnpm
+pnpm install
+```
+
+### 3️⃣ إعداد متغيرات البيئة
+
+أنشئ ملف `.env.local` في جذر المشروع:
+
+```env
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+# Resend (خدمة البريد الإلكتروني)
+RESEND_API_KEY=your_resend_api_key
+
+# متغيرات أخرى (حسب احتياجات مشروعك)
+```
+
+### 4️⃣ التحقق من الإعداد
+
+```bash
+npm run dev
+```
+
+---
+
+## 🚀 الاستخدام
+
+### تشغيل بيئة التطوير
+
+```bash
+npm run dev
+```
+
+سيتم تشغيل التطبيق على `http://localhost:3000`
+
+### بناء للإنتاج
+
+```bash
+npm run build
+```
+
+سيقوم النصق بـ:
+- ✅ بناء التطبيق
+- ✅ إنشاء خريطة الموقع (Sitemap) تلقائياً
+- ✅ تحسين الملفات للإنتاج
+
+### تشغيل خادم الإنتاج
+
+```bash
+npm start
+```
+
+### أوامر أخرى مفيدة
+
+| الأمر | الوصف |
+|------|-------|
+| `npm run dev` | تشغيل بيئة التطوير |
+| `npm run build` | بناء للإنتاج |
+| `npm start` | تشغيل خادم الإنتاج |
+| `npm run dev -- --webpack` | التطوير مع Webpack |
+
+---
+
+## 📁 بنية المشروع
+
+```
+Moonlight-Website/
+├── public/                   # ملفات ثابتة (صور، أيقونات)
+├── messages/                 # ملفات الترجمة (i18n)
+├── src/
+│   ├── app/                  # مسارات التطبيق (App Router)
+│   │   ├── api/              # API Routes
+│   │   ├── [locale]/         # المسارات بدعم اللغات المتعددة
+│   │   ├── layout.tsx        # التخطيط الرئيسي
+│   │   └── page.tsx          # الصفحة الرئيسية
+│   │
+│   ├── features/             # الميزات والمكونات الخاصة بالمشروع
+│   │   ├── bookings/         # ميزة الحجوزات
+│   │   ├── admin/            # لوحة التحكم
+│   │   ├── auth/             # المصادقة
+│   │   └── ...
+│   │
+│   ├── shared/               # المكونات المشتركة والأدوات
+│   │   ├── components/       # مكونات قابلة لإعادة الاستخدام
+│   │   ├── hooks/            # React Hooks مخصصة
+│   │   ├── utils/            # دوال مساعدة
+│   │   └── constants/        # ثوابت المشروع
+│   │
+│   └── i18n/                 # إعدادات التوطين
+│
+├── package.json              # المكتبات والنصوص
+├── tsconfig.json             # إعدادات TypeScript
+├── tailwind.config.ts        # إعدادات Tailwind CSS
+├── next.config.ts            # إعدادات Next.js
+└── README.md                 # هذا الملف
+```
+
+---
+
+## 🎨 المكتبات والتقنيات المستخدمة
+
+### 🏗️ الإطار والأساسيات
+| الحزمة | الإصدار | الغرض |
+|--------|---------|-------|
+| Next.js | 16.2.1 | إطار عمل React متقدم |
+| React | 19.2.3 | مكتبة بناء الواجهات |
+| TypeScript | 5 | لغة البرمجة المكتوبة |
+
+### 💾 قاعدة البيانات والمصادقة
+| الحزمة | الإصدار | الغرض |
+|--------|---------|-------|
+| @supabase/supabase-js | 2.100.1 | قاعدة البيانات |
+| @supabase/ssr | 0.9.0 | مصادقة SSR آمنة |
+
+### 🎨 التصميم والواجهة
+| الحزمة | الإصدار | الغرض |
+|--------|---------|-------|
+| Tailwind CSS | 4 | إطار عمل CSS حديث |
+| tailwindcss-animated | 2.0.0 | رسوم متحركة محسّنة |
+| Lenis | 1.3.21 | تأثيرات التمرير السلسة |
+| Swiper | 12.1.3 | كاروسيل واجهة احترافية |
+
+### 🔧 إدارة الحالة والنماذج
+| الحزمة | الإصدار | الغرض |
+|--------|---------|-------|
+| @tanstack/react-query | 5.90.21 | إدارة حالة البيانات |
+| react-hook-form | 7.71.2 | إدارة النماذج |
+| @hookform/resolvers | 5.2.2 | معالجات التحقق |
+| Zod | 4.3.6 | التحقق من البيانات |
+
+### 🌐 التوطين والخدمات
+| الحزمة | الإصدار | الغرض |
+|--------|---------|-------|
+| next-intl | 4.8.3 | دعم لغات متعددة |
+| Resend | 6.12.2 | خدمة البريد الإلكتروني |
+| next-sitemap | 4.2.3 | توليد خريطة الموقع |
+
+### 🛠️ أدوات إضافية
+| الحزمة | الإصدار | الغرض |
+|--------|---------|-------|
+| clsx | 2.1.1 | دمج أسماء الفئات CSS |
+| tailwind-merge | 3.5.0 | دمج أنماط Tailwind |
+
+---
+
+## 🚀 النشر والتوزيع
+
+### نشر على Vercel (الموصى به) ⭐
+
+Vercel هي أسهل وأسرع طريقة لنشر مشاريع Next.js:
+
+```bash
+# الخطوة 1: ربط المشروع على Vercel
+# 1. اذهب إلى https://vercel.com/new
+# 2. اختر "Import Git Repository"
+# 3. اختر المشروع من GitHub
+
+# الخطوة 2: تعيين متغيرات البيئة
+# 1. في لوحة تحكم Vercel
+# 2. اذهب إلى Settings → Environment Variables
+# 3. أضف المتغيرات التالية:
+#    - NEXT_PUBLIC_SUPABASE_URL
+#    - NEXT_PUBLIC_SUPABASE_ANON_KEY
+#    - RESEND_API_KEY
+
+# الخطوة 3: تفعيل النشر التلقائي
+# النشر سيتم تلقائياً عند كل دفع إلى main
+```
+
+### نشر يدوي على خادم
+
+```bash
+# بناء التطبيق
+npm run build
+
+# تشغيل الخادم
+npm start
+```
+
+### نشر مع Docker
+
+```dockerfile
+FROM node:18-alpine
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+RUN npm install
+
+COPY . .
+RUN npm run build
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
+```
+
+---
+
+## 🤝 المساهمة
+
+نرحب بمساهماتك! سواء كانت ميزة جديدة أو إصلاح خلل أو تحسين التوثيق.
+
+### 📋 خطوات المساهمة
+
+1. **Fork** المشروع
    ```bash
-   git clone <repository-url>
-   cd Moonlight-Website
+   # اضغط زر Fork على صفحة المشروع
    ```
 
-2. **Install Dependencies:**
+2. **أنشئ فرع جديد**
    ```bash
-   npm install
+   git checkout -b feature/ميزة-رائعة
    ```
 
-3. **Set up Environment Variables:**
-   Create a `.env` file in the root directory of the project and add the required variables based on the `env-example.txt` file:
-   ```env
-   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-   # Add any other required variables here
-   ```
-
-4. **Run the Development Server:**
+3. **قم بالتغييرات والاختبار**
    ```bash
    npm run dev
    ```
 
-   Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the website.
+4. **Commit التغييرات**
+   ```bash
+   git commit -m 'إضافة ميزة رائعة'
+   ```
 
-## 📦 Deployment
+5. **Push الفرع**
+   ```bash
+   git push origin feature/ميزة-رائعة
+   ```
 
-The project is fully optimized and ready to be deployed on **[Vercel](https://vercel.com/)**.
-It also supports automatic Sitemap generation for SEO using `next-sitemap`, which runs automatically after the build process (`npm run build`).
+6. **افتح Pull Request**
+   - اشرح التغييرات بوضوح
+   - أضف لقطات شاشة إن أمكن
+
+### ✅ معايير المساهمة
+
+- ✅ كود نظيف وقابل للقراءة
+- ✅ استخدم TypeScript
+- ✅ اتبع نمط المشروع
+- ✅ أضف تعليقات توضيحية عند الحاجة
+- ✅ اختبر التغييرات محلياً
+- ✅ لا تزيل أي أكواد قديمة بدون تحديث التوثيق
 
 ---
+
+## 📄 الترخيص
+
+هذا المشروع مرخص تحت ترخيص مفتوح المصدر. راجع ملف [LICENSE](LICENSE) للتفاصيل الكاملة.
+
+---
+
+## 📞 التواصل والدعم
+
+### 👨‍💻 المؤلف
+- **الاسم**: Mostafa Ahmed
+- **GitHub**: [@mostafa0x](https://github.com/mostafa0x)
+- **البريد الإلكتروني**: [تواصل عبر GitHub]
+
+### 💬 الدعم والمساعدة
+- 🐛 [الإبلاغ عن مشاكل](https://github.com/mostafa0x/Moonlight-Website/issues)
+- 💬 [النقاشات والأسئلة](https://github.com/mostafa0x/Moonlight-Website/discussions)
+- 📖 [الاطلاع على التوثيق](https://github.com/mostafa0x/Moonlight-Website/wiki)
+
+---
+
+## 🎉 شكر وتقدير
+
+شكراً لاستخدامك **Moonlight Website**! 
+
+إذا أعجبك المشروع، لا تنسَ:
+- ⭐ إضافة نجمة للمشروع
+- 🔗 مشاركة المشروع مع الآخرين
+- 🤝 المساهمة بملاحظاتك واقتراحاتك
+
+---
+
 <div align="center">
-  <p>Developed by <b>Mostafa Ahmed </b>.</p>
+
+### صُنع بـ ❤️ بواسطة Mostafa Ahmed
+
+**النسخة الحالية**: 1.0.0 | **آخر تحديث**: يوليو 2026
+
+[⬆ العودة للأعلى](#-moonlight-website)
+
 </div>
