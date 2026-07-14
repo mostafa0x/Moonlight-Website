@@ -7,90 +7,90 @@
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat-square&logo=tailwind-css&logoColor=white)
 
-**منصة ويب حديثة وأنيقة لحجز الرحلات والسياحة مع لوحة تحكم إدارية متقدمة**
+**A modern and elegant tourism booking platform with an advanced admin dashboard**
 
-[🌐 زيارة الموقع](https://moonlight-website-new-delta.vercel.app) • [🐛 الإبلاغ عن مشاكل](https://github.com/mostafa0x/Moonlight-Website/issues) • [💪 المساهمة](CONTRIBUTING.md)
+[🌐 Visit Website](https://moonlight-website-new-delta.vercel.app) • [🐛 Report Issues](https://github.com/mostafa0x/Moonlight-Website/issues) • [💪 Contribute](CONTRIBUTING.md)
 
 </div>
 
 ---
 
-## 📋 المحتويات
+## 📋 Table of Contents
 
-- [📖 نظرة عامة](#-نظرة-عامة)
-- [✨ الميزات الرئيسية](#-الميزات-الرئيسية)
-- [🛠️ المتطلبات](#️-المتطلبات)
-- [📦 التثبيت والإعداد](#-التثبيت-والإعداد)
-- [🚀 الاستخدام](#-الاستخدام)
-- [📁 بنية المشروع](#-بنية-المشروع)
-- [🎨 المكتبات والتقنيات المستخدمة](#-المكتبات-والتقنيات-المستخدمة)
-- [🚀 النشر والتوزيع](#-النشر-والتوزيع)
-- [🤝 المساهمة](#-المساهمة)
-- [📄 الترخيص](#-الترخيص)
-- [📞 التواصل](#-التواصل)
-
----
-
-## 📖 نظرة عامة
-
-**Moonlight Website** هو منصة ويب متكاملة لحجز الرحلات والعطلات السياحية مع لوحة تحكم إدارية قوية. يجمع المشروع بين أحدث تقنيات الويب لتوفير تجربة مستخدم سلسة وسريعة جداً.
-
-### 🎯 الأهداف
-- ✅ توفير منصة احترافية لحجز الرحلات والعطلات
-- ✅ لوحة تحكم إدارية متقدمة مع مصادقة آمنة
-- ✅ دعم متعدد اللغات والمناطق الجغرافية
-- ✅ أداء عالي جداً وسرعة استجابة فائقة
-- ✅ تجربة مستخدم استثنائية على جميع الأجهزة
+- [📖 Overview](#-overview)
+- [✨ Key Features](#-key-features)
+- [🛠️ Requirements](#️-requirements)
+- [📦 Installation & Setup](#-installation--setup)
+- [🚀 Usage](#-usage)
+- [📁 Project Structure](#-project-structure)
+- [🎨 Libraries & Technologies](#-libraries--technologies)
+- [🚀 Deployment](#-deployment)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+- [📞 Contact & Support](#-contact--support)
 
 ---
 
-## ✨ الميزات الرئيسية
+## 📖 Overview
 
-### 🎫 نظام الحجز الكامل
-- 📝 واجهة سهلة الاستخدام لحجز الرحلات
-- 🎯 تخصيص وتعديل حزم السفر
-- 💳 نظام دفع آمن وموثوق
-- 📧 تأكيد الحجز عبر البريد الإلكتروني
+**Moonlight Website** is a comprehensive web platform for booking tours and vacation packages with a powerful admin dashboard. The project combines the latest web technologies to provide a seamless and ultra-fast user experience.
 
-### 🛡️ لوحة التحكم الإدارية
-- 👨‍💼 إدارة كاملة للحجوزات والتذاكر
-- 🔐 مصادقة آمنة (SSR Authentication)
-- ⚡ تحديثات فورية في الوقت الفعلي
-- 📊 تقارير وإحصائيات مفصلة
-
-### 🌐 دعم متعدد اللغات
-- 🗣️ دعم كامل للغات المتعددة
-- 🌍 توجيه ديناميكي حسب اللغة
-- 🔤 ترجمة احترافية لكل المحتوى
-
-### 💰 نظام كود الخصم
-- ✅ التحقق الفوري من كود الخصم
-- 🧮 حساب السعر ديناميكي
-- 📉 تطبيق الخصم التلقائي
-
-### 🎨 واجهة حديثة وتفاعلية
-- 🌓 دعم الوضع الليلي والفاتح تلقائياً
-- ✨ رسوم متحركة سلسة (Lenis)
-- 🖼️ معارض صور احترافية (Swiper)
-- 📱 تصميم مستجيب تماماً
-
-### ⚡ أداء عالي جداً
-- 🚀 بناء على Next.js مع Server Components
-- 🔄 استدعاءات الخادم محسّنة
-- 📈 تحسين محركات البحث (SEO)
-- 🗺️ خريطة الموقع التلقائية
+### 🎯 Goals
+- ✅ Provide a professional platform for booking tours and vacations
+- ✅ Advanced admin dashboard with secure authentication
+- ✅ Support for multiple languages and geographic regions
+- ✅ High performance and fast response times
+- ✅ Exceptional user experience across all devices
 
 ---
 
-## 🛠️ المتطلبات
+## ✨ Key Features
 
-قبل البدء، تأكد من توفر المتطلبات التالية:
+### 🎫 Complete Booking System
+- 📝 User-friendly interface for booking tours
+- 🎯 Customize and modify travel packages
+- 💳 Secure and reliable payment system
+- 📧 Booking confirmation via email
 
-- **Node.js** إصدار 18 أو أحدث
-- **npm** أو **yarn** أو **pnpm**
-- **حساب Supabase** (لقاعدة البيانات والمصادقة)
+### 🛡️ Admin Dashboard
+- 👨‍💼 Full management of bookings and tickets
+- 🔐 Secure authentication (SSR Authentication)
+- ⚡ Real-time updates
+- 📊 Detailed reports and statistics
 
-### التحقق من الإصدارات المثبتة:
+### 🌐 Multi-Language Support
+- 🗣️ Full support for multiple languages
+- 🌍 Dynamic routing based on language
+- 🔤 Professional translation for all content
+
+### 💰 Discount Code System
+- ✅ Instant validation of discount codes
+- 🧮 Dynamic price calculation
+- 📉 Automatic discount application
+
+### 🎨 Modern & Interactive UI
+- 🌓 Automatic support for light/dark mode
+- ✨ Smooth scrolling effects (Lenis)
+- 🖼️ Professional image galleries (Swiper)
+- 📱 Fully responsive design
+
+### ⚡ High Performance
+- 🚀 Built on Next.js with Server Components
+- 🔄 Optimized server calls
+- 📈 SEO-optimized
+- 🗺️ Automatic sitemap generation
+
+---
+
+## 🛠️ Requirements
+
+Before starting, ensure you have:
+
+- **Node.js** version 18 or higher
+- **npm** or **yarn** or **pnpm**
+- **Supabase account** (for database and authentication)
+
+### Verify Installed Versions:
 
 ```bash
 node --version    # v18+
@@ -99,41 +99,41 @@ npm --version     # 8+
 
 ---
 
-## 📦 التثبيت والإعداد
+## 📦 Installation & Setup
 
-### 1️⃣ استنساخ المشروع
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/mostafa0x/Moonlight-Website.git
 cd Moonlight-Website
 ```
 
-### 2️⃣ تثبيت المكتبات
+### 2️⃣ Install Dependencies
 
 ```bash
 npm install
-# أو باستخدام yarn
+# or using yarn
 yarn install
-# أو باستخدام pnpm
+# or using pnpm
 pnpm install
 ```
 
-### 3️⃣ إعداد متغيرات البيئة
+### 3️⃣ Setup Environment Variables
 
-أنشئ ملف `.env.local` في جذر المشروع:
+Create a `.env.local` file in the project root:
 
 ```env
 # Supabase
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 
-# Resend (خدمة البريد الإلكتروني)
+# Resend (Email Service)
 RESEND_API_KEY=your_resend_api_key
 
-# متغيرات أخرى (حسب احتياجات مشروعك)
+# Other variables (as needed for your project)
 ```
 
-### 4️⃣ التحقق من الإعداد
+### 4️⃣ Verify Setup
 
 ```bash
 npm run dev
@@ -141,161 +141,161 @@ npm run dev
 
 ---
 
-## 🚀 الاستخدام
+## 🚀 Usage
 
-### تشغيل بيئة التطوير
+### Run Development Environment
 
 ```bash
 npm run dev
 ```
 
-سيتم تشغيل التطبيق على `http://localhost:3000`
+The application will run at `http://localhost:3000`
 
-### بناء للإنتاج
+### Build for Production
 
 ```bash
 npm run build
 ```
 
-سيقوم النصق بـ:
-- ✅ بناء التطبيق
-- ✅ إنشاء خريطة الموقع (Sitemap) تلقائياً
-- ✅ تحسين الملفات للإنتاج
+This will:
+- ✅ Build the application
+- ✅ Generate sitemap automatically
+- ✅ Optimize files for production
 
-### تشغيل خادم الإنتاج
+### Run Production Server
 
 ```bash
 npm start
 ```
 
-### أوامر أخرى مفيدة
+### Useful Commands
 
-| الأمر | الوصف |
-|------|-------|
-| `npm run dev` | تشغيل بيئة التطوير |
-| `npm run build` | بناء للإنتاج |
-| `npm start` | تشغيل خادم الإنتاج |
-| `npm run dev -- --webpack` | التطوير مع Webpack |
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development environment |
+| `npm run build` | Build for production |
+| `npm start` | Run production server |
+| `npm run dev -- --webpack` | Development with Webpack |
 
 ---
 
-## 📁 بنية المشروع
+## 📁 Project Structure
 
 ```
 Moonlight-Website/
-├── public/                   # ملفات ثابتة (صور، أيقونات)
-├── messages/                 # ملفات الترجمة (i18n)
+├── public/                   # Static files (images, icons)
+├── messages/                 # Translation files (i18n)
 ├── src/
-│   ├── app/                  # مسارات التطبيق (App Router)
+│   ├── app/                  # Application routes (App Router)
 │   │   ├── api/              # API Routes
-│   │   ├── [locale]/         # المسارات بدعم اللغات المتعددة
-│   │   ├── layout.tsx        # التخطيط الرئيسي
-│   │   └── page.tsx          # الصفحة الرئيسية
+│   │   ├── [locale]/         # Routes with multi-language support
+│   │   ├── layout.tsx        # Main layout
+│   │   └── page.tsx          # Home page
 │   │
-│   ├── features/             # الميزات والمكونات الخاصة بالمشروع
-│   │   ├── bookings/         # ميزة الحجوزات
-│   │   ├── admin/            # لوحة التحكم
-│   │   ├── auth/             # المصادقة
+│   ├── features/             # Project-specific features & components
+│   │   ├── bookings/         # Booking feature
+│   │   ├── admin/            # Admin dashboard
+│   │   ├── auth/             # Authentication
 │   │   └── ...
 │   │
-│   ├── shared/               # المكونات المشتركة والأدوات
-│   │   ├── components/       # مكونات قابلة لإعادة الاستخدام
-│   │   ├── hooks/            # React Hooks مخصصة
-│   │   ├── utils/            # دوال مساعدة
-│   │   └── constants/        # ثوابت المشروع
+│   ├── shared/               # Shared components & utilities
+│   │   ├── components/       # Reusable components
+│   │   ├── hooks/            # Custom React hooks
+│   │   ├── utils/            # Helper functions
+│   │   └── constants/        # Project constants
 │   │
-│   └── i18n/                 # إعدادات التوطين
+│   └── i18n/                 # Internationalization configuration
 │
-├── package.json              # المكتبات والنصوص
-├── tsconfig.json             # إعدادات TypeScript
-├── tailwind.config.ts        # إعدادات Tailwind CSS
-├── next.config.ts            # إعدادات Next.js
-└── README.md                 # هذا الملف
+├── package.json              # Dependencies and scripts
+├── tsconfig.json             # TypeScript configuration
+├── tailwind.config.ts        # Tailwind CSS configuration
+├── next.config.ts            # Next.js configuration
+└── README.md                 # This file
 ```
 
 ---
 
-## 🎨 المكتبات والتقنيات المستخدمة
+## 🎨 Libraries & Technologies
 
-### 🏗️ الإطار والأساسيات
-| الحزمة | الإصدار | الغرض |
-|--------|---------|-------|
-| Next.js | 16.2.1 | إطار عمل React متقدم |
-| React | 19.2.3 | مكتبة بناء الواجهات |
-| TypeScript | 5 | لغة البرمجة المكتوبة |
+### 🏗️ Framework & Basics
+| Package | Version | Purpose |
+|---------|---------|---------|
+| Next.js | 16.2.1 | Advanced React framework |
+| React | 19.2.3 | UI library |
+| TypeScript | 5 | Typed programming language |
 
-### 💾 قاعدة البيانات والمصادقة
-| الحزمة | الإصدار | الغرض |
-|--------|---------|-------|
-| @supabase/supabase-js | 2.100.1 | قاعدة البيانات |
-| @supabase/ssr | 0.9.0 | مصادقة SSR آمنة |
+### 💾 Database & Authentication
+| Package | Version | Purpose |
+|---------|---------|---------|
+| @supabase/supabase-js | 2.100.1 | Database |
+| @supabase/ssr | 0.9.0 | Secure SSR Authentication |
 
-### 🎨 التصميم والواجهة
-| الحزمة | الإصدار | الغرض |
-|--------|---------|-------|
-| Tailwind CSS | 4 | إطار عمل CSS حديث |
-| tailwindcss-animated | 2.0.0 | رسوم متحركة محسّنة |
-| Lenis | 1.3.21 | تأثيرات التمرير السلسة |
-| Swiper | 12.1.3 | كاروسيل واجهة احترافية |
+### 🎨 Design & UI
+| Package | Version | Purpose |
+|---------|---------|---------|
+| Tailwind CSS | 4 | Modern CSS framework |
+| tailwindcss-animated | 2.0.0 | Enhanced animations |
+| Lenis | 1.3.21 | Smooth scrolling effects |
+| Swiper | 12.1.3 | Professional carousels |
 
-### 🔧 إدارة الحالة والنماذج
-| الحزمة | الإصدار | الغرض |
-|--------|---------|-------|
-| @tanstack/react-query | 5.90.21 | إدارة حالة البيانات |
-| react-hook-form | 7.71.2 | إدارة النماذج |
-| @hookform/resolvers | 5.2.2 | معالجات التحقق |
-| Zod | 4.3.6 | التحقق من البيانات |
+### 🔧 State Management & Forms
+| Package | Version | Purpose |
+|---------|---------|---------|
+| @tanstack/react-query | 5.90.21 | Data state management |
+| react-hook-form | 7.71.2 | Form management |
+| @hookform/resolvers | 5.2.2 | Validation resolvers |
+| Zod | 4.3.6 | Data validation |
 
-### 🌐 التوطين والخدمات
-| الحزمة | الإصدار | الغرض |
-|--------|---------|-------|
-| next-intl | 4.8.3 | دعم لغات متعددة |
-| Resend | 6.12.2 | خدمة البريد الإلكتروني |
-| next-sitemap | 4.2.3 | توليد خريطة الموقع |
+### 🌐 Localization & Services
+| Package | Version | Purpose |
+|---------|---------|---------|
+| next-intl | 4.8.3 | Multi-language support |
+| Resend | 6.12.2 | Email service |
+| next-sitemap | 4.2.3 | Sitemap generation |
 
-### 🛠️ أدوات إضافية
-| الحزمة | الإصدار | الغرض |
-|--------|---------|-------|
-| clsx | 2.1.1 | دمج أسماء الفئات CSS |
-| tailwind-merge | 3.5.0 | دمج أنماط Tailwind |
+### 🛠️ Additional Tools
+| Package | Version | Purpose |
+|---------|---------|---------|
+| clsx | 2.1.1 | CSS class merging |
+| tailwind-merge | 3.5.0 | Tailwind style merging |
 
 ---
 
-## 🚀 النشر والتوزيع
+## 🚀 Deployment
 
-### نشر على Vercel (الموصى به) ⭐
+### Deploy on Vercel (Recommended) ⭐
 
-Vercel هي أسهل وأسرع طريقة لنشر مشاريع Next.js:
+Vercel is the easiest and fastest way to deploy Next.js projects:
 
 ```bash
-# الخطوة 1: ربط المشروع على Vercel
-# 1. اذهب إلى https://vercel.com/new
-# 2. اختر "Import Git Repository"
-# 3. اختر المشروع من GitHub
+# Step 1: Connect the project on Vercel
+# 1. Go to https://vercel.com/new
+# 2. Select "Import Git Repository"
+# 3. Choose the project from GitHub
 
-# الخطوة 2: تعيين متغيرات البيئة
-# 1. في لوحة تحكم Vercel
-# 2. اذهب إلى Settings → Environment Variables
-# 3. أضف المتغيرات التالية:
+# Step 2: Set environment variables
+# 1. In Vercel dashboard
+# 2. Go to Settings → Environment Variables
+# 3. Add the following variables:
 #    - NEXT_PUBLIC_SUPABASE_URL
 #    - NEXT_PUBLIC_SUPABASE_ANON_KEY
 #    - RESEND_API_KEY
 
-# الخطوة 3: تفعيل النشر التلقائي
-# النشر سيتم تلقائياً عند كل دفع إلى main
+# Step 3: Enable automatic deployment
+# Deployment will happen automatically on each push to main
 ```
 
-### نشر يدوي على خادم
+### Manual Deployment on Server
 
 ```bash
-# بناء التطبيق
+# Build the application
 npm run build
 
-# تشغيل الخادم
+# Run the server
 npm start
 ```
 
-### نشر مع Docker
+### Deploy with Docker
 
 ```dockerfile
 FROM node:18-alpine
@@ -315,89 +315,89 @@ CMD ["npm", "start"]
 
 ---
 
-## 🤝 المساهمة
+## 🤝 Contributing
 
-نرحب بمساهماتك! سواء كانت ميزة جديدة أو إصلاح خلل أو تحسين التوثيق.
+We welcome contributions! Whether it's a new feature, bug fix, or documentation improvement.
 
-### 📋 خطوات المساهمة
+### 📋 Contributing Steps
 
-1. **Fork** المشروع
+1. **Fork the Project**
    ```bash
-   # اضغط زر Fork على صفحة المشروع
+   # Click the Fork button on the project page
    ```
 
-2. **أنشئ فرع جديد**
+2. **Create a New Branch**
    ```bash
-   git checkout -b feature/ميزة-رائعة
+   git checkout -b feature/amazing-feature
    ```
 
-3. **قم بالتغييرات والاختبار**
+3. **Make Changes and Test**
    ```bash
    npm run dev
    ```
 
-4. **Commit التغييرات**
+4. **Commit Changes**
    ```bash
-   git commit -m 'إضافة ميزة رائعة'
+   git commit -m 'Add amazing feature'
    ```
 
-5. **Push الفرع**
+5. **Push the Branch**
    ```bash
-   git push origin feature/ميزة-رائعة
+   git push origin feature/amazing-feature
    ```
 
-6. **افتح Pull Request**
-   - اشرح التغييرات بوضوح
-   - أضف لقطات شاشة إن أمكن
+6. **Open a Pull Request**
+   - Explain your changes clearly
+   - Add screenshots if applicable
 
-### ✅ معايير المساهمة
+### ✅ Contribution Standards
 
-- ✅ كود نظيف وقابل للقراءة
-- ✅ استخدم TypeScript
-- ✅ اتبع نمط المشروع
-- ✅ أضف تعليقات توضيحية عند الحاجة
-- ✅ اختبر التغييرات محلياً
-- ✅ لا تزيل أي أكواد قديمة بدون تحديث التوثيق
+- ✅ Clean and readable code
+- ✅ Use TypeScript
+- ✅ Follow project patterns
+- ✅ Add comments for complex code
+- ✅ Test changes locally
+- ✅ Don't remove old code without updating documentation
 
 ---
 
-## 📄 الترخيص
+## 📄 License
 
-هذا المشروع مرخص تحت ترخيص مفتوح المصدر. راجع ملف [LICENSE](LICENSE) للتفاصيل الكاملة.
+This project is licensed under an open-source license. See the [LICENSE](LICENSE) file for full details.
 
 ---
 
-## 📞 التواصل والدعم
+## 📞 Contact & Support
 
-### 👨‍💻 المؤلف
-- **الاسم**: Mostafa Ahmed
+### 👨‍💻 Author
+- **Name**: Mostafa Ahmed
 - **GitHub**: [@mostafa0x](https://github.com/mostafa0x)
-- **البريد الإلكتروني**: [تواصل عبر GitHub]
+- **Email**: [Contact via GitHub]
 
-### 💬 الدعم والمساعدة
-- 🐛 [الإبلاغ عن مشاكل](https://github.com/mostafa0x/Moonlight-Website/issues)
-- 💬 [النقاشات والأسئلة](https://github.com/mostafa0x/Moonlight-Website/discussions)
-- 📖 [الاطلاع على التوثيق](https://github.com/mostafa0x/Moonlight-Website/wiki)
+### 💬 Support & Help
+- 🐛 [Report Issues](https://github.com/mostafa0x/Moonlight-Website/issues)
+- 💬 [Discussions & Questions](https://github.com/mostafa0x/Moonlight-Website/discussions)
+- 📖 [View Documentation](https://github.com/mostafa0x/Moonlight-Website/wiki)
 
 ---
 
-## 🎉 شكر وتقدير
+## 🎉 Thank You
 
-شكراً لاستخدامك **Moonlight Website**! 
+Thank you for using **Moonlight Website**!
 
-إذا أعجبك المشروع، لا تنسَ:
-- ⭐ إضافة نجمة للمشروع
-- 🔗 مشاركة المشروع مع الآخرين
-- 🤝 المساهمة بملاحظاتك واقتراحاتك
+If you like the project, don't forget to:
+- ⭐ Add a star to the project
+- 🔗 Share the project with others
+- 🤝 Contribute your feedback and suggestions
 
 ---
 
 <div align="center">
 
-### صُنع بـ ❤️ بواسطة Mostafa Ahmed
+### Made with ❤️ by Mostafa Ahmed
 
-**النسخة الحالية**: 1.0.0 | **آخر تحديث**: يوليو 2026
+**Current Version**: 1.0.0 | **Last Updated**: July 2026
 
-[⬆ العودة للأعلى](#-moonlight-website)
+[⬆ Back to Top](#-moonlight-website)
 
 </div>
